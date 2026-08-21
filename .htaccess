@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule (.*) https://github.com/dpw67/pkm/$1 [R=302,L,QSA]

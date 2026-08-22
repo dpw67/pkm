@@ -1,0 +1,44 @@
+# PKM Taxonomy — https://w3id.org/pkm/taxonomy
+#
+# Hierarchical (broader/narrower) structure over the concepts defined in
+# https://w3id.org/pkm/vocab. Definitions live in the vocabulary; this file
+# carries only the relationships, so a term is defined in exactly one place.
+
+@prefix pkmv:    <https://w3id.org/pkm/vocab/> .
+@prefix pkmt:    <https://w3id.org/pkm/taxonomy/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/pkm/taxonomy>
+    a                   skos:ConceptScheme ;
+    dcterms:title       "PKM Taxonomy"@en ;
+    dcterms:description "Hierarchical arrangement of PKM vocabulary concepts."@en ;
+    dcterms:creator     <https://github.com/dpw67> ;
+    dcterms:license     <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created     "2026-08-22"^^xsd:date ;
+    rdfs:seeAlso        <https://w3id.org/pkm/vocab> .
+
+# Example refinements of pkmv:note. Replace with the real hierarchy.
+
+pkmt:permanent-note
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
+    skos:prefLabel  "permanent note"@en ;
+    skos:definition "A note that has been refined into a durable, self-contained idea."@en ;
+    skos:broader    pkmv:note .
+
+pkmt:literature-note
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
+    skos:prefLabel  "literature note"@en ;
+    skos:definition "A note capturing an idea encountered in an external source, in the reader's own words."@en ;
+    skos:broader    pkmv:note .
+
+pkmt:fleeting-note
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
+    skos:prefLabel  "fleeting note"@en ;
+    skos:definition "A quick capture not yet processed into a permanent note."@en ;
+    skos:broader    pkmv:note .

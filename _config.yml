@@ -1,0 +1,14 @@
+title: PKM
+description: >-
+  Persistent URI namespace at https://w3id.org/pkm with Linked Data resources on
+  Personal Knowledge Management (PKM) for the Knowledge System Architecture (KSA) project.
+url: https://w3id.org/pkm
+theme: jekyll-theme-primer
+
+# Build machinery — never published, so it can never become a resolvable URI.
+exclude:
+  - scripts/
+  - generators/
+  - schema/
+  - Makefile
+  - README.md   # index.md is the site index; README is for the GitHub repo page

@@ -1,0 +1,11 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Python (build tooling is invoked ad hoc; no package lives here)
+.venv/
+__pycache__/
+
+# macOS
+.DS_Store

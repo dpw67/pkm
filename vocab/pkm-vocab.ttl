@@ -1,0 +1,48 @@
+# PKM Vocabulary — https://w3id.org/pkm/vocab
+#
+# SKOS glossary. Concepts use slash URIs so each term dereferences independently:
+#   https://w3id.org/pkm/vocab/note
+#
+# Ontology classes (hash URIs, pkm:) are the formal model; these concepts are the
+# human-facing glossary. The two are tied together with skos:exactMatch.
+
+@prefix pkmv:    <https://w3id.org/pkm/vocab/> .
+@prefix pkm:     <https://w3id.org/pkm/ontology#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/pkm/vocab>
+    a                   skos:ConceptScheme ;
+    dcterms:title       "PKM Vocabulary"@en ;
+    dcterms:description "A glossary of Personal Knowledge Management terms used across the KSA project."@en ;
+    dcterms:creator     <https://github.com/dpw67> ;
+    dcterms:license     <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created     "2026-08-22"^^xsd:date ;
+    skos:hasTopConcept  pkmv:note , pkmv:tag , pkmv:source .
+
+pkmv:note
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "note"@en ;
+    skos:altLabel   "atomic note"@en , "zettel"@en ;
+    skos:definition "An atomic unit of captured knowledge, authored as a Markdown document with YAML frontmatter."@en ;
+    skos:exactMatch pkm:Note .
+
+pkmv:tag
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "tag"@en ;
+    skos:definition "A user-assigned label used to group notes across the folder hierarchy."@en ;
+    skos:exactMatch pkm:Tag .
+
+pkmv:source
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "source"@en ;
+    skos:altLabel   "reference"@en ;
+    skos:definition "An external work from which a note derives — an article, book, dataset, or web page."@en ;
+    skos:exactMatch pkm:Source .

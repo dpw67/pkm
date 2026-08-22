@@ -1,0 +1,92 @@
+# PKM Ontology — https://w3id.org/pkm/ontology
+#
+# HAND-AUTHORED. This file is the source of truth for the OWL model; it is not
+# generated. Data-shape artifacts (SHACL, JSON Schema) are generated from
+# schema/pkm.yaml into shapes/ — see the Makefile.
+#
+# The three seed classes below are placeholders to establish the pattern.
+# Replace them with the real model.
+
+@prefix pkm:     <https://w3id.org/pkm/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+#################################################################
+#    Ontology metadata
+#################################################################
+
+<https://w3id.org/pkm/ontology>
+    a                             owl:Ontology ;
+    dcterms:title                 "PKM Ontology"@en ;
+    dcterms:description           """Classes, properties, and relationships for Personal
+        Knowledge Management (PKM) within the Knowledge System Architecture (KSA)
+        project, spanning Obsidian linked notes, a Neo4j knowledge graph, and
+        associated tooling."""@en ;
+    # Consider switching to <https://warrenweb.net/#me> once that IRI resolves.
+    dcterms:creator               <https://github.com/dpw67> ;
+    dcterms:license               <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights                "Copyright 2026 Doug Warren"@en ;
+    dcterms:created               "2026-08-22"^^xsd:date ;
+    owl:versionIRI                <https://w3id.org/pkm/ontology/0.1.0> ;
+    owl:versionInfo               "0.1.0" ;
+    vann:preferredNamespaceUri    "https://w3id.org/pkm/ontology#" ;
+    vann:preferredNamespacePrefix "pkm" ;
+    rdfs:seeAlso                  <https://w3id.org/pkm/vocab> .
+
+#################################################################
+#    Classes
+#################################################################
+
+pkm:Note
+    a                owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "Note"@en ;
+    skos:definition  "An atomic unit of captured knowledge, authored as a Markdown document with YAML frontmatter."@en ;
+    skos:exactMatch  <https://w3id.org/pkm/vocab/note> .
+
+pkm:Tag
+    a                owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "Tag"@en ;
+    skos:definition  "A user-assigned label used to group notes across the folder hierarchy."@en ;
+    skos:exactMatch  <https://w3id.org/pkm/vocab/tag> .
+
+pkm:Source
+    a                owl:Class ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "Source"@en ;
+    skos:definition  "An external work from which a note derives — an article, book, dataset, or web page."@en ;
+    skos:exactMatch  <https://w3id.org/pkm/vocab/source> .
+
+#################################################################
+#    Object properties
+#################################################################
+
+pkm:linksTo
+    a                owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "links to"@en ;
+    skos:definition  "Relates a note to another note it references by wiki-link."@en ;
+    rdfs:domain      pkm:Note ;
+    rdfs:range       pkm:Note .
+
+pkm:hasTag
+    a                owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "has tag"@en ;
+    skos:definition  "Relates a note to a tag assigned to it."@en ;
+    rdfs:domain      pkm:Note ;
+    rdfs:range       pkm:Tag .
+
+pkm:derivedFrom
+    a                owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
+    rdfs:label       "derived from"@en ;
+    skos:definition  "Relates a note to the source it was written from."@en ;
+    rdfs:domain      pkm:Note ;
+    rdfs:range       pkm:Source .

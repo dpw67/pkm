@@ -1,0 +1,41 @@
+# VoID description of the PKM namespace — https://w3id.org/pkm/void.ttl
+#
+# Machine-readable description of this dataset: what it contains, where to get it,
+# and how it may be reused. Crawlers and dataset registries read this.
+
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix pkm:     <https://w3id.org/pkm/ontology#> .
+
+<https://w3id.org/pkm/>
+    a                     void:Dataset ;
+    dcterms:title         "PKM — Personal Knowledge Management namespace"@en ;
+    dcterms:description   """Linked Data resources on Personal Knowledge Management for
+        the Knowledge System Architecture (KSA) project: an OWL ontology, a SKOS
+        vocabulary and taxonomy, SHACL shapes, and worked examples."""@en ;
+    dcterms:creator       <https://github.com/dpw67> ;
+    dcterms:license       <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created       "2026-08-22"^^xsd:date ;
+    dcterms:publisher     <https://github.com/dpw67> ;
+
+    void:uriSpace         "https://w3id.org/pkm/" ;
+    void:feature          <http://www.w3.org/ns/formats/Turtle> ,
+                          <http://www.w3.org/ns/formats/JSON-LD> ;
+
+    void:vocabulary       <http://www.w3.org/2004/02/skos/core#> ,
+                          <http://www.w3.org/2002/07/owl#> ,
+                          <http://purl.org/dc/terms/> ;
+
+    void:rootResource     <https://w3id.org/pkm/ontology> ,
+                          <https://w3id.org/pkm/vocab> ,
+                          <https://w3id.org/pkm/taxonomy> ;
+
+    void:dataDump         <https://w3id.org/pkm/ontology/pkm.ttl> ,
+                          <https://w3id.org/pkm/vocab/pkm-vocab.ttl> ,
+                          <https://w3id.org/pkm/taxonomy/pkm-taxonomy.ttl> ;
+
+    foaf:homepage         <https://w3id.org/pkm/> .

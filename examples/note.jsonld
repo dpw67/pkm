@@ -1,0 +1,14 @@
+{
+  "@context": "https://w3id.org/pkm/context.jsonld",
+  "id": "https://w3id.org/pkm/examples/note/atomic-notes",
+  "type": "Note",
+  "title": "Atomic notes",
+  "created": "2026-08-22T09:00:00Z",
+  "hasTag": [
+    "https://w3id.org/pkm/examples/tag/zettelkasten"
+  ],
+  "linksTo": [
+    "https://w3id.org/pkm/examples/note/note-linking"
+  ],
+  "derivedFrom": "https://w3id.org/pkm/examples/source/how-to-take-smart-notes"
+}

@@ -22,3 +22,9 @@ Additional information is available at https://blog.warrenweb.net.
 
 ## Maintainers
 - @dpw67
+
+## License
+Content in this repository — the ontology, vocabulary, taxonomy, and documentation —
+is licensed under [CC BY 4.0](LICENSE). Code examples under `examples/` and the build
+scripts are dedicated to the public domain under [CC0 1.0](LICENSE-EXAMPLES) and may
+be reused without attribution.

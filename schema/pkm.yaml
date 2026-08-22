@@ -1,0 +1,88 @@
+# LinkML source for the PKM data-shape layer.
+#
+# NOT PUBLISHED — this directory is excluded in _config.yml. It generates the
+# artifacts in shapes/ (SHACL, JSON Schema) via the Makefile.
+#
+# Scope note: the OWL ontology (ontology/pkm.ttl) is hand-authored, because LinkML's
+# generated OWL is deliberately conservative and would not carry the axioms we want.
+# LinkML is used here only for data shapes and validation.
+
+id: https://w3id.org/pkm/schema
+name: pkm
+title: PKM Data Shapes
+description: >-
+  Data shapes for Personal Knowledge Management instances described by the
+  PKM ontology at https://w3id.org/pkm/ontology.
+license: https://creativecommons.org/licenses/by/4.0/
+
+prefixes:
+  pkm: https://w3id.org/pkm/ontology#
+  pkmv: https://w3id.org/pkm/vocab/
+  linkml: https://w3id.org/linkml/
+  dcterms: http://purl.org/dc/terms/
+default_prefix: pkm
+default_range: string
+
+imports:
+  - linkml:types
+
+classes:
+
+  Note:
+    class_uri: pkm:Note
+    description: An atomic unit of captured knowledge.
+    slots:
+      - uri
+      - title
+      - created
+      - modified
+      - links_to
+      - has_tag
+      - derived_from
+
+  Tag:
+    class_uri: pkm:Tag
+    description: A user-assigned label used to group notes.
+    slots:
+      - uri
+      - title
+
+  Source:
+    class_uri: pkm:Source
+    description: An external work from which a note derives.
+    slots:
+      - uri
+      - title
+
+slots:
+
+  uri:
+    identifier: true
+    range: uriorcurie
+    description: The w3id.org identifier for this resource.
+
+  title:
+    slot_uri: dcterms:title
+    required: true
+
+  created:
+    slot_uri: dcterms:created
+    range: datetime
+
+  modified:
+    slot_uri: dcterms:modified
+    range: datetime
+
+  links_to:
+    slot_uri: pkm:linksTo
+    range: Note
+    multivalued: true
+
+  has_tag:
+    slot_uri: pkm:hasTag
+    range: Tag
+    multivalued: true
+
+  derived_from:
+    slot_uri: pkm:derivedFrom
+    range: Source

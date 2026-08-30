@@ -115,21 +115,41 @@ def render_vocabulary(vocab: Vocabulary, published: Graph) -> str:
             else:
                 lines.append("  <br>_No members yet._")
 
-    lines += ["", "## All terms", ""]
+    # Concepts and collections together. Four of the collections are not named
+    # "...Collection" -- Tech Stack, Note Types, Meal Domain, Semantic Web
+    # Standards -- so anyone scanning A-Z for one of those would otherwise have
+    # to already know it was a collection to find it.
+    lines += ["", "## All terms", "",
+              "Every concept and collection in one alphabetical list. Collections are "
+              "marked; the hierarchy above shows where the concepts sit.", ""]
     letter = ""
-    for concept in sorted(concepts, key=lambda c: (vocab.label(c).upper(), vocab.local_name(c))):
-        initial = vocab.label(concept)[:1].upper()
+    for uri in sorted([*concepts, *collections],
+                      key=lambda u: (vocab.label(u).upper(), vocab.local_name(u))):
+        initial = vocab.label(uri)[:1].upper()
         if initial != letter:
             letter = initial
             lines += [f"### {letter}", ""]
-        definition = _first(g, concept, SKOS.definition)
-        alts = sorted(str(a) for a in g.objects(concept, SKOS.altLabel))
-        entry = f"- **{_link(vocab, concept)}**"
+
+        entry = f"- **{_link(vocab, uri)}**"
+        if uri in collections:
+            members = list(g.objects(uri, SKOS.member))
+            noun = "member" if len(members) == 1 else "members"
+            entry += f" _(collection, {len(members)} {noun})_"
+        alts = sorted(str(a) for a in g.objects(uri, SKOS.altLabel))
         if alts:
             entry += f" _(also: {', '.join(alts)})_"
+        definition = _first(g, uri, SKOS.definition, SKOS.scopeNote)
         if definition:
             entry += f" — {definition}"
         lines.append(entry)
+
+        # skos:member has no inverse, so a concept never states its own
+        # membership. Say it here rather than make the reader scan 18 lists.
+        if uri in concepts:
+            belongs = sorted(g.subjects(SKOS.member, uri), key=vocab.label)
+            if belongs:
+                joined = ", ".join(_link(vocab, c) for c in belongs)
+                lines.append(f"  <br>In: {joined}")
 
     return "\n".join(lines)
 

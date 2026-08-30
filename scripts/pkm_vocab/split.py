@@ -25,14 +25,24 @@ TERMS_DIR = "terms"
 #: the largest thing in most records and the least useful to a consumer.
 STRIP_FROM_TERMS = (SKOS.changeNote,)
 
+#: Pulled in pointing *at* the subject as well as away from it. skos:member has
+#: no inverse in SKOS, so without this a term file cannot tell you which
+#: collections the term belongs to -- the statement lives only on the collection.
+#: Including it keeps the triple exactly as authored; the term file simply
+#: describes two subjects, which is ordinary for an RDF document.
+INBOUND = (SKOS.member,)
 
-def _subgraph(source: Graph, subject: URIRef, strip=()) -> Graph:
+
+def _subgraph(source: Graph, subject: URIRef, strip=(), inbound=()) -> Graph:
     g = Graph()
     for prefix, uri in source.namespaces():
         g.bind(prefix, uri, replace=True)
     for p, o in source.predicate_objects(subject):
         if p not in strip:
             g.add((subject, p, o))
+    for p in inbound:
+        for s in source.subjects(p, subject):
+            g.add((s, p, subject))
     return g
 
 
@@ -57,7 +67,7 @@ def write_all(vocab: Vocabulary, published: Graph, root: Path) -> list[Path]:
     # same namespace, so they have to dereference too.
     terms = root / "vocab" / TERMS_DIR
     for uri in [*vocab.concepts(), *vocab.collections()]:
-        term = _subgraph(published, uri, strip=STRIP_FROM_TERMS)
+        term = _subgraph(published, uri, strip=STRIP_FROM_TERMS, inbound=INBOUND)
         written.append(_write(term, terms / f"{vocab.local_name(uri)}.ttl"))
 
     # Agents and documents, each collected into the hash namespace it now lives

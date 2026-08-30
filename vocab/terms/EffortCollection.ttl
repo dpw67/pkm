@@ -4,10 +4,12 @@
 
 pkmv:EffortCollection a skos:Collection ;
     rdfs:label "Effort Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Area,
         pkmv:EffortCluster,
         pkmv:EffortsFolder,
         pkmv:Interest,
         pkmv:Project ;
-    skos:note "All the related notes for a single Effort."@en .
+    skos:note "All the related notes for a single Effort."@en ;
+    skos:prefLabel "Effort Collection"@en .
 

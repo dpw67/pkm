@@ -4,6 +4,7 @@
 
 pkmv:DayCollection a skos:Collection ;
     rdfs:label "Day Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Day,
         pkmv:DayActions,
         pkmv:DayAnalysis,
@@ -30,5 +31,6 @@ pkmv:DayCollection a skos:Collection ;
         pkmv:DayReview,
         pkmv:DaySchedule,
         pkmv:DayView ;
-    skos:note "All the related notes for a single calendar Day."@en .
+    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:prefLabel "Day Collection"@en .
 

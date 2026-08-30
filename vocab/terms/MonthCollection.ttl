@@ -4,10 +4,12 @@
 
 pkmv:MonthCollection a skos:Collection ;
     rdfs:label "Month Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
         pkmv:MonthLog,
         pkmv:MonthPlan,
         pkmv:MonthReview ;
-    skos:note "All related notes for a calendar month grouping Weeks and Days."@en .
+    skos:note "All related notes for a calendar month grouping Weeks and Days."@en ;
+    skos:prefLabel "Month Collection"@en .
 

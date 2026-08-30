@@ -5,6 +5,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+pkmv:ConceptCollection skos:member pkmv:KnowledgeGraph .
+
+pkmv:KnowledgeCollection skos:member pkmv:KnowledgeGraph .
+
+pkmv:SemanticWebStandards skos:member pkmv:KnowledgeGraph .
+
 pkmv:KnowledgeGraph a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;

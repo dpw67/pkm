@@ -4,6 +4,7 @@
 
 pkmv:MealDomain a skos:Collection ;
     rdfs:label "Meal Domain"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Breakfast,
         pkmv:DMPMealPlan,
         pkmv:DayMealPlan,
@@ -20,5 +21,6 @@ pkmv:MealDomain a skos:Collection ;
         pkmv:RecipeTime,
         pkmv:Snack,
         pkmv:WeekMealPlan ;
-    skos:note "All the related notes for a meal plan."@en .
+    skos:note "All the related notes for a meal plan."@en ;
+    skos:prefLabel "Meal Domain"@en .
 

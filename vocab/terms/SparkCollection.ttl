@@ -4,7 +4,9 @@
 
 pkmv:SparkCollection a skos:Collection ;
     rdfs:label "Spark Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;
-    skos:note "All the related notes for a new spark of interest or importance."@en .
+    skos:note "All the related notes for a new spark of interest or importance."@en ;
+    skos:prefLabel "Spark Collection"@en .
 

@@ -4,6 +4,7 @@
 
 pkmv:TechStack a skos:Collection ;
     rdfs:label "Tech Stack"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Cypher,
         pkmv:FastAPI,
         pkmv:Hummingbird,
@@ -13,5 +14,6 @@ pkmv:TechStack a skos:Collection ;
         pkmv:Shortcut,
         pkmv:Siri,
         pkmv:Swift,
-        pkmv:Tool .
+        pkmv:Tool ;
+    skos:prefLabel "Tech Stack"@en .
 

@@ -5,6 +5,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+pkmv:NoteTypes skos:member pkmv:Draft .
+
 pkmv:Draft a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;

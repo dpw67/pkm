@@ -4,6 +4,7 @@
 
 pkmv:WeekCollection a skos:Collection ;
     rdfs:label "Week Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Week,
         pkmv:WeekAnalysis,
         pkmv:WeekDiabetes,
@@ -15,5 +16,6 @@ pkmv:WeekCollection a skos:Collection ;
         pkmv:WeekMealPlan,
         pkmv:WeekPlan,
         pkmv:WeekReview ;
-    skos:note "All notes related to a single Week time period of seven consecutive days."@en .
+    skos:note "All notes related to a single Week time period of seven consecutive days."@en ;
+    skos:prefLabel "Week Collection"@en .
 

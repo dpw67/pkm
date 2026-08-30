@@ -4,6 +4,7 @@
 
 pkmv:ConceptCollection a skos:Collection ;
     rdfs:label "Concept Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Cypher,
         pkmv:KnowledgeGraph,
@@ -14,5 +15,6 @@ pkmv:ConceptCollection a skos:Collection ;
         pkmv:SKOS,
         pkmv:Taxonomy,
         pkmv:Term ;
-    skos:note "All notes related to a Concept."@en .
+    skos:note "All notes related to a Concept."@en ;
+    skos:prefLabel "Concept Collection"@en .
 

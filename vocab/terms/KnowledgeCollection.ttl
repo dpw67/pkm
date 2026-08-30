@@ -4,9 +4,11 @@
 
 pkmv:KnowledgeCollection a skos:Collection ;
     rdfs:label "Knowledge Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
         pkmv:KnowledgeGraph,
         pkmv:Topic ;
-    skos:note "All the related concepts about Knowledge."@en .
+    skos:note "All the related concepts about Knowledge."@en ;
+    skos:prefLabel "Knowledge Collection"@en .
 

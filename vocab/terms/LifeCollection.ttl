@@ -4,6 +4,8 @@
 
 pkmv:LifeCollection a skos:Collection ;
     rdfs:label "Life Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
-    skos:note "All notes related to the top time horizon of a full lifespan."@en .
+    skos:note "All notes related to the top time horizon of a full lifespan."@en ;
+    skos:prefLabel "Life Collection"@en .
 

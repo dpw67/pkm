@@ -5,6 +5,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+pkmv:MealDomain skos:member pkmv:Meal .
+
+pkmv:NoteTypes skos:member pkmv:Meal .
+
 pkmv:Meal a skos:Concept ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;

@@ -14,6 +14,7 @@
 
 pkmv:ConceptCollection a skos:Collection ;
     rdfs:label "Concept Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Cypher,
         pkmv:KnowledgeGraph,
@@ -24,10 +25,12 @@ pkmv:ConceptCollection a skos:Collection ;
         pkmv:SKOS,
         pkmv:Taxonomy,
         pkmv:Term ;
-    skos:note "All notes related to a Concept."@en .
+    skos:note "All notes related to a Concept."@en ;
+    skos:prefLabel "Concept Collection"@en .
 
 pkmv:DayCollection a skos:Collection ;
     rdfs:label "Day Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Day,
         pkmv:DayActions,
         pkmv:DayAnalysis,
@@ -54,43 +57,55 @@ pkmv:DayCollection a skos:Collection ;
         pkmv:DayReview,
         pkmv:DaySchedule,
         pkmv:DayView ;
-    skos:note "All the related notes for a single calendar Day."@en .
+    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:prefLabel "Day Collection"@en .
 
 pkmv:DecadeCollection a skos:Collection ;
     rdfs:label "Decade Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Decade ;
-    skos:note "All notes related to a ten-Year span used for long-range life planning."@en .
+    skos:note "All notes related to a ten-Year span used for long-range life planning."@en ;
+    skos:prefLabel "Decade Collection"@en .
 
 pkmv:EffortCollection a skos:Collection ;
     rdfs:label "Effort Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Area,
         pkmv:EffortCluster,
         pkmv:EffortsFolder,
         pkmv:Interest,
         pkmv:Project ;
-    skos:note "All the related notes for a single Effort."@en .
+    skos:note "All the related notes for a single Effort."@en ;
+    skos:prefLabel "Effort Collection"@en .
 
 pkmv:IdeaverseCollection a skos:Collection ;
     rdfs:label "Ideaverse Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ObsidianNotes,
         pkmv:Vault ;
-    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en .
+    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en ;
+    skos:prefLabel "Ideaverse Collection"@en .
 
 pkmv:KnowledgeCollection a skos:Collection ;
     rdfs:label "Knowledge Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
         pkmv:KnowledgeGraph,
         pkmv:Topic ;
-    skos:note "All the related concepts about Knowledge."@en .
+    skos:note "All the related concepts about Knowledge."@en ;
+    skos:prefLabel "Knowledge Collection"@en .
 
 pkmv:LifeCollection a skos:Collection ;
     rdfs:label "Life Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
-    skos:note "All notes related to the top time horizon of a full lifespan."@en .
+    skos:note "All notes related to the top time horizon of a full lifespan."@en ;
+    skos:prefLabel "Life Collection"@en .
 
 pkmv:MealDomain a skos:Collection ;
     rdfs:label "Meal Domain"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Breakfast,
         pkmv:DMPMealPlan,
         pkmv:DayMealPlan,
@@ -107,19 +122,23 @@ pkmv:MealDomain a skos:Collection ;
         pkmv:RecipeTime,
         pkmv:Snack,
         pkmv:WeekMealPlan ;
-    skos:note "All the related notes for a meal plan."@en .
+    skos:note "All the related notes for a meal plan."@en ;
+    skos:prefLabel "Meal Domain"@en .
 
 pkmv:MonthCollection a skos:Collection ;
     rdfs:label "Month Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
         pkmv:MonthLog,
         pkmv:MonthPlan,
         pkmv:MonthReview ;
-    skos:note "All related notes for a calendar month grouping Weeks and Days."@en .
+    skos:note "All related notes for a calendar month grouping Weeks and Days."@en ;
+    skos:prefLabel "Month Collection"@en .
 
 pkmv:NoteTypes a skos:Collection ;
     rdfs:label "Note Types"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Action,
         pkmv:App,
         pkmv:Area,
@@ -139,20 +158,24 @@ pkmv:NoteTypes a skos:Collection ;
         pkmv:Shortcut,
         pkmv:Spark,
         pkmv:Term,
-        pkmv:Vault .
+        pkmv:Vault ;
+    skos:prefLabel "Note Types"@en .
 
 pkmv:QuarterCollection a skos:Collection ;
     rdfs:label "Quarter Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:MonthJournal,
         pkmv:Quarter,
         pkmv:QuarterCluster,
         pkmv:QuarterLog,
         pkmv:QuarterPlan,
         pkmv:QuarterReview ;
-    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en .
+    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en ;
+    skos:prefLabel "Quarter Collection"@en .
 
 pkmv:RecipeCollection a skos:Collection ;
     rdfs:label "Recipe Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Ingredient,
         pkmv:Nutrition,
         pkmv:Recipe,
@@ -160,10 +183,12 @@ pkmv:RecipeCollection a skos:Collection ;
         pkmv:RecipeServings,
         pkmv:RecipeSource,
         pkmv:RecipeTime ;
-    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en .
+    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:prefLabel "Recipe Collection"@en .
 
 pkmv:SemanticWebStandards a skos:Collection ;
     rdfs:label "Semantic Web Standards"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
         pkmv:Metadata,
@@ -174,16 +199,20 @@ pkmv:SemanticWebStandards a skos:Collection ;
         pkmv:Standard,
         pkmv:Taxonomy,
         pkmv:Term,
-        pkmv:W3CStandard .
+        pkmv:W3CStandard ;
+    skos:prefLabel "Semantic Web Standards"@en .
 
 pkmv:SparkCollection a skos:Collection ;
     rdfs:label "Spark Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;
-    skos:note "All the related notes for a new spark of interest or importance."@en .
+    skos:note "All the related notes for a new spark of interest or importance."@en ;
+    skos:prefLabel "Spark Collection"@en .
 
 pkmv:TechStack a skos:Collection ;
     rdfs:label "Tech Stack"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Cypher,
         pkmv:FastAPI,
         pkmv:Hummingbird,
@@ -193,16 +222,20 @@ pkmv:TechStack a skos:Collection ;
         pkmv:Shortcut,
         pkmv:Siri,
         pkmv:Swift,
-        pkmv:Tool .
+        pkmv:Tool ;
+    skos:prefLabel "Tech Stack"@en .
 
 pkmv:TimeCollection a skos:Collection ;
     rdfs:label "Time Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Time,
         pkmv:TimeCluster ;
-    skos:note "All the related concepts about Time."@en .
+    skos:note "All the related concepts about Time."@en ;
+    skos:prefLabel "Time Collection"@en .
 
 pkmv:WeekCollection a skos:Collection ;
     rdfs:label "Week Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Week,
         pkmv:WeekAnalysis,
         pkmv:WeekDiabetes,
@@ -214,10 +247,12 @@ pkmv:WeekCollection a skos:Collection ;
         pkmv:WeekMealPlan,
         pkmv:WeekPlan,
         pkmv:WeekReview ;
-    skos:note "All notes related to a single Week time period of seven consecutive days."@en .
+    skos:note "All notes related to a single Week time period of seven consecutive days."@en ;
+    skos:prefLabel "Week Collection"@en .
 
 pkmv:YearCollection a skos:Collection ;
     rdfs:label "Year Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Year,
         pkmv:YearCluster,
         pkmv:YearHealth,
@@ -225,7 +260,8 @@ pkmv:YearCollection a skos:Collection ;
         pkmv:YearLog,
         pkmv:YearPlan,
         pkmv:YearReview ;
-    skos:note "All notes related to a calendar Year groups Quarters and Months."@en .
+    skos:note "All notes related to a calendar Year groups Quarters and Months."@en ;
+    skos:prefLabel "Year Collection"@en .
 
 pkma:Claude-AI a prov:SoftwareAgent ;
     foaf:homepage <https://claude.ai> ;

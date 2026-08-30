@@ -4,6 +4,7 @@
 
 pkmv:YearCollection a skos:Collection ;
     rdfs:label "Year Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Year,
         pkmv:YearCluster,
         pkmv:YearHealth,
@@ -11,5 +12,6 @@ pkmv:YearCollection a skos:Collection ;
         pkmv:YearLog,
         pkmv:YearPlan,
         pkmv:YearReview ;
-    skos:note "All notes related to a calendar Year groups Quarters and Months."@en .
+    skos:note "All notes related to a calendar Year groups Quarters and Months."@en ;
+    skos:prefLabel "Year Collection"@en .
 

@@ -5,6 +5,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+pkmv:IdeaverseCollection skos:member pkmv:ObsidianNotes .
+
 pkmv:ObsidianNotes a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;

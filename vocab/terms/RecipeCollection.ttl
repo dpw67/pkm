@@ -4,6 +4,7 @@
 
 pkmv:RecipeCollection a skos:Collection ;
     rdfs:label "Recipe Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Ingredient,
         pkmv:Nutrition,
         pkmv:Recipe,
@@ -11,5 +12,6 @@ pkmv:RecipeCollection a skos:Collection ;
         pkmv:RecipeServings,
         pkmv:RecipeSource,
         pkmv:RecipeTime ;
-    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en .
+    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:prefLabel "Recipe Collection"@en .
 

@@ -4,6 +4,7 @@
 
 pkmv:NoteTypes a skos:Collection ;
     rdfs:label "Note Types"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Action,
         pkmv:App,
         pkmv:Area,
@@ -23,5 +24,6 @@ pkmv:NoteTypes a skos:Collection ;
         pkmv:Shortcut,
         pkmv:Spark,
         pkmv:Term,
-        pkmv:Vault .
+        pkmv:Vault ;
+    skos:prefLabel "Note Types"@en .
 

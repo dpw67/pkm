@@ -126,7 +126,21 @@ def publish(vocab: Vocabulary) -> Graph:
                     out.remove((s, prop, o))
                     out.add((s, RDFS.seeAlso, o))
 
-    # 7. A versionIRI names this snapshot, so a consumer can cite what they read.
+    # 7. Collections come out of the editor with rdfs:label and skos:member and
+    #    nothing else -- no prefLabel, no inScheme. A SKOS consumer looking for
+    #    labels the way it does everywhere else finds 18 anonymous resources, and
+    #    nothing ties them to the scheme they belong to. Neither property is
+    #    domain-constrained to skos:Concept, so both are legal on a Collection.
+    for coll in set(out.subjects(RDF.type, SKOS.Collection)) | set(
+        out.subjects(RDF.type, SKOS.OrderedCollection)
+    ):
+        if not any(out.objects(coll, SKOS.prefLabel)):
+            for label in out.objects(coll, RDFS.label):
+                out.add((coll, SKOS.prefLabel, label))
+        if vocab.scheme is not None and not any(out.objects(coll, SKOS.inScheme)):
+            out.add((coll, SKOS.inScheme, vocab.scheme))
+
+    # 8. A versionIRI names this snapshot, so a consumer can cite what they read.
     #    Dots keep it clear of the term-URI rewrite rule in the w3id .htaccess.
     if vocab.scheme is not None:
         version = out.value(vocab.scheme, OWL.versionInfo)

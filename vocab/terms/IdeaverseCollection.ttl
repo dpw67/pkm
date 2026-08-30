@@ -4,7 +4,9 @@
 
 pkmv:IdeaverseCollection a skos:Collection ;
     rdfs:label "Ideaverse Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ObsidianNotes,
         pkmv:Vault ;
-    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en .
+    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en ;
+    skos:prefLabel "Ideaverse Collection"@en .
 

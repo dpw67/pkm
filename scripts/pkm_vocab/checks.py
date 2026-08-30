@@ -378,6 +378,22 @@ def check(vocab: Vocabulary) -> Report:
                 INFO, "orphan", "has no parent and is not a top concept", ln(concept)
             )
 
+    # Collections are terms too: they have URIs in the same namespace, get their
+    # own file, and dereference like a concept. A collection whose only content
+    # is a label and a member list tells a reader nothing about why those members
+    # were grouped. The build can supply prefLabel and inScheme; only an editor
+    # can say what the grouping means.
+    for collection in collections:
+        if not any(g.objects(collection, SKOS.definition)) and not any(
+            g.objects(collection, SKOS.scopeNote)
+        ):
+            report.add(
+                INFO, "collection-without-definition",
+                "has no skos:definition or skos:scopeNote to say what the "
+                "grouping means",
+                ln(collection),
+            )
+
     documented = (SKOS.definition, SKOS.scopeNote, SKOS.note, SKOS.editorialNote,
                   SKOS.historyNote, SKOS.changeNote, SKOS.example)
     untagged = sum(

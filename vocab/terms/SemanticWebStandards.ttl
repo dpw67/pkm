@@ -4,6 +4,7 @@
 
 pkmv:SemanticWebStandards a skos:Collection ;
     rdfs:label "Semantic Web Standards"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
         pkmv:Metadata,
@@ -14,5 +15,6 @@ pkmv:SemanticWebStandards a skos:Collection ;
         pkmv:Standard,
         pkmv:Taxonomy,
         pkmv:Term,
-        pkmv:W3CStandard .
+        pkmv:W3CStandard ;
+    skos:prefLabel "Semantic Web Standards"@en .
 

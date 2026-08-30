@@ -50,20 +50,36 @@ def resource_base(vocab: Vocabulary) -> str:
     return _parent(vocab.base) + "resources#"
 
 
+def _under(uri: URIRef, *bases: str) -> bool:
+    return any(str(uri).startswith(base) for base in bases)
+
+
 def relocations(vocab: Vocabulary) -> dict[URIRef, URIRef]:
-    """Metadata resources minted inside the concept namespace, and where they belong.
+    """Metadata resources that are not where they belong, and where they belong.
 
     Local names keep their hyphens. `Claude-AI` and `ACE-Organization` would
     collide with the existing concepts `ClaudeAI` and `ACEOrganization` if
     CamelCased, silently merging a software agent into a vocabulary term.
+
+    SKOS Editor 0.16.7 can mint these outside the concept namespace itself, so
+    on a fresh export this may have nothing to do. It has a single annex
+    namespace for both kinds, though, so with the annex set to `agents#` the
+    documents arrive among the agents and still need separating.
+
+    A resource moves when it sits under one of our three bases but not the
+    right one. Anything else -- an ORCID, a homepage -- is left verbatim, which
+    is the whole point of giving an agent an explicit identity URI.
     """
     g = vocab.graph
+    agents, resources = agent_base(vocab), resource_base(vocab)
+    ours = (vocab.base, agents, resources)
     moves: dict[URIRef, URIRef] = {}
-    for types, target in ((AGENT_TYPES, agent_base(vocab)),
-                          (DOCUMENT_TYPES, resource_base(vocab))):
+    for types, target in ((AGENT_TYPES, agents), (DOCUMENT_TYPES, resources)):
         for cls in types:
             for subj in g.subjects(RDF.type, cls):
-                if vocab.is_local(subj):
+                if not isinstance(subj, URIRef):
+                    continue
+                if _under(subj, *ours) and not _under(subj, target):
                     moves[subj] = URIRef(target + vocab.local_name(subj))
     return moves
 

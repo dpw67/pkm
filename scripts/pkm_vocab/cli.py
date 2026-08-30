@@ -2,6 +2,7 @@
 
     python -m pkm_vocab check <export.ttl>    validate, report
     python -m pkm_vocab build <export.ttl>    validate, transform, publish
+    python -m pkm_vocab notes <published.ttl> --out <dir>   Obsidian stubs
 """
 
 from __future__ import annotations
@@ -13,6 +14,7 @@ from pathlib import Path
 
 from . import load, wrap
 from .checks import ERROR, INFO, WARN, Report, check
+from .notes import write_notes
 
 LEVELS = (ERROR, WARN, INFO)
 
@@ -164,6 +166,22 @@ def _build(args) -> int:
     return 0
 
 
+def _notes(args) -> int:
+    """Mirror the published vocabulary into an Obsidian vault as term stubs."""
+    vocab = load(args.source)
+    written, unchanged, pruned = write_notes(
+        vocab, args.out, prune=not args.no_prune, dry_run=args.dry_run)
+
+    verb = "would write" if args.dry_run else "wrote"
+    print(f"{args.source}: {len(vocab.concepts())} concepts + "
+          f"{len(vocab.collections())} collections", file=sys.stderr)
+    print(f"  {verb} {written}, unchanged {unchanged} -> {args.out}", file=sys.stderr)
+    for name in pruned:
+        print(f"  {'would prune' if args.dry_run else 'pruned'}: {name} — "
+              "no longer in the vocabulary", file=sys.stderr)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pkm_vocab", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -194,10 +212,29 @@ def main(argv: list[str] | None = None) -> int:
         help="list what would be written without writing it",
     )
 
+    noter = sub.add_parser(
+        "notes", help="generate Obsidian term stubs into a vault directory")
+    noter.add_argument(
+        "source", type=Path,
+        help="published Turtle to mirror (vocab/pkm-vocab.ttl, not the export)")
+    noter.add_argument(
+        "--out", type=Path, required=True,
+        help="vault directory to write stubs into; entirely generated")
+    noter.add_argument(
+        "--no-prune", action="store_true",
+        help="keep stubs for terms no longer in the vocabulary")
+    noter.add_argument(
+        "--dry-run", action="store_true",
+        help="report what would change without writing it",
+    )
+
     args = parser.parse_args(argv)
 
     if args.command == "build":
         return _build(args)
+
+    if args.command == "notes":
+        return _notes(args)
 
     if args.command == "check":
         vocab = load(args.source)

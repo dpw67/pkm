@@ -275,41 +275,41 @@ Nested by `skos:broader`, starting from the top concepts. A term with more than 
 
 Groupings that carry no hierarchical meaning — a concept's place in the tree above is independent of the collections it belongs to.
 
-- **[Concept Collection](terms/ConceptCollection.ttl)**
+- **[Concept Collection](terms/ConceptCollection.ttl)** — All notes related to a Concept.
   <br>10 members: [Concept](terms/Concept.ttl), [Cypher](terms/Cypher.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Metadata](terms/Metadata.ttl), [OWL](terms/OWL.ttl), [Ontology](terms/Ontology.ttl), [RDF](terms/RDF.ttl), [SKOS](terms/SKOS.ttl), [Taxonomy](terms/Taxonomy.ttl), [Term](terms/Term.ttl)
-- **[Day Collection](terms/DayCollection.ttl)**
+- **[Day Collection](terms/DayCollection.ttl)** — All the related notes for a single calendar Day.
   <br>26 members: [Day](terms/Day.ttl), [Day Actions](terms/DayActions.ttl), [Day Analysis](terms/DayAnalysis.ttl), [Day Base](terms/DayBase.ttl), [Day Board](terms/DayBoard.ttl), [Day Canvas](terms/DayCanvas.ttl), [Day Cluster](terms/DayCluster.ttl), [Day Cluster Core](terms/DayClusterCore.ttl), [Day Cluster Health](terms/DayClusterHealth.ttl), [Day Cluster Support](terms/DayClusterSupport.ttl), [Day Cluster Visual](terms/DayClusterVisual.ttl), [Day Diabetes](terms/DayDiabetes.ttl), [Day Diabetes Analysis](terms/DayDiabetesAnalysis.ttl), [Day Diagram](terms/DayDiagram.ttl), [Day Drawing](terms/DayDrawing.ttl), [Day Health](terms/DayHealth.ttl), [Day Index](terms/DayIndex.ttl), [Day Journal](terms/DayJournal.ttl), [Day Links](terms/DayLinks.ttl), [Day Log](terms/DayLog.ttl), [Day Mindmap](terms/DayMindmap.ttl), [Day Plan](terms/DayPlan.ttl), [Day Review](terms/DayReview.ttl), [Day Schedule](terms/DaySchedule.ttl), [Day View](terms/DayView.ttl), [Day.Meal Plan](terms/DayMealPlan.ttl)
-- **[Decade Collection](terms/DecadeCollection.ttl)**
+- **[Decade Collection](terms/DecadeCollection.ttl)** — All notes related to a ten-Year span used for long-range life planning.
   <br>1 member: [Decade](terms/Decade.ttl)
-- **[Effort Collection](terms/EffortCollection.ttl)**
+- **[Effort Collection](terms/EffortCollection.ttl)** — All the related notes for a single Effort.
   <br>5 members: [Area](terms/Area.ttl), [Effort Cluster](terms/EffortCluster.ttl), [Efforts Folder](terms/EffortsFolder.ttl), [Interest](terms/Interest.ttl), [Project](terms/Project.ttl)
-- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)**
+- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** — Connected notes with the universe of ideas that exists between your brain and every place you think.
   <br>2 members: [Obsidian Notes](terms/ObsidianNotes.ttl), [Vault](terms/Vault.ttl)
-- **[Knowledge Collection](terms/KnowledgeCollection.ttl)**
+- **[Knowledge Collection](terms/KnowledgeCollection.ttl)** — All the related concepts about Knowledge.
   <br>4 members: [Concept](terms/Concept.ttl), [Knowledge](terms/Knowledge.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Topic](terms/Topic.ttl)
-- **[Life Collection](terms/LifeCollection.ttl)**
+- **[Life Collection](terms/LifeCollection.ttl)** — All notes related to the top time horizon of a full lifespan.
   <br>1 member: [Life](terms/Life.ttl)
-- **[Meal Domain](terms/MealDomain.ttl)**
+- **[Meal Domain](terms/MealDomain.ttl)** — All the related notes for a meal plan.
   <br>16 members: [Breakfast](terms/Breakfast.ttl), [DMP Meal Plan](terms/DMPMealPlan.ttl), [Day.Meal Plan](terms/DayMealPlan.ttl), [Dinner](terms/Dinner.ttl), [Ingredient](terms/Ingredient.ttl), [Lunch](terms/Lunch.ttl), [Meal](terms/Meal.ttl), [Meal Plan](terms/MealPlan.ttl), [Nutrition](terms/Nutrition.ttl), [PTE Meal Plan](terms/PTEMealPlan.ttl), [Recipe Images](terms/RecipeImages.ttl), [Recipe Servings](terms/RecipeServings.ttl), [Recipe Source](terms/RecipeSource.ttl), [Recipe Time](terms/RecipeTime.ttl), [Snack](terms/Snack.ttl), [Week Meal Plan](terms/WeekMealPlan.ttl)
-- **[Month Collection](terms/MonthCollection.ttl)**
+- **[Month Collection](terms/MonthCollection.ttl)** — All related notes for a calendar month grouping Weeks and Days.
   <br>5 members: [Month](terms/Month.ttl), [Month Journal](terms/MonthJournal.ttl), [Month Log](terms/MonthLog.ttl), [Month Plan](terms/MonthPlan.ttl), [Month Review](terms/MonthReview.ttl)
 - **[Note Types](terms/NoteTypes.ttl)**
   <br>20 members: [Action](terms/Action.ttl), [App](terms/App.ttl), [Area](terms/Area.ttl), [Clipping](terms/Clipping.ttl), [Concept](terms/Concept.ttl), [Draft](terms/Draft.ttl), [Focus](terms/Focus.ttl), [Idea](terms/Idea.ttl), [Interest](terms/Interest.ttl), [Meal](terms/Meal.ttl), [Meal Plan](terms/MealPlan.ttl), [Project](terms/Project.ttl), [Python Template](terms/PythonTemplate.ttl), [Recipe](terms/Recipe.ttl), [Restaurant](terms/Restaurant.ttl), [Script](terms/Script.ttl), [Shortcut](terms/Shortcut.ttl), [Spark](terms/Spark.ttl), [Term](terms/Term.ttl), [Vault](terms/Vault.ttl)
-- **[Quarter Collection](terms/QuarterCollection.ttl)**
+- **[Quarter Collection](terms/QuarterCollection.ttl)** — All related notes for a time period of three Months uses for medium-term planning.
   <br>6 members: [Month Journal](terms/MonthJournal.ttl), [Quarter](terms/Quarter.ttl), [Quarter Cluster](terms/QuarterCluster.ttl), [Quarter Log](terms/QuarterLog.ttl), [Quarter Plan](terms/QuarterPlan.ttl), [Quarter Review](terms/QuarterReview.ttl)
-- **[Recipe Collection](terms/RecipeCollection.ttl)**
+- **[Recipe Collection](terms/RecipeCollection.ttl)** — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
   <br>7 members: [Ingredient](terms/Ingredient.ttl), [Nutrition](terms/Nutrition.ttl), [Recipe](terms/Recipe.ttl), [Recipe Images](terms/RecipeImages.ttl), [Recipe Servings](terms/RecipeServings.ttl), [Recipe Source](terms/RecipeSource.ttl), [Recipe Time](terms/RecipeTime.ttl)
 - **[Semantic Web Standards](terms/SemanticWebStandards.ttl)**
   <br>11 members: [ISO Standard](terms/ISOStandard.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Metadata](terms/Metadata.ttl), [OWL](terms/OWL.ttl), [Ontology](terms/Ontology.ttl), [RDF](terms/RDF.ttl), [SKOS](terms/SKOS.ttl), [Standard](terms/Standard.ttl), [Taxonomy](terms/Taxonomy.ttl), [Term](terms/Term.ttl), [W3C Standard](terms/W3CStandard.ttl)
-- **[Spark Collection](terms/SparkCollection.ttl)**
+- **[Spark Collection](terms/SparkCollection.ttl)** — All the related notes for a new spark of interest or importance.
   <br>2 members: [Idea](terms/Idea.ttl), [Spark](terms/Spark.ttl)
 - **[Tech Stack](terms/TechStack.ttl)**
   <br>10 members: [Cypher](terms/Cypher.ttl), [FastAPI](terms/FastAPI.ttl), [Hummingbird](terms/Hummingbird.ttl), [Neo4j](terms/Neo4j.ttl), [Python](terms/Python.ttl), [Script](terms/Script.ttl), [Shortcut](terms/Shortcut.ttl), [Siri](terms/Siri.ttl), [Swift](terms/Swift.ttl), [Tool](terms/Tool.ttl)
-- **[Time Collection](terms/TimeCollection.ttl)**
+- **[Time Collection](terms/TimeCollection.ttl)** — All the related concepts about Time.
   <br>2 members: [Time](terms/Time.ttl), [Time Cluster](terms/TimeCluster.ttl)
-- **[Week Collection](terms/WeekCollection.ttl)**
+- **[Week Collection](terms/WeekCollection.ttl)** — All notes related to a single Week time period of seven consecutive days.
   <br>11 members: [Week](terms/Week.ttl), [Week Analysis](terms/WeekAnalysis.ttl), [Week Diabetes](terms/WeekDiabetes.ttl), [Week Diabetes Analysis](terms/WeekDiabetesAnalysis.ttl), [Week Health](terms/WeekHealth.ttl), [Week Index](terms/WeekIndex.ttl), [Week Journal](terms/WeekJournal.ttl), [Week Log](terms/WeekLog.ttl), [Week Meal Plan](terms/WeekMealPlan.ttl), [Week Plan](terms/WeekPlan.ttl), [Week Review](terms/WeekReview.ttl)
-- **[Year Collection](terms/YearCollection.ttl)**
+- **[Year Collection](terms/YearCollection.ttl)** — All notes related to a calendar Year groups Quarters and Months.
   <br>7 members: [Year](terms/Year.ttl), [Year Cluster](terms/YearCluster.ttl), [Year Health](terms/YearHealth.ttl), [Year Journal](terms/YearJournal.ttl), [Year Log](terms/YearLog.ttl), [Year Plan](terms/YearPlan.ttl), [Year Review](terms/YearReview.ttl)
 
 ## All terms
@@ -359,7 +359,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Cluster](terms/Cluster.ttl)** — A group of related notes.
 - **[Concept](terms/Concept.ttl)** — A unit of thought in a knowledge organization system.
   <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Knowledge Collection](terms/KnowledgeCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[Concept Collection](terms/ConceptCollection.ttl)** _(collection, 10 members)_
+- **[Concept Collection](terms/ConceptCollection.ttl)** _(collection, 10 members)_ — All notes related to a Concept.
 - **[Context Graph](terms/ContextGraph.ttl)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected context.
 - **[Cypher](terms/Cypher.ttl)** — A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j.
   <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Tech Stack](terms/TechStack.ttl)
@@ -388,7 +388,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](terms/DayCollection.ttl)
 - **[Day Cluster Visual](terms/DayClusterVisual.ttl)** — The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data graphically.
   <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Collection](terms/DayCollection.ttl)** _(collection, 26 members)_
+- **[Day Collection](terms/DayCollection.ttl)** _(collection, 26 members)_ — All the related notes for a single calendar Day.
 - **[Day Diabetes](terms/DayDiabetes.ttl)** — The record of diabetes-relevant data for a day (glucose, insulin, carbs, events).
   <br>In: [Day Collection](terms/DayCollection.ttl)
 - **[Day Diabetes Analysis](terms/DayDiabetesAnalysis.ttl)** — Interpretation of a day's diabetes data.
@@ -423,7 +423,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](terms/DayCollection.ttl), [Meal Domain](terms/MealDomain.ttl)
 - **[Decade](terms/Decade.ttl)** — A ten-year span used for long-range life planning.
   <br>In: [Decade Collection](terms/DecadeCollection.ttl)
-- **[Decade Collection](terms/DecadeCollection.ttl)** _(collection, 1 member)_
+- **[Decade Collection](terms/DecadeCollection.ttl)** _(collection, 1 member)_ — All notes related to a ten-Year span used for long-range life planning.
 - **[DeviceEvent](terms/DeviceEvent.ttl)** — Something that occurred with a device.
 - **[Dexcom Data](terms/DexcomData.ttl)** — Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
 - **[DiabetesEvent](terms/DiabetesEvent.ttl)** — Something that happened related to Diabetes.
@@ -437,7 +437,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Effort Cluster](terms/EffortCluster.ttl)** — A group of related notes about an effort..
   <br>In: [Effort Collection](terms/EffortCollection.ttl)
-- **[Effort Collection](terms/EffortCollection.ttl)** _(collection, 5 members)_
+- **[Effort Collection](terms/EffortCollection.ttl)** _(collection, 5 members)_ — All the related notes for a single Effort.
 - **[Effort Index](terms/EffortIndex.ttl)** — The index note that links all artifacts for an effort.
 - **[Effort Journal](terms/EffortJournal.ttl)** — Free-form reflective writing about an effort.
 - **[Effort Log](terms/EffortLog.ttl)** — A chronological record of what actually happened during an effort.
@@ -476,7 +476,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Note Types](terms/NoteTypes.ttl), [Spark Collection](terms/SparkCollection.ttl)
 - **[Idea Emergence](terms/IdeaEmergence.ttl)** — The process of how ideas you encounter go from "nothingness" to "somethingness", and how they grow in richness, complexity, and meaning over time.
 - **[Ideaverse](terms/Ideaverse.ttl)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
-- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** _(collection, 2 members)_
+- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
 - **[Ingredient](terms/Ingredient.ttl)** — An individual food item or component used in the preparation of a recipe.
   <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
 - **[InsulinEvent](terms/InsulinEvent.ttl)** — Something that happened related to Insulin.
@@ -488,7 +488,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Knowledge](terms/Knowledge.ttl)** — Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it can be applied, communicated, or built upon.
   <br>In: [Knowledge Collection](terms/KnowledgeCollection.ttl)
-- **[Knowledge Collection](terms/KnowledgeCollection.ttl)** _(collection, 4 members)_
+- **[Knowledge Collection](terms/KnowledgeCollection.ttl)** _(collection, 4 members)_ — All the related concepts about Knowledge.
 - **[Knowledge Graph](terms/KnowledgeGraph.ttl)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected knowledge.
   <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Knowledge Collection](terms/KnowledgeCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
 - **[Knowledge System](terms/KnowledgeSystem.ttl)** — A system of organization, navigation, and access for knowledge.
@@ -497,7 +497,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Life](terms/Life.ttl)** — The full lifespan, the top temporal (time) horizon.
   <br>In: [Life Collection](terms/LifeCollection.ttl)
-- **[Life Collection](terms/LifeCollection.ttl)** _(collection, 1 member)_
+- **[Life Collection](terms/LifeCollection.ttl)** _(collection, 1 member)_ — All notes related to the top time horizon of a full lifespan.
 - **[Local REST API with MCP](terms/LocalRESTAPIWithMCP.ttl)** — Support automation for notes using REST API for apps or MCP server for AI agents.
 - **[Lunch](terms/Lunch.ttl)** — The midday meal.
   <br>In: [Meal Domain](terms/MealDomain.ttl)
@@ -506,7 +506,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Map](terms/Map.ttl)** _(also: MOC, Map of Content)_ — A note used to think, plan, and organize a group of other notes.
 - **[Meal](terms/Meal.ttl)** — An eating occasion consisting of one or more foods or recipes consumed at a particular time.
   <br>In: [Meal Domain](terms/MealDomain.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[Meal Domain](terms/MealDomain.ttl)** _(collection, 16 members)_
+- **[Meal Domain](terms/MealDomain.ttl)** _(collection, 16 members)_ — All the related notes for a meal plan.
 - **[Meal Plan](terms/MealPlan.ttl)** — A structured plan of meals over a defined period.
   <br>In: [Meal Domain](terms/MealDomain.ttl), [Note Types](terms/NoteTypes.ttl)
 - **[MealEvent](terms/MealEvent.ttl)** — Something that happened related to a Meal.
@@ -518,7 +518,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Month](terms/Month.ttl)** — A calendar month grouping weeks and days.
   <br>In: [Month Collection](terms/MonthCollection.ttl)
 - **[Month Cluster](terms/MonthCluster.ttl)** — A group of related notes about a month.
-- **[Month Collection](terms/MonthCollection.ttl)** _(collection, 5 members)_
+- **[Month Collection](terms/MonthCollection.ttl)** _(collection, 5 members)_ — All related notes for a calendar month grouping Weeks and Days.
 - **[Month Health](terms/Month-Health.ttl)** — The health-related summary for a month.
 - **[Month Journal](terms/MonthJournal.ttl)** — Reflective writing about a month.
   <br>In: [Month Collection](terms/MonthCollection.ttl), [Quarter Collection](terms/QuarterCollection.ttl)
@@ -582,7 +582,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
 - **[Quarter Cluster](terms/QuarterCluster.ttl)** — A group of related notes about a quarter.
   <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Quarter Collection](terms/QuarterCollection.ttl)** _(collection, 6 members)_
+- **[Quarter Collection](terms/QuarterCollection.ttl)** _(collection, 6 members)_ — All related notes for a time period of three Months uses for medium-term planning.
 - **[Quarter Health](terms/QuarterHealth.ttl)** — The health-related summary for a quarter.
 - **[Quarter Journal](terms/QuarterJournal.ttl)** — Reflective writing about a quarter.
 - **[Quarter Log](terms/QuarterLog.ttl)** — A record of what happened over a quarter.
@@ -599,7 +599,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
 - **[Recipe](terms/Recipe.ttl)** — A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal.
   <br>In: [Note Types](terms/NoteTypes.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Recipe Collection](terms/RecipeCollection.ttl)** _(collection, 7 members)_
+- **[Recipe Collection](terms/RecipeCollection.ttl)** _(collection, 7 members)_ — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
 - **[Recipe Images](terms/RecipeImages.ttl)** — The photo or image assets associated with a recipe.
   <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
 - **[Recipe Servings](terms/RecipeServings.ttl)** — The number of servings or portions a recipe yields.
@@ -629,7 +629,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Source](terms/Source.ttl)** — A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system.
 - **[Spark](terms/Spark.ttl)** — A brief, informal capture of an idea, prompt, or stimulus intended for later development.
   <br>In: [Note Types](terms/NoteTypes.ttl), [Spark Collection](terms/SparkCollection.ttl)
-- **[Spark Collection](terms/SparkCollection.ttl)** _(collection, 2 members)_
+- **[Spark Collection](terms/SparkCollection.ttl)** _(collection, 2 members)_ — All the related notes for a new spark of interest or importance.
 - **[Standard](terms/Standard.ttl)** — A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated use.
   <br>In: [Semantic Web Standards](terms/SemanticWebStandards.ttl)
 - **[Swift](terms/Swift.ttl)** — A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development.
@@ -648,7 +648,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Time Collection](terms/TimeCollection.ttl)
 - **[Time Cluster](terms/TimeCluster.ttl)** — A group of related notes for a time period (or time horizon).
   <br>In: [Time Collection](terms/TimeCollection.ttl)
-- **[Time Collection](terms/TimeCollection.ttl)** _(collection, 2 members)_
+- **[Time Collection](terms/TimeCollection.ttl)** _(collection, 2 members)_ — All the related concepts about Time.
 - **[Tool](terms/Tool.ttl)** — A software capability used within the PKM system.
   <br>In: [Tech Stack](terms/TechStack.ttl)
 - **[ToolEvent](terms/ToolEvent.ttl)** — Something that happened during  processing with a tool.
@@ -677,7 +677,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Week Analysis](terms/WeekAnalysis.ttl)** — A note summarizing patterns, trends, or review findings across a week's Day Clusters.
   <br>In: [Week Collection](terms/WeekCollection.ttl)
 - **[Week Cluster](terms/WeekCluster.ttl)** — The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters.
-- **[Week Collection](terms/WeekCollection.ttl)** _(collection, 11 members)_
+- **[Week Collection](terms/WeekCollection.ttl)** _(collection, 11 members)_ — All notes related to a single Week time period of seven consecutive days.
 - **[Week Diabetes](terms/WeekDiabetes.ttl)** — A weekly note or artifact aggregating diabetes-related tracking data for the week.
   <br>In: [Week Collection](terms/WeekCollection.ttl)
 - **[Week Diabetes Analysis](terms/WeekDiabetesAnalysis.ttl)** — A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week.
@@ -705,7 +705,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Year Collection](terms/YearCollection.ttl)
 - **[Year Cluster](terms/YearCluster.ttl)** — A group of related notes about a year.
   <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Collection](terms/YearCollection.ttl)** _(collection, 7 members)_
+- **[Year Collection](terms/YearCollection.ttl)** _(collection, 7 members)_ — All notes related to a calendar Year groups Quarters and Months.
 - **[Year Health](terms/YearHealth.ttl)** — The health-related summary for a year.
   <br>In: [Year Collection](terms/YearCollection.ttl)
 - **[Year Journal](terms/YearJournal.ttl)** — Reflective writing about a year.

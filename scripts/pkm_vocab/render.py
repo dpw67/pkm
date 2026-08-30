@@ -106,7 +106,10 @@ def render_vocabulary(vocab: Vocabulary, published: Graph) -> str:
                   "the tree above is independent of the collections it belongs to.", ""]
         for coll in sorted(collections, key=vocab.label):
             members = sorted(g.objects(coll, SKOS.member), key=vocab.label)
-            note = _first(g, coll, SKOS.definition, SKOS.scopeNote, RDFS.comment)
+            # skos:note is where the SKOS Editor puts a collection's description --
+            # concepts get skos:definition, collections get the generic note. No
+            # concept carries skos:note, so looking for it costs nothing above.
+            note = _first(g, coll, SKOS.definition, SKOS.scopeNote, SKOS.note, RDFS.comment)
             lines.append(f"- **{_link(vocab, coll)}**" + (f" — {note}" if note else ""))
             if members:
                 joined = ", ".join(_link(vocab, m) for m in members)
@@ -138,7 +141,7 @@ def render_vocabulary(vocab: Vocabulary, published: Graph) -> str:
         alts = sorted(str(a) for a in g.objects(uri, SKOS.altLabel))
         if alts:
             entry += f" _(also: {', '.join(alts)})_"
-        definition = _first(g, uri, SKOS.definition, SKOS.scopeNote)
+        definition = _first(g, uri, SKOS.definition, SKOS.scopeNote, SKOS.note)
         if definition:
             entry += f" — {definition}"
         lines.append(entry)

@@ -383,14 +383,16 @@ def check(vocab: Vocabulary) -> Report:
     # is a label and a member list tells a reader nothing about why those members
     # were grouped. The build can supply prefLabel and inScheme; only an editor
     # can say what the grouping means.
+    # skos:note counts. The SKOS Editor writes a collection's description there
+    # rather than to skos:definition, so demanding definition alone would report
+    # 18 undescribed collections when only 3 really are.
+    describing = (SKOS.definition, SKOS.scopeNote, SKOS.note)
     for collection in collections:
-        if not any(g.objects(collection, SKOS.definition)) and not any(
-            g.objects(collection, SKOS.scopeNote)
-        ):
+        if not any(o for prop in describing for o in g.objects(collection, prop)):
             report.add(
                 INFO, "collection-without-definition",
-                "has no skos:definition or skos:scopeNote to say what the "
-                "grouping means",
+                "has no skos:definition, skos:scopeNote, or skos:note to say "
+                "what the grouping means",
                 ln(collection),
             )
 

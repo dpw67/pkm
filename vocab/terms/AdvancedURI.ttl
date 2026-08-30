@@ -1,0 +1,29 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:AdvancedURI a skos:Concept ;
+    dcterms:created "2026-08-29"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:broader pkmv:ObsidianPlugin ;
+    skos:definition "Control Obsidian features using special URIs to automate workflows."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Advanced URI"@en ;
+    skos:scopeNote """- Open files, workspacces, headlngs, blocks, lines, and settings.
+- Open files in tabs, splits, windows, popovers, or silently in the background.
+- Switch between reading, source, and live preview mode.
+- Edit, overwrite, append, prepend, and create files.
+- Append or prepend content to specific heading, block, or line.
+- Write clipboard contents to notes, including daily notes.
+- Open bookmarks.
+- Automated search and replace, including regular expressions.
+- Call Obsidian and plugin commands.
+- Edit, read, and focus frontmatter properties
+- Navigate using file paths, file names, aliases, daily notes, or frontmatter UIDs
+- Create robust persistent IDs in properties that keep working when notes are renamed or moved.
+"""@en .
+

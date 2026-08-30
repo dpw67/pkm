@@ -1,0 +1,40 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmr: <https://w3id.org/pkm/resources#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:NoteTypes skos:member pkmv:Recipe .
+
+pkmv:RecipeCollection skos:member pkmv:Recipe .
+
+pkmv:Recipe a skos:Concept ;
+    dcterms:created "2026-08-16"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:source pkmr:PKM-URI-Namespace ;
+    isothes:broaderPartitive pkmv:PKMMeals ;
+    isothes:narrowerPartitive pkmv:Ingredient,
+        pkmv:Nutrition,
+        pkmv:RecipeImages,
+        pkmv:RecipeServings,
+        pkmv:RecipeSource,
+        pkmv:RecipeTime ;
+    rdfs:seeAlso schema:Recipe ;
+    skos:broader pkmv:PKMMeals ;
+    skos:definition "A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:Ingredient,
+        pkmv:Nutrition,
+        pkmv:RecipeImages,
+        pkmv:RecipeServings,
+        pkmv:RecipeSource,
+        pkmv:RecipeTime ;
+    skos:prefLabel "Recipe"@en ;
+    skos:scopeNote "Reusable building block referenced by meals; imported into Plan to Eat and stored in the PKM Meals SwiftData SQL database, Obsidian Markdown notes, and Neo4j knowledge graph."@en .
+

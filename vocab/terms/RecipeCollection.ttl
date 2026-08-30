@@ -1,0 +1,17 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:RecipeCollection a skos:Collection ;
+    rdfs:label "Recipe Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:member pkmv:Ingredient,
+        pkmv:Nutrition,
+        pkmv:Recipe,
+        pkmv:RecipeImages,
+        pkmv:RecipeServings,
+        pkmv:RecipeSource,
+        pkmv:RecipeTime ;
+    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:prefLabel "Recipe Collection"@en .
+

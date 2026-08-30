@@ -1,0 +1,16 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:QuarterCollection a skos:Collection ;
+    rdfs:label "Quarter Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:member pkmv:MonthJournal,
+        pkmv:Quarter,
+        pkmv:QuarterCluster,
+        pkmv:QuarterLog,
+        pkmv:QuarterPlan,
+        pkmv:QuarterReview ;
+    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en ;
+    skos:prefLabel "Quarter Collection"@en .
+

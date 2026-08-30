@@ -4,6 +4,8 @@
 # invoke LinkML from whatever environment has it installed, e.g. the pkm-neo4j-services
 # virtualenv, or `pipx install linkml`.
 #
+#   make check      validate the SKOS Editor export -> reports/vocab-check.md
+#   make build      generate every published artifact from the export
 #   make shapes     regenerate SHACL + JSON Schema from schema/pkm.yaml
 #   make validate   parse-check every published Turtle file
 #   make serve      preview the site locally
@@ -11,20 +13,39 @@
 
 SCHEMA  := schema/pkm.yaml
 SHAPES  := shapes
-TTL     := ontology/pkm.ttl vocab/pkm-vocab.ttl taxonomy/pkm-taxonomy.ttl void.ttl
+EXPORT  := vocab/src/pkm-vocab.export.ttl
+PYTHON  := .venv/bin/python
+VOCAB   := PYTHONPATH=scripts $(PYTHON) -m pkm_vocab
 
-.PHONY: all shapes validate serve clean
+# Hand-authored Turtle plus the generated bulk dump. The 241 per-term files under
+# vocab/terms/ are checked by `validate` through the wildcard, not listed here.
+TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
+           vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-all: shapes validate
+.PHONY: all check build shapes validate serve clean
+
+all: build validate
+
+# Exits non-zero when there are errors, so it doubles as a pre-commit gate.
+check:
+	@mkdir -p reports
+	-$(VOCAB) check $(EXPORT) --format markdown -o reports/vocab-check.md
+	$(VOCAB) check $(EXPORT)
+
+# Depends on check, so a broken export can never reach the published tree.
+# The build re-checks its own output and refuses to write if the transform
+# introduced anything the checker would flag.
+build: check
+	$(VOCAB) build $(EXPORT)
 
 shapes:
 	gen-shacl $(SCHEMA)      > $(SHAPES)/pkm.shacl.ttl
 	gen-json-schema $(SCHEMA) > $(SHAPES)/pkm.schema.json
 
-# Requires Apache Jena (`brew install jena`). rdflib is a fine substitute:
-#   python -c "import rdflib,sys; [rdflib.Graph().parse(f) for f in sys.argv[1:]]" $(TTL)
+# rdflib rather than Jena's riot, so this runs without `brew install jena`.
+# The script adds vocab/terms/*.ttl and shapes/*.ttl to whatever is listed in TTL.
 validate:
-	riot --validate $(TTL) $(SHAPES)/*.ttl
+	@$(PYTHON) scripts/validate_ttl.py $(TTL)
 
 serve:
 	bundle exec jekyll serve --livereload

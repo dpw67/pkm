@@ -1,0 +1,21 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:WeekCollection skos:member pkmv:WeekLog .
+
+pkmv:WeekLog a skos:Concept ;
+    dcterms:created "2026-08-24"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-27"^^xsd:date ;
+    isothes:broaderPartitive pkmv:WeekCluster ;
+    skos:broader pkmv:WeekCluster ;
+    skos:definition "A record of what happened over a week."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Week Log"@en ;
+    skos:scopeNote "Weekly factual roll-up; aggregates DayLog entries."@en .
+

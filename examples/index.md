@@ -5,35 +5,20 @@ title: PKM Examples
 
 # Examples
 
-Worked instance data using the [PKM ontology](../ontology/). Every example is valid
-against the [shapes](../shapes/).
+Worked instance data using the [PKM ontology](../ontology/).
 
 Code in this directory is dedicated to the public domain under
 [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — reuse it without
 attribution.
 
-## Download
+## Nothing here yet
 
-- [`note.jsonld`](note.jsonld) — a single note in JSON-LD
-
-## A note in JSON-LD
-
-Using the namespace [`context.jsonld`](../context.jsonld), ordinary JSON becomes
-Linked Data with one added line:
-
-```json
-{
-  "@context": "https://w3id.org/pkm/context.jsonld",
-  "id": "https://w3id.org/pkm/examples/note/atomic-notes",
-  "type": "Note",
-  "title": "Atomic notes",
-  "created": "2026-08-22T09:00:00Z",
-  "hasTag": ["https://w3id.org/pkm/examples/tag/zettelkasten"],
-  "linksTo": ["https://w3id.org/pkm/examples/note/note-linking"]
-}
-```
+The one example that lived here was a JSON-LD note typed as `pkm:Note`, a placeholder
+class that has since been removed. Examples return with the ontology; until then the
+[vocabulary](../vocab/) is the part of this namespace that is real, and every one of
+its 223 terms dereferences to Turtle.
 
 ## Planned
 
-Equivalents in Turtle, Cypher, SQL, TypeDB, Python, and Swift, so the same instance
-can be compared across every representation the KSA project uses.
+The same instance in JSON-LD, Turtle, Cypher, SQL, TypeDB, Python, and Swift, so one
+piece of data can be compared across every representation the KSA project uses.

@@ -6,37 +6,31 @@ title: PKM Ontology
 # PKM Ontology
 
 **Namespace:** `https://w3id.org/pkm/ontology#` (preferred prefix `pkm:`)
-**Version:** 0.1.0
+**Version:** 0.1.0 — declaration only, no classes yet
 
 RDF/OWL classes, properties, and relationships for Personal Knowledge Management.
 
-Terms use hash URIs, so every term resolves through this one document —
-`https://w3id.org/pkm/ontology#Note` is defined in
-[`pkm.ttl`](pkm.ttl).
+The model is in development. [`pkm.ttl`](pkm.ttl) currently carries the ontology
+declaration and nothing else: the seed `Note`/`Tag`/`Source` classes minted when the
+namespace was registered have been removed, because they pointed at vocabulary terms
+that no longer exist.
+
+Work is happening in the [vocabulary](../vocab/) first. Once the 223 SKOS concepts
+settle, the ones that describe *things* rather than *topics* become OWL classes here,
+and the ontology gains the axioms — domains, ranges, disjointness, cardinality — that
+SKOS cannot express.
+
+Terms will use hash URIs, so every term resolves through this one document:
+`https://w3id.org/pkm/ontology#Note` will be defined in `pkm.ttl`.
 
 ## Download
 
 - [`pkm.ttl`](pkm.ttl) — Turtle (canonical, hand-authored)
 
-## Classes
-
-| Term | Label | Definition |
-| --- | --- | --- |
-| `pkm:Note` | Note | An atomic unit of captured knowledge, authored as a Markdown document with YAML frontmatter. |
-| `pkm:Tag` | Tag | A user-assigned label used to group notes across the folder hierarchy. |
-| `pkm:Source` | Source | An external work from which a note derives — an article, book, dataset, or web page. |
-
-## Object properties
-
-| Term | Label | Domain | Range |
-| --- | --- | --- | --- |
-| `pkm:linksTo` | links to | `pkm:Note` | `pkm:Note` |
-| `pkm:hasTag` | has tag | `pkm:Note` | `pkm:Tag` |
-| `pkm:derivedFrom` | derived from | `pkm:Note` | `pkm:Source` |
-
 ## Relationship to the vocabulary
 
-Each class carries a `skos:exactMatch` to its glossary entry in the
-[vocabulary](../vocab/). The ontology is the formal model; the vocabulary is the
-human-facing glossary. Definitions are authored once and mirrored via
-`skos:definition`.
+The ontology is the formal model; the [vocabulary](../vocab/) is the human-facing
+glossary. They stay separate documents with separate URIs. A class will point at the
+concept it formalises with `foaf:focus`, not `skos:exactMatch` — the SKOS mapping
+properties are defined between concepts, so aiming one at an `owl:Class` is a type
+error.

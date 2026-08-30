@@ -1,0 +1,21 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:WeekCollection a skos:Collection ;
+    rdfs:label "Week Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:member pkmv:Week,
+        pkmv:WeekAnalysis,
+        pkmv:WeekDiabetes,
+        pkmv:WeekDiabetesAnalysis,
+        pkmv:WeekHealth,
+        pkmv:WeekIndex,
+        pkmv:WeekJournal,
+        pkmv:WeekLog,
+        pkmv:WeekMealPlan,
+        pkmv:WeekPlan,
+        pkmv:WeekReview ;
+    skos:note "All notes related to a single Week time period of seven consecutive days."@en ;
+    skos:prefLabel "Week Collection"@en .
+

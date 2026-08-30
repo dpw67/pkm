@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:KnowledgeSystemArchitecture a skos:Concept ;
+    dcterms:created "2026-08-29"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:altLabel "KSA"@en ;
+    skos:definition "A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and Python APIs, services, scripts, commands, and agents."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:KnowledgeSystem ;
+    skos:prefLabel "Knowledge System Architecture"@en ;
+    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day. "@en ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> .
+

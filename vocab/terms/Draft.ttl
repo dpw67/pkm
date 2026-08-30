@@ -1,0 +1,22 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:NoteTypes skos:member pkmv:Draft .
+
+pkmv:Draft a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderPartitive pkmv:AddFolder ;
+    skos:broader pkmv:AddFolder ;
+    skos:definition "A new draft note received from the Drafts app via the Obsidian action group pipeline."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Draft"@en ;
+    skos:scopeNote """- This collects all incoming draft notes entering Obsidian from Drafts text or voice input on Mac, iPhone, iPad, or Watch. 
+- The Drafts app adds `draft/note` to the tags property, as well as a `object: draft` and `type: note` to these notes to simplify workflow processing for these drafts."""@en .
+

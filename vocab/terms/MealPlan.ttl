@@ -1,0 +1,29 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:MealDomain skos:member pkmv:MealPlan .
+
+pkmv:NoteTypes skos:member pkmv:MealPlan .
+
+pkmv:MealPlan a skos:Concept ;
+    dcterms:created "2026-08-25"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:narrowerGeneric pkmv:PTEMealPlan ;
+    isothes:narrowerPartitive pkmv:DayMeal,
+        pkmv:Menu ;
+    skos:broader pkmv:Meal ;
+    skos:definition "A structured plan of meals over a defined period."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:DMPMealPlan,
+        pkmv:DayMeal,
+        pkmv:Menu,
+        pkmv:PTEMealPlan ;
+    skos:prefLabel "Meal Plan"@en ;
+    skos:scopeNote "Generic parent for period- and source-specific meal plans (Day, Week, DMP, PTE)."@en .
+

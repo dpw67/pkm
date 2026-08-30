@@ -1,0 +1,23 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:PKMStudio a skos:Concept ;
+    dcterms:created "2026-08-29"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    isothes:broaderPartitive pkmv:PKMSwift ;
+    skos:broader pkmv:PKMSwift ;
+    skos:definition "A SwiftUI app that manages a PKM knowledge system."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "PKM Studio"@en ;
+    skos:scopeNote """- Available on macOS, iOS, iPadOS, and watchOS.
+- Uses Python and Swift services, scripts, commands, and agents.
+- Integrates with Obsidian notes, Neo4j graph database, Claude AI LLM, and diabetes websites.
+- Provides functions via the App Intents framework to offer actions for use in Shortcuts (workflows), Siri AI (voice interface & natural language), or Spotlight (search).
+- Supports development and management of concepts, glossary, taxonomy, thesaurus, ontology, knowledge graph, schema, metadata, and associated development artifacts."""@en .
+

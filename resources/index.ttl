@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pkmr: <https://w3id.org/pkm/resources#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+pkmr:ACE-Organization a foaf:Document ;
+    dcterms:title "ACE for Organization"@en ;
+    rdfs:comment "ACE for Organization, Knowledge Pack (Version 1.0) by Nick Milo & LYT, licensed under CC BY-NC-ND 4.0."@en .
+
+pkmr:PKM-URI-Namespace a foaf:Document ;
+    dcterms:title "PKM URI Namespace (https://w3id.org/pkm)"@en ;
+    rdfs:comment "Persistent URI namespace for Personal Knowledge Management (PKM) and Knowledge System Architecture (KSA). This includes glossary (terms), taxonomy (concepts, hierarchy, related, etc.), thesaurus, ontology (classes, individuals, properties, relations, rules), knowledge graph (nodes, relationships, properties, queries), metadata schema (JSON, CSV, etc,), tools (Python, Swift, Cypher, SQL, etc.), and resources (website, notes, repositories, etc.)."@en ;
+    foaf:page <https://w3id.org/pkm> .
+
+pkmr:RDF-Ontology-Glossary a foaf:Document ;
+    dcterms:title "RDF/RDFS Ontology Glossary"@en ;
+    rdfs:comment "Substack essay on Ontology Part IV including link to download an abbreviated Ontology Glossary."@en ;
+    foaf:page <https://jessicatalisman.substack.com/p/ontology-glossary> .
+
+pkmr:RDF-Ontology-Glossary-Abbreviated a foaf:Document ;
+    dcterms:title "RDF/RDFS Ontology Glossary (Abbreviated)"@en ;
+    rdfs:comment "A 6-page abbreviated RDF Ontology Glossary available as a downloadable PDF document."@en ;
+    foaf:page <https://jessicatalisman.substack.com/api/v1/file/75abcfc1-acec-4f9c-aeb2-6a27d455ffd5.pdf> .
+

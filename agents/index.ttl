@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+pkma:Claude-AI a prov:SoftwareAgent ;
+    foaf:homepage <https://claude.ai> ;
+    foaf:name "Claude AI LLM (Sonnet/Opus models)" .
+
+pkma:Doug-Warren a prov:Person ;
+    foaf:homepage <https://blog.warrenweb.net> ;
+    foaf:name "Doug Warren" .
+
+pkma:Jessica-Talisman a prov:Person ;
+    foaf:homepage <https://www.ontologypipeline.com> ;
+    foaf:name "Jessica Talisman" .
+
+pkma:SKOS-Editor a prov:SoftwareAgent ;
+    foaf:homepage <https://github.com/jesstalisman-ia/intentional-arrangement-skos> ;
+    foaf:name "SKOS Editor" .
+

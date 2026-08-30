@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:ConceptCollection skos:member pkmv:Term .
+
+pkmv:NoteTypes skos:member pkmv:Term .
+
+pkmv:SemanticWebStandards skos:member pkmv:Term .
+
+pkmv:Term a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:broader pkmv:KnowledgeSystem ;
+    skos:definition "A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Term"@en ;
+    skos:related pkmv:Concept ;
+    skos:scopeNote "Refers to the lexical/label layer (skos:prefLabel, skos:altLabel), not the concept itself - use for discussing naming/labeling conventions distinct from the concepts terms denote."@en .
+

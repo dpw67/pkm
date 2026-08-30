@@ -1,0 +1,18 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:Dataview a skos:Concept ;
+    dcterms:created "2026-08-29"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:broader pkmv:ObsidianPlugin ;
+    skos:definition "An Obsidian query language for filtering, sorting, and extracting data from Markdown pages."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Dataview"@en ;
+    skos:scopeNote """- Obsidian code blocks define Dataview (or DataviewJS) queries that render dynamic content in notes when viewed.
+- More generalized features are now available with Obsidian Bases."""@en .
+

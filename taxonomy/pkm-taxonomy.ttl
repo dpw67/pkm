@@ -4,7 +4,6 @@
 # https://w3id.org/pkm/vocab. Definitions live in the vocabulary; this file
 # carries only the relationships, so a term is defined in exactly one place.
 
-@prefix pkmv:    <https://w3id.org/pkm/vocab/> .
 @prefix pkmt:    <https://w3id.org/pkm/taxonomy/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
@@ -20,25 +19,7 @@
     dcterms:created     "2026-08-22"^^xsd:date ;
     rdfs:seeAlso        <https://w3id.org/pkm/vocab> .
 
-# Example refinements of pkmv:note. Replace with the real hierarchy.
-
-pkmt:permanent-note
-    a               skos:Concept ;
-    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
-    skos:prefLabel  "permanent note"@en ;
-    skos:definition "A note that has been refined into a durable, self-contained idea."@en ;
-    skos:broader    pkmv:note .
-
-pkmt:literature-note
-    a               skos:Concept ;
-    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
-    skos:prefLabel  "literature note"@en ;
-    skos:definition "A note capturing an idea encountered in an external source, in the reader's own words."@en ;
-    skos:broader    pkmv:note .
-
-pkmt:fleeting-note
-    a               skos:Concept ;
-    skos:inScheme   <https://w3id.org/pkm/taxonomy> ;
-    skos:prefLabel  "fleeting note"@en ;
-    skos:definition "A quick capture not yet processed into a permanent note."@en ;
-    skos:broader    pkmv:note .
+# No concepts yet. The hierarchy that used to sit here refined pkmv:note, a
+# placeholder term that no longer exists. The real broader/narrower structure is
+# currently carried inside the vocabulary itself at https://w3id.org/pkm/vocab;
+# it moves here once it is stable enough to maintain separately.

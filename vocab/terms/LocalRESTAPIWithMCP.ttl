@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:LocalRESTAPIWithMCP a skos:Concept ;
+    dcterms:created "2026-08-29"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:broader pkmv:ObsidianPlugin ;
+    skos:definition "Support automation for notes using REST API for apps or MCP server for AI agents."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Local REST API with MCP"@en ;
+    skos:scopeNote """- Enable Obsidian functions for Claude Desktop or Claude Code, Cursor, and other MCP clients such as Python services, scripts, or agents.
+- Create, read, update, or delete notes.
+- Patch specific sections of notes by heading, block, or frontmatter properties.
+- Search you vault using full-text or JsonLogic queries against note metadata (frontmatter, tags, path, or content).
+- Access the active Obsidian file.
+- List and execute commands.
+- Query tags.
+- Open files in Obsidian user interface."""@en .
+

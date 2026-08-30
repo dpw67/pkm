@@ -1,0 +1,1456 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix pkm: <https://w3id.org/pkm/> .
+
+pkm:taxonomy a skos:ConceptScheme ;
+    dcterms:title "PKM taxonomy"@en ;
+    dcterms:description "This PKM vocabulary includes concepts for personal knowledge management (PKM) system associated with my Knowledge System Architecture (KSA)."@en ;
+    dcterms:creator pkm:agent2 ;
+    dcterms:publisher pkm:agent2 ;
+    dcterms:created "2026-08-15"^^xsd:date ;
+    dcterms:issued "2026-08-23"^^xsd:date ;
+    dcterms:modified "2026-08-25"^^xsd:date ;
+    dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
+    dcterms:language "en" ;
+    skos:hasTopConcept pkm:Recipe, pkm:Concept, pkm:Day, pkm:Week, pkm:Knowledge, pkm:Action, pkm:Ingredient, pkm:Nutrition, pkm:RecipeTime, pkm:RecipeServings, pkm:RecipeSource, pkm:RecipeImages, pkm:Meal, pkm:MealPlan, pkm:Term, pkm:Metadata, pkm:Taxonomy, pkm:Ontology, pkm:KnowledgeGraph, pkm:SKOS, pkm:RDF, pkm:OWL, pkm:Neo4j, pkm:Cypher, pkm:Obsidian, pkm:Python, pkm:Swift, pkm:FastAPI, pkm:Hummingbird, pkm:Shortcut, pkm:Siri, pkm:AppIntent, pkm:Time, pkm:DayCluster, pkm:DayIndex, pkm:DayPlan, pkm:DayLog, pkm:DayJournal, pkm:DayReview, pkm:DayLinks, pkm:DayActions, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis, pkm:DaySchedule, pkm:WeekCluster, pkm:WeekIndex, pkm:WeekPlan, pkm:WeekLog, pkm:WeekJournal, pkm:WeekReview, pkm:WeekHealth, pkm:WeekDiabetes, pkm:WeekDiabetesAnalysis, pkm:WeekAnalysis, pkm:WeekMealPlan, pkm:Extra, pkm:Template, pkm:Script, pkm:Add, pkm:Draft, pkm:Clipping, pkm:Spark, pkm:Idea, pkm:Focus, pkm:Effort, pkm:Area, pkm:Interest, pkm:Project, pkm:Package, pkm:Food, pkm:Restaurant, pkm:Menu, pkm:MealPlan2, pkm:Recipe2, pkm:Tool, pkm:Effort2, pkm:Topic, pkm:Year, pkm:Life, pkm:Quarter, pkm:Calendar, pkm:Month, pkm:Decade, pkm:Calendar2, pkm:Cluster, pkm:Vault, pkm:Obsidian2 .
+
+pkm:Recipe a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Recipe-xl-pref-1 ;
+    skos:prefLabel "Recipe"@en ;
+    skos:definition "A set of ingredients, instructions, and nutrition used to prepare, cook, and eat food for a meal."@en ;
+    skos:scopeNote "Reusable building block referenced by meals; imported into Plan to Eat and stored in the PKM Meals SwiftData SQL database, Obsidian Markdown notes, and Neo4j knowledge graph."@en ;
+    skos:changeNote "Added definition and scope notes to Recipe in SKOS editor."@en, "2026-08-16 — Parent “Meal” added (by Doug Warren)", "2026-08-16 — Parent “Meal” removed; Related term “Meal” added (by Doug Warren)", "2026-08-24 — Definition added; Scope note added; Related term “MealPlan” added; Related term “Meal” removed; Linked artifact “Recipe” added (by Doug Warren)" ;
+    dcterms:source pkm:doc3 ;
+    skos:related pkm:MealPlan ;
+    isothes:broaderPartitive pkm:Meal ;
+    rdfs:seeAlso <https://schema.org/Recipe> ;
+    dcterms:created "2026-08-16T12:05:34Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T17:00:19Z"^^xsd:dateTime .
+
+pkm:Recipe-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe"@en .
+
+pkm:Meal a skos:Concept ;
+    isothes:narrowerPartitive pkm:Recipe ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Meal-xl-pref-1 ;
+    skos:prefLabel "Meal"@en ;
+    skos:related pkm:MealPlan ;
+    dcterms:created "2026-08-16T12:06:26Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:06:26Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “MealPlan” added (by Doug Warren)" ;
+    skos:narrower pkm:Dinner .
+
+pkm:Meal-xl-pref-1 a skosxl:Label ;
+	skosxl:literalForm "Meal"@en .
+
+pkm:Concept a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Concept-xl-pref-1 ;
+    skos:prefLabel "Concept"@en ;
+    skos:definition "A unit of thought in a knowledge organization system."@en ;
+    skos:scopeNote "An abstract idea independent of its label. It's how we organize ideas for browsing and retrieval. a PKM Concept is based on the SKOS standard skos:Concept."@en ;
+    skos:changeNote "Added definition and scope notes for Concept."@en, "2026-08-24 — Definition added; Scope note added; Linked artifact “skos:Concept” added (by Doug Warren)" ;
+    dcterms:source pkm:doc2, pkm:doc1 ;
+    rdfs:seeAlso <https://skos.org#Concept> ;
+    dcterms:created "2026-08-24T18:35:39Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T18:35:39Z"^^xsd:dateTime .
+
+pkm:Concept-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Concept"@en .
+
+pkm:Day a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Day-xl-pref-1 ;
+    skos:prefLabel "Day"@en ;
+    skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons)."@en ;
+    skos:scopeNote "Base temporal node in the Calendar subgraph: anchors PREV_DAY/NEXT_DAY ordering and all Day-prefixed note types in an Obsidian Ideaverse vault."@en ;
+    skos:changeNote "Added definition and scope notes to Day."@en, "2026-08-16 — Related term “Day Cluster” added (by Doug Warren)", "2026-08-24 — Definition added; Scope note added; Related term “Day Index” added (by Doug Warren)", "2026-08-24 — Related term “Day Plan” added; Related term “Day Log” added; Related term “Day Journal” added; Related term “Day Review” added; Related term “Day Links” added; Related term “Day Actions” added; Related term “Day Schedule” added; Related term “Day Health” added; Related term “Day Diabetes” added; Related term “Day Diabetes Analysis” added; Related term “Day Analysis” added (by Doug Warren)" ;
+    skos:related pkm:DayCluster, pkm:DayIndex, pkm:DayPlan, pkm:DayLog, pkm:DayJournal, pkm:DayReview, pkm:DayLinks, pkm:DayActions, pkm:DaySchedule, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis ;
+    isothes:broaderPartitive pkm:Week ;
+    dcterms:created "2026-08-16T12:07:00Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T17:08:47Z"^^xsd:dateTime .
+
+pkm:Day-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day"@en .
+
+pkm:Week a skos:Concept ;
+    isothes:narrowerPartitive pkm:Day ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Week-xl-pref-1 ;
+    skos:prefLabel "Week"@en ;
+    skos:definition "A seven-day time period grouping consecutive days."@en ;
+    skos:scopeNote "Contains Days via IN_WEEK: parent time horizon for weekly planning, log, journal, and review artifacts."@en ;
+    skos:changeNote "Add definition and scope notes to Week."@en, "2026-08-16 — Related term “Week Cluster” added (by Doug Warren)", "2026-08-24 — Definition added; Scope note added; Related term “Week Index” added; Related term “Week Log” added; Related term “Week Journal” added; Related term “Week Plan” added; Related term “Week Review” added; Related term “Week Meal Plan” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Health” added; Related term “Week Analysis” added (by Doug Warren)" ;
+    skos:related pkm:WeekCluster, pkm:WeekIndex, pkm:WeekLog, pkm:WeekJournal, pkm:WeekPlan, pkm:WeekReview, pkm:WeekMealPlan, pkm:WeekDiabetes, pkm:WeekDiabetesAnalysis, pkm:WeekHealth, pkm:WeekAnalysis ;
+    dcterms:created "2026-08-16T12:07:19Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T17:13:09Z"^^xsd:dateTime .
+
+pkm:Week-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week"@en .
+
+pkm:Knowledge a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Knowledge-xl-pref-1 ;
+    skos:prefLabel "Knowledge"@en .
+
+pkm:Knowledge-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Knowledge"@en .
+
+pkm:Action a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Action-xl-pref-1 ;
+    skos:prefLabel "Action"@en .
+
+pkm:Action-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Action"@en .
+
+pkm:Ingredient a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Ingredient-xl-pref-1 ;
+    skos:prefLabel "Ingredient"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:07:37Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:07:37Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:Ingredient-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Ingredient"@en .
+
+pkm:Nutrition a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Nutrition-xl-pref-1 ;
+    skos:prefLabel "Nutrition"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:07:55Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:07:55Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:Nutrition-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Nutrition"@en .
+
+pkm:RecipeTime a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:RecipeTime-xl-pref-1 ;
+    skos:prefLabel "Recipe Time"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:08:04Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:08:04Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:RecipeTime-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe Time"@en .
+
+pkm:RecipeServings a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:RecipeServings-xl-pref-1 ;
+    skos:prefLabel "Recipe Servings"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:08:11Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:08:11Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:RecipeServings-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe Servings"@en .
+
+pkm:RecipeSource a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:RecipeSource-xl-pref-1 ;
+    skos:prefLabel "Recipe Source"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:08:19Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:08:19Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:RecipeSource-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe Source"@en .
+
+pkm:RecipeImages a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:RecipeImages-xl-pref-1 ;
+    skos:prefLabel "Recipe Images"@en ;
+    skos:related pkm:Recipe ;
+    dcterms:created "2026-08-16T12:08:40Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-16T12:08:40Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-16 — Related term “Recipe” added (by Doug Warren)" .
+
+pkm:RecipeImages-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe Images"@en .
+
+pkm:MealPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:MealPlan-xl-pref-1 ;
+    skos:prefLabel "MealPlan"@en ;
+    skos:related pkm:Recipe .
+
+pkm:MealPlan-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "MealPlan"@en .
+
+pkm:Term a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Term-xl-pref-1 ;
+    skos:prefLabel "Term"@en .
+
+pkm:Term-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Term"@en .
+
+pkm:Metadata a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Metadata-xl-pref-1 ;
+    skos:prefLabel "Metadata"@en .
+
+pkm:Metadata-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Metadata"@en .
+
+pkm:Taxonomy a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Taxonomy-xl-pref-1 ;
+    skos:prefLabel "Taxonomy"@en .
+
+pkm:Taxonomy-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Taxonomy"@en .
+
+pkm:Ontology a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Ontology-xl-pref-1 ;
+    skos:prefLabel "Ontology"@en .
+
+pkm:Ontology-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Ontology"@en .
+
+pkm:KnowledgeGraph a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:KnowledgeGraph-xl-pref-1 ;
+    skos:prefLabel "Knowledge Graph"@en .
+
+pkm:KnowledgeGraph-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Knowledge Graph"@en .
+
+pkm:SKOS a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:SKOS-xl-pref-1 ;
+    skos:prefLabel "SKOS"@en .
+
+pkm:SKOS-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "SKOS"@en .
+
+pkm:RDF a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:RDF-xl-pref-1 ;
+    skos:prefLabel "RDF"@en .
+
+pkm:RDF-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "RDF"@en .
+
+pkm:OWL a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:OWL-xl-pref-1 ;
+    skos:prefLabel "OWL"@en .
+
+pkm:OWL-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "OWL"@en .
+
+pkm:Neo4j a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Neo4j-xl-pref-1 ;
+    skos:prefLabel "Neo4j"@en .
+
+pkm:Neo4j-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Neo4j"@en .
+
+pkm:Cypher a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Cypher-xl-pref-1 ;
+    skos:prefLabel "Cypher"@en .
+
+pkm:Cypher-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Cypher"@en .
+
+pkm:Obsidian a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Obsidian-xl-pref-1 ;
+    skos:prefLabel "Obsidian"@en .
+
+pkm:Obsidian-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Obsidian"@en .
+
+pkm:Python a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Python-xl-pref-1 ;
+    skos:prefLabel "Python"@en .
+
+pkm:Python-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Python"@en .
+
+pkm:Swift a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Swift-xl-pref-1 ;
+    skos:prefLabel "Swift"@en .
+
+pkm:Swift-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Swift"@en .
+
+pkm:FastAPI a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:FastAPI-xl-pref-1 ;
+    skos:prefLabel "FastAPI"@en .
+
+pkm:FastAPI-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "FastAPI"@en .
+
+pkm:Hummingbird a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Hummingbird-xl-pref-1 ;
+    skos:prefLabel "Hummingbird"@en .
+
+pkm:Hummingbird-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Hummingbird"@en .
+
+pkm:Shortcut a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Shortcut-xl-pref-1 ;
+    skos:prefLabel "Shortcut"@en .
+
+pkm:Shortcut-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Shortcut"@en .
+
+pkm:Siri a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Siri-xl-pref-1 ;
+    skos:prefLabel "Siri"@en .
+
+pkm:Siri-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Siri"@en .
+
+pkm:AppIntent a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:AppIntent-xl-pref-1 ;
+    skos:prefLabel "App Intent"@en .
+
+pkm:AppIntent-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "App Intent"@en .
+
+pkm:Time a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Time-xl-pref-1 ;
+    skos:prefLabel "Time"@en .
+
+pkm:Time-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Time"@en .
+
+pkm:DayCluster a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayCluster-xl-pref-1 ;
+    skos:prefLabel "Day Cluster"@en ;
+    skos:related pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis, pkm:DaySchedule ;
+    skos:narrower pkm:DayPLan, pkm:DayLog2, pkm:DayJournal2, pkm:DayIndex2, pkm:DayReview2, pkm:DayMealPlan .
+
+pkm:DayCluster-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Cluster"@en .
+
+pkm:DayIndex a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayIndex-xl-pref-1 ;
+    skos:prefLabel "Day Index"@en ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis, pkm:DaySchedule .
+
+pkm:DayIndex-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Index"@en .
+
+pkm:DayPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayPlan-xl-pref-1 ;
+    skos:prefLabel "Day Plan"@en ;
+    skos:related pkm:Day, pkm:DayAnalysis, pkm:DaySchedule .
+
+pkm:DayPlan-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Plan"@en .
+
+pkm:DayLog a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayLog-xl-pref-1 ;
+    skos:prefLabel "Day Log"@en ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetesAnalysis, pkm:DayAnalysis .
+
+pkm:DayLog-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Log"@en .
+
+pkm:DayJournal a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayJournal-xl-pref-1 ;
+    skos:prefLabel "Day Journal"@en ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis .
+
+pkm:DayJournal-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Journal"@en .
+
+pkm:DayReview a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayReview-xl-pref-1 ;
+    skos:prefLabel "Day Review"@en ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis .
+
+pkm:DayReview-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Review"@en .
+
+pkm:DayLinks a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayLinks-xl-pref-1 ;
+    skos:prefLabel "Day Links"@en ;
+    skos:related pkm:Day .
+
+pkm:DayLinks-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Links"@en .
+
+pkm:DayActions a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayActions-xl-pref-1 ;
+    skos:prefLabel "Day Actions"@en ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis .
+
+pkm:DayActions-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Actions"@en .
+
+pkm:DayHealth a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayHealth-xl-pref-1 ;
+    skos:prefLabel "Day Health"@en ;
+    skos:definition "The health-related summary for a day."@en ;
+    skos:scopeNote "Parent for day-centric health artifacts including diabetes tracking."@en ;
+    skos:changeNote "Added definition and scope notes for DayHealth."@en, "2026-08-24 — Definition added; Scope note added; Related term “Day Cluster” added; Related term “Day Index” added; Related term “Day Diabetes” added; Related term “Day Diabetes Analysis” added; Related term “Day Analysis” added; Related term “Day Log” added; Related term “Day Journal” added; Related term “Day Actions” added; Related term “Day Review” added; Related term “Week Health” added (by Doug Warren)" ;
+    skos:related pkm:Day, pkm:DayCluster, pkm:DayIndex, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis, pkm:DayLog, pkm:DayJournal, pkm:DayActions, pkm:DayReview, pkm:WeekHealth ;
+    dcterms:created "2026-08-24T20:03:12Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:03:12Z"^^xsd:dateTime .
+
+pkm:DayHealth-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Health"@en .
+
+pkm:DayDiabetes a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayDiabetes-xl-pref-1 ;
+    skos:prefLabel "Day Diabetes"@en ;
+    skos:definition "The record of diabetes-relevant data for a day (glucose, insulin, carbs, events)."@en ;
+    skos:scopeNote "Produced by the Morning Review workflow from Dexcom and Glooko data for the previous day."@en ;
+    skos:changeNote "Added definition and scope notes for DayDiabetes."@en, "2026-08-24 — Definition added; Scope note added; Related term “Day Cluster” added; Related term “Day Diabetes Analysis” added; Related term “Day Index” added; Related term “Day Actions” added; Related term “Day Analysis” added; Related term “Day Journal” added; Related term “Day Review” added (by Doug Warren)" ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayCluster, pkm:DayDiabetesAnalysis, pkm:DayIndex, pkm:DayActions, pkm:DayAnalysis, pkm:DayJournal, pkm:DayReview ;
+    dcterms:created "2026-08-24T20:05:50Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:05:50Z"^^xsd:dateTime .
+
+pkm:DayDiabetes-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Diabetes"@en .
+
+pkm:DayDiabetesAnalysis a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayDiabetesAnalysis-xl-pref-1 ;
+    skos:prefLabel "Day Diabetes Analysis"@en ;
+    skos:definition "Interpretation of a day's diabetes data."@en ;
+    skos:scopeNote "Analytical layer of DayDiabetes: identifies patterns, excursions, and likely causes."@en ;
+    skos:changeNote "Added definition and scope notes to DayDiabetesAnalysis."@en, "2026-08-24 — Definition added; Scope note added; Related term “Day Analysis” added; Related term “Day Actions” added; Related term “Day Cluster” added; Related term “Day Journal” added; Related term “Day Review” added; Related term “Day Log” added; Related term “Day Index” added (by Doug Warren)" ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayAnalysis, pkm:DayActions, pkm:DayCluster, pkm:DayJournal, pkm:DayReview, pkm:DayLog, pkm:DayIndex ;
+    dcterms:created "2026-08-24T20:08:28Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:08:28Z"^^xsd:dateTime .
+
+pkm:DayDiabetesAnalysis-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Diabetes Analysis"@en .
+
+pkm:DayAnalysis a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayAnalysis-xl-pref-1 ;
+    skos:prefLabel "Day Analysis"@en ;
+    skos:definition "Overall analytical synthesis of a day across domains."@en ;
+    skos:scopeNote "- Includes Plus-Minus-Next analysis: overall, health, learning, and work.\n- Generated by Claude AI during Morning Review workflow as a final report for the previous day.\n- Compares DayPlan intentions and actual DayLog activities."@en ;
+    skos:changeNote "Added definition and scope notes for Day Analysis."@en, "2026-08-24 — Definition added; Scope note added; Related term “Day Cluster” added; Related term “Day Index” added; Related term “Day Plan” added; Related term “Day Log” added; Related term “Day Review” added (by Doug Warren)" ;
+    skos:related pkm:Day, pkm:DayHealth, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayCluster, pkm:DayIndex, pkm:DayPlan, pkm:DayLog, pkm:DayReview ;
+    dcterms:created "2026-08-24T20:12:00Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:12:00Z"^^xsd:dateTime .
+
+pkm:DayAnalysis-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Analysis"@en .
+
+pkm:DaySchedule a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:DaySchedule-xl-pref-1 ;
+    skos:prefLabel "Day Schedule"@en ;
+    skos:definition "The time-blocked calendar of appointments and commitments for a day."@en ;
+    skos:scopeNote "Time-specific commitments; distinct from DayPlan's priority list."@en ;
+    skos:changeNote "Added definition and scope notes for DaySchedule."@en, "2026-08-24 — Definition added; Scope note added; Related term “Day Cluster” added; Related term “Day Index” added; Related term “Day Plan” added (by Doug Warren)" ;
+    skos:related pkm:Day, pkm:DayCluster, pkm:DayIndex, pkm:DayPlan ;
+    dcterms:created "2026-08-24T20:13:36Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:13:36Z"^^xsd:dateTime .
+
+pkm:DaySchedule-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Day Schedule"@en .
+
+pkm:WeekCluster a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekCluster-xl-pref-1 ;
+    skos:prefLabel "Week Cluster"@en ;
+    skos:related pkm:WeekLog ;
+    isothes:narrowerPartitive pkm:WeekPlan, pkm:WeekJournal, pkm:WeekReview .
+
+pkm:WeekCluster-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Cluster"@en .
+
+pkm:WeekIndex a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekIndex-xl-pref-1 ;
+    skos:prefLabel "Week Index"@en ;
+    skos:related pkm:Week, pkm:WeekPlan, pkm:WeekLog, pkm:WeekJournal, pkm:WeekReview .
+
+pkm:WeekIndex-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Index"@en .
+
+pkm:WeekPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekPlan-xl-pref-1 ;
+    skos:prefLabel "Week Plan"@en ;
+    skos:definition "The plan of intended priorities and activities for a week. "@en ;
+    skos:scopeNote "Forward-looking weekly intentions; parent context for DayPlan."@en ;
+    skos:changeNote "Added definition and scope notes for WeekPlan"@en, "2026-08-24 — Definition added; Scope note added; Related term “Week Review” added; Related term “Week Meal Plan” added; Related term “Week Analysis” added; Related term “Week Index” added (by Doug Warren)" ;
+    skos:related pkm:Week, pkm:WeekReview, pkm:WeekMealPlan, pkm:WeekAnalysis, pkm:WeekIndex, pkm:WeekLog, pkm:WeekJournal ;
+    isothes:broaderPartitive pkm:WeekCluster ;
+    dcterms:created "2026-08-24T20:00:23Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:00:23Z"^^xsd:dateTime .
+
+pkm:WeekPlan-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Plan"@en .
+
+pkm:WeekLog a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekLog-xl-pref-1 ;
+    skos:prefLabel "Week Log"@en ;
+    skos:definition "A record of what happened over a week."@en ;
+    skos:scopeNote "Weekly factual roll-up; aggregates DayLog entries."@en ;
+    skos:changeNote "Added definition and scope notes for WeekLog."@en, "2026-08-24 — Definition added; Scope note added; Related term “Week Index” added; Related term “Week Cluster” added; Related term “Week Analysis” added; Related term “Week Health” added; Related term “Week Journal” added; Related term “Week Plan” added; Related term “Week Review” added (by Doug Warren)" ;
+    skos:related pkm:Week, pkm:WeekIndex, pkm:WeekCluster, pkm:WeekAnalysis, pkm:WeekHealth, pkm:WeekJournal, pkm:WeekPlan, pkm:WeekReview ;
+    dcterms:created "2026-08-24T20:15:32Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:15:32Z"^^xsd:dateTime .
+
+pkm:WeekLog-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Log"@en .
+
+pkm:WeekJournal a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekJournal-xl-pref-1 ;
+    skos:prefLabel "Week Journal"@en ;
+    skos:definition "Reflective writing about a week."@en ;
+    skos:scopeNote "Weekly subjective narrative; complements WeekLog."@en ;
+    skos:changeNote "Added definition and scope notes for WeekJournal."@en, "2026-08-24 — Definition added; Scope note added; Related term “Week Review” added; Related term “Week Index” added; Related term “Week Health” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Meal Plan” added; Related term “Week Plan” added (by Doug Warren)" ;
+    skos:related pkm:Week, pkm:WeekLog, pkm:WeekReview, pkm:WeekIndex, pkm:WeekHealth, pkm:WeekDiabetes, pkm:WeekDiabetesAnalysis, pkm:WeekMealPlan, pkm:WeekPlan ;
+    isothes:broaderPartitive pkm:WeekCluster ;
+    dcterms:created "2026-08-24T20:18:05Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:18:05Z"^^xsd:dateTime .
+
+pkm:WeekJournal-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Journal"@en .
+
+pkm:WeekReview a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekReview-xl-pref-1 ;
+    skos:prefLabel "Week Review"@en ;
+    skos:definition "A structured retrospective evaluating a compled week"@en ;
+    skos:scopeNote "Assesses the week against the WeekPlan."@en ;
+    skos:changeNote "Added definition and scope notes for WeekReview."@en, "2026-08-24 — Definition added; Scope note added; Related term “Week Health” added; Related term “Week Analysis” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Index” added (by Doug Warren)" ;
+    skos:related pkm:Week, pkm:WeekPlan, pkm:WeekLog, pkm:WeekJournal, pkm:WeekHealth, pkm:WeekAnalysis, pkm:WeekDiabetes, pkm:WeekDiabetesAnalysis, pkm:WeekIndex ;
+    isothes:broaderPartitive pkm:WeekCluster ;
+    dcterms:created "2026-08-24T20:51:50Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-24T20:51:50Z"^^xsd:dateTime .
+
+pkm:WeekReview-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Review"@en .
+
+pkm:WeekHealth a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekHealth-xl-pref-1 ;
+    skos:prefLabel "Week Health"@en ;
+    skos:related pkm:Week, pkm:DayHealth, pkm:WeekLog, pkm:WeekJournal, pkm:WeekReview .
+
+pkm:WeekHealth-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Health"@en .
+
+pkm:WeekDiabetes a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekDiabetes-xl-pref-1 ;
+    skos:prefLabel "Week Diabetes"@en ;
+    skos:related pkm:Week, pkm:WeekJournal, pkm:WeekReview .
+
+pkm:WeekDiabetes-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Diabetes"@en .
+
+pkm:WeekDiabetesAnalysis a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekDiabetesAnalysis-xl-pref-1 ;
+    skos:prefLabel "Week Diabetes Analysis"@en ;
+    skos:related pkm:Week, pkm:WeekJournal, pkm:WeekReview .
+
+pkm:WeekDiabetesAnalysis-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Diabetes Analysis"@en .
+
+pkm:WeekAnalysis a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekAnalysis-xl-pref-1 ;
+    skos:prefLabel "Week Analysis"@en ;
+    skos:related pkm:Week, pkm:WeekPlan, pkm:WeekLog, pkm:WeekReview .
+
+pkm:WeekAnalysis-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Analysis"@en .
+
+pkm:WeekMealPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:WeekMealPlan-xl-pref-1 ;
+    skos:prefLabel "Week Meal Plan"@en ;
+    skos:related pkm:Week, pkm:WeekPlan, pkm:WeekJournal .
+
+pkm:WeekMealPlan-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Week Meal Plan"@en .
+
+pkm:Extra a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Extra-xl-pref-1 ;
+    skos:prefLabel "Extra"@en .
+
+pkm:Extra-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Extra"@en .
+
+pkm:Template a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Template-xl-pref-1 ;
+    skos:prefLabel "Template"@en .
+
+pkm:Template-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Template"@en .
+
+pkm:Script a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Script-xl-pref-1 ;
+    skos:prefLabel "Script"@en .
+
+pkm:Script-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Script"@en .
+
+pkm:Add a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Add-xl-pref-1 ;
+    skos:prefLabel "Add"@en .
+
+pkm:Add-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Add"@en .
+
+pkm:Draft a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Draft-xl-pref-1 ;
+    skos:prefLabel "Draft"@en .
+
+pkm:Draft-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Draft"@en .
+
+pkm:Clipping a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Clipping-xl-pref-1 ;
+    skos:prefLabel "Clipping"@en .
+
+pkm:Clipping-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Clipping"@en .
+
+pkm:Spark a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Spark-xl-pref-1 ;
+    skos:prefLabel "Spark"@en .
+
+pkm:Spark-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Spark"@en .
+
+pkm:Idea a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Idea-xl-pref-1 ;
+    skos:prefLabel "Idea"@en .
+
+pkm:Idea-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Idea"@en .
+
+pkm:Focus a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Focus-xl-pref-1 ;
+    skos:prefLabel "Focus"@en .
+
+pkm:Focus-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Focus"@en .
+
+pkm:Effort a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Effort-xl-pref-1 ;
+    skos:prefLabel "Effort"@en .
+
+pkm:Effort-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Effort"@en .
+
+pkm:Area a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Area-xl-pref-1 ;
+    skos:prefLabel "Area"@en .
+
+pkm:Area-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Area"@en .
+
+pkm:Interest a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Interest-xl-pref-1 ;
+    skos:prefLabel "Interest"@en .
+
+pkm:Interest-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Interest"@en .
+
+pkm:Project a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Project-xl-pref-1 ;
+    skos:prefLabel "Project"@en .
+
+pkm:Project-xl-pref-1 a skosxl:Label ;
+    skosxl:literalForm "Project"@en .
+
+pkm:Dinner a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Dinner-xl-pref-en-1 ;
+    skos:prefLabel "Dinner"@en ;
+    skosxl:altLabel pkm:Dinner-xl-alt-en-1 ;
+    skos:altLabel "Supper"@en ;
+    skos:definition "The evening meal."@en ;
+    skos:scopeNote "A DayMeal occasion type."@en ;
+    skos:broader pkm:Meal ;
+    dcterms:created "2026-08-25T18:58:57Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T18:58:57Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Dinner-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Dinner"@en .
+
+pkm:Dinner-xl-alt-en-1 a skosxl:Label ;
+    skosxl:literalForm "Supper"@en .
+
+pkm:Package a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Package-xl-pref-en-1 ;
+    skos:prefLabel "Package"@en ;
+    skos:definition "A physical package of a food product."@en ;
+    skos:scopeNote "Unit of a Product as purchased; carries label and serving data as well as photo (front, back, and/or side)."@en ;
+    dcterms:created "2026-08-25T19:01:29Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:01:29Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Package-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Package"@en .
+
+pkm:Food a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Food-xl-pref-en-1 ;
+    skos:prefLabel "Food"@en ;
+    skos:definition "A source of nutrition for something eaten as a meal or snack."@en ;
+    skos:scopeNote "A parent context for recipes, products, packages, and ingredients that might be included in a meal or snack."@en ;
+    dcterms:created "2026-08-25T19:01:37Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:01:37Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:Product .
+
+pkm:Food-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Food"@en .
+
+pkm:Product a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Product-xl-pref-en-1 ;
+    skos:prefLabel "Product"@en ;
+    skos:definition "A packaged food or grocery item."@en ;
+    skos:scopeNote "Purchasable food unit; source of nutrition and carb data for meals."@en ;
+    skos:broader pkm:Food ;
+    dcterms:created "2026-08-25T19:01:45Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:01:45Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Product-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Product"@en .
+
+pkm:Restaurant a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Restaurant-xl-pref-en-1 ;
+    skos:prefLabel "Restaurant"@en ;
+    skos:definition "A dining establishment where meals are eaten or taken out."@en ;
+    skos:scopeNote "Context for meals not prepared at home; relevant to carb-estimation for diabetes tracking."@en ;
+    dcterms:created "2026-08-25T19:01:55Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:01:55Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Restaurant-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Restaurant"@en .
+
+pkm:Menu a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Menu-xl-pref-en-1 ;
+    skos:prefLabel "Menu"@en ;
+    skos:definition "A curated list of dishes offered or planned."@en ;
+    skos:scopeNote "Grouping of dishes or recipes, e.g. for an event or a restaurant."@en ;
+    dcterms:created "2026-08-25T19:01:59Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:01:59Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Menu-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Menu"@en .
+
+pkm:MealPlan2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:MealPlan2-xl-pref-en-1 ;
+    skos:prefLabel "MealPlan"@en ;
+    skos:definition "A structured plan of meals over a defined period."@en ;
+    skos:scopeNote "Generic parent for period- and source-specific meal plans (Day, Week, DMP, PTE)."@en ;
+    dcterms:created "2026-08-25T19:02:02Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:02:02Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:PTEMealPlan, pkm:DMPMealPlan .
+
+pkm:MealPlan2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MealPlan"@en .
+
+pkm:PTEMealPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:PTEMealPlan-xl-pref-en-1 ;
+    skos:prefLabel "PTEMealPlan"@en ;
+    skos:definition "A weekly meal plan built in Plan to Eat (PTE); a recipe, meal-planning, and shopping list subscription service."@en ;
+    skos:scopeNote "Working meal plan assembled from DMP and other imported recipes; generates the weekly shopping list and syncs into the PKM Meals SwiftData database, as well as Neo4j graph database and Obsidian notes."@en ;
+    skos:broader pkm:MealPlan2 ;
+    dcterms:created "2026-08-25T19:02:25Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:02:25Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:PTEMealPlan-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "PTEMealPlan"@en .
+
+pkm:DMPMealPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DMPMealPlan-xl-pref-en-1 ;
+    skos:prefLabel "DMPMealPlan"@en ;
+    skos:definition "A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service."@en ;
+    skos:scopeNote "Primary weekly meal-planning source; recipes exposed by Wordpress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app."@en ;
+    skos:broader pkm:MealPlan2 ;
+    dcterms:created "2026-08-25T19:03:03Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:03Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DMPMealPlan-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DMPMealPlan"@en .
+
+pkm:Recipe2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Recipe2-xl-pref-en-1 ;
+    skos:prefLabel "Recipe"@en ;
+    skos:definition "A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal."@en ;
+    skos:scopeNote "Reusable building block referenced by meals; imported into Plan to Eat and stored in the PKM Meals SwiftData database, as well as Neo4j graph database and Obsidian notes."@en ;
+    dcterms:created "2026-08-25T19:03:13Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:13Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Recipe2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Recipe"@en .
+
+pkm:Tool a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Tool-xl-pref-en-1 ;
+    skos:prefLabel "Tool"@en ;
+    skos:definition "A software capability used within the PKM system."@en ;
+    skos:scopeNote "General parent for system affordances such as App, Agent, Script, and API."@en ;
+    dcterms:created "2026-08-25T19:03:36Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:36Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:AppIntent2, pkm:Widget, pkm:App .
+
+pkm:Tool-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Tool"@en .
+
+pkm:Effort2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Effort2-xl-pref-en-1 ;
+    skos:prefLabel "Effort"@en ;
+    skos:definition "A unit of directed work toward an outcome, such as a project or initiative."@en ;
+    skos:scopeNote "Groups activity by goal; the intent behind logged actions."@en ;
+    dcterms:created "2026-08-25T19:03:39Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:39Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Effort2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Effort"@en .
+
+pkm:Topic a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Topic-xl-pref-en-1 ;
+    skos:prefLabel "Topic"@en ;
+    skos:definition "A subject or theme that content can be about."@en ;
+    skos:scopeNote "Cross-cutting classifier; links artifacts by subject rather than by time horizon."@en ;
+    dcterms:created "2026-08-25T19:03:41Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:41Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Topic-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Topic"@en .
+
+pkm:AppIntent2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:AppIntent2-xl-pref-en-1 ;
+    skos:prefLabel "AppIntent"@en ;
+    skos:definition "A declared action the system exposes to Shortcuts, Siri, or Spotlight."@en ;
+    skos:scopeNote "App intents framework entry point; the invocable-action layer of Swift apps."@en ;
+    skos:broader pkm:Tool ;
+    dcterms:created "2026-08-25T19:03:55Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:03:55Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:AppIntent2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "AppIntent"@en .
+
+pkm:Widget a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Widget-xl-pref-en-1 ;
+    skos:prefLabel "Widget"@en ;
+    skos:definition "A home- or lock-screen glanceable view."@en ;
+    skos:scopeNote "WidgetKit surface exposing PKM data a glance."@en ;
+    skos:broader pkm:Tool ;
+    dcterms:created "2026-08-25T19:04:04Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:04:04Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Widget-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Widget"@en .
+
+pkm:Year a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Year-xl-pref-en-1 ;
+    skos:prefLabel "Year"@en ;
+    skos:definition "A calendar year grouping quarters and months."@en ;
+    skos:scopeNote "Contains lower-level time horizons via IN_YAR: anchor for annual planning and retrospectives."@en ;
+    dcterms:created "2026-08-25T19:11:53Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:11:53Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Year-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Year"@en .
+
+pkm:Life a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Life-xl-pref-en-1 ;
+    skos:prefLabel "Life"@en ;
+    skos:definition "The full lifespan, the top temporal (time) horizon."@en ;
+    skos:scopeNote "Root of the Calendar subgraph via IN_LIFE: frames lifelong goals and identity-level context."@en ;
+    dcterms:created "2026-08-25T19:11:56Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:11:56Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Life-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Life"@en .
+
+pkm:Quarter a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Quarter-xl-pref-en-1 ;
+    skos:prefLabel "Quarter"@en ;
+    skos:definition "A three-month time period used for medium-level planning."@en ;
+    skos:scopeNote "Groups months via IN_QUARTER: used for quarterly goal-setting and review."@en ;
+    dcterms:created "2026-08-25T19:11:59Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:11:59Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Quarter-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Quarter"@en .
+
+pkm:Calendar a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Calendar-xl-pref-en-1 ;
+    skos:prefLabel "Calendar"@en ;
+    skos:definition "Scheduled events and sessions for time periods: Day, Week, Quarter, and Year."@en ;
+    skos:scopeNote "- Calendar is a major spaces for time-based linked notes in Obsidian Ideaverse vault in a PKM system, as well as a synced Neo4j subgraph within a PKM knowledge graph.\n- Supported by API routes, Python services, scripts, and agents, as well as Swift apps, intents, widgets, shortcuts, and Siri.\n- Also represented by Calendar and Fantastical apps."@en ;
+    dcterms:created "2026-08-25T19:12:01Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:01Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Calendar-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Calendar"@en .
+
+pkm:Month a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Month-xl-pref-en-1 ;
+    skos:prefLabel "Month"@en ;
+    skos:definition "A calendar month grouping weeks and days."@en ;
+    skos:scopeNote "- Contains lower time horizons via IN_MONTH: parent horizon for monthly planning and review artifacts. \n- Each month contains multiple multiple weeks (4-5) and days (28-31).\n- There are 3 months in a quarter, and 12 months in a year."@en ;
+    dcterms:created "2026-08-25T19:12:03Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:03Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Month-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Month"@en .
+
+pkm:Decade a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Decade-xl-pref-en-1 ;
+    skos:prefLabel "Decade"@en ;
+    skos:definition "A ten-year span used for long-range life planning."@en ;
+    skos:scopeNote "Groups years via IN_DECADE: strategic, low-frequency time horizon."@en ;
+    dcterms:created "2026-08-25T19:12:07Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:07Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Decade-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Decade"@en .
+
+pkm:DayPLan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayPLan-xl-pref-en-1 ;
+    skos:prefLabel "DayPLan"@en ;
+    skos:definition "The plan of intended activities and priorities for a day."@en ;
+    skos:scopeNote "Forward-looking: created for the upcoming day, distinct from the retrospective DayReview."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:12:21Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:21Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DayPLan-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayPLan"@en .
+
+pkm:DayLog2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayLog2-xl-pref-en-1 ;
+    skos:prefLabel "DayLog"@en ;
+    skos:definition "A chronological record of what actually happened during a day."@en ;
+    skos:scopeNote "Captures events and timestamps as they occur: factual, not interpretive."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:12:26Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:26Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DayLog2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayLog"@en .
+
+pkm:DayJournal2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayJournal2-xl-pref-en-1 ;
+    skos:prefLabel "DayJournal"@en ;
+    skos:definition "Free-form reflective writing about a day."@en ;
+    skos:scopeNote "- Subjective narrative and reflection: complements the factual DayLog. \n- Includes Morning Thoughts (First Light), Meditation with reflection and moods, Free-writing, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light).\n- Primarily formatted as text paragraphs and/or headings as appropriate; whereas DayLog is typically timestamped bullet or numbered lists rather than written paragraphs."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:12:31Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:31Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DayJournal2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayJournal"@en .
+
+pkm:DayIndex2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayIndex2-xl-pref-en-1 ;
+    skos:prefLabel "DayIndex"@en ;
+    skos:definition "The index note that links all artifacts for a given day."@en ;
+    skos:scopeNote "Hub note connecting DayPlan, DayLog, DayJournal, DayReview, and related notes for one Day."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:12:37Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:37Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DayIndex2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayIndex"@en .
+
+pkm:DayReview2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayReview2-xl-pref-en-1 ;
+    skos:prefLabel "DayReview"@en ;
+    skos:definition "A structured retrospective evaluating a completed day."@en ;
+    skos:scopeNote "- Output of the Morning Review workflow: assesses the prior day against the Day Plan.\n- Includes Plus-Minus-Next (PMN) analysis: what worked, what needs improving, and what's next."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:12:44Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:12:44Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:DayReview2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayReview"@en .
+
+pkm:DayMealPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayMealPlan-xl-pref-en-1 ;
+    skos:prefLabel "DayMealPlan"@en ;
+    skos:definition "The planned set of meals for a single day."@en ;
+    skos:scopeNote "Day-scoped meal planning: contains DayMeal entries and derives from the WeekMealPlan."@en ;
+    skos:broader pkm:DayCluster ;
+    dcterms:created "2026-08-25T19:13:02Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:13:02Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:DayMeal .
+
+pkm:DayMealPlan-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayMealPlan"@en .
+
+pkm:DayMeal a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:DayMeal-xl-pref-en-1 ;
+    skos:prefLabel "DayMeal"@en ;
+    skos:definition "A single planned or eaten meal within a day."@en ;
+    skos:scopeNote "A meal occasion instance: typed as Breakfast, Lunch, Dinner, or Snack."@en ;
+    skos:broader pkm:DayMealPlan ;
+    dcterms:created "2026-08-25T19:13:40Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:13:40Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:Lunch, pkm:Breakfast, pkm:Snack .
+
+pkm:DayMeal-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "DayMeal"@en .
+
+pkm:Lunch a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Lunch-xl-pref-en-1 ;
+    skos:prefLabel "Lunch"@en ;
+    skos:definition "The midday meal."@en ;
+    skos:scopeNote "A DayMeal occasion type."@en ;
+    skos:broader pkm:DayMeal ;
+    dcterms:created "2026-08-25T19:13:51Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:13:51Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Lunch-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Lunch"@en .
+
+pkm:Breakfast a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Breakfast-xl-pref-en-1 ;
+    skos:prefLabel "Breakfast"@en ;
+    skos:definition "The first meal of the day."@en ;
+    skos:scopeNote "A DayMeal occasion type."@en ;
+    skos:broader pkm:DayMeal ;
+    dcterms:created "2026-08-25T19:14:03Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:14:03Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Breakfast-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Breakfast"@en .
+
+pkm:Snack a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:Snack-xl-pref-en-1 ;
+    skos:prefLabel "Snack"@en ;
+    skos:definition "A small meal eaten between main meals."@en ;
+    skos:scopeNote "A DayMeal occasion type: often relevant to glucose management."@en ;
+    skos:broader pkm:DayMeal ;
+    dcterms:created "2026-08-25T19:14:18Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:14:18Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Snack-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Snack"@en .
+
+pkm:Calendar2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Calendar2-xl-pref-en-1 ;
+    skos:prefLabel "Calendar"@en ;
+    skos:definition "A major space for time-based notes."@en ;
+    skos:scopeNote "Parent context for clusters of notes by time horizon."@en ;
+    dcterms:created "2026-08-25T19:17:18Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:17:18Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Calendar2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Calendar"@en .
+
+pkm:Cluster a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Cluster-xl-pref-en-1 ;
+    skos:prefLabel "Cluster"@en ;
+    skos:definition "A group of related notes."@en ;
+    skos:scopeNote "Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en ;
+    dcterms:created "2026-08-25T19:17:32Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:17:32Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:MonthCluster, pkm:MonthCluster2 .
+
+pkm:Cluster-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Cluster"@en .
+
+pkm:MonthCluster a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthCluster-xl-pref-en-1 ;
+    skos:prefLabel "MonthCluster"@en ;
+    skos:definition "A groupd of related notes for a Month."@en ;
+    skos:scopeNote "Organize all the notes about a specific month."@en ;
+    skos:broader pkm:Cluster ;
+    dcterms:created "2026-08-25T19:17:39Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:17:39Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:MonthLog .
+
+pkm:MonthCluster-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthCluster"@en .
+
+pkm:MonthCluster2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthCluster2-xl-pref-en-1 ;
+    skos:prefLabel "MonthCluster"@en ;
+    skos:definition "A group of related notes about a month."@en ;
+    skos:scopeNote "Parent context for all notes associated with a month."@en ;
+    skos:broader pkm:Cluster ;
+    dcterms:created "2026-08-25T19:17:47Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:17:47Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" ;
+    skos:narrower pkm:MonthJournal, pkm:MonthReview, pkm:MonthPlan .
+
+pkm:MonthCluster2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthCluster"@en .
+
+pkm:MonthLog a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthLog-xl-pref-en-1 ;
+    skos:prefLabel "MonthLog"@en ;
+    skos:definition "A record of what happened over a month."@en ;
+    skos:scopeNote "Monthly factual roll-up; aggregates WeekLog entries."@en ;
+    skos:broader pkm:MonthCluster ;
+    dcterms:created "2026-08-25T19:17:57Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:17:57Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:MonthLog-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthLog"@en .
+
+pkm:MonthJournal a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthJournal-xl-pref-en-1 ;
+    skos:prefLabel "MonthJournal"@en ;
+    skos:definition "Reflective writing about a month."@en ;
+    skos:scopeNote "Monthly subjective narrative; complements MonthLog."@en ;
+    skos:broader pkm:MonthCluster2 ;
+    dcterms:created "2026-08-25T19:18:09Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:18:09Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:MonthJournal-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthJournal"@en .
+
+pkm:MonthReview a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthReview-xl-pref-en-1 ;
+    skos:prefLabel "MonthReview"@en ;
+    skos:definition "A structured retrospectivee evaluating a completed month."@en ;
+    skos:scopeNote "Assesses the month against the MonthPlan."@en ;
+    skos:broader pkm:MonthCluster2 ;
+    dcterms:created "2026-08-25T19:18:28Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:18:28Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:MonthReview-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthReview"@en .
+
+pkm:MonthPlan a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:MonthPlan-xl-pref-en-1 ;
+    skos:prefLabel "MonthPlan"@en ;
+    skos:definition "The plan of intended priorities for a month."@en ;
+    skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlans."@en ;
+    skos:broader pkm:MonthCluster2 ;
+    dcterms:created "2026-08-25T19:18:37Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:18:37Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:MonthPlan-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "MonthPlan"@en .
+
+pkm:Vault a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Vault-xl-pref-en-1 ;
+    skos:prefLabel "Vault"@en ;
+    skos:definition "A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc."@en ;
+    skos:scopeNote "Parent context for major spaces within an Obsidian linked-note system; Ideaverse recommends using major spaces: + (add), Atlas (knowledge), Calendar (time), x (Extra), and z (Archive)."@en ;
+    dcterms:created "2026-08-25T19:19:53Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:19:53Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Vault-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Vault"@en .
+
+pkm:Obsidian2 a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skos:topConceptOf pkm:taxonomy ;
+    skosxl:prefLabel pkm:Obsidian2-xl-pref-en-1 ;
+    skos:prefLabel "Obsidian"@en ;
+    skos:definition "A major PKM system for linked notes."@en ;
+    skos:scopeNote "A critical element of a PKM system for knowledge management."@en ;
+    dcterms:created "2026-08-25T19:21:18Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:21:18Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:Obsidian2-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "Obsidian"@en .
+
+pkm:App a skos:Concept ;
+    skos:inScheme pkm:taxonomy ;
+    skosxl:prefLabel pkm:App-xl-pref-en-1 ;
+    skos:prefLabel "App"@en ;
+    skos:definition "A software application."@en ;
+    skos:scopeNote "A fundamental software capability for getting work done."@en ;
+    skos:broader pkm:Tool ;
+    dcterms:created "2026-08-25T19:21:35Z"^^xsd:dateTime ;
+    dcterms:modified "2026-08-25T19:21:35Z"^^xsd:dateTime ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)" .
+
+pkm:App-xl-pref-en-1 a skosxl:Label ;
+    skosxl:literalForm "App"@en .
+
+pkm:collection a skos:Collection ;
+    rdfs:label "Ideaverse"@en ;
+    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en ;
+    skos:member pkm:Spark, pkm:Concept, pkm:Idea, pkm:Interest, pkm:Effort, pkm:Area, pkm:Action .
+
+pkm:collection2 a skos:Collection ;
+    rdfs:label "Day Cluster"@en ;
+    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:member pkm:DayIndex, pkm:DayPlan, pkm:DayLog, pkm:DayJournal, pkm:DayReview, pkm:DayHealth, pkm:DayLinks, pkm:DayActions, pkm:DaySchedule, pkm:DayDiabetes, pkm:DayDiabetesAnalysis, pkm:DayAnalysis, pkm:Day .
+
+pkm:collection3 a skos:Collection ;
+    rdfs:label "Week Cluster"@en ;
+    skos:note "All notes related to a single Week time period of seven consecutive days."@en ;
+    skos:member pkm:WeekIndex, pkm:WeekPlan, pkm:WeekLog, pkm:WeekJournal, pkm:WeekReview, pkm:WeekHealth, pkm:WeekDiabetes, pkm:WeekDiabetesAnalysis, pkm:WeekAnalysis, pkm:WeekMealPlan, pkm:Week .
+
+pkm:collection4 a skos:Collection ;
+    rdfs:label "Month Cluster"@en ;
+    skos:note "All related notes for a calendar month grouping Weeks and Days."@en .
+
+pkm:collection5 a skos:Collection ;
+    rdfs:label "Quarter Cluster"@en ;
+    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en .
+
+pkm:collection6 a skos:Collection ;
+    rdfs:label "Year Cluster"@en ;
+    skos:note "All notes related to a calendar Year groups Quarters and Months."@en .
+
+pkm:collection7 a skos:Collection ;
+    rdfs:label "Decade Cluster"@en ;
+    skos:note "All notes related to a ten-Year span used for long-range life planning."@en .
+
+pkm:collection8 a skos:Collection ;
+    rdfs:label "Life Cluster"@en ;
+    skos:note "All notes related to the top time horizon of a full lifespan."@en .
+
+pkm:collection9 a skos:Collection ;
+    rdfs:label "Recipe Cluster"@en ;
+    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:member pkm:Recipe, pkm:Ingredient, pkm:RecipeTime, pkm:RecipeServings, pkm:RecipeSource, pkm:RecipeImages, pkm:Nutrition, pkm:Meal, pkm:MealPlan .
+
+pkm:collection10 a skos:Collection ;
+    rdfs:label "Concept Cluster"@en ;
+    skos:note "All notes related to a Concept."@en ;
+    skos:member pkm:Concept, pkm:Term, pkm:Taxonomy, pkm:Ontology, pkm:KnowledgeGraph, pkm:Metadata, pkm:SKOS, pkm:RDF, pkm:OWL, pkm:Cypher .
+
+pkm:doc1 a foaf:Document ;
+    dcterms:title "RDF/RDFS Ontology Glossary"@en ;
+    foaf:page <https://jessicatalisman.substack.com/p/ontology-glossary> ;
+    rdfs:comment "Substack essay on Ontology Part IV including link to download an abbreviated Ontology Glossary."@en .
+
+pkm:doc2 a foaf:Document ;
+    dcterms:title "RDF/RDFS Ontology Glossary (Abbreviated)"@en ;
+    foaf:page <https://jessicatalisman.substack.com/api/v1/file/75abcfc1-acec-4f9c-aeb2-6a27d455ffd5.pdf> ;
+    rdfs:comment "A 6-page abbreviated RDF Ontology Glossary available as a downloadable PDF document."@en .
+
+pkm:doc3 a foaf:Document ;
+    dcterms:title "PKM URI Namespace (https://w3id.org/pkm)"@en ;
+    foaf:page <https://w3id.org/pkm> ;
+    rdfs:comment "Persistent URi namespace for Personal Knowledge Management (PKM) and Knowledge System Architecture (KSA). This includes glossary (terms), taxonomy (concepts, hierarchy, related, etc.), thesaurus, ontology (classes, individuals, properties, relations, rules), knowledge graph (nodes, relationships, properties, queries), metadata schema (JSON, CSV, etc,), tools (Python, Swift, Cypher, SQL, etc.), and resources (website, notes, repositories, etc.)."@en .
+
+pkm:agent1 a prov:Person ;
+    foaf:name "Jessica Talisman" ;
+    foaf:homepage <https://www.ontologypipeline.com/> .
+
+pkm:agent2 a prov:Person ;
+    foaf:name "Doug Warren" ;
+    foaf:homepage <https://blog.warrenweb.net> .

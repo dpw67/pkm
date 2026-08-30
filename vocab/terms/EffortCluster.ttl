@@ -1,0 +1,24 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:EffortCollection skos:member pkmv:EffortCluster .
+
+pkmv:EffortCluster a skos:Concept ;
+    dcterms:created "2026-08-26"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    skos:broader pkmv:Cluster ;
+    skos:definition "A group of related notes about an effort.."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:EffortIndex,
+        pkmv:EffortJournal,
+        pkmv:EffortLog,
+        pkmv:EffortPlan,
+        pkmv:EffortReview ;
+    skos:prefLabel "Effort Cluster"@en ;
+    skos:scopeNote "Parent context for all notes associated with an effort."@en .
+

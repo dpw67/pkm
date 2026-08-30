@@ -1,0 +1,8 @@
+pkmv:note
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "note"@en ;
+    skos:altLabel   "atomic note"@en , "zettel"@en ;
+    skos:definition "An atomic unit of captured knowledge, authored as a Markdown document with YAML frontmatter."@en ;
+    skos:exactMatch pkm:Note .

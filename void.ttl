@@ -9,14 +9,15 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix pkm:     <https://w3id.org/pkm/ontology#> .
 
 <https://w3id.org/pkm/>
     a                     void:Dataset ;
     dcterms:title         "PKM — Personal Knowledge Management namespace"@en ;
     dcterms:description   """Linked Data resources on Personal Knowledge Management for
-        the Knowledge System Architecture (KSA) project: an OWL ontology, a SKOS
-        vocabulary and taxonomy, SHACL shapes, and worked examples."""@en ;
+        the Knowledge System Architecture (KSA) project. The SKOS vocabulary is the
+        current substance: 223 concepts and 18 collections, each term dereferencing
+        to Turtle. An OWL ontology, a separate taxonomy, SHACL shapes, and worked
+        examples are declared but still in development."""@en ;
     dcterms:creator       <https://github.com/dpw67> ;
     dcterms:license       <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created       "2026-08-22"^^xsd:date ;
@@ -27,15 +28,24 @@
                           <http://www.w3.org/ns/formats/JSON-LD> ;
 
     void:vocabulary       <http://www.w3.org/2004/02/skos/core#> ,
+                          <http://purl.org/iso25964/skos-thes#> ,
                           <http://www.w3.org/2002/07/owl#> ,
-                          <http://purl.org/dc/terms/> ;
+                          <http://purl.org/dc/terms/> ,
+                          <http://purl.org/vocab/vann/> ,
+                          <http://www.w3.org/ns/prov#> ,
+                          <http://xmlns.com/foaf/0.1/> ;
 
-    void:rootResource     <https://w3id.org/pkm/ontology> ,
-                          <https://w3id.org/pkm/vocab> ,
-                          <https://w3id.org/pkm/taxonomy> ;
+    void:rootResource     <https://w3id.org/pkm/vocab> ,
+                          <https://w3id.org/pkm/ontology> ,
+                          <https://w3id.org/pkm/taxonomy> ,
+                          <https://w3id.org/pkm/agents> ,
+                          <https://w3id.org/pkm/resources> ;
 
-    void:dataDump         <https://w3id.org/pkm/ontology/pkm.ttl> ,
-                          <https://w3id.org/pkm/vocab/pkm-vocab.ttl> ,
-                          <https://w3id.org/pkm/taxonomy/pkm-taxonomy.ttl> ;
+    # The vocabulary dump is the whole graph in one file: 223 concepts and 18
+    # collections, including the skos:changeNote history that the per-term files
+    # omit. Fetching it is the alternative to walking 241 term URIs.
+    void:dataDump         <https://w3id.org/pkm/vocab/pkm-vocab.ttl> ,
+                          <https://w3id.org/pkm/agents/index.ttl> ,
+                          <https://w3id.org/pkm/resources/index.ttl> ;
 
     foaf:homepage         <https://w3id.org/pkm/> .

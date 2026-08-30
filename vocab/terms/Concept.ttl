@@ -1,0 +1,31 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmr: <https://w3id.org/pkm/resources#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:ConceptCollection skos:member pkmv:Concept .
+
+pkmv:KnowledgeCollection skos:member pkmv:Concept .
+
+pkmv:NoteTypes skos:member pkmv:Concept .
+
+pkmv:Concept a skos:Concept ;
+    dcterms:created "2026-08-24"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:source pkmr:RDF-Ontology-Glossary,
+        pkmr:RDF-Ontology-Glossary-Abbreviated ;
+    isothes:broaderPartitive pkmv:Knowledge ;
+    rdfs:seeAlso <https://skos.org#Concept> ;
+    skos:broader pkmv:Knowledge ;
+    skos:definition "A unit of thought in a knowledge organization system."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Concept"@en ;
+    skos:related pkmv:Term ;
+    skos:scopeNote "An abstract idea independent of its label. It's how we organize ideas for browsing and retrieval. a PKM Concept is based on the SKOS standard skos:Concept."@en .
+

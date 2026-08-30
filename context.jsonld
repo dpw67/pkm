@@ -12,17 +12,17 @@
     "id":    "@id",
     "type":  "@type",
 
-    "Note":       "pkm:Note",
-    "Tag":        "pkm:Tag",
-    "Source":     "pkm:Source",
-
     "title":      { "@id": "dcterms:title" },
     "created":    { "@id": "dcterms:created", "@type": "xsd:dateTime" },
     "modified":   { "@id": "dcterms:modified", "@type": "xsd:dateTime" },
     "label":      { "@id": "rdfs:label", "@language": "en" },
 
-    "linksTo":    { "@id": "pkm:linksTo",   "@type": "@id", "@container": "@set" },
-    "hasTag":     { "@id": "pkm:hasTag",    "@type": "@id", "@container": "@set" },
-    "derivedFrom":{ "@id": "pkm:derivedFrom", "@type": "@id" }
+    "prefLabel":  { "@id": "skos:prefLabel", "@language": "en" },
+    "altLabel":   { "@id": "skos:altLabel", "@container": "@set" },
+    "definition": { "@id": "skos:definition", "@language": "en" },
+    "broader":    { "@id": "skos:broader", "@type": "@id", "@container": "@set" },
+    "narrower":   { "@id": "skos:narrower", "@type": "@id", "@container": "@set" },
+    "related":    { "@id": "skos:related", "@type": "@id", "@container": "@set" },
+    "inScheme":   { "@id": "skos:inScheme", "@type": "@id" }
   }
 }

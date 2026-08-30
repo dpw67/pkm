@@ -1,0 +1,23 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:MealDomain skos:member pkmv:WeekMealPlan .
+
+pkmv:WeekCollection skos:member pkmv:WeekMealPlan .
+
+pkmv:WeekMealPlan a skos:Concept ;
+    dcterms:created "2026-08-27"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderPartitive pkmv:WeekCluster ;
+    skos:broader pkmv:WeekCluster ;
+    skos:definition "A note representing the planned meals for a given week, aggregating daily meal plan entries."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Week Meal Plan"@en ;
+    skos:scopeNote "Part of the Meal domain within the Calendar hierarchy; relates to Meal and Recipe concepts at the week granularity."@en .
+

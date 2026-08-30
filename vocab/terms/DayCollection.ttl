@@ -1,0 +1,36 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:DayCollection a skos:Collection ;
+    rdfs:label "Day Collection"@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:member pkmv:Day,
+        pkmv:DayActions,
+        pkmv:DayAnalysis,
+        pkmv:DayBase,
+        pkmv:DayBoard,
+        pkmv:DayCanvas,
+        pkmv:DayCluster,
+        pkmv:DayClusterCore,
+        pkmv:DayClusterHealth,
+        pkmv:DayClusterSupport,
+        pkmv:DayClusterVisual,
+        pkmv:DayDiabetes,
+        pkmv:DayDiabetesAnalysis,
+        pkmv:DayDiagram,
+        pkmv:DayDrawing,
+        pkmv:DayHealth,
+        pkmv:DayIndex,
+        pkmv:DayJournal,
+        pkmv:DayLinks,
+        pkmv:DayLog,
+        pkmv:DayMealPlan,
+        pkmv:DayMindmap,
+        pkmv:DayPlan,
+        pkmv:DayReview,
+        pkmv:DaySchedule,
+        pkmv:DayView ;
+    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:prefLabel "Day Collection"@en .
+

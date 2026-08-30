@@ -1,0 +1,26 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:DayClusterSupport a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderPartitive pkmv:DayCluster ;
+    isothes:narrowerPartitive pkmv:DayActions,
+        pkmv:DayLinks,
+        pkmv:DaySchedule ;
+    skos:broader pkmv:DayCluster ;
+    skos:definition "The supporting notes within a Day Cluster that assist the core notes, such as DayActions and DayLinks."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:DayActions,
+        pkmv:DayLinks,
+        pkmv:DayMeeting,
+        pkmv:DaySchedule ;
+    skos:prefLabel "Day Cluster Support"@en ;
+    skos:scopeNote "Holds auxiliary tracking (tasks, references) rather than the primary daily narrative held in DayClusterCore."@en .
+

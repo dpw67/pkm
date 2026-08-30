@@ -1,0 +1,24 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:MealDomain a skos:Collection ;
+    rdfs:label "Meal Domain"@en ;
+    skos:member pkmv:Breakfast,
+        pkmv:DMPMealPlan,
+        pkmv:DayMealPlan,
+        pkmv:Dinner,
+        pkmv:Ingredient,
+        pkmv:Lunch,
+        pkmv:Meal,
+        pkmv:MealPlan,
+        pkmv:Nutrition,
+        pkmv:PTEMealPlan,
+        pkmv:RecipeImages,
+        pkmv:RecipeServings,
+        pkmv:RecipeSource,
+        pkmv:RecipeTime,
+        pkmv:Snack,
+        pkmv:WeekMealPlan ;
+    skos:note "All the related notes for a meal plan."@en .
+

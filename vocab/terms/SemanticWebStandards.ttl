@@ -1,0 +1,18 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:SemanticWebStandards a skos:Collection ;
+    rdfs:label "Semantic Web Standards"@en ;
+    skos:member pkmv:ISOStandard,
+        pkmv:KnowledgeGraph,
+        pkmv:Metadata,
+        pkmv:OWL,
+        pkmv:Ontology,
+        pkmv:RDF,
+        pkmv:SKOS,
+        pkmv:Standard,
+        pkmv:Taxonomy,
+        pkmv:Term,
+        pkmv:W3CStandard .
+

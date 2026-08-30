@@ -1,0 +1,12 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:KnowledgeCollection a skos:Collection ;
+    rdfs:label "Knowledge Collection"@en ;
+    skos:member pkmv:Concept,
+        pkmv:Knowledge,
+        pkmv:KnowledgeGraph,
+        pkmv:Topic ;
+    skos:note "All the related concepts about Knowledge."@en .
+

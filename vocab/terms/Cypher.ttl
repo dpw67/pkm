@@ -1,0 +1,20 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:Cypher a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    isothes:broaderGeneric pkmv:Tool ;
+    skos:broader pkmv:GraphDatabase,
+        pkmv:Tool ;
+    skos:definition "A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Cypher"@en ;
+    skos:scopeNote "The query language used against the Neo4j graph, as distinct from the database itself (Neo4j) or the API layer (FastAPI)."@en .
+

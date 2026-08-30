@@ -1,0 +1,32 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:YearCluster a skos:Concept ;
+    dcterms:created "2026-08-26"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    isothes:broaderGeneric pkmv:TimeCluster ;
+    isothes:broaderPartitive pkmv:CalendarFolder ;
+    isothes:narrowerPartitive pkmv:YearHealth,
+        pkmv:YearJournal,
+        pkmv:YearLog,
+        pkmv:YearPlan,
+        pkmv:YearReview ;
+    skos:broader pkmv:CalendarFolder,
+        pkmv:TimeCluster ;
+    skos:definition "A group of related notes about a year."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:YearHealth,
+        pkmv:YearJournal,
+        pkmv:YearLog,
+        pkmv:YearPlan,
+        pkmv:YearReview ;
+    skos:prefLabel "Year Cluster"@en ;
+    skos:related pkmv:Year ;
+    skos:scopeNote "Parent context for all notes associated with a year."@en .
+

@@ -1,0 +1,8 @@
+pkmv:source
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "source"@en ;
+    skos:altLabel   "reference"@en ;
+    skos:definition "An external work from which a note derives — an article, book, dataset, or web page."@en ;
+    skos:exactMatch pkm:Source .

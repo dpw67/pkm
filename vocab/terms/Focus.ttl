@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:Focus a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    isothes:broaderPartitive pkmv:AddFolder ;
+    skos:broader pkmv:AddFolder ;
+    skos:definition "A note or tag marking current priority attention within the PKM system."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Focus"@en ;
+    skos:scopeNote "A flag for active areas of concentration (e.g. within a Day or Week cluster) - confirm relationship to Area and Project."@en .
+

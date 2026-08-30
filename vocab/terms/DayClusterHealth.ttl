@@ -1,0 +1,27 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:DayClusterHealth a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderPartitive pkmv:DayCluster ;
+    isothes:narrowerPartitive pkmv:DayDiabetes,
+        pkmv:DayDiabetesAnalysis,
+        pkmv:DayHealth,
+        pkmv:DayMealPlan ;
+    skos:broader pkmv:DayCluster ;
+    skos:definition "The health-related data and notes within a Day Cluster, capturing tracked health events for that day."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:DayDiabetes,
+        pkmv:DayDiabetesAnalysis,
+        pkmv:DayHealth,
+        pkmv:DayMealPlan ;
+    skos:prefLabel "Day Cluster Health"@en ;
+    skos:scopeNote "Populated via automated health sync (glucose, insulin, blood pressure, EKG); see HealthEvent and its narrower types for the individual data points aggregated here."@en .
+

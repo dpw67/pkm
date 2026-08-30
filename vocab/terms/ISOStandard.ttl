@@ -1,0 +1,19 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:ISOStandard a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderGeneric pkmv:Standard ;
+    skos:broader pkmv:Standard ;
+    skos:definition "A standard published by the International Organization for Standardization (ISO)."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "ISO Standard"@en ;
+    skos:scopeNote "Covers standards such as ISO 25964 (thesauri and interoperability), which the SKOS Editor's validation and hierarchy materialization draw on."@en .
+

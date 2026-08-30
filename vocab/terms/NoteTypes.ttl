@@ -1,0 +1,27 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:NoteTypes a skos:Collection ;
+    rdfs:label "Note Types"@en ;
+    skos:member pkmv:Action,
+        pkmv:App,
+        pkmv:Area,
+        pkmv:Clipping,
+        pkmv:Concept,
+        pkmv:Draft,
+        pkmv:Focus,
+        pkmv:Idea,
+        pkmv:Interest,
+        pkmv:Meal,
+        pkmv:MealPlan,
+        pkmv:Project,
+        pkmv:PythonTemplate,
+        pkmv:Recipe,
+        pkmv:Restaurant,
+        pkmv:Script,
+        pkmv:Shortcut,
+        pkmv:Spark,
+        pkmv:Term,
+        pkmv:Vault .
+

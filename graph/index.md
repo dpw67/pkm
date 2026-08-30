@@ -13,32 +13,23 @@ Cypher in this directory is dedicated to the public domain under
 
 ## Mapping
 
-RDF and property graphs disagree about where information lives, so the mapping is
-stated explicitly rather than assumed:
+Not yet defined. The table that used to sit here mapped the placeholder
+`Note`/`Tag`/`Source` classes, which have been removed along with the rest of the seed
+ontology; a mapping to classes that do not exist would be worse than none.
 
-| Ontology | Neo4j |
-| --- | --- |
-| `pkm:Note` | `:Note` label |
-| `pkm:Tag` | `:Tag` label |
-| `pkm:Source` | `:Source` label |
-| `pkm:linksTo` | `[:LINKS_TO]` relationship |
-| `pkm:hasTag` | `[:HAS_TAG]` relationship |
-| `pkm:derivedFrom` | `[:DERIVED_FROM]` relationship |
-
-Each node carries a `uri` property holding its `w3id.org/pkm` identifier, so graph
-nodes and RDF resources can be reconciled in both directions.
+RDF and property graphs disagree about where information lives, so when the mapping
+arrives it will be stated explicitly rather than assumed: one row per OWL class to
+Neo4j label, one per object property to relationship type. The invariant already
+settled is that every node carries a `uri` property holding its `w3id.org/pkm`
+identifier, so graph nodes and RDF resources can be reconciled in both directions.
 
 ## Constraints
 
+One uniqueness constraint per label on that `uri` property, in the shape:
+
 ```cypher
-CREATE CONSTRAINT note_uri IF NOT EXISTS
-FOR (n:Note) REQUIRE n.uri IS UNIQUE;
-
-CREATE CONSTRAINT tag_uri IF NOT EXISTS
-FOR (t:Tag) REQUIRE t.uri IS UNIQUE;
-
-CREATE CONSTRAINT source_uri IF NOT EXISTS
-FOR (s:Source) REQUIRE s.uri IS UNIQUE;
+CREATE CONSTRAINT <label>_uri IF NOT EXISTS
+FOR (n:<Label>) REQUIRE n.uri IS UNIQUE;
 ```
 
 ## Implementation

@@ -1,0 +1,17 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:TechStack a skos:Collection ;
+    rdfs:label "Tech Stack"@en ;
+    skos:member pkmv:Cypher,
+        pkmv:FastAPI,
+        pkmv:Hummingbird,
+        pkmv:Neo4j,
+        pkmv:Python,
+        pkmv:Script,
+        pkmv:Shortcut,
+        pkmv:Siri,
+        pkmv:Swift,
+        pkmv:Tool .
+

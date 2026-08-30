@@ -1,0 +1,7 @@
+pkmv:tag
+    a               skos:Concept ;
+    skos:inScheme   <https://w3id.org/pkm/vocab> ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel  "tag"@en ;
+    skos:definition "A user-assigned label used to group notes across the folder hierarchy."@en ;
+    skos:exactMatch pkm:Tag .

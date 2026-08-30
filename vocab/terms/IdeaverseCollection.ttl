@@ -1,0 +1,10 @@
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+pkmv:IdeaverseCollection a skos:Collection ;
+    rdfs:label "Ideaverse Collection"@en ;
+    skos:member pkmv:ObsidianNotes,
+        pkmv:Vault ;
+    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en .
+

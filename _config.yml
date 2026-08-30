@@ -10,5 +10,9 @@ exclude:
   - scripts/
   - generators/
   - schema/
+  - reports/    # validation output, regenerated on demand
+  - vocab/src/  # SKOS Editor exports; the published artifact is vocab/pkm-vocab.ttl
+  - z/          # scratch
+  - .venv/
   - Makefile
   - README.md   # index.md is the site index; README is for the GitHub repo page

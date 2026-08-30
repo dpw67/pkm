@@ -1,0 +1,20 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:Neo4j a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
+    isothes:broaderGeneric pkmv:Tool ;
+    skos:broader pkmv:GraphDatabase,
+        pkmv:Tool ;
+    skos:definition "A native graph database management system that stores and queries data as nodes, relationships, and properties."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Neo4j"@en ;
+    skos:scopeNote "The specific technology implementing this system's KnowledgeGraph - day nodes, cluster nodes, and their temporal/topical relationships."@en .
+

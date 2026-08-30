@@ -1,0 +1,31 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
+@prefix pkma: <https://w3id.org/pkm/agents#> .
+@prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+pkmv:DayClusterCore a skos:Concept ;
+    dcterms:created "2026-08-28"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-08-28"^^xsd:date ;
+    isothes:broaderPartitive pkmv:DayCluster ;
+    isothes:narrowerPartitive pkmv:DayAnalysis,
+        pkmv:DayIndex,
+        pkmv:DayJournal,
+        pkmv:DayLog,
+        pkmv:DayPlan,
+        pkmv:DayReview ;
+    skos:broader pkmv:DayCluster ;
+    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:DayAnalysis,
+        pkmv:DayIndex,
+        pkmv:DayJournal,
+        pkmv:DayLog,
+        pkmv:DayPlan,
+        pkmv:DayReview ;
+    skos:prefLabel "Day Cluster Core"@en ;
+    skos:scopeNote "Distinguish from DayClusterSupport (Links, Actions), DayClusterHealth (health event data), and DayClusterVisual (visual/graph tools)."@en .
+

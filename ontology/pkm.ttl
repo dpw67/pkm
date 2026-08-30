@@ -4,8 +4,15 @@
 # generated. Data-shape artifacts (SHACL, JSON Schema) are generated from
 # schema/pkm.yaml into shapes/ — see the Makefile.
 #
-# The three seed classes below are placeholders to establish the pattern.
-# Replace them with the real model.
+# The model is in development. The seed Note/Tag/Source classes that were minted
+# when the namespace was registered have been removed: they referenced vocabulary
+# terms that no longer exist. Only the ontology declaration remains, so
+# https://w3id.org/pkm/ontology keeps resolving while the real classes are worked out.
+#
+# When classes arrive, do not link them to SKOS concepts with skos:exactMatch — the
+# SKOS mapping properties have skos:Concept as their domain and range, so pointing
+# one at an owl:Class is a type error. Use foaf:focus from the concept to the class,
+# or rdfs:isDefinedBy from the class back to this ontology.
 
 @prefix pkm:     <https://w3id.org/pkm/ontology#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
@@ -37,56 +44,3 @@
     vann:preferredNamespaceUri    "https://w3id.org/pkm/ontology#" ;
     vann:preferredNamespacePrefix "pkm" ;
     rdfs:seeAlso                  <https://w3id.org/pkm/vocab> .
-
-#################################################################
-#    Classes
-#################################################################
-
-pkm:Note
-    a                owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "Note"@en ;
-    skos:definition  "An atomic unit of captured knowledge, authored as a Markdown document with YAML frontmatter."@en ;
-    skos:exactMatch  <https://w3id.org/pkm/vocab/note> .
-
-pkm:Tag
-    a                owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "Tag"@en ;
-    skos:definition  "A user-assigned label used to group notes across the folder hierarchy."@en ;
-    skos:exactMatch  <https://w3id.org/pkm/vocab/tag> .
-
-pkm:Source
-    a                owl:Class ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "Source"@en ;
-    skos:definition  "An external work from which a note derives — an article, book, dataset, or web page."@en ;
-    skos:exactMatch  <https://w3id.org/pkm/vocab/source> .
-
-#################################################################
-#    Object properties
-#################################################################
-
-pkm:linksTo
-    a                owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "links to"@en ;
-    skos:definition  "Relates a note to another note it references by wiki-link."@en ;
-    rdfs:domain      pkm:Note ;
-    rdfs:range       pkm:Note .
-
-pkm:hasTag
-    a                owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "has tag"@en ;
-    skos:definition  "Relates a note to a tag assigned to it."@en ;
-    rdfs:domain      pkm:Note ;
-    rdfs:range       pkm:Tag .
-
-pkm:derivedFrom
-    a                owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://w3id.org/pkm/ontology> ;
-    rdfs:label       "derived from"@en ;
-    skos:definition  "Relates a note to the source it was written from."@en ;
-    rdfs:domain      pkm:Note ;
-    rdfs:range       pkm:Source .

@@ -157,7 +157,7 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
     fm.append("exclude_modified_update: true")
     fm.append("---")
 
-    body: list[str] = [f"#vocab/{kind} ", "", f"# {label}", ""]
+    body: list[str] = [f"# {label}", ""]
     if deprecated:
         replaced = _all(vocab, uri, DCTERMS.isReplacedBy)
         body += ["> [!warning] Deprecated",
@@ -200,6 +200,18 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
         body += [f"- see also <{u}>" for u in see_also]
         body += [f"- related match <{u}>" for u in matches]
         body += [""]
+
+    # Classification and dates go in a footer, not above the title. Publish is
+    # configured with hideTitle, so the H1 is the first thing a reader sees --
+    # a tag above it puts filing ahead of content. The dates are here because
+    # the vocabulary is explicitly still moving, and freshness is worth knowing.
+    # No `#` + space, or Markdown reads the tag as a heading.
+    meta = [f"#vocab/{kind}"]
+    if created:
+        meta.append(f"created {created}")
+    if modified:
+        meta.append(f"modified {modified}")
+    body += ["---", "", " · ".join(meta), ""]
 
     return "\n".join(fm) + "\n" + "\n".join(body)
 

@@ -290,3 +290,61 @@ A validation-tab rule would work as well as an inline warning, and would pair wi
 Same underlying theme as
 [#39](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/39) — the
 editor accepting a mapping target that isn't the kind of thing the property means.
+
+---
+
+## 6. `[Feature]: Separate the agents namespace from the documents namespace`
+
+**Label:** `enhancement` · **Area:** Import/Export
+**Follow-up to:** #57 (closed, shipped in 0.16.7)
+
+### What are you trying to do?
+
+Publish agents and cited documents at two different, already-advertised sections of my
+namespace:
+
+- `https://w3id.org/pkm/agents#` — people and software credited in the vocabulary
+- `https://w3id.org/pkm/resources#` — documents the vocabulary cites
+
+Both are listed on the namespace home page, both are declared in `void.ttl`, and both are
+named in the w3id.org registration for `https://w3id.org/pkm`. They dereference
+separately, so a document minted under `agents#` is wrong on its face —
+`agents#RDF-Ontology-Glossary` says a glossary is an agent.
+
+### What would you like the tool to do?
+
+Split the existing *Agents & documents namespace* field into two optional fields, or add a
+second optional field for documents that falls back to the first when blank:
+
+```
+Agents namespace      https://w3id.org/pkm/agents#
+Documents namespace   https://w3id.org/pkm/resources#     (blank = same as agents)
+```
+
+`prov:Person` / `prov:Agent` / `prov:Organization` / `prov:SoftwareAgent` mint under the
+first, `foaf:Document` under the second. Both blank keeps today's behaviour; documents
+blank keeps 0.16.7's behaviour exactly, so nothing existing changes.
+
+### Anything else?
+
+0.16.7 already does most of this — thank you. Measuring against my own export, the single
+annex field resolves 4 of my 8 metadata resources:
+
+| Resource | Type | 0.16.7 mints | I need |
+|---|---|---|---|
+| Doug-Warren | `prov:Person` | `agents#Doug-Warren` | ✅ same |
+| Jessica-Talisman | `prov:Person` | `agents#Jessica-Talisman` | ✅ same |
+| Claude-AI | `prov:SoftwareAgent` | `agents#Claude-AI` | ✅ same |
+| SKOS-Editor | `prov:SoftwareAgent` | `agents#SKOS-Editor` | ✅ same |
+| ACE-Organization | `foaf:Document` | `agents#ACE-Organization` | `resources#ACE-Organization` |
+| PKM-URI-Namespace | `foaf:Document` | `agents#PKM-URI-Namespace` | `resources#PKM-URI-Namespace` |
+| RDF-Ontology-Glossary | `foaf:Document` | `agents#RDF-Ontology-Glossary` | `resources#…` |
+| RDF-Ontology-Glossary-Abbreviated | `foaf:Document` | `agents#…-Abbreviated` | `resources#…` |
+
+There is a workaround that already works, and it may be enough — setting an explicit
+identity URI of `https://w3id.org/pkm/resources#{Name}` on each document, which 0.16.7
+uses verbatim as documented. I simulated it against my build: it produces a published
+graph isomorphic to what my post-processing produces today, with nothing left for the
+script to do. So this is a convenience request rather than a blocker — four documents is
+four fields to remember, but it is not a lot of typing, and I'd rather you spend the time
+on it only if others hit the same split.

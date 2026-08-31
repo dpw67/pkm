@@ -138,7 +138,9 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
     if created:
         fm.append(f"created: {created}")
     if modified:
-        fm.append(f"updated: {modified}")
+        # `modified` rather than `updated`: the vault's chosen name, and it
+        # echoes dcterms:modified, which is where this value comes from.
+        fm.append(f"modified: {modified}")
     fm.append("tags:")
     fm.append(f"  - vocab/{kind}")
     if is_top:

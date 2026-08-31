@@ -13,7 +13,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:ConceptCollection a skos:Collection ;
-    rdfs:label "Concept Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Cypher,
@@ -29,7 +28,6 @@ pkmv:ConceptCollection a skos:Collection ;
     skos:prefLabel "Concept Collection"@en .
 
 pkmv:DayCollection a skos:Collection ;
-    rdfs:label "Day Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Day,
         pkmv:DayActions,
@@ -61,14 +59,12 @@ pkmv:DayCollection a skos:Collection ;
     skos:prefLabel "Day Collection"@en .
 
 pkmv:DecadeCollection a skos:Collection ;
-    rdfs:label "Decade Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Decade ;
     skos:note "All notes related to a ten-Year span used for long-range life planning."@en ;
     skos:prefLabel "Decade Collection"@en .
 
 pkmv:EffortCollection a skos:Collection ;
-    rdfs:label "Effort Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Area,
         pkmv:EffortCluster,
@@ -79,7 +75,6 @@ pkmv:EffortCollection a skos:Collection ;
     skos:prefLabel "Effort Collection"@en .
 
 pkmv:IdeaverseCollection a skos:Collection ;
-    rdfs:label "Ideaverse Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ObsidianNotes,
         pkmv:Vault ;
@@ -87,7 +82,6 @@ pkmv:IdeaverseCollection a skos:Collection ;
     skos:prefLabel "Ideaverse Collection"@en .
 
 pkmv:KnowledgeCollection a skos:Collection ;
-    rdfs:label "Knowledge Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
@@ -97,14 +91,12 @@ pkmv:KnowledgeCollection a skos:Collection ;
     skos:prefLabel "Knowledge Collection"@en .
 
 pkmv:LifeCollection a skos:Collection ;
-    rdfs:label "Life Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
     skos:note "All notes related to the top time horizon of a full lifespan."@en ;
     skos:prefLabel "Life Collection"@en .
 
 pkmv:MealDomain a skos:Collection ;
-    rdfs:label "Meal Domain"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Breakfast,
         pkmv:DMPMealPlan,
@@ -126,7 +118,6 @@ pkmv:MealDomain a skos:Collection ;
     skos:prefLabel "Meal Domain"@en .
 
 pkmv:MonthCollection a skos:Collection ;
-    rdfs:label "Month Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
@@ -137,7 +128,6 @@ pkmv:MonthCollection a skos:Collection ;
     skos:prefLabel "Month Collection"@en .
 
 pkmv:NoteTypes a skos:Collection ;
-    rdfs:label "Note Types"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Action,
         pkmv:App,
@@ -162,7 +152,6 @@ pkmv:NoteTypes a skos:Collection ;
     skos:prefLabel "Note Types"@en .
 
 pkmv:QuarterCollection a skos:Collection ;
-    rdfs:label "Quarter Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:MonthJournal,
         pkmv:Quarter,
@@ -174,7 +163,6 @@ pkmv:QuarterCollection a skos:Collection ;
     skos:prefLabel "Quarter Collection"@en .
 
 pkmv:RecipeCollection a skos:Collection ;
-    rdfs:label "Recipe Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Ingredient,
         pkmv:Nutrition,
@@ -187,7 +175,6 @@ pkmv:RecipeCollection a skos:Collection ;
     skos:prefLabel "Recipe Collection"@en .
 
 pkmv:SemanticWebStandards a skos:Collection ;
-    rdfs:label "Semantic Web Standards"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
@@ -203,7 +190,6 @@ pkmv:SemanticWebStandards a skos:Collection ;
     skos:prefLabel "Semantic Web Standards"@en .
 
 pkmv:SparkCollection a skos:Collection ;
-    rdfs:label "Spark Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;
@@ -211,7 +197,6 @@ pkmv:SparkCollection a skos:Collection ;
     skos:prefLabel "Spark Collection"@en .
 
 pkmv:TechStack a skos:Collection ;
-    rdfs:label "Tech Stack"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Cypher,
         pkmv:FastAPI,
@@ -226,7 +211,6 @@ pkmv:TechStack a skos:Collection ;
     skos:prefLabel "Tech Stack"@en .
 
 pkmv:TimeCollection a skos:Collection ;
-    rdfs:label "Time Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Time,
         pkmv:TimeCluster ;
@@ -234,7 +218,6 @@ pkmv:TimeCollection a skos:Collection ;
     skos:prefLabel "Time Collection"@en .
 
 pkmv:WeekCollection a skos:Collection ;
-    rdfs:label "Week Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Week,
         pkmv:WeekAnalysis,
@@ -251,7 +234,6 @@ pkmv:WeekCollection a skos:Collection ;
     skos:prefLabel "Week Collection"@en .
 
 pkmv:YearCollection a skos:Collection ;
-    rdfs:label "Year Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Year,
         pkmv:YearCluster,
@@ -3223,14 +3205,15 @@ pkmv:Concept a skos:Concept ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     dcterms:source pkmr:RDF-Ontology-Glossary,
         pkmr:RDF-Ontology-Glossary-Abbreviated ;
     isothes:broaderPartitive pkmv:Knowledge ;
-    rdfs:seeAlso <https://skos.org#Concept> ;
+    rdfs:seeAlso skos:Concept ;
     skos:broader pkmv:Knowledge ;
     skos:changeNote "2026-08-24 — Definition added; Scope note added; Linked artifact “skos:Concept” added (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept; Parent “Knowledge” added (by Doug Warren)"@en,
+        "2026-08-31 — Linked artifact “SKOS Concept” added; Linked artifact “SKOS Concept” removed (by Doug Warren)"@en,
         "Added definition and scope notes for Concept."@en ;
     skos:definition "A unit of thought in a knowledge organization system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -3367,7 +3350,7 @@ pkmv:Source a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     isothes:broaderPartitive pkmv:Knowledge ;
     rdfs:seeAlso dcterms:bibliographicCitation,
         dcterms:conformsTo,
@@ -3382,7 +3365,8 @@ pkmv:Source a skos:Concept ;
         "2026-08-29 — relatedMatch http://purl.org/dc/terms/conformsTo added (by Doug Warren)"@en,
         "2026-08-29 — relatedMatch http://purl.org/dc/terms/references added (by Doug Warren)"@en,
         "2026-08-29 — relatedMatch http://purl.org/dc/terms/source added (by Doug Warren)"@en,
-        "2026-08-29 — relatedMatch https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/ added (by Doug Warren)"@en ;
+        "2026-08-29 — relatedMatch https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/ added (by Doug Warren)"@en,
+        "2026-08-31 — relatedMatch https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/ removed; relatedMatch http://purl.org/dc/terms/source removed; relatedMatch http://purl.org/dc/terms/bibliographicCitation removed; relatedMatch http://purl.org/dc/terms/conformsTo removed; relatedMatch http://purl.org/dc/terms/references removed; Linked artifact “DCT Source” added; Linked artifact “DCT Biblio Citation” added; Linked artifact “DCT Conforms To” added; Linked artifact “DCT References” added; Linked artifact “DCT Specifications” added (by Doug Warren)"@en ;
     skos:definition "A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:Book,
@@ -4124,7 +4108,7 @@ pkmv:Recipe a skos:Concept ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     dcterms:source pkmr:PKM-URI-Namespace ;
     isothes:broaderPartitive pkmv:PKMMeals ;
     isothes:narrowerPartitive pkmv:Ingredient,
@@ -4141,6 +4125,9 @@ pkmv:Recipe a skos:Concept ;
         "2026-08-26 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Parent “PKM Meals” added (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept (by Doug Warren)"@en,
+        "2026-08-30 — Linked artifact “SKOS Concept” added; Linked artifact “https://schema.org/Recipe” removed (by Doug Warren)"@en,
+        "2026-08-31 — Linked artifact “SKOS Concept” added; Linked artifact “schema:Recipe” removed (by Doug Warren)"@en,
+        "2026-08-31 — Linked artifact “schema:Recipe” added; Linked artifact “SKOS Concept” removed (by Doug Warren)"@en,
         "Added definition and scope notes to Recipe in SKOS editor. Remove redundant Recipe2 generated by Proposals when already existed."@en ;
     skos:definition "A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -4337,7 +4324,7 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-08-30"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     dcterms:publisher pkma:Doug-Warren ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:title "PKM Vocabulary"@en ;

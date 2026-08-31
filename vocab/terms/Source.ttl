@@ -10,7 +10,7 @@ pkmv:Source a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     isothes:broaderPartitive pkmv:Knowledge ;
     rdfs:seeAlso dcterms:bibliographicCitation,
         dcterms:conformsTo,

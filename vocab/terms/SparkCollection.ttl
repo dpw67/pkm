@@ -1,9 +1,7 @@
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 pkmv:SparkCollection a skos:Collection ;
-    rdfs:label "Spark Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;

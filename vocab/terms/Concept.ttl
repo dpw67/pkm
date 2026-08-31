@@ -17,11 +17,11 @@ pkmv:Concept a skos:Concept ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     dcterms:source pkmr:RDF-Ontology-Glossary,
         pkmr:RDF-Ontology-Glossary-Abbreviated ;
     isothes:broaderPartitive pkmv:Knowledge ;
-    rdfs:seeAlso <https://skos.org#Concept> ;
+    rdfs:seeAlso skos:Concept ;
     skos:broader pkmv:Knowledge ;
     skos:definition "A unit of thought in a knowledge organization system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;

@@ -149,6 +149,12 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
         fm.append("  - vocab/deprecated")
     fm.append("publish: true")
     fm.append(f"uri: {base}{local}")
+    # Opt out of the frontmatter-modified-date plugin. `modified` here is
+    # dcterms:modified -- the day the TERM changed -- and the plugin would
+    # overwrite it with the time this FILE was last written, i.e. whenever
+    # `make notes` last ran. Carried in the file rather than set as a folder
+    # exclusion so it survives renames and moves between vaults.
+    fm.append("exclude_modified_update: true")
     fm.append("---")
 
     body: list[str] = [f"#vocab/{kind} ", "", f"# {label}", ""]

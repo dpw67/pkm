@@ -13,6 +13,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:ConceptCollection a skos:Collection ;
+    rdfs:label "Concept Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Cypher,
@@ -28,6 +29,7 @@ pkmv:ConceptCollection a skos:Collection ;
     skos:prefLabel "Concept Collection"@en .
 
 pkmv:DayCollection a skos:Collection ;
+    rdfs:label "Day Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Day,
         pkmv:DayActions,
@@ -59,12 +61,14 @@ pkmv:DayCollection a skos:Collection ;
     skos:prefLabel "Day Collection"@en .
 
 pkmv:DecadeCollection a skos:Collection ;
+    rdfs:label "Decade Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Decade ;
     skos:note "All notes related to a ten-Year span used for long-range life planning."@en ;
     skos:prefLabel "Decade Collection"@en .
 
 pkmv:EffortCollection a skos:Collection ;
+    rdfs:label "Effort Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Area,
         pkmv:EffortCluster,
@@ -75,6 +79,7 @@ pkmv:EffortCollection a skos:Collection ;
     skos:prefLabel "Effort Collection"@en .
 
 pkmv:IdeaverseCollection a skos:Collection ;
+    rdfs:label "Ideaverse Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ObsidianNotes,
         pkmv:Vault ;
@@ -82,6 +87,7 @@ pkmv:IdeaverseCollection a skos:Collection ;
     skos:prefLabel "Ideaverse Collection"@en .
 
 pkmv:KnowledgeCollection a skos:Collection ;
+    rdfs:label "Knowledge Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
@@ -91,12 +97,14 @@ pkmv:KnowledgeCollection a skos:Collection ;
     skos:prefLabel "Knowledge Collection"@en .
 
 pkmv:LifeCollection a skos:Collection ;
+    rdfs:label "Life Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
     skos:note "All notes related to the top time horizon of a full lifespan."@en ;
     skos:prefLabel "Life Collection"@en .
 
 pkmv:MealDomain a skos:Collection ;
+    rdfs:label "Meal Domain"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Breakfast,
         pkmv:DMPMealPlan,
@@ -118,6 +126,7 @@ pkmv:MealDomain a skos:Collection ;
     skos:prefLabel "Meal Domain"@en .
 
 pkmv:MonthCollection a skos:Collection ;
+    rdfs:label "Month Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
@@ -128,6 +137,7 @@ pkmv:MonthCollection a skos:Collection ;
     skos:prefLabel "Month Collection"@en .
 
 pkmv:NoteTypes a skos:Collection ;
+    rdfs:label "Note Types"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Action,
         pkmv:App,
@@ -152,6 +162,7 @@ pkmv:NoteTypes a skos:Collection ;
     skos:prefLabel "Note Types"@en .
 
 pkmv:QuarterCollection a skos:Collection ;
+    rdfs:label "Quarter Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:MonthJournal,
         pkmv:Quarter,
@@ -163,6 +174,7 @@ pkmv:QuarterCollection a skos:Collection ;
     skos:prefLabel "Quarter Collection"@en .
 
 pkmv:RecipeCollection a skos:Collection ;
+    rdfs:label "Recipe Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Ingredient,
         pkmv:Nutrition,
@@ -175,6 +187,7 @@ pkmv:RecipeCollection a skos:Collection ;
     skos:prefLabel "Recipe Collection"@en .
 
 pkmv:SemanticWebStandards a skos:Collection ;
+    rdfs:label "Semantic Web Standards"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
@@ -190,6 +203,7 @@ pkmv:SemanticWebStandards a skos:Collection ;
     skos:prefLabel "Semantic Web Standards"@en .
 
 pkmv:SparkCollection a skos:Collection ;
+    rdfs:label "Spark Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;
@@ -197,6 +211,7 @@ pkmv:SparkCollection a skos:Collection ;
     skos:prefLabel "Spark Collection"@en .
 
 pkmv:TechStack a skos:Collection ;
+    rdfs:label "Tech Stack"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Cypher,
         pkmv:FastAPI,
@@ -211,6 +226,7 @@ pkmv:TechStack a skos:Collection ;
     skos:prefLabel "Tech Stack"@en .
 
 pkmv:TimeCollection a skos:Collection ;
+    rdfs:label "Time Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Time,
         pkmv:TimeCluster ;
@@ -218,6 +234,7 @@ pkmv:TimeCollection a skos:Collection ;
     skos:prefLabel "Time Collection"@en .
 
 pkmv:WeekCollection a skos:Collection ;
+    rdfs:label "Week Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Week,
         pkmv:WeekAnalysis,
@@ -234,6 +251,7 @@ pkmv:WeekCollection a skos:Collection ;
     skos:prefLabel "Week Collection"@en .
 
 pkmv:YearCollection a skos:Collection ;
+    rdfs:label "Year Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Year,
         pkmv:YearCluster,
@@ -273,6 +291,7 @@ pkmr:RDF-Ontology-Glossary-Abbreviated a foaf:Document ;
     foaf:page <https://jessicatalisman.substack.com/api/v1/file/75abcfc1-acec-4f9c-aeb2-6a27d455ffd5.pdf> .
 
 pkmv:ACEOrganization a skos:Concept ;
+    rdfs:label "ACE Organization"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -290,6 +309,7 @@ pkmv:ACEOrganization a skos:Concept ;
     skos:scopeNote "- Frameworks and methodology recommended by Nick Milo and Linking Your Thinking (LYT) for linked note systems like Obsidian."@en .
 
 pkmv:ARCIdeation a skos:Concept ;
+    rdfs:label "ARC Ideation"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -306,6 +326,7 @@ pkmv:ARCIdeation a skos:Concept ;
     skos:scopeNote "- Frameworks and methodology recommended by Nick Milo and Linking Your Thinking (LYT) for linked note systems like Obsidian."@en .
 
 pkmv:AdvancedURI a skos:Concept ;
+    rdfs:label "Advanced URI"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -332,6 +353,7 @@ pkmv:AdvancedURI a skos:Concept ;
 """@en .
 
 pkmv:AppleHealth a skos:Concept ;
+    rdfs:label "Apple Health"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -346,6 +368,7 @@ pkmv:AppleHealth a skos:Concept ;
     skos:scopeNote "- Includes data from Apple Health."@en .
 
 pkmv:Base a skos:Concept ;
+    rdfs:label "Base"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -361,6 +384,7 @@ pkmv:Base a skos:Concept ;
 - Enables CSV export from a base for integration with other apps such as Neo4j as well as Swift and Python apps, services, scripts, commands, or agents."""@en .
 
 pkmv:Bases a skos:Concept ;
+    rdfs:label "Bases"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -377,6 +401,7 @@ pkmv:Bases a skos:Concept ;
 - Enables CSV export of notes and properties."""@en .
 
 pkmv:Book a skos:Concept ;
+    rdfs:label "Book"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -397,6 +422,7 @@ pkmv:Book a skos:Concept ;
 - Includes properties for title, subtitle, authors, categories, description, publisher, total pages, cover URL small cover URL, local cover image, publishDate, and ISBN."""@en .
 
 pkmv:BookSearch a skos:Concept ;
+    rdfs:label "Book Search"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -411,6 +437,7 @@ pkmv:BookSearch a skos:Concept ;
     skos:scopeNote "Simplifies creation of Book notes by downloading relevant properties and cover image."@en .
 
 pkmv:Canvas a skos:Concept ;
+    rdfs:label "Canvas"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -425,6 +452,7 @@ pkmv:Canvas a skos:Concept ;
     skos:scopeNote "- Used for visualizing and organizing related notes with their relationships."@en .
 
 pkmv:ClaudeChat a skos:Concept ;
+    rdfs:label "Claude Chat"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -439,6 +467,7 @@ pkmv:ClaudeChat a skos:Concept ;
     skos:scopeNote "- Available for macOS, iOS, iPadOS, and web browsers."@en .
 
 pkmv:ClaudeCowork a skos:Concept ;
+    rdfs:label "Claude Cowork"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -453,6 +482,7 @@ pkmv:ClaudeCowork a skos:Concept ;
     skos:scopeNote "- Available for macOS with Apple Silicon."@en .
 
 pkmv:ClaudeDesktop a skos:Concept ;
+    rdfs:label "Claude Desktop"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -468,6 +498,7 @@ pkmv:ClaudeDesktop a skos:Concept ;
 - Includes Claude Chat; Cowork requires Apple Silicon.."""@en .
 
 pkmv:Dataview a skos:Concept ;
+    rdfs:label "Dataview"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -483,6 +514,7 @@ pkmv:Dataview a skos:Concept ;
 - More generalized features are now available with Obsidian Bases."""@en .
 
 pkmv:DayMeeting a skos:Concept ;
+    rdfs:label "Day Meeting"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -498,6 +530,7 @@ pkmv:DayMeeting a skos:Concept ;
     skos:scopeNote "Records what happened with a meeting event on a specific day, what's next, and who does what and when."@en .
 
 pkmv:DexcomData a skos:Concept ;
+    rdfs:label "Dexcom Data"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -513,6 +546,7 @@ pkmv:DexcomData a skos:Concept ;
     skos:scopeNote "- Includes data from Clarity website via the Dexcom API for glucose readings collected by sensor every 5 minutes."@en .
 
 pkmv:EffortIndex a skos:Concept ;
+    rdfs:label "Effort Index"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -529,6 +563,7 @@ pkmv:EffortIndex a skos:Concept ;
     skos:scopeNote "Hub note connecting EffortPlan, EffortLog, EffortJournal, EffortReview, and related notes for an Effort."@en .
 
 pkmv:EffortJournal a skos:Concept ;
+    rdfs:label "Effort Journal"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -546,6 +581,7 @@ pkmv:EffortJournal a skos:Concept ;
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light)."""@en .
 
 pkmv:EffortLog a skos:Concept ;
+    rdfs:label "Effort Log"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -562,6 +598,7 @@ pkmv:EffortLog a skos:Concept ;
     skos:scopeNote "Captures events about an effort with timestamps as they occur: factual, not interpretive."@en .
 
 pkmv:EffortPlan a skos:Concept ;
+    rdfs:label "Effort Plan"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -578,6 +615,7 @@ pkmv:EffortPlan a skos:Concept ;
     skos:scopeNote "Forward-looking: created for the effort, distinct from the retrospective EffortReview."@en .
 
 pkmv:EffortReview a skos:Concept ;
+    rdfs:label "Effort Review"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -595,6 +633,7 @@ pkmv:EffortReview a skos:Concept ;
 - Includes Plus-Minus-Next (PMN) analysis by Claude AI: what worked, what needs improving, and what's next."""@en .
 
 pkmv:Excalidraw a skos:Concept ;
+    rdfs:label "Excalidraw"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -610,6 +649,7 @@ pkmv:Excalidraw a skos:Concept ;
 - Enables linking to documents and other drawings."""@en .
 
 pkmv:Finance a skos:Concept ;
+    rdfs:label "Finance"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -625,6 +665,7 @@ pkmv:Finance a skos:Concept ;
 - It includes ongoing responsibilities that includes many efforts, projects, and actions."""@en .
 
 pkmv:GlookoData a skos:Concept ;
+    rdfs:label "Glooko Data"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -640,6 +681,7 @@ pkmv:GlookoData a skos:Concept ;
 - A Glooko API is available, but requests for approval have been ignored."""@en .
 
 pkmv:Health a skos:Concept ;
+    rdfs:label "Health"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -655,6 +697,7 @@ pkmv:Health a skos:Concept ;
 - It includes ongoing responsibilities that includes many efforts, projects, and actions."""@en .
 
 pkmv:IdeaEmergence a skos:Concept ;
+    rdfs:label "Idea Emergence"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -671,6 +714,7 @@ pkmv:IdeaEmergence a skos:Concept ;
     skos:scopeNote "- Process and methodology recommended by Nick Milo and Linking Your Thinking (LYT) for linked note systems like Obsidian."@en .
 
 pkmv:LocalRESTAPIWithMCP a skos:Concept ;
+    rdfs:label "Local REST API with MCP"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -692,6 +736,7 @@ pkmv:LocalRESTAPIWithMCP a skos:Concept ;
 - Open files in Obsidian user interface."""@en .
 
 pkmv:Map a skos:Concept ;
+    rdfs:label "Map"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -710,6 +755,7 @@ pkmv:Map a skos:Concept ;
 - Connected with other maps in a network to provide organization and navigation for the linked notes in a PKM system."""@en .
 
 pkmv:Movie a skos:Concept ;
+    rdfs:label "Movie"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -726,6 +772,7 @@ pkmv:Movie a skos:Concept ;
     skos:scopeNote "- Includes properties about the movie and its properties. "@en .
 
 pkmv:Neo4jDesktop a skos:Concept ;
+    rdfs:label "Neo4j Desktop"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -740,6 +787,7 @@ pkmv:Neo4jDesktop a skos:Concept ;
     skos:scopeNote "- Includes knowledge graph, context graph, memory (short-term and long-term), and PKM domain model."@en .
 
 pkmv:Note a skos:Concept ;
+    rdfs:label "Note"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -755,6 +803,7 @@ pkmv:Note a skos:Concept ;
 - Enables more reuse of knowledge and more focused linking."""@en .
 
 pkmv:ObsidianSettings a skos:Concept ;
+    rdfs:label "Obsidian Settings"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -770,6 +819,7 @@ pkmv:ObsidianSettings a skos:Concept ;
     skos:scopeNote "- Provides persistent storage in JSON files of settings."@en .
 
 pkmv:PKMNeo4jServiceProject a skos:Concept ;
+    rdfs:label "PKM Neo4j Service Project"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -786,6 +836,7 @@ pkmv:PKMNeo4jServiceProject a skos:Concept ;
     skos:scopeNote "Includes Python services for Calendar, Health, Grqph, Obsidian, Recipe, and Review."@en .
 
 pkmv:PKMPythonAgents a skos:Concept ;
+    rdfs:label "PKM Python Agents"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -800,6 +851,7 @@ pkmv:PKMPythonAgents a skos:Concept ;
     skos:scopeNote "Includes Python agents."@en .
 
 pkmv:PeriodicNotes a skos:Concept ;
+    rdfs:label "Periodic Notes"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -814,6 +866,7 @@ pkmv:PeriodicNotes a skos:Concept ;
     skos:scopeNote "Extends the core plugin for Daily Notes to include other time horizons: Week, Month, Quarter, and Year."@en .
 
 pkmv:Person a skos:Concept ;
+    rdfs:label "Person"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -830,6 +883,7 @@ pkmv:Person a skos:Concept ;
     skos:scopeNote "- Includes properties about the person. "@en .
 
 pkmv:Product a skos:Concept ;
+    rdfs:label "Product"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -842,6 +896,7 @@ pkmv:Product a skos:Concept ;
     skos:scopeNote "Purchasable food unit; source of nutrition and carb data for meals."@en .
 
 pkmv:Publish a skos:Concept ;
+    rdfs:label "Publish"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -856,6 +911,7 @@ pkmv:Publish a skos:Concept ;
     skos:scopeNote "- Enables sharing of Obsidian notes to a wider audience."@en .
 
 pkmv:QuickAdd a skos:Concept ;
+    rdfs:label "QuickAdd"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -874,6 +930,7 @@ pkmv:QuickAdd a skos:Concept ;
 - QuickAdd format syntax is available for all choices."""@en .
 
 pkmv:Quote a skos:Concept ;
+    rdfs:label "Quote"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -888,6 +945,7 @@ pkmv:Quote a skos:Concept ;
     skos:scopeNote "Includes the specific quote as well as attribution source information."@en .
 
 pkmv:Sync a skos:Concept ;
+    rdfs:label "Sync"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -902,6 +960,7 @@ pkmv:Sync a skos:Concept ;
     skos:scopeNote "- Supports sharing of Obsidian notes across multiple devices, such as macOS, iOS, iPadOS, and Windows."@en .
 
 pkmv:Templater a skos:Concept ;
+    rdfs:label "Templater"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -916,6 +975,7 @@ pkmv:Templater a skos:Concept ;
     skos:scopeNote "- Provides a consistent structure and layout for specific types of notes."@en .
 
 pkmv:TopicIndex a skos:Concept ;
+    rdfs:label "Topic Index"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -930,6 +990,7 @@ pkmv:TopicIndex a skos:Concept ;
     skos:scopeNote "Hub note connecting TopicPlan, TopicLog, TopicJournal, TopicReview, and related notes for a Topic."@en .
 
 pkmv:TopicJournal a skos:Concept ;
+    rdfs:label "Topic Journal"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -947,6 +1008,7 @@ pkmv:TopicJournal a skos:Concept ;
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light)."""@en .
 
 pkmv:TopicLog a skos:Concept ;
+    rdfs:label "Topic Log"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -962,6 +1024,7 @@ pkmv:TopicLog a skos:Concept ;
     skos:scopeNote "Captures events about a topic with timestamps as they occur: factual, not interpretive."@en .
 
 pkmv:TopicPlan a skos:Concept ;
+    rdfs:label "Topic Plan"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -977,6 +1040,7 @@ pkmv:TopicPlan a skos:Concept ;
     skos:scopeNote "Forward-looking: created for a topic, distinct from the retrospective TopicReview."@en .
 
 pkmv:TopicReview a skos:Concept ;
+    rdfs:label "Topic Review"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -993,6 +1057,7 @@ pkmv:TopicReview a skos:Concept ;
 - Includes Plus-Minus-Next (PMN) analysis by Claude AI: what worked, what needs improving, and what's next."""@en .
 
 pkmv:View a skos:Concept ;
+    rdfs:label "View"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1007,6 +1072,7 @@ pkmv:View a skos:Concept ;
     skos:scopeNote "Helps presentation and navigation for a collection of notes."@en .
 
 pkmv:Workspaces a skos:Concept ;
+    rdfs:label "Workspaces"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1021,6 +1087,7 @@ pkmv:Workspaces a skos:Concept ;
     skos:scopeNote "- Enables customized arrangement of Obsidian notes in different layouts."@en .
 
 pkmv:ActivityEvent a skos:Concept ;
+    rdfs:label "ActivityEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1037,6 +1104,7 @@ pkmv:ActivityEvent a skos:Concept ;
     skos:scopeNote "General activity-tracking events not covered by a more specific type - check for overlap with HealthEvent/MealEvent before applying."@en .
 
 pkmv:AgentEvent a skos:Concept ;
+    rdfs:label "AgentEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1054,6 +1122,7 @@ pkmv:AgentEvent a skos:Concept ;
     skos:scopeNote "Events originated or performed by an AI agent (e.g. Claude-driven actions in the PKM system), as distinct from UserEvent (human) and ToolEvent/ServiceEvent (system)."@en .
 
 pkmv:AlertEvent a skos:Concept ;
+    rdfs:label "AlertEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1068,6 +1137,7 @@ pkmv:AlertEvent a skos:Concept ;
     skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc. "@en .
 
 pkmv:AppEvent a skos:Concept ;
+    rdfs:label "AppEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1085,6 +1155,7 @@ pkmv:AppEvent a skos:Concept ;
     skos:scopeNote "Events originated within a specific application (PKMMeals, PKMStudio), distinct from DeviceEvent (OS/hardware) and ServiceEvent (backend)."@en .
 
 pkmv:ArchiveFolder a skos:Concept ;
+    rdfs:label "Archive Folder"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1100,6 +1171,7 @@ pkmv:ArchiveFolder a skos:Concept ;
     skos:scopeNote "- This includes notes that are no longer actively being used in the PKM system."@en .
 
 pkmv:AtlasFolder a skos:Concept ;
+    rdfs:label "Atlas Folder"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1119,6 +1191,7 @@ pkmv:AtlasFolder a skos:Concept ;
 - Additional spaces in an Ideaverse vault provide infrastructure with the + Folder (Add / Plus) as the Obsidian "inbox", x Folder (Extra / Support), and z Folder (Archive)."""@en .
 
 pkmv:BloodPressureEvent a skos:Concept ;
+    rdfs:label "Blood Pressure Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1136,6 +1209,7 @@ pkmv:BloodPressureEvent a skos:Concept ;
     skos:scopeNote "Narrower than HealthEvent; a single blood-pressure reading, distinct from GlucoseEvent, InsulinEvent, and EKGEvent."@en .
 
 pkmv:Clipping a skos:Concept ;
+    rdfs:label "Clipping"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1152,6 +1226,7 @@ pkmv:Clipping a skos:Concept ;
     skos:scopeNote "Web Clipped automatically uses a clipping template to populate metadata about the source in Obsidian properties (YAML frontmatter), in addition to the web content."@en .
 
 pkmv:ContextGraph a skos:Concept ;
+    rdfs:label "Context Graph"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1167,6 +1242,7 @@ pkmv:ContextGraph a skos:Concept ;
     skos:scopeNote "- Important for services and agents."@en .
 
 pkmv:DMPMealPlan a skos:Concept ;
+    rdfs:label "DMP Meal Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1180,6 +1256,7 @@ pkmv:DMPMealPlan a skos:Concept ;
     skos:scopeNote "Primary weekly meal-planning source; recipes exposed by Wordpress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app."@en .
 
 pkmv:DeviceEvent a skos:Concept ;
+    rdfs:label "DeviceEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1196,6 +1273,7 @@ pkmv:DeviceEvent a skos:Concept ;
     skos:scopeNote "Events originated at the device/OS level (e.g. an iOS Shortcut trigger), distinct from AppEvent and ServiceEvent."@en .
 
 pkmv:EKGEvent a skos:Concept ;
+    rdfs:label "EKG Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1213,6 +1291,7 @@ pkmv:EKGEvent a skos:Concept ;
     skos:scopeNote "Narrower than HealthEvent; a single EKG reading or recording, alongside GlucoseEvent, InsulinEvent, and BloodPressureEvent."@en .
 
 pkmv:ExtraFolder a skos:Concept ;
+    rdfs:label "Extra Folder"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1231,6 +1310,7 @@ pkmv:ExtraFolder a skos:Concept ;
 - It does not include knowledge content itself."""@en .
 
 pkmv:Glossary a skos:Concept ;
+    rdfs:label "Glossary"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1250,6 +1330,7 @@ pkmv:Glossary a skos:Concept ;
 - Also serves as a reference for the shared vocabulary of shared language for PKM systems."""@en .
 
 pkmv:GlucoseEvent a skos:Concept ;
+    rdfs:label "GlucoseEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1266,6 +1347,7 @@ pkmv:GlucoseEvent a skos:Concept ;
     skos:scopeNote "Narrower than HealthEvent (and DiabetesEvent); a single blood-glucose reading synced via the health-tracking pipeline."@en .
 
 pkmv:InsulinEvent a skos:Concept ;
+    rdfs:label "InsulinEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1282,6 +1364,7 @@ pkmv:InsulinEvent a skos:Concept ;
     skos:scopeNote "Narrower than HealthEvent (and DiabetesEvent); a single insulin dose or administration event."@en .
 
 pkmv:KnowledgeSystemArchitecture a skos:Concept ;
+    rdfs:label "Knowledge System Architecture"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1298,6 +1381,7 @@ pkmv:KnowledgeSystemArchitecture a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Life a skos:Concept ;
+    rdfs:label "Life"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1314,6 +1398,7 @@ pkmv:Life a skos:Concept ;
 - An area that includes your entire lifespan."""@en .
 
 pkmv:MealEvent a skos:Concept ;
+    rdfs:label "MealEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1330,6 +1415,7 @@ pkmv:MealEvent a skos:Concept ;
     skos:scopeNote "The occurrence of a Meal (a logged eating occasion), as distinct from the Meal/Recipe planning concepts themselves."@en .
 
 pkmv:MeditationEvent a skos:Concept ;
+    rdfs:label "MeditationEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1344,6 +1430,7 @@ pkmv:MeditationEvent a skos:Concept ;
     skos:scopeNote "- Capture information from Calm and Apple Health apps."@en .
 
 pkmv:MemoryGraph a skos:Concept ;
+    rdfs:label "Memory Graph"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1359,6 +1446,7 @@ pkmv:MemoryGraph a skos:Concept ;
     skos:scopeNote "- Important for services and agents."@en .
 
 pkmv:Menu a skos:Concept ;
+    rdfs:label "Menu"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1373,6 +1461,7 @@ pkmv:Menu a skos:Concept ;
     skos:scopeNote "Grouping of dishes or recipes, e.g. for an event or a restaurant."@en .
 
 pkmv:Month-Health a skos:Concept ;
+    rdfs:label "Month Health"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1391,6 +1480,7 @@ pkmv:Month-Health a skos:Concept ;
     skos:scopeNote "Parent for month-centric health artifacts including diabetes tracking."@en .
 
 pkmv:NoteEvent a skos:Concept ;
+    rdfs:label "NoteEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1407,6 +1497,7 @@ pkmv:NoteEvent a skos:Concept ;
     skos:scopeNote "Events related to note creation, modification, or lifecycle (e.g. an Obsidian note created/updated), distinct from ScriptEvent (automation-triggered)."@en .
 
 pkmv:PKMPythonAPI a skos:Concept ;
+    rdfs:label "PKM Python API"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1422,6 +1513,7 @@ pkmv:PKMPythonAPI a skos:Concept ;
     skos:scopeNote "Includes FastAPI routes for Python services, classes, and functions."@en .
 
 pkmv:PKMPythonCommands a skos:Concept ;
+    rdfs:label "PKM Python Commands"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1439,6 +1531,7 @@ pkmv:PKMPythonCommands a skos:Concept ;
     skos:scopeNote "Includes Python commands."@en .
 
 pkmv:PKMStudio a skos:Concept ;
+    rdfs:label "PKM Studio"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1461,6 +1554,7 @@ pkmv:PKMStudio a skos:Concept ;
 - Supports development and management of concepts, glossary, taxonomy, thesaurus, ontology, knowledge graph, schema, metadata, and associated development artifacts."""@en .
 
 pkmv:Package a skos:Concept ;
+    rdfs:label "Package"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1475,6 +1569,7 @@ pkmv:Package a skos:Concept ;
     skos:scopeNote "Unit of a Product as purchased; carries label and serving data as well as photo (front, back, and/or side)."@en .
 
 pkmv:QuarterHealth a skos:Concept ;
+    rdfs:label "Quarter Health"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1490,6 +1585,7 @@ pkmv:QuarterHealth a skos:Concept ;
     skos:scopeNote "Parent for quarter-centric health artifacts including diabetes tracking."@en .
 
 pkmv:QuarterJournal a skos:Concept ;
+    rdfs:label "Quarter Journal"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1506,6 +1602,7 @@ pkmv:QuarterJournal a skos:Concept ;
     skos:scopeNote "Quarterly subjective narrative; complements QuarterJournal."@en .
 
 pkmv:Restaurant a skos:Concept ;
+    rdfs:label "Restaurant"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1519,6 +1616,7 @@ pkmv:Restaurant a skos:Concept ;
     skos:scopeNote "Context for meals not prepared at home; relevant to carb-estimation for diabetes tracking."@en .
 
 pkmv:ScriptEvent a skos:Concept ;
+    rdfs:label "ScriptEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1536,6 +1634,7 @@ pkmv:ScriptEvent a skos:Concept ;
     skos:scopeNote "Events originated by a Script (Python/Swift automation run), distinct from ToolEvent (interactive tool use) and AgentEvent (AI-originated)."@en .
 
 pkmv:ServiceEvent a skos:Concept ;
+    rdfs:label "ServiceEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1553,6 +1652,7 @@ pkmv:ServiceEvent a skos:Concept ;
     skos:scopeNote "Events originated by a backend service (e.g. pkm-neo4j-service), distinct from AppEvent (client) and DeviceEvent (device/OS)."@en .
 
 pkmv:SleepEvent a skos:Concept ;
+    rdfs:label "SleepEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1567,6 +1667,7 @@ pkmv:SleepEvent a skos:Concept ;
     skos:scopeNote "- Capture information from Sleep Cycle and Apple Health apps."@en .
 
 pkmv:UserEvent a skos:Concept ;
+    rdfs:label "UserEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1583,6 +1684,7 @@ pkmv:UserEvent a skos:Concept ;
     skos:scopeNote "Events directly originated by the human user, as distinct from AgentEvent, DeviceEvent, AppEvent, ToolEvent, and ServiceEvent."@en .
 
 pkmv:WeightEvent a skos:Concept ;
+    rdfs:label "WeightEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -1598,6 +1700,7 @@ pkmv:WeightEvent a skos:Concept ;
 - If an Bluetooth-enable scale, capture the current weight reading."""@en .
 
 pkmv:Widget a skos:Concept ;
+    rdfs:label "Widget"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1616,6 +1719,7 @@ pkmr:ACE-Organization a foaf:Document ;
     rdfs:comment "ACE for Organization, Knowledge Pack (Version 1.0) by Nick Milo & LYT, licensed under CC BY-NC-ND 4.0."@en .
 
 pkmv:Action a skos:Concept ;
+    rdfs:label "Action"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1635,6 +1739,7 @@ pkmv:Action a skos:Concept ;
 - Parallel actions can use a numbered list to identify the sequence (1., 2., etc.).  """@en .
 
 pkmv:App a skos:Concept ;
+    rdfs:label "App"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1649,6 +1754,7 @@ pkmv:App a skos:Concept ;
     skos:scopeNote "A fundamental software capability for getting work done."@en .
 
 pkmv:AppIntent a skos:Concept ;
+    rdfs:label "App Intent"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1668,6 +1774,7 @@ pkmv:AppIntent a skos:Concept ;
     skos:scopeNote "App intents framework entry point; the invocable-action layer of Swift apps."@en .
 
 pkmv:Breakfast a skos:Concept ;
+    rdfs:label "Breakfast"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1682,6 +1789,7 @@ pkmv:Breakfast a skos:Concept ;
     skos:scopeNote "A DayMeal occasion type."@en .
 
 pkmv:DayActions a skos:Concept ;
+    rdfs:label "Day Actions"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1699,6 +1807,7 @@ pkmv:DayActions a skos:Concept ;
     skos:scopeNote "Narrower than the general Action concept - the daily aggregation note, alongside DayLinks within DayClusterSupport."@en .
 
 pkmv:DayAnalysis a skos:Concept ;
+    rdfs:label "Day Analysis"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1718,6 +1827,7 @@ pkmv:DayAnalysis a skos:Concept ;
 - Compares DayPlan intentions and actual DayLog activities."""@en .
 
 pkmv:DayBase a skos:Concept ;
+    rdfs:label "Day Base"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1734,6 +1844,7 @@ pkmv:DayBase a skos:Concept ;
 - Used for metadata management and workflow processing."""@en .
 
 pkmv:DayBoard a skos:Concept ;
+    rdfs:label "Day Board"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1751,6 +1862,7 @@ pkmv:DayBoard a skos:Concept ;
 - Used for workflow processing by status, stage, or category."""@en .
 
 pkmv:DayCanvas a skos:Concept ;
+    rdfs:label "Day Canvas"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1766,6 +1878,7 @@ pkmv:DayCanvas a skos:Concept ;
     skos:scopeNote "Visualize a set of related notes, images, and groups with arrows for labeled relationships."@en .
 
 pkmv:DayDiabetes a skos:Concept ;
+    rdfs:label "Day Diabetes"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1783,6 +1896,7 @@ pkmv:DayDiabetes a skos:Concept ;
     skos:scopeNote "Produced by the Morning Review workflow from Dexcom and Glooko data for the previous day."@en .
 
 pkmv:DayDiabetesAnalysis a skos:Concept ;
+    rdfs:label "Day Diabetes Analysis"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1800,6 +1914,7 @@ pkmv:DayDiabetesAnalysis a skos:Concept ;
     skos:scopeNote "Analytical layer of DayDiabetes: identifies patterns, excursions, and likely causes."@en .
 
 pkmv:DayDiagram a skos:Concept ;
+    rdfs:label "Day Diagram"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1815,6 +1930,7 @@ pkmv:DayDiagram a skos:Concept ;
     skos:scopeNote "- Offers visual tools for UML models, flow charts, etc."@en .
 
 pkmv:DayDrawing a skos:Concept ;
+    rdfs:label "Day Drawing"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1830,6 +1946,7 @@ pkmv:DayDrawing a skos:Concept ;
     skos:scopeNote "Visually organize and layout notes, groups, and relationships, along with images, links, etc."@en .
 
 pkmv:DayHealth a skos:Concept ;
+    rdfs:label "Day Health"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1847,6 +1964,7 @@ pkmv:DayHealth a skos:Concept ;
     skos:scopeNote "Parent for day-centric health artifacts including diabetes tracking."@en .
 
 pkmv:DayIndex a skos:Concept ;
+    rdfs:label "Day Index"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1869,6 +1987,7 @@ pkmv:DayIndex a skos:Concept ;
     skos:scopeNote "Hub note connecting DayPlan, DayLog, DayJournal, DayReview, and related notes for one Day."@en .
 
 pkmv:DayJournal a skos:Concept ;
+    rdfs:label "Day Journal"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1888,6 +2007,7 @@ pkmv:DayJournal a skos:Concept ;
 - Primarily formatted as text paragraphs and/or headings as appropriate; whereas DayLog is typically timestamped bullet or numbered lists rather than written paragraphs."""@en .
 
 pkmv:DayLinks a skos:Concept ;
+    rdfs:label "Day Links"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1904,6 +2024,7 @@ pkmv:DayLinks a skos:Concept ;
     skos:scopeNote "Alongside DayActions within DayClusterSupport; used for reference material rather than actionable tasks."@en .
 
 pkmv:DayLog a skos:Concept ;
+    rdfs:label "Day Log"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1922,6 +2043,7 @@ pkmv:DayLog a skos:Concept ;
     skos:scopeNote "Captures events and timestamps as they occur: factual, not interpretive."@en .
 
 pkmv:DayMindmap a skos:Concept ;
+    rdfs:label "Day Mindmap"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1938,6 +2060,7 @@ pkmv:DayMindmap a skos:Concept ;
     skos:scopeNote "Useful for brainstorming, idea generation, planning, and organizing."@en .
 
 pkmv:DayPlan a skos:Concept ;
+    rdfs:label "Day Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1955,6 +2078,7 @@ pkmv:DayPlan a skos:Concept ;
     skos:scopeNote "Forward-looking: created for the upcoming day, distinct from the retrospective DayReview."@en .
 
 pkmv:DayReview a skos:Concept ;
+    rdfs:label "Day Review"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1973,6 +2097,7 @@ pkmv:DayReview a skos:Concept ;
 - Includes Plus-Minus-Next (PMN) analysis: what worked, what needs improving, and what's next."""@en .
 
 pkmv:DaySchedule a skos:Concept ;
+    rdfs:label "Day Schedule"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -1990,6 +2115,7 @@ pkmv:DaySchedule a skos:Concept ;
     skos:scopeNote "Time-specific commitments; distinct from DayPlan's priority list."@en .
 
 pkmv:DayView a skos:Concept ;
+    rdfs:label "Day View"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2005,6 +2131,7 @@ pkmv:DayView a skos:Concept ;
     skos:scopeNote "Provides a dashboard view with frequent or useful Obsidian base views for selected filters, properties, group, sort, formula, and sequence criteria."@en .
 
 pkmv:Decade a skos:Concept ;
+    rdfs:label "Decade"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2019,6 +2146,7 @@ pkmv:Decade a skos:Concept ;
     skos:scopeNote "Groups years via IN_DECADE: strategic, low-frequency time horizon."@en .
 
 pkmv:Dinner a skos:Concept ;
+    rdfs:label "Dinner"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2036,6 +2164,7 @@ pkmv:Dinner a skos:Concept ;
     skos:scopeNote "A DayMeal occasion type."@en .
 
 pkmv:Draft a skos:Concept ;
+    rdfs:label "Draft"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2052,6 +2181,7 @@ pkmv:Draft a skos:Concept ;
 - The Drafts app adds `draft/note` to the tags property, as well as a `object: draft` and `type: note` to these notes to simplify workflow processing for these drafts."""@en .
 
 pkmv:Focus a skos:Concept ;
+    rdfs:label "Focus"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2067,6 +2197,7 @@ pkmv:Focus a skos:Concept ;
     skos:scopeNote "A flag for active areas of concentration (e.g. within a Day or Week cluster) - confirm relationship to Area and Project."@en .
 
 pkmv:ISOStandard a skos:Concept ;
+    rdfs:label "ISO Standard"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -2083,6 +2214,7 @@ pkmv:ISOStandard a skos:Concept ;
     skos:scopeNote "Covers standards such as ISO 25964 (thesauri and interoperability), which the SKOS Editor's validation and hierarchy materialization draw on."@en .
 
 pkmv:Lunch a skos:Concept ;
+    rdfs:label "Lunch"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2097,6 +2229,7 @@ pkmv:Lunch a skos:Concept ;
     skos:scopeNote "A DayMeal occasion type."@en .
 
 pkmv:MonthLog a skos:Concept ;
+    rdfs:label "Month Log"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2112,6 +2245,7 @@ pkmv:MonthLog a skos:Concept ;
     skos:scopeNote "Monthly factual roll-up; aggregates WeekLog entries."@en .
 
 pkmv:MonthPlan a skos:Concept ;
+    rdfs:label "Month Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2126,6 +2260,7 @@ pkmv:MonthPlan a skos:Concept ;
     skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlans."@en .
 
 pkmv:MonthReview a skos:Concept ;
+    rdfs:label "Month Review"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2140,6 +2275,7 @@ pkmv:MonthReview a skos:Concept ;
     skos:scopeNote "Assesses the month against the MonthPlan."@en .
 
 pkmv:ObsidianTemplate a skos:Concept ;
+    rdfs:label "Obsidian Template"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2158,6 +2294,7 @@ pkmv:ObsidianTemplate a skos:Concept ;
 - Distinguished from PKM Python templates using Jinja2 templates with Mustache syntax (`{{ ... }}`) that are used to generate Obsidian notes from Python (and/or Swift) services, scripts, commands, and agents."""@en .
 
 pkmv:PKMPythonScripts a skos:Concept ;
+    rdfs:label "PKM Python Scripts"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -2174,6 +2311,7 @@ pkmv:PKMPythonScripts a skos:Concept ;
     skos:scopeNote "Includes Python scripts."@en .
 
 pkmv:PKMSwiftServices a skos:Concept ;
+    rdfs:label "PKM Swift Services"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -2191,6 +2329,7 @@ pkmv:PKMSwiftServices a skos:Concept ;
     skos:scopeNote "- Available on macOS to support SwiftUI and Python apps, scripts, commands, and agents."@en .
 
 pkmv:PTEMealPlan a skos:Concept ;
+    rdfs:label "PTE Meal Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2206,6 +2345,7 @@ pkmv:PTEMealPlan a skos:Concept ;
     skos:scopeNote "Working meal plan assembled from DMP and other imported recipes; generates the weekly shopping list and syncs into the PKM Meals SwiftData database, as well as Neo4j graph database and Obsidian notes."@en .
 
 pkmv:QuarterLog a skos:Concept ;
+    rdfs:label "Quarter Log"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2222,6 +2362,7 @@ pkmv:QuarterLog a skos:Concept ;
     skos:scopeNote "Quarterly factual roll-up; aggregates QuarterLog entries."@en .
 
 pkmv:QuarterPlan a skos:Concept ;
+    rdfs:label "Quarter Plan"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2239,6 +2380,7 @@ pkmv:QuarterPlan a skos:Concept ;
     skos:scopeNote "Forward-looking quarterly intentions; parent context for MonthPlans."@en .
 
 pkmv:QuarterReview a skos:Concept ;
+    rdfs:label "Quarter Review"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2255,6 +2397,7 @@ pkmv:QuarterReview a skos:Concept ;
     skos:scopeNote "Assesses the quarter against the QuarterPlan."@en .
 
 pkmv:Siri a skos:Concept ;
+    rdfs:label "Siri"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2271,6 +2414,7 @@ pkmv:Siri a skos:Concept ;
     skos:scopeNote "Voice-triggered entry points into the PKM system, typically via Siri-invoked Shortcuts - distinct from the Shortcut automation itself."@en .
 
 pkmv:Snack a skos:Concept ;
+    rdfs:label "Snack"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2285,6 +2429,7 @@ pkmv:Snack a skos:Concept ;
     skos:scopeNote "A DayMeal occasion type: often relevant to glucose management."@en .
 
 pkmv:Time a skos:Concept ;
+    rdfs:label "Time"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2301,6 +2446,7 @@ pkmv:Time a skos:Concept ;
     skos:scopeNote "Treated as the anchor/parent for the Calendar hierarchy (Life > Decade > Year > Quarter > Month > Week > Day). Worth deciding OWL Time alignment before finalizing."@en .
 
 pkmv:Topic a skos:Concept ;
+    rdfs:label "Topic"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2315,6 +2461,7 @@ pkmv:Topic a skos:Concept ;
     skos:scopeNote "Cross-cutting classifier; links artifacts by subject rather than by time horizon."@en .
 
 pkmv:WeekAnalysis a skos:Concept ;
+    rdfs:label "Week Analysis"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2331,6 +2478,7 @@ pkmv:WeekAnalysis a skos:Concept ;
     skos:scopeNote "Distinguish from WeekIndex (navigation) and from domain-specific analyses like WeekDiabetesAnalysis, scoped specifically to diabetes data."@en .
 
 pkmv:WeekDiabetes a skos:Concept ;
+    rdfs:label "Week Diabetes"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2347,6 +2495,7 @@ pkmv:WeekDiabetes a skos:Concept ;
     skos:scopeNote "Parent concept for WeekDiabetesAnalysis; part of the health-tracking dimension of WeekCluster, alongside the broader WeekHealth."@en .
 
 pkmv:WeekDiabetesAnalysis a skos:Concept ;
+    rdfs:label "Week Diabetes Analysis"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2363,6 +2512,7 @@ pkmv:WeekDiabetesAnalysis a skos:Concept ;
     skos:scopeNote "Narrower than WeekAnalysis and WeekDiabetes - the analytical output specific to diabetes data, tied to the Diabetes AI Coach project."@en .
 
 pkmv:WeekHealth a skos:Concept ;
+    rdfs:label "Week Health"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2381,6 +2531,7 @@ pkmv:WeekHealth a skos:Concept ;
     skos:scopeNote "Broader than WeekDiabetes; covers non-diabetes-specific health data aggregated at the week level, alongside diabetes-specific tracking."@en .
 
 pkmv:WeekIndex a skos:Concept ;
+    rdfs:label "Week Index"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2398,6 +2549,7 @@ pkmv:WeekIndex a skos:Concept ;
     skos:scopeNote "Navigational role within WeekCluster, analogous to the Index hub notes in the Effort/Output Cluster design."@en .
 
 pkmv:WeekJournal a skos:Concept ;
+    rdfs:label "Week Journal"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2413,6 +2565,7 @@ pkmv:WeekJournal a skos:Concept ;
     skos:scopeNote "Weekly subjective narrative; complements WeekLog."@en .
 
 pkmv:WeekLog a skos:Concept ;
+    rdfs:label "Week Log"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2429,6 +2582,7 @@ pkmv:WeekLog a skos:Concept ;
     skos:scopeNote "Weekly factual roll-up; aggregates DayLog entries."@en .
 
 pkmv:WeekPlan a skos:Concept ;
+    rdfs:label "Week Plan"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2445,6 +2599,7 @@ pkmv:WeekPlan a skos:Concept ;
     skos:scopeNote "Forward-looking weekly intentions; parent context for DayPlan."@en .
 
 pkmv:WeekReview a skos:Concept ;
+    rdfs:label "Week Review"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2461,6 +2616,7 @@ pkmv:WeekReview a skos:Concept ;
     skos:scopeNote "Assesses the week against the WeekPlan."@en .
 
 pkmv:YearHealth a skos:Concept ;
+    rdfs:label "Year Health"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2477,6 +2633,7 @@ pkmv:YearHealth a skos:Concept ;
     skos:scopeNote "Parent for year-centric health artifacts including diabetes tracking."@en .
 
 pkmv:YearJournal a skos:Concept ;
+    rdfs:label "Year Journal"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2493,6 +2650,7 @@ pkmv:YearJournal a skos:Concept ;
     skos:scopeNote "Yearly subjective narrative; complements YearLog."@en .
 
 pkmv:YearLog a skos:Concept ;
+    rdfs:label "Year Log"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2509,6 +2667,7 @@ pkmv:YearLog a skos:Concept ;
     skos:scopeNote "Yeary factual roll-up; aggregates QuarterLog entries."@en .
 
 pkmv:YearPlan a skos:Concept ;
+    rdfs:label "Year Plan"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2524,6 +2683,7 @@ pkmv:YearPlan a skos:Concept ;
     skos:scopeNote "Forward-looking yearly intentions; parent context for QuarterPlans."@en .
 
 pkmv:YearReview a skos:Concept ;
+    rdfs:label "Year Review"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2540,6 +2700,7 @@ pkmv:YearReview a skos:Concept ;
     skos:scopeNote "Assesses the year against the YearPlan."@en .
 
 pkmv:DayMealPlan a skos:Concept ;
+    rdfs:label "Day.Meal Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2557,6 +2718,7 @@ pkmv:DayMealPlan a skos:Concept ;
     skos:scopeNote "Day-scoped meal planning: contains DayMeal entries and derives from the WeekMealPlan."@en .
 
 pkmv:FastAPI a skos:Concept ;
+    rdfs:label "FastAPI"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2576,6 +2738,7 @@ pkmv:FastAPI a skos:Concept ;
     skos:scopeNote "The framework underlying pkm-neo4j-service, which exposes the Neo4j knowledge graph as an API."@en .
 
 pkmv:Hummingbird a skos:Concept ;
+    rdfs:label "Hummingbird"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2594,6 +2757,7 @@ pkmv:Hummingbird a skos:Concept ;
     skos:scopeNote "Use for Swift-based server/API components, as a Swift-side counterpart to FastAPI."@en .
 
 pkmv:Idea a skos:Concept ;
+    rdfs:label "Idea"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2610,6 +2774,7 @@ pkmv:Idea a skos:Concept ;
     skos:scopeNote "Framed as a distillation from Spark, Concept, and Interest, and explicityl distinguished from Focus (priority flag, not a content type)."@en .
 
 pkmv:Ideaverse a skos:Concept ;
+    rdfs:label "Ideaverse"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -2627,6 +2792,7 @@ pkmv:Ideaverse a skos:Concept ;
     skos:scopeNote "- Frameworks and methodology recommended by Nick Milo and Linking Your Thinking (LYT) for linked note systems like Obsidian."@en .
 
 pkmv:Ingredient a skos:Concept ;
+    rdfs:label "Ingredient"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2643,6 +2809,7 @@ pkmv:Ingredient a skos:Concept ;
     skos:scopeNote "Recipe components, as modeled in the PKMMeals Ingredient type; distinguish from Nutrition (aggregate values) and RecipeSource (provenance)."@en .
 
 pkmv:Interest a skos:Concept ;
+    rdfs:label "Interest"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2659,6 +2826,7 @@ pkmv:Interest a skos:Concept ;
     skos:scopeNote "Distinguish from Area (ongoing responsibility) and Project (bounded effort with an end state), per PARA-style organization."@en .
 
 pkmv:Metadata a skos:Concept ;
+    rdfs:label "Metadata"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2674,6 +2842,7 @@ pkmv:Metadata a skos:Concept ;
     skos:scopeNote "Covers Obsidian YAML frontmatter properties, SKOS annotation properties, and similar descriptive attributes. Does not cover the content/body of a resource itself."@en .
 
 pkmv:Month a skos:Concept ;
+    rdfs:label "Month"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2692,6 +2861,7 @@ pkmv:Month a skos:Concept ;
 - There are 3 months in a quarter, and 12 months in a year."""@en .
 
 pkmv:MonthJournal a skos:Concept ;
+    rdfs:label "Month Journal"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2706,6 +2876,7 @@ pkmv:MonthJournal a skos:Concept ;
     skos:scopeNote "Monthly subjective narrative; complements MonthLog."@en .
 
 pkmv:Neo4j a skos:Concept ;
+    rdfs:label "Neo4j"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2723,6 +2894,7 @@ pkmv:Neo4j a skos:Concept ;
     skos:scopeNote "The specific technology implementing this system's KnowledgeGraph - day nodes, cluster nodes, and their temporal/topical relationships."@en .
 
 pkmv:Nutrition a skos:Concept ;
+    rdfs:label "Nutrition"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2741,6 +2913,7 @@ pkmv:Nutrition a skos:Concept ;
     skos:scopeNote "Data parsed from recipe sources (PTE, DMP) in PKMMeals; used for tracking and analysis such as carbohydrate totals shown on recipe cards."@en .
 
 pkmv:OWL a skos:Concept ;
+    rdfs:label "OWL"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2757,6 +2930,7 @@ pkmv:OWL a skos:Concept ;
     skos:scopeNote "The target language for the eventual Ontology stage (e.g. via Protege), building on the SKOS taxonomy."@en .
 
 pkmv:Ontology a skos:Concept ;
+    rdfs:label "Ontology"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2772,6 +2946,7 @@ pkmv:Ontology a skos:Concept ;
     skos:scopeNote "Represents the formal layer following the SKOS taxonomy in the Glossary -> Taxonomy -> Ontology pipeline. Use for concepts/classes/axioms intended for formal reasoning, distinct from the looser Taxonomy stage."@en .
 
 pkmv:PKMPythonServices a skos:Concept ;
+    rdfs:label "PKM Python Services"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -2789,6 +2964,7 @@ pkmv:PKMPythonServices a skos:Concept ;
     skos:scopeNote "Includes FastAPI routes, services, classes, functions, scripts, commands, and agents."@en .
 
 pkmv:Project a skos:Concept ;
+    rdfs:label "Project"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2804,6 +2980,7 @@ pkmv:Project a skos:Concept ;
     skos:scopeNote "Per the PARA method; distinguish from Area (ongoing, no end state) and from the Effort Cluster / Output Cluster structures used specifically for content-series work."@en .
 
 pkmv:Python a skos:Concept ;
+    rdfs:label "Python"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2822,6 +2999,7 @@ pkmv:Python a skos:Concept ;
     skos:scopeNote "Tags PKM automation written in Python - e.g. pkm-neo4j-service and CLI scripts (pkm-day, pkm-health, pkm-pte) - as distinct from Swift components."@en .
 
 pkmv:Quarter a skos:Concept ;
+    rdfs:label "Quarter"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2838,6 +3016,7 @@ pkmv:Quarter a skos:Concept ;
     skos:scopeNote "Groups months via IN_QUARTER: used for quarterly goal-setting and review."@en .
 
 pkmv:RDF a skos:Concept ;
+    rdfs:label "RDF"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2854,6 +3033,7 @@ pkmv:RDF a skos:Concept ;
     skos:scopeNote "The underlying triple model that SKOS and OWL are built on; pkm-vocab.export.ttl is serialized RDF in Turtle syntax."@en .
 
 pkmv:RecipeImages a skos:Concept ;
+    rdfs:label "Recipe Images"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2871,6 +3051,7 @@ pkmv:RecipeImages a skos:Concept ;
     skos:scopeNote "Recipe photography used in detail/list views (including the rating and carb overlays); distinct from RecipeSource."@en .
 
 pkmv:RecipeServings a skos:Concept ;
+    rdfs:label "Recipe Servings"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2888,6 +3069,7 @@ pkmv:RecipeServings a skos:Concept ;
     skos:scopeNote "A recipe metadata attribute used for scaling and planning; part of the General/Details tab content."@en .
 
 pkmv:RecipeSource a skos:Concept ;
+    rdfs:label "Recipe Source"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2905,6 +3087,7 @@ pkmv:RecipeSource a skos:Concept ;
     skos:scopeNote "Attribution/provenance metadata (e.g. PTE, DMP as web sources), distinct from RecipeImages or Nutrition."@en .
 
 pkmv:RecipeTime a skos:Concept ;
+    rdfs:label "Recipe Time"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2922,6 +3105,7 @@ pkmv:RecipeTime a skos:Concept ;
     skos:scopeNote "A recipe metadata attribute distinct from RecipeServings and Nutrition; used in recipe detail displays."@en .
 
 pkmv:Shortcut a skos:Concept ;
+    rdfs:label "Shortcut"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2938,6 +3122,7 @@ pkmv:Shortcut a skos:Concept ;
     skos:scopeNote "Shortcuts used as capture entry points into PKM workflows, distinct from the Python/Swift scripts implementing the underlying logic."@en .
 
 pkmv:Spark a skos:Concept ;
+    rdfs:label "Spark"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2953,6 +3138,7 @@ pkmv:Spark a skos:Concept ;
     skos:scopeNote "A PKM quick-capture note type sibling to Idea/Draft/Clipping. This is not intended as the open-source technology tool called Apache Spark (data processing)."@en .
 
 pkmv:Swift a skos:Concept ;
+    rdfs:label "Swift"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2971,6 +3157,7 @@ pkmv:Swift a skos:Concept ;
     skos:scopeNote "Tags native app components - PKMMeals, PKMStudio (SwiftUI/SwiftData) - as distinct from Python backend tooling."@en .
 
 pkmv:Taxonomy a skos:Concept ;
+    rdfs:label "Taxonomy"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -2987,6 +3174,7 @@ pkmv:Taxonomy a skos:Concept ;
     skos:scopeNote "Refers to the SKOS concept scheme built in the SKOS Editor - the structural layer between the flat Glossary stage and the formal Ontology stage."@en .
 
 pkmv:TemplateCopy a skos:Concept ;
+    rdfs:label "Template"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3004,6 +3192,7 @@ pkmv:TemplateCopy a skos:Concept ;
 - Also includes PKM Python template system using Jinja2 templates with Mustache syntax (`{{ ... }}`) that are used to generate Obsidian notes from Python (and/or Swift) services, scripts, commands, and agents."""@en .
 
 pkmv:WeekMealPlan a skos:Concept ;
+    rdfs:label "Week Meal Plan"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3020,6 +3209,7 @@ pkmv:WeekMealPlan a skos:Concept ;
     skos:scopeNote "Part of the Meal domain within the Calendar hierarchy; relates to Meal and Recipe concepts at the week granularity."@en .
 
 pkmv:Year a skos:Concept ;
+    rdfs:label "Year"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3037,6 +3227,7 @@ pkmv:Year a skos:Concept ;
     skos:scopeNote "Contains lower-level time horizons via IN_YAR: anchor for annual planning and retrospectives."@en .
 
 pkmv:ClaudeAI a skos:Concept ;
+    rdfs:label "Claude AI"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3058,6 +3249,7 @@ pkmv:ClaudeAI a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Cypher a skos:Concept ;
+    rdfs:label "Cypher"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3075,6 +3267,7 @@ pkmv:Cypher a skos:Concept ;
     skos:scopeNote "The query language used against the Neo4j graph, as distinct from the database itself (Neo4j) or the API layer (FastAPI)."@en .
 
 pkmv:Day a skos:Concept ;
+    rdfs:label "Day"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3094,6 +3287,7 @@ pkmv:Day a skos:Concept ;
     skos:scopeNote "Base temporal node in the Calendar subgraph: anchors PREV_DAY/NEXT_DAY ordering and all Day-prefixed note types in an Obsidian Ideaverse vault."@en .
 
 pkmv:Food a skos:Concept ;
+    rdfs:label "Food"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3111,6 +3305,7 @@ pkmv:Food a skos:Concept ;
     skos:scopeNote "A parent context for recipes, products, packages, and ingredients that might be included in a meal or snack."@en .
 
 pkmv:SKOS a skos:Concept ;
+    rdfs:label "SKOS"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3128,6 +3323,7 @@ pkmv:SKOS a skos:Concept ;
     skos:scopeNote "The core standard underpinning this vocabulary and the SKOS Editor tool itself; concepts, schemes, and relationships here are all expressed using SKOS."@en .
 
 pkmv:Script a skos:Concept ;
+    rdfs:label "Script"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3146,6 +3342,7 @@ pkmv:Script a skos:Concept ;
     skos:scopeNote "Covers CLI tools and automation scripts (pkm-day, pkm-health, diagnostic/backfill scripts), as distinct from a Shortcut (Apple automation) or a full Project."@en .
 
 pkmv:Term a skos:Concept ;
+    rdfs:label "Term"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3162,6 +3359,7 @@ pkmv:Term a skos:Concept ;
     skos:scopeNote "Refers to the lexical/label layer (skos:prefLabel, skos:altLabel), not the concept itself - use for discussing naming/labeling conventions distinct from the concepts terms denote."@en .
 
 pkmv:Week a skos:Concept ;
+    rdfs:label "Week"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3182,6 +3380,7 @@ pkmv:Week a skos:Concept ;
     skos:scopeNote "Contains Days via IN_WEEK: parent time horizon for weekly planning, log, journal, and review artifacts."@en .
 
 pkmv:Cluster a skos:Concept ;
+    rdfs:label "Cluster"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3203,6 +3402,7 @@ pkmv:Cluster a skos:Concept ;
     skos:scopeNote "Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
 
 pkmv:Concept a skos:Concept ;
+    rdfs:label "Concept"@en ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3223,6 +3423,7 @@ pkmv:Concept a skos:Concept ;
     skos:scopeNote "An abstract idea independent of its label. It's how we organize ideas for browsing and retrieval. a PKM Concept is based on the SKOS standard skos:Concept."@en .
 
 pkmv:KnowledgeGraph a skos:Concept ;
+    rdfs:label "Knowledge Graph"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3239,6 +3440,7 @@ pkmv:KnowledgeGraph a skos:Concept ;
     skos:scopeNote "Refers specifically to the Neo4j graph instance mirroring and linking PKM notes and health events. Distinguish from Ontology (schema) and Taxonomy (classificatory hierarchy) - this is the populated data instance."@en .
 
 pkmv:PythonTemplate a skos:Concept ;
+    rdfs:label "Python Template"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3262,6 +3464,7 @@ pkmv:PythonTemplate a skos:Concept ;
 - Distinguished from templates created with the Obsidian Templater plugin, with optional inline Templater expressions (`<% ... %>`) and JavaScript code."""@en .
 
 pkmv:TopicCluster a skos:Concept ;
+    rdfs:label "Topic Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3282,6 +3485,7 @@ pkmv:TopicCluster a skos:Concept ;
     skos:scopeNote "Parent context for all notes associated with a topic."@en .
 
 pkmv:Area a skos:Concept ;
+    rdfs:label "Area"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3301,6 +3505,7 @@ pkmv:Area a skos:Concept ;
     skos:scopeNote "Per the PARA method; distinct from Project (has an end state) and Interest (topic without an ownership obligation)."@en .
 
 pkmv:EffortCluster a skos:Concept ;
+    rdfs:label "Effort Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3325,6 +3530,7 @@ pkmv:EffortCluster a skos:Concept ;
     skos:scopeNote "Parent context for all notes associated with an effort."@en .
 
 pkmv:HealthData a skos:Concept ;
+    rdfs:label "Health Data"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3348,6 +3554,7 @@ pkmv:HealthData a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Source a skos:Concept ;
+    rdfs:label "Source"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3379,6 +3586,7 @@ pkmv:Source a skos:Concept ;
     skos:scopeNote "- Includes a person, article, webpage, book, video, podcast, webinar, or course,"@en .
 
 pkmv:Event a skos:Concept ;
+    rdfs:label "Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3403,6 +3611,7 @@ pkmv:Event a skos:Concept ;
     skos:scopeNote "Top concept for the Event hierarchy; narrower concepts partition by originator (UserEvent, AgentEvent, DeviceEvent, AppEvent, ToolEvent, ServiceEvent) and by domain (HealthEvent, MealEvent, NoteEvent, ScriptEvent, ActivityEvent)."@en .
 
 pkmv:Meal a skos:Concept ;
+    rdfs:label "Meal"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3424,6 +3633,7 @@ pkmv:Meal a skos:Concept ;
     skos:scopeNote "Parent concept for the meal-planning domain (Breakfast, Lunch, Dinner, Snack, Recipe, DayMeal, etc.) - the occasion itself, not the recipe or ingredient content."@en .
 
 pkmv:PKMMeals a skos:Concept ;
+    rdfs:label "PKM Meals"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3450,6 +3660,7 @@ pkmv:PKMMeals a skos:Concept ;
 - Provides functions via the App Intents framework to offer actions for use in Shortcuts (workflows), Siri AI (voice interface & natural language), or Spotlight (search)."""@en .
 
 pkmv:PKMPython a skos:Concept ;
+    rdfs:label "PKM Python"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3471,6 +3682,7 @@ pkmv:PKMPython a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:W3CStandard a skos:Concept ;
+    rdfs:label "W3C Standard"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3492,6 +3704,7 @@ pkmv:W3CStandard a skos:Concept ;
     skos:scopeNote "Covers the semantic web standards underlying this vocabulary - SKOS, OWL, RDF - as a class distinct from ISO standards."@en .
 
 pkmv:PKMSwift a skos:Concept ;
+    rdfs:label "PKM Swift"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3514,6 +3727,7 @@ pkmv:PKMSwift a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Standard a skos:Concept ;
+    rdfs:label "Standard"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3537,6 +3751,7 @@ pkmv:Standard a skos:Concept ;
     skos:scopeNote "Parent concept for ISOStandard and W3CStandard, and for related individual standards such as SKOS, OWL, and RDF."@en .
 
 pkmv:AddFolder a skos:Concept ;
+    rdfs:label "Add Folder"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3561,6 +3776,7 @@ pkmv:AddFolder a skos:Concept ;
     skos:scopeNote "It's a pre-triage staging area before migrating into the heart of the PKM system (Ideaverse) in Atlas, Calendar, or Efforts."@en .
 
 pkmv:DayClusterSupport a skos:Concept ;
+    rdfs:label "Day Cluster Support"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3584,6 +3800,7 @@ pkmv:DayClusterSupport a skos:Concept ;
     skos:scopeNote "Holds auxiliary tracking (tasks, references) rather than the primary daily narrative held in DayClusterCore."@en .
 
 pkmv:DayMeal a skos:Concept ;
+    rdfs:label "Day Meal"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3607,6 +3824,7 @@ pkmv:DayMeal a skos:Concept ;
     skos:scopeNote "A meal occasion instance: typed as Breakfast, Lunch, Dinner, or Snack."@en .
 
 pkmv:GraphDatabase a skos:Concept ;
+    rdfs:label "Graph Database"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3631,6 +3849,7 @@ pkmv:GraphDatabase a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Knowledge a skos:Concept ;
+    rdfs:label "Knowledge"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3654,6 +3873,7 @@ pkmv:Knowledge a skos:Concept ;
     skos:scopeNote "Use as the broadest top concept anchoring the vocabulary; more specific forms (Metadata, Ontology, Taxonomy, KnowledgeGraph, Term) refine how knowledge is captured or represented. Not applied to individual notes directly."@en .
 
 pkmv:MealPlan a skos:Concept ;
+    rdfs:label "Meal Plan"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3677,6 +3897,7 @@ pkmv:MealPlan a skos:Concept ;
     skos:scopeNote "Generic parent for period- and source-specific meal plans (Day, Week, DMP, PTE)."@en .
 
 pkmv:ToolEvent a skos:Concept ;
+    rdfs:label "ToolEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3701,6 +3922,7 @@ pkmv:ToolEvent a skos:Concept ;
     skos:scopeNote "Events representing the use of a tool (e.g. a CLI command such as pkm-day or pkm-health), distinct from ScriptEvent (an automation run) and AgentEvent (AI-originated)."@en .
 
 pkmv:DayClusterHealth a skos:Concept ;
+    rdfs:label "Day Cluster Health"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3725,6 +3947,7 @@ pkmv:DayClusterHealth a skos:Concept ;
     skos:scopeNote "Populated via automated health sync (glucose, insulin, blood pressure, EKG); see HealthEvent and its narrower types for the individual data points aggregated here."@en .
 
 pkmv:EffortsFolder a skos:Concept ;
+    rdfs:label "Efforts Folder"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3750,6 +3973,7 @@ pkmv:EffortsFolder a skos:Concept ;
     skos:scopeNote "Groups activity by goal; the intent behind logged actions."@en .
 
 pkmv:DayCluster a skos:Concept ;
+    rdfs:label "Day Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3778,6 +4002,7 @@ pkmv:DayCluster a skos:Concept ;
     skos:scopeNote "The central organizing pattern of this system. Narrower concepts (DayClusterCore, DayClusterHealth, DayClusterSupport, DayClusterVisual) partition each day's artifacts; mirrors the Week/Month clusters at other granularities."@en .
 
 pkmv:HealthEvent a skos:Concept ;
+    rdfs:label "HealthEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3806,6 +4031,7 @@ pkmv:HealthEvent a skos:Concept ;
     skos:scopeNote "Broader concept for all tracked health data points (GlucoseEvent, InsulinEvent, BloodPressureEvent, EKGEvent); populates DayClusterHealth and rolls up into WeekHealth/WeekDiabetes."@en .
 
 pkmv:KnowledgeSystem a skos:Concept ;
+    rdfs:label "Knowledge System"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3838,6 +4064,7 @@ pkmv:KnowledgeSystem a skos:Concept ;
 - Refers to standards for knowledge systems and semantic web with linked data like SKOS, RDF, and OWL."""@en .
 
 pkmv:ObsidianNotes a skos:Concept ;
+    rdfs:label "Obsidian Notes"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3865,6 +4092,7 @@ pkmv:ObsidianNotes a skos:Concept ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:ObsidianPlugin a skos:Concept ;
+    rdfs:label "Obsidian Plugin"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3892,6 +4120,7 @@ pkmv:ObsidianPlugin a skos:Concept ;
     skos:scopeNote "- Provides many additional useful features for the Obsidian app, such as Templater for templates, Periodic Notes for calendar notes, and many more. "@en .
 
 pkmv:Calendar a skos:Concept ;
+    rdfs:label "Calendar"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3926,6 +4155,7 @@ pkmv:Calendar a skos:Concept ;
 - Also represented by Calendar and Fantastical apps."""@en .
 
 pkmv:DayClusterCore a skos:Concept ;
+    rdfs:label "Day Cluster Core"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -3954,6 +4184,7 @@ pkmv:DayClusterCore a skos:Concept ;
     skos:scopeNote "Distinguish from DayClusterSupport (Links, Actions), DayClusterHealth (health event data), and DayClusterVisual (visual/graph tools)."@en .
 
 pkmv:MonthCluster a skos:Concept ;
+    rdfs:label "Month Cluster"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -3985,6 +4216,7 @@ pkmv:MonthCluster a skos:Concept ;
     skos:scopeNote "Parent context for all notes associated with a month."@en .
 
 pkmv:TimeCluster a skos:Concept ;
+    rdfs:label "Time Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4015,6 +4247,7 @@ pkmv:TimeCluster a skos:Concept ;
 - Does not include other non-time clusters:  EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
 
 pkmv:CalendarFolder a skos:Concept ;
+    rdfs:label "Calendar Folder"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -4046,6 +4279,7 @@ pkmv:CalendarFolder a skos:Concept ;
     skos:scopeNote "- Includes time clusters: Day, Week, Month, Quarter, Year, Decade, and Life."@en .
 
 pkmv:DiabetesEvent a skos:Concept ;
+    rdfs:label "DiabetesEvent"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -4076,6 +4310,7 @@ pkmv:DiabetesEvent a skos:Concept ;
     skos:scopeNote "Broader grouping for diabetes-related HealthEvent subtypes (GlucoseEvent, InsulinEvent); relates to WeekDiabetes/WeekDiabetesAnalysis at the weekly rollup."@en .
 
 pkmv:QuarterCluster a skos:Concept ;
+    rdfs:label "Quarter Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4106,6 +4341,7 @@ pkmv:QuarterCluster a skos:Concept ;
     skos:scopeNote "Parent context for all notes associated with a quarter."@en .
 
 pkmv:Recipe a skos:Concept ;
+    rdfs:label "Recipe"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4142,6 +4378,7 @@ pkmv:Recipe a skos:Concept ;
     skos:scopeNote "Reusable building block referenced by meals; imported into Plan to Eat and stored in the PKM Meals SwiftData SQL database, Obsidian Markdown notes, and Neo4j knowledge graph."@en .
 
 pkmv:YearCluster a skos:Concept ;
+    rdfs:label "Year Cluster"@en ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4173,6 +4410,7 @@ pkmv:YearCluster a skos:Concept ;
     skos:scopeNote "Parent context for all notes associated with a year."@en .
 
 pkmv:DayClusterVisual a skos:Concept ;
+    rdfs:label "Day Cluster Visual"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
@@ -4203,6 +4441,7 @@ pkmv:DayClusterVisual a skos:Concept ;
     skos:scopeNote "The day-cluster generator's visual output; distinct from the textual notes in DayClusterCore/Support/Health."@en .
 
 pkmv:Vault a skos:Concept ;
+    rdfs:label "Vault"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4232,6 +4471,7 @@ pkmv:Vault a skos:Concept ;
     skos:scopeNote "Parent context for major spaces within an Obsidian linked-note system; Ideaverse recommends using major spaces: + (Add), Atlas (Knowledge), Calendar (Time), Efforts (Action), x (Extra/Support), and z (Archive)."@en .
 
 pkmv:WeekCluster a skos:Concept ;
+    rdfs:label "Week Cluster"@en ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4270,6 +4510,7 @@ pkmv:WeekCluster a skos:Concept ;
     skos:scopeNote "Sits above DayCluster and below Month in the Calendar hierarchy; narrower concepts include WeekIndex, WeekAnalysis, WeekMealPlan, WeekDiabetes, and WeekHealth."@en .
 
 pkmv:Tool a skos:Concept ;
+    rdfs:label "Tool"@en ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
@@ -4331,8 +4572,8 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI pkmv:0.1.2 ;
-    owl:versionInfo "0.1.2" ;
+    owl:versionIRI pkmv:0.1.3 ;
+    owl:versionInfo "0.1.3" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,

@@ -1,10 +1,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkma: <https://w3id.org/pkm/agents#> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:TopicJournal a skos:Concept ;
+    rdfs:label "Topic Journal"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;

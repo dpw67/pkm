@@ -13,6 +13,7 @@ pkmv:NoteTypes skos:member pkmv:Recipe .
 pkmv:RecipeCollection skos:member pkmv:Recipe .
 
 pkmv:Recipe a skos:Concept ;
+    rdfs:label "Recipe"@en ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;

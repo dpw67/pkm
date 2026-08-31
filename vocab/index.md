@@ -474,7 +474,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Idea](terms/Idea.ttl)** — An idea about something to explore curiosity, research interests, support areas, or identify opporuntities.
   <br>In: [Note Types](terms/NoteTypes.ttl), [Spark Collection](terms/SparkCollection.ttl)
-- **[Idea Emergence](terms/IdeaEmergence.ttl)** — The process of how ideas you encounter go from "nothingness" to "somethingness", and how they grow in richness, complexity, and meaning over time.
+- **[Idea Emergence](terms/IdeaEmergence.ttl)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
 - **[Ideaverse](terms/Ideaverse.ttl)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
 - **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
 - **[Ingredient](terms/Ingredient.ttl)** — An individual food item or component used in the preparation of a recipe.

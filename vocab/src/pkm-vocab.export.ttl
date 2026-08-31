@@ -24,7 +24,7 @@
     dcterms:modified "2026-08-31"^^xsd:date ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.1.1" ;
+    owl:versionInfo "0.1.2" ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
     dcterms:language "en" ;
@@ -2392,14 +2392,14 @@ pkmv:ARCIdeation a skos:Concept ;
 pkmv:IdeaEmergence a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Idea Emergence"@en ;
-    skos:definition "The process of how ideas you encounter go from \"nothingness\" to \"somethingness\", and how they grow in richness, complexity, and meaning over time."@en ;
+    skos:definition "The process of how ideas you encounter go from \"nothingness to somethingness\", and how they grow in richness, complexity, and meaning over time."@en ;
     skos:scopeNote "- Process and methodology recommended by Nick Milo and Linking Your Thinking (LYT) for linked note systems like Obsidian."@en ;
-    skos:changeNote "Added definition and scope notes for Idea Emergence."@en, "2026-08-29 — Duplicated from “ARC Ideation” (by Doug Warren)", "2026-08-29 — Renamed from “ARCIdeationCopy” to “IdeaEmergence”; Preferred label changed from “ARC Ideation@en” to “Idea Emergence@en”; Alternative label “ARC Framework@en” removed; Definition updated; Scope note updated (by Doug Warren)" ;
+    skos:changeNote "Added definition and scope notes for Idea Emergence."@en, "2026-08-29 — Duplicated from “ARC Ideation” (by Doug Warren)", "2026-08-29 — Renamed from “ARCIdeationCopy” to “IdeaEmergence”; Preferred label changed from “ARC Ideation@en” to “Idea Emergence@en”; Alternative label “ARC Framework@en” removed; Definition updated; Scope note updated (by Doug Warren)", "2026-08-31 — Definition updated (by Doug Warren)" ;
     dcterms:source resources:ACE-Organization ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-08-31"^^xsd:date ;
     skos:broader pkmv:Ideaverse .
 
 pkmv:ObsidianSettings a skos:Concept ;

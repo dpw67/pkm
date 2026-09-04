@@ -13,6 +13,7 @@
 #   make swiftrun   run the generated harness against the fixture
 #   make validate   parse-check every published Turtle file
 #   make notes      regenerate the Obsidian term stubs in the WarrenWeb vault
+#   make vault      mirror the generated Obsidian artifacts into that vault
 #   make serve      preview the site locally
 #   make clean      remove build output
 
@@ -47,12 +48,22 @@ VOCAB   := PYTHONPATH=scripts $(PYTHON) -m pkm_vocab
 # command line for a different vault: make notes NOTES_OUT=/path/to/pkm/vocab
 NOTES_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab
 
+# Where `vault` mirrors the generated Obsidian tree. A directory this repo owns
+# outright, not a folder shared with hand-written notes: the target prunes, so
+# anything here that the generator no longer emits is deleted. That is the point
+# -- the vault had a stale Ingredient.base and six ingredient notes from before
+# Ingredient stopped being a note type, and a copy without pruning leaves a Base
+# listing files the schema no longer describes.
+#
+# Override for a different vault: make vault VAULT_OUT=/path/to/vault/_PKM
+VAULT_OUT := $(HOME)/Obsidian/WarrenWeb/+/_PKM
+
 # Hand-authored Turtle plus the generated bulk dump. The 241 per-term files under
 # vocab/terms/ are checked by `validate` through the wildcard, not listed here.
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes serve clean
+.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes vault serve clean
 
 all: build validate
 
@@ -141,6 +152,30 @@ validate:
 # the vocabulary has had terms renamed.
 notes:
 	$(VOCAB) notes vocab/pkm-vocab.ttl --out $(NOTES_OUT)
+
+# Puts the generated Obsidian tree where Obsidian can actually open it, which is
+# the only way to find out whether a Base renders: the templates are YAML that
+# looks right and fails in the app, which is how the groupBy defect survived a
+# reading. Depends on `artifacts` because mirroring a stale generated/ tree is
+# the failure this is meant to catch, and regenerating costs nothing.
+#
+# Like `notes`, deliberately not part of `all`: it writes outside this repo,
+# into a vault with Sync and Publish both enabled. Dry run first --
+# `make vault DRY=-n` -- to see what would be pruned.
+#
+# rsync per leaf directory rather than one pass over the tree, because --delete
+# is scoped to what it is given: a single pass at $(VAULT_OUT) would prune any
+# hand-written file that had been added alongside, and the three leaves are the
+# generator's own. Blank templates land under templates/Seed to match the layout
+# already in the vault; note that Obsidian's Templates plugin reads x/Templates,
+# so these are reference scaffolds rather than templates the picker will offer.
+vault: artifacts
+	@test -d $(GEN)/obsidian || { echo "no $(GEN)/obsidian — run make artifacts"; exit 1; }
+	@mkdir -p "$(VAULT_OUT)/bases" "$(VAULT_OUT)/notes" "$(VAULT_OUT)/templates/Seed"
+	@rsync -a $(DRY) -i --delete $(GEN)/obsidian/bases/     "$(VAULT_OUT)/bases/"
+	@rsync -a $(DRY) -i --delete $(GEN)/obsidian/notes/     "$(VAULT_OUT)/notes/"
+	@rsync -a $(DRY) -i --delete $(GEN)/obsidian/templates/ "$(VAULT_OUT)/templates/Seed/"
+	@echo "  $(VAULT_OUT)"
 
 serve:
 	bundle exec jekyll serve --livereload

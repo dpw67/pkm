@@ -10,6 +10,7 @@ exclude:
   - scripts/
   - generators/
   - schema/
+  - generated/  # LinkML dev artifacts; derived, not citable
   - reports/    # validation output, regenerated on demand
   - vocab/src/  # SKOS Editor exports; the published artifact is vocab/pkm-vocab.ttl
   - z/          # scratch

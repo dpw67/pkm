@@ -1,0 +1,56 @@
+// {{ title }} -- Neo4j seed data
+// Generated from {{ source }} + {{ fixture }} by `make artifacts`. Do not edit.
+//
+// Example data with the values inlined, so this runs as-is. Load it into a
+// database of its own rather than the default one -- a sandbox keeps the seed
+// MERGEs away from anything already in `neo4j`:
+//
+//     cypher-shell -a bolt://localhost:7687 -u neo4j -d system \
+//       "CREATE DATABASE {{ db }} IF NOT EXISTS WAIT;"
+//     cat {{ out }}.cypher {{ out }}.seed.cypher \
+//       | cypher-shell -a bolt://localhost:7687 -u neo4j -d {{ db }}
+//
+// Piped rather than passed twice: cypher-shell's -f takes one file, so the two
+// have to arrive on stdin as a single script.
+//
+// Multiple databases in one DBMS is an Enterprise feature. On Community, drop
+// the -d flag and accept the default database.
+//
+// Every write is a MERGE on the identifier, so re-running updates rather than
+// duplicating. RecipeImage ids are surrogate -- `<recipe>#images/0` -- because
+// the schema has images as an inlined value object with no key of its own.
+{% for label, rows in seed.nodes.items() %}
+{% if rows %}
+
+// ---- {{ label }} ({{ rows | length }})
+UNWIND [
+{% for row in rows %}
+  { {{ row.items() | map("cypher_pair") | join(", ") }} }{{ "," if not loop.last }}
+{% endfor %}
+] AS row
+MERGE (n:{{ label }} {id: row.id})
+SET
+{% for key in rows[0] if key != "id" %}
+    n.{{ key }} = row.{{ key }}{{ "," if not loop.last }}
+{% endfor %}
+;
+{% endif %}
+{% endfor %}
+{% for e in model.edges %}
+{% if seed.pairs[e.table] %}
+
+// ---- (:{{ e.source.name }})-[:{{ e.rel }}]->(:{{ e.target.name }}) ({{ seed.pairs[e.table] | length }})
+UNWIND [
+{% for a, b in seed.pairs[e.table] %}
+  [{{ a | cypher }}, {{ b | cypher }}]{{ "," if not loop.last }}
+{% endfor %}
+] AS pair
+MATCH (a:{{ e.source.name }} {id: pair[0]})
+MATCH (b:{{ e.target.name }} {id: pair[1]})
+MERGE (a)-[:{{ e.rel }}]->(b);
+{% endif %}
+{% endfor %}
+
+// ---- what you should see
+// MATCH (m:Meal)-[:HAS_RECIPE]->(r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)
+// RETURN m.name, r.name, collect(i.name) AS ingredients;

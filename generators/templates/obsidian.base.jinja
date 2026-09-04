@@ -1,0 +1,34 @@
+# {{ shape.name }} — generated from {{ source }} by `make artifacts`. Do not edit.
+#
+# displayName is a column header, so it is the humanised property key rather
+# than the slot description. A shared slot would otherwise label two columns
+# identically: `name` and `source_name` both describe "Human-readable name".
+# The descriptions live in the note template's property reference instead.
+filters:
+  and:
+    - 'type == "{{ shape.name }}"'
+properties:
+{% for f in shape.flat() if not f.identifier %}
+  note.{{ f.key }}:
+    displayName: {{ f.key | label }}
+{% endfor %}
+views:
+  - type: table
+    name: All {{ shape.name }}s
+    order:
+      - file.name
+{% for f in shape.flat() if not f.identifier and not f.multivalued %}
+      - note.{{ f.key }}
+{% endfor %}
+{% for f in shape.flat() if f.enum and not f.multivalued %}
+{% if loop.first %}
+  - type: table
+    name: By {{ f.key | label }}
+    groupBy: note.{{ f.key }}
+    order:
+      - file.name
+{% for g in shape.flat() if not g.identifier and not g.multivalued and g.key != f.key %}
+      - note.{{ g.key }}
+{% endfor %}
+{% endif %}
+{% endfor %}

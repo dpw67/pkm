@@ -1,0 +1,15 @@
+// {{ title }} -- LadybugDB load
+// Generated from {{ source }} by `make artifacts`. Do not edit.
+//
+// COPY is Ladybug's bulk loader; it reads CSV, Parquet, JSON, and Arrow. Node
+// tables load before relationship tables, since edges resolve by primary key.
+//
+// Nested columns need a format that can carry them. STRUCT and STRUCT[] columns
+// round-trip cleanly through Parquet and JSON; in CSV they have to be written in
+// Ladybug's literal syntax, which is fiddly. Prefer Parquet.
+{% for s in model.declared_nodes %}
+COPY {{ s.name }} FROM '{{ s.name | lower }}.parquet';
+{% endfor %}
+{% for e in model.declared_edges %}
+COPY {{ e.table }} FROM '{{ e.table | lower }}.parquet';   // columns: FROM {{ e.source.identifier.key }}, TO {{ e.target.identifier.key }}
+{% endfor %}

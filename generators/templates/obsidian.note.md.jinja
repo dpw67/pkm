@@ -1,0 +1,33 @@
+---
+type: {{ shape.name }}
+{% for f in shape.flat() -%}
+{{ f.key }}:{{ " []" if f.multivalued }}
+{% endfor -%}
+{% for e in edges_out -%}
+{{ e.name }}: []
+{% endfor -%}
+tags:
+  - pkm/{{ shape.name | lower }}
+---
+
+> [!abstract] {{ shape.name }}
+> {{ shape.description }}
+{% if shape.concept %}> Concept: [{{ shape.concept }}](https://w3id.org/pkm/vocab/{{ shape.concept.split(":")[1] }})
+{% endif %}
+{% for e in edges_out %}
+
+## {{ e.name | replace("_", " ") | title }}
+
+{{ e.description }}
+Link each as `[[…]]` in the `{{ e.name }}` property{{ " — many allowed" if e.multivalued }}.
+{% endfor %}
+
+## Notes
+
+<!--
+Property reference — generated from {{ source }}
+{% for f in shape.flat() %}  {{ "%-28s"|format(f.key) }} {{ "%-9s"|format(f.type("obsidian")) }}{{ "required" if f.required else "        " }}  {{ f.description }}
+{% if f.enum %}
+  {{ " " * 28 }}          one of: {{ enums[f.enum].permissible_values.keys() | join(", ") }}
+{% endif %}
+{% endfor %}-->

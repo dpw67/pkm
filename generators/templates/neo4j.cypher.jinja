@@ -1,0 +1,59 @@
+// {{ title }} -- Neo4j schema
+// Generated from {{ source }} by `make artifacts`. Do not edit.
+//
+// Neo4j stores scalars and lists of scalars, and nothing else. Two consequences
+// the LinkML schema does not show:
+//
+//   * Single value objects are flattened into prefixed properties, so
+//     Nutrition.calories on a Recipe is `nutrition_calories`.
+//   * A *list* of value objects cannot be a property at all, so it is promoted
+{% for s in model.nodes if s.promoted_from %}//     to a node with a surrogate key. {{ s.name }} is one of those, out of {{ s.promoted_from }}.
+{% endfor %}//
+// Uniqueness constraints are Community edition. Existence and property-type
+// constraints are Enterprise only and are emitted commented out, so this file
+// runs anywhere; uncomment them if you are on Enterprise.
+
+// ---------------------------------------------------------------- constraints
+{% for s in model.nodes %}
+// {{ s.name }}{{ " -- " ~ s.description if s.description }}
+CREATE CONSTRAINT {{ s.name | lower }}_{{ s.identifier.key }} IF NOT EXISTS
+    FOR (n:{{ s.name }}) REQUIRE n.{{ s.identifier.key }} IS UNIQUE;
+{% if s.flat() | selectattr("required") | rejectattr("identifier") | list %}
+// Enterprise only -- existence constraints:
+{% endif %}
+{% for f in s.flat() if f.required and not f.identifier %}
+// CREATE CONSTRAINT {{ s.name | lower }}_{{ f.key }}_required IF NOT EXISTS
+//     FOR (n:{{ s.name }}) REQUIRE n.{{ f.key }} IS NOT NULL;
+{% endfor %}
+{% endfor %}
+
+// ------------------------------------------------------------------- indexes
+{% for s in model.nodes %}{% for f in s.flat() if f.name == "name" %}
+CREATE INDEX {{ s.name | lower }}_{{ f.key }} IF NOT EXISTS FOR (n:{{ s.name }}) ON (n.{{ f.key }});
+{% endfor %}{% endfor %}
+
+// ---------------------------------------------------------------- properties
+// Neo4j is schema-optional, so this is documentation rather than DDL. The
+// commented type constraints are the Enterprise way to actually enforce it.
+{% for s in model.nodes %}
+// (:{{ s.name }})
+{% for f in s.flat() %}
+//     {{ "%-28s"|format(f.key) }} {{ "%-14s"|format(f.type("neo4j")) }} {{ "required" if f.required else "        " }}  {{ f.description }}
+{% if f.enum %}
+//     {{ " " * 28 }} one of: {{ model.values(f.enum) }}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+// Enterprise only -- property type constraints:
+{% for s in model.nodes %}{% for f in s.flat() if f.required %}
+// CREATE CONSTRAINT {{ s.name|lower }}_{{ f.key }}_type IF NOT EXISTS
+//     FOR (n:{{ s.name }}) REQUIRE n.{{ f.key }} IS :: {{ f.type("neo4j") }};
+{% endfor %}{% endfor %}
+
+// ----------------------------------------------------------- relationships
+// Neo4j has no relationship schema, so these are the shapes the loader should
+// produce. Cardinality is from the LinkML schema and is not enforced here.
+{% for e in model.edges %}
+// (:{{ e.source.name }})-[:{{ e.rel }}]->(:{{ e.target.name }}){{ "  many" if e.multivalued else "  one " }}   {{ e.description }}
+{% endfor %}

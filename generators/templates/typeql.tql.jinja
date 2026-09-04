@@ -46,10 +46,15 @@ define
     {{ members | join(",\n    ") }};
 {% endfor %}
   # -------------------------------------------------------------- relations
+  # A relation owns attributes the same way an entity does, so an association
+  # class needs no reification here -- TypeDB relations are already reified.
 {% for e in model.edges %}
+{% set members = ["relates " ~ e.role_source ~ " @card(1..1)", "relates " ~ e.role_target ~ " @card(" ~ ("0.." if e.multivalued else "0..1") ~ ")"] %}
+{% for f in e.flat() %}
+{% set _ = members.append("owns " ~ kebab(f.key) ~ (" @card(0..)" if f.multivalued else " @card(1..1)" if f.required else " @card(0..1)")) %}
+{% endfor %}
 
-  # {{ e.description }}
+  # {{ e.description }}{{ ("  Attributes from " ~ kebab(e.via) ~ ".") if e.via }}
   relation {{ e.relation }},
-    relates {{ e.role_source }} @card(1..1),
-    relates {{ e.role_target }} @card({{ "0.." if e.multivalued else "0..1" }});
+    {{ members | join(",\n    ") }};
 {% endfor %}

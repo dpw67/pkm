@@ -10,6 +10,10 @@ the fixture's two images under one recipe have to become two rows and two edges,
 with identifiers that do not exist in the source data. Those are minted here,
 deterministically from the parent id and the list position, so re-running the
 generator produces the same graph rather than a second copy of it.
+
+The other case is the association class, which goes the opposite way: the fixture
+nests it like any other value object, but it collapses onto the relationship, so
+its scalars end up on the link rather than on a row at either end.
 """
 
 from __future__ import annotations
@@ -20,7 +24,7 @@ from typing import Any
 
 import yaml
 
-from . import Model, Shape
+from . import Embed, Model, Shape
 
 
 def surrogate(parent_id: str, slot: str, index: int) -> str:
@@ -33,12 +37,25 @@ def surrogate(parent_id: str, slot: str, index: int) -> str:
 
 
 @dataclass
+class Link:
+    """One edge, with whatever properties the relationship itself carries.
+
+    A plain reference leaves `props` empty; a collapsed association class fills
+    it with the scalars that described the use rather than the thing.
+    """
+
+    source: str
+    target: str
+    props: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
 class Seed:
     model: Model
     raw: dict[str, list[dict[str, Any]]]
     nodes: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     nested: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
-    pairs: dict[str, list[tuple[str, str]]] = field(default_factory=dict)
+    pairs: dict[str, list[Link]] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         for shape in self.model.declared_nodes:
@@ -56,6 +73,8 @@ class Seed:
             nest: dict[str, Any] = dict(flat)
             for embed in shape.embeds:
                 value = item.get(embed.name)
+                if embed.reifies is not None:
+                    continue  # belongs to the relationship, not to either end
                 if embed.promote:
                     nest[embed.name] = value or []
                     continue
@@ -79,8 +98,11 @@ class Seed:
                 targets = item.get(edge.name) or []
                 if not edge.multivalued:
                     targets = [targets] if targets else []
-                self.pairs[edge.table].extend((parent, t) for t in targets)
+                self.pairs[edge.table].extend(Link(parent, t) for t in targets)
             for embed in shape.embeds:
+                if embed.reifies is not None:
+                    self._associations(shape, parent, item, embed)
+                    continue
                 if not embed.promote:
                     continue
                 edge = next(e for e in self.model.edges
@@ -92,7 +114,33 @@ class Seed:
                     row.update({f.name: value.get(f.name)
                                 for f in embed.shape.fields if not f.surrogate})
                     rows.append(row)
-                    self.pairs[edge.table].append((parent, key))
+                    self.pairs[edge.table].append(Link(parent, key))
+
+    def _associations(self, shape: Shape, parent: str, item: dict[str, Any],
+                      embed: Embed) -> None:
+        """Links carrying properties, from an association class in the fixture.
+
+        The fixture nests these -- `ingredients: [{ingredient: ..., quantity: ...}]`
+        -- so the target id is read from the association's own reference slot and
+        everything else becomes a property of the link.
+        """
+        inner = embed.reifies
+        edge = next(e for e in self.model.edges
+                    if e.via == embed.shape.name and e.source.name == shape.name)
+        values = item.get(embed.name) or []
+        if not embed.multivalued:
+            values = [values]
+        for value in values:
+            target = value.get(inner.name)
+            if target is None:
+                continue
+            props = {f.key: value.get(f.name) for f in edge.fields}
+            for sub in edge.embeds:
+                held = value.get(sub.name) or {}
+                for f in edge.flat():
+                    if f.prefix == sub.name:
+                        props[f.key] = held.get(f.name)
+            self.pairs[edge.table].append(Link(parent, target, props))
 
 
 def load(model: Model, path: Path) -> Seed:

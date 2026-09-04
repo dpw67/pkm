@@ -30,6 +30,9 @@ CREATE NODE TABLE IF NOT EXISTS {{ s.name }}(
 {% endfor %}
 // ----------------------------------------------------------- relationships
 {% for e in model.declared_edges %}
-// {{ e.description }}
-CREATE REL TABLE IF NOT EXISTS {{ e.table }}(FROM {{ e.source.name }} TO {{ e.target.name }}, {{ "MANY_MANY" if e.multivalued else "MANY_ONE" }});
+{% set cols = [] %}
+{% for f in e.fields %}{% set _ = cols.append(f.name ~ " " ~ f.type("ladybug")) %}{% endfor %}
+{% for m in e.embeds %}{% set _ = cols.append(m.name ~ " " ~ m.struct()) %}{% endfor %}
+// {{ e.description }}{{ ("  Properties from " ~ e.via ~ ".") if e.via }}
+CREATE REL TABLE IF NOT EXISTS {{ e.table }}(FROM {{ e.source.name }} TO {{ e.target.name }}, {{ (cols | join(", ") ~ ", ") if cols }}{{ "MANY_MANY" if e.multivalued else "MANY_ONE" }});
 {% endfor %}

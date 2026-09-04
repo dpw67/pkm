@@ -93,6 +93,23 @@ class Field:
         return {"neo4j": f"LIST<{base}>", "ladybug": f"{base}[]"}.get(target, base)
 
 
+def flatten(fields: list[Field], embeds: list["Embed"]) -> list[Field]:
+    """Scalars, plus the scalars of every embed that is not promoted.
+
+    Prefixed, because Obsidian's property editor does not handle nested objects
+    and Neo4j has no nested properties at all. Shared by Shape and Edge -- an
+    association class flattens onto a relationship exactly as a value object
+    flattens onto a node.
+    """
+    out = list(fields)
+    for e in embeds:
+        if e.promote:
+            continue
+        for f in e.shape.fields:
+            out.append(Field(**{**f.__dict__, "prefix": e.name}))
+    return out
+
+
 @dataclass
 class Embed:
     name: str
@@ -101,9 +118,29 @@ class Embed:
     description: str = ""
 
     @property
+    def reifies(self) -> Optional["Edge"]:
+        """The link this value object reifies, when it is an association class.
+
+        A value object holding exactly one single-valued reference to an
+        identified class is not a thing -- it is a *use* of that thing.
+        RecipeIngredient is the chili's use of kidney beans, and the quantity
+        belongs to the use rather than to the beans. Every target can put
+        properties on the relationship itself, so collapsing to an edge beats
+        promoting to a surrogate-keyed node in the middle.
+
+        Detected from the shape rather than declared, because there is nothing
+        else a class of this shape could mean.
+        """
+        if self.shape.is_node or len(self.shape.edges) != 1:
+            return None
+        if any(m.multivalued for m in self.shape.embeds):
+            return None  # that list promotes to nodes, which need a node to hang off
+        return None if self.shape.edges[0].multivalued else self.shape.edges[0]
+
+    @property
     def promote(self) -> bool:
         """True when the target has to make this a node instead of a property."""
-        return self.multivalued
+        return self.multivalued and self.reifies is None
 
     def struct(self, target: str = "ladybug") -> str:
         """Nested record type. Ladybug is the only target that can store one."""
@@ -120,6 +157,13 @@ class Edge:
     multivalued: bool
     description: str = ""
     renamed: str = ""          # set by Model when the default name collides
+    via: str = ""              # association class this was collapsed from
+    fields: list[Field] = field(default_factory=list)
+    embeds: list[Embed] = field(default_factory=list)
+
+    def flat(self) -> list[Field]:
+        """Properties on the relationship itself. Empty for a plain reference."""
+        return flatten(self.fields, self.embeds)
 
     @property
     def rel(self) -> str:
@@ -182,24 +226,14 @@ class Shape:
     edges: list[Edge] = field(default_factory=list)
     identifier: Optional[Field] = None
     promoted_from: Optional[str] = None   # set on shapes promoted out of an embed
+    association: bool = False             # collapsed into an edge by Model._associate
 
     @property
     def is_node(self) -> bool:
         return self.identifier is not None
 
     def flat(self) -> list[Field]:
-        """Scalars, plus the scalars of every embed that is not promoted.
-
-        Prefixed, because Obsidian's property editor does not handle nested
-        objects and Neo4j has no nested properties at all.
-        """
-        out = list(self.fields)
-        for e in self.embeds:
-            if e.promote:
-                continue
-            for f in e.shape.fields:
-                out.append(Field(**{**f.__dict__, "prefix": e.name}))
-        return out
+        return flatten(self.fields, self.embeds)
 
 
 class Model:
@@ -214,8 +248,10 @@ class Model:
             self._shape(name)
         for name in self.sv.all_classes():
             self._link(name)
+        self._collapsed: list[Edge] = []
+        self._associate()
         self._promote()
-        self._edges = [e for s in self.shapes.values() for e in s.edges] + [
+        self._edges = self._references + [
             Edge(e.name, e.shape, s, True, e.description)
             for s in self.shapes.values() for e in s.embeds if e.promote
         ]
@@ -271,6 +307,30 @@ class Model:
     def _has_id(self, cname: str) -> bool:
         return any(s.identifier for s in self.sv.class_induced_slots(cname))
 
+    def _associate(self) -> None:
+        """Turn every association class into an edge that carries properties.
+
+        The value object disappears from the node set and its scalars move onto
+        the link: Recipe -[HAS_INGREDIENT {quantity, unit}]-> Ingredient rather
+        than a RecipeIngredient node wedged between the two. Neo4j stores those
+        natively, Ladybug as rel-table columns, TypeDB as attributes the
+        relation owns. Obsidian is the one target with nowhere to put them.
+
+        Runs before _promote so the collapsed shapes never get a surrogate key
+        they have no use for.
+        """
+        for s in list(self.shapes.values()):
+            for e in s.embeds:
+                inner = e.reifies
+                if inner is None:
+                    continue
+                e.shape.association = True
+                self._collapsed.append(Edge(
+                    e.name, inner.target, s, e.multivalued, e.description,
+                    via=e.shape.name, fields=list(e.shape.fields),
+                    embeds=list(e.shape.embeds),
+                ))
+
     def _promote(self) -> None:
         """Give every promoted embed a synthetic identifier.
 
@@ -319,13 +379,24 @@ class Model:
         return self._edges
 
     @property
+    def _references(self) -> list["Edge"]:
+        """Every edge the schema declared, with association classes collapsed.
+
+        An association shape's own inner edge is excluded -- it is already
+        represented by the collapsed edge, which spans both ends and carries
+        the properties.
+        """
+        return [e for s in self.shapes.values() if not s.association
+                for e in s.edges] + self._collapsed
+
+    @property
     def declared_edges(self) -> list["Edge"]:
         """Only references the schema actually declared.
 
         Ladybug stores nested records, so it does not promote value objects and
         does not want the synthetic edges that promotion creates.
         """
-        return [e for s in self.shapes.values() for e in s.edges]
+        return self._references
 
     @property
     def typeql_attributes(self) -> dict[str, Field]:
@@ -336,10 +407,14 @@ class Model:
         fields of every shape into a single set, and raises if two shapes want
         the same attribute name with different value types, because TypeDB
         allows an attribute exactly one value type.
+
+        Relations are included: a collapsed association class owns its leftover
+        scalars as attributes, and those compete for the same global names.
         """
         attrs: dict[str, Field] = {}
-        for s in self.nodes:
-            for f in s.flat():
+        owners = [s.flat() for s in self.nodes] + [e.flat() for e in self.edges]
+        for fields in owners:
+            for f in fields:
                 key = kebab(f.key)
                 prior = attrs.get(key)
                 if prior is None:

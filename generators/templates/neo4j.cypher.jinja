@@ -54,6 +54,14 @@ CREATE INDEX {{ s.name | lower }}_{{ f.key }} IF NOT EXISTS FOR (n:{{ s.name }})
 // ----------------------------------------------------------- relationships
 // Neo4j has no relationship schema, so these are the shapes the loader should
 // produce. Cardinality is from the LinkML schema and is not enforced here.
+//
+// Indented properties belong to the relationship, not to either end. They come
+// from an association class -- a value object in the schema whose only reference
+// is to the target, so its scalars describe the *use* of that target rather than
+// the target itself. Neo4j stores them natively.
 {% for e in model.edges %}
 // (:{{ e.source.name }})-[:{{ e.rel }}]->(:{{ e.target.name }}){{ "  many" if e.multivalued else "  one " }}   {{ e.description }}
+{% for f in e.flat() %}
+//     .{{ f.key }} :: {{ f.type("neo4j") }}{{ ("   " ~ f.description) if f.description }}
+{% endfor %}
 {% endfor %}

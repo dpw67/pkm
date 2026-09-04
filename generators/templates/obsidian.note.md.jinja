@@ -20,6 +20,13 @@ tags:
 
 {{ e.description }}
 Link each as `[[…]]` in the `{{ e.name }}` property{{ " — many allowed" if e.multivalued }}.
+{% if e.flat() %}
+
+Per-link properties from {{ e.via }} ({{ e.flat() | map(attribute="key") | join(", ") }})
+have nowhere to live here: a frontmatter property holds a list of links, not a list of
+links with attributes. Record them in prose below. The other three targets keep them on
+the relationship itself.
+{% endif %}
 {% endfor %}
 
 ## Notes

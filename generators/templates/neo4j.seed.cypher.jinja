@@ -50,13 +50,20 @@ SET
 
 // ---- (:{{ e.source.name }})-[:{{ e.rel }}]->(:{{ e.target.name }}) ({{ seed.pairs[e.table] | length }})
 UNWIND [
-{% for a, b in seed.pairs[e.table] %}
-  [{{ a | cypher }}, {{ b | cypher }}]{{ "," if not loop.last }}
+{% for link in seed.pairs[e.table] %}
+  { ends: [{{ link.source | cypher }}, {{ link.target | cypher }}]{{ (", props: { " ~ (link.props.items() | map("cypher_pair") | join(", ")) ~ " }") if link.props }} }{{ "," if not loop.last }}
 {% endfor %}
-] AS pair
-MATCH (a:{{ e.source.name }} {id: pair[0]})
-MATCH (b:{{ e.target.name }} {id: pair[1]})
-MERGE (a)-[:{{ e.rel }}]->(b);
+] AS row
+MATCH (a:{{ e.source.name }} {id: row.ends[0]})
+MATCH (b:{{ e.target.name }} {id: row.ends[1]})
+MERGE (a)-[{{ "r" if e.flat() }}:{{ e.rel }}]->(b){{ ";" if not e.flat() }}
+{% if e.flat() %}
+SET
+{% for f in e.flat() %}
+    r.{{ f.key }} = row.props.{{ f.key }}{{ "," if not loop.last }}
+{% endfor %}
+;
+{% endif %}
 {% endif %}
 {% endfor %}
 

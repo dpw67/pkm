@@ -30,20 +30,24 @@ from linkml_runtime.linkml_model.meta import ClassDefinition, SlotDefinition
 # LinkML type -> target type. Kept here rather than in the templates so the
 # four stay honest with each other: adding a LinkML type breaks all of them at
 # once instead of silently emitting STRING in three places and nothing in one.
+# `uri` is URL in Swift but String everywhere else: URL is Codable and
+# SwiftData-persistable, and a slot declared `uri` really is a web address.
+# `uriorcurie` stays String, because `pkm:ing/salt` is not a URL.
 TYPES: dict[str, dict[str, str]] = {
-    #                neo4j          ladybug         typeql      obsidian
-    "string":     {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text"},
-    "uri":        {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text"},
-    "uriorcurie": {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text"},
-    "integer":    {"neo4j": "INTEGER", "ladybug": "INT64",    "typeql": "integer",  "obsidian": "number"},
-    "float":      {"neo4j": "FLOAT",   "ladybug": "DOUBLE",   "typeql": "double",   "obsidian": "number"},
-    "double":     {"neo4j": "FLOAT",   "ladybug": "DOUBLE",   "typeql": "double",   "obsidian": "number"},
-    "decimal":    {"neo4j": "FLOAT",   "ladybug": "DECIMAL(18, 4)", "typeql": "decimal", "obsidian": "number"},
-    "boolean":    {"neo4j": "BOOLEAN", "ladybug": "BOOLEAN",  "typeql": "boolean",  "obsidian": "checkbox"},
-    "date":       {"neo4j": "DATE",    "ladybug": "DATE",     "typeql": "date",     "obsidian": "date"},
-    "datetime":   {"neo4j": "ZONED DATETIME", "ladybug": "TIMESTAMP", "typeql": "datetime", "obsidian": "datetime"},
+    #                neo4j          ladybug         typeql      obsidian      swift
+    "string":     {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text",     "swift": "String"},
+    "uri":        {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text",     "swift": "URL"},
+    "uriorcurie": {"neo4j": "STRING",  "ladybug": "STRING",   "typeql": "string",   "obsidian": "text",     "swift": "String"},
+    "integer":    {"neo4j": "INTEGER", "ladybug": "INT64",    "typeql": "integer",  "obsidian": "number",   "swift": "Int"},
+    "float":      {"neo4j": "FLOAT",   "ladybug": "DOUBLE",   "typeql": "double",   "obsidian": "number",   "swift": "Double"},
+    "double":     {"neo4j": "FLOAT",   "ladybug": "DOUBLE",   "typeql": "double",   "obsidian": "number",   "swift": "Double"},
+    "decimal":    {"neo4j": "FLOAT",   "ladybug": "DECIMAL(18, 4)", "typeql": "decimal", "obsidian": "number", "swift": "Decimal"},
+    "boolean":    {"neo4j": "BOOLEAN", "ladybug": "BOOLEAN",  "typeql": "boolean",  "obsidian": "checkbox", "swift": "Bool"},
+    "date":       {"neo4j": "DATE",    "ladybug": "DATE",     "typeql": "date",     "obsidian": "date",     "swift": "Date"},
+    "datetime":   {"neo4j": "ZONED DATETIME", "ladybug": "TIMESTAMP", "typeql": "datetime", "obsidian": "datetime", "swift": "Date"},
 }
-FALLBACK = {"neo4j": "STRING", "ladybug": "STRING", "typeql": "string", "obsidian": "text"}
+FALLBACK = {"neo4j": "STRING", "ladybug": "STRING", "typeql": "string",
+            "obsidian": "text", "swift": "String"}
 
 
 def snake(name: str) -> str:
@@ -86,11 +90,22 @@ class Field:
             return self.name
         return f"{self.prefix}_{self.name}"
 
+    def scalar(self, target: str) -> str:
+        """The element type, ignoring cardinality."""
+        return TYPES.get(self.range, FALLBACK)[target]
+
     def type(self, target: str) -> str:
-        base = TYPES.get(self.range, FALLBACK)[target]
+        base = self.scalar(target)
         if not self.multivalued:
             return base
-        return {"neo4j": f"LIST<{base}>", "ladybug": f"{base}[]"}.get(target, base)
+        return {"neo4j": f"LIST<{base}>", "ladybug": f"{base}[]",
+                "swift": f"[{base}]"}.get(target, base)
+
+
+def _annotation(element, key: str, default: str = "") -> str:
+    """One LinkML annotation as a lowercased string, or the default."""
+    ann = (element.annotations or {}).get(key)
+    return str(ann.value).strip().lower() if ann is not None else default
 
 
 def flatten(fields: list[Field], embeds: list["Embed"]) -> list[Field]:
@@ -156,6 +171,7 @@ class Edge:
     source: "Shape"
     multivalued: bool
     description: str = ""
+    required: bool = False     # the schema said the reference has to be there
     renamed: str = ""          # set by Model when the default name collides
     via: str = ""              # association class this was collapsed from
     fields: list[Field] = field(default_factory=list)
@@ -235,6 +251,17 @@ class Shape:
     def flat(self) -> list[Field]:
         return flatten(self.fields, self.embeds)
 
+    @property
+    def members(self) -> list:
+        """Everything a record holds: scalars, inlined value objects, references.
+
+        Surrogate keys are left out. They exist so a store that cannot nest a
+        record can point at one instead; a store that can nest has no use for
+        them and would be inventing identity the schema does not claim.
+        """
+        return [*(f for f in self.fields if not f.surrogate),
+                *self.embeds, *self.edges]
+
 
 class Model:
     """Every shape in a schema, plus the derived node set."""
@@ -280,7 +307,8 @@ class Model:
                 target = self.shapes[rng]
                 if self._has_id(rng):
                     s.edges.append(Edge(slot.name, target, s, bool(slot.multivalued),
-                                        (slot.description or "").strip()))
+                                        (slot.description or "").strip(),
+                                        required=bool(slot.required)))
                 else:
                     s.embeds.append(Embed(slot.name, target, bool(slot.multivalued),
                                           (slot.description or "").strip()))
@@ -297,7 +325,7 @@ class Model:
             name=slot.name,
             range=rng,
             description=(slot.description or "").strip(),
-            required=bool(slot.required) or bool(slot.identifier),
+                required=bool(slot.required) or bool(slot.identifier),
             multivalued=bool(slot.multivalued),
             enum=rng if is_enum else None,
             concept=next((x for x in (slot.see_also or []) if x.startswith("pkmv:")), None),
@@ -397,6 +425,63 @@ class Model:
         does not want the synthetic edges that promotion creates.
         """
         return self._references
+
+    @property
+    def associations(self) -> list[Shape]:
+        """The shapes _associate collapsed into an edge.
+
+        Kept because one target wants them back. SwiftData has no relationship
+        properties -- @Relationship is a plain reference -- so the association
+        has to be a join @Model, which is the promoted form the graph stores
+        rejected. SwiftData is the inverse of them on both axes: it nests the
+        multivalued value object they promote, and promotes the association
+        they collapse.
+        """
+        return [s for s in self.shapes.values() if s.association]
+
+    @property
+    def value_objects(self) -> list[Shape]:
+        """Inlined shapes with no identity of their own.
+
+        Includes the ones _promote gave a surrogate key to: promotion is what a
+        store that cannot nest a record needs, and a store that can wants the
+        original back. Skip `surrogate` fields when emitting these.
+        """
+        return [s for s in self.shapes.values()
+                if not s.association and (s.promoted_from or not s.is_node)]
+
+    def uses(self, shape: Shape) -> list["Edge"]:
+        """The collapsed edges an association shape stands behind.
+
+        One entry per parent slot that embeds it. SwiftData needs the parent
+        named on the join model to declare an inverse, and can only be given
+        one; two parents means letting it infer instead.
+        """
+        return [e for e in self._collapsed if e.via == shape.name]
+
+    @property
+    def load_order(self) -> list[Shape]:
+        """Declared nodes ordered so every reference already exists.
+
+        A reference cannot be resolved before the thing it points at is stored,
+        so an importer has to insert Ingredient before Recipe and Recipe before
+        Meal. A cycle has no such order; the members of one are appended in
+        declaration order and the caller has to insert first and link second.
+        """
+        deps = {s.name: {e.target.name for e in self._references
+                         if e.source.name == s.name and e.target.name != s.name}
+                for s in self.declared_nodes}
+        order: list[str] = []
+        seen: set[str] = set()
+        while True:
+            ready = sorted(n for n, d in deps.items() if n not in seen and d <= seen)
+            if not ready:
+                break
+            order += ready
+            seen |= set(ready)
+        order += [n for n in deps if n not in seen]
+        by_name = {s.name: s for s in self.declared_nodes}
+        return [by_name[n] for n in order]
 
     @property
     def typeql_attributes(self) -> dict[str, Field]:

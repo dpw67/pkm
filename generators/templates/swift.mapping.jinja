@@ -1,0 +1,65 @@
+// {{ title }} -- mapping
+//
+// Generated from {{ source }}. Do not edit; edit the schema and re-run
+// `make artifacts`.
+//
+// Payload to store and back. Two halves, because they are not symmetrical:
+//
+//   `dto`     is total. A stored record knows its references, so it can always
+//             report them as ids.
+//   `apply`   is partial. It sets scalars and value objects and stops there,
+//             because turning an id back into an object means fetching it, and
+//             fetching needs a ModelContext. Reference resolution therefore
+//             lives in Repositories.swift, where the context is already to hand.
+//
+// Splitting it this way keeps the round trip honest: `apply` cannot silently
+// drop a reference, because it never claims to set one.
+
+import Foundation
+import SwiftData
+
+{% for shape in model.declared_nodes + model.associations %}
+extension {{ shape.name }} {
+
+    /// This record as a payload.
+    public var dto: {{ shape.name }}DTO {
+        {{ shape.name }}DTO(
+{% for m in shape.members %}
+{% if m.shape is defined and m.shape.association %}
+{% if m.multivalued %}
+            {{ m.name | camel }}: {{ m.name | camel }}.map(\.dto){{ "," if not loop.last }}
+{% else %}
+            {{ m.name | camel }}: {{ m.name | camel }}?.dto{{ "," if not loop.last }}
+{% endif %}
+{% elif m.target is defined %}
+{% if m.multivalued %}
+            {{ m.name | camel }}: {{ m.name | camel }}.map(\.{{ m.target.identifier.name | camel }}){{ "," if not loop.last }}
+{% elif m.required %}
+            {{ m.name | camel }}: {{ m.name | camel }}.{{ m.target.identifier.name | camel }}{{ "," if not loop.last }}
+{% else %}
+            {{ m.name | camel }}: {{ m.name | camel }}?.{{ m.target.identifier.name | camel }}{{ "," if not loop.last }}
+{% endif %}
+{% else %}
+            {{ m.name | camel }}: {{ m.name | camel }}{{ "," if not loop.last }}
+{% endif %}
+{% endfor %}
+        )
+    }
+
+    /// Overwrite everything this payload carries on its own.
+    ///
+    /// References are left untouched -- see the file header.
+    public func apply(_ dto: {{ shape.name }}DTO) {
+{% for m in shape.members %}
+{% if m.target is defined %}
+        // {{ m.name | camel }} is a reference; the repository sets it.
+{% elif m.shape is defined and m.shape.association %}
+        // {{ m.name | camel }} holds references; the repository sets it.
+{% else %}
+        {{ m.name | camel }} = dto.{{ m.name | camel }}
+{% endif %}
+{% endfor %}
+    }
+}
+
+{% endfor %}

@@ -1,0 +1,69 @@
+{#
+  Declaration fragments shared by the payload and store layers.
+
+  Both layers hold the same members in the same order and need the same three
+  pieces of Codable boilerplate; they differ only in how a reference is typed.
+  Kept here so the two templates stay honest about being two views of one
+  schema rather than two files that happen to agree.
+#}
+{% macro declare(shape, layer) %}
+{% for m in shape.members %}
+{% if not loop.first %}
+
+{% endif %}
+{% if m.description %}
+    /// {{ m.description | doc(4) }}
+{% endif %}
+    public var {{ m.name | camel }}: {{ m | swift(layer) }}
+{% endfor %}
+{%- endmacro %}
+{% macro initialiser(shape, layer, extra=[]) %}
+    public init(
+{% for m in shape.members + extra %}
+{% set kind = m | swift(layer) %}
+        {{ m.name | camel }}: {{ kind }}{{ kind | dflt }}{{ "," if not loop.last }}
+{% endfor %}
+    ) {
+{% for m in shape.members + extra %}
+        self.{{ m.name | camel }} = {{ m.name | camel }}
+{% endfor %}
+    }
+{%- endmacro %}
+{#
+  CodingKeys is not written out anywhere: the coders convert snake_case, so the
+  synthesised keys are already the schema's slot names. Naming the type below
+  still resolves, because Swift synthesises the enum for the encode(to:) it is
+  generating even when the decoder is hand-written.
+
+  A missing key is only an error for a member that has to be there. Swift's
+  synthesised initialiser throws on an absent list, which would make a recipe
+  with no images undecodable; these read as empty instead.
+#}
+{% macro decoder(shape, layer) %}
+{% if shape.members | selectattr("multivalued") | list %}
+    public init(from decoder: any Decoder) throws {
+        let box = try decoder.container(keyedBy: CodingKeys.self)
+{% for m in shape.members %}
+{% set kind = m | swift(layer) %}
+{% if m.multivalued %}
+        self.{{ m.name | camel }} = try box.decodeIfPresent({{ kind }}.self, forKey: .{{ m.name | camel }}) ?? []
+{% elif kind.endswith("?") %}
+        self.{{ m.name | camel }} = try box.decodeIfPresent({{ kind | bare }}.self, forKey: .{{ m.name | camel }})
+{% else %}
+        self.{{ m.name | camel }} = try box.decode({{ kind }}.self, forKey: .{{ m.name | camel }})
+{% endif %}
+{% endfor %}
+    }
+{% endif %}
+{%- endmacro %}
+{#
+  Initialiser, wire names, and tolerant decoder as one block, since a template
+  wanting any of them wants all three that apply.
+#}
+{% macro codable(shape, layer, extra=[]) %}
+{{ initialiser(shape, layer, extra) }}
+{% if shape.members | selectattr("multivalued") | list %}
+
+{{ decoder(shape, layer) }}
+{% endif %}
+{%- endmacro %}

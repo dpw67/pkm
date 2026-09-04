@@ -8,7 +8,9 @@
 #   make build      generate every published artifact from the export
 #   make shapes     regenerate SHACL + JSON Schema from schema/pkm.yaml
 #   make models     regenerate dev artifacts from the LinkML domain modules
-#   make artifacts  render the Obsidian/Neo4j/Ladybug/TypeQL templates
+#   make artifacts  render the Obsidian/Neo4j/Ladybug/TypeQL/Swift templates
+#   make swiftcheck compile the generated Swift against the macOS SDK
+#   make swiftrun   run the generated harness against the fixture
 #   make validate   parse-check every published Turtle file
 #   make notes      regenerate the Obsidian term stubs in the WarrenWeb vault
 #   make serve      preview the site locally
@@ -27,9 +29,14 @@ MODULES := schema/pkm-meals.yaml
 GEN     := generated
 
 # Classes worth a JSON Schema of their own. LinkML's default output has an empty
-# root with everything under $defs, which quicktype cannot follow -- it emits a
-# bare `typealias = [String: JSONAny]`. --top-class gives each one a real root,
-# and then the whole struct graph below it generates.
+# root with everything under $defs, so a consumer that needs a single rooted
+# document -- an API contract, a validator -- gets one per top class here.
+#
+# This used to feed quicktype as well. It no longer does: quicktype sees JSON
+# Schema, which has no idea which classes have identity, so a reference came out
+# as a nested copy of the whole record and `Nutrition` was redeclared in every
+# file. The Swift now comes from `artifacts`, off the same shape model as the
+# graph targets. See generators/templates/swift.*.jinja.
 TOPS    := Recipe Meal
 EXPORT  := vocab/src/pkm-vocab.export.ttl
 PYTHON  := .venv/bin/python
@@ -45,7 +52,7 @@ NOTES_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build shapes models artifacts validate notes serve clean
+.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes serve clean
 
 all: build validate
 
@@ -65,11 +72,11 @@ shapes:
 	gen-shacl $(SCHEMA)      > $(SHAPES)/pkm.shacl.ttl
 	gen-json-schema $(SCHEMA) > $(SHAPES)/pkm.schema.json
 
-# Dev artifacts for prototyping: Pydantic, JSON Schema, SHACL, OWL, Swift.
-# Nothing here is published or citable -- regenerate freely. Needs linkml in
-# .venv (`.venv/bin/python -m pip install linkml`) and quicktype on PATH.
+# Dev artifacts for prototyping: JSON Schema, Pydantic, SHACL, OWL. Nothing here
+# is published or citable -- regenerate freely. Needs linkml in .venv
+# (`.venv/bin/python -m pip install linkml`). quicktype is no longer required.
 models:
-	@mkdir -p $(GEN)/jsonschema $(GEN)/pydantic $(GEN)/shacl $(GEN)/owl $(GEN)/swift
+	@mkdir -p $(GEN)/jsonschema $(GEN)/pydantic $(GEN)/shacl $(GEN)/owl
 	@for m in $(MODULES); do \
 	  base=$$(basename $$m .yaml); \
 	  echo "  $$m"; \
@@ -79,13 +86,10 @@ models:
 	  $(BIN)/gen-owl         $$m > $(GEN)/owl/$$base.owl.ttl; \
 	  for c in $(TOPS); do \
 	    $(BIN)/gen-json-schema --top-class $$c $$m > $(GEN)/jsonschema/$$c.schema.json; \
-	    quicktype --src-lang schema --lang swift -o $(GEN)/swift/$$c.swift \
-	      $(GEN)/jsonschema/$$c.schema.json >/dev/null 2>&1; \
-	    echo "    $$c -> swift"; \
 	  done; \
 	done
 
-# The four targets LinkML has no generator for. Everything upstream of this --
+# The five targets LinkML has no generator for. Everything upstream of this --
 # JSON Schema, Pydantic, SHACL, OWL -- comes from `models`; these come from
 # generators/templates, driven by the shape model in generators/__init__.py.
 # Separate from `models` because they are a different toolchain, not because
@@ -95,6 +99,35 @@ artifacts:
 	  echo "  $$m"; \
 	  $(BIN)/python -m generators $$m --out $(GEN); \
 	done
+
+# The one generated target that can be verified rather than eyeballed: emitting a
+# module typechecks every file together, so a bad @Relationship inverse or a
+# @Model that SwiftData's macro rejects fails here instead of in Xcode. Needs the
+# Command Line Tools; nothing is installed by this repo.
+# Typecheck only: it writes nothing, and it still expands the macros, which is
+# where a bad @Relationship inverse keypath is caught. The harness is skipped
+# because it has a @main and no module of its own -- swiftrun compiles it.
+swiftcheck:
+	@sdk=$$(xcrun --show-sdk-path) && for d in $(GEN)/swift/*/; do \
+	  case $$d in *Harness/) continue;; esac; \
+	  echo "  $$d"; \
+	  swiftc -sdk $$sdk -parse-as-library -typecheck \
+	    -module-name $$(basename $$d) $$d*.swift; \
+	done
+	@echo "  ok"
+
+# Compiling proves the generated code parses; only running it proves SwiftData
+# accepts the shapes. swiftcheck passed on a version that trapped on the first
+# insert, so this is the gate that matters.
+swiftrun:
+	@sdk=$$(xcrun --show-sdk-path) && tmp=$$(mktemp -d) && \
+	for d in $(GEN)/swift/*Harness/; do \
+	  m=$$(basename $$d | sed 's/Harness$$//'); \
+	  echo "  $$m"; \
+	  swiftc -sdk $$sdk -o $$tmp/$$m $(GEN)/swift/$$m/*.swift $$d*.swift && \
+	    $$tmp/$$m $(GEN)/swift/$$m/fixture.json; \
+	done; \
+	rm -rf $$tmp
 
 # rdflib rather than Jena's riot, so this runs without `brew install jena`.
 # The script adds vocab/terms/*.ttl and shapes/*.ttl to whatever is listed in TTL.

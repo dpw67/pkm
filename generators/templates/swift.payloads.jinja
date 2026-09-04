@@ -1,0 +1,99 @@
+// {{ title }} -- payloads
+//
+// Generated from {{ source }}. Do not edit; edit the schema and re-run
+// `make artifacts`.
+//
+// The transport shape of every identified class: what the fixture holds, what
+// an API would return, what a decoder produces before anything is stored. A
+// reference travels as the id string it is in the schema, so a payload can be
+// decoded on its own without resolving anything.
+//
+// The `DTO` suffix is on the transport types rather than the stored ones so
+// that `@Query var recipes: [Recipe]` reads the way SwiftData expects. If you
+// would rather the plain name meant the struct, the suffix is one line in
+// swift.payloads.jinja and one in swift.models.jinja.
+
+import Foundation
+{% import "swift.macros.jinja" as s %}
+
+/// Coders configured for the shapes in this schema.
+///
+/// Dates are ISO 8601 because that is what a LinkML `datetime` slot holds.
+///
+/// The key strategies carry the whole snake_case-to-camelCase mapping, so no
+/// type below writes a CodingKeys enum. That is not a style preference: a
+/// value object stored by SwiftData becomes a composite attribute whose
+/// sub-properties are read off the struct by reflection and then encoded
+/// through Codable, so a CodingKeys that renames them makes the two disagree
+/// and the insert traps. Doing it here keeps one struct usable in both layers.
+///
+/// The generator refuses to emit a schema whose slot names are not exactly
+/// recoverable this way, so the strategies are never lossy.
+public enum {{ module }}Coding {
+    public static var decoder: JSONDecoder {
+        let d = JSONDecoder()
+        d.dateDecodingStrategy = .iso8601
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        return d
+    }
+
+    public static var encoder: JSONEncoder {
+        let e = JSONEncoder()
+        e.dateEncodingStrategy = .iso8601
+        e.keyEncodingStrategy = .convertToSnakeCase
+        e.outputFormatting = [.prettyPrinted, .sortedKeys]
+        return e
+    }
+}
+
+{% for shape in model.declared_nodes + model.associations %}
+{% if shape.description %}
+/// {{ shape.description | doc(0) }}
+{% endif %}
+{% if shape.association %}
+///
+/// An association class: no identity of its own, and one reference out to
+/// something that has identity. On the wire it stays nested inside its parent,
+/// which is where {{ shape.fields | map(attribute="name") | join(" and ") }} belong -- they describe the use, not the
+/// {{ shape.edges[0].target.name | lower }}.
+{% endif %}
+public struct {{ shape.name }}DTO: Codable, Hashable, Sendable{{ ", Identifiable" if shape.identifier }} {
+{{ s.declare(shape, "payload") }}
+{{ s.codable(shape, "payload") }}
+}
+
+{% endfor %}
+/// The fixture in `schema/examples/`, keyed by class name as the schema writes it.
+///
+/// Decodable only. These keys are class names rather than slot names, so they
+/// are written out below verbatim -- and `convertToSnakeCase` would turn
+/// `Recipe` into `recipe` on the way back out. Nothing needs to write a
+/// fixture, so the asymmetry is removed rather than worked around.
+public struct {{ module }}Fixture: Decodable, Sendable {
+{% for shape in model.declared_nodes %}
+    public var {{ shape.name | plural }}: [{{ shape.name }}DTO] = []
+{% endfor %}
+
+    private enum CodingKeys: String, CodingKey {
+{% for shape in model.declared_nodes %}
+        case {{ shape.name | plural }} = "{{ shape.name }}"
+{% endfor %}
+    }
+
+    public init(from decoder: any Decoder) throws {
+        let box = try decoder.container(keyedBy: CodingKeys.self)
+{% for shape in model.declared_nodes %}
+        self.{{ shape.name | plural }} = try box.decodeIfPresent([{{ shape.name }}DTO].self, forKey: .{{ shape.name | plural }}) ?? []
+{% endfor %}
+    }
+
+    public init(
+{% for shape in model.declared_nodes %}
+        {{ shape.name | plural }}: [{{ shape.name }}DTO] = []{{ "," if not loop.last }}
+{% endfor %}
+    ) {
+{% for shape in model.declared_nodes %}
+        self.{{ shape.name | plural }} = {{ shape.name | plural }}
+{% endfor %}
+    }
+}

@@ -1,0 +1,64 @@
+// {{ title }} -- values
+//
+// Generated from {{ source }}. Do not edit; edit the schema and re-run
+// `make artifacts`.
+//
+// The types with no identity of their own: the enumerations, and the value
+// objects that are described entirely by what they contain. Both layers share
+// them on purpose. SwiftData persists a Codable struct inline, so `Nutrition`
+// is one type whether it arrived as JSON or came back out of the store, and
+// only the identified classes need a separate transport type.
+//
+// This file is where SwiftData parts company with the graph stores. Neo4j and
+// TypeDB cannot hold a repeated nested record, so the generator promotes those
+// to nodes with minted keys. SwiftData can, so it gets them back as structs --
+// including {{ (model.value_objects | selectattr("promoted_from") | map(attribute="name") | join(", ")) or "none here" }}, which the other targets
+// only ever see as separate rows.
+
+import Foundation
+{% import "swift.macros.jinja" as s %}
+
+// MARK: - Enumerations
+
+{% for name, e in model.used_enums.items() %}
+{% if e.description %}
+/// {{ e.description | doc(0) }}
+{% endif %}
+public enum {{ name }}: String, Codable, CaseIterable, Sendable {
+{#
+  Blank-separated only when the cases carry documentation. A run of bare cases
+  reads better closed up, and SourceKind has no concepts behind it yet.
+#}
+{% set spaced = e.permissible_values.values() | selectattr("meaning") | list
+                or e.permissible_values.values() | selectattr("description") | list %}
+{% for value, pv in e.permissible_values.items() %}
+{% if pv.description %}
+    /// {{ pv.description | doc(4) }}
+{% endif %}
+{% if pv.meaning %}
+    /// Defined by {{ pv.meaning }}.
+{% endif %}
+    case {{ value | camel }} = "{{ value }}"
+{% if spaced and not loop.last %}
+
+{% endif %}
+{% endfor %}
+}
+
+{% endfor %}
+// MARK: - Value objects
+
+{% for shape in model.value_objects %}
+{% if shape.description %}
+/// {{ shape.description | doc(0) }}
+{% endif %}
+{% for note in shape.comments %}
+///
+/// {{ note | doc(0) }}
+{% endfor %}
+public struct {{ shape.name }}: Codable, Hashable, Sendable {
+{{ s.declare(shape, "payload") }}
+{{ s.codable(shape, "payload") }}
+}
+
+{% endfor %}

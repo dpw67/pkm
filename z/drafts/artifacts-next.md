@@ -59,6 +59,30 @@ the class now holds both a count and a yield.
 mass, cup is volume, and can is packaging, so `convert(to:)` has to be able to
 refuse.
 
+## Next, on the Obsidian target
+
+**Column widths.** `columnSize` is a view-level mapping of qualified property to
+pixel width, sitting beside `order` and `sort`:
+
+    columnSize:
+      note.name: 193
+      note.served_at: 213
+
+Undocumented in the Bases syntax page -- read off the hand-made
+`+/Notes/Meal1.base`, where it was set by dragging in the app. The six nutrition
+columns are all short numbers under a short header and render far wider than
+their content, so they want an explicit width. Two questions before generating
+one: what number, given the widths in that file came from dragging rather than
+from a rule, and where the number comes from -- a per-slot annotation in the
+schema, or a heuristic on the slot's type and header length. A width is
+presentation, and the schema has held nothing presentational so far except
+`title`.
+
+Note that a width the generator writes will be overwritten the moment the column
+is dragged in the app, and `make vault` will then put the generated one back.
+That is the same overwrite `--delete` already implies for the tree, but a width
+is the first thing a reader is likely to adjust by hand and lose.
+
 ## Also unresolved
 
 `schema/pkm.yaml` is superseded by `pkm-meals.yaml` but still present -- retire

@@ -11,9 +11,29 @@
 # groupBy takes a mapping, not a property name: a bare `groupBy: note.x` parses
 # as YAML and then fails to render, because Bases reads `property` and
 # `direction` off it and finds a string.
+#
+# `type` alone is not enough to identify an instance. The blank note template
+# this generator emits alongside this Base declares `type: {{ shape.name }}` in its
+# own frontmatter, so it matches its own filter -- opening the tree in a vault
+# for the first time, Recipe read 5 rows for 2 recipes and Meal 6 for 2 meals.
+# Every extra row was a copy of a template.
+#
+# So the folder decides. Not a literal path, because the copies are never in one
+# place: this vault had them under the generated templates/ directory, under
+# x/Templates where the Templates plugin looks, and inside an exported snapshot
+# of an older generated/ tree. What they share is a parent folder that says
+# "template", which is a convention rather than a location and so survives being
+# copied somewhere new. `file.folder` is the parent path, and matching on it
+# lowercased catches "Templates" and "Template" alike.
+#
+# The cost is that a real {{ shape.name | lower }} filed under a folder whose path happens to
+# say "template" is invisible here. That is the trade for not naming paths.
 filters:
   and:
     - 'type == "{{ shape.name }}"'
+{% if template_marker %}
+    - '!file.folder.lower().contains("{{ template_marker }}")'
+{% endif %}
 properties:
   file.folder:
     displayName: Folder

@@ -384,6 +384,17 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--seed", type=Path,
                     help="example-data fixture; defaults to "
                          "schema/examples/<schema>-seed.yaml when that exists")
+    # A generated blank template declares `type: Recipe`, so without this every
+    # Base counts its own template as an instance -- Recipe read 5 for 2 recipes
+    # and Meal 6 for 2 meals the first time the tree was opened in a vault. The
+    # marker is a folder-name substring rather than a path because the copies are
+    # not in one place: a vault accumulates them under x/Templates, under an
+    # exported snapshot, and under the generator's own output directory. What all
+    # of them share is a parent folder that says "template".
+    ap.add_argument("--template-folder-marker", default="template",
+                    help="folder-name substring marking a folder as holding "
+                         "templates rather than instances; Bases filters exclude "
+                         "it (default: %(default)s). Empty string disables.")
     a = ap.parse_args(argv)
 
     model = Model(str(a.schema))
@@ -402,6 +413,7 @@ def main(argv: list[str] | None = None) -> int:
         # Swift module and type-name prefix. pkm-meals -> PKMMeals.
         "module": pascal(a.schema.stem),
         "out": (a.out / "neo4j" / a.schema.stem).as_posix(),
+        "template_marker": a.template_folder_marker.lower(),
     }
     e = env()
 

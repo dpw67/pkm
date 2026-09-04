@@ -40,7 +40,9 @@ Recipe:
       - Brown the beef in a heavy pot, breaking it up as it cooks.
       - Add the tomatoes and beans; simmer uncovered for 40 minutes.
       - Season, then rest off the heat for 10 minutes before serving.
-    servings: 6
+    serving:
+      servings: 6
+      recipe_yield: About 8 cups
     nutrition: {calories: 1488, carbohydrates_g: 80.0, protein_g: 118.0, fat_g: 77.8, fiber_g: 26.0, sodium_mg: 2090}
     preparation: {prep_minutes: 15, cook_minutes: 45, total_minutes: 60}
     images:
@@ -54,7 +56,9 @@ Recipe:
     instructions:
       - Combine the oats with milk in a jar and refrigerate overnight.
       - Top with blueberries before eating.
-    servings: 1
+    serving:
+      servings: 1
+      recipe_yield: One 12-ounce jar
     nutrition: {calories: 210, carbohydrates_g: 42.0, protein_g: 5.8, fat_g: 3.3, fiber_g: 6.7, sodium_mg: 1}
     preparation: {prep_minutes: 5, cook_minutes: 0, total_minutes: 5}
     source: {name: "Serious Eats", url: "https://www.seriouseats.com/", source_kind: Website}

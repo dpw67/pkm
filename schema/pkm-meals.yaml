@@ -31,7 +31,7 @@
 # What ISO cannot say is a slot's range, cardinality, or whether it is required.
 # Recipe makes the point: all six of its children are narrowerPartitive, and
 # they resolve to four different shapes -- a multivalued object (Ingredient), a
-# single inlined object (Nutrition, RecipeTime, RecipeSource), a multivalued
+# single inlined object (Nutrition, RecipeServing, RecipeTime, RecipeSource), a multivalued
 # inlined object (RecipeImage), and a plain integer (RecipeServings, which is
 # not a class at all). That residue is editorial, and it is small.
 
@@ -85,7 +85,7 @@ classes:
       - id
       - name
       - instructions
-      - servings
+      - serving
       - ingredients
       - nutrition
       - preparation
@@ -152,6 +152,28 @@ classes:
       - fat_g
       - fiber_g
       - sodium_mg
+
+  RecipeServing:
+    class_uri: pkm:RecipeServing
+    description: >-
+      How much a recipe makes, both as a portion count and as the yield the
+      source states.
+    comments:
+      - >-
+        Two properties, so a value object rather than the scalar this was in
+        0.1.3: servings scales the ingredient list, while yield is what the
+        source actually claims ("makes 24 cookies", "one 9-inch loaf") and does
+        not always reduce to a number.
+      - >-
+        pkmv:RecipeServings is defined as "the number of servings or portions a
+        recipe yields" -- a count, which is now only one of the two slots. Either
+        broaden that definition and add a RecipeYield narrowerPartitive child in
+        0.1.4, or keep it scalar and mint a separate grouping concept.
+    see_also:
+      - pkmv:RecipeServings
+    slots:
+      - servings
+      - recipe_yield
 
   RecipeTime:
     class_uri: pkm:RecipeTime
@@ -258,13 +280,24 @@ slots:
     multivalued: true
     description: Ordered preparation steps.
 
+  serving:
+    range: RecipeServing
+    inlined: true
+    description: How much the recipe makes.
+
   servings:
     range: integer
     description: The number of servings or portions a recipe yields.
+
+  recipe_yield:
+    range: string
+    description: The yield as the source states it, when it is not a portion count.
     comments:
-      - pkmv:RecipeServings -- partitive in the vocabulary, but a scalar here.
+      - >-
+        Named recipe_yield rather than yield because `yield` is a Python keyword,
+        and gen-pydantic would emit it as a field name.
     see_also:
-      - pkmv:RecipeServings
+      - https://schema.org/recipeYield
 
   ingredients:
     description: The food items and components the recipe calls for.

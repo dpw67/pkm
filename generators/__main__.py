@@ -127,6 +127,7 @@ def main(argv: list[str] | None = None) -> int:
         # separators because Neo4j database names allow letters, digits, dots,
         # and dashes but must start with a letter -- `pkmmeals` is safe anywhere.
         "db": a.schema.stem.replace("-", "").replace("_", ""),
+        "stem": a.schema.stem,
         "out": (a.out / "neo4j" / a.schema.stem).as_posix(),
     }
     e = env()

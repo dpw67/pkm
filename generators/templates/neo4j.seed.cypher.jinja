@@ -5,19 +5,22 @@
 // database of its own rather than the default one -- a sandbox keeps the seed
 // MERGEs away from anything already in `neo4j`:
 //
-//     read -rs "?Neo4j password: " NEO4J_PASSWORD && export NEO4J_PASSWORD && echo
 //     cypher-shell -a bolt://localhost:7687 -u neo4j -d system \
 //       "CREATE DATABASE {{ db }} IF NOT EXISTS WAIT;"
 //     cat {{ out }}.cypher {{ out }}.seed.cypher \
-//       | cypher-shell -a bolt://localhost:7687 -u neo4j -d {{ db }}
-//     unset NEO4J_PASSWORD
+//       > /tmp/{{ stem }}-load.cypher
+//     cypher-shell -a bolt://localhost:7687 -u neo4j -d {{ db }} \
+//       -f /tmp/{{ stem }}-load.cypher
 //
-// Piped rather than passed twice: cypher-shell's -f takes one file, so the two
-// have to arrive on stdin as a single script. That is also why the password has
-// to come from the environment -- with the script on stdin there is no terminal
-// left to prompt on, and cypher-shell connects unauthenticated instead. The
-// failure looks like an authorization error (`42NFF ... permission/access
-// denied`) rather than a missing password, which is misleading.
+// Concatenated into one file rather than piped, because cypher-shell's -f takes
+// exactly one file and piping costs the password prompt: with the script on
+// stdin there is no terminal left to prompt on, and cypher-shell reads the
+// script's first line as the password instead. It then reports `42NFF ...
+// permission/access denied`, which reads as an authorization problem -- only
+// the server's security.log says "invalid principal or credentials".
+//
+// For unattended runs, set NEO4J_PASSWORD in the environment and pipe. Quote it
+// with single quotes; zsh globs `?` and expands `!` even inside double quotes.
 //
 // Multiple databases in one DBMS is an Enterprise feature. On Community, drop
 // the -d flag and accept the default database.

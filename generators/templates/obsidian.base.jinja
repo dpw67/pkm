@@ -1,33 +1,61 @@
 # {{ shape.name }} — generated from {{ source }} by `make artifacts`. Do not edit.
 #
-# displayName is a column header, so it is the humanised property key rather
-# than the slot description. A shared slot would otherwise label two columns
-# identically: `name` and `source_name` both describe "Human-readable name".
-# The descriptions live in the note template's property reference instead.
+# displayName is a column header, so it is the slot's `title` where the schema
+# gives one and the humanised key otherwise -- never the description, since a
+# shared slot would label two columns identically: `name` and `source_name` both
+# describe "Human-readable name". A title wins unprefixed, because in a
+# {{ shape.name }} table the grouped columns are obvious from adjacency; a header
+# that would then collide gets its prefix back. Units live in the property key
+# and the note template's reference rather than the header.
+#
+# groupBy takes a mapping, not a property name: a bare `groupBy: note.x` parses
+# as YAML and then fails to render, because Bases reads `property` and
+# `direction` off it and finds a string.
 filters:
   and:
     - 'type == "{{ shape.name }}"'
 properties:
-{% for f in shape.flat() if not f.identifier %}
+  file.folder:
+    displayName: Folder
+  note.neo4j_id:
+    displayName: Neo4j id
+{% for f in props if not f.identifier %}
   note.{{ f.key }}:
-    displayName: {{ f.key | label }}
+    displayName: {{ headers[f.key] }}
 {% endfor %}
 views:
   - type: table
     name: All {{ shape.name }}s
     order:
       - file.name
-{% for f in shape.flat() if not f.identifier and not f.multivalued %}
+      - file.folder
+{% for f in props if not f.identifier %}
       - note.{{ f.key }}
 {% endfor %}
-{% for f in shape.flat() if f.enum and not f.multivalued %}
-{% if loop.first %}
+  # Where a note was filed is a fact about the note that no property holds, and
+  # in a folder-first vault it is the more useful grouping: file.name says which
+  # {{ shape.name | lower }} this is, file.folder says which part of the vault it came from.
   - type: table
-    name: By {{ f.key | label }}
-    groupBy: note.{{ f.key }}
+    name: By Folder
+    groupBy:
+      property: file.folder
+      direction: ASC
     order:
       - file.name
-{% for g in shape.flat() if not g.identifier and not g.multivalued and g.key != f.key %}
+{% for f in props if not f.identifier %}
+      - note.{{ f.key }}
+{% endfor %}
+{% for f in props if f.enum %}
+{% if loop.first %}
+  - type: table
+    name: By {{ headers[f.key] }}
+    groupBy:
+      property: note.{{ f.key }}
+      direction: ASC
+    order:
+      - file.name
+      - file.folder
+{% for g in props if not g.identifier and g.key != f.key %}
       - note.{{ g.key }}
 {% endfor %}
 {% endif %}

@@ -1,0 +1,48 @@
+---
+{{ note.front | frontmatter }}
+---
+
+> [!example] Seed data
+> Generated from {{ fixture }} by `make artifacts`, so the {{ shape.name }} Base has
+> something to display. Example data, not part of the schema — copy it into a vault to
+> try a view out, and delete it once you have real notes.
+{% for e in links_out if note.links[e.name] is defined %}
+
+## {{ headers.get(e.name, e.name | replace("_", " ") | title) }}
+{% if e.flat() %}
+
+With the {{ e.via }} properties the `{{ e.name }}` property cannot carry
+({{ e.flat() | map(attribute="key") | join(", ") }}):
+{% endif %}
+
+{% for target, props in note.links[e.name] %}
+- [[{{ target }}]]{{ (" — " ~ (props.values() | reject("none") | join(" "))) if props }}
+{% endfor %}
+{% endfor %}
+{% for e in refs_out if note.refs[e.name] is defined %}
+
+## {{ headers.get(e.name, e.name | replace("_", " ") | title) }}
+
+Named here, referenced by id in the `{{ e.name }}` property: {{ e.target.name }} is not a
+note type.
+
+{% for target, props in note.refs[e.name] %}
+- {{ target }}{{ (" — " ~ (props.values() | reject("none") | join(" "))) if props }}
+{% endfor %}
+{% endfor %}
+{% for f in lists if note.lists[f.key] is defined %}
+
+## {{ headers[f.key] }}
+
+{% for item in note.lists[f.key] %}
+{{ loop.index }}. {{ item }}
+{% endfor %}
+{% endfor %}
+{% for n in nests if note.nested[n.name] is defined %}
+
+## {{ n.name | replace("_", " ") | title }}
+
+{% for item in note.nested[n.name] %}
+- {{ item | record(n.shape.fields | rejectattr("surrogate") | list) }}
+{% endfor %}
+{% endfor %}

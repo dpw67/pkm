@@ -24,7 +24,7 @@ from typing import Any
 
 import yaml
 
-from . import Embed, Model, Shape
+from . import Embed, Field, Model, Shape
 
 
 def surrogate(parent_id: str, slot: str, index: int) -> str:
@@ -167,3 +167,136 @@ def cypher(value: Any) -> str:
     if len(text) == 20 and text.endswith("Z") and text[10] == "T":
         return f"datetime('{escaped}')"
     return f"'{escaped}'"
+
+
+def slug(identifier: str) -> str:
+    """File name for a note, from the schema's identifier.
+
+    `pkm:ing/ground-beef` -> `ground-beef`. Obsidian is the one target where
+    identity is the file name rather than a property: a wikilink resolves by
+    name, so the id has to become the name or nothing can point at the note.
+    The last segment is enough here and reads better in a Base's first column;
+    the full id stays in frontmatter, which is what the other targets key on.
+    """
+    return identifier.rsplit("/", 1)[-1].rsplit(":", 1)[-1]
+
+
+@dataclass
+class Note:
+    """One vault note, with the three shapes of the fixture gathered together.
+
+    Obsidian is the only target that needs all three at once. Flat scalars go to
+    frontmatter, where a Base can column them. Edges become wikilinks, and the
+    properties a collapsed association put on the link have to go in the body,
+    since a frontmatter property holds a list of links and not a list of links
+    with attributes. Promoted value objects go in the body for the same reason.
+
+    Which means the body is also the one place list order survives: it is text,
+    so `ingredients` comes back in fixture order here even though a SwiftData
+    to-many and a Cypher MATCH both return it arbitrarily.
+    """
+
+    slug: str
+    front: dict[str, Any]
+    lists: dict[str, list[Any]] = field(default_factory=dict)
+    links: dict[str, list[tuple[str, dict[str, Any]]]] = field(default_factory=dict)
+    refs: dict[str, list[tuple[str, dict[str, Any]]]] = field(default_factory=dict)
+    nested: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
+
+
+def notes(model: Model, seed: Seed, shape: Shape) -> list[Note]:
+    """Seed notes for one shape, ready to render.
+
+    Without these a generated Base has nothing to display: the templates are
+    empty by design, so the only way to see whether a view works is to fill a
+    note in by hand from one of the other targets' output.
+    """
+    key = shape.identifier.name
+    names = {row[s.identifier.name]: slug(row[s.identifier.name])
+             for s in model.declared_nodes for row in seed.nodes.get(s.name, [])}
+    # A note target is addressed by file name; a reference target has no file, so
+    # the body says what it is called and frontmatter keeps the id. `name` is the
+    # only slot a label could come from, and the slug is a readable fallback.
+    labels = {row[s.identifier.name]: row.get("name") or slug(row[s.identifier.name])
+              for s in model.declared_nodes for row in seed.nodes.get(s.name, [])}
+    out = []
+    for flat, nest in zip(seed.nodes.get(shape.name, []), seed.nested.get(shape.name, [])):
+        # Empty keys are left out rather than written as nulls: a Base shows a
+        # missing property and an empty one the same way, and salt genuinely has
+        # no nutrition. Order follows the schema, so the frontmatter reads in the
+        # same order as the Base's columns.
+        front = {"type": shape.name}
+        front.update({k: v for k, v in flat.items()
+                      if v not in (None, [], "") and not isinstance(v, list)})
+        note = Note(slug=names[flat[key]], front=front,
+                    # Multivalued scalars go to the body, for the reasons the
+                    # note template states: ordered prose is not a column.
+                    lists={k: v for k, v in flat.items() if isinstance(v, list) and v})
+        for edge in model.edges:
+            # Promoted targets are not notes -- same rule the note template uses
+            # to decide which edges get a wikilink section.
+            if edge.source.name != shape.name or edge.target.promoted_from:
+                continue
+            hits = [link for link in seed.pairs[edge.table] if link.source == flat[key]]
+            if not hits:
+                continue
+            if edge.target.note:
+                note.links[edge.name] = [(names[x.target], x.props) for x in hits]
+                note.front[edge.name] = [f"[[{names[x.target]}]]" for x in hits]
+            else:
+                # No note to link to, so the property carries the id -- the same
+                # reference the other three targets store, and the join key back
+                # to the row in SwiftData or the node in Neo4j. A `[[…]]` here
+                # would be a link to a file the generator never writes.
+                note.refs[edge.name] = [(labels[x.target], x.props) for x in hits]
+                note.front[edge.name] = [x.target for x in hits]
+        for embed in shape.embeds:
+            if embed.promote and nest.get(embed.name):
+                note.nested[embed.name] = nest[embed.name]
+        note.front["tags"] = [f"pkm/{shape.name.lower()}"]
+        out.append(note)
+    return out
+
+
+def record(item: dict[str, Any], fields: list[Field] | None = None) -> str:
+    """One value object as a single line of a body list.
+
+    A `uri`-ranged field paired with exactly one other is a link, and rendering
+    it as one is the difference between a note and a dump of the row. That is
+    read off the schema range rather than guessed from the value: `caption` is
+    the label because `url` is the uri, not because it sorts second.
+
+    Anything else keeps its field names. Without a range to go on the generator
+    has no way to know which of two strings labels the other, and a bare pair
+    reads as a pair only when it happens to be two.
+    """
+    live = {k: v for k, v in item.items() if v is not None}
+    ranges = {f.name: f.range for f in fields or []}
+    uris = [k for k in live if ranges.get(k) == "uri"]
+    if len(uris) == 1 and len(live) == 2:
+        label = next(k for k in live if k != uris[0])
+        return f"[{live[label]}]({live[uris[0]]})"
+    return ", ".join(f"{k}: {v}" for k, v in live.items())
+
+
+def frontmatter(front: dict[str, Any]) -> str:
+    """Render a note's frontmatter as YAML.
+
+    Dumped rather than templated, because the values are real data: a caption
+    with a colon in it, or an ingredient named `Ground beef, 85% lean`, breaks
+    a hand-written `{{ key }}: {{ value }}` and quotes correctly here.
+    """
+    return yaml.dump(front, Dumper=_Indented, sort_keys=False, allow_unicode=True,
+                     default_flow_style=False, width=10000).rstrip()
+
+
+class _Indented(yaml.SafeDumper):
+    """SafeDumper that indents sequences under their key.
+
+    Only so a generated note matches what Obsidian's own property editor writes.
+    Both forms parse, but the flush-left one gets rewritten the first time a
+    property is touched in the UI, which makes an untouched note look edited.
+    """
+
+    def increase_indent(self, flow: bool = False, indentless: bool = False):
+        return super().increase_indent(flow, False)

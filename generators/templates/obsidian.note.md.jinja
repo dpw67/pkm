@@ -1,11 +1,12 @@
 ---
 type: {{ shape.name }}
-{% for f in shape.flat() -%}
-{{ f.key }}:{{ " []" if f.multivalued }}
+{% for f in props -%}
+{{ f.key }}:
 {% endfor -%}
-{% for e in edges_out -%}
+{% for e in links_out + refs_out -%}
 {{ e.name }}: []
 {% endfor -%}
+neo4j_id:
 tags:
   - pkm/{{ shape.name | lower }}
 ---
@@ -14,7 +15,7 @@ tags:
 > {{ shape.description }}
 {% if shape.concept %}> Concept: [{{ shape.concept }}](https://w3id.org/pkm/vocab/{{ shape.concept.split(":")[1] }})
 {% endif %}
-{% for e in edges_out %}
+{% for e in links_out %}
 
 ## {{ e.name | replace("_", " ") | title }}
 
@@ -28,6 +29,46 @@ links with attributes. Record them in prose below. The other three targets keep 
 the relationship itself.
 {% endif %}
 {% endfor %}
+{% for e in refs_out %}
+
+## {{ e.name | replace("_", " ") | title }}
+
+{{ e.description }}
+{{ e.target.name }} is not a note type, so the `{{ e.name }}` property holds
+{{ e.target.name }} `{{ e.target.identifier.name }}` values rather than `[[…]]` links{{ " — many allowed" if e.multivalued }}.
+That is the same reference the other three targets store, and the key that joins this
+note back to the row in SwiftData or the node in Neo4j. A wikilink would point at a file
+nothing generates, and in a large vault a bare name is the sort of thing that resolves to
+somebody else's note.
+{% if e.flat() %}
+
+Say which and how much below: the {{ e.via }} properties
+({{ e.flat() | map(attribute="key") | join(", ") }}) describe the use, not the thing, and
+a property holding a list of ids has nowhere to put them.
+{% endif %}
+{% endfor %}
+{% for f in lists %}
+
+## {{ headers[f.key] }}
+
+{{ f.description }}
+One per line, numbered. Not a frontmatter property: the editor would show each
+step as a chip, and a Base can neither column nor group on a list of sentences.
+The order is the list's own, which is the other thing frontmatter would lose.
+
+1. …
+{% endfor %}
+{% for n in nests %}
+
+## {{ n.name | replace("_", " ") | title }}
+
+{{ n.description }}
+Record each one here in the body, as a list — not as a frontmatter property. Each is a
+{{ n.shape.name }} of {{ n.shape.fields | rejectattr("surrogate") | map(attribute="name") | join(" and ") }},
+and a property holds a list of strings rather than a list of records. The graph targets
+promote each one to a node keyed by its position, which is identity a note does not
+need: the list below is already in order, because it is text.
+{% endfor %}
 
 ## Notes
 
@@ -37,4 +78,9 @@ Property reference — generated from {{ source }}
 {% if f.enum %}
   {{ " " * 28 }}          one of: {{ enums[f.enum].permissible_values.keys() | join(", ") }}
 {% endif %}
-{% endfor %}-->
+{% endfor %}
+  {{ "%-28s"|format("neo4j_id") }} {{ "%-9s"|format("text") }}          Not a schema slot: provenance for a note imported from Neo4j.
+{{ " " * 50 }}`id` is the join key every target agrees on and the one the Cypher
+{{ " " * 50 }}loader MERGEs on. An internal Neo4j id is local to one database and
+{{ " " * 50 }}gets reused after a delete, so record it but never match on it.
+-->

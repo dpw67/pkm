@@ -117,6 +117,8 @@ classes:
       - nutrition
 
   Ingredient:
+    annotations:
+      obsidian_note: false
     class_uri: pkm:Ingredient
     description: >-
       An individual food item or component used in the preparation of a recipe.
@@ -327,10 +329,12 @@ slots:
     description: How much the recipe makes.
 
   servings:
+    title: Servings
     range: integer
     description: The number of servings or portions a recipe yields.
 
   recipe_yield:
+    title: Yield
     range: string
     description: The yield as the source states it, when it is not a portion count.
     comments:
@@ -390,28 +394,34 @@ slots:
         events, where every unit in play measured the same quantity.
 
   calories:
+    title: Cal
     description: Energy content in kilocalories.
     range: float
 
   carbohydrates_g:
+    title: Carbs
     range: float
     description: Carbohydrates in grams.
 
   protein_g:
+    title: Protein
     range: float
     description: Protein in grams.
     comments:
       - No pkmv concept. Mint in 0.1.4.
 
   fat_g:
+    title: Fat
     range: float
     description: Fat in grams.
 
   fiber_g:
+    title: Fiber
     range: float
     description: Fiber in grams.
 
   sodium_mg:
+    title: Sodium
     range: float
     description: Sodium in milligrams.
     comments:
@@ -422,14 +432,17 @@ slots:
       - No pkmv concept. Mint in 0.1.4.
 
   prep_minutes:
+    title: Prep
     description: Hands-on preparation time in minutes.
     range: integer
 
   cook_minutes:
+    title: Cook
     description: Cooking time in minutes.
     range: integer
 
   total_minutes:
+    title: Total
     description: Total time in minutes, as stated by the source.
     range: integer
 

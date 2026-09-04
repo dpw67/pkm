@@ -69,6 +69,7 @@ class Field:
     name: str
     range: str                      # LinkML type name, or enum name
     description: str = ""
+    title: str = ""                 # LinkML `title` -- short label for a column header
     required: bool = False
     multivalued: bool = False
     enum: Optional[str] = None      # enum name when the range is an enum
@@ -109,16 +110,22 @@ def _annotation(element, key: str, default: str = "") -> str:
 
 
 def flatten(fields: list[Field], embeds: list["Embed"]) -> list[Field]:
-    """Scalars, plus the scalars of every embed that is not promoted.
+    """Scalars, plus the scalars of every embed that is neither promoted nor reified.
 
     Prefixed, because Obsidian's property editor does not handle nested objects
     and Neo4j has no nested properties at all. Shared by Shape and Edge -- an
     association class flattens onto a relationship exactly as a value object
     flattens onto a node.
+
+    A reifying embed is skipped for the same reason a promoted one is: its
+    scalars are not the owner's. `_associate` hands them to the collapsed edge,
+    which flattens them itself, so leaving them here too states them twice --
+    once on the relationship where they belong and once on the node where they
+    would hold a single value for a recipe that has four ingredients.
     """
     out = list(fields)
     for e in embeds:
-        if e.promote:
+        if e.promote or e.reifies is not None:
             continue
         for f in e.shape.fields:
             out.append(Field(**{**f.__dict__, "prefix": e.name}))
@@ -237,6 +244,7 @@ class Shape:
     comments: list[str] = field(default_factory=list)
     class_uri: str = ""
     concept: Optional[str] = None
+    note: bool = True               # generates an Obsidian note type
     fields: list[Field] = field(default_factory=list)
     embeds: list[Embed] = field(default_factory=list)
     edges: list[Edge] = field(default_factory=list)
@@ -295,6 +303,10 @@ class Model:
             comments=list(c.comments or []),
             class_uri=c.class_uri or "",
             concept=next((x for x in (c.see_also or []) if x.startswith("pkmv:")), None),
+            # Whether a class earns a note is an editorial call, not a derivable
+            # one, so it is recorded on the class rather than guessed from shape.
+            # Default on: a new class gets a note until someone decides otherwise.
+            note=_annotation(c, "obsidian_note") != "false",
         )
         self.shapes[name] = s
         return s
@@ -325,7 +337,8 @@ class Model:
             name=slot.name,
             range=rng,
             description=(slot.description or "").strip(),
-                required=bool(slot.required) or bool(slot.identifier),
+            title=(slot.title or "").strip(),
+            required=bool(slot.required) or bool(slot.identifier),
             multivalued=bool(slot.multivalued),
             enum=rng if is_enum else None,
             concept=next((x for x in (slot.see_also or []) if x.startswith("pkmv:")), None),

@@ -21,7 +21,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 from . import Model, kebab, snake
-from .seed import cypher, load
+from .seed import cypher, frontmatter, load, notes, record
 
 TEMPLATES = Path(__file__).parent / "templates"
 
@@ -43,6 +43,33 @@ def label(key: str) -> str:
     if len(parts) > 1 and parts[-1] in UNITS:
         return f"{' '.join(parts[:-1]).capitalize()} ({parts[-1]})"
     return key.replace("_", " ").capitalize()
+
+
+def headers(fields: list) -> dict[str, str]:
+    """Column header per flattened property key.
+
+    A slot's `title` wins where it has one, and wins unprefixed: in a Recipe
+    table the nutrition columns are obviously nutrition, so `Cal` and `Carbs`
+    read better than `Nutrition calories` and the prefix only costs width. The
+    prefix exists to disambiguate the property *key*, which is a different job.
+
+    Only a title wins unprefixed, though. An untitled embedded slot keeps its
+    prefix, because dropping it silently is how `source.url` becomes a column
+    headed `Url` in a table that has no other url and still does not say whose.
+    A title is a decision someone made; a humanised key is just a fallback.
+
+    And a title loses again if it collides. `name` and `source_name` are the
+    same slot embedded twice, so titling it would label two columns identically
+    -- the defect this whole function exists to avoid. Any header that is not
+    unique gets its prefix back, which leaves the shape's own field bare and
+    qualifies the embedded ones.
+    """
+    out = {f.key: (f.title or label(f.key)) for f in fields}
+    seen: dict[str, int] = {}
+    for h in out.values():
+        seen[h] = seen.get(h, 0) + 1
+    return {k: (label(f.key) if seen[v] > 1 and f.prefix else v)
+            for (k, v), f in zip(out.items(), fields)}
 
 
 # Swift keywords a slot name could plausibly collide with. Escaped rather than
@@ -231,6 +258,8 @@ def env() -> Environment:
     e.tests["relationship"] = lambda m: bool(getattr(m, "target", None)) or bool(
         getattr(getattr(m, "shape", None), "association", False))
     e.filters["cypher"] = cypher
+    e.filters["frontmatter"] = frontmatter
+    e.filters["record"] = record
     e.filters["cypher_pair"] = lambda kv: f"{kv[0]}: {cypher(kv[1])}"
     return e
 
@@ -275,11 +304,41 @@ def obsidian(m: Model, e: Environment, ctx: dict) -> dict[str, str]:
     user maintain a separate file for a photo caption.
     """
     out: dict[str, str] = {}
-    for s in m.declared_nodes:
-        common = dict(ctx, shape=s, enums=m.used_enums,
-                      edges_out=[x for x in m.edges if x.source.name == s.name])
+    for s in [x for x in m.declared_nodes if x.note]:
+        # A multivalued scalar is prose, not a column. Obsidian's property editor
+        # shows `instructions` as three chips of a sentence each and a Base cannot
+        # usefully filter or group on it, so it moves to the body as an ordered
+        # list -- which is also the only place its order is visible.
+        #
+        # Nutrition deliberately does NOT move. Six numbers are exactly what a
+        # frontmatter property is for, they are the columns of the Base, and
+        # Obsidian already renders them as a table at the top of the note. A body
+        # section would state the same figures a second time in the same file.
+        lists = [f for f in s.flat() if f.multivalued and not f.identifier]
+        props = [f for f in s.flat() if not f.multivalued or f.identifier]
+        common = dict(ctx, shape=s, enums=m.used_enums, headers=headers(s.flat()),
+                      props=props, lists=lists,
+                      # Three kinds of outgoing edge, and the difference is only
+                      # ever "does the target exist as a note".
+                      #
+                      # A note target gets `[[…]]`, which is what makes backlinks
+                      # and graph view work. A target the schema marked
+                      # obsidian_note: false gets its id instead: the reference is
+                      # real and has to survive a round trip, but a wikilink to a
+                      # file nobody will create is a broken link, and `[[salt]]` in
+                      # a large vault is a name collision waiting to resolve
+                      # somewhere else. A promoted value object gets neither -- it
+                      # is not a class at all, just a record in the body.
+                      links_out=[x for x in m.edges if x.source.name == s.name
+                                 and not x.target.promoted_from and x.target.note],
+                      refs_out=[x for x in m.edges if x.source.name == s.name
+                                and not x.target.promoted_from and not x.target.note],
+                      nests=[x for x in s.embeds if x.promote])
         out[f"obsidian/templates/{s.name}.md"] = e.get_template("obsidian.note.md.jinja").render(**common)
         out[f"obsidian/bases/{s.name}.base"] = e.get_template("obsidian.base.jinja").render(**common)
+        for note in notes(m, ctx["seed"], s) if ctx.get("seed") else []:
+            out[f"obsidian/notes/{note.slug}.md"] = e.get_template(
+                "obsidian.seed.md.jinja").render(**common, note=note)
     return out
 
 

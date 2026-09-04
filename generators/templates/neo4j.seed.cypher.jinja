@@ -68,5 +68,14 @@ SET
 {% endfor %}
 
 // ---- what you should see
-// MATCH (m:Meal)-[:HAS_RECIPE]->(r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)
-// RETURN m.name, r.name, collect(i.name) AS ingredients;
+// MATCH (m:Meal)-[:HAS_RECIPE]->(r:Recipe)-[u:HAS_INGREDIENT]->(i:Ingredient)
+// RETURN m.name, r.name, collect(toString(u.quantity) + ' ' + u.unit + ' ' + i.name) AS ingredients;
+//
+// And the reason the amounts live on `u` rather than on `i`:
+//
+// MATCH (r:Recipe)-[u:HAS_INGREDIENT]->(i:Ingredient {name: 'Salt'})
+// RETURN r.name, u.quantity, u.unit;
+//
+// One Ingredient node, two links, two different amounts. Had quantity been a
+// property of Salt itself there would be one value for both recipes, and
+// whichever loaded second would win.

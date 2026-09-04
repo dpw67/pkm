@@ -64,6 +64,11 @@ imports:
 # into their parent. That split is the one modelling decision that most changes
 # the generated artifacts: identified classes become Neo4j nodes and SwiftData
 # @Model types, value objects become nested structs and node properties.
+#
+# RecipeIngredient is a third case. A value object with no identifier and exactly
+# one single-valued reference to an identified class is not a thing but a *use* of
+# one, so it collapses into the relationship and its scalars become properties of
+# that link. The generator detects the shape rather than being told.
 # ---------------------------------------------------------------------------
 
 classes:
@@ -119,14 +124,50 @@ classes:
       - >-
         Identified rather than inlined: the same ingredient recurs across
         recipes, which is what makes it worth a node in the graph.
+      - >-
+        quantity and unit lived here until 0.1.4 and moved to RecipeIngredient.
+        Recurrence is exactly why they could not stay: one node, two recipes,
+        two different amounts.
+      - >-
+        nutrition has the same defect and has not been fixed. The seed figures
+        are scoped to the recipe's amount, so they belong to the use as much as
+        quantity did. The fix is different, though -- a reference quantity on
+        the ingredient with the recipe's contribution derived -- so it waits.
     see_also:
       - pkmv:Ingredient
     slots:
       - id
       - name
+      - nutrition
+
+  RecipeIngredient:
+    class_uri: pkm:RecipeIngredient
+    description: >-
+      One recipe's use of one ingredient: which ingredient, and how much of it.
+    comments:
+      - >-
+        An association class. No identifier, and exactly one single-valued
+        reference to an identified class -- which is the whole detection rule,
+        because there is nothing else a class of that shape could mean. It
+        collapses into HAS_INGREDIENT and its scalars become properties of the
+        link rather than a node wedged between recipe and ingredient.
+      - >-
+        Collapsing also sidesteps a TypeDB collision: promoted, this would be
+        both the entity `recipe-ingredient` and the relation of the same name,
+        in TypeDB's one global namespace for both.
+      - >-
+        quantity and unit are kept as two slots rather than one Amount value
+        object. Both project onto a node property or a relationship property
+        without further choices, whereas an Amount would flatten to
+        amount_quantity/amount_unit and commit the vocabulary to concepts that
+        do not exist yet.
+      - >-
+        No pkmv: concept yet -- a 0.1.4 minting candidate, alongside Amount and
+        UnitOfMeasure.
+    slots:
+      - ingredient
       - quantity
       - unit
-      - nutrition
 
   Nutrition:
     class_uri: pkm:Nutrition
@@ -301,9 +342,14 @@ slots:
 
   ingredients:
     description: The food items and components the recipe calls for.
-    range: Ingredient
+    range: RecipeIngredient
     multivalued: true
     inlined_as_list: true
+
+  ingredient:
+    description: The ingredient this line of the recipe calls for.
+    range: Ingredient
+    required: true
 
   nutrition:
     description: Aggregate nutrient content for this item.
@@ -329,11 +375,19 @@ slots:
   quantity:
     range: float
     description: How much of the ingredient the recipe calls for.
+    comments:
+      - >-
+        A property of the relationship, not of either end. See RecipeIngredient.
 
   unit:
     description: The unit the quantity is expressed in.
     comments:
-      - Free text for now; a UnitOfMeasure enum is a 0.1.4 candidate.
+      - >-
+        Free text for now; a UnitOfMeasure enum is a 0.1.4 candidate. It will
+        need a dimension tag before it is useful: lb and oz are mass, cup is
+        volume, can is packaging, and they do not inter-convert. So any
+        convert(to:) has to be failable -- unlike the single-dimension diabetes
+        events, where every unit in play measured the same quantity.
 
   calories:
     description: Energy content in kilocalories.

@@ -5,33 +5,35 @@
 # Ladybug, and TypeQL without restating any of their differences. It exists
 # mainly so the generated loaders are runnable, and so promotion is exercised
 # by real data -- Chili has two images, which is the case that forces a node.
+#
+# Salt is here for the opposite case. Both recipes call for it in different
+# amounts, so it is the data that distinguishes a correct association from the
+# broken model where quantity sat on the ingredient: one Ingredient node, two
+# HAS_INGREDIENT links, two different sets of link properties.
+#
+# It carries no nutrition block, and that is deliberate rather than tidy: the
+# nutrition figures below are scoped to each recipe's amount (chili's 1488 kcal
+# is exactly the sum of its three), so a shared ingredient has no single right
+# answer for them. Recording none is honest; recording one would not be.
 
 Ingredient:
   - id: pkm:ing/kidney-beans
     name: Kidney beans
-    quantity: 2.0
-    unit: can
     nutrition: {calories: 220, carbohydrates_g: 40.0, protein_g: 14.0, fat_g: 0.8, fiber_g: 16.0, sodium_mg: 480}
   - id: pkm:ing/ground-beef
     name: Ground beef, 85% lean
-    quantity: 1.5
-    unit: lb
     nutrition: {calories: 1088, carbohydrates_g: 0.0, protein_g: 96.0, fat_g: 76.0, fiber_g: 0.0, sodium_mg: 510}
   - id: pkm:ing/crushed-tomatoes
     name: Crushed tomatoes
-    quantity: 28.0
-    unit: oz
     nutrition: {calories: 180, carbohydrates_g: 40.0, protein_g: 8.0, fat_g: 1.0, fiber_g: 10.0, sodium_mg: 1100}
   - id: pkm:ing/rolled-oats
     name: Rolled oats
-    quantity: 0.5
-    unit: cup
     nutrition: {calories: 150, carbohydrates_g: 27.0, protein_g: 5.0, fat_g: 3.0, fiber_g: 4.0, sodium_mg: 0}
   - id: pkm:ing/blueberries
     name: Blueberries
-    quantity: 0.75
-    unit: cup
     nutrition: {calories: 60, carbohydrates_g: 15.0, protein_g: 0.8, fat_g: 0.3, fiber_g: 2.7, sodium_mg: 1}
+  - id: pkm:ing/salt
+    name: Salt
 
 Recipe:
   - id: pkm:rec/weeknight-chili
@@ -49,7 +51,11 @@ Recipe:
       - {url: "https://example.org/chili-hero.jpg", caption: "Finished chili in the pot"}
       - {url: "https://example.org/chili-bowl.jpg", caption: "Single bowl, plated"}
     source: {name: "Warren family notebook", url: "https://warrenweb.net/recipes/chili", source_kind: Cookbook}
-    ingredients: [pkm:ing/ground-beef, pkm:ing/crushed-tomatoes, pkm:ing/kidney-beans]
+    ingredients:
+      - {ingredient: pkm:ing/ground-beef, quantity: 1.5, unit: lb}
+      - {ingredient: pkm:ing/crushed-tomatoes, quantity: 28.0, unit: oz}
+      - {ingredient: pkm:ing/kidney-beans, quantity: 2.0, unit: can}
+      - {ingredient: pkm:ing/salt, quantity: 1.5, unit: tsp}
 
   - id: pkm:rec/overnight-oats
     name: Overnight oats with blueberries
@@ -62,7 +68,10 @@ Recipe:
     nutrition: {calories: 210, carbohydrates_g: 42.0, protein_g: 5.8, fat_g: 3.3, fiber_g: 6.7, sodium_mg: 1}
     preparation: {prep_minutes: 5, cook_minutes: 0, total_minutes: 5}
     source: {name: "Serious Eats", url: "https://www.seriouseats.com/", source_kind: Website}
-    ingredients: [pkm:ing/rolled-oats, pkm:ing/blueberries]
+    ingredients:
+      - {ingredient: pkm:ing/rolled-oats, quantity: 0.5, unit: cup}
+      - {ingredient: pkm:ing/blueberries, quantity: 0.75, unit: cup}
+      - {ingredient: pkm:ing/salt, quantity: 0.25, unit: tsp}
 
 Meal:
   - id: pkm:meal/2026-09-04-breakfast

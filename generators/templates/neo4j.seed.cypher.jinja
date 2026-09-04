@@ -5,13 +5,19 @@
 // database of its own rather than the default one -- a sandbox keeps the seed
 // MERGEs away from anything already in `neo4j`:
 //
+//     read -rs "?Neo4j password: " NEO4J_PASSWORD && export NEO4J_PASSWORD && echo
 //     cypher-shell -a bolt://localhost:7687 -u neo4j -d system \
 //       "CREATE DATABASE {{ db }} IF NOT EXISTS WAIT;"
 //     cat {{ out }}.cypher {{ out }}.seed.cypher \
 //       | cypher-shell -a bolt://localhost:7687 -u neo4j -d {{ db }}
+//     unset NEO4J_PASSWORD
 //
 // Piped rather than passed twice: cypher-shell's -f takes one file, so the two
-// have to arrive on stdin as a single script.
+// have to arrive on stdin as a single script. That is also why the password has
+// to come from the environment -- with the script on stdin there is no terminal
+// left to prompt on, and cypher-shell connects unauthenticated instead. The
+// failure looks like an authorization error (`42NFF ... permission/access
+// denied`) rather than a missing password, which is misleading.
 //
 // Multiple databases in one DBMS is an Enterprise feature. On Community, drop
 // the -d flag and accept the default database.

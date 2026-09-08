@@ -1,0 +1,14 @@
+# .github/FUNDING.yml
+
+# Native GitHub Sponsors
+github: [dpw67]
+
+# Popular third-party platforms
+ko_fi: warrenweb
+
+# Custom URLs (Ghost subscription and Stripe or PayPal donation)
+custom: [
+    "https://blog.warrenweb.net/#/portal/signup", 
+    "https://blog.warrenweb.net/#/portal/support", 
+    "https://paypal.me/DougWarrenMoney"
+]

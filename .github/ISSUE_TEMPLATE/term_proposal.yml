@@ -1,0 +1,77 @@
+name: 🌱 Propose a new term
+description: Suggest a concept that belongs in the PKM vocabulary.
+title: "[Term]: "
+labels: ["vocabulary", "term-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The vocabulary is authored in the [Intentional Arrangement SKOS Editor](https://github.com/jesstalisman-ia/intentional-arrangement-skos) and exported into this repo, so everything under `vocab/` is generated — a pull request can't add a term. This form is how terms get in.
+
+        Browse the [vocabulary index](https://w3id.org/pkm/vocab/) first; the concept may already exist under a different label.
+  - type: input
+    id: label
+    attributes:
+      label: Preferred label
+      description: Natural language, spaces and all. The URI is derived from it once, at creation, and does not change afterward.
+      placeholder: "Reading Session"
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition
+      description: One sentence saying what the thing *is*. Every concept in the vocabulary has one.
+      placeholder: "A bounded period spent reading a single source, recorded so that time and comprehension can be reviewed later."
+    validations:
+      required: true
+  - type: textarea
+    id: scopenote
+    attributes:
+      label: Scope note
+      description: When to use it, and when to reach for something else. Every concept in the vocabulary has one of these too — it's what keeps two similar terms apart.
+      placeholder: "Use for a single sitting with one source. For a multi-session study of one work, use Reading Project."
+    validations:
+      required: true
+  - type: input
+    id: broader
+    attributes:
+      label: Broader term
+      description: The parent this sits under. Should be an is-a-kind-of relationship, not a part-of or related-to.
+      placeholder: "Activity"
+    validations:
+      required: true
+  - type: input
+    id: related
+    attributes:
+      label: Related terms
+      description: Associative links — concepts a reader should also know about, but that aren't parents or children. Optional.
+      placeholder: "Source, Note"
+    validations:
+      required: false
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this needed?
+      description: What can't be expressed today, and what you'd do with it. This becomes the term's change note, so it's the part that outlives the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources or prior art
+      description: Definitions from a standard, another vocabulary, or the literature. Links or citations. Optional.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the vocabulary and this concept isn't already there under another label.
+          required: true
+        - label: I understand the URI is minted by the maintainer and can't be chosen.
+          required: true
+  - type: markdown
+    attributes:
+      value: Attachments welcome — Turtle, CSV, JSON. GitHub won't accept a bare `.ttl`, so rename it to `.ttl.txt` or paste it in a fenced code block.

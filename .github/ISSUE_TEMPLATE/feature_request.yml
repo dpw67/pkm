@@ -1,0 +1,59 @@
+name: ✨ Feature request
+description: Suggest a capability or improvement for the PKM Vocabulary and related resources.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping shape the vocabulary, concepts, terms, definitions, tools, resources, and documentation. Please check [existing issues](https://github.com/dpw67/pkm/issues) first — a 👍 on a matching one helps it rise.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The task or goal, and what gets in the way today.
+      placeholder: "When I access a concept in the vocabulary, I want to…"
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to do?
+      description: Describe the capability or outcome. Rough is fine.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you run into this?
+      options:
+        - Vocabulary at w3id.org/pkm
+        - GitHub repo or Pages site
+        - Obsidian notes site
+        - Ghost blog
+        - Not tied to one place
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part?
+      options:
+        - Concepts, terms, definitions
+        - Labels and thesaurus relations
+        - Hierarchy and associations
+        - Cross-vocabulary matches
+        - Metadata, schema, shapes
+        - Formats and downloads
+        - Tooling and integration
+        - Domain coverage (meals, diabetes)
+        - Documentation
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: Examples, a sample file, links, or how you're using the tool. Optional.
+    validations:
+      required: false

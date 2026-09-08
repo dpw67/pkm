@@ -1,0 +1,61 @@
+name: 🐛 Bug report
+description: Something didn't work as expected.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what actually happened.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you run into this?
+      options:
+        - Vocabulary at w3id.org/pkm
+        - GitHub repo or Pages site
+        - Obsidian notes site
+        - Ghost blog
+        - Not tied to one place
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part?
+      options:
+        - Concepts, terms, definitions
+        - Labels and thesaurus relations
+        - Hierarchy and associations
+        - Cross-vocabulary matches
+        - Metadata, schema, shapes
+        - Formats and downloads
+        - Tooling and integration
+        - Domain coverage (meals, diabetes)
+        - Documentation
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Opened https://w3id.org/pkm/vocab/Recipe.
+        2. Downloaded the RDF Turtle file.
+        3. Expected skos:broader to point at Meal: it was missing.
+    validations:
+      required: false
+  - type: input
+    id: env
+    attributes:
+      label: Browser & device
+      placeholder: "e.g. Dia on macOS, Chrome on Windows, or Safari on iPhone"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: Attach (or drag/drop) files such as Turtle, CSV, JSON, etc., if it helps reproduce the issue. GitHub won't accept a bare `.ttl`, so rename it to `.ttl.txt` or paste it in a fenced code block.

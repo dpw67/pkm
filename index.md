@@ -33,12 +33,15 @@ Machine-readable descriptions of the namespace itself:
 
 ## Status
 
-Vocabulary **0.1.1** — early draft, published for feedback. Terms are not yet stable
+Vocabulary **0.1.3** — early draft, published for feedback. Terms are not yet stable
 and may change without notice until 1.0.0 is tagged.
 
 Nothing is deleted outright: a retired URI keeps resolving, marked `owl:deprecated`
 and pointed at its replacement with `dcterms:isReplacedBy`, so a link made today does
 not rot. Comments and corrections are welcome — that is what this release is for.
+
+See the [changelog](https://github.com/dpw67/pkm/blob/main/CHANGELOG.md) for what
+changed in each version and what counts as a breaking change.
 
 ## License
 

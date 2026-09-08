@@ -1,0 +1,69 @@
+name: ✏️ Propose a change to an existing term
+description: Correct or refine a concept already in the PKM vocabulary.
+title: "[Term change]: "
+labels: ["vocabulary", "term-change"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The vocabulary is authored in the [Intentional Arrangement SKOS Editor](https://github.com/jesstalisman-ia/intentional-arrangement-skos) and exported into this repo, so everything under `vocab/` is generated — a pull request editing a term file would be overwritten by the next build. This form is how changes get made.
+
+        For a concept that doesn't exist yet, use [propose a new term](https://github.com/dpw67/pkm/issues/new?template=term_proposal.yml) instead.
+  - type: input
+    id: term
+    attributes:
+      label: Which term?
+      description: Its URI, or its preferred label if you don't have the URI to hand.
+      placeholder: "https://w3id.org/pkm/vocab/DayMealPlan"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change?
+      options:
+        - Preferred label
+        - Definition
+        - Scope note
+        - Alternative label
+        - Broader or narrower relation
+        - Related relation
+        - Cross-vocabulary mapping
+        - Deprecate this term
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+      description: Paste the current value, so the change is unambiguous.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say
+      description: For a deprecation, name the successor term if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why?
+      description: The reasoning, not the mechanics — the change note records *what* changed automatically, so this is the place for *why* it was wrong. A future reader wondering whether the old form was deliberate will land here.
+      placeholder: "The period in 'Day.Meal Plan' reads as a namespace separator, but it was a typo — nothing else in the vocabulary uses dotted labels."
+    validations:
+      required: true
+  - type: checkboxes
+    id: understood
+    attributes:
+      label: Before submitting
+      options:
+        - label: I understand the URI stays the same even if the label changes.
+          required: true
+        - label: I understand retired terms are deprecated, not deleted, and keep resolving.
+          required: true
+  - type: markdown
+    attributes:
+      value: Attachments welcome — Turtle, CSV, JSON. GitHub won't accept a bare `.ttl`, so rename it to `.ttl.txt` or paste it in a fenced code block.

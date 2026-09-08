@@ -12,13 +12,15 @@ It documents the following, with PKM extensions based on SKOS, RDF, OWL, schema.
 - tools — Python and Swift apps, services, scripts, intents, Siri
 - resources — related documentation and examples
 
-Schema and examples are provided in Python, Swift, Cypher, SQL, TypeDB, JSON Schema, and JSON.
+Schema and examples are provided for LinkML, Python, Pydantic, Swift, SwiftUI, SwiftData, Neo4j, Ladybug, Cypher, TypeDB, TypeQL, JSON Schema, JSON, GraphQL, and SQL.
 
 ## Contact
 This space is administered by Doug Warren.
-Email: doug78645@gmail.com (GitHub: @dpw67)
+Email: doug@warrenweb.net (GitHub: @dpw67)
 
-Additional information is available at https://blog.warrenweb.net.
+Additional information is available on these WarrenWeb sites:
+- Notes (Obsidian): https://notes.warrenweb.net
+- Blog (Ghost): https://blog.warrenweb.net
 
 ## Maintainers
 - @dpw67

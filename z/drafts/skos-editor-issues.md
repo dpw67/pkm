@@ -1,7 +1,7 @@
 # SKOS Editor — draft issues
 
 Five drafts against `jesstalisman-ia/intentional-arrangement-skos`, ready to file.
-Evidence is from `vocab/src/pkm-vocab.export.ttl` (223 concepts, 18 collections,
+Evidence is from `../pkm-vocab.export-0.1.3.ttl` (223 concepts, 18 collections,
 318 ISO 25964 links).
 
 **Before filing:** confirm the editor version that produced the export. The change

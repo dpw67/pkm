@@ -13,7 +13,7 @@ each term dereferences independently.
 
 ## Download
 
-- [`pkm-vocab.export-0.ttl`](../z/pkm-vocab-0.1.0.ttl) — Turtle
+- [`pkm-vocab.export-0.1.2.ttl`](pkm-vocab.export-0.1.0.ttl) — Turtle
 
 ## Terms
 

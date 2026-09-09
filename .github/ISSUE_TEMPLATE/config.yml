@@ -6,9 +6,9 @@ contact_links:
   - name: 💡 Half-formed idea
     url: https://github.com/dpw67/pkm/discussions/categories/ideas
     about: Not sure it's a feature request yet? Start here.
-  - name: 📖 Documentation
+  - name: 📖 New here? Start with the docs
     url: https://github.com/dpw67/pkm/tree/main/docs
-    about: Getting started, the SKOS background, and the companion Notes and Blog sites.
+    about: What the vocabulary is, how to access it, and where the long write-ups live.
   - name: 📬 Prefer email?
     url: mailto:doug@warrenweb.net
     about: Not on GitHub? Send feedback by email instead.

@@ -18,6 +18,27 @@ concepts, and collections created with the SKOS Editor. This will
 evolve into an entire ontology pipeline over time as this 
 is developed further (from concepts to agents).
 
+### Accessing a term
+Every concept and collection has a URI of its own, and that URI
+resolves to a description of the term. There is nothing to install
+and no API key to request.
+
+One URI serves two audiences. Open
+[https://w3id.org/pkm/vocab/Recipe](https://w3id.org/pkm/vocab/Recipe)
+in a browser and you get a readable page: the definition, the broader
+and narrower terms, the collections it belongs to, and its dates.
+Ask for RDF at the same address and you get Turtle instead.
+
+```
+curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Recipe
+```
+
+Swap `Recipe` for any term name. The full list is at
+[https://w3id.org/pkm/vocab](https://w3id.org/pkm/vocab), and the whole
+vocabulary in one file -- every concept, collection, and editorial note --
+is at
+[vocab/pkm-vocab.ttl](https://w3id.org/pkm/vocab/pkm-vocab.ttl).
+
 Visit these companion websites to learn more about the PKM Vocabulary.
 
 - [PKM Vocabulary](https://w3id.org/pkm/vocab)

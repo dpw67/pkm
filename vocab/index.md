@@ -7,8 +7,8 @@ title: PKM Vocabulary
 **Concept URIs:** `https://w3id.org/pkm/vocab/{Term}`
 
 A SKOS glossary of Personal Knowledge Management terms. Concepts use slash URIs, so
-each term dereferences on its own: an RDF client asking for
-`https://w3id.org/pkm/vocab/Recipe` gets Turtle back, a browser gets this page.
+each term dereferences on its own: `https://w3id.org/pkm/vocab/Recipe` returns
+[the page for Recipe](Recipe/) to a browser and Turtle to an RDF client.
 
 Terms are still moving. Retired URIs are marked `owl:deprecated` and pointed at
 their replacement with `dcterms:isReplacedBy` rather than removed, so a link made
@@ -20,297 +20,298 @@ today keeps resolving.
 ## Download
 
 - [`pkm-vocab.ttl`](pkm-vocab.ttl) — the whole vocabulary in Turtle (223 concepts, 18 collections)
-- One Turtle file per term at `terms/{Term}.ttl`, which is what `https://w3id.org/pkm/vocab/{Term}` resolves to for an RDF client
+- One page per term at `https://w3id.org/pkm/vocab/{Term}` — the same URI serves a readable page to a browser and Turtle to an RDF client
+- The per-term Turtle on its own at `terms/{Term}.ttl`
 
 ## Hierarchy
 
 Nested by `skos:broader`, starting from the top concepts. A term with more than one parent is listed in full once and cross-referenced after that.
 
-- [Claude AI](terms/ClaudeAI.ttl)
-  - [Claude Chat](terms/ClaudeChat.ttl)
-  - [Claude Cowork](terms/ClaudeCowork.ttl)
-  - [Claude Desktop](terms/ClaudeDesktop.ttl)
-- [Graph Database](terms/GraphDatabase.ttl)
-  - [Context Graph](terms/ContextGraph.ttl)
-  - [Cypher](terms/Cypher.ttl)
-  - [Knowledge Graph](terms/KnowledgeGraph.ttl)
-  - [Memory Graph](terms/MemoryGraph.ttl)
-  - [Neo4j](terms/Neo4j.ttl)
-  - [Neo4j Desktop](terms/Neo4jDesktop.ttl)
-- [Health Data](terms/HealthData.ttl)
-  - [Apple Health](terms/AppleHealth.ttl)
-  - [Dexcom Data](terms/DexcomData.ttl)
-  - [Glooko Data](terms/GlookoData.ttl)
-- [Knowledge System Architecture](terms/KnowledgeSystemArchitecture.ttl)
-  - [Knowledge System](terms/KnowledgeSystem.ttl)
-    - [Glossary](terms/Glossary.ttl)
-    - [Knowledge](terms/Knowledge.ttl)
-      - [Cluster](terms/Cluster.ttl)
-        - [Effort Cluster](terms/EffortCluster.ttl)
-          - [Effort Index](terms/EffortIndex.ttl)
-          - [Effort Journal](terms/EffortJournal.ttl)
-          - [Effort Log](terms/EffortLog.ttl)
-          - [Effort Plan](terms/EffortPlan.ttl)
-          - [Effort Review](terms/EffortReview.ttl)
-        - [Time Cluster](terms/TimeCluster.ttl)
-          - [Day Cluster](terms/DayCluster.ttl)
-            - [Day Cluster Core](terms/DayClusterCore.ttl)
-              - [Day Analysis](terms/DayAnalysis.ttl)
-              - [Day Index](terms/DayIndex.ttl)
-              - [Day Journal](terms/DayJournal.ttl)
-              - [Day Log](terms/DayLog.ttl)
-              - [Day Plan](terms/DayPlan.ttl)
-              - [Day Review](terms/DayReview.ttl)
-            - [Day Cluster Health](terms/DayClusterHealth.ttl)
-              - [Day Diabetes](terms/DayDiabetes.ttl)
-              - [Day Diabetes Analysis](terms/DayDiabetesAnalysis.ttl)
-              - [Day Health](terms/DayHealth.ttl)
-              - [Day.Meal Plan](terms/DayMealPlan.ttl)
-            - [Day Cluster Support](terms/DayClusterSupport.ttl)
-              - [Day Actions](terms/DayActions.ttl)
-              - [Day Links](terms/DayLinks.ttl)
-              - [Day Meeting](terms/DayMeeting.ttl)
-              - [Day Schedule](terms/DaySchedule.ttl)
-            - [Day Cluster Visual](terms/DayClusterVisual.ttl)
-              - [Day Base](terms/DayBase.ttl)
-              - [Day Board](terms/DayBoard.ttl)
-              - [Day Canvas](terms/DayCanvas.ttl)
-              - [Day Diagram](terms/DayDiagram.ttl)
-              - [Day Drawing](terms/DayDrawing.ttl)
-              - [Day Mindmap](terms/DayMindmap.ttl)
-              - [Day View](terms/DayView.ttl)
-          - [Month Cluster](terms/MonthCluster.ttl)
-            - [Month Health](terms/Month-Health.ttl)
-            - [Month Journal](terms/MonthJournal.ttl)
-            - [Month Log](terms/MonthLog.ttl)
-            - [Month Plan](terms/MonthPlan.ttl)
-            - [Month Review](terms/MonthReview.ttl)
-          - [Quarter Cluster](terms/QuarterCluster.ttl)
-            - [Quarter Health](terms/QuarterHealth.ttl)
-            - [Quarter Journal](terms/QuarterJournal.ttl)
-            - [Quarter Log](terms/QuarterLog.ttl)
-            - [Quarter Plan](terms/QuarterPlan.ttl)
-            - [Quarter Review](terms/QuarterReview.ttl)
-          - [Week Cluster](terms/WeekCluster.ttl)
-            - [Week Analysis](terms/WeekAnalysis.ttl)
-            - [Week Diabetes](terms/WeekDiabetes.ttl)
-            - [Week Diabetes Analysis](terms/WeekDiabetesAnalysis.ttl)
-            - [Week Health](terms/WeekHealth.ttl)
-            - [Week Index](terms/WeekIndex.ttl)
-            - [Week Journal](terms/WeekJournal.ttl)
-            - [Week Log](terms/WeekLog.ttl)
-            - [Week Meal Plan](terms/WeekMealPlan.ttl)
-            - [Week Plan](terms/WeekPlan.ttl)
-            - [Week Review](terms/WeekReview.ttl)
-          - [Year Cluster](terms/YearCluster.ttl)
-            - [Year Health](terms/YearHealth.ttl)
-            - [Year Journal](terms/YearJournal.ttl)
-            - [Year Log](terms/YearLog.ttl)
-            - [Year Plan](terms/YearPlan.ttl)
-            - [Year Review](terms/YearReview.ttl)
-        - [Topic Cluster](terms/TopicCluster.ttl)
-          - [Topic Index](terms/TopicIndex.ttl)
-          - [Topic Journal](terms/TopicJournal.ttl)
-          - [Topic Log](terms/TopicLog.ttl)
-          - [Topic Plan](terms/TopicPlan.ttl)
-          - [Topic Review](terms/TopicReview.ttl)
-      - [Concept](terms/Concept.ttl)
-      - [Source](terms/Source.ttl)
-        - [Book](terms/Book.ttl)
-        - [Clipping](terms/Clipping.ttl)
-        - [Movie](terms/Movie.ttl)
-        - [Person](terms/Person.ttl)
-        - [Quote](terms/Quote.ttl)
-      - [Topic](terms/Topic.ttl)
-    - [Knowledge Graph](terms/KnowledgeGraph.ttl) — also under Graph Database
-    - [Metadata](terms/Metadata.ttl)
-    - [Ontology](terms/Ontology.ttl)
-    - [Standard](terms/Standard.ttl)
-      - [ISO Standard](terms/ISOStandard.ttl)
-      - [SKOS](terms/SKOS.ttl)
-      - [W3C Standard](terms/W3CStandard.ttl)
-        - [OWL](terms/OWL.ttl)
-        - [RDF](terms/RDF.ttl)
-        - [SKOS](terms/SKOS.ttl) — also under Standard
-    - [Taxonomy](terms/Taxonomy.ttl)
-    - [Term](terms/Term.ttl)
-- [Obsidian Notes](terms/ObsidianNotes.ttl)
-  - [Base](terms/Base.ttl)
-  - [Map](terms/Map.ttl)
-  - [Note](terms/Note.ttl)
-  - [Obsidian Plugin](terms/ObsidianPlugin.ttl)
-    - [Advanced URI](terms/AdvancedURI.ttl)
-    - [Bases](terms/Bases.ttl)
-    - [Book Search](terms/BookSearch.ttl)
-    - [Canvas](terms/Canvas.ttl)
-    - [Dataview](terms/Dataview.ttl)
-    - [Excalidraw](terms/Excalidraw.ttl)
-    - [Local REST API with MCP](terms/LocalRESTAPIWithMCP.ttl)
-    - [Periodic Notes](terms/PeriodicNotes.ttl)
-    - [Publish](terms/Publish.ttl)
-    - [QuickAdd](terms/QuickAdd.ttl)
-    - [Sync](terms/Sync.ttl)
-    - [Templater](terms/Templater.ttl)
-    - [Workspaces](terms/Workspaces.ttl)
-  - [Obsidian Template](terms/ObsidianTemplate.ttl)
-  - [Python Template](terms/PythonTemplate.ttl)
-  - [Template](terms/TemplateCopy.ttl)
-  - [Vault](terms/Vault.ttl)
-    - [Add Folder](terms/AddFolder.ttl)
-      - [Draft](terms/Draft.ttl)
-      - [Focus](terms/Focus.ttl)
-      - [Idea](terms/Idea.ttl)
-      - [Spark](terms/Spark.ttl)
-    - [Archive Folder](terms/ArchiveFolder.ttl)
-    - [Atlas Folder](terms/AtlasFolder.ttl)
-    - [Calendar Folder](terms/CalendarFolder.ttl)
-      - [Calendar](terms/Calendar.ttl)
-        - [Day](terms/Day.ttl)
-        - [Decade](terms/Decade.ttl)
-        - [Month](terms/Month.ttl)
-        - [Quarter](terms/Quarter.ttl)
-        - [Time](terms/Time.ttl)
-        - [Week](terms/Week.ttl)
-          - [Day](terms/Day.ttl) — also under Calendar
-        - [Year](terms/Year.ttl)
-      - [Day Cluster](terms/DayCluster.ttl) — also under Calendar Folder
-      - [Month Cluster](terms/MonthCluster.ttl) — also under Calendar Folder
-      - [Quarter Cluster](terms/QuarterCluster.ttl) — also under Calendar Folder
-      - [Time Cluster](terms/TimeCluster.ttl) — also under Calendar Folder
-      - [Week Cluster](terms/WeekCluster.ttl) — also under Calendar Folder
-      - [Year Cluster](terms/YearCluster.ttl) — also under Calendar Folder
-    - [Efforts Folder](terms/EffortsFolder.ttl)
-      - [Action](terms/Action.ttl)
-      - [Area](terms/Area.ttl)
-        - [Finance](terms/Finance.ttl)
-        - [Health](terms/Health.ttl)
-        - [Life](terms/Life.ttl)
-      - [Interest](terms/Interest.ttl)
-      - [Project](terms/Project.ttl)
-    - [Extra Folder](terms/ExtraFolder.ttl)
-    - [Ideaverse](terms/Ideaverse.ttl)
-      - [ACE Organization](terms/ACEOrganization.ttl)
-      - [ARC Ideation](terms/ARCIdeation.ttl)
-      - [Idea Emergence](terms/IdeaEmergence.ttl)
-    - [Obsidian Settings](terms/ObsidianSettings.ttl)
-  - [View](terms/View.ttl)
-- [PKM Python](terms/PKMPython.ttl)
-  - [PKM Python API](terms/PKMPythonAPI.ttl)
-    - [FastAPI](terms/FastAPI.ttl)
-  - [PKM Python Agents](terms/PKMPythonAgents.ttl)
-  - [PKM Python Commands](terms/PKMPythonCommands.ttl)
-  - [PKM Python Scripts](terms/PKMPythonScripts.ttl)
-    - [Script](terms/Script.ttl)
-  - [PKM Python Services](terms/PKMPythonServices.ttl)
-    - [PKM Neo4j Service Project](terms/PKMNeo4jServiceProject.ttl)
-  - [Python](terms/Python.ttl)
-  - [Python Template](terms/PythonTemplate.ttl) — also under Obsidian Notes
-- [PKM Swift](terms/PKMSwift.ttl)
-  - [App Intent](terms/AppIntent.ttl)
-  - [PKM Meals](terms/PKMMeals.ttl)
-    - [Event](terms/Event.ttl)
-      - [HealthEvent](terms/HealthEvent.ttl)
-        - [Blood Pressure Event](terms/BloodPressureEvent.ttl)
-        - [DiabetesEvent](terms/DiabetesEvent.ttl)
-          - [ActivityEvent](terms/ActivityEvent.ttl)
-          - [AlertEvent](terms/AlertEvent.ttl)
-          - [DeviceEvent](terms/DeviceEvent.ttl)
-          - [GlucoseEvent](terms/GlucoseEvent.ttl)
-          - [InsulinEvent](terms/InsulinEvent.ttl)
-          - [MealEvent](terms/MealEvent.ttl)
-          - [NoteEvent](terms/NoteEvent.ttl)
-        - [EKG Event](terms/EKGEvent.ttl)
-        - [MeditationEvent](terms/MeditationEvent.ttl)
-        - [SleepEvent](terms/SleepEvent.ttl)
-        - [WeightEvent](terms/WeightEvent.ttl)
-      - [ToolEvent](terms/ToolEvent.ttl)
-        - [AgentEvent](terms/AgentEvent.ttl)
-        - [AppEvent](terms/AppEvent.ttl)
-        - [ScriptEvent](terms/ScriptEvent.ttl)
-        - [ServiceEvent](terms/ServiceEvent.ttl)
-      - [UserEvent](terms/UserEvent.ttl)
-    - [Meal](terms/Meal.ttl)
-      - [Food](terms/Food.ttl)
-        - [Package](terms/Package.ttl)
-        - [Product](terms/Product.ttl)
-      - [Meal Plan](terms/MealPlan.ttl)
-        - [DMP Meal Plan](terms/DMPMealPlan.ttl)
-        - [Day Meal](terms/DayMeal.ttl)
-          - [Breakfast](terms/Breakfast.ttl)
-          - [Dinner](terms/Dinner.ttl)
-          - [Lunch](terms/Lunch.ttl)
-          - [Snack](terms/Snack.ttl)
-        - [Menu](terms/Menu.ttl)
-        - [PTE Meal Plan](terms/PTEMealPlan.ttl)
-      - [Restaurant](terms/Restaurant.ttl)
-    - [Recipe](terms/Recipe.ttl)
-      - [Ingredient](terms/Ingredient.ttl)
-      - [Nutrition](terms/Nutrition.ttl)
-      - [Recipe Images](terms/RecipeImages.ttl)
-      - [Recipe Servings](terms/RecipeServings.ttl)
-      - [Recipe Source](terms/RecipeSource.ttl)
-      - [Recipe Time](terms/RecipeTime.ttl)
-  - [PKM Studio](terms/PKMStudio.ttl)
-  - [PKM Swift Services](terms/PKMSwiftServices.ttl)
-    - [Hummingbird](terms/Hummingbird.ttl)
-  - [Swift](terms/Swift.ttl)
-- [Tool](terms/Tool.ttl)
-  - [App](terms/App.ttl)
-  - [App Intent](terms/AppIntent.ttl) — also under PKM Swift
-  - [Cypher](terms/Cypher.ttl) — also under Graph Database
-  - [FastAPI](terms/FastAPI.ttl) — also under PKM Python API
-  - [Hummingbird](terms/Hummingbird.ttl) — also under PKM Swift Services
-  - [Neo4j](terms/Neo4j.ttl) — also under Graph Database
-  - [Obsidian Template](terms/ObsidianTemplate.ttl) — also under Obsidian Notes
-  - [Python](terms/Python.ttl) — also under PKM Python
-  - [Python Template](terms/PythonTemplate.ttl) — also under Obsidian Notes
-  - [Script](terms/Script.ttl) — also under PKM Python Scripts
-  - [Shortcut](terms/Shortcut.ttl)
-  - [Siri](terms/Siri.ttl)
-  - [Swift](terms/Swift.ttl) — also under PKM Swift
-  - [Template](terms/TemplateCopy.ttl) — also under Obsidian Notes
-  - [Widget](terms/Widget.ttl)
+- [Claude AI](ClaudeAI/)
+  - [Claude Chat](ClaudeChat/)
+  - [Claude Cowork](ClaudeCowork/)
+  - [Claude Desktop](ClaudeDesktop/)
+- [Graph Database](GraphDatabase/)
+  - [Context Graph](ContextGraph/)
+  - [Cypher](Cypher/)
+  - [Knowledge Graph](KnowledgeGraph/)
+  - [Memory Graph](MemoryGraph/)
+  - [Neo4j](Neo4j/)
+  - [Neo4j Desktop](Neo4jDesktop/)
+- [Health Data](HealthData/)
+  - [Apple Health](AppleHealth/)
+  - [Dexcom Data](DexcomData/)
+  - [Glooko Data](GlookoData/)
+- [Knowledge System Architecture](KnowledgeSystemArchitecture/)
+  - [Knowledge System](KnowledgeSystem/)
+    - [Glossary](Glossary/)
+    - [Knowledge](Knowledge/)
+      - [Cluster](Cluster/)
+        - [Effort Cluster](EffortCluster/)
+          - [Effort Index](EffortIndex/)
+          - [Effort Journal](EffortJournal/)
+          - [Effort Log](EffortLog/)
+          - [Effort Plan](EffortPlan/)
+          - [Effort Review](EffortReview/)
+        - [Time Cluster](TimeCluster/)
+          - [Day Cluster](DayCluster/)
+            - [Day Cluster Core](DayClusterCore/)
+              - [Day Analysis](DayAnalysis/)
+              - [Day Index](DayIndex/)
+              - [Day Journal](DayJournal/)
+              - [Day Log](DayLog/)
+              - [Day Plan](DayPlan/)
+              - [Day Review](DayReview/)
+            - [Day Cluster Health](DayClusterHealth/)
+              - [Day Diabetes](DayDiabetes/)
+              - [Day Diabetes Analysis](DayDiabetesAnalysis/)
+              - [Day Health](DayHealth/)
+              - [Day Meal Plan](DayMealPlan/)
+            - [Day Cluster Support](DayClusterSupport/)
+              - [Day Actions](DayActions/)
+              - [Day Links](DayLinks/)
+              - [Day Meeting](DayMeeting/)
+              - [Day Schedule](DaySchedule/)
+            - [Day Cluster Visual](DayClusterVisual/)
+              - [Day Base](DayBase/)
+              - [Day Board](DayBoard/)
+              - [Day Canvas](DayCanvas/)
+              - [Day Diagram](DayDiagram/)
+              - [Day Drawing](DayDrawing/)
+              - [Day Mindmap](DayMindmap/)
+              - [Day View](DayView/)
+          - [Month Cluster](MonthCluster/)
+            - [Month Health](Month-Health/)
+            - [Month Journal](MonthJournal/)
+            - [Month Log](MonthLog/)
+            - [Month Plan](MonthPlan/)
+            - [Month Review](MonthReview/)
+          - [Quarter Cluster](QuarterCluster/)
+            - [Quarter Health](QuarterHealth/)
+            - [Quarter Journal](QuarterJournal/)
+            - [Quarter Log](QuarterLog/)
+            - [Quarter Plan](QuarterPlan/)
+            - [Quarter Review](QuarterReview/)
+          - [Week Cluster](WeekCluster/)
+            - [Week Analysis](WeekAnalysis/)
+            - [Week Diabetes](WeekDiabetes/)
+            - [Week Diabetes Analysis](WeekDiabetesAnalysis/)
+            - [Week Health](WeekHealth/)
+            - [Week Index](WeekIndex/)
+            - [Week Journal](WeekJournal/)
+            - [Week Log](WeekLog/)
+            - [Week Meal Plan](WeekMealPlan/)
+            - [Week Plan](WeekPlan/)
+            - [Week Review](WeekReview/)
+          - [Year Cluster](YearCluster/)
+            - [Year Health](YearHealth/)
+            - [Year Journal](YearJournal/)
+            - [Year Log](YearLog/)
+            - [Year Plan](YearPlan/)
+            - [Year Review](YearReview/)
+        - [Topic Cluster](TopicCluster/)
+          - [Topic Index](TopicIndex/)
+          - [Topic Journal](TopicJournal/)
+          - [Topic Log](TopicLog/)
+          - [Topic Plan](TopicPlan/)
+          - [Topic Review](TopicReview/)
+      - [Concept](Concept/)
+      - [Source](Source/)
+        - [Book](Book/)
+        - [Clipping](Clipping/)
+        - [Movie](Movie/)
+        - [Person](Person/)
+        - [Quote](Quote/)
+      - [Topic](Topic/)
+    - [Knowledge Graph](KnowledgeGraph/) — also under Graph Database
+    - [Metadata](Metadata/)
+    - [Ontology](Ontology/)
+    - [Standard](Standard/)
+      - [ISO Standard](ISOStandard/)
+      - [SKOS](SKOS/)
+      - [W3C Standard](W3CStandard/)
+        - [OWL](OWL/)
+        - [RDF](RDF/)
+        - [SKOS](SKOS/) — also under Standard
+    - [Taxonomy](Taxonomy/)
+    - [Term](Term/)
+- [Obsidian Notes](ObsidianNotes/)
+  - [Base](Base/)
+  - [Map](Map/)
+  - [Note](Note/)
+  - [Obsidian Plugin](ObsidianPlugin/)
+    - [Advanced URI](AdvancedURI/)
+    - [Bases](Bases/)
+    - [Book Search](BookSearch/)
+    - [Canvas](Canvas/)
+    - [Dataview](Dataview/)
+    - [Excalidraw](Excalidraw/)
+    - [Local REST API with MCP](LocalRESTAPIWithMCP/)
+    - [Periodic Notes](PeriodicNotes/)
+    - [Publish](Publish/)
+    - [QuickAdd](QuickAdd/)
+    - [Sync](Sync/)
+    - [Templater](Templater/)
+    - [Workspaces](Workspaces/)
+  - [Obsidian Template](ObsidianTemplate/)
+  - [Python Template](PythonTemplate/)
+  - [Template](TemplateCopy/)
+  - [Vault](Vault/)
+    - [Add Folder](AddFolder/)
+      - [Draft](Draft/)
+      - [Focus](Focus/)
+      - [Idea](Idea/)
+      - [Spark](Spark/)
+    - [Archive Folder](ArchiveFolder/)
+    - [Atlas Folder](AtlasFolder/)
+    - [Calendar Folder](CalendarFolder/)
+      - [Calendar](Calendar/)
+        - [Day](Day/)
+        - [Decade](Decade/)
+        - [Month](Month/)
+        - [Quarter](Quarter/)
+        - [Time](Time/)
+        - [Week](Week/)
+          - [Day](Day/) — also under Calendar
+        - [Year](Year/)
+      - [Day Cluster](DayCluster/) — also under Calendar Folder
+      - [Month Cluster](MonthCluster/) — also under Calendar Folder
+      - [Quarter Cluster](QuarterCluster/) — also under Calendar Folder
+      - [Time Cluster](TimeCluster/) — also under Calendar Folder
+      - [Week Cluster](WeekCluster/) — also under Calendar Folder
+      - [Year Cluster](YearCluster/) — also under Calendar Folder
+    - [Efforts Folder](EffortsFolder/)
+      - [Action](Action/)
+      - [Area](Area/)
+        - [Finance](Finance/)
+        - [Health](Health/)
+        - [Life](Life/)
+      - [Interest](Interest/)
+      - [Project](Project/)
+    - [Extra Folder](ExtraFolder/)
+    - [Ideaverse](Ideaverse/)
+      - [ACE Organization](ACEOrganization/)
+      - [ARC Ideation](ARCIdeation/)
+      - [Idea Emergence](IdeaEmergence/)
+    - [Obsidian Settings](ObsidianSettings/)
+  - [View](View/)
+- [PKM Python](PKMPython/)
+  - [PKM Python API](PKMPythonAPI/)
+    - [FastAPI](FastAPI/)
+  - [PKM Python Agents](PKMPythonAgents/)
+  - [PKM Python Commands](PKMPythonCommands/)
+  - [PKM Python Scripts](PKMPythonScripts/)
+    - [Script](Script/)
+  - [PKM Python Services](PKMPythonServices/)
+    - [PKM Neo4j Service Project](PKMNeo4jServiceProject/)
+  - [Python](Python/)
+  - [Python Template](PythonTemplate/) — also under Obsidian Notes
+- [PKM Swift](PKMSwift/)
+  - [App Intent](AppIntent/)
+  - [PKM Meals](PKMMeals/)
+    - [Event](Event/)
+      - [HealthEvent](HealthEvent/)
+        - [Blood Pressure Event](BloodPressureEvent/)
+        - [DiabetesEvent](DiabetesEvent/)
+          - [ActivityEvent](ActivityEvent/)
+          - [AlertEvent](AlertEvent/)
+          - [DeviceEvent](DeviceEvent/)
+          - [GlucoseEvent](GlucoseEvent/)
+          - [InsulinEvent](InsulinEvent/)
+          - [MealEvent](MealEvent/)
+          - [NoteEvent](NoteEvent/)
+        - [EKG Event](EKGEvent/)
+        - [MeditationEvent](MeditationEvent/)
+        - [SleepEvent](SleepEvent/)
+        - [WeightEvent](WeightEvent/)
+      - [ToolEvent](ToolEvent/)
+        - [AgentEvent](AgentEvent/)
+        - [AppEvent](AppEvent/)
+        - [ScriptEvent](ScriptEvent/)
+        - [ServiceEvent](ServiceEvent/)
+      - [UserEvent](UserEvent/)
+    - [Meal](Meal/)
+      - [Food](Food/)
+        - [Package](Package/)
+        - [Product](Product/)
+      - [Meal Plan](MealPlan/)
+        - [DMP Meal Plan](DMPMealPlan/)
+        - [Day Meal](DayMeal/)
+          - [Breakfast](Breakfast/)
+          - [Dinner](Dinner/)
+          - [Lunch](Lunch/)
+          - [Snack](Snack/)
+        - [Menu](Menu/)
+        - [PTE Meal Plan](PTEMealPlan/)
+      - [Restaurant](Restaurant/)
+    - [Recipe](Recipe/)
+      - [Ingredient](Ingredient/)
+      - [Nutrition](Nutrition/)
+      - [Recipe Images](RecipeImages/)
+      - [Recipe Servings](RecipeServings/)
+      - [Recipe Source](RecipeSource/)
+      - [Recipe Time](RecipeTime/)
+  - [PKM Studio](PKMStudio/)
+  - [PKM Swift Services](PKMSwiftServices/)
+    - [Hummingbird](Hummingbird/)
+  - [Swift](Swift/)
+- [Tool](Tool/)
+  - [App](App/)
+  - [App Intent](AppIntent/) — also under PKM Swift
+  - [Cypher](Cypher/) — also under Graph Database
+  - [FastAPI](FastAPI/) — also under PKM Python API
+  - [Hummingbird](Hummingbird/) — also under PKM Swift Services
+  - [Neo4j](Neo4j/) — also under Graph Database
+  - [Obsidian Template](ObsidianTemplate/) — also under Obsidian Notes
+  - [Python](Python/) — also under PKM Python
+  - [Python Template](PythonTemplate/) — also under Obsidian Notes
+  - [Script](Script/) — also under PKM Python Scripts
+  - [Shortcut](Shortcut/)
+  - [Siri](Siri/)
+  - [Swift](Swift/) — also under PKM Swift
+  - [Template](TemplateCopy/) — also under Obsidian Notes
+  - [Widget](Widget/)
 
 ## Collections
 
 Groupings that carry no hierarchical meaning — a concept's place in the tree above is independent of the collections it belongs to.
 
-- **[Concept Collection](terms/ConceptCollection.ttl)** — All notes related to a Concept.
-  <br>10 members: [Concept](terms/Concept.ttl), [Cypher](terms/Cypher.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Metadata](terms/Metadata.ttl), [OWL](terms/OWL.ttl), [Ontology](terms/Ontology.ttl), [RDF](terms/RDF.ttl), [SKOS](terms/SKOS.ttl), [Taxonomy](terms/Taxonomy.ttl), [Term](terms/Term.ttl)
-- **[Day Collection](terms/DayCollection.ttl)** — All the related notes for a single calendar Day.
-  <br>26 members: [Day](terms/Day.ttl), [Day Actions](terms/DayActions.ttl), [Day Analysis](terms/DayAnalysis.ttl), [Day Base](terms/DayBase.ttl), [Day Board](terms/DayBoard.ttl), [Day Canvas](terms/DayCanvas.ttl), [Day Cluster](terms/DayCluster.ttl), [Day Cluster Core](terms/DayClusterCore.ttl), [Day Cluster Health](terms/DayClusterHealth.ttl), [Day Cluster Support](terms/DayClusterSupport.ttl), [Day Cluster Visual](terms/DayClusterVisual.ttl), [Day Diabetes](terms/DayDiabetes.ttl), [Day Diabetes Analysis](terms/DayDiabetesAnalysis.ttl), [Day Diagram](terms/DayDiagram.ttl), [Day Drawing](terms/DayDrawing.ttl), [Day Health](terms/DayHealth.ttl), [Day Index](terms/DayIndex.ttl), [Day Journal](terms/DayJournal.ttl), [Day Links](terms/DayLinks.ttl), [Day Log](terms/DayLog.ttl), [Day Mindmap](terms/DayMindmap.ttl), [Day Plan](terms/DayPlan.ttl), [Day Review](terms/DayReview.ttl), [Day Schedule](terms/DaySchedule.ttl), [Day View](terms/DayView.ttl), [Day.Meal Plan](terms/DayMealPlan.ttl)
-- **[Decade Collection](terms/DecadeCollection.ttl)** — All notes related to a ten-Year span used for long-range life planning.
-  <br>1 member: [Decade](terms/Decade.ttl)
-- **[Effort Collection](terms/EffortCollection.ttl)** — All the related notes for a single Effort.
-  <br>5 members: [Area](terms/Area.ttl), [Effort Cluster](terms/EffortCluster.ttl), [Efforts Folder](terms/EffortsFolder.ttl), [Interest](terms/Interest.ttl), [Project](terms/Project.ttl)
-- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** — Connected notes with the universe of ideas that exists between your brain and every place you think.
-  <br>2 members: [Obsidian Notes](terms/ObsidianNotes.ttl), [Vault](terms/Vault.ttl)
-- **[Knowledge Collection](terms/KnowledgeCollection.ttl)** — All the related concepts about Knowledge.
-  <br>4 members: [Concept](terms/Concept.ttl), [Knowledge](terms/Knowledge.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Topic](terms/Topic.ttl)
-- **[Life Collection](terms/LifeCollection.ttl)** — All notes related to the top time horizon of a full lifespan.
-  <br>1 member: [Life](terms/Life.ttl)
-- **[Meal Domain](terms/MealDomain.ttl)** — All the related notes for a meal plan.
-  <br>16 members: [Breakfast](terms/Breakfast.ttl), [DMP Meal Plan](terms/DMPMealPlan.ttl), [Day.Meal Plan](terms/DayMealPlan.ttl), [Dinner](terms/Dinner.ttl), [Ingredient](terms/Ingredient.ttl), [Lunch](terms/Lunch.ttl), [Meal](terms/Meal.ttl), [Meal Plan](terms/MealPlan.ttl), [Nutrition](terms/Nutrition.ttl), [PTE Meal Plan](terms/PTEMealPlan.ttl), [Recipe Images](terms/RecipeImages.ttl), [Recipe Servings](terms/RecipeServings.ttl), [Recipe Source](terms/RecipeSource.ttl), [Recipe Time](terms/RecipeTime.ttl), [Snack](terms/Snack.ttl), [Week Meal Plan](terms/WeekMealPlan.ttl)
-- **[Month Collection](terms/MonthCollection.ttl)** — All related notes for a calendar month grouping Weeks and Days.
-  <br>5 members: [Month](terms/Month.ttl), [Month Journal](terms/MonthJournal.ttl), [Month Log](terms/MonthLog.ttl), [Month Plan](terms/MonthPlan.ttl), [Month Review](terms/MonthReview.ttl)
-- **[Note Types](terms/NoteTypes.ttl)**
-  <br>20 members: [Action](terms/Action.ttl), [App](terms/App.ttl), [Area](terms/Area.ttl), [Clipping](terms/Clipping.ttl), [Concept](terms/Concept.ttl), [Draft](terms/Draft.ttl), [Focus](terms/Focus.ttl), [Idea](terms/Idea.ttl), [Interest](terms/Interest.ttl), [Meal](terms/Meal.ttl), [Meal Plan](terms/MealPlan.ttl), [Project](terms/Project.ttl), [Python Template](terms/PythonTemplate.ttl), [Recipe](terms/Recipe.ttl), [Restaurant](terms/Restaurant.ttl), [Script](terms/Script.ttl), [Shortcut](terms/Shortcut.ttl), [Spark](terms/Spark.ttl), [Term](terms/Term.ttl), [Vault](terms/Vault.ttl)
-- **[Quarter Collection](terms/QuarterCollection.ttl)** — All related notes for a time period of three Months uses for medium-term planning.
-  <br>6 members: [Month Journal](terms/MonthJournal.ttl), [Quarter](terms/Quarter.ttl), [Quarter Cluster](terms/QuarterCluster.ttl), [Quarter Log](terms/QuarterLog.ttl), [Quarter Plan](terms/QuarterPlan.ttl), [Quarter Review](terms/QuarterReview.ttl)
-- **[Recipe Collection](terms/RecipeCollection.ttl)** — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
-  <br>7 members: [Ingredient](terms/Ingredient.ttl), [Nutrition](terms/Nutrition.ttl), [Recipe](terms/Recipe.ttl), [Recipe Images](terms/RecipeImages.ttl), [Recipe Servings](terms/RecipeServings.ttl), [Recipe Source](terms/RecipeSource.ttl), [Recipe Time](terms/RecipeTime.ttl)
-- **[Semantic Web Standards](terms/SemanticWebStandards.ttl)**
-  <br>11 members: [ISO Standard](terms/ISOStandard.ttl), [Knowledge Graph](terms/KnowledgeGraph.ttl), [Metadata](terms/Metadata.ttl), [OWL](terms/OWL.ttl), [Ontology](terms/Ontology.ttl), [RDF](terms/RDF.ttl), [SKOS](terms/SKOS.ttl), [Standard](terms/Standard.ttl), [Taxonomy](terms/Taxonomy.ttl), [Term](terms/Term.ttl), [W3C Standard](terms/W3CStandard.ttl)
-- **[Spark Collection](terms/SparkCollection.ttl)** — All the related notes for a new spark of interest or importance.
-  <br>2 members: [Idea](terms/Idea.ttl), [Spark](terms/Spark.ttl)
-- **[Tech Stack](terms/TechStack.ttl)**
-  <br>10 members: [Cypher](terms/Cypher.ttl), [FastAPI](terms/FastAPI.ttl), [Hummingbird](terms/Hummingbird.ttl), [Neo4j](terms/Neo4j.ttl), [Python](terms/Python.ttl), [Script](terms/Script.ttl), [Shortcut](terms/Shortcut.ttl), [Siri](terms/Siri.ttl), [Swift](terms/Swift.ttl), [Tool](terms/Tool.ttl)
-- **[Time Collection](terms/TimeCollection.ttl)** — All the related concepts about Time.
-  <br>2 members: [Time](terms/Time.ttl), [Time Cluster](terms/TimeCluster.ttl)
-- **[Week Collection](terms/WeekCollection.ttl)** — All notes related to a single Week time period of seven consecutive days.
-  <br>11 members: [Week](terms/Week.ttl), [Week Analysis](terms/WeekAnalysis.ttl), [Week Diabetes](terms/WeekDiabetes.ttl), [Week Diabetes Analysis](terms/WeekDiabetesAnalysis.ttl), [Week Health](terms/WeekHealth.ttl), [Week Index](terms/WeekIndex.ttl), [Week Journal](terms/WeekJournal.ttl), [Week Log](terms/WeekLog.ttl), [Week Meal Plan](terms/WeekMealPlan.ttl), [Week Plan](terms/WeekPlan.ttl), [Week Review](terms/WeekReview.ttl)
-- **[Year Collection](terms/YearCollection.ttl)** — All notes related to a calendar Year groups Quarters and Months.
-  <br>7 members: [Year](terms/Year.ttl), [Year Cluster](terms/YearCluster.ttl), [Year Health](terms/YearHealth.ttl), [Year Journal](terms/YearJournal.ttl), [Year Log](terms/YearLog.ttl), [Year Plan](terms/YearPlan.ttl), [Year Review](terms/YearReview.ttl)
+- **[Concept Collection](ConceptCollection/)** — All notes related to a Concept.
+  <br>10 members: [Concept](Concept/), [Cypher](Cypher/), [Knowledge Graph](KnowledgeGraph/), [Metadata](Metadata/), [OWL](OWL/), [Ontology](Ontology/), [RDF](RDF/), [SKOS](SKOS/), [Taxonomy](Taxonomy/), [Term](Term/)
+- **[Day Collection](DayCollection/)** — All the related notes for a single calendar Day.
+  <br>26 members: [Day](Day/), [Day Actions](DayActions/), [Day Analysis](DayAnalysis/), [Day Base](DayBase/), [Day Board](DayBoard/), [Day Canvas](DayCanvas/), [Day Cluster](DayCluster/), [Day Cluster Core](DayClusterCore/), [Day Cluster Health](DayClusterHealth/), [Day Cluster Support](DayClusterSupport/), [Day Cluster Visual](DayClusterVisual/), [Day Diabetes](DayDiabetes/), [Day Diabetes Analysis](DayDiabetesAnalysis/), [Day Diagram](DayDiagram/), [Day Drawing](DayDrawing/), [Day Health](DayHealth/), [Day Index](DayIndex/), [Day Journal](DayJournal/), [Day Links](DayLinks/), [Day Log](DayLog/), [Day Meal Plan](DayMealPlan/), [Day Mindmap](DayMindmap/), [Day Plan](DayPlan/), [Day Review](DayReview/), [Day Schedule](DaySchedule/), [Day View](DayView/)
+- **[Decade Collection](DecadeCollection/)** — All notes related to a ten-Year span used for long-range life planning.
+  <br>1 member: [Decade](Decade/)
+- **[Effort Collection](EffortCollection/)** — All the related notes for a single Effort.
+  <br>5 members: [Area](Area/), [Effort Cluster](EffortCluster/), [Efforts Folder](EffortsFolder/), [Interest](Interest/), [Project](Project/)
+- **[Ideaverse Collection](IdeaverseCollection/)** — Connected notes with the universe of ideas that exists between your brain and every place you think.
+  <br>2 members: [Obsidian Notes](ObsidianNotes/), [Vault](Vault/)
+- **[Knowledge Collection](KnowledgeCollection/)** — All the related concepts about Knowledge.
+  <br>4 members: [Concept](Concept/), [Knowledge](Knowledge/), [Knowledge Graph](KnowledgeGraph/), [Topic](Topic/)
+- **[Life Collection](LifeCollection/)** — All notes related to the top time horizon of a full lifespan.
+  <br>1 member: [Life](Life/)
+- **[Meal Domain](MealDomain/)** — All the related notes for a meal plan.
+  <br>16 members: [Breakfast](Breakfast/), [DMP Meal Plan](DMPMealPlan/), [Day Meal Plan](DayMealPlan/), [Dinner](Dinner/), [Ingredient](Ingredient/), [Lunch](Lunch/), [Meal](Meal/), [Meal Plan](MealPlan/), [Nutrition](Nutrition/), [PTE Meal Plan](PTEMealPlan/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/), [Snack](Snack/), [Week Meal Plan](WeekMealPlan/)
+- **[Month Collection](MonthCollection/)** — All related notes for a calendar month grouping Weeks and Days.
+  <br>5 members: [Month](Month/), [Month Journal](MonthJournal/), [Month Log](MonthLog/), [Month Plan](MonthPlan/), [Month Review](MonthReview/)
+- **[Note Types](NoteTypes/)**
+  <br>20 members: [Action](Action/), [App](App/), [Area](Area/), [Clipping](Clipping/), [Concept](Concept/), [Draft](Draft/), [Focus](Focus/), [Idea](Idea/), [Interest](Interest/), [Meal](Meal/), [Meal Plan](MealPlan/), [Project](Project/), [Python Template](PythonTemplate/), [Recipe](Recipe/), [Restaurant](Restaurant/), [Script](Script/), [Shortcut](Shortcut/), [Spark](Spark/), [Term](Term/), [Vault](Vault/)
+- **[Quarter Collection](QuarterCollection/)** — All related notes for a time period of three Months uses for medium-term planning.
+  <br>6 members: [Month Journal](MonthJournal/), [Quarter](Quarter/), [Quarter Cluster](QuarterCluster/), [Quarter Log](QuarterLog/), [Quarter Plan](QuarterPlan/), [Quarter Review](QuarterReview/)
+- **[Recipe Collection](RecipeCollection/)** — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
+  <br>7 members: [Ingredient](Ingredient/), [Nutrition](Nutrition/), [Recipe](Recipe/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/)
+- **[Semantic Web Standards](SemanticWebStandards/)**
+  <br>11 members: [ISO Standard](ISOStandard/), [Knowledge Graph](KnowledgeGraph/), [Metadata](Metadata/), [OWL](OWL/), [Ontology](Ontology/), [RDF](RDF/), [SKOS](SKOS/), [Standard](Standard/), [Taxonomy](Taxonomy/), [Term](Term/), [W3C Standard](W3CStandard/)
+- **[Spark Collection](SparkCollection/)** — All the related notes for a new spark of interest or importance.
+  <br>2 members: [Idea](Idea/), [Spark](Spark/)
+- **[Tech Stack](TechStack/)**
+  <br>10 members: [Cypher](Cypher/), [FastAPI](FastAPI/), [Hummingbird](Hummingbird/), [Neo4j](Neo4j/), [Python](Python/), [Script](Script/), [Shortcut](Shortcut/), [Siri](Siri/), [Swift](Swift/), [Tool](Tool/)
+- **[Time Collection](TimeCollection/)** — All the related concepts about Time.
+  <br>2 members: [Time](Time/), [Time Cluster](TimeCluster/)
+- **[Week Collection](WeekCollection/)** — All notes related to a single Week time period of seven consecutive days.
+  <br>11 members: [Week](Week/), [Week Analysis](WeekAnalysis/), [Week Diabetes](WeekDiabetes/), [Week Diabetes Analysis](WeekDiabetesAnalysis/), [Week Health](WeekHealth/), [Week Index](WeekIndex/), [Week Journal](WeekJournal/), [Week Log](WeekLog/), [Week Meal Plan](WeekMealPlan/), [Week Plan](WeekPlan/), [Week Review](WeekReview/)
+- **[Year Collection](YearCollection/)** — All notes related to a calendar Year groups Quarters and Months.
+  <br>7 members: [Year](Year/), [Year Cluster](YearCluster/), [Year Health](YearHealth/), [Year Journal](YearJournal/), [Year Log](YearLog/), [Year Plan](YearPlan/), [Year Review](YearReview/)
 
 ## All terms
 
@@ -318,403 +319,403 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 ### A
 
-- **[ACE Organization](terms/ACEOrganization.ttl)** _(also: ACE Folders)_ — The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse.
-- **[Action](terms/Action.ttl)** — Something to do for an effort, project, area, or interest.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
-- **[ActivityEvent](terms/ActivityEvent.ttl)** — Something that happened related to activity or exercise.
-- **[Add Folder](terms/AddFolder.ttl)** _(also: Obsidian Inbox, Plus Folder)_ — The + (Add) folder is the PKM "inbox" space for new and incoming notes.
-- **[Advanced URI](terms/AdvancedURI.ttl)** — Control Obsidian features using special URIs to automate workflows.
-- **[AgentEvent](terms/AgentEvent.ttl)** — Something that happened during agent processing.
-- **[AlertEvent](terms/AlertEvent.ttl)** — An exception condition raised by a device threshold setting, or other metric.
-- **[App](terms/App.ttl)** — A software application.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
-- **[App Intent](terms/AppIntent.ttl)** — A declared action the system exposes to Shortcuts, Siri, or Spotlight.
-- **[AppEvent](terms/AppEvent.ttl)** — Something that happened during app  processing.
-- **[Apple Health](terms/AppleHealth.ttl)** — Health data from Apple Health via the HealthKit framework.
-- **[ARC Ideation](terms/ARCIdeation.ttl)** _(also: ARC Framework)_ — The stages for the natural flow of ideas in the creative process (Add, Related, Communicate).
-- **[Archive Folder](terms/ArchiveFolder.ttl)** — The top-level `z` folder space in Obsidian includes Archive (inactive) notes.
-- **[Area](terms/Area.ttl)** — An ongoing sphere of responsibility or activity with a standard to be maintained over time, without a defined completion date.
-  <br>In: [Effort Collection](terms/EffortCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[Atlas Folder](terms/AtlasFolder.ttl)** _(also: Knowledge Folder)_ — A major space within an Obsidian vault containing notes about knowledge ("what you know").
+- **[ACE Organization](ACEOrganization/)** _(also: ACE Folders)_ — The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse.
+- **[Action](Action/)** — Something to do for an effort, project, area, or interest.
+  <br>In: [Note Types](NoteTypes/)
+- **[ActivityEvent](ActivityEvent/)** — Something that happened related to activity or exercise.
+- **[Add Folder](AddFolder/)** _(also: Obsidian Inbox, Plus Folder)_ — The + (Add) folder is the PKM "inbox" space for new and incoming notes.
+- **[Advanced URI](AdvancedURI/)** — Control Obsidian features using special URIs to automate workflows.
+- **[AgentEvent](AgentEvent/)** — Something that happened during agent processing.
+- **[AlertEvent](AlertEvent/)** — An exception condition raised by a device threshold setting, or other metric.
+- **[App](App/)** — A software application.
+  <br>In: [Note Types](NoteTypes/)
+- **[App Intent](AppIntent/)** — A declared action the system exposes to Shortcuts, Siri, or Spotlight.
+- **[AppEvent](AppEvent/)** — Something that happened during app  processing.
+- **[Apple Health](AppleHealth/)** — Health data from Apple Health via the HealthKit framework.
+- **[ARC Ideation](ARCIdeation/)** _(also: ARC Framework)_ — The stages for the natural flow of ideas in the creative process (Add, Related, Communicate).
+- **[Archive Folder](ArchiveFolder/)** — The top-level `z` folder space in Obsidian includes Archive (inactive) notes.
+- **[Area](Area/)** — An ongoing sphere of responsibility or activity with a standard to be maintained over time, without a defined completion date.
+  <br>In: [Effort Collection](EffortCollection/), [Note Types](NoteTypes/)
+- **[Atlas Folder](AtlasFolder/)** _(also: Knowledge Folder)_ — A major space within an Obsidian vault containing notes about knowledge ("what you know").
 ### B
 
-- **[Base](terms/Base.ttl)** — A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria..
-- **[Bases](terms/Bases.ttl)** — A core plugin thatcreates custom views to edit, sort, and filter files using properties.
-- **[Blood Pressure Event](terms/BloodPressureEvent.ttl)** _(also: BP Event)_ — Recording of current blood pressure with systolic/diastolic readings.
-- **[Book](terms/Book.ttl)** — A book used as a source in a PKM system.
-- **[Book Search](terms/BookSearch.ttl)** — Query book by title, author, publisher, or ISBN, and get book information via Google Books API for properties.
-- **[Breakfast](terms/Breakfast.ttl)** — The first meal of the day.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
+- **[Base](Base/)** — A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria..
+- **[Bases](Bases/)** — A core plugin thatcreates custom views to edit, sort, and filter files using properties.
+- **[Blood Pressure Event](BloodPressureEvent/)** _(also: BP Event)_ — Recording of current blood pressure with systolic/diastolic readings.
+- **[Book](Book/)** — A book used as a source in a PKM system.
+- **[Book Search](BookSearch/)** — Query book by title, author, publisher, or ISBN, and get book information via Google Books API for properties.
+- **[Breakfast](Breakfast/)** — The first meal of the day.
+  <br>In: [Meal Domain](MealDomain/)
 ### C
 
-- **[Calendar](terms/Calendar.ttl)** — A major space for time-based notes.
-- **[Calendar Folder](terms/CalendarFolder.ttl)** _(also: Time Folder)_ — The Calendar (Time) folder is the PKM knowledge space for time-based notes.
-- **[Canvas](terms/Canvas.ttl)** — A core plugin that enables you to arrange and connect notes on an infinite canvas.
-- **[Claude AI](terms/ClaudeAI.ttl)** — Claude AI LLM (Sonnet or Opus models) that support a PKM system.
-- **[Claude Chat](terms/ClaudeChat.ttl)** — Chat interface for Claude AI.
-- **[Claude Cowork](terms/ClaudeCowork.ttl)** — Desktop app for Claude AI.
-- **[Claude Desktop](terms/ClaudeDesktop.ttl)** — Desktop app for Claude AI.
-- **[Clipping](terms/Clipping.ttl)** — A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO).
-  <br>In: [Note Types](terms/NoteTypes.ttl)
-- **[Cluster](terms/Cluster.ttl)** — A group of related notes.
-- **[Concept](terms/Concept.ttl)** — A unit of thought in a knowledge organization system.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Knowledge Collection](terms/KnowledgeCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[Concept Collection](terms/ConceptCollection.ttl)** _(collection, 10 members)_ — All notes related to a Concept.
-- **[Context Graph](terms/ContextGraph.ttl)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected context.
-- **[Cypher](terms/Cypher.ttl)** — A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Tech Stack](terms/TechStack.ttl)
+- **[Calendar](Calendar/)** — A major space for time-based notes.
+- **[Calendar Folder](CalendarFolder/)** _(also: Time Folder)_ — The Calendar (Time) folder is the PKM knowledge space for time-based notes.
+- **[Canvas](Canvas/)** — A core plugin that enables you to arrange and connect notes on an infinite canvas.
+- **[Claude AI](ClaudeAI/)** — Claude AI LLM (Sonnet or Opus models) that support a PKM system.
+- **[Claude Chat](ClaudeChat/)** — Chat interface for Claude AI.
+- **[Claude Cowork](ClaudeCowork/)** — Desktop app for Claude AI.
+- **[Claude Desktop](ClaudeDesktop/)** — Desktop app for Claude AI.
+- **[Clipping](Clipping/)** — A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO).
+  <br>In: [Note Types](NoteTypes/)
+- **[Cluster](Cluster/)** — A group of related notes.
+- **[Concept](Concept/)** — A unit of thought in a knowledge organization system.
+  <br>In: [Concept Collection](ConceptCollection/), [Knowledge Collection](KnowledgeCollection/), [Note Types](NoteTypes/)
+- **[Concept Collection](ConceptCollection/)** _(collection, 10 members)_ — All notes related to a Concept.
+- **[Context Graph](ContextGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected context.
+- **[Cypher](Cypher/)** — A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j.
+  <br>In: [Concept Collection](ConceptCollection/), [Tech Stack](TechStack/)
 ### D
 
-- **[Dataview](terms/Dataview.ttl)** — An Obsidian query language for filtering, sorting, and extracting data from Markdown pages.
-- **[Day](terms/Day.ttl)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons).
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Actions](terms/DayActions.ttl)** — A support note within a Day Cluster listing discrete Action items tracked for that day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Analysis](terms/DayAnalysis.ttl)** — Overall analytical synthesis of a day across domains.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Base](terms/DayBase.ttl)** — An Obsidian base file with multiple views for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Board](terms/DayBoard.ttl)** — An Obsidian Kanboard board note for the day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Canvas](terms/DayCanvas.ttl)** — An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Cluster](terms/DayCluster.ttl)** — The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Cluster Core](terms/DayClusterCore.ttl)** — The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Cluster Health](terms/DayClusterHealth.ttl)** — The health-related data and notes within a Day Cluster, capturing tracked health events for that day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Cluster Support](terms/DayClusterSupport.ttl)** — The supporting notes within a Day Cluster that assist the core notes, such as DayActions and DayLinks.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Cluster Visual](terms/DayClusterVisual.ttl)** — The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data graphically.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Collection](terms/DayCollection.ttl)** _(collection, 26 members)_ — All the related notes for a single calendar Day.
-- **[Day Diabetes](terms/DayDiabetes.ttl)** — The record of diabetes-relevant data for a day (glucose, insulin, carbs, events).
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Diabetes Analysis](terms/DayDiabetesAnalysis.ttl)** — Interpretation of a day's diabetes data.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Diagram](terms/DayDiagram.ttl)** — An Obsidian note that renders Mermaid diagrams using embedded code blocks.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Drawing](terms/DayDrawing.ttl)** — An Obsidian Excalidraw drawing note with an infinite drawing space, tools, and plugins. embedded Base views, Dataview, and Datacore queries for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Health](terms/DayHealth.ttl)** — The health-related summary for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Index](terms/DayIndex.ttl)** _(also: Day Hub, Day Note)_ — The index note that links all artifacts for a given day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Journal](terms/DayJournal.ttl)** — Free-form reflective writing about a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Links](terms/DayLinks.ttl)** — A support note within a Day Cluster capturing links or references relevant to that day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Log](terms/DayLog.ttl)** — A chronological record of what actually happened during a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Meal](terms/DayMeal.ttl)** — A single planned or eaten meal within a day.
-- **[Day Meeting](terms/DayMeeting.ttl)** — An event with other people with agenda, topics, decisions, and actions.
-- **[Day Mindmap](terms/DayMindmap.ttl)** — An Obsidian Excalidraw drawing note using the Mindmap plugin.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Plan](terms/DayPlan.ttl)** — The plan of intended activities and priorities for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Review](terms/DayReview.ttl)** — A structured retrospective evaluating a completed day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day Schedule](terms/DaySchedule.ttl)** — The time-blocked calendar of appointments and commitments for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day View](terms/DayView.ttl)** — An Obsidian view note with embedded Base views, Dataview, and Datacore queries for a day.
-  <br>In: [Day Collection](terms/DayCollection.ttl)
-- **[Day.Meal Plan](terms/DayMealPlan.ttl)** — The planned set of meals for a single day.
-  <br>In: [Day Collection](terms/DayCollection.ttl), [Meal Domain](terms/MealDomain.ttl)
-- **[Decade](terms/Decade.ttl)** — A ten-year span used for long-range life planning.
-  <br>In: [Decade Collection](terms/DecadeCollection.ttl)
-- **[Decade Collection](terms/DecadeCollection.ttl)** _(collection, 1 member)_ — All notes related to a ten-Year span used for long-range life planning.
-- **[DeviceEvent](terms/DeviceEvent.ttl)** — Something that occurred with a device.
-- **[Dexcom Data](terms/DexcomData.ttl)** — Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
-- **[DiabetesEvent](terms/DiabetesEvent.ttl)** — Something that happened related to Diabetes.
-- **[Dinner](terms/Dinner.ttl)** _(also: Supper)_ — The evening meal.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
-- **[DMP Meal Plan](terms/DMPMealPlan.ttl)** — A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
-- **[Draft](terms/Draft.ttl)** — A new draft note received from the Drafts app via the Obsidian action group pipeline.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
+- **[Dataview](Dataview/)** — An Obsidian query language for filtering, sorting, and extracting data from Markdown pages.
+- **[Day](Day/)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons).
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Actions](DayActions/)** — A support note within a Day Cluster listing discrete Action items tracked for that day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Analysis](DayAnalysis/)** — Overall analytical synthesis of a day across domains.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Base](DayBase/)** — An Obsidian base file with multiple views for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Board](DayBoard/)** — An Obsidian Kanboard board note for the day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Canvas](DayCanvas/)** — An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Cluster](DayCluster/)** — The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Cluster Health](DayClusterHealth/)** — The health-related data and notes within a Day Cluster, capturing tracked health events for that day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Cluster Support](DayClusterSupport/)** — The supporting notes within a Day Cluster that assist the core notes, such as DayActions and DayLinks.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Cluster Visual](DayClusterVisual/)** — The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data graphically.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Collection](DayCollection/)** _(collection, 26 members)_ — All the related notes for a single calendar Day.
+- **[Day Diabetes](DayDiabetes/)** — The record of diabetes-relevant data for a day (glucose, insulin, carbs, events).
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Diabetes Analysis](DayDiabetesAnalysis/)** — Interpretation of a day's diabetes data.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Diagram](DayDiagram/)** — An Obsidian note that renders Mermaid diagrams using embedded code blocks.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Drawing](DayDrawing/)** — An Obsidian Excalidraw drawing note with an infinite drawing space, tools, and plugins. embedded Base views, Dataview, and Datacore queries for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Health](DayHealth/)** — The health-related summary for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Index](DayIndex/)** _(also: Day Hub, Day Note)_ — The index note that links all artifacts for a given day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Journal](DayJournal/)** — Free-form reflective writing about a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Links](DayLinks/)** — A support note within a Day Cluster capturing links or references relevant to that day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Log](DayLog/)** — A chronological record of what actually happened during a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Meal](DayMeal/)** — A single planned or eaten meal within a day.
+- **[Day Meal Plan](DayMealPlan/)** — The planned set of meals for a single day.
+  <br>In: [Day Collection](DayCollection/), [Meal Domain](MealDomain/)
+- **[Day Meeting](DayMeeting/)** — An event with other people with agenda, topics, decisions, and actions.
+- **[Day Mindmap](DayMindmap/)** — An Obsidian Excalidraw drawing note using the Mindmap plugin.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Plan](DayPlan/)** — The plan of intended activities and priorities for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Review](DayReview/)** — A structured retrospective evaluating a completed day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day Schedule](DaySchedule/)** — The time-blocked calendar of appointments and commitments for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Day View](DayView/)** — An Obsidian view note with embedded Base views, Dataview, and Datacore queries for a day.
+  <br>In: [Day Collection](DayCollection/)
+- **[Decade](Decade/)** — A ten-year span used for long-range life planning.
+  <br>In: [Decade Collection](DecadeCollection/)
+- **[Decade Collection](DecadeCollection/)** _(collection, 1 member)_ — All notes related to a ten-Year span used for long-range life planning.
+- **[DeviceEvent](DeviceEvent/)** — Something that occurred with a device.
+- **[Dexcom Data](DexcomData/)** — Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
+- **[DiabetesEvent](DiabetesEvent/)** — Something that happened related to Diabetes.
+- **[Dinner](Dinner/)** _(also: Supper)_ — The evening meal.
+  <br>In: [Meal Domain](MealDomain/)
+- **[DMP Meal Plan](DMPMealPlan/)** — A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service.
+  <br>In: [Meal Domain](MealDomain/)
+- **[Draft](Draft/)** — A new draft note received from the Drafts app via the Obsidian action group pipeline.
+  <br>In: [Note Types](NoteTypes/)
 ### E
 
-- **[Effort Cluster](terms/EffortCluster.ttl)** — A group of related notes about an effort..
-  <br>In: [Effort Collection](terms/EffortCollection.ttl)
-- **[Effort Collection](terms/EffortCollection.ttl)** _(collection, 5 members)_ — All the related notes for a single Effort.
-- **[Effort Index](terms/EffortIndex.ttl)** — The index note that links all artifacts for an effort.
-- **[Effort Journal](terms/EffortJournal.ttl)** — Free-form reflective writing about an effort.
-- **[Effort Log](terms/EffortLog.ttl)** — A chronological record of what actually happened during an effort.
-- **[Effort Plan](terms/EffortPlan.ttl)** — The plan of intended activities and priorities for an effort.
-- **[Effort Review](terms/EffortReview.ttl)** — A structured retrospective evaluating an effort.
-- **[Efforts Folder](terms/EffortsFolder.ttl)** _(also: Effort Folder)_ — A unit of directed work toward an outcome, such as a project or initiative.
-  <br>In: [Effort Collection](terms/EffortCollection.ttl)
-- **[EKG Event](terms/EKGEvent.ttl)** _(also: ECG Event)_ — Recording an EKG reading from Apple Watch EKG app or Kardia 6-lead EKG device.
-- **[Event](terms/Event.ttl)** — Something that happened.
-- **[Excalidraw](terms/Excalidraw.ttl)** — A sketching tool with rich capabilities for drawings with many extensions for scripts for additional features.
-- **[Extra Folder](terms/ExtraFolder.ttl)** _(also: Support Folder)_ — The top-level `x` folder space in Obsidian includes Extra or Support resources.
+- **[Effort Cluster](EffortCluster/)** — A group of related notes about an effort..
+  <br>In: [Effort Collection](EffortCollection/)
+- **[Effort Collection](EffortCollection/)** _(collection, 5 members)_ — All the related notes for a single Effort.
+- **[Effort Index](EffortIndex/)** — The index note that links all artifacts for an effort.
+- **[Effort Journal](EffortJournal/)** — Free-form reflective writing about an effort.
+- **[Effort Log](EffortLog/)** — A chronological record of what actually happened during an effort.
+- **[Effort Plan](EffortPlan/)** — The plan of intended activities and priorities for an effort.
+- **[Effort Review](EffortReview/)** — A structured retrospective evaluating an effort.
+- **[Efforts Folder](EffortsFolder/)** _(also: Effort Folder)_ — A unit of directed work toward an outcome, such as a project or initiative.
+  <br>In: [Effort Collection](EffortCollection/)
+- **[EKG Event](EKGEvent/)** _(also: ECG Event)_ — Recording an EKG reading from Apple Watch EKG app or Kardia 6-lead EKG device.
+- **[Event](Event/)** — Something that happened.
+- **[Excalidraw](Excalidraw/)** — A sketching tool with rich capabilities for drawings with many extensions for scripts for additional features.
+- **[Extra Folder](ExtraFolder/)** _(also: Support Folder)_ — The top-level `x` folder space in Obsidian includes Extra or Support resources.
 ### F
 
-- **[FastAPI](terms/FastAPI.ttl)** — A modern, high-performance Python web framework for building APIs.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[Finance](terms/Finance.ttl)** — An area that includes all aspects of your finances.
-- **[Focus](terms/Focus.ttl)** — A note or tag marking current priority attention within the PKM system.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
-- **[Food](terms/Food.ttl)** — A source of nutrition for something eaten as a meal or snack.
+- **[FastAPI](FastAPI/)** — A modern, high-performance Python web framework for building APIs.
+  <br>In: [Tech Stack](TechStack/)
+- **[Finance](Finance/)** — An area that includes all aspects of your finances.
+- **[Focus](Focus/)** — A note or tag marking current priority attention within the PKM system.
+  <br>In: [Note Types](NoteTypes/)
+- **[Food](Food/)** — A source of nutrition for something eaten as a meal or snack.
 ### G
 
-- **[Glooko Data](terms/GlookoData.ttl)** — Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insulin pump data that is also integrated with Dexcom data for glucose, meals, and other events.
-- **[Glossary](terms/Glossary.ttl)** — A list of concept terms and definitions.
-- **[GlucoseEvent](terms/GlucoseEvent.ttl)** — Something that happened related to Glucose.
-- **[Graph Database](terms/GraphDatabase.ttl)** — Graph databases that support a PKM system.
+- **[Glooko Data](GlookoData/)** — Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insulin pump data that is also integrated with Dexcom data for glucose, meals, and other events.
+- **[Glossary](Glossary/)** — A list of concept terms and definitions.
+- **[GlucoseEvent](GlucoseEvent/)** — Something that happened related to Glucose.
+- **[Graph Database](GraphDatabase/)** — Graph databases that support a PKM system.
 ### H
 
-- **[Health](terms/Health.ttl)** — An area that includes all aspects of your health.
-- **[Health Data](terms/HealthData.ttl)** — Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
-- **[HealthEvent](terms/HealthEvent.ttl)** — Something that happened related to Health.
-- **[Hummingbird](terms/Hummingbird.ttl)** — A lightweight, Swift-native server-side web framework for building HTTP APIs and services.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
+- **[Health](Health/)** — An area that includes all aspects of your health.
+- **[Health Data](HealthData/)** — Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
+- **[HealthEvent](HealthEvent/)** — Something that happened related to Health.
+- **[Hummingbird](Hummingbird/)** — A lightweight, Swift-native server-side web framework for building HTTP APIs and services.
+  <br>In: [Tech Stack](TechStack/)
 ### I
 
-- **[Idea](terms/Idea.ttl)** — An idea about something to explore curiosity, research interests, support areas, or identify opporuntities.
-  <br>In: [Note Types](terms/NoteTypes.ttl), [Spark Collection](terms/SparkCollection.ttl)
-- **[Idea Emergence](terms/IdeaEmergence.ttl)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
-- **[Ideaverse](terms/Ideaverse.ttl)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
-- **[Ideaverse Collection](terms/IdeaverseCollection.ttl)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
-- **[Ingredient](terms/Ingredient.ttl)** — An individual food item or component used in the preparation of a recipe.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[InsulinEvent](terms/InsulinEvent.ttl)** — Something that happened related to Insulin.
-- **[Interest](terms/Interest.ttl)** — A note capturing an ongoing topic of curiosity or attention that is not (yet) an active Project or Area of responsibility.
-  <br>In: [Effort Collection](terms/EffortCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[ISO Standard](terms/ISOStandard.ttl)** — A standard published by the International Organization for Standardization (ISO).
-  <br>In: [Semantic Web Standards](terms/SemanticWebStandards.ttl)
+- **[Idea](Idea/)** — An idea about something to explore curiosity, research interests, support areas, or identify opporuntities.
+  <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
+- **[Idea Emergence](IdeaEmergence/)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
+- **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
+- **[Ideaverse Collection](IdeaverseCollection/)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
+- **[Ingredient](Ingredient/)** — An individual food item or component used in the preparation of a recipe.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
+- **[InsulinEvent](InsulinEvent/)** — Something that happened related to Insulin.
+- **[Interest](Interest/)** — A note capturing an ongoing topic of curiosity or attention that is not (yet) an active Project or Area of responsibility.
+  <br>In: [Effort Collection](EffortCollection/), [Note Types](NoteTypes/)
+- **[ISO Standard](ISOStandard/)** — A standard published by the International Organization for Standardization (ISO).
+  <br>In: [Semantic Web Standards](SemanticWebStandards/)
 ### K
 
-- **[Knowledge](terms/Knowledge.ttl)** — Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it can be applied, communicated, or built upon.
-  <br>In: [Knowledge Collection](terms/KnowledgeCollection.ttl)
-- **[Knowledge Collection](terms/KnowledgeCollection.ttl)** _(collection, 4 members)_ — All the related concepts about Knowledge.
-- **[Knowledge Graph](terms/KnowledgeGraph.ttl)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected knowledge.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Knowledge Collection](terms/KnowledgeCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Knowledge System](terms/KnowledgeSystem.ttl)** — A system of organization, navigation, and access for knowledge.
-- **[Knowledge System Architecture](terms/KnowledgeSystemArchitecture.ttl)** _(also: KSA)_ — A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and Python APIs, services, scripts, commands, and agents.
+- **[Knowledge](Knowledge/)** — Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it can be applied, communicated, or built upon.
+  <br>In: [Knowledge Collection](KnowledgeCollection/)
+- **[Knowledge Collection](KnowledgeCollection/)** _(collection, 4 members)_ — All the related concepts about Knowledge.
+- **[Knowledge Graph](KnowledgeGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected knowledge.
+  <br>In: [Concept Collection](ConceptCollection/), [Knowledge Collection](KnowledgeCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[Knowledge System](KnowledgeSystem/)** — A system of organization, navigation, and access for knowledge.
+- **[Knowledge System Architecture](KnowledgeSystemArchitecture/)** _(also: KSA)_ — A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and Python APIs, services, scripts, commands, and agents.
 ### L
 
-- **[Life](terms/Life.ttl)** — The full lifespan, the top temporal (time) horizon.
-  <br>In: [Life Collection](terms/LifeCollection.ttl)
-- **[Life Collection](terms/LifeCollection.ttl)** _(collection, 1 member)_ — All notes related to the top time horizon of a full lifespan.
-- **[Local REST API with MCP](terms/LocalRESTAPIWithMCP.ttl)** — Support automation for notes using REST API for apps or MCP server for AI agents.
-- **[Lunch](terms/Lunch.ttl)** — The midday meal.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
+- **[Life](Life/)** — The full lifespan, the top temporal (time) horizon.
+  <br>In: [Life Collection](LifeCollection/)
+- **[Life Collection](LifeCollection/)** _(collection, 1 member)_ — All notes related to the top time horizon of a full lifespan.
+- **[Local REST API with MCP](LocalRESTAPIWithMCP/)** — Support automation for notes using REST API for apps or MCP server for AI agents.
+- **[Lunch](Lunch/)** — The midday meal.
+  <br>In: [Meal Domain](MealDomain/)
 ### M
 
-- **[Map](terms/Map.ttl)** _(also: MOC, Map of Content)_ — A note used to think, plan, and organize a group of other notes.
-- **[Meal](terms/Meal.ttl)** — An eating occasion consisting of one or more foods or recipes consumed at a particular time.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[Meal Domain](terms/MealDomain.ttl)** _(collection, 16 members)_ — All the related notes for a meal plan.
-- **[Meal Plan](terms/MealPlan.ttl)** — A structured plan of meals over a defined period.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[MealEvent](terms/MealEvent.ttl)** — Something that happened related to a Meal.
-- **[MeditationEvent](terms/MeditationEvent.ttl)** — Recording information from meditation session.
-- **[Memory Graph](terms/MemoryGraph.ttl)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected short-term and long-term memory.
-- **[Menu](terms/Menu.ttl)** — A curated list of dishes offered or planned.
-- **[Metadata](terms/Metadata.ttl)** — Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Month](terms/Month.ttl)** — A calendar month grouping weeks and days.
-  <br>In: [Month Collection](terms/MonthCollection.ttl)
-- **[Month Cluster](terms/MonthCluster.ttl)** — A group of related notes about a month.
-- **[Month Collection](terms/MonthCollection.ttl)** _(collection, 5 members)_ — All related notes for a calendar month grouping Weeks and Days.
-- **[Month Health](terms/Month-Health.ttl)** — The health-related summary for a month.
-- **[Month Journal](terms/MonthJournal.ttl)** — Reflective writing about a month.
-  <br>In: [Month Collection](terms/MonthCollection.ttl), [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Month Log](terms/MonthLog.ttl)** — A record of what happened over a month.
-  <br>In: [Month Collection](terms/MonthCollection.ttl)
-- **[Month Plan](terms/MonthPlan.ttl)** — The plan of intended priorities for a month.
-  <br>In: [Month Collection](terms/MonthCollection.ttl)
-- **[Month Review](terms/MonthReview.ttl)** — A structured retrospectivee evaluating a completed month.
-  <br>In: [Month Collection](terms/MonthCollection.ttl)
-- **[Movie](terms/Movie.ttl)** — A movie used as a source in a PKM system.
+- **[Map](Map/)** _(also: MOC, Map of Content)_ — A note used to think, plan, and organize a group of other notes.
+- **[Meal](Meal/)** — An eating occasion consisting of one or more foods or recipes consumed at a particular time.
+  <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
+- **[Meal Domain](MealDomain/)** _(collection, 16 members)_ — All the related notes for a meal plan.
+- **[Meal Plan](MealPlan/)** — A structured plan of meals over a defined period.
+  <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
+- **[MealEvent](MealEvent/)** — Something that happened related to a Meal.
+- **[MeditationEvent](MeditationEvent/)** — Recording information from meditation session.
+- **[Memory Graph](MemoryGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected short-term and long-term memory.
+- **[Menu](Menu/)** — A curated list of dishes offered or planned.
+- **[Metadata](Metadata/)** — Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[Month](Month/)** — A calendar month grouping weeks and days.
+  <br>In: [Month Collection](MonthCollection/)
+- **[Month Cluster](MonthCluster/)** — A group of related notes about a month.
+- **[Month Collection](MonthCollection/)** _(collection, 5 members)_ — All related notes for a calendar month grouping Weeks and Days.
+- **[Month Health](Month-Health/)** — The health-related summary for a month.
+- **[Month Journal](MonthJournal/)** — Reflective writing about a month.
+  <br>In: [Month Collection](MonthCollection/), [Quarter Collection](QuarterCollection/)
+- **[Month Log](MonthLog/)** — A record of what happened over a month.
+  <br>In: [Month Collection](MonthCollection/)
+- **[Month Plan](MonthPlan/)** — The plan of intended priorities for a month.
+  <br>In: [Month Collection](MonthCollection/)
+- **[Month Review](MonthReview/)** — A structured retrospectivee evaluating a completed month.
+  <br>In: [Month Collection](MonthCollection/)
+- **[Movie](Movie/)** — A movie used as a source in a PKM system.
 ### N
 
-- **[Neo4j](terms/Neo4j.ttl)** — A native graph database management system that stores and queries data as nodes, relationships, and properties.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[Neo4j Desktop](terms/Neo4jDesktop.ttl)** — Neo4j graph database that support a PKM system.
-- **[Note](terms/Note.ttl)** — A unit of knowledge in a PKM system.
-- **[Note Types](terms/NoteTypes.ttl)** _(collection, 20 members)_
-- **[NoteEvent](terms/NoteEvent.ttl)** — Something to record related to a note associated with an event.
-- **[Nutrition](terms/Nutrition.ttl)** — The nutrient content (e.g. calories, carbohydrates, fat, fiber) associated with a meal, recipe, or ingredient.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
+- **[Neo4j](Neo4j/)** — A native graph database management system that stores and queries data as nodes, relationships, and properties.
+  <br>In: [Tech Stack](TechStack/)
+- **[Neo4j Desktop](Neo4jDesktop/)** — Neo4j graph database that support a PKM system.
+- **[Note](Note/)** — A unit of knowledge in a PKM system.
+- **[Note Types](NoteTypes/)** _(collection, 20 members)_
+- **[NoteEvent](NoteEvent/)** — Something to record related to a note associated with an event.
+- **[Nutrition](Nutrition/)** — The nutrient content (e.g. calories, carbohydrates, fat, fiber) associated with a meal, recipe, or ingredient.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
 ### O
 
-- **[Obsidian Notes](terms/ObsidianNotes.ttl)** — A major PKM system for linked notes.
-  <br>In: [Ideaverse Collection](terms/IdeaverseCollection.ttl)
-- **[Obsidian Plugin](terms/ObsidianPlugin.ttl)** — A core or community plugin that extends available  functions using JavaScript and the Obsidian API.
-- **[Obsidian Settings](terms/ObsidianSettings.ttl)** — A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins.
-- **[Obsidian Template](terms/ObsidianTemplate.ttl)** — An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
-- **[Ontology](terms/Ontology.ttl)** — A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language such as OWL.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[OWL](terms/OWL.ttl)** — Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
+- **[Obsidian Notes](ObsidianNotes/)** — A major PKM system for linked notes.
+  <br>In: [Ideaverse Collection](IdeaverseCollection/)
+- **[Obsidian Plugin](ObsidianPlugin/)** — A core or community plugin that extends available  functions using JavaScript and the Obsidian API.
+- **[Obsidian Settings](ObsidianSettings/)** — A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins.
+- **[Obsidian Template](ObsidianTemplate/)** — An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
+- **[Ontology](Ontology/)** — A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language such as OWL.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[OWL](OWL/)** — Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 ### P
 
-- **[Package](terms/Package.ttl)** — A physical package of a food product.
-- **[Periodic Notes](terms/PeriodicNotes.ttl)** — Manage daily, weekly, and monthly notes.
-- **[Person](terms/Person.ttl)** — A person used as a source in a PKM system.
-- **[PKM Meals](terms/PKMMeals.ttl)** — A SwiftUI app that manages events, recipes, and meals in a PKM system.
-- **[PKM Neo4j Service Project](terms/PKMNeo4jServiceProject.ttl)** _(also: pkm-neo4j-service)_ — Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system.
-- **[PKM Python](terms/PKMPython.ttl)** — Python apps and services supporting PKM system.
-- **[PKM Python Agents](terms/PKMPythonAgents.ttl)** — Python agents supporting the PKM system.
-- **[PKM Python API](terms/PKMPythonAPI.ttl)** — Python FastAPI routes providing an API for PKM services.
-- **[PKM Python Commands](terms/PKMPythonCommands.ttl)** — Python commands supporting the PKM system.
-- **[PKM Python Scripts](terms/PKMPythonScripts.ttl)** — Python scripts supporting the PKM system.
-- **[PKM Python Services](terms/PKMPythonServices.ttl)** — Python services supporting the PKM system.
-- **[PKM Studio](terms/PKMStudio.ttl)** — A SwiftUI app that manages a PKM knowledge system.
-- **[PKM Swift](terms/PKMSwift.ttl)** — Swift apps and services supporting PKM system.
-- **[PKM Swift Services](terms/PKMSwiftServices.ttl)** — Swift Hummingbird services that support a PKM system.
-- **[Product](terms/Product.ttl)** — A packaged food or grocery item.
-- **[Project](terms/Project.ttl)** — A defined, bounded effort with a specific goal and completion criteria, undertaken over a limited timeframe.
-  <br>In: [Effort Collection](terms/EffortCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[PTE Meal Plan](terms/PTEMealPlan.ttl)** — A weekly meal plan built in Plan to Eat (PTE); a recipe, meal-planning, and shopping list subscription service.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
-- **[Publish](terms/Publish.ttl)** — A core plugin that allows you to host your notes online as a website, wiki, or documentation.
-- **[Python](terms/Python.ttl)** — A general-purpose, interpreted programming language.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[Python Template](terms/PythonTemplate.ttl)** — A Python (Jinja2) template determines the structure, layout, and configuration for various types of notes in the PKM system.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
+- **[Package](Package/)** — A physical package of a food product.
+- **[Periodic Notes](PeriodicNotes/)** — Manage daily, weekly, and monthly notes.
+- **[Person](Person/)** — A person used as a source in a PKM system.
+- **[PKM Meals](PKMMeals/)** — A SwiftUI app that manages events, recipes, and meals in a PKM system.
+- **[PKM Neo4j Service Project](PKMNeo4jServiceProject/)** _(also: pkm-neo4j-service)_ — Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system.
+- **[PKM Python](PKMPython/)** — Python apps and services supporting PKM system.
+- **[PKM Python Agents](PKMPythonAgents/)** — Python agents supporting the PKM system.
+- **[PKM Python API](PKMPythonAPI/)** — Python FastAPI routes providing an API for PKM services.
+- **[PKM Python Commands](PKMPythonCommands/)** — Python commands supporting the PKM system.
+- **[PKM Python Scripts](PKMPythonScripts/)** — Python scripts supporting the PKM system.
+- **[PKM Python Services](PKMPythonServices/)** — Python services supporting the PKM system.
+- **[PKM Studio](PKMStudio/)** — A SwiftUI app that manages a PKM knowledge system.
+- **[PKM Swift](PKMSwift/)** — Swift apps and services supporting PKM system.
+- **[PKM Swift Services](PKMSwiftServices/)** — Swift Hummingbird services that support a PKM system.
+- **[Product](Product/)** — A packaged food or grocery item.
+- **[Project](Project/)** — A defined, bounded effort with a specific goal and completion criteria, undertaken over a limited timeframe.
+  <br>In: [Effort Collection](EffortCollection/), [Note Types](NoteTypes/)
+- **[PTE Meal Plan](PTEMealPlan/)** — A weekly meal plan built in Plan to Eat (PTE); a recipe, meal-planning, and shopping list subscription service.
+  <br>In: [Meal Domain](MealDomain/)
+- **[Publish](Publish/)** — A core plugin that allows you to host your notes online as a website, wiki, or documentation.
+- **[Python](Python/)** — A general-purpose, interpreted programming language.
+  <br>In: [Tech Stack](TechStack/)
+- **[Python Template](PythonTemplate/)** — A Python (Jinja2) template determines the structure, layout, and configuration for various types of notes in the PKM system.
+  <br>In: [Note Types](NoteTypes/)
 ### Q
 
-- **[Quarter](terms/Quarter.ttl)** — A three-month time period used for medium-level planning.
-  <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Quarter Cluster](terms/QuarterCluster.ttl)** — A group of related notes about a quarter.
-  <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Quarter Collection](terms/QuarterCollection.ttl)** _(collection, 6 members)_ — All related notes for a time period of three Months uses for medium-term planning.
-- **[Quarter Health](terms/QuarterHealth.ttl)** — The health-related summary for a quarter.
-- **[Quarter Journal](terms/QuarterJournal.ttl)** — Reflective writing about a quarter.
-- **[Quarter Log](terms/QuarterLog.ttl)** — A record of what happened over a quarter.
-  <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Quarter Plan](terms/QuarterPlan.ttl)** — The plan of intended priorities for a quarter.
-  <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[Quarter Review](terms/QuarterReview.ttl)** — A structured retrospectivee evaluating a completed quarter.
-  <br>In: [Quarter Collection](terms/QuarterCollection.ttl)
-- **[QuickAdd](terms/QuickAdd.ttl)** — Extension for Obsidian that includes additional tools (choices): templates, captures, macros, and multis.
-- **[Quote](terms/Quote.ttl)** — A quote by a specific source that you want to capture and reuse.
+- **[Quarter](Quarter/)** — A three-month time period used for medium-level planning.
+  <br>In: [Quarter Collection](QuarterCollection/)
+- **[Quarter Cluster](QuarterCluster/)** — A group of related notes about a quarter.
+  <br>In: [Quarter Collection](QuarterCollection/)
+- **[Quarter Collection](QuarterCollection/)** _(collection, 6 members)_ — All related notes for a time period of three Months uses for medium-term planning.
+- **[Quarter Health](QuarterHealth/)** — The health-related summary for a quarter.
+- **[Quarter Journal](QuarterJournal/)** — Reflective writing about a quarter.
+- **[Quarter Log](QuarterLog/)** — A record of what happened over a quarter.
+  <br>In: [Quarter Collection](QuarterCollection/)
+- **[Quarter Plan](QuarterPlan/)** — The plan of intended priorities for a quarter.
+  <br>In: [Quarter Collection](QuarterCollection/)
+- **[Quarter Review](QuarterReview/)** — A structured retrospectivee evaluating a completed quarter.
+  <br>In: [Quarter Collection](QuarterCollection/)
+- **[QuickAdd](QuickAdd/)** — Extension for Obsidian that includes additional tools (choices): templates, captures, macros, and multis.
+- **[Quote](Quote/)** — A quote by a specific source that you want to capture and reuse.
 ### R
 
-- **[RDF](terms/RDF.ttl)** — Resource Description Framework - a W3C standard model for representing data as subject-predicate-object triples, forming the graph-based foundation for SKOS, OWL, and linked data.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Recipe](terms/Recipe.ttl)** — A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal.
-  <br>In: [Note Types](terms/NoteTypes.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Recipe Collection](terms/RecipeCollection.ttl)** _(collection, 7 members)_ — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
-- **[Recipe Images](terms/RecipeImages.ttl)** — The photo or image assets associated with a recipe.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Recipe Servings](terms/RecipeServings.ttl)** — The number of servings or portions a recipe yields.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Recipe Source](terms/RecipeSource.ttl)** — The origin or provenance of a recipe, such as the website, cookbook, or person it was sourced from.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Recipe Time](terms/RecipeTime.ttl)** — The time-related metadata for a recipe, such as preparation time, cook time, and total time.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Recipe Collection](terms/RecipeCollection.ttl)
-- **[Restaurant](terms/Restaurant.ttl)** — A dining establishment where meals are eaten or taken out.
-  <br>In: [Note Types](terms/NoteTypes.ttl)
+- **[RDF](RDF/)** — Resource Description Framework - a W3C standard model for representing data as subject-predicate-object triples, forming the graph-based foundation for SKOS, OWL, and linked data.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[Recipe](Recipe/)** — A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal.
+  <br>In: [Note Types](NoteTypes/), [Recipe Collection](RecipeCollection/)
+- **[Recipe Collection](RecipeCollection/)** _(collection, 7 members)_ — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
+- **[Recipe Images](RecipeImages/)** — The photo or image assets associated with a recipe.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
+- **[Recipe Servings](RecipeServings/)** — The number of servings or portions a recipe yields.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
+- **[Recipe Source](RecipeSource/)** — The origin or provenance of a recipe, such as the website, cookbook, or person it was sourced from.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
+- **[Recipe Time](RecipeTime/)** — The time-related metadata for a recipe, such as preparation time, cook time, and total time.
+  <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
+- **[Restaurant](Restaurant/)** — A dining establishment where meals are eaten or taken out.
+  <br>In: [Note Types](NoteTypes/)
 ### S
 
-- **[Script](terms/Script.ttl)** — A short program or set of automated instructions, typically in Python or Swift, that performs a specific task.
-  <br>In: [Note Types](terms/NoteTypes.ttl), [Tech Stack](terms/TechStack.ttl)
-- **[ScriptEvent](terms/ScriptEvent.ttl)** — Something that happened during script  processing.
-- **[Semantic Web Standards](terms/SemanticWebStandards.ttl)** _(collection, 11 members)_
-- **[ServiceEvent](terms/ServiceEvent.ttl)** — Something that happened during service   processing.
-- **[Shortcut](terms/Shortcut.ttl)** — An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events.
-  <br>In: [Note Types](terms/NoteTypes.ttl), [Tech Stack](terms/TechStack.ttl)
-- **[Siri](terms/Siri.ttl)** — Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[SKOS](terms/SKOS.ttl)** — Simple Knowledge Organization System - a W3C standard data model, expressed in RDF, for representing controlled vocabularies such as thesauri, taxonomies, and classification schemes.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[SleepEvent](terms/SleepEvent.ttl)** — Recording metrics from overnight sleep.
-- **[Snack](terms/Snack.ttl)** — A small meal eaten between main meals.
-  <br>In: [Meal Domain](terms/MealDomain.ttl)
-- **[Source](terms/Source.ttl)** — A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system.
-- **[Spark](terms/Spark.ttl)** — A brief, informal capture of an idea, prompt, or stimulus intended for later development.
-  <br>In: [Note Types](terms/NoteTypes.ttl), [Spark Collection](terms/SparkCollection.ttl)
-- **[Spark Collection](terms/SparkCollection.ttl)** _(collection, 2 members)_ — All the related notes for a new spark of interest or importance.
-- **[Standard](terms/Standard.ttl)** — A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated use.
-  <br>In: [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Swift](terms/Swift.ttl)** — A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[Sync](terms/Sync.ttl)** — A core plugin that synchronizes your files through the Obsidian Sync service.
+- **[Script](Script/)** — A short program or set of automated instructions, typically in Python or Swift, that performs a specific task.
+  <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
+- **[ScriptEvent](ScriptEvent/)** — Something that happened during script  processing.
+- **[Semantic Web Standards](SemanticWebStandards/)** _(collection, 11 members)_
+- **[ServiceEvent](ServiceEvent/)** — Something that happened during service   processing.
+- **[Shortcut](Shortcut/)** — An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events.
+  <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
+- **[Siri](Siri/)** — Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS.
+  <br>In: [Tech Stack](TechStack/)
+- **[SKOS](SKOS/)** — Simple Knowledge Organization System - a W3C standard data model, expressed in RDF, for representing controlled vocabularies such as thesauri, taxonomies, and classification schemes.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[SleepEvent](SleepEvent/)** — Recording metrics from overnight sleep.
+- **[Snack](Snack/)** — A small meal eaten between main meals.
+  <br>In: [Meal Domain](MealDomain/)
+- **[Source](Source/)** — A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system.
+- **[Spark](Spark/)** — A brief, informal capture of an idea, prompt, or stimulus intended for later development.
+  <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
+- **[Spark Collection](SparkCollection/)** _(collection, 2 members)_ — All the related notes for a new spark of interest or importance.
+- **[Standard](Standard/)** — A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated use.
+  <br>In: [Semantic Web Standards](SemanticWebStandards/)
+- **[Swift](Swift/)** — A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development.
+  <br>In: [Tech Stack](TechStack/)
+- **[Sync](Sync/)** — A core plugin that synchronizes your files through the Obsidian Sync service.
 ### T
 
-- **[Taxonomy](terms/Taxonomy.ttl)** — A hierarchical classification scheme that organizes concepts into broader/narrower relationships.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Tech Stack](terms/TechStack.ttl)** _(collection, 10 members)_
-- **[Template](terms/TemplateCopy.ttl)** — A template determines the structure, layout, and configuration for various types of notes in the PKM system.
-- **[Templater](terms/Templater.ttl)** — Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with JavaScript code.
-- **[Term](terms/Term.ttl)** — A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary.
-  <br>In: [Concept Collection](terms/ConceptCollection.ttl), [Note Types](terms/NoteTypes.ttl), [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Time](terms/Time.ttl)** — A concept element representing a temporal reference point or duration.
-  <br>In: [Time Collection](terms/TimeCollection.ttl)
-- **[Time Cluster](terms/TimeCluster.ttl)** — A group of related notes for a time period (or time horizon).
-  <br>In: [Time Collection](terms/TimeCollection.ttl)
-- **[Time Collection](terms/TimeCollection.ttl)** _(collection, 2 members)_ — All the related concepts about Time.
-- **[Tool](terms/Tool.ttl)** — A software capability used within the PKM system.
-  <br>In: [Tech Stack](terms/TechStack.ttl)
-- **[ToolEvent](terms/ToolEvent.ttl)** — Something that happened during  processing with a tool.
-- **[Topic](terms/Topic.ttl)** — A subject or theme that content can be about.
-  <br>In: [Knowledge Collection](terms/KnowledgeCollection.ttl)
-- **[Topic Cluster](terms/TopicCluster.ttl)** — A group of related notes about a topic..
-- **[Topic Index](terms/TopicIndex.ttl)** — The index note that links all artifacts for a topic.
-- **[Topic Journal](terms/TopicJournal.ttl)** — Free-form reflective writing about a topic.
-- **[Topic Log](terms/TopicLog.ttl)** — A chronological record of what actually happened related to a topic.
-- **[Topic Plan](terms/TopicPlan.ttl)** — The plan of intended activities and priorities for a topic.
-- **[Topic Review](terms/TopicReview.ttl)** — A structured retrospective evaluating a topic.
+- **[Taxonomy](Taxonomy/)** — A hierarchical classification scheme that organizes concepts into broader/narrower relationships.
+  <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
+- **[Tech Stack](TechStack/)** _(collection, 10 members)_
+- **[Template](TemplateCopy/)** — A template determines the structure, layout, and configuration for various types of notes in the PKM system.
+- **[Templater](Templater/)** — Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with JavaScript code.
+- **[Term](Term/)** — A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary.
+  <br>In: [Concept Collection](ConceptCollection/), [Note Types](NoteTypes/), [Semantic Web Standards](SemanticWebStandards/)
+- **[Time](Time/)** — A concept element representing a temporal reference point or duration.
+  <br>In: [Time Collection](TimeCollection/)
+- **[Time Cluster](TimeCluster/)** — A group of related notes for a time period (or time horizon).
+  <br>In: [Time Collection](TimeCollection/)
+- **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — All the related concepts about Time.
+- **[Tool](Tool/)** — A software capability used within the PKM system.
+  <br>In: [Tech Stack](TechStack/)
+- **[ToolEvent](ToolEvent/)** — Something that happened during  processing with a tool.
+- **[Topic](Topic/)** — A subject or theme that content can be about.
+  <br>In: [Knowledge Collection](KnowledgeCollection/)
+- **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic..
+- **[Topic Index](TopicIndex/)** — The index note that links all artifacts for a topic.
+- **[Topic Journal](TopicJournal/)** — Free-form reflective writing about a topic.
+- **[Topic Log](TopicLog/)** — A chronological record of what actually happened related to a topic.
+- **[Topic Plan](TopicPlan/)** — The plan of intended activities and priorities for a topic.
+- **[Topic Review](TopicReview/)** — A structured retrospective evaluating a topic.
 ### U
 
-- **[UserEvent](terms/UserEvent.ttl)** — Something that happened and raised by a user.
+- **[UserEvent](UserEvent/)** — Something that happened and raised by a user.
 ### V
 
-- **[Vault](terms/Vault.ttl)** — A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc.
-  <br>In: [Ideaverse Collection](terms/IdeaverseCollection.ttl), [Note Types](terms/NoteTypes.ttl)
-- **[View](terms/View.ttl)** — A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases.
+- **[Vault](Vault/)** — A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc.
+  <br>In: [Ideaverse Collection](IdeaverseCollection/), [Note Types](NoteTypes/)
+- **[View](View/)** — A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases.
 ### W
 
-- **[W3C Standard](terms/W3CStandard.ttl)** — A standard or recommendation published by the World Wide Web Consortium (W3C).
-  <br>In: [Semantic Web Standards](terms/SemanticWebStandards.ttl)
-- **[Week](terms/Week.ttl)** — A seven-day time period grouping consecutive days.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Analysis](terms/WeekAnalysis.ttl)** — A note summarizing patterns, trends, or review findings across a week's Day Clusters.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Cluster](terms/WeekCluster.ttl)** — The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters.
-- **[Week Collection](terms/WeekCollection.ttl)** _(collection, 11 members)_ — All notes related to a single Week time period of seven consecutive days.
-- **[Week Diabetes](terms/WeekDiabetes.ttl)** — A weekly note or artifact aggregating diabetes-related tracking data for the week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Diabetes Analysis](terms/WeekDiabetesAnalysis.ttl)** — A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Health](terms/WeekHealth.ttl)** — The health-related summary for a week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Index](terms/WeekIndex.ttl)** — A hub note for a given week that links to and organizes its constituent Day Cluster notes and other weekly artifacts.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Journal](terms/WeekJournal.ttl)** — Reflective writing about a week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Log](terms/WeekLog.ttl)** — A record of what happened over a week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Meal Plan](terms/WeekMealPlan.ttl)** — A note representing the planned meals for a given week, aggregating daily meal plan entries.
-  <br>In: [Meal Domain](terms/MealDomain.ttl), [Week Collection](terms/WeekCollection.ttl)
-- **[Week Plan](terms/WeekPlan.ttl)** — The plan of intended priorities and activities for a week.
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[Week Review](terms/WeekReview.ttl)** — A structured retrospective evaluating a compled week
-  <br>In: [Week Collection](terms/WeekCollection.ttl)
-- **[WeightEvent](terms/WeightEvent.ttl)** — A record of current weight.
-- **[Widget](terms/Widget.ttl)** — A home- or lock-screen glanceable view.
-- **[Workspaces](terms/Workspaces.ttl)** — A core plugin that enables you to create, save, and load workspace layouts.
+- **[W3C Standard](W3CStandard/)** — A standard or recommendation published by the World Wide Web Consortium (W3C).
+  <br>In: [Semantic Web Standards](SemanticWebStandards/)
+- **[Week](Week/)** — A seven-day time period grouping consecutive days.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Analysis](WeekAnalysis/)** — A note summarizing patterns, trends, or review findings across a week's Day Clusters.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Cluster](WeekCluster/)** — The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters.
+- **[Week Collection](WeekCollection/)** _(collection, 11 members)_ — All notes related to a single Week time period of seven consecutive days.
+- **[Week Diabetes](WeekDiabetes/)** — A weekly note or artifact aggregating diabetes-related tracking data for the week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Diabetes Analysis](WeekDiabetesAnalysis/)** — A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Health](WeekHealth/)** — The health-related summary for a week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Index](WeekIndex/)** — A hub note for a given week that links to and organizes its constituent Day Cluster notes and other weekly artifacts.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Journal](WeekJournal/)** — Reflective writing about a week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Log](WeekLog/)** — A record of what happened over a week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Meal Plan](WeekMealPlan/)** — A note representing the planned meals for a given week, aggregating daily meal plan entries.
+  <br>In: [Meal Domain](MealDomain/), [Week Collection](WeekCollection/)
+- **[Week Plan](WeekPlan/)** — The plan of intended priorities and activities for a week.
+  <br>In: [Week Collection](WeekCollection/)
+- **[Week Review](WeekReview/)** — A structured retrospective evaluating a compled week
+  <br>In: [Week Collection](WeekCollection/)
+- **[WeightEvent](WeightEvent/)** — A record of current weight.
+- **[Widget](Widget/)** — A home- or lock-screen glanceable view.
+- **[Workspaces](Workspaces/)** — A core plugin that enables you to create, save, and load workspace layouts.
 ### Y
 
-- **[Year](terms/Year.ttl)** — A calendar year grouping quarters and months.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Cluster](terms/YearCluster.ttl)** — A group of related notes about a year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Collection](terms/YearCollection.ttl)** _(collection, 7 members)_ — All notes related to a calendar Year groups Quarters and Months.
-- **[Year Health](terms/YearHealth.ttl)** — The health-related summary for a year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Journal](terms/YearJournal.ttl)** — Reflective writing about a year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Log](terms/YearLog.ttl)** — A record of what happened over a year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Plan](terms/YearPlan.ttl)** — The plan of intended priorities for a year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
-- **[Year Review](terms/YearReview.ttl)** — A structured retrospective evaluating a completed year.
-  <br>In: [Year Collection](terms/YearCollection.ttl)
+- **[Year](Year/)** — A calendar year grouping quarters and months.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Cluster](YearCluster/)** — A group of related notes about a year.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Collection](YearCollection/)** _(collection, 7 members)_ — All notes related to a calendar Year groups Quarters and Months.
+- **[Year Health](YearHealth/)** — The health-related summary for a year.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Journal](YearJournal/)** — Reflective writing about a year.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Log](YearLog/)** — A record of what happened over a year.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Plan](YearPlan/)** — The plan of intended priorities for a year.
+  <br>In: [Year Collection](YearCollection/)
+- **[Year Review](YearReview/)** — A structured retrospective evaluating a completed year.
+  <br>In: [Year Collection](YearCollection/)
 
 <!-- pkm:end generated -->

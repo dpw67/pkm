@@ -19,6 +19,11 @@ merges to `main`.
 
 ### Added
 
+- An HTML page for every term, at the term's own URI. Until now a browser opening
+  `https://w3id.org/pkm/vocab/{Term}` got a 404, because every rewrite rule was
+  gated on an RDF `Accept` header and nothing served HTML. The same URI now
+  returns a readable page to a browser and Turtle to an RDF client. The
+  vocabulary index links to those pages rather than straight into Turtle.
 - Community health files: `CODE_OF_CONDUCT.md`, `SECURITY.md`, a pull request
   template, and issue forms for bug reports, feature requests, term proposals,
   and term changes.
@@ -69,9 +74,10 @@ Note/Tag/Source model that preceded it.
 
 They dereference through content negotiation at w3id.org: a request carrying an
 RDF `Accept` header (`text/turtle`, `application/rdf+xml`, `application/n-triples`,
-`text/n3`) is redirected to the term's Turtle document. A browser asking for HTML
-gets a 404 today — there is no per-term HTML page yet — so a term URI is currently
-a reliable identifier and a reliable RDF lookup, but not a link to hand someone.
+`text/n3`) is redirected to the term's Turtle document. Everything else — a
+browser, or any client sending the default `*/*` — gets the term's HTML page. So
+a term URI is a link you can hand someone as well as an identifier and an RDF
+lookup.
 
 A URI is minted once, when the term is created, and does not follow later label
 changes — correcting `Day.Meal Plan` to `Day Meal Plan` in 0.1.4 left

@@ -109,6 +109,7 @@ def _render_markdown(report: Report) -> str:
 
 def _build(args) -> int:
     """Validate, transform, then write every published artifact."""
+    from .pages import write_pages
     from .render import render_agents, render_resources, render_vocabulary, splice
     from .split import stale_term_files, write_all
     from .transform import publish
@@ -148,16 +149,21 @@ def _build(args) -> int:
 
     if args.dry_run:
         names = {vocab.local_name(u) for u in [*vocab.concepts(), *vocab.collections()]}
-        print(f"would write vocab/pkm-vocab.ttl, {len(names)} files under "
-              f"vocab/terms/, agents/index.ttl, resources/index.ttl", file=sys.stderr)
+        print(f"would write vocab/pkm-vocab.ttl, {len(names)} Turtle files and "
+              f"{len(names)} term pages under vocab/terms/, agents/index.ttl, "
+              f"resources/index.ttl", file=sys.stderr)
         for path, _ in targets:
             print(f"would splice {path.relative_to(root)}", file=sys.stderr)
         return 0
 
     written = write_all(vocab, published, root)
+    # Unlike the Turtle, term pages are only rewritten when their content
+    # changes, so this counts what moved rather than what exists.
+    pages = write_pages(vocab, published, root)
     for path, body in targets:
         written.append(splice(path, body))
-    print(f"wrote {len(written)} files", file=sys.stderr)
+    print(f"wrote {len(written)} files, {len(pages)} term pages changed",
+          file=sys.stderr)
 
     keep = {vocab.local_name(u) for u in [*vocab.concepts(), *vocab.collections()]}
     for stale in stale_term_files(root, keep):

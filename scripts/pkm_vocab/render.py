@@ -47,7 +47,13 @@ def _first(graph: Graph, subject, *props) -> str:
 
 
 def _link(vocab: Vocabulary, uri: URIRef) -> str:
-    return f"[{vocab.label(uri)}]({TERMS_DIR}/{vocab.local_name(uri)}.ttl)"
+    """Link to the term's own page rather than to its Turtle.
+
+    This index is where most readers arrive, and dropping them into raw Turtle
+    is a poor first look at a vocabulary. The Turtle is one hop further on,
+    linked from every term page and from Download above.
+    """
+    return f"[{vocab.label(uri)}]({vocab.local_name(uri)}/)"
 
 
 def render_vocabulary(vocab: Vocabulary, published: Graph) -> str:
@@ -66,8 +72,9 @@ def render_vocabulary(vocab: Vocabulary, published: Graph) -> str:
         "",
         f"- [`pkm-vocab.ttl`](pkm-vocab.ttl) — the whole vocabulary in Turtle "
         f"({len(concepts)} concepts, {len(collections)} collections)",
-        f"- One Turtle file per term at `{TERMS_DIR}/{{Term}}.ttl`, which is what "
-        "`https://w3id.org/pkm/vocab/{Term}` resolves to for an RDF client",
+        "- One page per term at `https://w3id.org/pkm/vocab/{Term}` — the same URI "
+        "serves a readable page to a browser and Turtle to an RDF client",
+        f"- The per-term Turtle on its own at `{TERMS_DIR}/{{Term}}.ttl`",
         "",
         "## Hierarchy",
         "",

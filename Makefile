@@ -14,6 +14,8 @@
 #   make validate   parse-check every published Turtle file
 #   make notes      regenerate the Obsidian term stubs in the WarrenWeb vault
 #   make vault      mirror the generated Obsidian artifacts into that vault
+#   make gems       install the gems GitHub Pages builds this site with
+#   make site       build the site and check the term URIs resolve
 #   make serve      preview the site locally
 #   make clean      remove build output
 
@@ -44,6 +46,24 @@ PYTHON  := .venv/bin/python
 BIN     := .venv/bin
 VOCAB   := PYTHONPATH=scripts $(PYTHON) -m pkm_vocab
 
+# Ruby for the local site build. Pages builds this site with 3.3.4; macOS ships
+# 2.6, which cannot resolve the gem set, so this is Homebrew's keg-only ruby@3.3
+# reached by path -- nothing has to be on PATH and the system ruby is untouched.
+# Recursive `=`, not `:=`, so `brew --prefix` runs only for the targets that
+# need it rather than on every `make check`.
+RUBY_BIN = $(shell brew --prefix ruby@3.3)/bin
+BUNDLE   = $(RUBY_BIN)/bundle
+
+# Vendored into the repo rather than the global gem dir, so the site's gems
+# cannot drift with whatever else gets installed. Gitignored, and excluded in
+# _config.yml -- Jekyll 3 drops its own default excludes once that list exists.
+export BUNDLE_PATH = vendor/bundle
+
+# Overridable because 4000 is Jekyll's default and therefore the port everything
+# else also picks: `make serve PORT=4001`. Without this the target fails with a
+# bind error on any machine already running something there.
+PORT ?= 4000
+
 # Obsidian vault directory the term stubs are mirrored into. Override on the
 # command line for a different vault: make notes NOTES_OUT=/path/to/pkm/vocab
 NOTES_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab
@@ -63,7 +83,7 @@ VAULT_OUT := $(HOME)/Obsidian/WarrenWeb/+/_PKM
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes vault serve clean
+.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes vault gems site serve clean
 
 all: build validate
 
@@ -177,8 +197,33 @@ vault: artifacts
 	@rsync -a $(DRY) -i --delete $(GEN)/obsidian/templates/ "$(VAULT_OUT)/templates/Seed/"
 	@echo "  $(VAULT_OUT)"
 
+# One-time, and after any change to the Gemfile. Needs `brew install ruby@3.3`.
+gems:
+	$(BUNDLE) install
+
+# Builds the site the way Pages builds it, then checks the one thing no other
+# target can: that each term page's `permalink` really does land at
+# vocab/{Term}/index.html, and that the Turtle is still served from
+# vocab/terms/{Term}.ttl. Those two are exactly "a browser gets a readable page"
+# and "an RDF client still gets Turtle" -- the whole point of the term URIs.
+#
+# Deliberately not part of `all`: like notes and vault, it needs something this
+# repo does not install.
+site:
+	$(BUNDLE) exec jekyll build
+	@built=$$(ls -d _site/vocab/*/ 2>/dev/null | grep -cv '/terms/$$'); \
+	 want=$$(ls vocab/terms/*.md | wc -l | tr -d ' '); \
+	 test "$$built" = "$$want" || \
+	   { echo "  $$built term pages built, expected $$want"; exit 1; }; \
+	 test -f _site/vocab/terms/DayMealPlan.ttl || \
+	   { echo "  per-term Turtle missing from _site"; exit 1; }; \
+	 echo "  _site ok: $$built term pages, per-term Turtle intact"
+
+# Serves what `make site` builds, at http://127.0.0.1:$(PORT)/vocab/. The one
+# thing worth clicking is a term URI -- /vocab/DayMealPlan/ -- since that path
+# exists only because of the page's `permalink`.
 serve:
-	bundle exec jekyll serve --livereload
+	$(BUNDLE) exec jekyll serve --livereload --port $(PORT)
 
 clean:
-	rm -rf _site .jekyll-cache
+	rm -rf _site .jekyll-cache .sass-cache

@@ -16,4 +16,12 @@ exclude:
   - z/          # scratch
   - .venv/
   - Makefile
+  # Local site build only; Pages resolves its own gems and never reads these.
+  # Named explicitly because Jekyll 3 replaces its own default excludes with
+  # this list rather than adding to it -- without these, `vendor/bundle` is
+  # copied into the built site and Gemfile publishes as a URI.
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
   - README.md   # index.md is the site index; README is for the GitHub repo page

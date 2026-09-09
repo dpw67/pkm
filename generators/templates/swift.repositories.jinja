@@ -1,0 +1,180 @@
+// {{ title }} -- store access
+//
+// Generated from {{ source }}. Do not edit; edit the schema and re-run
+// `make artifacts`.
+//
+// One repository per identified class, plus an importer that loads a fixture.
+//
+// Resolution is the only real work here. A payload carries references as ids,
+// so storing one means fetching the far end -- and every repository does that
+// through its peer rather than through a generic helper, because `#Predicate`
+// cannot be written against an identifier it only knows through a protocol.
+// The duplication is the price of a macro that wants a concrete type.
+//
+// Every `upsert` resolves before it writes, so a payload naming something that
+// is not stored fails without leaving a half-linked record behind.
+
+import Foundation
+import SwiftData
+
+/// A reference that could not be resolved.
+public enum StoreError: Error, CustomStringConvertible {
+    case missing(type: String, id: String)
+
+    public var description: String {
+        switch self {
+        case let .missing(type, id):
+            return "no \(type) with identifier \(id)"
+        }
+    }
+}
+
+{% for shape in model.declared_nodes %}
+{% set key = shape.identifier.name | camel %}
+{% set sortkey = "name" if shape.fields | selectattr("name", "equalto", "name") | list else key %}
+{% set joins = shape.embeds | selectattr("shape.association") | list %}
+/// Reading and writing stored {{ shape.name | plural }}.
+public struct {{ shape.name }}Repository {
+
+    public let context: ModelContext
+
+    public init(context: ModelContext) {
+        self.context = context
+    }
+
+    /// Everything stored, by {{ sortkey }}.
+    public func all() throws -> [{{ shape.name }}] {
+        try context.fetch(FetchDescriptor<{{ shape.name }}>(sortBy: [SortDescriptor(\.{{ sortkey }})]))
+    }
+
+    /// The record with this identifier, if there is one.
+    public func find({{ key }}: {{ shape.identifier.scalar("swift") }}) throws -> {{ shape.name }}? {
+        var query = FetchDescriptor<{{ shape.name }}>(predicate: #Predicate { $0.{{ key }} == {{ key }} })
+        query.fetchLimit = 1
+        return try context.fetch(query).first
+    }
+
+    /// Store a payload, updating the record with the same identifier if it exists.
+    @discardableResult
+    public func upsert(_ dto: {{ shape.name }}DTO) throws -> {{ shape.name }} {
+{% for e in shape.edges %}
+{% if e.multivalued %}
+        var {{ e.name | camel }}: [{{ e.target.name }}] = []
+        for id in dto.{{ e.name | camel }} {
+            guard let target = try {{ e.target.name }}Repository(context: context).find({{ e.target.identifier.name | camel }}: id) else {
+                throw StoreError.missing(type: "{{ e.target.name }}", id: id)
+            }
+            {{ e.name | camel }}.append(target)
+        }
+{% elif e.required %}
+        guard let {{ e.name | camel }} = try {{ e.target.name }}Repository(context: context).find({{ e.target.identifier.name | camel }}: dto.{{ e.name | camel }}) else {
+            throw StoreError.missing(type: "{{ e.target.name }}", id: dto.{{ e.name | camel }})
+        }
+{% else %}
+        var {{ e.name | camel }}: {{ e.target.name }}?
+        if let id = dto.{{ e.name | camel }} {
+            guard let target = try {{ e.target.name }}Repository(context: context).find({{ e.target.identifier.name | camel }}: id) else {
+                throw StoreError.missing(type: "{{ e.target.name }}", id: id)
+            }
+            {{ e.name | camel }} = target
+        }
+{% endif %}
+{% endfor %}
+{% for m in joins %}
+{% set inner = m.shape.edges[0] %}
+        var {{ m.name | camel }}: [{{ m.shape.name }}] = []
+{% if m.multivalued %}
+        for line in dto.{{ m.name | camel }} {
+{% else %}
+        if let line = dto.{{ m.name | camel }} {
+{% endif %}
+            guard let {{ inner.name | camel }} = try {{ inner.target.name }}Repository(context: context).find({{ inner.target.identifier.name | camel }}: line.{{ inner.name | camel }}) else {
+                throw StoreError.missing(type: "{{ inner.target.name }}", id: line.{{ inner.name | camel }})
+            }
+            {{ m.name | camel }}.append({{ m.shape.name }}(
+{% for sub in m.shape.members %}
+                {{ sub.name | camel }}: {{ (sub.name | camel) if sub.target is defined else ("line." + (sub.name | camel)) }}{{ "," if not loop.last }}
+{% endfor %}
+            ))
+        }
+{% endfor %}
+{% if shape.edges or joins %}
+
+{% endif %}
+        let record: {{ shape.name }}
+        if let found = try find({{ key }}: dto.{{ key }}) {
+            record = found
+        } else {
+            record = {{ shape.name }}(
+{% set needed = shape.members | select("mandatory") | list %}
+{% for m in needed %}
+                {{ m.name | camel }}: {{ (m.name | camel) if m.target is defined else ("dto." + (m.name | camel)) }}{{ "," if not loop.last }}
+{% endfor %}
+            )
+            context.insert(record)
+        }
+        record.apply(dto)
+{% for e in shape.edges %}
+        record.{{ e.name | camel }} = {{ e.name | camel }}
+{% endfor %}
+{% for m in joins %}
+
+        // The old {{ m.shape.name }} rows are ours to remove: cascade fires when the
+        // owner is deleted, not when its array is replaced.
+        for old in record.{{ m.name | camel }} {
+            context.delete(old)
+        }
+        record.{{ m.name | camel }} = {{ m.name | camel }}
+{% endfor %}
+        return record
+    }
+
+    /// Store several payloads.
+    @discardableResult
+    public func upsert(_ dtos: [{{ shape.name }}DTO]) throws -> [{{ shape.name }}] {
+        try dtos.map { try upsert($0) }
+    }
+
+    public func delete(_ record: {{ shape.name }}) {
+        context.delete(record)
+    }
+}
+
+{% endfor %}
+/// The stored types, and a container holding them.
+public enum {{ module }}Store {
+
+    public static let models: [any PersistentModel.Type] = [
+{% for shape in model.load_order + model.associations %}
+        {{ shape.name }}.self{{ "," if not loop.last }}
+{% endfor %}
+    ]
+
+    public static func container(inMemory: Bool = false) throws -> ModelContainer {
+        let schema = Schema(models)
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
+        return try ModelContainer(for: schema, configurations: [config])
+    }
+}
+
+/// Loads a fixture into a context.
+public struct {{ module }}Importer {
+
+    public let context: ModelContext
+
+    public init(context: ModelContext) {
+        self.context = context
+    }
+
+    /// Store every record in the fixture, then save.
+    ///
+    /// The order is {{ model.load_order | map(attribute="name") | join(", then ") }} -- read off the
+    /// schema, not chosen. A reference cannot be resolved before the record it
+    /// points at exists.
+    public func load(_ fixture: {{ module }}Fixture) throws {
+{% for shape in model.load_order %}
+        try {{ shape.name }}Repository(context: context).upsert(fixture.{{ shape.name | plural }})
+{% endfor %}
+        try context.save()
+    }
+}

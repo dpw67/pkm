@@ -35,6 +35,14 @@ ISO_NARROWER = (
     ISOTHES.narrowerInstantial,
 )
 
+#: The word each ISO 25964 broader property adds to a plain parent. Lives here
+#: rather than in a renderer because more than one of them needs it.
+ISO_QUALIFIER = {
+    ISOTHES.broaderGeneric: "generic",
+    ISOTHES.broaderPartitive: "partitive",
+    ISOTHES.broaderInstantial: "instantial",
+}
+
 
 @dataclass
 class Vocabulary:

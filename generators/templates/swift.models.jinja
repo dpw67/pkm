@@ -1,0 +1,96 @@
+// {{ title }} -- store
+//
+// Generated from {{ source }}. Do not edit; edit the schema and re-run
+// `make artifacts`.
+//
+// The SwiftData layer. Every identified class is a `@Model`, every value
+// object stays a struct persisted inline, and every association class becomes
+// a join model.
+//
+// That last one is the interesting difference. The graph targets collapse an
+// association onto the relationship itself: Neo4j puts the properties on the
+// edge, Ladybug on rel-table columns, TypeDB on the relation. SwiftData has no
+// relationship properties -- `@Relationship` is a plain reference and holds
+// nothing -- so the association has to be promoted back to a record of its
+// own. It is the Core Data join entity, and it is exactly the shape the graph
+// stores rejected.
+//
+// Delete rules are read off the schema rather than chosen: a composition
+// cascades, a reference nullifies. `Meal.recipes` is a reference because a
+// recipe outlives the occasion it was cooked for.
+//
+// One thing this layer does not keep: list order across a relationship. A
+// SwiftData to-many is a set, so the order a fixture wrote its ingredients in
+// is gone once they are stored, and comes back arbitrary. Nested value objects
+// are unaffected -- `images` is an attribute, and an attribute holds an array.
+// The graph targets lose it in the same place for the same reason, and the
+// seed generator already mints the position into a promoted value object's
+// key (`<recipe>#images/0`) because nothing else would carry it. An
+// association class gets no such key, so if order is meant to be part of the
+// data it has to become a slot in the schema.
+
+import Foundation
+import SwiftData
+
+{% for shape in model.declared_nodes + model.associations %}
+{% set parents = model.uses(shape) if shape.association else [] %}
+{% if shape.description %}
+/// {{ shape.description | doc(0) }}
+{% endif %}
+{% if shape.association %}
+///
+/// A join model. {{ shape.fields | map(attribute="name") | join(" and ") }} describe a {{ parents[0].source.name | lower }}'s use of the
+/// {{ shape.edges[0].target.name | lower }}, not the {{ shape.edges[0].target.name | lower }} itself, so one {{ shape.edges[0].target.name | lower }} can be
+/// reached from many {{ parents[0].source.name | plural }} at different amounts.
+{% endif %}
+@Model
+public final class {{ shape.name }} {
+{% for m in shape.members %}
+{% set kind = m | swift("model") %}
+{% if m.description %}
+    /// {{ m.description | doc(4) }}
+{% endif %}
+{% if m.identifier is defined and m.identifier %}
+    @Attribute(.unique) public var {{ m.name | camel }}: {{ kind }}
+{% elif m.shape is defined and m.shape.association %}
+{% if model.uses(m.shape) | length == 1 %}
+    @Relationship(deleteRule: .cascade, inverse: \{{ m.shape.name }}.{{ shape.name | camel }})
+{% else %}
+    @Relationship(deleteRule: .cascade)
+{% endif %}
+    public var {{ m.name | camel }}: {{ kind }}
+{% elif m.target is defined %}
+    @Relationship(deleteRule: .nullify) public var {{ m.name | camel }}: {{ kind }}
+{% else %}
+    public var {{ m.name | camel }}: {{ kind }}
+{% endif %}
+
+{% endfor %}
+{% if parents | length == 1 %}
+    /// The {{ parents[0].source.name | lower }} this line belongs to.
+    ///
+    /// Not in the schema: SwiftData needs the far end of a relationship named
+    /// before it can be declared as an inverse, and the graph targets have no
+    /// use for it because the edge already spans both ends.
+    public var {{ parents[0].source.name | camel }}: {{ parents[0].source.name }}?
+
+{% endif %}
+    public init(
+{% for m in shape.members %}
+{% set kind = m | swift("model") %}
+        {{ m.name | camel }}: {{ kind }}{{ kind | dflt }}{{ "," if not loop.last or parents | length == 1 }}
+{% endfor %}
+{% if parents | length == 1 %}
+        {{ parents[0].source.name | camel }}: {{ parents[0].source.name }}? = nil
+{% endif %}
+    ) {
+{% for m in shape.members %}
+        self.{{ m.name | camel }} = {{ m.name | camel }}
+{% endfor %}
+{% if parents | length == 1 %}
+        self.{{ parents[0].source.name | camel }} = {{ parents[0].source.name | camel }}
+{% endif %}
+    }
+}
+
+{% endfor %}

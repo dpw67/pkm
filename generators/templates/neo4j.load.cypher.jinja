@@ -1,0 +1,25 @@
+// {{ title }} -- Neo4j load patterns
+// Generated from {{ source }} by `make artifacts`. Do not edit.
+//
+// Parameterised MERGE statements, one per node label and one per relationship.
+// Pass $rows as a list of maps. MERGE on the identifier only, then SET the rest,
+// so re-running updates instead of duplicating.
+{% for s in model.nodes %}
+// ---- {{ s.name }}
+UNWIND $rows AS row
+MERGE (n:{{ s.name }} {% raw %}{{% endraw %}{{ s.identifier.key }}: row.{{ s.identifier.key }}{% raw %}}{% endraw %})
+{% set rest = s.flat() | rejectattr("identifier") | list %}
+{% if rest %}
+SET
+{% for f in rest %}
+    n.{{ f.key }} = row.{{ f.key }}{{ "," if not loop.last }}
+{% endfor %}
+{%- endif %};
+{% endfor %}
+{% for e in model.edges %}
+// ---- ({{ e.source.name }})-[:{{ e.rel }}]->({{ e.target.name }})
+UNWIND $rows AS row
+MATCH (a:{{ e.source.name }} {% raw %}{{% endraw %}{{ e.source.identifier.key }}: row.{{ e.source.name|lower }}_{{ e.source.identifier.key }}{% raw %}}{% endraw %})
+MATCH (b:{{ e.target.name }} {% raw %}{{% endraw %}{{ e.target.identifier.key }}: row.{{ e.target.name|lower }}_{{ e.target.identifier.key }}{% raw %}}{% endraw %})
+MERGE (a)-[:{{ e.rel }}]->(b);
+{% endfor %}

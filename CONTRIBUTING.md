@@ -52,8 +52,8 @@ quick to accept:
   follow later label changes. Correcting `Day.Meal Plan` to `Day Meal Plan` in
   0.1.4 left `pkmv:DayMealPlan` exactly as it was.
 - **A published URI is never removed or reused.** All 241 URIs from 0.1.1 still
-  mean what they meant, and still dereference for RDF clients. (Opened in a
-  browser they 404 — there is no per-term HTML page yet.)
+  mean what they meant, and still dereference — Turtle for an RDF client, an
+  HTML page for a browser, from the same URI.
 - **Retirement is deprecation, not deletion** — `owl:deprecated true` plus
   `dcterms:isReplacedBy` where there's a successor. `make build` reports orphaned
   term files rather than deleting them, so this is enforced by the build.

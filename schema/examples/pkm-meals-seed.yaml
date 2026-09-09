@@ -1,0 +1,89 @@
+# Seed fixture for the PKM Meals domain -- example data, not part of the schema.
+#
+# Written in the SHAPE OF THE SCHEMA: value objects nested, references by id.
+# The generator flattens or promotes per target, so this one file feeds Neo4j,
+# Ladybug, and TypeQL without restating any of their differences. It exists
+# mainly so the generated loaders are runnable, and so promotion is exercised
+# by real data -- Chili has two images, which is the case that forces a node.
+#
+# Salt is here for the opposite case. Both recipes call for it in different
+# amounts, so it is the data that distinguishes a correct association from the
+# broken model where quantity sat on the ingredient: one Ingredient node, two
+# HAS_INGREDIENT links, two different sets of link properties.
+#
+# It carries no nutrition block, and that is deliberate rather than tidy: the
+# nutrition figures below are scoped to each recipe's amount (chili's 1488 kcal
+# is exactly the sum of its three), so a shared ingredient has no single right
+# answer for them. Recording none is honest; recording one would not be.
+
+Ingredient:
+  - id: pkm:ing/kidney-beans
+    name: Kidney beans
+    nutrition: {calories: 220, carbohydrates_g: 40.0, protein_g: 14.0, fat_g: 0.8, fiber_g: 16.0, sodium_mg: 480}
+  - id: pkm:ing/ground-beef
+    name: Ground beef, 85% lean
+    nutrition: {calories: 1088, carbohydrates_g: 0.0, protein_g: 96.0, fat_g: 76.0, fiber_g: 0.0, sodium_mg: 510}
+  - id: pkm:ing/crushed-tomatoes
+    name: Crushed tomatoes
+    nutrition: {calories: 180, carbohydrates_g: 40.0, protein_g: 8.0, fat_g: 1.0, fiber_g: 10.0, sodium_mg: 1100}
+  - id: pkm:ing/rolled-oats
+    name: Rolled oats
+    nutrition: {calories: 150, carbohydrates_g: 27.0, protein_g: 5.0, fat_g: 3.0, fiber_g: 4.0, sodium_mg: 0}
+  - id: pkm:ing/blueberries
+    name: Blueberries
+    nutrition: {calories: 60, carbohydrates_g: 15.0, protein_g: 0.8, fat_g: 0.3, fiber_g: 2.7, sodium_mg: 1}
+  - id: pkm:ing/salt
+    name: Salt
+
+Recipe:
+  - id: pkm:rec/weeknight-chili
+    name: Weeknight chili
+    instructions:
+      - Brown the beef in a heavy pot, breaking it up as it cooks.
+      - Add the tomatoes and beans; simmer uncovered for 40 minutes.
+      - Season, then rest off the heat for 10 minutes before serving.
+    serving:
+      servings: 6
+      recipe_yield: About 8 cups
+    nutrition: {calories: 1488, carbohydrates_g: 80.0, protein_g: 118.0, fat_g: 77.8, fiber_g: 26.0, sodium_mg: 2090}
+    preparation: {prep_minutes: 15, cook_minutes: 45, total_minutes: 60}
+    images:
+      - {url: "https://example.org/chili-hero.jpg", caption: "Finished chili in the pot"}
+      - {url: "https://example.org/chili-bowl.jpg", caption: "Single bowl, plated"}
+    source: {name: "Warren family notebook", url: "https://warrenweb.net/recipes/chili", source_kind: Cookbook}
+    ingredients:
+      - {ingredient: pkm:ing/ground-beef, quantity: 1.5, unit: lb}
+      - {ingredient: pkm:ing/crushed-tomatoes, quantity: 28.0, unit: oz}
+      - {ingredient: pkm:ing/kidney-beans, quantity: 2.0, unit: can}
+      - {ingredient: pkm:ing/salt, quantity: 1.5, unit: tsp}
+
+  - id: pkm:rec/overnight-oats
+    name: Overnight oats with blueberries
+    instructions:
+      - Combine the oats with milk in a jar and refrigerate overnight.
+      - Top with blueberries before eating.
+    serving:
+      servings: 1
+      recipe_yield: One 12-ounce jar
+    nutrition: {calories: 210, carbohydrates_g: 42.0, protein_g: 5.8, fat_g: 3.3, fiber_g: 6.7, sodium_mg: 1}
+    preparation: {prep_minutes: 5, cook_minutes: 0, total_minutes: 5}
+    source: {name: "Serious Eats", url: "https://www.seriouseats.com/", source_kind: Website}
+    ingredients:
+      - {ingredient: pkm:ing/rolled-oats, quantity: 0.5, unit: cup}
+      - {ingredient: pkm:ing/blueberries, quantity: 0.75, unit: cup}
+      - {ingredient: pkm:ing/salt, quantity: 0.25, unit: tsp}
+
+Meal:
+  - id: pkm:meal/2026-09-04-breakfast
+    name: Breakfast, 4 September 2026
+    meal_kind: Breakfast
+    served_at: "2026-09-04T07:30:00Z"
+    nutrition: {calories: 210, carbohydrates_g: 42.0, protein_g: 5.8, fat_g: 3.3, fiber_g: 6.7, sodium_mg: 1}
+    recipes: [pkm:rec/overnight-oats]
+
+  - id: pkm:meal/2026-09-04-dinner
+    name: Dinner, 4 September 2026
+    meal_kind: Dinner
+    served_at: "2026-09-04T18:45:00Z"
+    nutrition: {calories: 248, carbohydrates_g: 13.3, protein_g: 19.7, fat_g: 13.0, fiber_g: 4.3, sodium_mg: 348}
+    recipes: [pkm:rec/weeknight-chili]

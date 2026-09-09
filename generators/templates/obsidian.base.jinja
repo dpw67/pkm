@@ -1,0 +1,82 @@
+# {{ shape.name }} — generated from {{ source }} by `make artifacts`. Do not edit.
+#
+# displayName is a column header, so it is the slot's `title` where the schema
+# gives one and the humanised key otherwise -- never the description, since a
+# shared slot would label two columns identically: `name` and `source_name` both
+# describe "Human-readable name". A title wins unprefixed, because in a
+# {{ shape.name }} table the grouped columns are obvious from adjacency; a header
+# that would then collide gets its prefix back. Units live in the property key
+# and the note template's reference rather than the header.
+#
+# groupBy takes a mapping, not a property name: a bare `groupBy: note.x` parses
+# as YAML and then fails to render, because Bases reads `property` and
+# `direction` off it and finds a string.
+#
+# `type` alone is not enough to identify an instance. The blank note template
+# this generator emits alongside this Base declares `type: {{ shape.name }}` in its
+# own frontmatter, so it matches its own filter -- opening the tree in a vault
+# for the first time, Recipe read 5 rows for 2 recipes and Meal 6 for 2 meals.
+# Every extra row was a copy of a template.
+#
+# So the folder decides. Not a literal path, because the copies are never in one
+# place: this vault had them under the generated templates/ directory, under
+# x/Templates where the Templates plugin looks, and inside an exported snapshot
+# of an older generated/ tree. What they share is a parent folder that says
+# "template", which is a convention rather than a location and so survives being
+# copied somewhere new. `file.folder` is the parent path, and matching on it
+# lowercased catches "Templates" and "Template" alike.
+#
+# The cost is that a real {{ shape.name | lower }} filed under a folder whose path happens to
+# say "template" is invisible here. That is the trade for not naming paths.
+filters:
+  and:
+    - 'type == "{{ shape.name }}"'
+{% if template_marker %}
+    - '!file.folder.lower().contains("{{ template_marker }}")'
+{% endif %}
+properties:
+  file.folder:
+    displayName: Folder
+  note.neo4j_id:
+    displayName: Neo4j id
+{% for f in props if not f.identifier %}
+  note.{{ f.key }}:
+    displayName: {{ headers[f.key] }}
+{% endfor %}
+views:
+  - type: table
+    name: All {{ shape.name }}s
+    order:
+      - file.name
+      - file.folder
+{% for f in props if not f.identifier %}
+      - note.{{ f.key }}
+{% endfor %}
+  # Where a note was filed is a fact about the note that no property holds, and
+  # in a folder-first vault it is the more useful grouping: file.name says which
+  # {{ shape.name | lower }} this is, file.folder says which part of the vault it came from.
+  - type: table
+    name: By Folder
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+{% for f in props if not f.identifier %}
+      - note.{{ f.key }}
+{% endfor %}
+{% for f in props if f.enum %}
+{% if loop.first %}
+  - type: table
+    name: By {{ headers[f.key] }}
+    groupBy:
+      property: note.{{ f.key }}
+      direction: ASC
+    order:
+      - file.name
+      - file.folder
+{% for g in props if not g.identifier and g.key != f.key %}
+      - note.{{ g.key }}
+{% endfor %}
+{% endif %}
+{% endfor %}

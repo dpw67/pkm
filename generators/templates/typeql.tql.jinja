@@ -1,0 +1,60 @@
+# {{ title }} -- TypeDB 3.x schema
+# Generated from {{ source }} by `make artifacts`. Do not edit.
+#
+# TypeDB's model is the least like the LinkML one, in three ways worth knowing
+# before reading:
+#
+#   * Attribute types are global. `name` below is one type owned by several
+#     entities, not one per entity -- so a flattened value object has to carry
+#     its owner's name into the attribute (`nutrition-calories`), and two slots
+#     that flatten to the same name must agree on a value type. The generator
+#     refuses to build if they don't.
+#   * There is no nested record, so single value objects flatten to prefixed
+#     attributes and lists of them become entities.
+{% for s in model.nodes if s.promoted_from %}
+#     {{ kebab(s.name) }} is one, promoted out of {{ kebab(s.promoted_from) }}.
+{% endfor %}
+#   * Enums are a value constraint on the attribute (@values), not a type.
+#
+# Cardinality is real here, unlike in the Neo4j file: @card is enforced.
+
+define
+
+  # ------------------------------------------------------------- attributes
+{% for name, f in model.typeql_attributes.items() %}
+  attribute {{ name }}, value {{ f.type("typeql") }}{{ (" @values(" ~ model.quoted(f.enum) ~ ")") if f.enum }};{{ ("  # " ~ f.description) if f.description }}
+{% endfor %}
+
+  # --------------------------------------------------------------- entities
+{% for s in model.nodes %}
+  # {{ s.description }}
+{% if s.promoted_from %}
+  # Promoted out of {{ kebab(s.promoted_from) }} -- a value object in the schema, so
+  # `id` is a surrogate the loader must mint.
+{% endif %}
+{% set members = [] %}
+{% for f in s.flat() %}
+{% set _ = members.append("owns " ~ kebab(f.key) ~ (" @key" if f.identifier else " @card(0..)" if f.multivalued else " @card(1..1)" if f.required else " @card(0..1)")) %}
+{% endfor %}
+{% for e in model.edges if e.source.name == s.name %}
+{% set _ = members.append("plays " ~ e.relation ~ ":" ~ e.role_source) %}
+{% endfor %}
+{% for e in model.edges if e.target.name == s.name %}
+{% set _ = members.append("plays " ~ e.relation ~ ":" ~ e.role_target) %}
+{% endfor %}
+  entity {{ kebab(s.name) }},
+    {{ members | join(",\n    ") }};
+{% endfor %}
+  # -------------------------------------------------------------- relations
+  # A relation owns attributes the same way an entity does, so an association
+  # class needs no reification here -- TypeDB relations are already reified.
+{% for e in model.edges %}
+{% set members = ["relates " ~ e.role_source ~ " @card(1..1)", "relates " ~ e.role_target ~ " @card(" ~ ("0.." if e.multivalued else "0..1") ~ ")"] %}
+{% for f in e.flat() %}
+{% set _ = members.append("owns " ~ kebab(f.key) ~ (" @card(0..)" if f.multivalued else " @card(1..1)" if f.required else " @card(0..1)")) %}
+{% endfor %}
+
+  # {{ e.description }}{{ ("  Attributes from " ~ kebab(e.via) ~ ".") if e.via }}
+  relation {{ e.relation }},
+    {{ members | join(",\n    ") }};
+{% endfor %}

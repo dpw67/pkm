@@ -88,10 +88,14 @@ def write_all(vocab: Vocabulary, published: Graph, root: Path) -> list[Path]:
 def stale_term_files(root: Path, keep: set[str]) -> list[Path]:
     """Per-term files for URIs the vocabulary no longer defines.
 
+    Both representations: the Turtle and the `.md` the term page is built from,
+    since a renamed term leaves one of each behind.
+
     Reported rather than deleted: a term disappearing usually means it was
     renamed, and the old URI should be deprecated rather than made to 404.
     """
     terms = root / "vocab" / TERMS_DIR
     if not terms.is_dir():
         return []
-    return sorted(p for p in terms.glob("*.ttl") if p.stem not in keep)
+    return sorted(p for p in terms.iterdir()
+                  if p.suffix in (".ttl", ".md") and p.stem not in keep)

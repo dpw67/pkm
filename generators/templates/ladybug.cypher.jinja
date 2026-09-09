@@ -1,0 +1,38 @@
+// {{ title }} -- LadybugDB schema
+// Generated from {{ source }} by `make artifacts`. Do not edit.
+//
+// Ladybug (the Kuzu successor) is schema-first and strictly typed, so unlike
+// the Neo4j file this is real DDL rather than documentation with a few
+// constraints attached. Two differences follow from that:
+//
+//   * Ladybug has STRUCT and LIST column types, so value objects stay nested
+//     instead of being flattened into prefixed properties. `nutrition` is one
+//     column here and six columns in Neo4j.
+//   * A list of value objects is STRUCT(...)[], so nothing has to be promoted
+{% for s in model.nodes if s.promoted_from %}//     to a node. Neo4j and TypeQL both mint a {{ s.name }} node; Ladybug does not.
+{% endfor %}//
+// Enums have no native type -- they are STRING with the permitted values in a
+// comment. Relationship tables carry no primary key by design.
+
+{% for s in model.declared_nodes %}
+// {{ s.description }}
+{% for c in s.comments %}
+// {{ c }}
+{% endfor %}
+CREATE NODE TABLE IF NOT EXISTS {{ s.name }}(
+{% set cols = [] %}
+{% for f in s.fields %}{% set _ = cols.append((f.name, f.type("ladybug"), f.identifier, f.description, f.enum)) %}{% endfor %}
+{% for e in s.embeds %}{% set _ = cols.append((e.name, e.struct(), false, e.description, none)) %}{% endfor %}
+{% for name, type, is_id, desc, enum in cols %}
+    {{ name }} {{ type }}{{ " PRIMARY KEY" if is_id }}{{ "," if not loop.last }}{{ ("  // " ~ (desc or "")) if (desc or enum) }}{{ (" one of: " ~ model.values(enum)) if enum }}
+{% endfor %}
+);
+{% endfor %}
+// ----------------------------------------------------------- relationships
+{% for e in model.declared_edges %}
+{% set cols = [] %}
+{% for f in e.fields %}{% set _ = cols.append(f.name ~ " " ~ f.type("ladybug")) %}{% endfor %}
+{% for m in e.embeds %}{% set _ = cols.append(m.name ~ " " ~ m.struct()) %}{% endfor %}
+// {{ e.description }}{{ ("  Properties from " ~ e.via ~ ".") if e.via }}
+CREATE REL TABLE IF NOT EXISTS {{ e.table }}(FROM {{ e.source.name }} TO {{ e.target.name }}, {{ (cols | join(", ") ~ ", ") if cols }}{{ "MANY_MANY" if e.multivalued else "MANY_ONE" }});
+{% endfor %}

@@ -25,7 +25,7 @@ from rdflib import URIRef
 from . import (
     DCTERMS,
     ISO_BROADER,
-    ISOTHES,
+    ISO_QUALIFIER,
     OWL,
     RDFS,
     SKOS,
@@ -45,12 +45,6 @@ _UNSAFE = re.compile(r'[\\/:*?"<>|]')
 #: Scalars needing quotes in YAML: anything with structural punctuation, or
 #: leading/trailing whitespace.
 _NEEDS_QUOTE = re.compile(r'''[:#\[\]{},&*?|<>=!%@`"']|^\s|\s$''')
-
-ISO_QUALIFIER = {
-    ISOTHES.broaderGeneric: "generic",
-    ISOTHES.broaderPartitive: "partitive",
-    ISOTHES.broaderInstantial: "instantial",
-}
 
 
 def _yaml(value: str) -> str:

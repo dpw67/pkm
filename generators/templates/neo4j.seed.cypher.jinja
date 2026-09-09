@@ -1,0 +1,81 @@
+// {{ title }} -- Neo4j seed data
+// Generated from {{ source }} + {{ fixture }} by `make artifacts`. Do not edit.
+//
+// Example data with the values inlined, so this runs as-is. Load it into a
+// database of its own rather than the default one -- a sandbox keeps the seed
+// MERGEs away from anything already in `neo4j`:
+//
+//     cypher-shell -a bolt://localhost:7687 -u neo4j -d system \
+//       "CREATE DATABASE {{ db }} IF NOT EXISTS WAIT;"
+//     cat {{ out }}.cypher {{ out }}.seed.cypher \
+//       > /tmp/{{ stem }}-load.cypher
+//     cypher-shell -a bolt://localhost:7687 -u neo4j -d {{ db }} \
+//       -f /tmp/{{ stem }}-load.cypher
+//
+// Concatenated into one file rather than piped, because cypher-shell's -f takes
+// exactly one file and piping costs the password prompt: with the script on
+// stdin there is no terminal left to prompt on, and cypher-shell reads the
+// script's first line as the password instead. It then reports `42NFF ...
+// permission/access denied`, which reads as an authorization problem -- only
+// the server's security.log says "invalid principal or credentials".
+//
+// For unattended runs, set NEO4J_PASSWORD in the environment and pipe. Quote it
+// with single quotes; zsh globs `?` and expands `!` even inside double quotes.
+//
+// Multiple databases in one DBMS is an Enterprise feature. On Community, drop
+// the -d flag and accept the default database.
+//
+// Every write is a MERGE on the identifier, so re-running updates rather than
+// duplicating. RecipeImage ids are surrogate -- `<recipe>#images/0` -- because
+// the schema has images as an inlined value object with no key of its own.
+{% for label, rows in seed.nodes.items() %}
+{% if rows %}
+
+// ---- {{ label }} ({{ rows | length }})
+UNWIND [
+{% for row in rows %}
+  { {{ row.items() | map("cypher_pair") | join(", ") }} }{{ "," if not loop.last }}
+{% endfor %}
+] AS row
+MERGE (n:{{ label }} {id: row.id})
+SET
+{% for key in rows[0] if key != "id" %}
+    n.{{ key }} = row.{{ key }}{{ "," if not loop.last }}
+{% endfor %}
+;
+{% endif %}
+{% endfor %}
+{% for e in model.edges %}
+{% if seed.pairs[e.table] %}
+
+// ---- (:{{ e.source.name }})-[:{{ e.rel }}]->(:{{ e.target.name }}) ({{ seed.pairs[e.table] | length }})
+UNWIND [
+{% for link in seed.pairs[e.table] %}
+  { ends: [{{ link.source | cypher }}, {{ link.target | cypher }}]{{ (", props: { " ~ (link.props.items() | map("cypher_pair") | join(", ")) ~ " }") if link.props }} }{{ "," if not loop.last }}
+{% endfor %}
+] AS row
+MATCH (a:{{ e.source.name }} {id: row.ends[0]})
+MATCH (b:{{ e.target.name }} {id: row.ends[1]})
+MERGE (a)-[{{ "r" if e.flat() }}:{{ e.rel }}]->(b){{ ";" if not e.flat() }}
+{% if e.flat() %}
+SET
+{% for f in e.flat() %}
+    r.{{ f.key }} = row.props.{{ f.key }}{{ "," if not loop.last }}
+{% endfor %}
+;
+{% endif %}
+{% endif %}
+{% endfor %}
+
+// ---- what you should see
+// MATCH (m:Meal)-[:HAS_RECIPE]->(r:Recipe)-[u:HAS_INGREDIENT]->(i:Ingredient)
+// RETURN m.name, r.name, collect(toString(u.quantity) + ' ' + u.unit + ' ' + i.name) AS ingredients;
+//
+// And the reason the amounts live on `u` rather than on `i`:
+//
+// MATCH (r:Recipe)-[u:HAS_INGREDIENT]->(i:Ingredient {name: 'Salt'})
+// RETURN r.name, u.quantity, u.unit;
+//
+// One Ingredient node, two links, two different amounts. Had quantity been a
+// property of Salt itself there would be one value for both recipes, and
+// whichever loaded second would win.

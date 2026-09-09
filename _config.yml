@@ -2,7 +2,12 @@ title: PKM
 description: >-
   Persistent URI namespace at https://w3id.org/pkm with Linked Data resources on
   Personal Knowledge Management (PKM) for the Knowledge System Architecture (KSA) project.
-url: https://w3id.org/pkm
+# Split at the host, because GitHub Pages injects `baseurl: /pkm` for a project
+# site and Jekyll builds absolute URLs as url + baseurl. Carrying the path in
+# `url` too produced https://w3id.org/pkm/pkm/... in every canonical tag, og:url
+# and theme header link -- correct locally, 404 once deployed.
+url: https://w3id.org
+baseurl: /pkm
 theme: jekyll-theme-primer
 
 # Build machinery — never published, so it can never become a resolvable URI.

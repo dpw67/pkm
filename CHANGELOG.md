@@ -8,7 +8,13 @@ Version levels are explained under [Versioning](#versioning).
 
 ## [Unreleased]
 
-Nothing yet. Work starts on a branch named for the version it targets.
+### Fixed
+
+- Canonical URLs on every published page. `url` carried the `/pkm` path and
+  GitHub Pages adds `baseurl: /pkm` on top of it, so each page advertised
+  itself as `w3id.org/pkm/pkm/...` — a 404 — in its `canonical` tag, its
+  `og:url`, and the "PKM" link in the site header. Term-to-term navigation was
+  never affected; those links are relative. Predates 0.1.4.
 
 ## [0.1.4] — 2026-09-09
 

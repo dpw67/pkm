@@ -219,9 +219,10 @@ site:
 	   { echo "  per-term Turtle missing from _site"; exit 1; }; \
 	 echo "  _site ok: $$built term pages, per-term Turtle intact"
 
-# Serves what `make site` builds, at http://127.0.0.1:$(PORT)/vocab/. The one
-# thing worth clicking is a term URI -- /vocab/DayMealPlan/ -- since that path
-# exists only because of the page's `permalink`.
+# Serves what `make site` builds, at http://127.0.0.1:$(PORT)/pkm/vocab/ -- the
+# `/pkm/` is `baseurl`, which Pages sets for a project site and the local build
+# has to match or the CSS 404s. The one thing worth clicking is a term URI,
+# /pkm/vocab/DayMealPlan/, since that path exists only because of `permalink`.
 serve:
 	$(BUNDLE) exec jekyll serve --livereload --port $(PORT)
 

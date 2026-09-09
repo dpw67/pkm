@@ -10,8 +10,10 @@ Options +FollowSymLinks
 RewriteEngine on
 
 # Individual terms: /vocab/Recipe -> vocab/terms/Recipe.ttl
-# No dot in the character class, so /vocab/Recipe.ttl and the versionIRI
-# /vocab/0.1.1 both fall through to the catch-all instead of matching here.
+# No dot in the character class, so /vocab/Recipe.ttl falls through to the
+# catch-all instead of matching here. The versionIRI used to rely on this too;
+# it now sits beside the scheme at /{version}/vocab and is clear of this rule
+# outright, so the exclusion no longer has to hold for it.
 RewriteCond %{HTTP_ACCEPT} (text/turtle|application/rdf\+xml|application/n-triples|text/n3) [NC]
 RewriteRule ^vocab/([A-Za-z][A-Za-z0-9_-]*)$ https://dpw67.github.io/pkm/vocab/terms/$1.ttl [R=303,L]
 

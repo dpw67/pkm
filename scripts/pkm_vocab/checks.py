@@ -56,6 +56,29 @@ AGENT_PROPS = (DCTERMS.creator, DCTERMS.contributor, DCTERMS.publisher)
 #: Dates that describe a single event and so should hold a single value.
 SINGLE_DATE = (DCTERMS.created, DCTERMS.modified, DCTERMS.issued)
 
+#: Documentation properties carrying prose a reader will see on a term page.
+#: Same list as `transform.DOCUMENTED`, plus the scheme's own description.
+DOCUMENTED = (SKOS.definition, SKOS.scopeNote, SKOS.note, SKOS.editorialNote,
+              SKOS.historyNote, SKOS.changeNote, SKOS.example)
+PROSE = DOCUMENTED + (DCTERMS.description,)
+
+#: `..` that is not part of an ellipsis. Scope notes legitimately contain
+#: `...` inside code spans like `<% ... %>`, so those must not match.
+DOUBLE_PERIOD = re.compile(r"(?<!\.)\.\.(?!\.)")
+#: Two or more spaces between non-space characters. Renders as one space in
+#: HTML, so it is invisible on the page and only shows in the RDF.
+PADDED_LITERAL = re.compile(r"\S {2,}\S")
+#: A language tag written *inside* the text, as in `“Day Meal Plan@en”`. The
+#: SKOS Editor emits this when it quotes a label into a change note.
+LANG_IN_TEXT = re.compile(r"@[a-z]{2}(?=[”\"'])")
+#: The editor names the proposer and then names them again as the actor.
+DOUBLED_ATTRIBUTION = re.compile(r"\(proposed by ([^)]+)\) \(by \1\)")
+#: Every editor-generated change note ends in `(by Someone)`. A note that is
+#: dated but unattributed was therefore typed by hand, which is how a
+#: duplicate of the editor's own record gets in.
+ATTRIBUTED = re.compile(r"\(by [^)]+\)\s*$")
+DATED = re.compile(r"\d{4}-\d{2}-\d{2}")
+
 #: Classes whose instances are metadata resources, not vocabulary terms.
 NON_TERM_TYPES = (
     PROV.Person, PROV.Agent, PROV.Organization, PROV.SoftwareAgent,
@@ -366,6 +389,72 @@ def check(vocab: Vocabulary) -> Report:
                     ln(subj),
                 )
 
+    # Text hygiene. None of this breaks a query, but definitions and scope
+    # notes are rendered verbatim onto every term page, so a reader sees them.
+    # Each of these is the mirror of a normalisation step in `transform.py`.
+    for prop in PROSE:
+        for subj, obj in g.subject_objects(prop):
+            if not isinstance(obj, Literal) or obj.datatype is not None:
+                continue
+            text = str(obj)
+            if DOUBLE_PERIOD.search(text):
+                report.add(
+                    WARN, "double-period",
+                    f"{vocab.curie(prop)} ends a sentence with two periods",
+                    ln(subj) or "scheme",
+                )
+            if PADDED_LITERAL.search(text):
+                report.add(
+                    WARN, "padded-literal",
+                    f"{vocab.curie(prop)} has two or more consecutive spaces; "
+                    "HTML collapses them, so the page hides what the RDF says",
+                    ln(subj) or "scheme",
+                )
+
+    # High-volume editor artifacts: counted, with an example, because naming
+    # 151 subjects individually would bury everything else in the report.
+    for pattern, code, note in (
+        (LANG_IN_TEXT, "lang-tag-in-text",
+         "carry a language tag inside the text, as in \u201cDay Meal Plan@en\u201d"),
+        (DOUBLED_ATTRIBUTION, "doubled-attribution",
+         "name the same person twice, as in \u201c(proposed by X) (by X)\u201d"),
+    ):
+        hits = [
+            (s, o) for prop in PROSE for s, o in g.subject_objects(prop)
+            if isinstance(o, Literal) and o.datatype is None and pattern.search(str(o))
+        ]
+        if hits:
+            report.add(
+                WARN, code,
+                f"{len(hits)} documentation literal(s) {note}, e.g. "
+                f"{ln(hits[0][0])}; the build step can fix these",
+            )
+
+    # A dated change note with no `(by ...)` is a hand edit, and the one in the
+    # data duplicates an editor-generated note for the same change.
+    for subj, obj in g.subject_objects(SKOS.changeNote):
+        text = str(obj)
+        if DATED.match(text) and not ATTRIBUTED.search(text):
+            report.add(
+                WARN, "unattributed-changenote",
+                f'change note "{text}" is dated but not attributed, so it was '
+                "typed by hand; check it does not duplicate an editor-generated one",
+                ln(subj),
+            )
+
+    # The versionIRI names a snapshot, not a term, so it must not sit in the
+    # term namespace -- there it serialises as `pkmv:0.1.4` and a consumer
+    # enumerating the namespace by prefix picks up a concept that is not one.
+    # Mirrors step 9 of `transform.py`, which now mints it beside the scheme.
+    for version_iri in g.objects(vocab.scheme, OWL.versionIRI):
+        if vocab.is_local(version_iri):
+            report.add(
+                WARN, "versioniri-in-term-namespace",
+                f"owl:versionIRI <{version_iri}> is inside the term namespace, "
+                "so it reads as a concept; it belongs beside the scheme",
+                ln(vocab.scheme) or "scheme",
+            )
+
     # --- INFO: editorial completeness and publication metadata ---------------
 
     for concept in concepts:
@@ -396,10 +485,8 @@ def check(vocab: Vocabulary) -> Report:
                 ln(collection),
             )
 
-    documented = (SKOS.definition, SKOS.scopeNote, SKOS.note, SKOS.editorialNote,
-                  SKOS.historyNote, SKOS.changeNote, SKOS.example)
     untagged = sum(
-        1 for prop in documented for o in g.objects(None, prop)
+        1 for prop in DOCUMENTED for o in g.objects(None, prop)
         if isinstance(o, Literal) and o.datatype is None and not o.language
     )
     if untagged:

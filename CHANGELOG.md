@@ -15,6 +15,16 @@ Version levels are explained under [Versioning](#versioning).
   itself as `w3id.org/pkm/pkm/...` — a 404 — in its `canonical` tag, its
   `og:url`, and the "PKM" link in the site header. Term-to-term navigation was
   never affected; those links are relative. Predates 0.1.4.
+- Change notes no longer carry the editor's internals into their prose. 151
+  quoted a label with its language tag still attached — `“Day Meal Plan@en”`
+  — and 39 named the same person twice, as `(proposed by X) (by X)`. Both are
+  artifacts of the SKOS Editor's generated notes, so the build normalises them
+  rather than the source export changing.
+- `owl:versionIRI` moved out of the term namespace. It was minted under
+  `https://w3id.org/pkm/vocab/`, the namespace `vann:preferredNamespaceUri`
+  declares to hold terms, so it serialised as `pkmv:0.1.4` and read like a
+  concept that does not exist. It now sits beside the scheme, at
+  `https://w3id.org/pkm/{version}/vocab`.
 
 ## [0.1.4] — 2026-09-09
 

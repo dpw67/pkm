@@ -6,9 +6,14 @@ Drafts against [`jesstalisman-ia/intentional-arrangement-skos`](https://github.c
 #58 through #63. They are kept below as an archive, because their shape is the one
 Jessica accepted and it is worth matching. Do not re-file them.
 
-Two new drafts are ready, A and B. Both are visible in the source at `main`
-(through `48b1ae35`), so they do not need a fresh export to demonstrate. Evidence
-is from `../../vocab/src/pkm-vocab.export.ttl` (223 concepts, 18 collections).
+A and B are filed and **open** — #77 and #78. They stay above the archive until
+they close, because follow-up may be needed. Do not re-file them either; the
+text below is what was submitted, plus a re-measurement paragraph each.
+
+Evidence is from `../../vocab/src/pkm-vocab.export.ttl` (223 concepts, 18
+collections), re-measured against a fresh export from the editor at `48b1ae35`:
+the six upstream commits changed nothing but 674 language tags, so both defects
+came back byte-identical and the migration ask in A is correct.
 
 **Cite the commit SHA, not a version string.** The `v0.17.3` at `app/index.html:933`
 belongs to the Crosswalk panel, not the app.
@@ -16,6 +21,8 @@ belongs to the Crosswalk panel, not the app.
 ---
 
 ## A. `[Bug]: The label comparison key is written into change-note prose, so notes read “Day Meal Plan@en”`
+
+**Filed as [#77 — the label comparison key in change-note prose](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77). Open.**
 
 **Label:** `bug` · **Area:** Concept editor / change history
 
@@ -91,7 +98,9 @@ Adjacent to **#71** (language dropdown on concept change notes), not a duplicate
 
 ---
 
-## B. `[Bug]: Approving your own proposal names you twice — “(proposed by X) (by X)”`
+## B. `[Bug]: Approving your own proposal names me twice — “(proposed by X) (by X)”`
+
+**Filed as [#78 — approving your own proposal names you twice](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78). Open.**
 
 **Label:** `bug` · **Area:** Proposals / change history
 

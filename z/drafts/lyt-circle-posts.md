@@ -1,22 +1,38 @@
-# LYT Circle — draft announcement posts
+# LYT Circle — draft announcement posts (SUPERSEDED)
 
-Two drafts. The first is the main announcement; the second is a shorter,
-single-question follow-up to post a week or so later if the first one gets traction.
+**Do not post from this file.** Both drafts are at 0.1.1 and have been replaced
+by the maintained versions in the vault, which are at 0.1.4:
 
-**Pre-flight, before posting:**
+| this file | superseded by |
+|---|---|
+| Post 1 — main announcement | `_Vocabulary/PKM Vocabulary - Social Web/PKM Vocabulary - Announcement (Circle Post 1).md` |
+| Post 2 — Day Cluster follow-up | `…/PKM Vocabulary - Day Cluster (Circle Post 2).md` |
 
-- `notes.warrenweb.net` is still behind the Plus paywall. Either drop the paywall first
-  or cut that link — a paywalled link in a "please give me feedback" post reads badly.
-- The blog post doesn't exist yet. Placeholder marked `[BLOG POST URL]` below; drop the
-  sentence if you post before writing it.
-- Checked against the published vocabulary: "Effort" is not a term (the terms are
-  *Effort Cluster*, *Efforts Folder*, *Project*, *Area*, *Interest*), and the time
-  periods are siblings under Calendar rather than nested — the draft is written to match.
-- Three concepts cite the ACE for Organization Knowledge Pack (CC BY-NC-ND). Your
-  definitions are your own paraphrases, which is ordinary citation and fine. One thing
-  to eyeball: *Idea Emergence* uses Nick's "nothingness / somethingness" phrasing
-  fairly directly — worth putting in quotation marks, given you're publishing CC BY 4.0
-  and he's ND.
+Kept for the pre-flight checklist below, which is the part that had lasting
+value. All four items are now closed — recorded here rather than deleted, so the
+reasoning survives.
+
+**Pre-flight — ✅ all resolved as of 2026-09-09:**
+
+- **✅ `notes.warrenweb.net` is not gated.** Written when the site was password
+  protected; the password came off before the vocabulary was published. Verified
+  properly rather than by page status — Obsidian Publish serves an identical JS
+  shell either way, so the real test is the content endpoint with no
+  credentials: `/access/<site>/pkm/vocab.md` returns 200 and 6292 bytes.
+  Keep the link, and point it at `/pkm/vocab` rather than the bare host.
+- **✅ The blog post exists** —
+  `blog.warrenweb.net/three-places-for-one-pkm-vocabulary`, live. The
+  `[BLOG POST URL]` placeholder below is stale; the vault drafts carry the real
+  link.
+- **✅ Still accurate, and the vault drafts match it:** "Effort" is not a term
+  (the terms are *Effort Cluster*, *Efforts Folder*, *Project*, *Area*,
+  *Interest*), and the time periods are siblings under Calendar rather than
+  nested.
+- **✅ Nick's phrasing is already quoted and credited.** *Idea Emergence*'s
+  `skos:definition` reads `"nothingness to somethingness"` in quotation marks,
+  and its scope note names Nick Milo and Linking Your Thinking. Verified live at
+  `w3id.org/pkm/vocab/IdeaEmergence`. Nothing further needed for the CC BY 4.0 /
+  CC BY-NC-ND asymmetry.
 
 ---
 

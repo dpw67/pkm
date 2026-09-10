@@ -25,6 +25,17 @@ Version levels are explained under [Versioning](#versioning).
   declares to hold terms, so it serialised as `pkmv:0.1.4` and read like a
   concept that does not exist. It now sits beside the scheme, at
   `https://w3id.org/pkm/{version}/vocab`.
+- Every term page described itself with the same sentence. None carried its own
+  `description`, so jekyll-seo-tag fell back to the site's, and a link card for
+  any of the 241 terms read "Persistent URI namespace at ..." rather than what
+  the term means. Each page now takes its `og:description` from the term's own
+  `skos:definition`. The three collections that have no definition still fall
+  back, which is the same gap `collection-without-definition` reports.
+- The page footer no longer invites a web edit. The Primer theme offers
+  "Improve this page", but term pages are rewritten in place on every build and
+  are maintained in the SKOS Editor export, so the change would have been
+  discarded — and the link pointed at a `gh-pages` branch the site does not
+  build from. The footer now points at Issues and Discussions.
 
 ## [0.1.4] — 2026-09-09
 

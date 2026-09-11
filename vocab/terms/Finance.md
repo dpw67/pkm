@@ -15,7 +15,7 @@ An area that includes all aspects of your finances.
 
 ## Scope note
 
-- This area includes everything related to managing and maintaining your financies over time throughout your life.
+- This area includes everything related to managing and maintaining your finances over time throughout your life.
 - It includes ongoing responsibilities that includes many efforts, projects, and actions.
 
 ## Broader
@@ -36,6 +36,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Finance
 
 ---
 
-`pkmv:Finance` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Finance` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

@@ -16,31 +16,31 @@ the third position; only major advances the second.
 |---|---|---|
 | 1 | 0.1.5 released — tagged, published, spot-checked live | done |
 | 2 | 0.1.5 announcement, [Discussions #3](https://github.com/dpw67/pkm/discussions/3) | done |
-| 3 | Circle post on the "Cluster" naming question | done |
+| 3 | Circle post on the "Cluster" naming question | posted; replies to answer — §F |
 | 4 | Upstream migration-cutoff issue → [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | done |
-| 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | committed, unreleased |
+| 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | released in 0.1.6 |
 | 6 | This roadmap, in the repo | done — §A |
-| 7 | `make review` — the family-grouped review sheet | §B |
-| 8 | 0.1.6 — the prose patch | needs an editor session — §C |
-| 9 | 0.2.0 — two malformed URIs renamed | after 0.1.6 — §D |
+| 7 | `make review` — the family-grouped review sheet | done — §B |
+| 8 | 0.1.6 — the prose patch, 29 literals | done — §C |
+| 9 | 0.2.0 — two malformed URIs renamed | next — §D |
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §F |
 
-### Where 0.1.5 left the graph
+### Where 0.1.6 left the graph
 
-`make check` on the current export: 4292 triples, 223 concepts, 18 collections,
-236 hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 4 warn.**
+`make check` on the export: 4337 triples, 223 concepts, 18 collections, 236
+hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 2 warn.**
 
-Two of the four warns are real and two are upstream residue:
+Both warns are upstream residue, not defects here: `doubled-attribution` (39)
+and `lang-tag-in-text` (35) are SKOS Editor artifacts that `transform.py`
+repairs on the way out, so the **published** graph is clean either way. Upstream
+#81 covers them. `make build` prints no "warn remain after transform" line,
+which is the signal that everything the transform cannot repair has been fixed
+at the source.
 
-- `definition-no-terminal-punctuation` — `WeekReview`. Real; §C1.
-- `self-referential-prose` — `QuarterLog`. Real; §C1.
-- `doubled-attribution` (39) and `lang-tag-in-text` (35) — SKOS Editor
-  artifacts. `transform.py` repairs both on the way out, so the **published**
-  graph is clean. Upstream #81; nothing to do here.
-
-`make build` reports `2 warn remain after transform`. That is expected: the two
-new checks name defects the transform cannot repair. **Those 2 returning to 0 is
-the signal that §C1 landed.**
+Three `skos:editorialNote`s now record open questions on the concepts that carry
+them rather than in a tracker: `DayClusterCore` (is Analysis a Core note?),
+`Map` (should a Home Note be its parent?), and as of 0.1.6 `Month-Health` (the
+local name is wrong; see §D).
 
 ## A. This roadmap
 
@@ -78,86 +78,53 @@ siblings all have children.
 
 ## C. 0.1.6 — the prose patch
 
-**Patch throughout.** Definition, scope-note and change-note prose only. No URI,
-no label, no membership, no relationship.
+**Shipped.** Patch throughout: definition, scope-note and change-note prose
+only. No URI, no label, no membership, no relationship. 29 defective literals,
+none of them the four 0.1.5 fixed — those stayed fixed. The itemised worklist is
+in the [0.1.6 changelog entry](CHANGELOG.md); what is worth keeping here is what
+the exercise taught.
 
-Ship this before and independently of §D. It is finished work, it needs no
-decisions, and since 0.1.5 gave every page its own `og:description` each of
-these defects is rendering in link cards.
+**Four editor passes, because verification kept finding the pass itself.** Two
+corrections landed on the wrong side of a quotation — `Clipping`'s audit note
+came back reading `from "changing" to "changing"`, which documents nothing — and
+two newly-authored change notes shipped with double spaces inside them. Neither
+class of defect is visible in the editor.
 
-These are **not** the four misspellings 0.1.5 fixed. Those are verified gone. A
-dictionary sweep plus a family-alignment pass found 27 further misspelling
-occurrences in 26 different literals, plus three defects that are not
-misspellings at all.
+**The audit-note convention works, and it breaks naive verification.** Every
+correction leaves a companion note quoting the old spelling. So `definiton` still
+occurs nine times in the export and all nine are correct. Counting occurrences
+answers the wrong question; the check has to classify *quoted* versus
+*narrative*:
 
-### C1. Definitions and scope notes — 13 literals
+```python
+quoted = re.findall(r'["“]\s*(?:%s)\s*["”]' % pattern, text)
+```
 
-| term | field | defect | corrected |
-|---|---|---|---|
-| `WeekReview` | definition | `compled`, **and no terminal period** | `A structured retrospective evaluating a completed week.` |
-| `MonthReview` | definition | `retrospectivee` | `A structured retrospective evaluating a completed month.` |
-| `QuarterReview` | definition | `retrospectivee` | `A structured retrospective evaluating a completed quarter.` |
-| `Bases` | definition | `thatcreates` | `A core plugin that creates custom views to edit, sort, and filter files using properties.` |
-| `DayBoard` | definition | `Kanboard board` | `An Obsidian Kanban board note for the day.` |
-| `DayClusterCore` | definition | names five core notes; the hierarchy has six | `The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis.` |
-| `AdvancedURI` | scopeNote | `workspacces`, `headlngs` — two in one literal | `- Open files, workspaces, headings, blocks, lines, and settings.` |
-| `Base` | scopeNote | `crtieria` | `…different query criteria, which can be selected…` |
-| `Finance` | scopeNote | `financies` | `…managing and maintaining your finances over time…` |
-| `YearLog` | scopeNote | `Yeary` | `Yearly factual roll-up; aggregates QuarterLog entries.` |
-| `QuarterLog` | scopeNote | **aggregates itself** | `Quarterly factual roll-up; aggregates MonthLog entries.` |
-| `PKMNeo4jServiceProject` | scopeNote | `Grqph` | `…for Calendar, Health, Graph, Obsidian, Recipe, and Review.` |
-| `DMPMealPlan` | scopeNote | `Wordpress` | `WordPress Recipe Maker (WPRM)` |
+Three grep traps, all hit:
 
-Two of these are not typos, and they are the most valuable finds:
+- `grep -c` counts **lines**, and every change note on a term serialises on one
+  line, so it undercounts badly. `grep -o | wc -l`.
+- `collectio` is a substring of `collection`, so the 0.1.5 audit-quote check
+  false-positives on any literal containing "a collection of notes".
+- The editor writes curly quotes, so a straight-quote grep finds nothing and
+  looks like the record was destroyed. Diff properties against `HEAD` instead.
 
-- **`QuarterLog` says it aggregates `QuarterLog`.** The roll-up chain is Day →
-  Week → Month → Quarter → Year and every other rung names the rung below it. A
-  reader following the chain hits a loop. Its own changelog bullet — this is a
-  wrong statement, not a misspelling.
-- **`WeekReview` is the only definition of 223 with no terminal punctuation**,
-  which is what makes that check worth having: the signal is not buried.
+**Two checks earned their keep**: `definition-no-terminal-punctuation` found the
+only definition of 223 missing its period, and `self-referential-prose` found
+`QuarterLog` claiming to aggregate itself. Neither was findable by reading.
 
-### C2. Change notes — 15 literals
+### C1. Deliberately not done
 
-| defect | count | terms |
-|---|---:|---|
-| `definiton` → `definition` | 9 | `EffortIndex`, `EffortJournal`, `EffortLog`, `EffortPlan`, `TopicIndex`, `TopicJournal`, `TopicLog`, `TopicPlan`, `TopicReview` |
-| `definintion` → `definition` | 2 | `PKMPythonAPI`, `PKMPythonServices` |
-| `deinition` → `definition` | 2 | `Finance`, `Health` |
-| `Pujblish` → `Publish` | 1 | `Publish` |
-| `changiing` → `changing` | 1 | `Clipping` |
-
-`TopicReview`'s note also names the wrong term — "Added definiton and scope
-notes for a Topic **Index**", copy-pasted from the line above. Fix both in one
-edit.
-
-> **Two change notes must be left exactly as they are.** They quote a
-> misspelling deliberately, as the record of what 0.1.5 corrected: `Map`'s note
-> quotes `collectio`, and `Idea`'s quotes `explicityl`. A find-and-replace over
-> the export destroys that record. Do the change notes by hand in the editor, or
-> exclude quoted strings explicitly. The quotes are curly, so a straight-quote
-> grep will not find them.
-
-Whether to rewrite history at all is a judgment call. For: they render verbatim
-on 241 public pages, `definiton` appears nine times, and nothing about the
-substance — date, author, described change — moves. C1 alone is still a
-worthwhile release if C2 is dropped.
-
-### C3. Optional, descending value — all patch-level
-
-- **`View`'s scope note** uses "collection" informally for the thing
-  `skos:Collection` names formally. Harmless today, confusing the moment a
-  `Collection` concept exists. One word: "group".
 - **Five formulaic `*Cluster` definitions** — `EffortCluster`, `MonthCluster`,
   `QuarterCluster`, `TopicCluster` and `YearCluster` all read "A group of
   related notes about a …" while `DayCluster` and `WeekCluster` carry real ones.
-  Editorial, but authoring rather than correction; reasonable to fold into the
-  §E restructure instead.
+  Editorial, but authoring rather than correction; folded into §E, where the
+  Cluster/Collection question is open anyway.
 - **`DayMealPlan`'s sixth change note is undated and unattributed.** No check
   fires, because `unattributed-changenote` requires a date.
-- **23 literals with edge whitespace.** `transform.py` strips them on publish,
+- **15 literals with edge whitespace.** `transform.py` strips them on publish,
   so the published graph is already clean and no reader can perceive the
-  difference. Leave them — 23 invisible edits in a browser textarea.
+  difference. 15 invisible edits in a browser textarea buys nothing.
 
 ## D. 0.2.0 — two malformed URIs
 
@@ -173,6 +140,14 @@ the change without notice; it does not make it editorial.
 
 Both first appeared in 0.1.3, both return 200 today, and `make check` flags
 neither — `numeric-suffix` wants a digit and `opaque-uri` matches neither.
+
+`Month-Health` was briefly renamed during the 0.1.6 editor passes, which turned
+a patch into a major release and left `vocab/terms/Month-Health.{md,ttl}` as
+ghosts — complete, live-looking pages for a term the vocabulary no longer
+defined, with no deprecation marker, which is worse than either a tombstone or a
+404. The hyphen was restored and the rename deferred here. **As of 0.1.6 the
+concept carries a `skos:editorialNote` stating the defect and the deferral**, so
+anyone dereferencing the term sees it. That note comes out when §D lands.
 
 ### D1. Leave a tombstone at each old URI
 
@@ -248,6 +223,33 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   `*Collection` collections exist. `Cluster` exists, defined "A group of related
   notes." Defining `Collection` is what forces `Cluster` to resolve — do them
   together. Additive, so minor on its own.
+- **What readers suggested instead of "Cluster"** (Circle, 2026-09-11, on the
+  naming post). Worth recording because the post asked the question and these
+  are the answers: **Bentō**, **Dossier**, **Kit**, **Package** and "Doug Day"
+  from Malaika; **Compilation** from Zainab. Two are live candidates.
+  *Compilation* carries the deliberate assembly that "Cluster" lacks — you
+  compile something on purpose — and unlike *Collection* it has no SKOS meaning
+  to collide with, so it can stay a `skos:Concept` and keep its 63 hierarchy
+  links. *Dossier* says "assembled record of one subject" precisely and is the
+  only suggestion that implies the thing is *about* something. Against both:
+  every name in the vocabulary is a plain English word a script author would
+  guess, and neither is.
+
+  **Record** (Sabine, same thread) answers that objection — it is a plain word,
+  it carries the assembled-record-of-one-subject sense that *Dossier* has, and
+  the naming post already reached for it unprompted, calling a Day Cluster "the
+  record of that one day". What rules it out is internal: *record* is already
+  this vocabulary's word for a `Log`. `pkmv:DayLog` is defined as "A
+  chronological record of what actually happened during a day", and
+  `pkmv:WeekLog`, `pkmv:MonthLog` and `pkmv:YearLog` all read "A record of what
+  happened over a …". Naming the container `Day Record` when one of its six
+  members already *is* the record of the day collides at the definition level,
+  not just the label. *Daily Record* also reintroduces the adjective the post
+  rejected in "Daily". Worth saying back to her, since the reasoning is the
+  interesting part and it is the same test that killed *Collection*: the nicer
+  word turns out to be the wrong shape.
+
+  Decide with the `Collection` definition above, not before it.
 - **The four-way question** — `Day` the period, `Day Folder` the path (not
   modelled), `Day Cluster` the concept with 25 descendants, `Day Collection` the
   flat bag with 26 members. `DayFolder` alone is odd without
@@ -269,6 +271,13 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
 
 ## F. Unscheduled
 
+- **Reply to the Circle naming thread.** Seven suggestions from three people and
+  two likes so far; all are recorded in §E with the reasoning. A reply that says
+  which ones landed and why is what keeps the thread going. *Record* deserves a
+  substantive answer in particular — it is the first suggestion to survive the
+  plain-word test, and what rules it out is a collision with `pkmv:DayLog`'s own
+  definition, which is the kind of thing only someone inside the vocabulary can
+  see.
 - **LinkedIn 0.1.4/0.1.5 follow-up** — drafted; its link-card claim is verified.
 - **A third Circle post** on the Spectrum — drafted, 220 lines.
 - **Stub filenames** — `vocab/terms/IdeaEmergence.md` with an `aliases:` entry,

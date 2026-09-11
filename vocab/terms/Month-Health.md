@@ -35,6 +35,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Month-Health
 
 ---
 
-`pkmv:Month-Health` · created 2026-08-26 · modified 2026-08-27 · by [Doug Warren](../../agents/)
+`pkmv:Month-Health` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

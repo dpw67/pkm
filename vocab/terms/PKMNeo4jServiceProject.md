@@ -17,7 +17,7 @@ Python (PyCharm) project with FastAPI services, scripts, commands, and agents th
 
 ## Scope note
 
-Includes Python services for Calendar, Health, Grqph, Obsidian, Recipe, and Review.
+Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Review.
 
 ## Broader
 
@@ -37,6 +37,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/PKMNeo4jServiceProje
 
 ---
 
-`pkmv:PKMNeo4jServiceProject` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:PKMNeo4jServiceProject` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

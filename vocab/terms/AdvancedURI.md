@@ -15,7 +15,7 @@ Control Obsidian features using special URIs to automate workflows.
 
 ## Scope note
 
-- Open files, workspacces, headlngs, blocks, lines, and settings.
+- Open files, workspaces, headings, blocks, lines, and settings.
 - Open files in tabs, splits, windows, popovers, or silently in the background.
 - Switch between reading, source, and live preview mode.
 - Edit, overwrite, append, prepend, and create files.
@@ -46,6 +46,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/AdvancedURI
 
 ---
 
-`pkmv:AdvancedURI` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:AdvancedURI` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

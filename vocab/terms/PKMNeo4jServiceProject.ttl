@@ -10,11 +10,11 @@ pkmv:PKMNeo4jServiceProject a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:altLabel "pkm-neo4j-service"@en ;
     skos:broader pkmv:PKMPythonServices ;
     skos:definition "Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "PKM Neo4j Service Project"@en ;
-    skos:scopeNote "Includes Python services for Calendar, Health, Grqph, Obsidian, Recipe, and Review."@en .
+    skos:scopeNote "Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Review."@en .
 

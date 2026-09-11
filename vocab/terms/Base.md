@@ -15,7 +15,7 @@ A database with table, grid, or list views of a collection of notes with selecte
 
 ## Scope note
 
-- Provides multiple views with different query crtieria, which can be selected as embedded bases in view or canvas notes.
+- Provides multiple views with different query criteria, which can be selected as embedded bases in view or canvas notes.
 - Enables CSV export from a base for integration with other apps such as Neo4j as well as Swift and Python apps, services, scripts, commands, or agents.
 
 ## Broader

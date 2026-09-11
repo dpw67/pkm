@@ -15,7 +15,7 @@ A note that offers a view perspective of related notes as a dashboard, dynamic q
 
 ## Scope note
 
-Helps presentation and navigation for a collection of notes.
+Helps presentation and navigation for a group of notes.
 
 ## Broader
 
@@ -35,6 +35,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/View
 
 ---
 
-`pkmv:View` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:View` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

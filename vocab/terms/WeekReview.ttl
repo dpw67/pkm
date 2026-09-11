@@ -13,10 +13,10 @@ pkmv:WeekReview a skos:Concept ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:WeekCluster ;
     skos:broader pkmv:WeekCluster ;
-    skos:definition "A structured retrospective evaluating a compled week"@en ;
+    skos:definition "A structured retrospective evaluating a completed week."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Week Review"@en ;
     skos:scopeNote "Assesses the week against the WeekPlan."@en .

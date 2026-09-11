@@ -10,12 +10,12 @@ pkmv:AdvancedURI a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianPlugin ;
     skos:definition "Control Obsidian features using special URIs to automate workflows."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Advanced URI"@en ;
-    skos:scopeNote """- Open files, workspacces, headlngs, blocks, lines, and settings.
+    skos:scopeNote """- Open files, workspaces, headings, blocks, lines, and settings.
 - Open files in tabs, splits, windows, popovers, or silently in the background.
 - Switch between reading, source, and live preview mode.
 - Edit, overwrite, append, prepend, and create files.

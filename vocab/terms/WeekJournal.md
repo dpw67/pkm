@@ -27,6 +27,17 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Week Collection](../WeekCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)
+- 2026-08-24 — Definition added; Scope note added; Related term “Week Review” added; Related term “Week Index” added; Related term “Week Health” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Meal Plan” added; Related term “Week Plan” added (by Doug Warren)
+- Added definition and scope notes for WeekJournal.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/WeekJournal` (`pkmv:WeekJournal`)

@@ -21,6 +21,18 @@ A core plugin that allows you to host your notes online as a website, wiki, or d
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “CanvasCopy” to “Publish”; Preferred label changed from “Canvas” to “Publish”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Canvas” (by Doug Warren)
+- Added definition and scope notes for Publish.
+- Corrected typo from "Pujblish" to "Publish" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Publish` (`pkmv:Publish`)

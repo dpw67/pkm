@@ -22,6 +22,17 @@ A unit of knowledge in a PKM system.
 
 - [Obsidian Notes](../ObsidianNotes/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created under “Cluster” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Note”; Preferred label “Note” added; Definition added; Scope note added; Parent “Obsidian” added; Parent “Cluster” removed (by Doug Warren)
+- Added definition and scope notes for a Note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Note` (`pkmv:Note`)

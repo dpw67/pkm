@@ -17,6 +17,12 @@ The core set of daily notes within a Day Cluster - typically Index, Plan, Log, J
 
 Distinguish from DayClusterSupport (Links, Actions), DayClusterHealth (health event data), and DayClusterVisual (visual/graph tools).
 
+## Editorial note
+
+_An open question about this term, not part of its definition._
+
+It seems that Analysis belongs in the Core group since it analyzes the other core notes, especially Plan vs Log with Plus—Minus—Next methodology. It could be argued that it's a Support note rather than a Core note; for example, currently Day Diabetes Analysis is included as a support note associated with Day Diabetes (which is also support), as is Health, since they're more detailed variations of a Log note.
+
 ## Broader
 
 - [Day Cluster](../DayCluster/) — partitive (ISO 25964)
@@ -35,6 +41,23 @@ Distinguish from DayClusterSupport (Links, Actions), DayClusterHealth (health ev
 _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
+
+## Change history
+
+<details markdown="1">
+<summary>9 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-09-10 — Definition updated (by Doug Warren)
+- 2026-08-28 — Term created under “Day Cluster” (by Doug Warren)
+- 2026-08-28 — Renamed from “NewConcept” to “DayClusterCore”; Preferred label “Day Cluster Core” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+- Added an editorial notes regarding core vs support groups.
+- Changed "and Review" to "Review, and Analysis" to include AI-generated note that supports the Review.
+- Inserted missing "Index" as the hub note for related core Day notes.
+
+</details>
 
 ## This term in RDF
 

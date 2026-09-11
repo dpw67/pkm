@@ -27,6 +27,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Quarter Collection](../QuarterCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthPlanCopy” to “QuarterPlan”; Preferred label changed from “MonthPlan” to “Quarter Plan”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-26 — Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)
+- Added definition and scope notes for a QuarterPlan.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterPlan` (`pkmv:QuarterPlan`)

@@ -21,6 +21,20 @@ Records what happened with a meeting event on a specific day, what's next, and w
 
 - [Day Cluster Support](../DayClusterSupport/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-10 — Definition updated (by Doug Warren)
+- 2026-08-29 — Term created under “Calendar Folder” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Meeting”; Preferred label “Meeting” added; Definition added; Scope note added; Parent “Day” added; Parent “Calendar Folder” removed (by Doug Warren)
+- 2026-08-29 — Renamed from “Meeting” to “DayMeeting”; Preferred label changed from “Meeting” to “Day Meeting”; Scope note updated; Parent “Day Cluster Support” added; Parent “Day” removed (by Doug Warren)
+- Added definition and scope notes for a Meeting.
+- Changed definition from "with people with agenda" to "with attendees, agenda".
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayMeeting` (`pkmv:DayMeeting`)

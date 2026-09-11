@@ -30,6 +30,21 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “Template” to “PythonTemplate”; Preferred label changed from “Template” to “Python Template”; Definition updated; Scope note updated; Parent “Template” added; Parent “Tool” removed; Parent “Obsidian” removed (by Doug Warren)
+- 2026-08-29 — Parent “PKM Python” added; Parent “Template” removed (by Doug Warren)
+- 2026-08-29 — Parent “Obsidian” added (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-28 — Unmarked as a top concept; Parent “Tool” added (by Doug Warren)
+- Added definition and scope notes for Python Template.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PythonTemplate` (`pkmv:PythonTemplate`)

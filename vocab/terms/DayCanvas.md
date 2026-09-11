@@ -27,6 +27,17 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-28 — Renamed from “DayViewCopy4” to “DayCanvas”; Preferred label changed from “Day View” to “Day Canvas”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “Day View” (by Doug Warren)
+- Added definition and scope notes for DayCanvas.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayCanvas` (`pkmv:DayCanvas`)

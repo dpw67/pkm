@@ -27,6 +27,18 @@ The universe of linked notes about knowledge, concepts, and ideas in a PKM syste
 - [ARC Ideation](../ARCIdeation/)
 - [Idea Emergence](../IdeaEmergence/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Term created under “Vault” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Ideaverse”; Preferred label “Ideaverse” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Ideaverse.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Ideaverse` (`pkmv:Ideaverse`)

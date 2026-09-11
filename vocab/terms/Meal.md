@@ -34,6 +34,19 @@ _Groupings; they carry no hierarchical meaning._
 - [Meal Domain](../MealDomain/)
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-29 — Parent “PKM Meals” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-16 — Related term “MealPlan” added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Meal` (`pkmv:Meal`)

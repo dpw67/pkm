@@ -30,6 +30,16 @@ It's a pre-triage staging area before migrating into the heart of the PKM system
 - [Idea](../Idea/)
 - [Spark](../Spark/)
 
+## Change history
+
+<details markdown="1">
+<summary>2 change notes</summary>
+
+- 2026-08-29 — Renamed from “Add” to “AddFolder”; Unmarked as a top concept; Preferred label changed from “Add” to “Add Folder”; Alternative label “Plus Folder” added; Alternative label “Obsidian Inbox” added; Parent “Vault” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/AddFolder` (`pkmv:AddFolder`)

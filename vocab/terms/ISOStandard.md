@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Semantic Web Standards](../SemanticWebStandards/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Renamed from “W3CStandardCopy” to “ISOStandard”; Preferred label changed from “W3C Standard” to “ISO Standard” (by Doug Warren)
+- 2026-08-28 — Duplicated from “W3C Standard” (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ISOStandard` (`pkmv:ISOStandard`)

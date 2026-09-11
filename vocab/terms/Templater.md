@@ -21,6 +21,17 @@ Create and use dynamic templates with a templating language that inserts variabl
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “BookSearchCopy” to “Templater”; Preferred label changed from “Book Search” to “Templater”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Book Search” (by Doug Warren)
+- Added definition and scope notes for Templater.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Templater` (`pkmv:Templater`)

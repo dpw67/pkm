@@ -33,6 +33,20 @@ _Associated, not hierarchical._
 - [PKM Python Scripts](../PKMPythonScripts/)
 - [PKM Python Services](../PKMPythonServices/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Term created (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “HealthData”; Preferred label “Health Data” added; Definition added; Scope note added (by Doug Warren)
+- 2026-08-29 — Related term “PKM Python Services” added; Related term “PKM Python Scripts” added; Related term “PKM Python Commands” added (by Doug Warren)
+- Added definition and scope notes for Health Data.
+- Removed double space after "Personal" in definition.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/HealthData` (`pkmv:HealthData`)

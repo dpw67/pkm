@@ -21,6 +21,17 @@ A structured network of entities (nodes) and their relationships (edges), typica
 
 - [Graph Database](../GraphDatabase/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “ContextGraphCopy” to “MemoryGraph”; Preferred label changed from “Context Graph” to “Memory Graph”; Definition updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Context Graph” (by Doug Warren)
+- Added definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/MemoryGraph` (`pkmv:MemoryGraph`)

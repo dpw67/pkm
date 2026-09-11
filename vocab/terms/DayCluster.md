@@ -41,6 +41,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Time Cluster” added (by Doug Warren)
+- 2026-08-26 — Related term “DayIndex” added; Related term “Day” added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayCluster` (`pkmv:DayCluster`)

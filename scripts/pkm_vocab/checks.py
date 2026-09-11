@@ -56,11 +56,17 @@ AGENT_PROPS = (DCTERMS.creator, DCTERMS.contributor, DCTERMS.publisher)
 #: Dates that describe a single event and so should hold a single value.
 SINGLE_DATE = (DCTERMS.created, DCTERMS.modified, DCTERMS.issued)
 
-#: Documentation properties carrying prose a reader will see on a term page.
-#: Same list as `transform.DOCUMENTED`, plus the scheme's own description.
+#: Documentation properties carrying prose, whether or not a reader ever sees
+#: it. Same list as `transform.DOCUMENTED`, plus the scheme's own description.
 DOCUMENTED = (SKOS.definition, SKOS.scopeNote, SKOS.note, SKOS.editorialNote,
               SKOS.historyNote, SKOS.changeNote, SKOS.example)
 PROSE = DOCUMENTED + (DCTERMS.description,)
+
+#: The two of those the renderers drop on the floor. Both are unused today, so
+#: nothing is hidden; the point is that `skos:editorialNote` was in this state
+#: for as long as term pages have existed -- 0.1.4 through 0.1.6 -- and the
+#: only thing that would have said so was a check like this one.
+UNRENDERED = (SKOS.historyNote, SKOS.example)
 
 #: `..` that is not part of an ellipsis. Scope notes legitimately contain
 #: `...` inside code spans like `<% ... %>`, so those must not match.
@@ -541,6 +547,18 @@ def check(vocab: Vocabulary) -> Report:
                 "has no skos:definition, skos:scopeNote, or skos:note to say "
                 "what the grouping means",
                 ln(collection),
+            )
+
+    # Written on the term, present in the Turtle, absent from both the term
+    # page and the Obsidian stub. Prose nobody reads is prose nobody corrects.
+    for prop in UNRENDERED:
+        for subject in sorted(set(g.subjects(prop, None))):
+            report.add(
+                INFO, "unrendered-prose",
+                f"has {vocab.curie(prop)}, which reaches the RDF but not the "
+                "term page or the Obsidian stub; move it to skos:note or "
+                "teach pages.py and notes.py to render it",
+                ln(subject),
             )
 
     untagged = sum(

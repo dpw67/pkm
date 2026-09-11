@@ -27,6 +27,19 @@ Parent context for a group of related notes, like DayCluster, WeekCluster, Month
 - [Time Cluster](../TimeCluster/)
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)
+- 2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)
+- 2026-08-27 — Parent “Time Cluster” removed (by Doug Warren)
+- 2026-08-27 — Parent “Time Cluster” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Cluster` (`pkmv:Cluster`)

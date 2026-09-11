@@ -29,6 +29,18 @@ A book used as a source in a PKM system.
 
 - Related match <https://schema.org/Book>
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — relatedMatch https://schema.org/Book added (by Doug Warren)
+- 2026-08-29 — Renamed from “SourceCopy” to “Book”; Preferred label changed from “Source” to “Book”; Definition updated; Scope note updated; Parent “Source” added; Parent “Knowledge” removed (by Doug Warren)
+- 2026-08-29 — Duplicated from “Source” (by Doug Warren)
+- Added definition and scope notes for a Book.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Book` (`pkmv:Book`)

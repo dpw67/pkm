@@ -21,6 +21,17 @@ Includes the specific quote as well as attribution source information.
 
 - [Source](../Source/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created under “Atlas Folder” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Quote”; Preferred label “Quote” added; Definition added; Scope note added; Parent “Source” added; Parent “Atlas Folder” removed (by Doug Warren)
+- Added definition and scope notes for Quote.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Quote` (`pkmv:Quote`)

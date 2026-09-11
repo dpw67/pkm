@@ -27,6 +27,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Quarter Collection](../QuarterCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthReviewCopy” to “QuarterReview”; Preferred label changed from “MonthReview” to “Quarter Review”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthReview” (by Doug Warren)
+- Added definition and scope notes for QuarterReview.
+- Fixed extra "e" after "retrospective" (copy/paste error from MonthReview).
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterReview` (`pkmv:QuarterReview`)

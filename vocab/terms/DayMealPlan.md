@@ -28,6 +28,20 @@ _Groupings; they carry no hierarchical meaning._
 - [Day Collection](../DayCollection/)
 - [Meal Domain](../MealDomain/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-07 — Preferred label changed from “Day.Meal Plan” to “Day Meal Plan” (by Doug Warren)
+- 2026-08-28 — Parent “Day Cluster Health” added; Parent “Day Cluster” removed (by Doug Warren)
+- 2026-08-27 — Preferred label changed from “DayMealPlan” to “Day.Meal Plan”; Parent “Day Cluster” added (by Doug Warren)
+- 2026-08-27 — Parent “Day Cluster” removed (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Added definition and scope notes to DayMealPlan.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayMealPlan` (`pkmv:DayMealPlan`)

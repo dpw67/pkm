@@ -21,6 +21,17 @@ Desktop app for Claude AI.
 
 - [Claude AI](../ClaudeAI/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “ClaudeDesktopCopy” to “ClaudeCowork”; Preferred label changed from “Claude Desktop” to “Claude Cowork”; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Claude Desktop” (by Doug Warren)
+- Added definition and scope notes for Claude Cowork.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ClaudeCowork` (`pkmv:ClaudeCowork`)

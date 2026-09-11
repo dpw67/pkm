@@ -37,6 +37,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Time Collection](../TimeCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Parent “Calendar Folder” added; Parent “Cluster” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “ClusterCopy” to “TimeCluster”; Preferred label changed from “Cluster” to “Time Cluster”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-26 — Duplicated from “Cluster” (by Doug Warren)
+- Added definition and scope notes for TimeCluster.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TimeCluster` (`pkmv:TimeCluster`)

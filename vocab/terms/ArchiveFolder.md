@@ -21,6 +21,17 @@ The top-level `z` folder space in Obsidian includes Archive (inactive) notes.
 
 - [Vault](../Vault/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “ExtraFolderCopy” to “ArchiveFolder”; Preferred label changed from “Extra Folder” to “Archive Folder”; Alternative label “Support Folder” removed; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Extra Folder” (by Doug Warren)
+- Added definition and scope notes for Archive Folder.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ArchiveFolder` (`pkmv:ArchiveFolder`)

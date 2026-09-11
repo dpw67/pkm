@@ -27,6 +27,20 @@ Top concept for the Event hierarchy; narrower concepts partition by originator (
 - [Tool Event](../ToolEvent/)
 - [User Event](../UserEvent/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-29 — Parent “PKM Meals” added (by Doug Warren)
+- 2026-08-28 — Term created (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “NewConcept” to “Event”; Preferred label “Event” added; Definition added (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Event` (`pkmv:Event`)

@@ -21,6 +21,17 @@ A core plugin that enables you to arrange and connect notes on an infinite canva
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “BasesCopy” to “Canvas”; Preferred label changed from “Bases” to “Canvas”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Bases” (by Doug Warren)
+- Added definition and scope notes for Canvas.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Canvas` (`pkmv:Canvas`)

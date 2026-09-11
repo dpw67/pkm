@@ -28,6 +28,20 @@ Events representing the use of a tool (e.g. a CLI command such as pkm-day or pkm
 - [Script Event](../ScriptEvent/)
 - [Service Event](../ServiceEvent/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “ToolEvent” to “Tool Event” (by Doug Warren)
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “AgentEventCopy” to “ToolEvent”; Preferred label changed from “AgentEvent” to “ToolEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “AgentEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ToolEvent` (`pkmv:ToolEvent`)

@@ -21,6 +21,21 @@ Events originated by a backend service (e.g. pkm-neo4j-service), distinct from A
 
 - [Tool Event](../ToolEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “ServiceEvent” to “Service Event” (by Doug Warren)
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “ScriptEventCopy” to “ServiceEvent”; Preferred label changed from “ScriptEvent” to “ServiceEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “ScriptEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ServiceEvent` (`pkmv:ServiceEvent`)

@@ -24,6 +24,18 @@ The top-level `x` folder space in Obsidian includes Extra or Support resources.
 
 - [Vault](../Vault/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “Extra” to “ExtraFolder”; Unmarked as a top concept; Preferred label changed from “Extra” to “Extra Folder”; Alternative label “Support Folder” added; Parent “Vault” added (by Doug Warren)
+- 2026-08-29 — Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Extra.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ExtraFolder` (`pkmv:ExtraFolder`)

@@ -21,6 +21,17 @@ Extends the core plugin for Daily Notes to include other time horizons: Week, Mo
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “QuickAddCopy” to “PeriodicNotes”; Preferred label changed from “QuickAdd” to “Periodic Notes”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “QuickAdd” (by Doug Warren)
+- Added definition and scope notes for Periodic Notes.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PeriodicNotes` (`pkmv:PeriodicNotes`)

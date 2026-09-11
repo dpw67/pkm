@@ -25,6 +25,18 @@ A person used as a source in a PKM system.
 
 - Related match <https://schema.org/Person>
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — relatedMatch https://schema.org/Person added; relatedMatch https://schema.org/Book removed (by Doug Warren)
+- 2026-08-29 — Renamed from “MovieCopy” to “Person”; Preferred label changed from “Movie” to “Person”; Definition updated; Scope note updated; relatedMatch https://schema.org/Book added (by Doug Warren)
+- 2026-08-29 — Duplicated from “Movie” (by Doug Warren)
+- Added definition and scope notes for a Person.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Person` (`pkmv:Person`)

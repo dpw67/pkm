@@ -25,6 +25,18 @@ Swift Hummingbird services that support a PKM system.
 
 - [Hummingbird](../Hummingbird/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “PKMStudioCopy” to “PKMSwiftServices”; Preferred label changed from “PKM Studio” to “PKM Swift Services”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “PKM Studio” (by Doug Warren)
+- Added definition and scope notes for PKM Swift Services.
+- Removed as Top Concept and moved under PKM Swift.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMSwiftServices` (`pkmv:PKMSwiftServices`)

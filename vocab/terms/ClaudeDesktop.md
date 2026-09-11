@@ -22,6 +22,18 @@ Desktop app for Claude AI.
 
 - [Claude AI](../ClaudeAI/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Term created under “Claude AI” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “ClaudeDesktop”; Preferred label “Claude Desktop” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Claude Desktop.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ClaudeDesktop` (`pkmv:ClaudeDesktop`)

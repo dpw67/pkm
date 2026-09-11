@@ -21,6 +21,19 @@ Events originated at the device/OS level (e.g. an iOS Shortcut trigger), distinc
 
 - [Diabetes Event](../DiabetesEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “DeviceEvent” to “Device Event” (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “NoteEventCopy” to “DeviceEvent”; Preferred label changed from “NoteEvent” to “DeviceEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “NoteEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DeviceEvent` (`pkmv:DeviceEvent`)

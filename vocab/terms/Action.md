@@ -31,6 +31,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)
+- Added definition and scope notes for Action.
+- Removed trailing double space at end of scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Action` (`pkmv:Action`)

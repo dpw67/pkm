@@ -21,6 +21,20 @@ Captures events about an effort with timestamps as they occur: factual, not inte
 
 - [Effort Cluster](../EffortCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “EffortPlanCopy3” to “EffortLog”; Preferred label changed from “Effort Plan” to “Effort Log” (by Doug Warren)
+- 2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for Effort Log.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortLog` (`pkmv:EffortLog`)

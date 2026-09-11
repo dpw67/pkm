@@ -21,6 +21,17 @@ Neo4j graph database that support a PKM system.
 
 - [Graph Database](../GraphDatabase/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created under “Graph Database” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Neo4jDesktop”; Preferred label “Neo4j Desktop” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Neo4j Desktop.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Neo4jDesktop` (`pkmv:Neo4jDesktop`)

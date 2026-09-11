@@ -34,6 +34,18 @@ _Groupings; they carry no hierarchical meaning._
 - [Effort Collection](../EffortCollection/)
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-28 — Parent “Effort” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Area` (`pkmv:Area`)

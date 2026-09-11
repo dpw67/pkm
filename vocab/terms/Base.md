@@ -22,6 +22,20 @@ A database with table, grid, or list views of a collection of notes with selecte
 
 - [Obsidian Notes](../ObsidianNotes/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Note” (by Doug Warren)
+- Added definition and scope notes for a Base.
+- Corrected mispelling from "crtieria" to "criteria" in scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Base` (`pkmv:Base`)

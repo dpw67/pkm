@@ -27,6 +27,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-28 — Related term “Day Health” removed; Related term “Day Diabetes” removed; Related term “Day Diabetes Analysis” removed (by Doug Warren)
+- 2026-08-28 — Parent “Day Cluster Support” added; Parent “Day Cluster” removed (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Day Cluster” added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayActions` (`pkmv:DayActions`)

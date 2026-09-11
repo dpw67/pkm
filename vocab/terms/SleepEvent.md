@@ -21,6 +21,17 @@ Recording metrics from overnight sleep.
 
 - [Health Event](../HealthEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “SleepEvent” to “Sleep Event” (by Doug Warren)
+- 2026-08-28 — Renamed from “DiabetesEventCopy” to “SleepEvent”; Preferred label changed from “DiabetesEvent” to “SleepEvent”; Definition updated; Scope note added (by Doug Warren)
+- 2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/SleepEvent` (`pkmv:SleepEvent`)

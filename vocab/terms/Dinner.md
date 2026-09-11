@@ -29,6 +29,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Meal Domain](../MealDomain/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Parent “Day Meal” added (by Doug Warren)
+- 2026-08-27 — Parent “Meal” removed (by Doug Warren)
+- 2026-08-27 — Parent “Day Meal” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Dinner` (`pkmv:Dinner`)

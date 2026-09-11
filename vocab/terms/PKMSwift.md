@@ -25,6 +25,17 @@ Includes SwiftUI apps, SwiftData database, and Swift services, scripts, commands
 - [PKM Swift Services](../PKMSwiftServices/)
 - [Swift](../Swift/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “PKMSwift”; Preferred label “PKM Swift” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for PKM Swift.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMSwift` (`pkmv:PKMSwift`)

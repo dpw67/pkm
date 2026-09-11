@@ -27,6 +27,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-27 — Parent “Year Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthLogCopy” to “YearLog”; Preferred label changed from “MonthLog” to “Year Log”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)
+- Added definition and scope notes for YearLog.
+- Corrected type from "Yeary" to "Yearly" in scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearLog` (`pkmv:YearLog`)

@@ -22,6 +22,17 @@ An Obsidian query language for filtering, sorting, and extracting data from Mark
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “TemplaterCopy” to “Dataview”; Preferred label changed from “Templater” to “Dataview”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Templater” (by Doug Warren)
+- Added definition and scope notes for Dataview.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Dataview` (`pkmv:Dataview`)

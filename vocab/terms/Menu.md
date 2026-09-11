@@ -21,6 +21,16 @@ Grouping of dishes or recipes, e.g. for an event or a restaurant.
 
 - [Meal Plan](../MealPlan/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>2 change notes</summary>
+
+- 2026-08-28 — Unmarked as a top concept; Parent “Meal Plan” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Menu` (`pkmv:Menu`)

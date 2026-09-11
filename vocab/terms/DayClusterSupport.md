@@ -34,6 +34,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Renamed from “DayClusterCoreCopy” to “DayClusterSupport”; Preferred label changed from “Day Cluster Core” to “Day Cluster Support” (by Doug Warren)
+- 2026-08-28 — Duplicated from “Day Cluster Core” (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayClusterSupport` (`pkmv:DayClusterSupport`)

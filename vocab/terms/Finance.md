@@ -22,6 +22,19 @@ An area that includes all aspects of your finances.
 
 - [Area](../Area/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “HealthCopy” to “Finance”; Preferred label changed from “Health” to “Finance”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Health” (by Doug Warren)
+- Added definition and scope note for Finance.
+- Corrected misspelling from "financies" to "finances" in scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Finance` (`pkmv:Finance`)

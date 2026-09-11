@@ -25,6 +25,18 @@ A movie used as a source in a PKM system.
 
 - Related match <https://schema.org/Movie>
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — relatedMatch https://schema.org/Movie added (by Doug Warren)
+- 2026-08-29 — Renamed from “BookCopy” to “Movie”; Preferred label changed from “Book” to “Movie”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Book” (by Doug Warren)
+- Added definition and scope notes for a Movie.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Movie` (`pkmv:Movie`)

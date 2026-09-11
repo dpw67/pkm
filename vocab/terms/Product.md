@@ -21,6 +21,15 @@ Purchasable food unit; source of nutrition and carb data for meals.
 
 - [Food](../Food/)
 
+## Change history
+
+<details markdown="1">
+<summary>1 change note</summary>
+
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Product` (`pkmv:Product`)

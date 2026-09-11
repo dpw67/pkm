@@ -22,6 +22,17 @@ Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insuli
 
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “DexcomClarityDataCopy” to “GlookoData”; Preferred label changed from “Dexcom Clarity Data” to “Glooko Data”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Dexcom Clarity Data” (by Doug Warren)
+- Added definition and scope notes for Glooko Data.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/GlookoData` (`pkmv:GlookoData`)

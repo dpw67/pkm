@@ -21,6 +21,16 @@ Unit of a Product as purchased; carries label and serving data as well as photo 
 
 - [Food](../Food/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>2 change notes</summary>
+
+- 2026-08-28 — Unmarked as a top concept; Parent “Food” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Package` (`pkmv:Package`)

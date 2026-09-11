@@ -22,6 +22,17 @@ A record of current weight.
 
 - [Health Event](../HealthEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “WeightEvent” to “Weight Event” (by Doug Warren)
+- 2026-08-28 — Renamed from “HealthEventCopy4” to “WeightEvent”; Preferred label changed from “HealthEvent” to “WeightEvent”; Definition updated; Scope note added; Parent “HealthEvent” added; Parent “Event” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/WeightEvent` (`pkmv:WeightEvent`)

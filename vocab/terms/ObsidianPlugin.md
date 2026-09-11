@@ -37,6 +37,18 @@ A core or community plugin that extends available functions using JavaScript and
 - [Templater](../Templater/)
 - [Workspaces](../Workspaces/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “NoteCopy” to “ObsidianPlugin”; Preferred label changed from “Note” to “Obsidian Plugin”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Note” (by Doug Warren)
+- Added definition and scope notes for an Obsidian Plugin.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ObsidianPlugin` (`pkmv:ObsidianPlugin`)

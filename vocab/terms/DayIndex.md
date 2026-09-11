@@ -29,6 +29,22 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>8 change notes</summary>
+
+- 2026-08-28 — Related term “Day Schedule” removed; Related term “Day Log” removed; Related term “Day Journal” removed (by Doug Warren)
+- 2026-08-28 — Parent “Day Cluster Core” added; Parent “Day Cluster” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Day Cluster” added (by Doug Warren)
+- 2026-08-26 — Scope note added (by Doug Warren)
+- 2026-08-26 — Related term “Day Plan” added; Related term “DayLog” added; Related term “DayJournal” added; Related term “Day Review” added (by Doug Warren)
+- 2026-08-26 — Definition added (by Doug Warren)
+- 2026-08-26 — Alternative label “Day Hub” added; Alternative label “Day Note” added (by Doug Warren)
+- Added definition and scope notes.Removed conflicts with both related and broader/narrower.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayIndex` (`pkmv:DayIndex`)

@@ -22,6 +22,20 @@ Free-form reflective writing about an effort.
 
 - [Effort Cluster](../EffortCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “EffortPlanCopy2” to “EffortJournal”; Preferred label changed from “Effort Plan” to “Effort Journal” (by Doug Warren)
+- 2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for Effort Journal.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortJournal` (`pkmv:EffortJournal`)

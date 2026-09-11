@@ -17,9 +17,31 @@ The health-related summary for a month.
 
 Parent for month-centric health artifacts including diabetes tracking.
 
+## Editorial note
+
+_An open question about this term, not part of its definition._
+
+Remove the hyphen from local name; it should be named MonthHealth. Deferred to 0.2.0 since it changes the URI.
+
 ## Broader
 
 - [Month Cluster](../MonthCluster/) — partitive (ISO 25964)
+
+## Change history
+
+<details markdown="1">
+<summary>8 change notes</summary>
+
+- 2026-09-11 — Renamed from “MonthHealth” to “Month-Health” (by Doug Warren)
+- 2026-09-11 — Renamed from “Month-Health” to “MonthHealth” (by Doug Warren)
+- 2026-08-27 — Preferred label changed from “MonthHealth” to “Month Health” (by Doug Warren)
+- 2026-08-26 — Term created under “MonthCluster” (by Doug Warren)
+- 2026-08-26 — Scope note added (by Doug Warren)
+- 2026-08-26 — Renamed from “NewConcept” to “Month-Health”; Preferred label “MonthHealth” added (by Doug Warren)
+- 2026-08-26 — Definition added (by Doug Warren)
+- Added definition and scope notes to MonthHealth.
+
+</details>
 
 ## This term in RDF
 

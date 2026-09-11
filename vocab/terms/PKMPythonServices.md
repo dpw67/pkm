@@ -32,6 +32,18 @@ _Associated, not hierarchical._
 - [Claude AI](../ClaudeAI/)
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Term created under “PKM Python” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “PKMPythonServices”; Preferred label “PKM Python Services” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for PKM Python Services.
+- Corrected typo from "definintion" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMPythonServices` (`pkmv:PKMPythonServices`)

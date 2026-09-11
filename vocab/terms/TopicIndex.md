@@ -21,6 +21,18 @@ Hub note connecting TopicPlan, TopicLog, TopicJournal, TopicReview, and related 
 
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “EffortIndexCopy” to “TopicIndex”; Preferred label changed from “Effort Index” to “Topic Index”; Definition updated; Scope note updated; Parent “Topic Cluster” added; Parent “Effort Cluster” removed (by Doug Warren)
+- 2026-08-29 — Duplicated from “Effort Index” (by Doug Warren)
+- Added definition and scope notes for a Topic Index.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicIndex` (`pkmv:TopicIndex`)

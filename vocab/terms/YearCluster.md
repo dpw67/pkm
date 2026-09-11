@@ -42,6 +42,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)
+- 2026-08-27 — Parent “Time Cluster” added; Parent “Cluster” removed (by Doug Warren)
+- 2026-08-27 — Parent “Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthCluster2Copy” to “YearCluster”; Preferred label changed from “MonthCluster” to “Year Cluster”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthCluster” (by Doug Warren)
+- Added definition and scope notes for a YearCluster.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearCluster` (`pkmv:YearCluster`)

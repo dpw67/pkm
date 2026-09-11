@@ -23,6 +23,18 @@ Narrower than HealthEvent; a single EKG reading or recording, alongside GlucoseE
 
 - [Health Event](../HealthEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “DiabetesEventCopy2” to “EKGEvent”; Preferred label changed from “DiabetesEvent” to “EKG Event”; Alternative label “ECG Event” added; Definition updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EKGEvent` (`pkmv:EKGEvent`)

@@ -37,6 +37,23 @@ A source of information from others that is used as input for developing your ow
 - See also <http://purl.org/dc/terms/source>
 - See also <https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/>
 
+## Change history
+
+<details markdown="1">
+<summary>9 change notes</summary>
+
+- 2026-08-31 — relatedMatch https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/ removed; relatedMatch http://purl.org/dc/terms/source removed; relatedMatch http://purl.org/dc/terms/bibliographicCitation removed; relatedMatch http://purl.org/dc/terms/conformsTo removed; relatedMatch http://purl.org/dc/terms/references removed; Linked artifact “DCT Source” added; Linked artifact “DCT Biblio Citation” added; Linked artifact “DCT Conforms To” added; Linked artifact “DCT References” added; Linked artifact “DCT Specifications” added (by Doug Warren)
+- 2026-08-29 — relatedMatch https://www.dublincore.org/specifications/dublin-core/dcmi-terms/elements11/source/ added (by Doug Warren)
+- 2026-08-29 — relatedMatch http://purl.org/dc/terms/source added (by Doug Warren)
+- 2026-08-29 — relatedMatch http://purl.org/dc/terms/references added (by Doug Warren)
+- 2026-08-29 — relatedMatch http://purl.org/dc/terms/conformsTo added (by Doug Warren)
+- 2026-08-29 — relatedMatch http://purl.org/dc/terms/bibliographicCitation added (by Doug Warren)
+- 2026-08-29 — Renamed from “TopicCopy” to “Source”; Preferred label changed from “Topic” to “Source”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Topic” (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Source` (`pkmv:Source`)

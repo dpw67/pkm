@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Week Collection](../WeekCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Related term “Week” removed; Related term “Week Index” removed; Related term “Week Cluster” removed; Related term “Week Analysis” removed; Related term “Week Health” removed; Related term “Week Journal” removed; Related term “Week Plan” removed; Related term “Week Review” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)
+- 2026-08-24 — Definition added; Scope note added; Related term “Week Index” added; Related term “Week Cluster” added; Related term “Week Analysis” added; Related term “Week Health” added; Related term “Week Journal” added; Related term “Week Plan” added; Related term “Week Review” added (by Doug Warren)
+- Added definition and scope notes for WeekLog.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/WeekLog` (`pkmv:WeekLog`)

@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Month Collection](../MonthCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-27 — Preferred label changed from “MonthReview” to “Month Review” (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Removed extra "e" at end of "retrospective" in definition.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/MonthReview` (`pkmv:MonthReview`)

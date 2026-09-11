@@ -28,6 +28,22 @@ _Groupings; they carry no hierarchical meaning._
 - [Note Types](../NoteTypes/)
 - [Spark Collection](../SparkCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>8 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-09-10 — Scope note updated (by Doug Warren)
+- 2026-09-10 — Definition updated (by Doug Warren)
+- 2026-08-29 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-29 — Parent “Add” added (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Idea.
+- Corrected scopeNote by inserting "a" before Spark, changing "and" to "or" before Interest, corrected "explicityl" typo to be "explicitly"; also, fixed definition typo by inserting the missing first "i" in "opportunities"; changed
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Idea` (`pkmv:Idea`)

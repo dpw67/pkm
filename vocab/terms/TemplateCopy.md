@@ -23,6 +23,16 @@ A template determines the structure, layout, and configuration for various types
 - [Obsidian Notes](../ObsidianNotes/) — partitive (ISO 25964)
 - [Tool](../Tool/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>2 change notes</summary>
+
+- 2026-08-29 — Duplicated from “Template” (by Doug Warren)
+- Added definition and scope notes for Template.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TemplateCopy` (`pkmv:TemplateCopy`)

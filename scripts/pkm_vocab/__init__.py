@@ -7,6 +7,7 @@ list, so it can never become a resolvable URI.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -42,6 +43,11 @@ ISO_QUALIFIER = {
     ISOTHES.broaderPartitive: "partitive",
     ISOTHES.broaderInstantial: "instantial",
 }
+
+#: A change note that opens with an ISO date, as every editor-written one does:
+#: `2026-08-29 — Renamed from "Ideaverse" (by Doug Warren)`. 231 of the 964 are
+#: hand-typed without one, and cannot be placed on a date they do not carry.
+_DATED = re.compile(r"^\d{4}-\d{2}-\d{2}")
 
 
 @dataclass
@@ -98,6 +104,21 @@ class Vocabulary:
             for parent, child in self.graph.subject_objects(prop):
                 pairs.add((child, parent))
         return pairs
+
+    def change_notes(self, uri: URIRef) -> list[str]:
+        """A term's skos:changeNote values, newest first.
+
+        ISO dates sort lexically, so reversing a plain sort is chronological.
+        The undated notes follow, sorted alphabetically, rather than being
+        interleaved on a date they do not have. Ordering is fixed either way:
+        these land in a generated file, and an unstable sort would churn the
+        diff on every build.
+
+        Lives here rather than in a renderer because both of them need it.
+        """
+        notes = [str(o) for o in self.graph.objects(uri, SKOS.changeNote)]
+        dated = sorted((n for n in notes if _DATED.match(n)), reverse=True)
+        return dated + sorted(n for n in notes if not _DATED.match(n))
 
 
 def load(path: str | Path) -> Vocabulary:

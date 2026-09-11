@@ -27,6 +27,17 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-28 — Renamed from “DayViewCopy2” to “DayView” (by Doug Warren)
+- 2026-08-28 — Duplicated from “Day View” (by Doug Warren)
+- Added definition and scope notes for DayView.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayView` (`pkmv:DayView`)

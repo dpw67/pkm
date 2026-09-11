@@ -36,6 +36,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Effort Collection](../EffortCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “Effort” to “EffortsFolder”; Unmarked as a top concept; Preferred label changed from “Effort” to “Efforts Folder”; Alternative label “Effort Folder” added; Parent “Vault” added (by Doug Warren)
+- 2026-08-26 — Renamed from “Effort2” to “Effort” (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Added definition and scope notes. Removed redundant Effort2 created by Proposal when already existed.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortsFolder` (`pkmv:EffortsFolder`)

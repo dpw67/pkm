@@ -21,6 +21,19 @@ General activity-tracking events not covered by a more specific type - check for
 
 - [Diabetes Event](../DiabetesEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “ActivityEvent” to “Activity Event” (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “GlucoseEventCopy2” to “ActivityEvent”; Preferred label changed from “GlucoseEvent” to “ActivityEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “GlucoseEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ActivityEvent` (`pkmv:ActivityEvent`)

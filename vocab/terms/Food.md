@@ -26,6 +26,16 @@ A parent context for recipes, products, packages, and ingredients that might be 
 - [Package](../Package/)
 - [Product](../Product/)
 
+## Change history
+
+<details markdown="1">
+<summary>2 change notes</summary>
+
+- 2026-08-28 — Unmarked as a top concept; Parent “Meal” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Food` (`pkmv:Food`)

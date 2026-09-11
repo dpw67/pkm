@@ -28,6 +28,17 @@ A meal occasion instance: typed as Breakfast, Lunch, Dinner, or Snack.
 - [Lunch](../Lunch/)
 - [Snack](../Snack/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-28 — Parent “Meal Plan” added (by Doug Warren)
+- 2026-08-27 — Preferred label changed from “DayMeal” to “Day Meal”; Parent “DayMealPlan” removed (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayMeal` (`pkmv:DayMeal`)

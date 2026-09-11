@@ -6,6 +6,7 @@
 #
 #   make check      validate the SKOS Editor export -> reports/vocab-check.md
 #   make build      generate every published artifact from the export
+#   make review     family-grouped reading sheet -> reports/vocab-review.md
 #   make shapes     regenerate SHACL + JSON Schema from schema/pkm.yaml
 #   make models     regenerate dev artifacts from the LinkML domain modules
 #   make artifacts  render the Obsidian/Neo4j/Ladybug/TypeQL/Swift templates
@@ -83,7 +84,7 @@ VAULT_OUT := $(HOME)/Obsidian/WarrenWeb/+/_PKM
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build shapes models artifacts swiftcheck swiftrun validate notes vault gems site serve clean
+.PHONY: all check build review shapes models artifacts swiftcheck swiftrun validate notes vault gems site serve clean
 
 all: build validate
 
@@ -92,6 +93,13 @@ check:
 	@mkdir -p reports
 	-$(VOCAB) check $(EXPORT) --format markdown -o reports/vocab-check.md
 	$(VOCAB) check $(EXPORT)
+
+# A reading aid, not a gate: it prints suffix families side by side so drift
+# between terms that are meant to be parallel is visible across a row. Nothing
+# here can fail, which is why it is not wired into `all`.
+review:
+	@mkdir -p reports
+	$(VOCAB) review $(EXPORT) -o reports/vocab-review.md
 
 # Depends on check, so a broken export can never reach the published tree.
 # The build re-checks its own output and refuses to write if the transform

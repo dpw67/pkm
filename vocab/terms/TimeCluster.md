@@ -15,7 +15,7 @@ A group of related notes for a time period (or time horizon).
 
 ## Scope note
 
-- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster, LifeCluster.
 - Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
 
 ## Broader
@@ -51,6 +51,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/TimeCluster
 
 ---
 
-`pkmv:TimeCluster` · created 2026-08-26 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:TimeCluster` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

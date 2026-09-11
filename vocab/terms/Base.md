@@ -11,7 +11,7 @@ description: "A database with table, grid, or list views of a collection of note
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria..
+A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria.
 
 ## Scope note
 
@@ -36,6 +36,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Base
 
 ---
 
-`pkmv:Base` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Base` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

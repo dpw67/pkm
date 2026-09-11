@@ -138,6 +138,7 @@ pkmv:MonthCollection a skos:Collection ;
 
 pkmv:NoteTypes a skos:Collection ;
     rdfs:label "Note Types"@en ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Action,
         pkmv:App,
@@ -159,6 +160,7 @@ pkmv:NoteTypes a skos:Collection ;
         pkmv:Spark,
         pkmv:Term,
         pkmv:Vault ;
+    skos:note "The concepts used as note types in the vault."@en ;
     skos:prefLabel "Note Types"@en .
 
 pkmv:QuarterCollection a skos:Collection ;
@@ -188,6 +190,7 @@ pkmv:RecipeCollection a skos:Collection ;
 
 pkmv:SemanticWebStandards a skos:Collection ;
     rdfs:label "Semantic Web Standards"@en ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
@@ -200,6 +203,7 @@ pkmv:SemanticWebStandards a skos:Collection ;
         pkmv:Taxonomy,
         pkmv:Term,
         pkmv:W3CStandard ;
+    skos:note "Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph."@en ;
     skos:prefLabel "Semantic Web Standards"@en .
 
 pkmv:SparkCollection a skos:Collection ;
@@ -212,6 +216,7 @@ pkmv:SparkCollection a skos:Collection ;
 
 pkmv:TechStack a skos:Collection ;
     rdfs:label "Tech Stack"@en ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Cypher,
         pkmv:FastAPI,
@@ -223,6 +228,7 @@ pkmv:TechStack a skos:Collection ;
         pkmv:Siri,
         pkmv:Swift,
         pkmv:Tool ;
+    skos:note "The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts."@en ;
     skos:prefLabel "Tech Stack"@en .
 
 pkmv:TimeCollection a skos:Collection ;
@@ -371,12 +377,13 @@ pkmv:Base a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for a Base."@en ;
-    skos:definition "A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria.."@en ;
+    skos:definition "A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Base"@en ;
     skos:scopeNote """- Provides multiple views with different query crtieria, which can be selected as embedded bases in view or canvas notes.
@@ -485,16 +492,17 @@ pkmv:ClaudeDesktop a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ClaudeAI ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “ClaudeDesktop”; Preferred label “Claude Desktop” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Claude AI” (by Doug Warren)"@en,
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for Claude Desktop."@en ;
     skos:definition "Desktop app for Claude AI."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Claude Desktop"@en ;
     skos:scopeNote """- Available for macOS, iOS, and iPadOS.
-- Includes Claude Chat; Cowork requires Apple Silicon.."""@en .
+- Includes Claude Chat; Cowork requires Apple Silicon."""@en .
 
 pkmv:Dataview a skos:Concept ;
     rdfs:label "Dataview"@en ;
@@ -517,13 +525,15 @@ pkmv:DayMeeting a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
     skos:broader pkmv:DayClusterSupport ;
     skos:changeNote "2026-08-29 — Renamed from “Meeting” to “DayMeeting”; Preferred label changed from “Meeting” to “Day Meeting”; Scope note updated; Parent “Day Cluster Support” added; Parent “Day” removed (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NewConcept” to “Meeting”; Preferred label “Meeting” added; Definition added; Scope note added; Parent “Day” added; Parent “Calendar Folder” removed (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Calendar Folder” (by Doug Warren)"@en,
-        "Added definition and scope notes for a Meeting."@en ;
-    skos:definition "An event with other people with agenda, topics, decisions, and actions."@en ;
+        "2026-09-10 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for a Meeting."@en,
+        "Changed definition from \"with people with agenda\" to \"with attendees, agenda\"."@en ;
+    skos:definition "An event with attendees, agenda, topics, decisions, and actions."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day Meeting"@en ;
     skos:scopeNote "Records what happened with a meeting event on a specific day, what's next, and who does what and when."@en .
@@ -739,17 +749,24 @@ pkmv:Map a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:altLabel "MOC"@en,
         "Map of Content"@en ;
     skos:broader pkmv:ObsidianNotes ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “Map”; Preferred label changed from “Note” to “Map”; Alternative label “Map of Content” added; Alternative label “MOC” added; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for a Map."@en ;
-    skos:definition "A note used to think, plan, and organize a group of other notes."@en ;
+        "2026-09-10 — Definition updated (by Doug Warren)"@en,
+        "2026-09-10 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for a Map."@en,
+        "Correct spelling typo in scope note — changed \"collectio\" to \"collection\"."@en,
+        "Modified definition to add \"and/or navigate\" and changed a group of \"other\" to \"related\"."@en ;
+    skos:definition "A note used to think, plan, organize, and/or navigate a group of related notes."@en ;
+    skos:editorialNote """- Add a Home Note to the vocabulary as a broader (parent) concept for a Map. It's a special kind of Map (a Map of all the maps, like an Atlas of knowledge).
+- Maps should have an upward path toward the Home Note.
+- The Home Note should be an entry point to an Obsidian vault providing major organizational structure and navigation paths across all the concepts in the knowledge system. When that's added, it will be the parent for Map, rather than the current Obsidian Notes."""@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Map"@en ;
-    skos:scopeNote """- It might begin as an index or hub note for a collectio of other related notes.
+    skos:scopeNote """- It might begin as an index or hub note for a collection of other related notes.
 - This typically evolves into a more structured map by collecting links into related groups, adding headings to establish more organization, and additional commentary to provide more context and information.
 - Connected with other maps in a network to provide organization and navigation for the linked notes in a PKM system."""@en .
 
@@ -1086,71 +1103,77 @@ pkmv:Workspaces a skos:Concept ;
     skos:scopeNote "- Enables customized arrangement of Obsidian notes in different layouts."@en .
 
 pkmv:ActivityEvent a skos:Concept ;
-    rdfs:label "ActivityEvent"@en ;
+    rdfs:label "Activity Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “GlucoseEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “GlucoseEventCopy2” to “ActivityEvent”; Preferred label changed from “GlucoseEvent” to “ActivityEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “ActivityEvent” to “Activity Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to activity or exercise."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "ActivityEvent"@en ;
+    skos:prefLabel "Activity Event"@en ;
     skos:scopeNote "General activity-tracking events not covered by a more specific type - check for overlap with HealthEvent/MealEvent before applying."@en .
 
 pkmv:AgentEvent a skos:Concept ;
-    rdfs:label "AgentEvent"@en ;
+    rdfs:label "Agent Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)"@en,
         "2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “HealthEventCopy3” to “AgentEvent”; Preferred label changed from “HealthEvent” to “AgentEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “AgentEvent” to “Agent Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened during agent processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AgentEvent"@en ;
+    skos:prefLabel "Agent Event"@en ;
     skos:scopeNote "Events originated or performed by an AI agent (e.g. Claude-driven actions in the PKM system), as distinct from UserEvent (human) and ToolEvent/ServiceEvent (system)."@en .
 
 pkmv:AlertEvent a skos:Concept ;
-    rdfs:label "AlertEvent"@en ;
+    rdfs:label "Alert Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “DeviceEvent” (by Doug Warren)"@en,
-        "2026-08-28 — Renamed from “DeviceEventCopy” to “AlertEvent”; Preferred label changed from “DeviceEvent” to “AlertEvent”; Definition updated; Scope note added (by Doug Warren)"@en ;
+        "2026-08-28 — Renamed from “DeviceEventCopy” to “AlertEvent”; Preferred label changed from “DeviceEvent” to “AlertEvent”; Definition updated; Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “AlertEvent” to “Alert Event” (by Doug Warren)"@en ;
     skos:definition "An exception condition raised by a device threshold setting, or other metric."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AlertEvent"@en ;
+    skos:prefLabel "Alert Event"@en ;
     skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc."@en .
 
 pkmv:AppEvent a skos:Concept ;
-    rdfs:label "AppEvent"@en ;
+    rdfs:label "App Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “AgentEvent” (by Doug Warren)"@en,
         "2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “AgentEventCopy” to “AppEvent”; Preferred label changed from “AgentEvent” to “AppEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
-        "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “AppEvent” to “App Event” (by Doug Warren)"@en,
+        "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en,
+        "Removed double spaces in \"app processing\"."@en ;
     skos:definition "Something that happened during app processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AppEvent"@en ;
+    skos:prefLabel "App Event"@en ;
     skos:scopeNote "Events originated within a specific application (PKMMeals, PKMStudio), distinct from DeviceEvent (OS/hardware) and ServiceEvent (backend)."@en .
 
 pkmv:ArchiveFolder a skos:Concept ;
@@ -1212,17 +1235,19 @@ pkmv:Clipping a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
     skos:broader pkmv:Source ;
     skos:changeNote "2026-08-28 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-28 — Parent “Add” added (by Doug Warren)"@en,
         "2026-08-28 — Unmarked as a top concept (by Doug Warren)"@en,
         "2026-08-29 — Parent “Source” added; Parent “Add Folder” removed (by Doug Warren)"@en,
-        "Added definition and scope notes for Clipping."@en ;
+        "2026-09-10 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Clipping."@en,
+        "Corrected typo by changiing \"Clipping\" to \"Clipper\"."@en ;
     skos:definition "A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Clipping"@en ;
-    skos:scopeNote "Web Clipped automatically uses a clipping template to populate metadata about the source in Obsidian properties (YAML frontmatter), in addition to the web content."@en .
+    skos:scopeNote "Web Clipper automatically uses a template to populate metadata about the source in Obsidian properties (YAML frontmatter), in addition to the web content."@en .
 
 pkmv:ContextGraph a skos:Concept ;
     rdfs:label "Context Graph"@en ;
@@ -1255,20 +1280,21 @@ pkmv:DMPMealPlan a skos:Concept ;
     skos:scopeNote "Primary weekly meal-planning source; recipes exposed by Wordpress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app."@en .
 
 pkmv:DeviceEvent a skos:Concept ;
-    rdfs:label "DeviceEvent"@en ;
+    rdfs:label "Device Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “NoteEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “NoteEventCopy” to “DeviceEvent”; Preferred label changed from “NoteEvent” to “DeviceEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “DeviceEvent” to “Device Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that occurred with a device."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "DeviceEvent"@en ;
+    skos:prefLabel "Device Event"@en ;
     skos:scopeNote "Events originated at the device/OS level (e.g. an iOS Shortcut trigger), distinct from AppEvent and ServiceEvent."@en .
 
 pkmv:EKGEvent a skos:Concept ;
@@ -1329,37 +1355,39 @@ pkmv:Glossary a skos:Concept ;
 - Also serves as a reference for the shared vocabulary of shared language for PKM systems."""@en .
 
 pkmv:GlucoseEvent a skos:Concept ;
-    rdfs:label "GlucoseEvent"@en ;
+    rdfs:label "Glucose Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “DiabetesEventCopy4” to “GlucoseEvent”; Preferred label changed from “DiabetesEvent” to “GlucoseEvent”; Definition updated; Parent “DiabetesEvent” added; Parent “HealthEvent” removed (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “GlucoseEvent” to “Glucose Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to Glucose."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "GlucoseEvent"@en ;
+    skos:prefLabel "Glucose Event"@en ;
     skos:scopeNote "Narrower than HealthEvent (and DiabetesEvent); a single blood-glucose reading synced via the health-tracking pipeline."@en .
 
 pkmv:InsulinEvent a skos:Concept ;
-    rdfs:label "InsulinEvent"@en ;
+    rdfs:label "Insulin Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “GlucoseEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “GlucoseEventCopy4” to “InsulinEvent”; Preferred label changed from “GlucoseEvent” to “InsulinEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “InsulinEvent” to “Insulin Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to Insulin."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "InsulinEvent"@en ;
+    skos:prefLabel "Insulin Event"@en ;
     skos:scopeNote "Narrower than HealthEvent (and DiabetesEvent); a single insulin dose or administration event."@en .
 
 pkmv:KnowledgeSystemArchitecture a skos:Concept ;
@@ -1397,35 +1425,37 @@ pkmv:Life a skos:Concept ;
 - An area that includes your entire lifespan."""@en .
 
 pkmv:MealEvent a skos:Concept ;
-    rdfs:label "MealEvent"@en ;
+    rdfs:label "Meal Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “GlucoseEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “GlucoseEventCopy3” to “MealEvent”; Preferred label changed from “GlucoseEvent” to “MealEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “MealEvent” to “Meal Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to a Meal."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "MealEvent"@en ;
+    skos:prefLabel "Meal Event"@en ;
     skos:scopeNote "The occurrence of a Meal (a logged eating occasion), as distinct from the Meal/Recipe planning concepts themselves."@en .
 
 pkmv:MeditationEvent a skos:Concept ;
-    rdfs:label "MeditationEvent"@en ;
+    rdfs:label "Meditation Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:HealthEvent ;
     skos:broader pkmv:HealthEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “SleepEvent” (by Doug Warren)"@en,
-        "2026-08-28 — Renamed from “SleepEventCopy” to “MeditationEvent”; Preferred label changed from “SleepEvent” to “MeditationEvent”; Definition updated; Scope note updated (by Doug Warren)"@en ;
+        "2026-08-28 — Renamed from “SleepEventCopy” to “MeditationEvent”; Preferred label changed from “SleepEvent” to “MeditationEvent”; Definition updated; Scope note updated (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “MeditationEvent” to “Meditation Event” (by Doug Warren)"@en ;
     skos:definition "Recording information from meditation session."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "MeditationEvent"@en ;
+    skos:prefLabel "Meditation Event"@en ;
     skos:scopeNote "- Capture information from Calm and Apple Health apps."@en .
 
 pkmv:MemoryGraph a skos:Concept ;
@@ -1479,20 +1509,21 @@ pkmv:Month-Health a skos:Concept ;
     skos:scopeNote "Parent for month-centric health artifacts including diabetes tracking."@en .
 
 pkmv:NoteEvent a skos:Concept ;
-    rdfs:label "NoteEvent"@en ;
+    rdfs:label "Note Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “GlucoseEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “GlucoseEventCopy” to “NoteEvent”; Preferred label changed from “GlucoseEvent” to “NoteEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “NoteEvent” to “Note Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something to record related to a note associated with an event."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "NoteEvent"@en ;
+    skos:prefLabel "Note Event"@en ;
     skos:scopeNote "Events related to note creation, modification, or lifecycle (e.g. an Obsidian note created/updated), distinct from ScriptEvent (automation-triggered)."@en .
 
 pkmv:PKMPythonAPI a skos:Concept ;
@@ -1615,86 +1646,93 @@ pkmv:Restaurant a skos:Concept ;
     skos:scopeNote "Context for meals not prepared at home; relevant to carb-estimation for diabetes tracking."@en .
 
 pkmv:ScriptEvent a skos:Concept ;
-    rdfs:label "ScriptEvent"@en ;
+    rdfs:label "Script Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “AppEvent” (by Doug Warren)"@en,
         "2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “AppEventCopy” to “ScriptEvent”; Preferred label changed from “AppEvent” to “ScriptEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “ScriptEvent” to “Script Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened during script processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "ScriptEvent"@en ;
+    skos:prefLabel "Script Event"@en ;
     skos:scopeNote "Events originated by a Script (Python/Swift automation run), distinct from ToolEvent (interactive tool use) and AgentEvent (AI-originated)."@en .
 
 pkmv:ServiceEvent a skos:Concept ;
-    rdfs:label "ServiceEvent"@en ;
+    rdfs:label "Service Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “ScriptEvent” (by Doug Warren)"@en,
         "2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “ScriptEventCopy” to “ServiceEvent”; Preferred label changed from “ScriptEvent” to “ServiceEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “ServiceEvent” to “Service Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened during service processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "ServiceEvent"@en ;
+    skos:prefLabel "Service Event"@en ;
     skos:scopeNote "Events originated by a backend service (e.g. pkm-neo4j-service), distinct from AppEvent (client) and DeviceEvent (device/OS)."@en .
 
 pkmv:SleepEvent a skos:Concept ;
-    rdfs:label "SleepEvent"@en ;
+    rdfs:label "Sleep Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:HealthEvent ;
     skos:broader pkmv:HealthEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)"@en,
-        "2026-08-28 — Renamed from “DiabetesEventCopy” to “SleepEvent”; Preferred label changed from “DiabetesEvent” to “SleepEvent”; Definition updated; Scope note added (by Doug Warren)"@en ;
+        "2026-08-28 — Renamed from “DiabetesEventCopy” to “SleepEvent”; Preferred label changed from “DiabetesEvent” to “SleepEvent”; Definition updated; Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “SleepEvent” to “Sleep Event” (by Doug Warren)"@en ;
     skos:definition "Recording metrics from overnight sleep."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "SleepEvent"@en ;
+    skos:prefLabel "Sleep Event"@en ;
     skos:scopeNote "- Capture information from Sleep Cycle and Apple Health apps."@en .
 
 pkmv:UserEvent a skos:Concept ;
-    rdfs:label "UserEvent"@en ;
+    rdfs:label "User Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     skos:broader pkmv:Event ;
     skos:changeNote "2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “HealthEventCopy2” to “UserEvent”; Preferred label changed from “HealthEvent” to “UserEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “UserEvent” to “User Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened and raised by a user."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "UserEvent"@en ;
+    skos:prefLabel "User Event"@en ;
     skos:scopeNote "Events directly originated by the human user, as distinct from AgentEvent, DeviceEvent, AppEvent, ToolEvent, and ServiceEvent."@en .
 
 pkmv:WeightEvent a skos:Concept ;
-    rdfs:label "WeightEvent"@en ;
+    rdfs:label "Weight Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:HealthEvent ;
     skos:broader pkmv:HealthEvent ;
     skos:changeNote "2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)"@en,
-        "2026-08-28 — Renamed from “HealthEventCopy4” to “WeightEvent”; Preferred label changed from “HealthEvent” to “WeightEvent”; Definition updated; Scope note added; Parent “HealthEvent” added; Parent “Event” removed (by Doug Warren)"@en ;
+        "2026-08-28 — Renamed from “HealthEventCopy4” to “WeightEvent”; Preferred label changed from “HealthEvent” to “WeightEvent”; Definition updated; Scope note added; Parent “HealthEvent” added; Parent “Event” removed (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “WeightEvent” to “Weight Event” (by Doug Warren)"@en ;
     skos:definition "A record of current weight."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "WeightEvent"@en ;
+    skos:prefLabel "Weight Event"@en ;
     skos:scopeNote """- Stepping on a weight scale, and logging the weight displayed.
 - If an Bluetooth-enable scale, capture the current weight reading."""@en .
 
@@ -2278,13 +2316,14 @@ pkmv:ObsidianTemplate a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Tool ;
     skos:broader pkmv:ObsidianNotes,
         pkmv:Tool ;
     skos:changeNote "2026-08-29 — Duplicated from “Template” (by Doug Warren)"@en,
         "2026-08-29 — Parent “Obsidian Notes” added; Parent “Template” removed (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TemplateCopy2” to “ObsidianTemplate”; Preferred label changed from “Template” to “Obsidian Template”; Definition updated; Scope note updated; Parent “Template” added; Parent “Tool” removed; Parent “Obsidian” removed (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for Obsidian Template."@en ;
     skos:definition "An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -2710,7 +2749,6 @@ pkmv:DayMealPlan a skos:Concept ;
         "2026-08-27 — Parent “Day Cluster” removed (by Doug Warren)"@en,
         "2026-08-27 — Preferred label changed from “DayMealPlan” to “Day.Meal Plan”; Parent “Day Cluster” added (by Doug Warren)"@en,
         "2026-08-28 — Parent “Day Cluster Health” added; Parent “Day Cluster” removed (by Doug Warren)"@en,
-        "2026-09-07 — Preferred label changed from \"Day.Meal Plan\" to \"Day Meal Plan\"."@en,
         "2026-09-07 — Preferred label changed from “Day.Meal Plan” to “Day Meal Plan” (by Doug Warren)"@en,
         "Added definition and scope notes to DayMealPlan."@en ;
     skos:definition "The planned set of meals for a single day."@en ;
@@ -2762,27 +2800,32 @@ pkmv:Idea a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:AddFolder ;
     skos:broader pkmv:AddFolder ;
     skos:changeNote "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Parent “Add” added (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept (by Doug Warren)"@en,
-        "Added definition and scope notes for Idea."@en ;
-    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opporuntities."@en ;
+        "2026-09-10 — Definition updated (by Doug Warren)"@en,
+        "2026-09-10 — Scope note updated (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Idea."@en,
+        "Corrected scopeNote by inserting \"a\" before Spark, changing \"and\" to \"or\" before Interest, corrected \"explicityl\" typo to be \"explicitly\"; also, fixed definition typo by inserting the missing first \"i\" in \"opportunities\"; changed"@en ;
+    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opportunities."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Idea"@en ;
-    skos:scopeNote "Framed as a distillation from Spark, Concept, and Interest, and explicityl distinguished from Focus (priority flag, not a content type)."@en .
+    skos:scopeNote "Framed as a distillation from a Spark, Concept, or Interest, and explicitly distinguished from Focus (priority flag, not a content type)."@en .
 
 pkmv:Ideaverse a skos:Concept ;
     rdfs:label "Ideaverse"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Vault ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “Ideaverse”; Preferred label “Ideaverse” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Vault” (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for Ideaverse."@en ;
     skos:definition "The universe of linked notes about knowledge, concepts, and ideas in a PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -3272,7 +3315,7 @@ pkmv:Day a skos:Concept ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:Week ;
     skos:broader pkmv:Calendar,
         pkmv:Week ;
@@ -3280,6 +3323,7 @@ pkmv:Day a skos:Concept ;
         "2026-08-24 — Definition added; Scope note added; Related term “Day Index” added (by Doug Warren)"@en,
         "2026-08-24 — Related term “Day Plan” added; Related term “Day Log” added; Related term “Day Journal” added; Related term “Day Review” added; Related term “Day Links” added; Related term “Day Actions” added; Related term “Day Schedule” added; Related term “Day Health” added; Related term “Day Diabetes” added; Related term “Day Diabetes Analysis” added; Related term “Day Analysis” added (by Doug Warren)"@en,
         "2026-08-27 — Unmarked as a top concept; Parent “Calendar” added; Related term “Day Index” removed; Related term “Day Links” removed; Related term “Day Actions” removed; Related term “Day Schedule” removed; Related term “Day Health” removed; Related term “Day Diabetes” removed; Related term “Day Diabetes Analysis” removed; Related term “Day Analysis” removed (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes to Day."@en ;
     skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -3469,13 +3513,14 @@ pkmv:TopicCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Cluster ;
     skos:changeNote "2026-08-26 — Term created (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Effort Cluster” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “EffortClusterCopy” to “TopicCluster”; Preferred label changed from “Effort Cluster” to “Topic Cluster”; Definition updated; Scope note updated (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for a TopicCluster."@en ;
-    skos:definition "A group of related notes about a topic.."@en ;
+    skos:definition "A group of related notes about a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:TopicIndex,
         pkmv:TopicJournal,
@@ -3510,7 +3555,7 @@ pkmv:EffortCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Cluster ;
     skos:changeNote "2026-08-26 — Definition added (by Doug Warren)"@en,
         "2026-08-26 — Renamed from “NewConcept” to “EffortCluster”; Preferred label “Effort Cluster” added; Related term “Effort” added (by Doug Warren)"@en,
@@ -3519,8 +3564,9 @@ pkmv:EffortCluster a skos:Concept ;
         "2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)"@en,
         "2026-08-29 — Parent “Cluster” added; Parent “Efforts Folder” removed; Related term “Efforts Folder” removed (by Doug Warren)"@en,
         "2026-08-29 — Parent “Efforts Folder” added (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for an EffortCluster."@en ;
-    skos:definition "A group of related notes about an effort.."@en ;
+    skos:definition "A group of related notes about an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:EffortIndex,
         pkmv:EffortJournal,
@@ -3535,11 +3581,13 @@ pkmv:HealthData a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:changeNote "2026-08-29 — Related term “PKM Python Services” added; Related term “PKM Python Scripts” added; Related term “PKM Python Commands” added (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NewConcept” to “HealthData”; Preferred label “Health Data” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created (by Doug Warren)"@en,
-        "Added definition and scope notes for Health Data."@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Health Data."@en,
+        "Removed double space after \"Personal\" in definition."@en ;
     skos:definition "Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AppleHealth,
@@ -3898,11 +3946,11 @@ pkmv:MealPlan a skos:Concept ;
     skos:scopeNote "Generic parent for period- and source-specific meal plans (Day, Week, DMP, PTE)."@en .
 
 pkmv:ToolEvent a skos:Concept ;
-    rdfs:label "ToolEvent"@en ;
+    rdfs:label "Tool Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     isothes:narrowerGeneric pkmv:AgentEvent,
         pkmv:AppEvent,
@@ -3912,6 +3960,8 @@ pkmv:ToolEvent a skos:Concept ;
     skos:changeNote "2026-08-28 — Duplicated from “AgentEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “AgentEventCopy” to “ToolEvent”; Preferred label changed from “AgentEvent” to “ToolEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “ToolEvent” to “Tool Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened during processing with a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -3919,7 +3969,7 @@ pkmv:ToolEvent a skos:Concept ;
         pkmv:AppEvent,
         pkmv:ScriptEvent,
         pkmv:ServiceEvent ;
-    skos:prefLabel "ToolEvent"@en ;
+    skos:prefLabel "Tool Event"@en ;
     skos:scopeNote "Events representing the use of a tool (e.g. a CLI command such as pkm-day or pkm-health), distinct from ScriptEvent (an automation run) and AgentEvent (AI-originated)."@en .
 
 pkmv:DayClusterHealth a skos:Concept ;
@@ -4003,11 +4053,11 @@ pkmv:DayCluster a skos:Concept ;
     skos:scopeNote "The central organizing pattern of this system. Narrower concepts (DayClusterCore, DayClusterHealth, DayClusterSupport, DayClusterVisual) partition each day's artifacts; mirrors the Week/Month clusters at other granularities."@en .
 
 pkmv:HealthEvent a skos:Concept ;
-    rdfs:label "HealthEvent"@en ;
+    rdfs:label "Health Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     isothes:narrowerGeneric pkmv:BloodPressureEvent,
         pkmv:DiabetesEvent,
@@ -4019,6 +4069,7 @@ pkmv:HealthEvent a skos:Concept ;
     skos:changeNote "2026-08-28 — Renamed from “NewConcept” to “HealthEvent”; Preferred label “HealthEvent” added; Definition added (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
         "2026-08-28 — Term created under “Event” (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “HealthEvent” to “Health Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to Health."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -4028,7 +4079,7 @@ pkmv:HealthEvent a skos:Concept ;
         pkmv:MeditationEvent,
         pkmv:SleepEvent,
         pkmv:WeightEvent ;
-    skos:prefLabel "HealthEvent"@en ;
+    skos:prefLabel "Health Event"@en ;
     skos:scopeNote "Broader concept for all tracked health data points (GlucoseEvent, InsulinEvent, BloodPressureEvent, EKGEvent); populates DayClusterHealth and rolls up into WeekHealth/WeekDiabetes."@en .
 
 pkmv:KnowledgeSystem a skos:Concept ;
@@ -4097,10 +4148,11 @@ pkmv:ObsidianPlugin a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “ObsidianPlugin”; Preferred label changed from “Note” to “Obsidian Plugin”; Definition updated; Scope note updated (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Added definition and scope notes for an Obsidian Plugin."@en ;
     skos:definition "A core or community plugin that extends available functions using JavaScript and the Obsidian API."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -4160,7 +4212,7 @@ pkmv:DayClusterCore a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayCluster ;
     isothes:narrowerPartitive pkmv:DayAnalysis,
         pkmv:DayIndex,
@@ -4172,8 +4224,12 @@ pkmv:DayClusterCore a skos:Concept ;
     skos:changeNote "2026-08-28 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “NewConcept” to “DayClusterCore”; Preferred label “Day Cluster Core” added (by Doug Warren)"@en,
         "2026-08-28 — Term created under “Day Cluster” (by Doug Warren)"@en,
-        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review."@en ;
+        "2026-09-10 — Definition updated (by Doug Warren)"@en,
+        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en,
+        "Added an editorial notes regarding core vs support groups."@en,
+        "Changed \"and Review\" to \"Review, and Analysis\" to include AI-generated note that supports the Review."@en ;
+    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, Review, and Analysis."@en ;
+    skos:editorialNote "It seems that Analysis belongs in the Core group since it analyzes the other core notes, especially Plan vs Log with Plus—Minus—Next methodology. It could be argued that it's a Support note rather than a Core note; for example, currently Day Diabetes Analysis is included as a support note associated with Day Diabetes (which is also support), as is Health, since they're more detailed variations of a Log note."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:DayAnalysis,
         pkmv:DayIndex,
@@ -4221,7 +4277,7 @@ pkmv:TimeCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Cluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerGeneric pkmv:DayCluster,
@@ -4235,6 +4291,7 @@ pkmv:TimeCluster a skos:Concept ;
         "2026-08-26 — Renamed from “ClusterCopy” to “TimeCluster”; Preferred label changed from “Cluster” to “Time Cluster”; Definition updated; Scope note updated (by Doug Warren)"@en,
         "2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)"@en,
         "2026-08-29 — Parent “Calendar Folder” added; Parent “Cluster” removed (by Doug Warren)"@en,
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for TimeCluster."@en ;
     skos:definition "A group of related notes for a time period (or time horizon)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -4244,7 +4301,7 @@ pkmv:TimeCluster a skos:Concept ;
         pkmv:WeekCluster,
         pkmv:YearCluster ;
     skos:prefLabel "Time Cluster"@en ;
-    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster, LifeCluster.
 - Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
 
 pkmv:CalendarFolder a skos:Concept ;
@@ -4280,11 +4337,11 @@ pkmv:CalendarFolder a skos:Concept ;
     skos:scopeNote "- Includes time clusters: Day, Week, Month, Quarter, Year, Decade, and Life."@en .
 
 pkmv:DiabetesEvent a skos:Concept ;
-    rdfs:label "DiabetesEvent"@en ;
+    rdfs:label "Diabetes Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:HealthEvent ;
     isothes:narrowerGeneric pkmv:ActivityEvent,
         pkmv:AlertEvent,
@@ -4297,6 +4354,7 @@ pkmv:DiabetesEvent a skos:Concept ;
     skos:changeNote "2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “HealthEventCopy5” to “DiabetesEvent”; Preferred label changed from “HealthEvent” to “DiabetesEvent”; Definition updated; Parent “HealthEvent” added; Parent “Event” removed (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
+        "2026-09-11 — Preferred label changed from “DiabetesEvent” to “Diabetes Event” (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
     skos:definition "Something that happened related to Diabetes."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -4307,7 +4365,7 @@ pkmv:DiabetesEvent a skos:Concept ;
         pkmv:InsulinEvent,
         pkmv:MealEvent,
         pkmv:NoteEvent ;
-    skos:prefLabel "DiabetesEvent"@en ;
+    skos:prefLabel "Diabetes Event"@en ;
     skos:scopeNote "Broader grouping for diabetes-related HealthEvent subtypes (GlucoseEvent, InsulinEvent); relates to WeekDiabetes/WeekDiabetesAnalysis at the weekly rollup."@en .
 
 pkmv:QuarterCluster a skos:Concept ;
@@ -4567,14 +4625,14 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-07"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     dcterms:publisher pkma:Doug-Warren ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI <https://w3id.org/pkm/0.1.4/vocab> ;
-    owl:versionInfo "0.1.4" ;
+    owl:versionIRI <https://w3id.org/pkm/0.1.5/vocab> ;
+    owl:versionInfo "0.1.5" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,

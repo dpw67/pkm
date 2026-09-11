@@ -10,9 +10,9 @@ pkmv:DayMeeting a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
     skos:broader pkmv:DayClusterSupport ;
-    skos:definition "An event with other people with agenda, topics, decisions, and actions."@en ;
+    skos:definition "An event with attendees, agenda, topics, decisions, and actions."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day Meeting"@en ;
     skos:scopeNote "Records what happened with a meeting event on a specific day, what's next, and who does what and when."@en .

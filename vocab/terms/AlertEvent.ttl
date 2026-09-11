@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:AlertEvent a skos:Concept ;
-    rdfs:label "AlertEvent"@en ;
+    rdfs:label "Alert Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:definition "An exception condition raised by a device threshold setting, or other metric."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AlertEvent"@en ;
+    skos:prefLabel "Alert Event"@en ;
     skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc."@en .
 

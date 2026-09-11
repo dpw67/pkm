@@ -16,7 +16,7 @@ Desktop app for Claude AI.
 ## Scope note
 
 - Available for macOS, iOS, and iPadOS.
-- Includes Claude Chat; Cowork requires Apple Silicon..
+- Includes Claude Chat; Cowork requires Apple Silicon.
 
 ## Broader
 
@@ -36,6 +36,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/ClaudeDesktop
 
 ---
 
-`pkmv:ClaudeDesktop` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:ClaudeDesktop` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

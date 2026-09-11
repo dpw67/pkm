@@ -13,7 +13,7 @@ pkmv:TimeCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Cluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerGeneric pkmv:DayCluster,
@@ -31,6 +31,6 @@ pkmv:TimeCluster a skos:Concept ;
         pkmv:WeekCluster,
         pkmv:YearCluster ;
     skos:prefLabel "Time Cluster"@en ;
-    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster, LifeCluster.
 - Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
 

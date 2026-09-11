@@ -7,11 +7,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:DiabetesEvent a skos:Concept ;
-    rdfs:label "DiabetesEvent"@en ;
+    rdfs:label "Diabetes Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:HealthEvent ;
     isothes:narrowerGeneric pkmv:ActivityEvent,
         pkmv:AlertEvent,
@@ -30,6 +30,6 @@ pkmv:DiabetesEvent a skos:Concept ;
         pkmv:InsulinEvent,
         pkmv:MealEvent,
         pkmv:NoteEvent ;
-    skos:prefLabel "DiabetesEvent"@en ;
+    skos:prefLabel "Diabetes Event"@en ;
     skos:scopeNote "Broader grouping for diabetes-related HealthEvent subtypes (GlucoseEvent, InsulinEvent); relates to WeekDiabetes/WeekDiabetesAnalysis at the weekly rollup."@en .
 

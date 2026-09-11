@@ -13,7 +13,7 @@ pkmv:DayClusterCore a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-10"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayCluster ;
     isothes:narrowerPartitive pkmv:DayAnalysis,
         pkmv:DayIndex,
@@ -22,7 +22,8 @@ pkmv:DayClusterCore a skos:Concept ;
         pkmv:DayPlan,
         pkmv:DayReview ;
     skos:broader pkmv:DayCluster ;
-    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review."@en ;
+    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, Review, and Analysis."@en ;
+    skos:editorialNote "It seems that Analysis belongs in the Core group since it analyzes the other core notes, especially Plan vs Log with Plus—Minus—Next methodology. It could be argued that it's a Support note rather than a Core note; for example, currently Day Diabetes Analysis is included as a support note associated with Day Diabetes (which is also support), as is Health, since they're more detailed variations of a Log note."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:DayAnalysis,
         pkmv:DayIndex,

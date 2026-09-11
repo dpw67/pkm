@@ -23,9 +23,9 @@ Top concept for the Event hierarchy; narrower concepts partition by originator (
 
 ## Narrower
 
-- [HealthEvent](../HealthEvent/)
-- [ToolEvent](../ToolEvent/)
-- [UserEvent](../UserEvent/)
+- [Health Event](../HealthEvent/)
+- [Tool Event](../ToolEvent/)
+- [User Event](../UserEvent/)
 
 ## This term in RDF
 

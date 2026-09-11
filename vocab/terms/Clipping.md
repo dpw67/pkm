@@ -15,7 +15,7 @@ A clipping captured by the Obsidian Web Clipper browser extension that was devel
 
 ## Scope note
 
-Web Clipped automatically uses a clipping template to populate metadata about the source in Obsidian properties (YAML frontmatter), in addition to the web content.
+Web Clipper automatically uses a template to populate metadata about the source in Obsidian properties (YAML frontmatter), in addition to the web content.
 
 ## Broader
 
@@ -41,6 +41,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Clipping
 
 ---
 
-`pkmv:Clipping` · created 2026-08-28 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Clipping` · created 2026-08-28 · modified 2026-09-10 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

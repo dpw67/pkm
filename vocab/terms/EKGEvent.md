@@ -21,7 +21,7 @@ Narrower than HealthEvent; a single EKG reading or recording, alongside GlucoseE
 
 ## Broader
 
-- [HealthEvent](../HealthEvent/) — generic (ISO 25964)
+- [Health Event](../HealthEvent/) — generic (ISO 25964)
 
 ## This term in RDF
 

@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:AgentEvent a skos:Concept ;
-    rdfs:label "AgentEvent"@en ;
+    rdfs:label "Agent Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
     skos:definition "Something that happened during agent processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AgentEvent"@en ;
+    skos:prefLabel "Agent Event"@en ;
     skos:scopeNote "Events originated or performed by an AI agent (e.g. Claude-driven actions in the PKM system), as distinct from UserEvent (human) and ToolEvent/ServiceEvent (system)."@en .
 

@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:ActivityEvent a skos:Concept ;
-    rdfs:label "ActivityEvent"@en ;
+    rdfs:label "Activity Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:DiabetesEvent ;
     skos:broader pkmv:DiabetesEvent ;
     skos:definition "Something that happened related to activity or exercise."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "ActivityEvent"@en ;
+    skos:prefLabel "Activity Event"@en ;
     skos:scopeNote "General activity-tracking events not covered by a more specific type - check for overlap with HealthEvent/MealEvent before applying."@en .
 

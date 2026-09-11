@@ -13,7 +13,7 @@ pkmv:Day a skos:Concept ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:Week ;
     skos:broader pkmv:Calendar,
         pkmv:Week ;

@@ -3,6 +3,7 @@
     python -m pkm_vocab check <export.ttl>    validate, report
     python -m pkm_vocab build <export.ttl>    validate, transform, publish
     python -m pkm_vocab notes <published.ttl> --out <dir>   Obsidian stubs
+    python -m pkm_vocab review <export.ttl>   family-grouped reading sheet
 """
 
 from __future__ import annotations
@@ -15,6 +16,7 @@ from pathlib import Path
 from . import load, wrap
 from .checks import ERROR, INFO, WARN, Report, check
 from .notes import write_notes
+from .review import write_review
 
 LEVELS = (ERROR, WARN, INFO)
 
@@ -188,6 +190,16 @@ def _notes(args) -> int:
     return 0
 
 
+def _review(args) -> int:
+    """Render the review sheet -- a reading aid, so it never fails a build."""
+    vocab = load(args.source)
+    out = write_review(vocab, args.out)
+    print(f"{args.source}: {len(vocab.concepts())} concepts + "
+          f"{len(vocab.collections())} collections", file=sys.stderr)
+    print(f"  wrote {out}", file=sys.stderr)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pkm_vocab", description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -234,6 +246,14 @@ def main(argv: list[str] | None = None) -> int:
         help="report what would change without writing it",
     )
 
+    reviewer = sub.add_parser(
+        "review", help="write a family-grouped reading sheet for human review")
+    reviewer.add_argument("source", type=Path, help="Turtle file to review")
+    reviewer.add_argument(
+        "-o", "--out", type=Path, default=Path("reports/vocab-review.md"),
+        help="where to write the sheet (default: reports/vocab-review.md)",
+    )
+
     args = parser.parse_args(argv)
 
     if args.command == "build":
@@ -241,6 +261,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "notes":
         return _notes(args)
+
+    if args.command == "review":
+        return _review(args)
 
     if args.command == "check":
         vocab = load(args.source)

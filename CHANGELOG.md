@@ -10,6 +10,67 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.6] — 2026-09-11
+
+A prose patch. 0.1.5 fixed the four misspellings I happened to see; a systematic
+sweep afterwards found 29 more defective literals, and this fixes those. No URI,
+label, membership or relationship changed, so [Versioning](#versioning) makes it
+a patch.
+
+### Fixed
+
+- **`pkmv:QuarterLog`'s scope note claimed it aggregates `QuarterLog`.** The
+  roll-up chain is Day → Week → Month → Quarter → Year and every other rung
+  names the rung below it, so a reader following the chain upward hit a loop at
+  the fourth step. It now names `MonthLog`. This is a false statement rather
+  than a typo, which is why it is first.
+- **`pkmv:DayClusterCore`'s definition was still one note short.** 0.1.5
+  corrected it to name Analysis and left Index out, so it named five of the six
+  concepts that are actually narrower than it. All six are named now: Index,
+  Plan, Log, Journal, Review, Analysis. Nothing was reparented, then or now.
+- **`pkmv:WeekReview` was the only definition of 223 with no terminal
+  punctuation.** Found by a check written for this release rather than by
+  reading, which is the argument for writing it.
+- Misspellings in six definitions and eight scope notes: `compled`,
+  `retrospectivee` (on both `pkmv:MonthReview` and `pkmv:QuarterReview`),
+  `thatcreates`, `Kanboard`, `workspacces` and `headlngs` (both on
+  `pkmv:AdvancedURI`), `crtieria`, `financies`, `Yeary`, `Grqph`, and
+  `Wordpress` for WordPress Recipe Maker.
+- Misspellings in 15 change notes: `definiton` nine times, `definintion` twice,
+  `deinition` twice, plus `Pujblish` and `changiing`. `pkmv:TopicReview`'s note
+  also named a Topic *Index* — a copy-paste from the line above it — and now
+  names a Topic Review.
+
+Each correction above leaves a companion change note recording what was fixed, so
+the record survives the fix. Twenty-one quote the old spelling — the convention
+0.1.5 started on `pkmv:Map` and `pkmv:Idea` — and six describe the edit instead,
+as `pkmv:AdvancedURI`'s `Removed duplicated "c" from "workspaces"` and
+`pkmv:Bases`'s `Insert missing space between "that" and "creates"` do. Either way
+a raw count of `definiton` in the export is still nine while all nine are now
+correct, because they are quotations.
+
+### Changed
+
+- `pkmv:View`'s scope note says a "group" of notes where it said a "collection".
+  The informal word already collides with `skos:Collection`, which this
+  vocabulary uses formally for its 18 collections, and it would collide harder
+  the moment a `Collection` concept exists.
+
+### Added
+
+- A `skos:editorialNote` on `pkmv:Month-Health` recording that its local name is
+  wrong. It is the only hyphenated local name of 241 — its siblings are
+  `pkmv:DayHealth`, `pkmv:WeekHealth`, `pkmv:QuarterHealth` and
+  `pkmv:YearHealth` — and it should be `pkmv:MonthHealth`. **The rename is
+  deferred to 0.2.0 because it moves a URI**, and a query for
+  `pkmv:Month-Health` would stop returning what it returns today. The defect is
+  recorded on the concept, where anyone dereferencing the term will see it,
+  rather than only in a tracker. `pkmv:Month-Health` is unchanged in this
+  release, which is what keeps 0.1.6 a patch. The term also carries two change
+  notes dated 2026-09-11 recording a rename to `pkmv:MonthHealth` and back: the
+  rename was made while preparing this release and reverted once it was clear it
+  belonged in 0.2.0. They are the evidence for the deferral, not a URI change.
+
 ## [0.1.5] — 2026-09-11
 
 ### Added
@@ -208,7 +269,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.6...HEAD
+[0.1.6]: https://github.com/dpw67/pkm/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/dpw67/pkm/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/dpw67/pkm/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/dpw67/pkm/compare/v0.1.2...v0.1.3

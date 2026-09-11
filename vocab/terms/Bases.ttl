@@ -10,9 +10,9 @@ pkmv:Bases a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianPlugin ;
-    skos:definition "A core plugin thatcreates custom views to edit, sort, and filter files using properties."@en ;
+    skos:definition "A core plugin that creates custom views to edit, sort, and filter files using properties."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Bases"@en ;
     skos:scopeNote """- Used for frequent or common views of notes with properties.

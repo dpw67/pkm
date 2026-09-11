@@ -340,7 +340,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 ### B
 
 - **[Base](Base/)** — A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria.
-- **[Bases](Bases/)** — A core plugin thatcreates custom views to edit, sort, and filter files using properties.
+- **[Bases](Bases/)** — A core plugin that creates custom views to edit, sort, and filter files using properties.
 - **[Blood Pressure Event](BloodPressureEvent/)** _(also: BP Event)_ — Recording of current blood pressure with systolic/diastolic readings.
 - **[Book](Book/)** — A book used as a source in a PKM system.
 - **[Book Search](BookSearch/)** — Query book by title, author, publisher, or ISBN, and get book information via Google Books API for properties.
@@ -375,13 +375,13 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](DayCollection/)
 - **[Day Base](DayBase/)** — An Obsidian base file with multiple views for a day.
   <br>In: [Day Collection](DayCollection/)
-- **[Day Board](DayBoard/)** — An Obsidian Kanboard board note for the day.
+- **[Day Board](DayBoard/)** — An Obsidian Kanban board note for the day.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Canvas](DayCanvas/)** — An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster](DayCluster/)** — The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings.
   <br>In: [Day Collection](DayCollection/)
-- **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, Review, and Analysis.
+- **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster Health](DayClusterHealth/)** — The health-related data and notes within a Day Cluster, capturing tracked health events for that day.
   <br>In: [Day Collection](DayCollection/)
@@ -527,7 +527,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Month Collection](MonthCollection/)
 - **[Month Plan](MonthPlan/)** — The plan of intended priorities for a month.
   <br>In: [Month Collection](MonthCollection/)
-- **[Month Review](MonthReview/)** — A structured retrospectivee evaluating a completed month.
+- **[Month Review](MonthReview/)** — A structured retrospective evaluating a completed month.
   <br>In: [Month Collection](MonthCollection/)
 - **[Movie](Movie/)** — A movie used as a source in a PKM system.
 ### N
@@ -590,7 +590,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Quarter Collection](QuarterCollection/)
 - **[Quarter Plan](QuarterPlan/)** — The plan of intended priorities for a quarter.
   <br>In: [Quarter Collection](QuarterCollection/)
-- **[Quarter Review](QuarterReview/)** — A structured retrospectivee evaluating a completed quarter.
+- **[Quarter Review](QuarterReview/)** — A structured retrospective evaluating a completed quarter.
   <br>In: [Quarter Collection](QuarterCollection/)
 - **[QuickAdd](QuickAdd/)** — Extension for Obsidian that includes additional tools (choices): templates, captures, macros, and multis.
 - **[Quote](Quote/)** — A quote by a specific source that you want to capture and reuse.
@@ -695,7 +695,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Meal Domain](MealDomain/), [Week Collection](WeekCollection/)
 - **[Week Plan](WeekPlan/)** — The plan of intended priorities and activities for a week.
   <br>In: [Week Collection](WeekCollection/)
-- **[Week Review](WeekReview/)** — A structured retrospective evaluating a compled week
+- **[Week Review](WeekReview/)** — A structured retrospective evaluating a completed week.
   <br>In: [Week Collection](WeekCollection/)
 - **[Weight Event](WeightEvent/)** — A record of current weight.
 - **[Widget](Widget/)** — A home- or lock-screen glanceable view.

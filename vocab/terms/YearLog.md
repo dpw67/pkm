@@ -15,7 +15,7 @@ A record of what happened over a year.
 
 ## Scope note
 
-Yeary factual roll-up; aggregates QuarterLog entries.
+Yearly factual roll-up; aggregates QuarterLog entries.
 
 ## Broader
 
@@ -41,6 +41,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/YearLog
 
 ---
 
-`pkmv:YearLog` · created 2026-08-26 · modified 2026-08-27 · by [Doug Warren](../../agents/)
+`pkmv:YearLog` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

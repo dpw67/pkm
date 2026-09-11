@@ -13,10 +13,10 @@ pkmv:DayBoard a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayClusterVisual ;
     skos:broader pkmv:DayClusterVisual ;
-    skos:definition "An Obsidian Kanboard board note for the day."@en ;
+    skos:definition "An Obsidian Kanban board note for the day."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day Board"@en ;
     skos:scopeNote """- Provides a Kanban view with items in columns.

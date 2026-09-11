@@ -15,7 +15,7 @@ A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes
 
 ## Scope note
 
-Primary weekly meal-planning source; recipes exposed by Wordpress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app.
+Primary weekly meal-planning source; recipes exposed by WordPress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app.
 
 ## Broader
 
@@ -41,6 +41,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/DMPMealPlan
 
 ---
 
-`pkmv:DMPMealPlan` · created 2026-08-25 · modified 2026-08-27 · by [Doug Warren](../../agents/)
+`pkmv:DMPMealPlan` · created 2026-08-25 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

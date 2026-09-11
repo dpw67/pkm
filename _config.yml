@@ -30,3 +30,4 @@ exclude:
   - vendor/
   - .bundle/
   - README.md   # index.md is the site index; README is for the GitHub repo page
+  - ROADMAP.md  # likewise: planning state, not a namespace resource

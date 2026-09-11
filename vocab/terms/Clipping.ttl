@@ -12,7 +12,7 @@ pkmv:Clipping a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-10"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Source ;
     skos:definition "A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;

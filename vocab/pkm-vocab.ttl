@@ -336,15 +336,17 @@ pkmv:AdvancedURI a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianPlugin ;
     skos:changeNote "2026-08-29 — Duplicated from “Local REST API with MCP” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “LocalRESTAPIWithMCPCopy” to “AdvancedURI”; Preferred label changed from “Local REST API with MCP” to “Advanced URI”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for Advanced URI."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Advanced URI."@en,
+        "Removed duplicated \"c\" from \"workspaces\" in scope note, and corrected mistyped \"l\" (lower L) to be \"i\" (lower I) for \"headings\"."@en ;
     skos:definition "Control Obsidian features using special URIs to automate workflows."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Advanced URI"@en ;
-    skos:scopeNote """- Open files, workspacces, headlngs, blocks, lines, and settings.
+    skos:scopeNote """- Open files, workspaces, headings, blocks, lines, and settings.
 - Open files in tabs, splits, windows, popovers, or silently in the background.
 - Switch between reading, source, and live preview mode.
 - Edit, overwrite, append, prepend, and create files.
@@ -382,11 +384,13 @@ pkmv:Base a skos:Concept ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)"@en,
         "2026-09-11 — Definition updated (by Doug Warren)"@en,
-        "Added definition and scope notes for a Base."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for a Base."@en,
+        "Corrected mispelling from \"crtieria\" to \"criteria\" in scope note."@en ;
     skos:definition "A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Base"@en ;
-    skos:scopeNote """- Provides multiple views with different query crtieria, which can be selected as embedded bases in view or canvas notes.
+    skos:scopeNote """- Provides multiple views with different query criteria, which can be selected as embedded bases in view or canvas notes.
 - Enables CSV export from a base for integration with other apps such as Neo4j as well as Swift and Python apps, services, scripts, commands, or agents."""@en .
 
 pkmv:Bases a skos:Concept ;
@@ -394,12 +398,14 @@ pkmv:Bases a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianPlugin ;
     skos:changeNote "2026-08-29 — Duplicated from “Periodic Notes” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “PeriodicNotesCopy” to “Bases”; Preferred label changed from “Periodic Notes” to “Bases”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for Bases."@en ;
-    skos:definition "A core plugin thatcreates custom views to edit, sort, and filter files using properties."@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Bases."@en,
+        "Insert missing space between \"that\" and \"creates\" in definition."@en ;
+    skos:definition "A core plugin that creates custom views to edit, sort, and filter files using properties."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Bases"@en ;
     skos:scopeNote """- Used for frequent or common views of notes with properties.
@@ -559,13 +565,14 @@ pkmv:EffortIndex a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:EffortCluster ;
     skos:changeNote "2026-08-29 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “EffortPlanCopy4” to “EffortIndex”; Preferred label changed from “Effort Plan” to “Effort Index” (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for Effort Index."@en ;
+        "Added definition and scope notes for Effort Index."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "The index note that links all artifacts for an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Index"@en ;
@@ -576,13 +583,14 @@ pkmv:EffortJournal a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:EffortCluster ;
     skos:changeNote "2026-08-29 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “EffortPlanCopy2” to “EffortJournal”; Preferred label changed from “Effort Plan” to “Effort Journal” (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for Effort Journal."@en ;
+        "Added definition and scope notes for Effort Journal."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "Free-form reflective writing about an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Journal"@en ;
@@ -594,13 +602,14 @@ pkmv:EffortLog a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:EffortCluster ;
     skos:changeNote "2026-08-29 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “EffortPlanCopy3” to “EffortLog”; Preferred label changed from “Effort Plan” to “Effort Log” (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for Effort Log."@en ;
+        "Added definition and scope notes for Effort Log."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "A chronological record of what actually happened during an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Log"@en ;
@@ -611,13 +620,14 @@ pkmv:EffortPlan a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:EffortCluster ;
     skos:changeNote "2026-08-29 — Definition added (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NewConcept” to “EffortPlan”; Preferred label “Effort Plan” added (by Doug Warren)"@en,
         "2026-08-29 — Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Effort Cluster” (by Doug Warren)"@en,
-        "Added definiton and scope notes for Effort Plan."@en ;
+        "Added definition and scope notes for Effort Plan."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "The plan of intended activities and priorities for an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Plan"@en ;
@@ -662,15 +672,17 @@ pkmv:Finance a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Area ;
     skos:changeNote "2026-08-29 — Duplicated from “Health” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “HealthCopy” to “Finance”; Preferred label changed from “Health” to “Finance”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added deinition and scope notes for Finance."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope note for Finance."@en,
+        "Corrected misspelling from \"financies\" to \"finances\" in scope note."@en ;
     skos:definition "An area that includes all aspects of your finances."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Finance"@en ;
-    skos:scopeNote """- This area includes everything related to managing and maintaining your financies over time throughout your life.
+    skos:scopeNote """- This area includes everything related to managing and maintaining your finances over time throughout your life.
 - It includes ongoing responsibilities that includes many efforts, projects, and actions."""@en .
 
 pkmv:GlookoData a skos:Concept ;
@@ -694,11 +706,12 @@ pkmv:Health a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Area ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “Health”; Preferred label “Health” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Area” (by Doug Warren)"@en,
-        "Added deinition and scope notes for Health."@en ;
+        "Added definition and scope note for Health."@en,
+        "Fixed misspelling in \"definition\" for previous change note."@en ;
     skos:definition "An area that includes all aspects of your health."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Health"@en ;
@@ -839,17 +852,19 @@ pkmv:PKMNeo4jServiceProject a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:altLabel "pkm-neo4j-service"@en ;
     skos:broader pkmv:PKMPythonServices ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “PKMNeo4jService”; Preferred label “PKM Neo4j Service” added; Alternative label “pkm-neo4j-service” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “PKMNeo4jService” to “PKMNeo4jServiceProject”; Preferred label changed from “PKM Neo4j Service” to “PKM Neo4j Service Project”; Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Term created under “PKM Python Services” (by Doug Warren)"@en,
-        "Added definition and scope notes for PKM Neo4j Service."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for PKM Neo4j Service."@en,
+        "Fixed type from \"Grqph\" to \"Graph\" in scope note."@en ;
     skos:definition "Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "PKM Neo4j Service Project"@en ;
-    skos:scopeNote "Includes Python services for Calendar, Health, Grqph, Obsidian, Recipe, and Review."@en .
+    skos:scopeNote "Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Review."@en .
 
 pkmv:PKMPythonAgents a skos:Concept ;
     rdfs:label "PKM Python Agents"@en ;
@@ -916,11 +931,12 @@ pkmv:Publish a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianPlugin ;
     skos:changeNote "2026-08-29 — Duplicated from “Canvas” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “CanvasCopy” to “Publish”; Preferred label changed from “Canvas” to “Publish”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for Pujblish."@en ;
+        "Added definition and scope notes for Publish."@en,
+        "Corrected typo from \"Pujblish\" to \"Publish\" in previous change note."@en ;
     skos:definition "A core plugin that allows you to host your notes online as a website, wiki, or documentation."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Publish"@en ;
@@ -995,11 +1011,12 @@ pkmv:TopicIndex a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:TopicCluster ;
     skos:changeNote "2026-08-29 — Duplicated from “Effort Index” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “EffortIndexCopy” to “TopicIndex”; Preferred label changed from “Effort Index” to “Topic Index”; Definition updated; Scope note updated; Parent “Topic Cluster” added; Parent “Effort Cluster” removed (by Doug Warren)"@en,
-        "Added definiton and scope notes for a Topic Index."@en ;
+        "Added definition and scope notes for a Topic Index."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "The index note that links all artifacts for a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Index"@en ;
@@ -1010,13 +1027,14 @@ pkmv:TopicJournal a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:TopicCluster ;
     skos:changeNote "2026-08-29 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TopicIndexCopy2” to “TopicJournal”; Preferred label changed from “Topic Index” to “Topic Journal” (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for a Topic Journal."@en ;
+        "Added definition and scope notes for a Topic Journal."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "Free-form reflective writing about a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Journal"@en ;
@@ -1028,12 +1046,13 @@ pkmv:TopicLog a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:TopicCluster ;
     skos:changeNote "2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TopicIndexCopy3” to “TopicLog”; Preferred label changed from “Topic Index” to “Topic Log”; Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for a Topic Log."@en ;
+        "Added definition and scope notes for a Topic Log."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "A chronological record of what actually happened related to a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Log"@en ;
@@ -1044,12 +1063,13 @@ pkmv:TopicPlan a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:TopicCluster ;
     skos:changeNote "2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TopicIndexCopy4” to “TopicPlan”; Preferred label changed from “Topic Index” to “Topic Plan”; Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for a Topic Plan."@en ;
+        "Added definition and scope notes for a Topic Plan."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note."@en ;
     skos:definition "The plan of intended activities and priorities for a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Plan"@en ;
@@ -1060,12 +1080,13 @@ pkmv:TopicReview a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:TopicCluster ;
     skos:changeNote "2026-08-29 — Definition updated (by Doug Warren)"@en,
         "2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TopicIndexCopy” to “TopicReview”; Preferred label changed from “Topic Index” to “Topic Review”; Scope note updated (by Doug Warren)"@en,
-        "Added definiton and scope notes for a Topic Index."@en ;
+        "Added definition and scope notes for a Topic Index."@en,
+        "Corrected typo from \"definiton\" to \"definition\" in previous change note; also fixed typo from a Topic \"Index\" which should be this one (\"Review\")."@en ;
     skos:definition "A structured retrospective evaluating a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Review"@en ;
@@ -1077,15 +1098,17 @@ pkmv:View a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “View”; Preferred label changed from “Note” to “View”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for a View."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for a View."@en,
+        "Changed scope note to be \"group\" of notes, since the informal use of \"collection\" might be confusing when Collection is subsequently defined as a concept term."@en ;
     skos:definition "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "View"@en ;
-    skos:scopeNote "Helps presentation and navigation for a collection of notes."@en .
+    skos:scopeNote "Helps presentation and navigation for a group of notes."@en .
 
 pkmv:Workspaces a skos:Concept ;
     rdfs:label "Workspaces"@en ;
@@ -1235,7 +1258,7 @@ pkmv:Clipping a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-10"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Source ;
     skos:changeNote "2026-08-28 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-28 — Parent “Add” added (by Doug Warren)"@en,
@@ -1243,7 +1266,7 @@ pkmv:Clipping a skos:Concept ;
         "2026-08-29 — Parent “Source” added; Parent “Add Folder” removed (by Doug Warren)"@en,
         "2026-09-10 — Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for Clipping."@en,
-        "Corrected typo by changiing \"Clipping\" to \"Clipper\"."@en ;
+        "Corrected typo by changing \"Clipping\" to \"Clipper\"."@en ;
     skos:definition "A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Clipping"@en ;
@@ -1270,14 +1293,16 @@ pkmv:DMPMealPlan a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:MealPlan ;
     skos:changeNote "2026-08-25 — Created from approved proposal (by Doug Warren)"@en,
-        "2026-08-27 — Preferred label changed from “DMPMealPlan” to “DMP Meal Plan” (by Doug Warren)"@en ;
+        "2026-08-27 — Preferred label changed from “DMPMealPlan” to “DMP Meal Plan” (by Doug Warren)"@en,
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Corrected spelling from \"Wordpress\" to \"WordPress\" in scope note."@en ;
     skos:definition "A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "DMP Meal Plan"@en ;
-    skos:scopeNote "Primary weekly meal-planning source; recipes exposed by Wordpress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app."@en .
+    skos:scopeNote "Primary weekly meal-planning source; recipes exposed by WordPress Recipe Maker (WPRM) API and imported into Plan to Eat and the PKM Meals app."@en .
 
 pkmv:DeviceEvent a skos:Concept ;
     rdfs:label "Device Event"@en ;
@@ -1494,7 +1519,7 @@ pkmv:Month-Health a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster ;
     skos:changeNote "2026-08-26 — Definition added (by Doug Warren)"@en,
@@ -1502,8 +1527,11 @@ pkmv:Month-Health a skos:Concept ;
         "2026-08-26 — Scope note added (by Doug Warren)"@en,
         "2026-08-26 — Term created under “MonthCluster” (by Doug Warren)"@en,
         "2026-08-27 — Preferred label changed from “MonthHealth” to “Month Health” (by Doug Warren)"@en,
+        "2026-09-11 — Renamed from “Month-Health” to “MonthHealth” (by Doug Warren)"@en,
+        "2026-09-11 — Renamed from “MonthHealth” to “Month-Health” (by Doug Warren)"@en,
         "Added definition and scope notes to MonthHealth."@en ;
     skos:definition "The health-related summary for a month."@en ;
+    skos:editorialNote "Remove the hyphen from local name; it should be named MonthHealth. Deferred to 0.2.0 since it changes the URI."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Month Health"@en ;
     skos:scopeNote "Parent for month-centric health artifacts including diabetes tracking."@en .
@@ -1531,11 +1559,12 @@ pkmv:PKMPythonAPI a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:PKMPython ;
     skos:changeNote "2026-08-29 — Duplicated from “PKM Python Services” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “PKMPythonServicesCopy” to “PKMPythonAPI”; Preferred label changed from “PKM Python Services” to “PKM Python API”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definintion and scope notes for PKM Python API."@en ;
+        "Added definition and scope notes for PKM Python API."@en,
+        "Corrected typo from \"definintion\" to \"definition\" in previous change note."@en ;
     skos:definition "Python FastAPI routes providing an API for PKM services."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:FastAPI ;
@@ -1760,12 +1789,14 @@ pkmv:Action a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:EffortsFolder ;
     skos:broader pkmv:EffortsFolder ;
     skos:changeNote "2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)"@en,
         "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en,
-        "Added definition and scope notes for Action."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for Action."@en,
+        "Removed trailing double space at end of scope note."@en ;
     skos:definition "Something to do for an effort, project, area, or interest."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Action"@en ;
@@ -1885,13 +1916,15 @@ pkmv:DayBoard a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayClusterVisual ;
     skos:broader pkmv:DayClusterVisual ;
     skos:changeNote "2026-08-28 — Duplicated from “Day View” (by Doug Warren)"@en,
         "2026-08-28 — Renamed from “DayViewCopy5” to “DayBoard”; Preferred label changed from “Day View” to “Day Board”; Definition updated; Scope note updated (by Doug Warren)"@en,
-        "Added definition and scope notes for DayBoard."@en ;
-    skos:definition "An Obsidian Kanboard board note for the day."@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for DayBoard."@en,
+        "Corrected spelling mistake from \"Kanboard\" to \"Kanban\"."@en ;
+    skos:definition "An Obsidian Kanban board note for the day."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day Board"@en ;
     skos:scopeNote """- Provides a Kanban view with items in columns.
@@ -2301,12 +2334,14 @@ pkmv:MonthReview a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster ;
     skos:changeNote "2026-08-25 — Created from approved proposal (by Doug Warren)"@en,
-        "2026-08-27 — Preferred label changed from “MonthReview” to “Month Review” (by Doug Warren)"@en ;
-    skos:definition "A structured retrospectivee evaluating a completed month."@en ;
+        "2026-08-27 — Preferred label changed from “MonthReview” to “Month Review” (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Removed extra \"e\" at end of \"retrospective\" in definition."@en ;
+    skos:definition "A structured retrospective evaluating a completed month."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Month Review"@en ;
     skos:scopeNote "Assesses the month against the MonthPlan."@en .
@@ -2387,17 +2422,19 @@ pkmv:QuarterLog a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:QuarterCluster ;
     skos:broader pkmv:QuarterCluster ;
     skos:changeNote "2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)"@en,
         "2026-08-26 — Renamed from “MonthLogCopy” to “QuarterLog”; Preferred label changed from “MonthLog” to “Quarter Log”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)"@en,
         "2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)"@en,
-        "Added definition and scope notes for QuarterLog."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for QuarterLog."@en,
+        "Changed scopeNote self-referential prose from \"QuarterLog\" to indicate that it aggregates \"MonthLog\"; it was an invalid statement that introduced a loop in the graph."@en ;
     skos:definition "A record of what happened over a quarter."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quarter Log"@en ;
-    skos:scopeNote "Quarterly factual roll-up; aggregates QuarterLog entries."@en .
+    skos:scopeNote "Quarterly factual roll-up; aggregates MonthLog entries."@en .
 
 pkmv:QuarterPlan a skos:Concept ;
     rdfs:label "Quarter Plan"@en ;
@@ -2422,14 +2459,16 @@ pkmv:QuarterReview a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:QuarterCluster ;
     skos:broader pkmv:QuarterCluster ;
     skos:changeNote "2026-08-26 — Duplicated from “MonthReview” (by Doug Warren)"@en,
         "2026-08-26 — Renamed from “MonthReviewCopy” to “QuarterReview”; Preferred label changed from “MonthReview” to “Quarter Review”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)"@en,
         "2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)"@en,
-        "Added definition and scope notes for QuarterReview."@en ;
-    skos:definition "A structured retrospectivee evaluating a completed quarter."@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for QuarterReview."@en,
+        "Fixed extra \"e\" after \"retrospective\" (copy/paste error from MonthReview)."@en ;
+    skos:definition "A structured retrospective evaluating a completed quarter."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quarter Review"@en ;
     skos:scopeNote "Assesses the quarter against the QuarterPlan."@en .
@@ -2641,14 +2680,16 @@ pkmv:WeekReview a skos:Concept ;
     dcterms:created "2026-08-24"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:WeekCluster ;
     skos:broader pkmv:WeekCluster ;
     skos:changeNote "2026-08-24 — Definition added; Scope note added; Related term “Week Health” added; Related term “Week Analysis” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Index” added (by Doug Warren)"@en,
         "2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)"@en,
         "2026-08-28 — Related term “Week” removed; Related term “Week Journal” removed (by Doug Warren)"@en,
-        "Added definition and scope notes for WeekReview."@en ;
-    skos:definition "A structured retrospective evaluating a compled week"@en ;
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
+        "Added definition and scope notes for WeekReview."@en,
+        "Corrected spelling from \"compled\" to \"completed\", and added terminal punctuation in definition."@en ;
+    skos:definition "A structured retrospective evaluating a completed week."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Week Review"@en ;
     skos:scopeNote "Assesses the week against the WeekPlan."@en .
@@ -2692,17 +2733,19 @@ pkmv:YearLog a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:YearCluster ;
     skos:broader pkmv:YearCluster ;
     skos:changeNote "2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)"@en,
         "2026-08-26 — Renamed from “MonthLogCopy” to “YearLog”; Preferred label changed from “MonthLog” to “Year Log”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)"@en,
         "2026-08-27 — Parent “Year Cluster” added (by Doug Warren)"@en,
-        "Added definition and scope notes for YearLog."@en ;
+        "2026-09-11 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for YearLog."@en,
+        "Corrected type from \"Yeary\" to \"Yearly\" in scope note."@en ;
     skos:definition "A record of what happened over a year."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Year Log"@en ;
-    skos:scopeNote "Yeary factual roll-up; aggregates QuarterLog entries."@en .
+    skos:scopeNote "Yearly factual roll-up; aggregates QuarterLog entries."@en .
 
 pkmv:YearPlan a skos:Concept ;
     rdfs:label "Year Plan"@en ;
@@ -2994,11 +3037,12 @@ pkmv:PKMPythonServices a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:PKMPython ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “PKMPythonServices”; Preferred label “PKM Python Services” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “PKM Python” (by Doug Warren)"@en,
-        "Added definintion and scope notes for PKM Python Services."@en ;
+        "Added definition and scope notes for PKM Python Services."@en,
+        "Corrected typo from \"definintion\" to \"definition\" in previous change note."@en ;
     skos:definition "Python services supporting the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:PKMNeo4jServiceProject ;
@@ -4212,7 +4256,7 @@ pkmv:DayClusterCore a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-10"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayCluster ;
     isothes:narrowerPartitive pkmv:DayAnalysis,
         pkmv:DayIndex,
@@ -4225,10 +4269,12 @@ pkmv:DayClusterCore a skos:Concept ;
         "2026-08-28 — Renamed from “NewConcept” to “DayClusterCore”; Preferred label “Day Cluster Core” added (by Doug Warren)"@en,
         "2026-08-28 — Term created under “Day Cluster” (by Doug Warren)"@en,
         "2026-09-10 — Definition updated (by Doug Warren)"@en,
+        "2026-09-11 — Definition updated (by Doug Warren)"@en,
         "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en,
         "Added an editorial notes regarding core vs support groups."@en,
-        "Changed \"and Review\" to \"Review, and Analysis\" to include AI-generated note that supports the Review."@en ;
-    skos:definition "The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, Review, and Analysis."@en ;
+        "Changed \"and Review\" to \"Review, and Analysis\" to include AI-generated note that supports the Review."@en,
+        "Inserted missing \"Index\" as the hub note for related core Day notes."@en ;
+    skos:definition "The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis."@en ;
     skos:editorialNote "It seems that Analysis belongs in the Core group since it analyzes the other core notes, especially Plan vs Log with Plus—Minus—Next methodology. It could be argued that it's a Support note rather than a Core note; for example, currently Day Diabetes Analysis is included as a support note associated with Day Diabetes (which is also support), as is Health, since they're more detailed variations of a Log note."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:DayAnalysis,
@@ -4631,8 +4677,8 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI <https://w3id.org/pkm/0.1.5/vocab> ;
-    owl:versionInfo "0.1.5" ;
+    owl:versionIRI <https://w3id.org/pkm/0.1.6/vocab> ;
+    owl:versionInfo "0.1.6" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,

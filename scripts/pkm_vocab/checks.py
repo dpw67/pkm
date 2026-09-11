@@ -68,6 +68,16 @@ DOUBLE_PERIOD = re.compile(r"(?<!\.)\.\.(?!\.)")
 #: Two or more spaces between non-space characters. Renders as one space in
 #: HTML, so it is invisible on the page and only shows in the RDF.
 PADDED_LITERAL = re.compile(r"\S {2,}\S")
+#: What a finished definition ends with. `)` is here because a definition may
+#: close on a parenthetical — "\u2026 Recipe Maker (WPRM)".
+TERMINAL_PUNCTUATION = ".?!)"
+#: Verbs that make prose a claim about what the subject gathers up, with any
+#: article that follows them. Only a match whose next words are the subject's
+#: own name is a defect, so this half of the test can afford to be generous.
+AGGREGATING_VERB = re.compile(
+    r"\b(?:aggregates?|comprises?|collects?|consists\s+of|rolls\s+up|"
+    r"contains?|includes?)\s+(?:the|its|all|any)?\s*"
+)
 #: A language tag written *inside* the text, as in `“Day Meal Plan@en”`. The
 #: SKOS Editor emits this when it quotes a label into a change note.
 LANG_IN_TEXT = re.compile(r"@[a-z]{2}(?=[”\"'])")
@@ -391,7 +401,9 @@ def check(vocab: Vocabulary) -> Report:
 
     # Text hygiene. None of this breaks a query, but definitions and scope
     # notes are rendered verbatim onto every term page, so a reader sees them.
-    # Each of these is the mirror of a normalisation step in `transform.py`.
+    # The first two mirror a normalisation step in `transform.py`, so the build
+    # repairs them on the way out. The two after do not: only an author knows
+    # what the text was meant to say, so the check reports and stops there.
     for prop in PROSE:
         for subj, obj in g.subject_objects(prop):
             if not isinstance(obj, Literal) or obj.datatype is not None:
@@ -410,6 +422,52 @@ def check(vocab: Vocabulary) -> Report:
                     "HTML collapses them, so the page hides what the RDF says",
                     ln(subj) or "scheme",
                 )
+
+    # A definition that stops without punctuation reads as truncated. One
+    # missing full stop across 223 definitions is a typo; the check exists so
+    # that the next one shows up as a line in the report rather than on a page.
+    for subj, obj in g.subject_objects(SKOS.definition):
+        if not isinstance(obj, Literal) or obj.datatype is not None:
+            continue
+        text = str(obj).strip()
+        if text and text[-1] not in TERMINAL_PUNCTUATION:
+            report.add(
+                WARN, "definition-no-terminal-punctuation",
+                f"skos:definition ends with {text[-1]!r} rather than a full "
+                f"stop: \u201c\u2026{text[-32:]}\u201d",
+                ln(subj) or "scheme",
+            )
+
+    # Prose naming its own subject as the thing it gathers up. A roll-up chain
+    # (Day to Week to Month to Quarter to Year) reads as a loop when one rung
+    # points at itself, and the wording at every rung is identical but for the
+    # period name, so the copy-paste that causes it is invisible one term at a
+    # time. Deliberately narrow: an aggregating verb, then the subject's own
+    # name, and nothing else counts.
+    for prop in (SKOS.definition, SKOS.scopeNote):
+        for subj, obj in g.subject_objects(prop):
+            if not isinstance(obj, Literal) or obj.datatype is not None:
+                continue
+            text = str(obj)
+            names = {ln(subj)}
+            names.update(str(x) for x in g.objects(subj, SKOS.prefLabel))
+            names = sorted((n for n in names if n), key=len, reverse=True)
+            for match in AGGREGATING_VERB.finditer(text):
+                rest = text[match.end():]
+                hit = next((n for n in names if rest.startswith(n)), None)
+                # A name that is merely the prefix of a longer term is not a
+                # self-reference: `pkmv:TopicCluster` may legitimately contain
+                # Topic Cluster Core notes. Only a lowercase or punctuated
+                # continuation means the subject itself was named.
+                if hit is None or rest[len(hit):][:1].isupper():
+                    continue
+                report.add(
+                    WARN, "self-referential-prose",
+                    f"{vocab.curie(prop)} says it {match.group().strip()} "
+                    f"{hit} \u2014 itself",
+                    ln(subj) or "scheme",
+                )
+                break
 
     # High-volume editor artifacts: counted, with an example, because naming
     # 151 subjects individually would bury everything else in the report.

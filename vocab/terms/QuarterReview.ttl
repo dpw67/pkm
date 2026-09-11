@@ -13,10 +13,10 @@ pkmv:QuarterReview a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:QuarterCluster ;
     skos:broader pkmv:QuarterCluster ;
-    skos:definition "A structured retrospectivee evaluating a completed quarter."@en ;
+    skos:definition "A structured retrospective evaluating a completed quarter."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quarter Review"@en ;
     skos:scopeNote "Assesses the quarter against the QuarterPlan."@en .

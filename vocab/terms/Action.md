@@ -45,6 +45,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Action
 
 ---
 
-`pkmv:Action` · created 2026-08-28 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Action` · created 2026-08-28 · modified 2026-09-11 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

@@ -10,11 +10,11 @@ pkmv:Finance a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:Area ;
     skos:definition "An area that includes all aspects of your finances."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Finance"@en ;
-    skos:scopeNote """- This area includes everything related to managing and maintaining your financies over time throughout your life.
+    skos:scopeNote """- This area includes everything related to managing and maintaining your finances over time throughout your life.
 - It includes ongoing responsibilities that includes many efforts, projects, and actions."""@en .
 

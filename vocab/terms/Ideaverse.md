@@ -11,7 +11,7 @@ description: "The universe of linked notes about knowledge, concepts, and ideas 
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
+The universe of linked notes about knowledge, concepts, and ideas in a PKM system.
 
 ## Scope note
 

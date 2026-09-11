@@ -36,6 +36,13 @@ Version levels are explained under [Versioning](#versioning).
   are maintained in the SKOS Editor export, so the change would have been
   discarded — and the link pointed at a `gh-pages` branch the site does not
   build from. The footer now points at Issues and Discussions.
+- Invisible whitespace no longer reaches the published graph. 31 definitions,
+  scope notes and change notes carried whitespace no reader could see: 11 held
+  a run of two or more spaces mid-sentence, the rest only padding at the end of
+  a line or at the edges of the literal. HTML collapses all of it, so every
+  page read correctly while the RDF underneath said `with  JavaScript`. The
+  build now collapses horizontal whitespace in prose and trims the edges,
+  leaving newlines alone so a bulleted scope note stays a list.
 
 ## [0.1.4] — 2026-09-09
 

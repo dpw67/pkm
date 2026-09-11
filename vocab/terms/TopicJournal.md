@@ -15,7 +15,7 @@ Free-form reflective writing about a topic.
 
 ## Scope note
 
-- Subjective narrative and reflection: complements the factual TopicLog. 
+- Subjective narrative and reflection: complements the factual TopicLog.
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light).
 
 ## Broader

@@ -14,7 +14,7 @@ pkmv:ScriptEvent a skos:Concept ;
     dcterms:modified "2026-08-28"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
-    skos:definition "Something that happened during script  processing."@en ;
+    skos:definition "Something that happened during script processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "ScriptEvent"@en ;
     skos:scopeNote "Events originated by a Script (Python/Swift automation run), distinct from ToolEvent (interactive tool use) and AgentEvent (AI-originated)."@en .

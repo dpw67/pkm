@@ -11,7 +11,7 @@ description: "Something that happened during service processing."
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-Something that happened during service   processing.
+Something that happened during service processing.
 
 ## Scope note
 

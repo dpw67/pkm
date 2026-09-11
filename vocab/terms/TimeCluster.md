@@ -15,8 +15,8 @@ A group of related notes for a time period (or time horizon).
 
 ## Scope note
 
-- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster. 
-- Does not include other non-time clusters:  EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
+- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+- Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
 
 ## Broader
 

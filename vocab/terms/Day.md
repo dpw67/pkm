@@ -11,7 +11,7 @@ description: "A single calendar day with 24 hours, the atomic unit of the tempor
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons).
+A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons).
 
 ## Scope note
 

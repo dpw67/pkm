@@ -17,7 +17,7 @@ pkmv:Day a skos:Concept ;
     isothes:broaderPartitive pkmv:Week ;
     skos:broader pkmv:Calendar,
         pkmv:Week ;
-    skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons)."@en ;
+    skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day"@en ;
     skos:related pkmv:DayCluster ;

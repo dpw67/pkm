@@ -11,7 +11,7 @@ description: "Something that happened during app processing."
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-Something that happened during app  processing.
+Something that happened during app processing.
 
 ## Scope note
 

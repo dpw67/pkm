@@ -16,12 +16,12 @@ pkmv:Action a skos:Concept ;
     dcterms:modified "2026-08-29"^^xsd:date ;
     isothes:broaderGeneric pkmv:EffortsFolder ;
     skos:broader pkmv:EffortsFolder ;
-    skos:definition "Something to do for an effort, project, area, or interest. "@en ;
+    skos:definition "Something to do for an effort, project, area, or interest."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Action"@en ;
     skos:scopeNote """- Narrower than an Effort, and alongside Area, Interest, or Project.
 - May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.
 - More complex actions might be ActionGroups that have one or more nested groups of actions.
 - Sequential actions can be represented as a simple bullet list with a checkbox.
-- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.).  """@en .
+- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."""@en .
 

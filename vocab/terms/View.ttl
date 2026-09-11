@@ -12,7 +12,7 @@ pkmv:View a skos:Concept ;
     dcterms:issued "2026-08-15"^^xsd:date ;
     dcterms:modified "2026-08-29"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
-    skos:definition "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases. "@en ;
+    skos:definition "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "View"@en ;
     skos:scopeNote "Helps presentation and navigation for a collection of notes."@en .

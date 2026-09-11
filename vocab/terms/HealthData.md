@@ -11,7 +11,7 @@ description: "Personal health and diabetes data from websites and HealthKit coll
 
 _SKOS concept in the [PKM Vocabulary](../), one of its top concepts._
 
-Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
+Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
 
 ## Scope note
 

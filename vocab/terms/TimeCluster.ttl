@@ -31,6 +31,6 @@ pkmv:TimeCluster a skos:Concept ;
         pkmv:WeekCluster,
         pkmv:YearCluster ;
     skos:prefLabel "Time Cluster"@en ;
-    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster. 
-- Does not include other non-time clusters:  EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
+    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+- Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
 

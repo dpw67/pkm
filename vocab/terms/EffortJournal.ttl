@@ -15,6 +15,6 @@ pkmv:EffortJournal a skos:Concept ;
     skos:definition "Free-form reflective writing about an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Journal"@en ;
-    skos:scopeNote """- Subjective narrative and reflection: complements the factual EffortLog. 
+    skos:scopeNote """- Subjective narrative and reflection: complements the factual EffortLog.
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light)."""@en .
 

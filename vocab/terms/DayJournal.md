@@ -15,7 +15,7 @@ Free-form reflective writing about a day.
 
 ## Scope note
 
-- Subjective narrative and reflection: complements the factual DayLog. 
+- Subjective narrative and reflection: complements the factual DayLog.
 - Includes Morning Thoughts (First Light), Meditation with reflection and moods, Free-writing, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light).
 - Primarily formatted as text paragraphs and/or headings as appropriate; whereas DayLog is typically timestamped bullet or numbered lists rather than written paragraphs.
 

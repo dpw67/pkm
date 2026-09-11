@@ -15,7 +15,7 @@ A new draft note received from the Drafts app via the Obsidian action group pipe
 
 ## Scope note
 
-- This collects all incoming draft notes entering Obsidian from Drafts text or voice input on Mac, iPhone, iPad, or Watch. 
+- This collects all incoming draft notes entering Obsidian from Drafts text or voice input on Mac, iPhone, iPad, or Watch.
 - The Drafts app adds `draft/note` to the tags property, as well as a `object: draft` and `type: note` to these notes to simplify workflow processing for these drafts.
 
 ## Broader

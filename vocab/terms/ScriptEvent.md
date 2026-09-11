@@ -11,7 +11,7 @@ description: "Something that happened during script processing."
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-Something that happened during script  processing.
+Something that happened during script processing.
 
 ## Scope note
 

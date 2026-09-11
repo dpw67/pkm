@@ -18,7 +18,7 @@ pkmv:ToolEvent a skos:Concept ;
         pkmv:ScriptEvent,
         pkmv:ServiceEvent ;
     skos:broader pkmv:Event ;
-    skos:definition "Something that happened during  processing with a tool."@en ;
+    skos:definition "Something that happened during processing with a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AgentEvent,
         pkmv:AppEvent,

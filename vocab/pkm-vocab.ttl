@@ -349,8 +349,7 @@ pkmv:AdvancedURI a skos:Concept ;
 - Call Obsidian and plugin commands.
 - Edit, read, and focus frontmatter properties
 - Navigate using file paths, file names, aliases, daily notes, or frontmatter UIDs
-- Create robust persistent IDs in properties that keep working when notes are renamed or moved.
-"""@en .
+- Create robust persistent IDs in properties that keep working when notes are renamed or moved."""@en .
 
 pkmv:AppleHealth a skos:Concept ;
     rdfs:label "Apple Health"@en ;
@@ -577,7 +576,7 @@ pkmv:EffortJournal a skos:Concept ;
     skos:definition "Free-form reflective writing about an effort."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Effort Journal"@en ;
-    skos:scopeNote """- Subjective narrative and reflection: complements the factual EffortLog. 
+    skos:scopeNote """- Subjective narrative and reflection: complements the factual EffortLog.
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light)."""@en .
 
 pkmv:EffortLog a skos:Concept ;
@@ -769,7 +768,7 @@ pkmv:Movie a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Movie"@en ;
     skos:relatedMatch schema:Movie ;
-    skos:scopeNote "- Includes properties about the movie and its properties. "@en .
+    skos:scopeNote "- Includes properties about the movie and its properties."@en .
 
 pkmv:Neo4jDesktop a skos:Concept ;
     rdfs:label "Neo4j Desktop"@en ;
@@ -880,7 +879,7 @@ pkmv:Person a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Person"@en ;
     skos:relatedMatch schema:Person ;
-    skos:scopeNote "- Includes properties about the person. "@en .
+    skos:scopeNote "- Includes properties about the person."@en .
 
 pkmv:Product a skos:Concept ;
     rdfs:label "Product"@en ;
@@ -939,7 +938,7 @@ pkmv:Quote a skos:Concept ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “Quote”; Preferred label “Quote” added; Definition added; Scope note added; Parent “Source” added; Parent “Atlas Folder” removed (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Atlas Folder” (by Doug Warren)"@en,
         "Added definition and scope notes for Quote."@en ;
-    skos:definition "A quote by a specific source that you want to capture and reuse. "@en ;
+    skos:definition "A quote by a specific source that you want to capture and reuse."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quote"@en ;
     skos:scopeNote "Includes the specific quote as well as attribution source information."@en .
@@ -1004,7 +1003,7 @@ pkmv:TopicJournal a skos:Concept ;
     skos:definition "Free-form reflective writing about a topic."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Topic Journal"@en ;
-    skos:scopeNote """- Subjective narrative and reflection: complements the factual TopicLog. 
+    skos:scopeNote """- Subjective narrative and reflection: complements the factual TopicLog.
 - Includes Morning Thoughts (First Light), Free-writing with narrative reflection and stream of thought, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light)."""@en .
 
 pkmv:TopicLog a skos:Concept ;
@@ -1066,7 +1065,7 @@ pkmv:View a skos:Concept ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “View”; Preferred label changed from “Note” to “View”; Definition updated; Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for a View."@en ;
-    skos:definition "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases. "@en ;
+    skos:definition "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "View"@en ;
     skos:scopeNote "Helps presentation and navigation for a collection of notes."@en .
@@ -1134,7 +1133,7 @@ pkmv:AlertEvent a skos:Concept ;
     skos:definition "An exception condition raised by a device threshold setting, or other metric."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "AlertEvent"@en ;
-    skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc. "@en .
+    skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc."@en .
 
 pkmv:AppEvent a skos:Concept ;
     rdfs:label "AppEvent"@en ;
@@ -1149,7 +1148,7 @@ pkmv:AppEvent a skos:Concept ;
         "2026-08-28 — Renamed from “AgentEventCopy” to “AppEvent”; Preferred label changed from “AgentEvent” to “AppEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "Something that happened during app  processing."@en ;
+    skos:definition "Something that happened during app processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "AppEvent"@en ;
     skos:scopeNote "Events originated within a specific application (PKMMeals, PKMStudio), distinct from DeviceEvent (OS/hardware) and ServiceEvent (backend)."@en .
@@ -1326,7 +1325,7 @@ pkmv:Glossary a skos:Concept ;
     skos:prefLabel "Glossary"@en ;
     skos:scopeNote """- An on-ramp stage for building an ontology.
 - Focused on the names for concepts as terms, along with their definitions and scope notes.
-- Distinguished from a Taxonomy that includes structure with relationships between concept terms. 
+- Distinguished from a Taxonomy that includes structure with relationships between concept terms.
 - Also serves as a reference for the shared vocabulary of shared language for PKM systems."""@en .
 
 pkmv:GlucoseEvent a skos:Concept ;
@@ -1377,7 +1376,7 @@ pkmv:KnowledgeSystemArchitecture a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:KnowledgeSystem ;
     skos:prefLabel "Knowledge System Architecture"@en ;
-    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day. "@en ;
+    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Life a skos:Concept ;
@@ -1628,7 +1627,7 @@ pkmv:ScriptEvent a skos:Concept ;
         "2026-08-28 — Renamed from “AppEventCopy” to “ScriptEvent”; Preferred label changed from “AppEvent” to “ScriptEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "Something that happened during script  processing."@en ;
+    skos:definition "Something that happened during script processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "ScriptEvent"@en ;
     skos:scopeNote "Events originated by a Script (Python/Swift automation run), distinct from ToolEvent (interactive tool use) and AgentEvent (AI-originated)."@en .
@@ -1646,7 +1645,7 @@ pkmv:ServiceEvent a skos:Concept ;
         "2026-08-28 — Renamed from “ScriptEventCopy” to “ServiceEvent”; Preferred label changed from “ScriptEvent” to “ServiceEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "Something that happened during service   processing."@en ;
+    skos:definition "Something that happened during service processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "ServiceEvent"@en ;
     skos:scopeNote "Events originated by a backend service (e.g. pkm-neo4j-service), distinct from AppEvent (client) and DeviceEvent (device/OS)."@en .
@@ -1729,14 +1728,14 @@ pkmv:Action a skos:Concept ;
     skos:changeNote "2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)"@en,
         "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en,
         "Added definition and scope notes for Action."@en ;
-    skos:definition "Something to do for an effort, project, area, or interest. "@en ;
+    skos:definition "Something to do for an effort, project, area, or interest."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Action"@en ;
     skos:scopeNote """- Narrower than an Effort, and alongside Area, Interest, or Project.
 - May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.
 - More complex actions might be ActionGroups that have one or more nested groups of actions.
 - Sequential actions can be represented as a simple bullet list with a checkbox.
-- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.).  """@en .
+- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."""@en .
 
 pkmv:App a skos:Concept ;
     rdfs:label "App"@en ;
@@ -2002,7 +2001,7 @@ pkmv:DayJournal a skos:Concept ;
     skos:definition "Free-form reflective writing about a day."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day Journal"@en ;
-    skos:scopeNote """- Subjective narrative and reflection: complements the factual DayLog. 
+    skos:scopeNote """- Subjective narrative and reflection: complements the factual DayLog.
 - Includes Morning Thoughts (First Light), Meditation with reflection and moods, Free-writing, Interstitial journaling between sessions or activities, and Evening Thoughts (Last Light).
 - Primarily formatted as text paragraphs and/or headings as appropriate; whereas DayLog is typically timestamped bullet or numbered lists rather than written paragraphs."""@en .
 
@@ -2177,7 +2176,7 @@ pkmv:Draft a skos:Concept ;
     skos:definition "A new draft note received from the Drafts app via the Obsidian action group pipeline."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Draft"@en ;
-    skos:scopeNote """- This collects all incoming draft notes entering Obsidian from Drafts text or voice input on Mac, iPhone, iPad, or Watch. 
+    skos:scopeNote """- This collects all incoming draft notes entering Obsidian from Drafts text or voice input on Mac, iPhone, iPad, or Watch.
 - The Drafts app adds `draft/note` to the tags property, as well as a `object: draft` and `type: note` to these notes to simplify workflow processing for these drafts."""@en .
 
 pkmv:Focus a skos:Concept ;
@@ -2287,7 +2286,7 @@ pkmv:ObsidianTemplate a skos:Concept ;
         "2026-08-29 — Parent “Obsidian Notes” added; Parent “Template” removed (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “TemplateCopy2” to “ObsidianTemplate”; Preferred label changed from “Template” to “Obsidian Template”; Definition updated; Scope note updated; Parent “Template” added; Parent “Tool” removed; Parent “Obsidian” removed (by Doug Warren)"@en,
         "Added definition and scope notes for Obsidian Template."@en ;
-    skos:definition "An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system."@en ;
+    skos:definition "An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Obsidian Template"@en ;
     skos:scopeNote """- Includes templates created with the Obsidian Templater plugin, with optional inline Templater expressions (`<% ... %>`) and JavaScript code.
@@ -2593,7 +2592,7 @@ pkmv:WeekPlan a skos:Concept ;
         "2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)"@en,
         "2026-08-28 — Related term “Week” removed; Related term “Week Review” removed; Related term “Week Journal” removed (by Doug Warren)"@en,
         "Added definition and scope notes for WeekPlan"@en ;
-    skos:definition "The plan of intended priorities and activities for a week. "@en ;
+    skos:definition "The plan of intended priorities and activities for a week."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Week Plan"@en ;
     skos:scopeNote "Forward-looking weekly intentions; parent context for DayPlan."@en .
@@ -2770,7 +2769,7 @@ pkmv:Idea a skos:Concept ;
         "2026-08-29 — Parent “Add” added (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept (by Doug Warren)"@en,
         "Added definition and scope notes for Idea."@en ;
-    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opporuntities. "@en ;
+    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opporuntities."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Idea"@en ;
     skos:scopeNote "Framed as a distillation from Spark, Concept, and Interest, and explicityl distinguished from Focus (priority flag, not a content type)."@en .
@@ -2785,7 +2784,7 @@ pkmv:Ideaverse a skos:Concept ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “Ideaverse”; Preferred label “Ideaverse” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created under “Vault” (by Doug Warren)"@en,
         "Added definition and scope notes for Ideaverse."@en ;
-    skos:definition "The universe of linked notes about knowledge, concepts,  and ideas in a PKM system."@en ;
+    skos:definition "The universe of linked notes about knowledge, concepts, and ideas in a PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:ACEOrganization,
         pkmv:ARCIdeation,
@@ -2858,7 +2857,7 @@ pkmv:Month a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Month"@en ;
     skos:related pkmv:MonthCluster ;
-    skos:scopeNote """- Contains lower time horizons via IN_MONTH: parent horizon for monthly planning and review artifacts. 
+    skos:scopeNote """- Contains lower time horizons via IN_MONTH: parent horizon for monthly planning and review artifacts.
 - Each month contains multiple multiple weeks (4-5) and days (28-31).
 - There are 3 months in a quarter, and 12 months in a year."""@en .
 
@@ -3282,7 +3281,7 @@ pkmv:Day a skos:Concept ;
         "2026-08-24 — Related term “Day Plan” added; Related term “Day Log” added; Related term “Day Journal” added; Related term “Day Review” added; Related term “Day Links” added; Related term “Day Actions” added; Related term “Day Schedule” added; Related term “Day Health” added; Related term “Day Diabetes” added; Related term “Day Diabetes Analysis” added; Related term “Day Analysis” added (by Doug Warren)"@en,
         "2026-08-27 — Unmarked as a top concept; Parent “Calendar” added; Related term “Day Index” removed; Related term “Day Links” removed; Related term “Day Actions” removed; Related term “Day Schedule” removed; Related term “Day Health” removed; Related term “Day Diabetes” removed; Related term “Day Diabetes Analysis” removed; Related term “Day Analysis” removed (by Doug Warren)"@en,
         "Added definition and scope notes to Day."@en ;
-    skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons)."@en ;
+    skos:definition "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Day"@en ;
     skos:related pkmv:DayCluster ;
@@ -3541,7 +3540,7 @@ pkmv:HealthData a skos:Concept ;
         "2026-08-29 — Renamed from “NewConcept” to “HealthData”; Preferred label “Health Data” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created (by Doug Warren)"@en,
         "Added definition and scope notes for Health Data."@en ;
-    skos:definition "Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps."@en ;
+    skos:definition "Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AppleHealth,
         pkmv:DexcomData,
@@ -3680,7 +3679,7 @@ pkmv:PKMPython a skos:Concept ;
         pkmv:Python,
         pkmv:PythonTemplate ;
     skos:prefLabel "PKM Python"@en ;
-    skos:scopeNote "Includes Python API routes, services, scripts, commands, and agents. "@en ;
+    skos:scopeNote "Includes Python API routes, services, scripts, commands, and agents."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:W3CStandard a skos:Concept ;
@@ -3725,7 +3724,7 @@ pkmv:PKMSwift a skos:Concept ;
         pkmv:PKMSwiftServices,
         pkmv:Swift ;
     skos:prefLabel "PKM Swift"@en ;
-    skos:scopeNote "Includes SwiftUI apps, SwiftData database, and Swift services, scripts, commands, and agents. "@en ;
+    skos:scopeNote "Includes SwiftUI apps, SwiftData database, and Swift services, scripts, commands, and agents."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Standard a skos:Concept ;
@@ -3914,7 +3913,7 @@ pkmv:ToolEvent a skos:Concept ;
         "2026-08-28 — Renamed from “AgentEventCopy” to “ToolEvent”; Preferred label changed from “AgentEvent” to “ToolEvent”; Definition updated (by Doug Warren)"@en,
         "2026-08-28 — Scope note added (by Doug Warren)"@en,
         "Add missing scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "Something that happened during  processing with a tool."@en ;
+    skos:definition "Something that happened during processing with a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AgentEvent,
         pkmv:AppEvent,
@@ -4103,7 +4102,7 @@ pkmv:ObsidianPlugin a skos:Concept ;
     skos:changeNote "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “NoteCopy” to “ObsidianPlugin”; Preferred label changed from “Note” to “Obsidian Plugin”; Definition updated; Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for an Obsidian Plugin."@en ;
-    skos:definition "A core or community plugin that extends available  functions using JavaScript and the Obsidian API."@en ;
+    skos:definition "A core or community plugin that extends available functions using JavaScript and the Obsidian API."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AdvancedURI,
         pkmv:Bases,
@@ -4119,7 +4118,7 @@ pkmv:ObsidianPlugin a skos:Concept ;
         pkmv:Templater,
         pkmv:Workspaces ;
     skos:prefLabel "Obsidian Plugin"@en ;
-    skos:scopeNote "- Provides many additional useful features for the Obsidian app, such as Templater for templates, Periodic Notes for calendar notes, and many more. "@en .
+    skos:scopeNote "- Provides many additional useful features for the Obsidian app, such as Templater for templates, Periodic Notes for calendar notes, and many more."@en .
 
 pkmv:Calendar a skos:Concept ;
     rdfs:label "Calendar"@en ;
@@ -4245,8 +4244,8 @@ pkmv:TimeCluster a skos:Concept ;
         pkmv:WeekCluster,
         pkmv:YearCluster ;
     skos:prefLabel "Time Cluster"@en ;
-    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster. 
-- Does not include other non-time clusters:  EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
+    skos:scopeNote """- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster,LifeCluster.
+- Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."""@en .
 
 pkmv:CalendarFolder a skos:Concept ;
     rdfs:label "Calendar Folder"@en ;
@@ -4564,7 +4563,7 @@ pkma:Doug-Warren a prov:Person ;
         pkma:SKOS-Editor ;
     dcterms:created "2026-08-15"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
-    dcterms:description "This PKM vocabulary includes concepts for personal knowledge management (PKM) system associated with a  Knowledge System Architecture (KSA)."@en ;
+    dcterms:description "This PKM vocabulary includes concepts for personal knowledge management (PKM) system associated with a Knowledge System Architecture (KSA)."@en ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;

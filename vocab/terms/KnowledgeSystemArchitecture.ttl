@@ -16,6 +16,6 @@ pkmv:KnowledgeSystemArchitecture a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:KnowledgeSystem ;
     skos:prefLabel "Knowledge System Architecture"@en ;
-    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day. "@en ;
+    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 

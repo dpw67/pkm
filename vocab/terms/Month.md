@@ -15,7 +15,7 @@ A calendar month grouping weeks and days.
 
 ## Scope note
 
-- Contains lower time horizons via IN_MONTH: parent horizon for monthly planning and review artifacts. 
+- Contains lower time horizons via IN_MONTH: parent horizon for monthly planning and review artifacts.
 - Each month contains multiple multiple weeks (4-5) and days (28-31).
 - There are 3 months in a quarter, and 12 months in a year.
 

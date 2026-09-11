@@ -17,5 +17,5 @@ pkmv:AlertEvent a skos:Concept ;
     skos:definition "An exception condition raised by a device threshold setting, or other metric."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "AlertEvent"@en ;
-    skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc. "@en .
+    skos:scopeNote "- Includes signal loss, low glucose alert, high glucose alert, low pod insulin, expired pod, etc."@en .
 

@@ -11,7 +11,7 @@ description: "Something that happened during processing with a tool."
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-Something that happened during  processing with a tool.
+Something that happened during processing with a tool.
 
 ## Scope note
 

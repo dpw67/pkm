@@ -11,7 +11,7 @@ description: "An Obsidian template using the Templater plugin with JavaScript th
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
+An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
 
 ## Scope note
 

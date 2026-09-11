@@ -330,7 +330,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[App](App/)** — A software application.
   <br>In: [Note Types](NoteTypes/)
 - **[App Intent](AppIntent/)** — A declared action the system exposes to Shortcuts, Siri, or Spotlight.
-- **[AppEvent](AppEvent/)** — Something that happened during app  processing.
+- **[AppEvent](AppEvent/)** — Something that happened during app processing.
 - **[Apple Health](AppleHealth/)** — Health data from Apple Health via the HealthKit framework.
 - **[ARC Ideation](ARCIdeation/)** _(also: ARC Framework)_ — The stages for the natural flow of ideas in the creative process (Add, Related, Communicate).
 - **[Archive Folder](ArchiveFolder/)** — The top-level `z` folder space in Obsidian includes Archive (inactive) notes.
@@ -367,7 +367,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 ### D
 
 - **[Dataview](Dataview/)** — An Obsidian query language for filtering, sorting, and extracting data from Markdown pages.
-- **[Day](Day/)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons).
+- **[Day](Day/)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons).
   <br>In: [Day Collection](DayCollection/)
 - **[Day Actions](DayActions/)** — A support note within a Day Cluster listing discrete Action items tracked for that day.
   <br>In: [Day Collection](DayCollection/)
@@ -467,7 +467,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 ### H
 
 - **[Health](Health/)** — An area that includes all aspects of your health.
-- **[Health Data](HealthData/)** — Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
+- **[Health Data](HealthData/)** — Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
 - **[HealthEvent](HealthEvent/)** — Something that happened related to Health.
 - **[Hummingbird](Hummingbird/)** — A lightweight, Swift-native server-side web framework for building HTTP APIs and services.
   <br>In: [Tech Stack](TechStack/)
@@ -476,7 +476,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Idea](Idea/)** — An idea about something to explore curiosity, research interests, support areas, or identify opporuntities.
   <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
 - **[Idea Emergence](IdeaEmergence/)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
-- **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
+- **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts, and ideas in a PKM system.
 - **[Ideaverse Collection](IdeaverseCollection/)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
 - **[Ingredient](Ingredient/)** — An individual food item or component used in the preparation of a recipe.
   <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
@@ -544,9 +544,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Obsidian Notes](ObsidianNotes/)** — A major PKM system for linked notes.
   <br>In: [Ideaverse Collection](IdeaverseCollection/)
-- **[Obsidian Plugin](ObsidianPlugin/)** — A core or community plugin that extends available  functions using JavaScript and the Obsidian API.
+- **[Obsidian Plugin](ObsidianPlugin/)** — A core or community plugin that extends available functions using JavaScript and the Obsidian API.
 - **[Obsidian Settings](ObsidianSettings/)** — A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins.
-- **[Obsidian Template](ObsidianTemplate/)** — An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
+- **[Obsidian Template](ObsidianTemplate/)** — An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
 - **[Ontology](Ontology/)** — A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language such as OWL.
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[OWL](OWL/)** — Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships.
@@ -615,9 +615,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Script](Script/)** — A short program or set of automated instructions, typically in Python or Swift, that performs a specific task.
   <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
-- **[ScriptEvent](ScriptEvent/)** — Something that happened during script  processing.
+- **[ScriptEvent](ScriptEvent/)** — Something that happened during script processing.
 - **[Semantic Web Standards](SemanticWebStandards/)** _(collection, 11 members)_
-- **[ServiceEvent](ServiceEvent/)** — Something that happened during service   processing.
+- **[ServiceEvent](ServiceEvent/)** — Something that happened during service processing.
 - **[Shortcut](Shortcut/)** — An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events.
   <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
 - **[Siri](Siri/)** — Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS.
@@ -652,7 +652,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — All the related concepts about Time.
 - **[Tool](Tool/)** — A software capability used within the PKM system.
   <br>In: [Tech Stack](TechStack/)
-- **[ToolEvent](ToolEvent/)** — Something that happened during  processing with a tool.
+- **[ToolEvent](ToolEvent/)** — Something that happened during processing with a tool.
 - **[Topic](Topic/)** — A subject or theme that content can be about.
   <br>In: [Knowledge Collection](KnowledgeCollection/)
 - **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic..

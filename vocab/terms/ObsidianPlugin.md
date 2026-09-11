@@ -11,7 +11,7 @@ description: "A core or community plugin that extends available functions using 
 
 _SKOS concept in the [PKM Vocabulary](../)._
 
-A core or community plugin that extends available  functions using JavaScript and the Obsidian API.
+A core or community plugin that extends available functions using JavaScript and the Obsidian API.
 
 ## Scope note
 

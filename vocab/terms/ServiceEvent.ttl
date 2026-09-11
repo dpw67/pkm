@@ -14,7 +14,7 @@ pkmv:ServiceEvent a skos:Concept ;
     dcterms:modified "2026-08-28"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
-    skos:definition "Something that happened during service   processing."@en ;
+    skos:definition "Something that happened during service processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "ServiceEvent"@en ;
     skos:scopeNote "Events originated by a backend service (e.g. pkm-neo4j-service), distinct from AppEvent (client) and DeviceEvent (device/OS)."@en .

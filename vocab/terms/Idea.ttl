@@ -18,7 +18,7 @@ pkmv:Idea a skos:Concept ;
     dcterms:modified "2026-08-29"^^xsd:date ;
     isothes:broaderPartitive pkmv:AddFolder ;
     skos:broader pkmv:AddFolder ;
-    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opporuntities. "@en ;
+    skos:definition "An idea about something to explore curiosity, research interests, support areas, or identify opporuntities."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Idea"@en ;
     skos:scopeNote "Framed as a distillation from Spark, Concept, and Interest, and explicityl distinguished from Focus (priority flag, not a content type)."@en .

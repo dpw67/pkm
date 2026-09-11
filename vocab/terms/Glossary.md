@@ -17,7 +17,7 @@ A list of concept terms and definitions.
 
 - An on-ramp stage for building an ontology.
 - Focused on the names for concepts as terms, along with their definitions and scope notes.
-- Distinguished from a Taxonomy that includes structure with relationships between concept terms. 
+- Distinguished from a Taxonomy that includes structure with relationships between concept terms.
 - Also serves as a reference for the shared vocabulary of shared language for PKM systems.
 
 ## Broader

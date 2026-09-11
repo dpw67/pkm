@@ -7,11 +7,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:HealthEvent a skos:Concept ;
-    rdfs:label "HealthEvent"@en ;
+    rdfs:label "Health Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     isothes:narrowerGeneric pkmv:BloodPressureEvent,
         pkmv:DiabetesEvent,
@@ -28,6 +28,6 @@ pkmv:HealthEvent a skos:Concept ;
         pkmv:MeditationEvent,
         pkmv:SleepEvent,
         pkmv:WeightEvent ;
-    skos:prefLabel "HealthEvent"@en ;
+    skos:prefLabel "Health Event"@en ;
     skos:scopeNote "Broader concept for all tracked health data points (GlucoseEvent, InsulinEvent, BloodPressureEvent, EKGEvent); populates DayClusterHealth and rolls up into WeekHealth/WeekDiabetes."@en .
 

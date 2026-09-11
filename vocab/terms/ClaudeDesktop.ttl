@@ -10,11 +10,11 @@ pkmv:ClaudeDesktop a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ClaudeAI ;
     skos:definition "Desktop app for Claude AI."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Claude Desktop"@en ;
     skos:scopeNote """- Available for macOS, iOS, and iPadOS.
-- Includes Claude Chat; Cowork requires Apple Silicon.."""@en .
+- Includes Claude Chat; Cowork requires Apple Silicon."""@en .
 

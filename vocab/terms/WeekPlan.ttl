@@ -16,7 +16,7 @@ pkmv:WeekPlan a skos:Concept ;
     dcterms:modified "2026-08-27"^^xsd:date ;
     isothes:broaderPartitive pkmv:WeekCluster ;
     skos:broader pkmv:WeekCluster ;
-    skos:definition "The plan of intended priorities and activities for a week. "@en ;
+    skos:definition "The plan of intended priorities and activities for a week."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Week Plan"@en ;
     skos:scopeNote "Forward-looking weekly intentions; parent context for DayPlan."@en .

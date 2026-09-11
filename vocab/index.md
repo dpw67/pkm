@@ -210,26 +210,26 @@ Nested by `skos:broader`, starting from the top concepts. A term with more than 
   - [App Intent](AppIntent/)
   - [PKM Meals](PKMMeals/)
     - [Event](Event/)
-      - [HealthEvent](HealthEvent/)
+      - [Health Event](HealthEvent/)
         - [Blood Pressure Event](BloodPressureEvent/)
-        - [DiabetesEvent](DiabetesEvent/)
-          - [ActivityEvent](ActivityEvent/)
-          - [AlertEvent](AlertEvent/)
-          - [DeviceEvent](DeviceEvent/)
-          - [GlucoseEvent](GlucoseEvent/)
-          - [InsulinEvent](InsulinEvent/)
-          - [MealEvent](MealEvent/)
-          - [NoteEvent](NoteEvent/)
+        - [Diabetes Event](DiabetesEvent/)
+          - [Activity Event](ActivityEvent/)
+          - [Alert Event](AlertEvent/)
+          - [Device Event](DeviceEvent/)
+          - [Glucose Event](GlucoseEvent/)
+          - [Insulin Event](InsulinEvent/)
+          - [Meal Event](MealEvent/)
+          - [Note Event](NoteEvent/)
         - [EKG Event](EKGEvent/)
-        - [MeditationEvent](MeditationEvent/)
-        - [SleepEvent](SleepEvent/)
-        - [WeightEvent](WeightEvent/)
-      - [ToolEvent](ToolEvent/)
-        - [AgentEvent](AgentEvent/)
-        - [AppEvent](AppEvent/)
-        - [ScriptEvent](ScriptEvent/)
-        - [ServiceEvent](ServiceEvent/)
-      - [UserEvent](UserEvent/)
+        - [Meditation Event](MeditationEvent/)
+        - [Sleep Event](SleepEvent/)
+        - [Weight Event](WeightEvent/)
+      - [Tool Event](ToolEvent/)
+        - [Agent Event](AgentEvent/)
+        - [App Event](AppEvent/)
+        - [Script Event](ScriptEvent/)
+        - [Service Event](ServiceEvent/)
+      - [User Event](UserEvent/)
     - [Meal](Meal/)
       - [Food](Food/)
         - [Package](Package/)
@@ -294,17 +294,17 @@ Groupings that carry no hierarchical meaning — a concept's place in the tree a
   <br>16 members: [Breakfast](Breakfast/), [DMP Meal Plan](DMPMealPlan/), [Day Meal Plan](DayMealPlan/), [Dinner](Dinner/), [Ingredient](Ingredient/), [Lunch](Lunch/), [Meal](Meal/), [Meal Plan](MealPlan/), [Nutrition](Nutrition/), [PTE Meal Plan](PTEMealPlan/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/), [Snack](Snack/), [Week Meal Plan](WeekMealPlan/)
 - **[Month Collection](MonthCollection/)** — All related notes for a calendar month grouping Weeks and Days.
   <br>5 members: [Month](Month/), [Month Journal](MonthJournal/), [Month Log](MonthLog/), [Month Plan](MonthPlan/), [Month Review](MonthReview/)
-- **[Note Types](NoteTypes/)**
+- **[Note Types](NoteTypes/)** — The concepts used as note types in the vault.
   <br>20 members: [Action](Action/), [App](App/), [Area](Area/), [Clipping](Clipping/), [Concept](Concept/), [Draft](Draft/), [Focus](Focus/), [Idea](Idea/), [Interest](Interest/), [Meal](Meal/), [Meal Plan](MealPlan/), [Project](Project/), [Python Template](PythonTemplate/), [Recipe](Recipe/), [Restaurant](Restaurant/), [Script](Script/), [Shortcut](Shortcut/), [Spark](Spark/), [Term](Term/), [Vault](Vault/)
 - **[Quarter Collection](QuarterCollection/)** — All related notes for a time period of three Months uses for medium-term planning.
   <br>6 members: [Month Journal](MonthJournal/), [Quarter](Quarter/), [Quarter Cluster](QuarterCluster/), [Quarter Log](QuarterLog/), [Quarter Plan](QuarterPlan/), [Quarter Review](QuarterReview/)
 - **[Recipe Collection](RecipeCollection/)** — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
   <br>7 members: [Ingredient](Ingredient/), [Nutrition](Nutrition/), [Recipe](Recipe/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/)
-- **[Semantic Web Standards](SemanticWebStandards/)**
+- **[Semantic Web Standards](SemanticWebStandards/)** — Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph.
   <br>11 members: [ISO Standard](ISOStandard/), [Knowledge Graph](KnowledgeGraph/), [Metadata](Metadata/), [OWL](OWL/), [Ontology](Ontology/), [RDF](RDF/), [SKOS](SKOS/), [Standard](Standard/), [Taxonomy](Taxonomy/), [Term](Term/), [W3C Standard](W3CStandard/)
 - **[Spark Collection](SparkCollection/)** — All the related notes for a new spark of interest or importance.
   <br>2 members: [Idea](Idea/), [Spark](Spark/)
-- **[Tech Stack](TechStack/)**
+- **[Tech Stack](TechStack/)** — The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts.
   <br>10 members: [Cypher](Cypher/), [FastAPI](FastAPI/), [Hummingbird](Hummingbird/), [Neo4j](Neo4j/), [Python](Python/), [Script](Script/), [Shortcut](Shortcut/), [Siri](Siri/), [Swift](Swift/), [Tool](Tool/)
 - **[Time Collection](TimeCollection/)** — All the related concepts about Time.
   <br>2 members: [Time](Time/), [Time Cluster](TimeCluster/)
@@ -322,15 +322,15 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[ACE Organization](ACEOrganization/)** _(also: ACE Folders)_ — The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse.
 - **[Action](Action/)** — Something to do for an effort, project, area, or interest.
   <br>In: [Note Types](NoteTypes/)
-- **[ActivityEvent](ActivityEvent/)** — Something that happened related to activity or exercise.
+- **[Activity Event](ActivityEvent/)** — Something that happened related to activity or exercise.
 - **[Add Folder](AddFolder/)** _(also: Obsidian Inbox, Plus Folder)_ — The + (Add) folder is the PKM "inbox" space for new and incoming notes.
 - **[Advanced URI](AdvancedURI/)** — Control Obsidian features using special URIs to automate workflows.
-- **[AgentEvent](AgentEvent/)** — Something that happened during agent processing.
-- **[AlertEvent](AlertEvent/)** — An exception condition raised by a device threshold setting, or other metric.
+- **[Agent Event](AgentEvent/)** — Something that happened during agent processing.
+- **[Alert Event](AlertEvent/)** — An exception condition raised by a device threshold setting, or other metric.
 - **[App](App/)** — A software application.
   <br>In: [Note Types](NoteTypes/)
+- **[App Event](AppEvent/)** — Something that happened during app processing.
 - **[App Intent](AppIntent/)** — A declared action the system exposes to Shortcuts, Siri, or Spotlight.
-- **[AppEvent](AppEvent/)** — Something that happened during app  processing.
 - **[Apple Health](AppleHealth/)** — Health data from Apple Health via the HealthKit framework.
 - **[ARC Ideation](ARCIdeation/)** _(also: ARC Framework)_ — The stages for the natural flow of ideas in the creative process (Add, Related, Communicate).
 - **[Archive Folder](ArchiveFolder/)** — The top-level `z` folder space in Obsidian includes Archive (inactive) notes.
@@ -339,7 +339,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Atlas Folder](AtlasFolder/)** _(also: Knowledge Folder)_ — A major space within an Obsidian vault containing notes about knowledge ("what you know").
 ### B
 
-- **[Base](Base/)** — A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria..
+- **[Base](Base/)** — A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria.
 - **[Bases](Bases/)** — A core plugin thatcreates custom views to edit, sort, and filter files using properties.
 - **[Blood Pressure Event](BloodPressureEvent/)** _(also: BP Event)_ — Recording of current blood pressure with systolic/diastolic readings.
 - **[Book](Book/)** — A book used as a source in a PKM system.
@@ -367,7 +367,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 ### D
 
 - **[Dataview](Dataview/)** — An Obsidian query language for filtering, sorting, and extracting data from Markdown pages.
-- **[Day](Day/)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time  horizons).
+- **[Day](Day/)** — A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons).
   <br>In: [Day Collection](DayCollection/)
 - **[Day Actions](DayActions/)** — A support note within a Day Cluster listing discrete Action items tracked for that day.
   <br>In: [Day Collection](DayCollection/)
@@ -381,7 +381,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster](DayCluster/)** — The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings.
   <br>In: [Day Collection](DayCollection/)
-- **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, and Review.
+- **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Plan, Log, Journal, Review, and Analysis.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster Health](DayClusterHealth/)** — The health-related data and notes within a Day Cluster, capturing tracked health events for that day.
   <br>In: [Day Collection](DayCollection/)
@@ -411,7 +411,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Day Meal](DayMeal/)** — A single planned or eaten meal within a day.
 - **[Day Meal Plan](DayMealPlan/)** — The planned set of meals for a single day.
   <br>In: [Day Collection](DayCollection/), [Meal Domain](MealDomain/)
-- **[Day Meeting](DayMeeting/)** — An event with other people with agenda, topics, decisions, and actions.
+- **[Day Meeting](DayMeeting/)** — An event with attendees, agenda, topics, decisions, and actions.
 - **[Day Mindmap](DayMindmap/)** — An Obsidian Excalidraw drawing note using the Mindmap plugin.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Plan](DayPlan/)** — The plan of intended activities and priorities for a day.
@@ -425,9 +425,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Decade](Decade/)** — A ten-year span used for long-range life planning.
   <br>In: [Decade Collection](DecadeCollection/)
 - **[Decade Collection](DecadeCollection/)** _(collection, 1 member)_ — All notes related to a ten-Year span used for long-range life planning.
-- **[DeviceEvent](DeviceEvent/)** — Something that occurred with a device.
+- **[Device Event](DeviceEvent/)** — Something that occurred with a device.
 - **[Dexcom Data](DexcomData/)** — Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
-- **[DiabetesEvent](DiabetesEvent/)** — Something that happened related to Diabetes.
+- **[Diabetes Event](DiabetesEvent/)** — Something that happened related to Diabetes.
 - **[Dinner](Dinner/)** _(also: Supper)_ — The evening meal.
   <br>In: [Meal Domain](MealDomain/)
 - **[DMP Meal Plan](DMPMealPlan/)** — A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service.
@@ -436,7 +436,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Note Types](NoteTypes/)
 ### E
 
-- **[Effort Cluster](EffortCluster/)** — A group of related notes about an effort..
+- **[Effort Cluster](EffortCluster/)** — A group of related notes about an effort.
   <br>In: [Effort Collection](EffortCollection/)
 - **[Effort Collection](EffortCollection/)** _(collection, 5 members)_ — All the related notes for a single Effort.
 - **[Effort Index](EffortIndex/)** — The index note that links all artifacts for an effort.
@@ -462,25 +462,25 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Glooko Data](GlookoData/)** — Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insulin pump data that is also integrated with Dexcom data for glucose, meals, and other events.
 - **[Glossary](Glossary/)** — A list of concept terms and definitions.
-- **[GlucoseEvent](GlucoseEvent/)** — Something that happened related to Glucose.
+- **[Glucose Event](GlucoseEvent/)** — Something that happened related to Glucose.
 - **[Graph Database](GraphDatabase/)** — Graph databases that support a PKM system.
 ### H
 
 - **[Health](Health/)** — An area that includes all aspects of your health.
-- **[Health Data](HealthData/)** — Personal  health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
-- **[HealthEvent](HealthEvent/)** — Something that happened related to Health.
+- **[Health Data](HealthData/)** — Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps.
+- **[Health Event](HealthEvent/)** — Something that happened related to Health.
 - **[Hummingbird](Hummingbird/)** — A lightweight, Swift-native server-side web framework for building HTTP APIs and services.
   <br>In: [Tech Stack](TechStack/)
 ### I
 
-- **[Idea](Idea/)** — An idea about something to explore curiosity, research interests, support areas, or identify opporuntities.
+- **[Idea](Idea/)** — An idea about something to explore curiosity, research interests, support areas, or identify opportunities.
   <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
 - **[Idea Emergence](IdeaEmergence/)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
-- **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts,  and ideas in a PKM system.
+- **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts, and ideas in a PKM system.
 - **[Ideaverse Collection](IdeaverseCollection/)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
 - **[Ingredient](Ingredient/)** — An individual food item or component used in the preparation of a recipe.
   <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
-- **[InsulinEvent](InsulinEvent/)** — Something that happened related to Insulin.
+- **[Insulin Event](InsulinEvent/)** — Something that happened related to Insulin.
 - **[Interest](Interest/)** — A note capturing an ongoing topic of curiosity or attention that is not (yet) an active Project or Area of responsibility.
   <br>In: [Effort Collection](EffortCollection/), [Note Types](NoteTypes/)
 - **[ISO Standard](ISOStandard/)** — A standard published by the International Organization for Standardization (ISO).
@@ -504,14 +504,14 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Meal Domain](MealDomain/)
 ### M
 
-- **[Map](Map/)** _(also: MOC, Map of Content)_ — A note used to think, plan, and organize a group of other notes.
+- **[Map](Map/)** _(also: MOC, Map of Content)_ — A note used to think, plan, organize, and/or navigate a group of related notes.
 - **[Meal](Meal/)** — An eating occasion consisting of one or more foods or recipes consumed at a particular time.
   <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
 - **[Meal Domain](MealDomain/)** _(collection, 16 members)_ — All the related notes for a meal plan.
+- **[Meal Event](MealEvent/)** — Something that happened related to a Meal.
 - **[Meal Plan](MealPlan/)** — A structured plan of meals over a defined period.
   <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
-- **[MealEvent](MealEvent/)** — Something that happened related to a Meal.
-- **[MeditationEvent](MeditationEvent/)** — Recording information from meditation session.
+- **[Meditation Event](MeditationEvent/)** — Recording information from meditation session.
 - **[Memory Graph](MemoryGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected short-term and long-term memory.
 - **[Menu](Menu/)** — A curated list of dishes offered or planned.
 - **[Metadata](Metadata/)** — Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file.
@@ -536,17 +536,17 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Tech Stack](TechStack/)
 - **[Neo4j Desktop](Neo4jDesktop/)** — Neo4j graph database that support a PKM system.
 - **[Note](Note/)** — A unit of knowledge in a PKM system.
-- **[Note Types](NoteTypes/)** _(collection, 20 members)_
-- **[NoteEvent](NoteEvent/)** — Something to record related to a note associated with an event.
+- **[Note Event](NoteEvent/)** — Something to record related to a note associated with an event.
+- **[Note Types](NoteTypes/)** _(collection, 20 members)_ — The concepts used as note types in the vault.
 - **[Nutrition](Nutrition/)** — The nutrient content (e.g. calories, carbohydrates, fat, fiber) associated with a meal, recipe, or ingredient.
   <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
 ### O
 
 - **[Obsidian Notes](ObsidianNotes/)** — A major PKM system for linked notes.
   <br>In: [Ideaverse Collection](IdeaverseCollection/)
-- **[Obsidian Plugin](ObsidianPlugin/)** — A core or community plugin that extends available  functions using JavaScript and the Obsidian API.
+- **[Obsidian Plugin](ObsidianPlugin/)** — A core or community plugin that extends available functions using JavaScript and the Obsidian API.
 - **[Obsidian Settings](ObsidianSettings/)** — A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins.
-- **[Obsidian Template](ObsidianTemplate/)** — An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
+- **[Obsidian Template](ObsidianTemplate/)** — An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
 - **[Ontology](Ontology/)** — A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language such as OWL.
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[OWL](OWL/)** — Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships.
@@ -615,16 +615,16 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Script](Script/)** — A short program or set of automated instructions, typically in Python or Swift, that performs a specific task.
   <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
-- **[ScriptEvent](ScriptEvent/)** — Something that happened during script  processing.
-- **[Semantic Web Standards](SemanticWebStandards/)** _(collection, 11 members)_
-- **[ServiceEvent](ServiceEvent/)** — Something that happened during service   processing.
+- **[Script Event](ScriptEvent/)** — Something that happened during script processing.
+- **[Semantic Web Standards](SemanticWebStandards/)** _(collection, 11 members)_ — Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph.
+- **[Service Event](ServiceEvent/)** — Something that happened during service processing.
 - **[Shortcut](Shortcut/)** — An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events.
   <br>In: [Note Types](NoteTypes/), [Tech Stack](TechStack/)
 - **[Siri](Siri/)** — Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS.
   <br>In: [Tech Stack](TechStack/)
 - **[SKOS](SKOS/)** — Simple Knowledge Organization System - a W3C standard data model, expressed in RDF, for representing controlled vocabularies such as thesauri, taxonomies, and classification schemes.
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
-- **[SleepEvent](SleepEvent/)** — Recording metrics from overnight sleep.
+- **[Sleep Event](SleepEvent/)** — Recording metrics from overnight sleep.
 - **[Snack](Snack/)** — A small meal eaten between main meals.
   <br>In: [Meal Domain](MealDomain/)
 - **[Source](Source/)** — A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system.
@@ -640,7 +640,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Taxonomy](Taxonomy/)** — A hierarchical classification scheme that organizes concepts into broader/narrower relationships.
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
-- **[Tech Stack](TechStack/)** _(collection, 10 members)_
+- **[Tech Stack](TechStack/)** _(collection, 10 members)_ — The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts.
 - **[Template](TemplateCopy/)** — A template determines the structure, layout, and configuration for various types of notes in the PKM system.
 - **[Templater](Templater/)** — Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with JavaScript code.
 - **[Term](Term/)** — A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary.
@@ -652,10 +652,10 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — All the related concepts about Time.
 - **[Tool](Tool/)** — A software capability used within the PKM system.
   <br>In: [Tech Stack](TechStack/)
-- **[ToolEvent](ToolEvent/)** — Something that happened during  processing with a tool.
+- **[Tool Event](ToolEvent/)** — Something that happened during processing with a tool.
 - **[Topic](Topic/)** — A subject or theme that content can be about.
   <br>In: [Knowledge Collection](KnowledgeCollection/)
-- **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic..
+- **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic.
 - **[Topic Index](TopicIndex/)** — The index note that links all artifacts for a topic.
 - **[Topic Journal](TopicJournal/)** — Free-form reflective writing about a topic.
 - **[Topic Log](TopicLog/)** — A chronological record of what actually happened related to a topic.
@@ -663,7 +663,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Topic Review](TopicReview/)** — A structured retrospective evaluating a topic.
 ### U
 
-- **[UserEvent](UserEvent/)** — Something that happened and raised by a user.
+- **[User Event](UserEvent/)** — Something that happened and raised by a user.
 ### V
 
 - **[Vault](Vault/)** — A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc.
@@ -697,7 +697,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Week Collection](WeekCollection/)
 - **[Week Review](WeekReview/)** — A structured retrospective evaluating a compled week
   <br>In: [Week Collection](WeekCollection/)
-- **[WeightEvent](WeightEvent/)** — A record of current weight.
+- **[Weight Event](WeightEvent/)** — A record of current weight.
 - **[Widget](Widget/)** — A home- or lock-screen glanceable view.
 - **[Workspaces](Workspaces/)** — A core plugin that enables you to create, save, and load workspace layouts.
 ### Y

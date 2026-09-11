@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:AppEvent a skos:Concept ;
-    rdfs:label "AppEvent"@en ;
+    rdfs:label "App Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
-    skos:definition "Something that happened during app  processing."@en ;
+    skos:definition "Something that happened during app processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "AppEvent"@en ;
+    skos:prefLabel "App Event"@en ;
     skos:scopeNote "Events originated within a specific application (PKMMeals, PKMStudio), distinct from DeviceEvent (OS/hardware) and ServiceEvent (backend)."@en .
 

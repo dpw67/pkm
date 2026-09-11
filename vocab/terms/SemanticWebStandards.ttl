@@ -1,9 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:SemanticWebStandards a skos:Collection ;
     rdfs:label "Semantic Web Standards"@en ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ISOStandard,
         pkmv:KnowledgeGraph,
@@ -16,5 +19,6 @@ pkmv:SemanticWebStandards a skos:Collection ;
         pkmv:Taxonomy,
         pkmv:Term,
         pkmv:W3CStandard ;
+    skos:note "Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph."@en ;
     skos:prefLabel "Semantic Web Standards"@en .
 

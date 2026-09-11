@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:ServiceEvent a skos:Concept ;
-    rdfs:label "ServiceEvent"@en ;
+    rdfs:label "Service Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:ToolEvent ;
     skos:broader pkmv:ToolEvent ;
-    skos:definition "Something that happened during service   processing."@en ;
+    skos:definition "Something that happened during service processing."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "ServiceEvent"@en ;
+    skos:prefLabel "Service Event"@en ;
     skos:scopeNote "Events originated by a backend service (e.g. pkm-neo4j-service), distinct from AppEvent (client) and DeviceEvent (device/OS)."@en .
 

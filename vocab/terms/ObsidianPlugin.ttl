@@ -10,9 +10,9 @@ pkmv:ObsidianPlugin a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
-    skos:definition "A core or community plugin that extends available  functions using JavaScript and the Obsidian API."@en ;
+    skos:definition "A core or community plugin that extends available functions using JavaScript and the Obsidian API."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AdvancedURI,
         pkmv:Bases,
@@ -28,5 +28,5 @@ pkmv:ObsidianPlugin a skos:Concept ;
         pkmv:Templater,
         pkmv:Workspaces ;
     skos:prefLabel "Obsidian Plugin"@en ;
-    skos:scopeNote "- Provides many additional useful features for the Obsidian app, such as Templater for templates, Periodic Notes for calendar notes, and many more. "@en .
+    skos:scopeNote "- Provides many additional useful features for the Obsidian app, such as Templater for templates, Periodic Notes for calendar notes, and many more."@en .
 

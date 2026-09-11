@@ -23,6 +23,6 @@ pkmv:PKMSwift a skos:Concept ;
         pkmv:PKMSwiftServices,
         pkmv:Swift ;
     skos:prefLabel "PKM Swift"@en ;
-    skos:scopeNote "Includes SwiftUI apps, SwiftData database, and Swift services, scripts, commands, and agents. "@en ;
+    skos:scopeNote "Includes SwiftUI apps, SwiftData database, and Swift services, scripts, commands, and agents."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 

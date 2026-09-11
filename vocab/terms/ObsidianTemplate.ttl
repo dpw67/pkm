@@ -11,11 +11,11 @@ pkmv:ObsidianTemplate a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Tool ;
     skos:broader pkmv:ObsidianNotes,
         pkmv:Tool ;
-    skos:definition "An Obsidian template using the Templater plugin with  JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system."@en ;
+    skos:definition "An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Obsidian Template"@en ;
     skos:scopeNote """- Includes templates created with the Obsidian Templater plugin, with optional inline Templater expressions (`<% ... %>`) and JavaScript code.

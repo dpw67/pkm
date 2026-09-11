@@ -8,13 +8,103 @@ Version levels are explained under [Versioning](#versioning).
 
 ## [Unreleased]
 
+Nothing yet. Work starts on a branch named for the version it targets.
+
+## [0.1.5] — 2026-09-11
+
+### Added
+
+- A description for the last three collections that had none. `NoteTypes`,
+  `SemanticWebStandards` and `TechStack` were the only 3 of 18 collections
+  carrying no `skos:note`, so their pages opened straight onto a member list
+  and their link cards fell back to the site description. They are also the
+  only three that list *types* rather than everything about one subject, which
+  is why the phrasing the other collections use — "All the related notes for a
+  single calendar Day." — does not fit them, and why they stayed undescribed
+  this long. Each now says plainly what its list holds. Membership is
+  unchanged.
+- Two `skos:editorialNote`s recording open questions where they belong, on the
+  concept rather than in a tracker. `pkmv:DayClusterCore` carries the argument
+  for and against Analysis being a Core note rather than a Support one, and
+  `pkmv:Map` carries the case for adding a Home Note as its parent — a map of
+  the maps — in place of the current `pkmv:ObsidianNotes`.
+
+### Changed
+
+- Eighteen preferred labels gained the space they were missing: `AppEvent` now
+  reads "App Event", and likewise for Activity, Agent, Alert, Device,
+  Diabetes, Glucose, Health, Insulin, Meal, Meditation, Note, Script, Service,
+  Sleep, Tool, User and Weight. "EKG Event" and "Blood Pressure Event" were
+  already spaced, which is what made the rest look inconsistent. A preferred
+  label does not need to match the technology artifact it names — the URI
+  already does that, and the URI is what the Swift app and the Python services
+  key on. `pkmv:AppEvent` and every other URI are unchanged, so this is a
+  patch: [Versioning](#versioning) counts a corrected preferred label as
+  editorial. `FastAPI` and `QuickAdd` keep their spelling; those are product
+  names, not CamelCased phrases.
+- Three definitions reworded for precision. A `Map` is now "A note used to
+  think, plan, organize, and/or navigate a group of related notes" —
+  navigation was the use it was actually put to and the word was missing. A
+  `Day Meeting` is "An event with attendees, agenda, topics, decisions, and
+  actions", where it read "with other people with agenda". An `Idea` is a
+  distillation from "a Spark, Concept, or Interest" rather than from all three
+  at once.
+
 ### Fixed
 
+- `pkmv:DayClusterCore`'s definition disagreed with the hierarchy. It named
+  "Plan, Log, Journal, and Review" as the core set while `pkmv:DayAnalysis` has
+  been one of its six narrower concepts all along. The definition now names
+  Analysis too, so a reader and a query agree about what the core set contains.
+  Nothing was reparented.
+- Four spelling errors in published prose: "opporuntities" and "explicityl" on
+  `pkmv:Idea`, "collectio" on `pkmv:Map`, and "Web Clipped" for the Obsidian
+  Web Clipper on `pkmv:Clipping`.
+- Four definitions ended in a doubled period — `pkmv:Base`,
+  `pkmv:EffortCluster`, `pkmv:TopicCluster` and `pkmv:ClaudeDesktop`.
+- The 11 invisible double spaces are now fixed in the export itself, not only
+  on the way out. The build has collapsed them since they were found (below),
+  but the export is the citable artifact, so the RDF said `with  JavaScript`
+  while every page read correctly. `pkmv:TimeCluster` had two problems in one
+  scope note — a double space, and a missing one after the comma in
+  `DecadeCluster,LifeCluster`; both are gone.
+- A duplicate change note on `pkmv:DayMealPlan`, hand-typed to describe a label
+  change the editor had already recorded on the same date. Seven change notes,
+  six distinct changes.
 - Canonical URLs on every published page. `url` carried the `/pkm` path and
   GitHub Pages adds `baseurl: /pkm` on top of it, so each page advertised
   itself as `w3id.org/pkm/pkm/...` — a 404 — in its `canonical` tag, its
   `og:url`, and the "PKM" link in the site header. Term-to-term navigation was
   never affected; those links are relative. Predates 0.1.4.
+- Change notes no longer carry the editor's internals into their prose. Some
+  quoted a label with its language tag still attached — `“Day Meal Plan@en”` —
+  and some named the same person twice, as `(proposed by X) (by X)`. Both are
+  artifacts of the SKOS Editor's generated notes. It has since fixed the
+  generator and repaired most of the stored history, and the build normalises
+  whatever is left, so the published graph is clean either way.
+- `owl:versionIRI` moved out of the term namespace. It was minted under
+  `https://w3id.org/pkm/vocab/`, the namespace `vann:preferredNamespaceUri`
+  declares to hold terms, so it serialised as `pkmv:0.1.4` and read like a
+  concept that does not exist. It now sits beside the scheme, at
+  `https://w3id.org/pkm/{version}/vocab`.
+- Every term page described itself with the same sentence. None carried its own
+  `description`, so jekyll-seo-tag fell back to the site's, and a link card for
+  any of the 241 terms read "Persistent URI namespace at ..." rather than what
+  the term means. Each page now takes its `og:description` from the term's own
+  `skos:definition`. The three collections that had no definition fell back
+  too, which is the gap the notes above close.
+- The page footer no longer invites a web edit. The Primer theme offers
+  "Improve this page", but term pages are rewritten in place on every build and
+  are maintained in the SKOS Editor export, so the change would have been
+  discarded — and the link pointed at a `gh-pages` branch the site does not
+  build from. The footer now points at Issues and Discussions.
+- Invisible whitespace no longer reaches the published graph. 31 definitions,
+  scope notes and change notes carried whitespace no reader could see: 11 held
+  a run of two or more spaces mid-sentence, the rest only padding at the end of
+  a line or at the edges of the literal. HTML collapses all of it, so every
+  page read correctly while the RDF underneath said `with  JavaScript`. The
+  build now collapses horizontal whitespace in prose and trims the edges,
+  leaving newlines alone so a bulleted scope note stays a list.
 
 ## [0.1.4] — 2026-09-09
 
@@ -118,7 +208,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.5...HEAD
+[0.1.5]: https://github.com/dpw67/pkm/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/dpw67/pkm/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/dpw67/pkm/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/dpw67/pkm/compare/v0.1.1...v0.1.2

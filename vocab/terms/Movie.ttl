@@ -17,5 +17,5 @@ pkmv:Movie a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Movie"@en ;
     skos:relatedMatch schema:Movie ;
-    skos:scopeNote "- Includes properties about the movie and its properties. "@en .
+    skos:scopeNote "- Includes properties about the movie and its properties."@en .
 

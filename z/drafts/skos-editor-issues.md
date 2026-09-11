@@ -1,17 +1,162 @@
 # SKOS Editor — draft issues
 
-Five drafts against `jesstalisman-ia/intentional-arrangement-skos`, ready to file.
-Evidence is from `../pkm-vocab.export-0.1.3.ttl` (223 concepts, 18 collections,
-318 ISO 25964 links).
+Drafts against [`jesstalisman-ia/intentional-arrangement-skos`](https://github.com/jesstalisman-ia/intentional-arrangement-skos).
 
-**Before filing:** confirm the editor version that produced the export. The change
-notes run to 2026-08-29, so it is almost certainly 0.16.7 with the new *Agents &
-documents namespace* field left blank — but a cached older build would look the same.
-Replace `<VERSION>` below.
+**Status.** The six drafts that used to head this file are all filed and closed —
+#58 through #63. They are kept below as an archive, because their shape is the one
+Jessica accepted and it is worth matching. Do not re-file them.
+
+A and B are filed and **open** — #77 and #78. They stay above the archive until
+they close, because follow-up may be needed. Do not re-file them either; the
+text below is what was submitted, plus a re-measurement paragraph each.
+
+Evidence is from `../../vocab/src/pkm-vocab.export.ttl` (223 concepts, 18
+collections), re-measured against a fresh export from the editor at `48b1ae35`:
+the six upstream commits changed nothing but 674 language tags, so both defects
+came back byte-identical and the migration ask in A is correct.
+
+**Cite the commit SHA, not a version string.** The `v0.17.3` at `app/index.html:933`
+belongs to the Crosswalk panel, not the app.
+
+---
+
+## A. `[Bug]: The label comparison key is written into change-note prose, so notes read “Day Meal Plan@en”`
+
+**Filed as [#77 — the label comparison key in change-note prose](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77). Open.**
+
+**Label:** `bug` · **Area:** Concept editor / change history
+
+### What happened?
+
+Editing a preferred label writes a change note that quotes the label with its
+language tag glued on:
+
+```
+2026-09-07 — Preferred label changed from “Day.Meal Plan@en” to “Day Meal Plan@en” (by Doug Warren)
+```
+
+The `@en` is not part of the label. It comes from the key used to diff the two
+label sets — `app/index.html:1926`:
+
+```js
+function labelsSet(arr){ return (arr||[]).filter(l=>l.val).map(l=> l.val+(l.lang?"@"+l.lang:"")); }
+```
+
+That key is correct *as a key*: it keeps `"Recipe"@en` and `"Recept"@nl` distinct
+across a set difference, which is exactly what you want. The problem is that the
+same string is then interpolated straight into human prose, at `:1934` and `:1935`:
+
+```js
+if(f==="pref"&&add.length===1&&rem.length===1){ ch.push(`Preferred label changed from “${rem[0]}” to “${add[0]}”`); return; }
+add.forEach(x=>ch.push(`${name} “${x}” added`)); rem.forEach(x=>ch.push(`${name} “${x}” removed`));
+```
+
+So it affects preferred-label changes and alternative/hidden label add and remove.
+`noteDiff` also calls `labelsSet`, but it never interpolates the result — it emits
+only "Definition updated" / "Scope note updated" — which is why definition and
+scope-note edits produce clean notes.
+
+**Reproduction:** `pkmv:DayMealPlan` — 7 change notes, 3 of them defective.
+
+**Scale:** 151 literals across a full export of 223 concepts carry a language tag
+inside their text.
+
+### Why it matters
+
+`skos:changeNote` is prose meant for a human reader. These notes are published:
+they render on each term's HTML page and ship in the Turtle. A reader who does not
+know the editor's internals sees a label that appears to be named `Day Meal Plan@en`.
+
+### Suggested fix
+
+Two parts, and the second matters as much as the first.
+
+1. **Separate the display form from the comparison key.** Keep `labelsSet` as-is for
+   diffing, and carry the plain `l.val` (optionally " (nl)" where the language is
+   worth stating) into the message. Something like a parallel `labelsDisplay(arr)`,
+   or having `labelsSet` return objects and letting the caller choose.
+
+2. **Migrate stored history.** This is the part a display-only fix would miss.
+   `app/core.js:277` shows only the `(by X)` suffix is generated at export time —
+   the note body comes from `h.changes`, which was written into the workspace when
+   the edit happened:
+
+   ```js
+   const who = h.author ? " (by " + h.author + ")" : "";
+   add(s, iri(NS.skos+"changeNote"), lit((when? when+" — ":"") + changes + who, defLang));
+   ```
+
+   So every existing workspace keeps its defective notes forever unless they are
+   rewritten in place. A one-time pass over `history[].changes` stripping the
+   `@lang` from inside the quotes would clear them.
+
+### Related
+
+Adjacent to **#71** (language dropdown on concept change notes), not a duplicate.
+#71 was about the language tag *of* the note literal; this is a language tag
+*inside* the note text. Different layer, different fix.
+
+---
+
+## B. `[Bug]: Approving your own proposal names me twice — “(proposed by X) (by X)”`
+
+**Filed as [#78 — approving your own proposal names you twice](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78). Open.**
+
+**Label:** `bug` · **Area:** Proposals / change history
+
+### What happened?
+
+Creating a concept through the proposal workflow and then approving it yields:
+
+```
+2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)
+```
+
+The same person is named through two independent channels that meet at export.
+Three lines, in order:
+
+```js
+$('#pSubmitter').value=getEditor();                                                                 // index.html:3868
+seedHistory(c, "Created from approved proposal"+(p.submitter?` (proposed by ${p.submitter})`:""));  // index.html:3942
+const who = h.author ? " (by " + h.author + ")" : "";                                               // core.js:277
+```
+
+1. The submitter field pre-fills with the current editor identity.
+2. Approval bakes `(proposed by …)` into the change *text*.
+3. The serializer appends `(by …)` from the entry's `author` field.
+
+When submitter and editor are the same person — the common case for a solo
+vocabulary, since the field defaults to exactly that — the name appears twice.
+
+**Scale:** 39 change notes in one export.
+
+### Why it matters
+
+Same as A: these are published prose. It also makes the attribution ambiguous —
+a reader cannot tell whether two people were involved or one person was recorded
+twice.
+
+### Suggested fix
+
+Carry the submitter as structured data rather than in prose: store it on the
+history entry (`{ ts, author, submitter, changes }`) and let the serializer decide
+how to render one name versus two. That also lets the export say something
+genuinely useful when they differ — "(proposed by A, approved by B)".
+
+As with A, existing workspaces need a migration pass; the doubled text is already
+stored in `h.changes`.
+
+---
+
+# Filed and closed
+
+Archived below. Kept for the format, which was accepted; do not re-file.
 
 ---
 
 ## 1. `[Bug]: Collections export as second-class citizens — rdfs:label and skos:note where concepts get skos:prefLabel and skos:definition`
+
+**Filed as [#58 — Collections export](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/58). Closed.**
 
 **Label:** `bug` · **Area:** Import / Export
 
@@ -93,6 +238,8 @@ Safari / Chrome on macOS 26. SKOS Editor `<VERSION>`.
 
 ## 2. `[Bug]: dcterms:creator is exported as a literal string even when the agent has a URI in the same file`
 
+**Filed as [#59 — Dublin Core literals in dcterms:creator](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/59). Closed.**
+
 **Label:** `bug` · **Area:** Import / Export
 
 ### What happened?
@@ -144,6 +291,8 @@ Safari / Chrome on macOS 26. SKOS Editor `<VERSION>`.
 ---
 
 ## 3. `[Bug]: A few ISO 25964 relations export without the skos:broader they entail`
+
+**Filed as [#60 — ISO 25964 links without skos:broader](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/60). Closed.**
 
 **Label:** `bug` · **Area:** Import / Export
 
@@ -203,6 +352,8 @@ Safari / Chrome on macOS 26. SKOS Editor `<VERSION>`.
 
 ## 4. `[Feature]: Export the validation report`
 
+**Filed as [#61 — Downloadable validation report](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/61). Closed.**
+
 **Label:** `enhancement` · **Area:** Validation (qSKOS)
 
 ### What are you trying to do?
@@ -242,6 +393,8 @@ export time.
 ---
 
 ## 5. `[Feature]: Warn when a mapping property points at an RDF property rather than a concept`
+
+**Filed as [#62 — Mapping property targets as RDF](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/62). Closed.**
 
 **Label:** `enhancement` · **Area:** Validation (qSKOS)
 
@@ -294,6 +447,8 @@ editor accepting a mapping target that isn't the kind of thing the property mean
 ---
 
 ## 6. `[Feature]: Separate the agents namespace from the documents namespace`
+
+**Filed as [#63 — Separate the agents namespace](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/63). Closed.**
 
 **Label:** `enhancement` · **Area:** Import/Export
 **Follow-up to:** #57 (closed, shipped in 0.16.7)

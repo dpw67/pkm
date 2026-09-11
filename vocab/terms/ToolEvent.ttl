@@ -7,23 +7,23 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:ToolEvent a skos:Concept ;
-    rdfs:label "ToolEvent"@en ;
+    rdfs:label "Tool Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     isothes:narrowerGeneric pkmv:AgentEvent,
         pkmv:AppEvent,
         pkmv:ScriptEvent,
         pkmv:ServiceEvent ;
     skos:broader pkmv:Event ;
-    skos:definition "Something that happened during  processing with a tool."@en ;
+    skos:definition "Something that happened during processing with a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:AgentEvent,
         pkmv:AppEvent,
         pkmv:ScriptEvent,
         pkmv:ServiceEvent ;
-    skos:prefLabel "ToolEvent"@en ;
+    skos:prefLabel "Tool Event"@en ;
     skos:scopeNote "Events representing the use of a tool (e.g. a CLI command such as pkm-day or pkm-health), distinct from ScriptEvent (an automation run) and AgentEvent (AI-originated)."@en .
 

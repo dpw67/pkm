@@ -10,14 +10,17 @@ pkmv:Map a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:altLabel "MOC"@en,
         "Map of Content"@en ;
     skos:broader pkmv:ObsidianNotes ;
-    skos:definition "A note used to think, plan, and organize a group of other notes."@en ;
+    skos:definition "A note used to think, plan, organize, and/or navigate a group of related notes."@en ;
+    skos:editorialNote """- Add a Home Note to the vocabulary as a broader (parent) concept for a Map. It's a special kind of Map (a Map of all the maps, like an Atlas of knowledge).
+- Maps should have an upward path toward the Home Note.
+- The Home Note should be an entry point to an Obsidian vault providing major organizational structure and navigation paths across all the concepts in the knowledge system. When that's added, it will be the parent for Map, rather than the current Obsidian Notes."""@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Map"@en ;
-    skos:scopeNote """- It might begin as an index or hub note for a collectio of other related notes.
+    skos:scopeNote """- It might begin as an index or hub note for a collection of other related notes.
 - This typically evolves into a more structured map by collecting links into related groups, adding headings to establish more organization, and additional commentary to provide more context and information.
 - Connected with other maps in a network to provide organization and navigation for the linked notes in a PKM system."""@en .
 

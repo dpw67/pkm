@@ -64,6 +64,29 @@ def _prose(text: str) -> str:
     return f"{{% raw %}}{text}{{% endraw %}}" if _LIQUID.search(text) else text
 
 
+#: The practical ceiling for a link-card renderer. Longer descriptions are cut
+#: at a word boundary rather than mid-word; the tail is not worth the ellipsis.
+_DESCRIPTION_MAX = 160
+
+
+def _description(text: str) -> str:
+    """A term's definition, flattened to one line for the front matter.
+
+    Every page inherited `site.description` from `_config.yml` because none
+    carried its own, so a link card for any of the 241 terms read "Persistent
+    URI namespace at ..." -- the same sentence, 241 times. jekyll-seo-tag uses
+    a page's own `description` when it has one, which is what this supplies.
+
+    Front matter is not run through Liquid, so `_prose` is not needed here; the
+    three definitions that mention `{{ ... }}` are safe unfenced.
+    """
+    flat = " ".join(text.split())
+    if len(flat) <= _DESCRIPTION_MAX:
+        return flat
+    head = flat[:_DESCRIPTION_MAX].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return f"{head}\u2026"
+
+
 def _first(vocab: Vocabulary, subject: URIRef, *props) -> str | None:
     for prop in props:
         value = vocab.graph.value(subject, prop)
@@ -124,6 +147,16 @@ def render_page(vocab: Vocabulary, uri: URIRef, *,
         "layout: default",
         f"title: {_q(label)}",
         f"permalink: /vocab/{local}/",
+    ]
+
+    # Mirrors the lead paragraph below: whichever of the two the page opens
+    # with is the sentence a reader hovering the link should see. A term with
+    # neither omits the key and falls back to `site.description`.
+    summary = definition or note
+    if summary:
+        out.append(f"description: {_q(_description(summary))}")
+
+    out += [
         "---",
         "",
         NOTICE,

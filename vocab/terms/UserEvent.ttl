@@ -7,15 +7,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:UserEvent a skos:Concept ;
-    rdfs:label "UserEvent"@en ;
+    rdfs:label "User Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Event ;
     skos:broader pkmv:Event ;
     skos:definition "Something that happened and raised by a user."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
-    skos:prefLabel "UserEvent"@en ;
+    skos:prefLabel "User Event"@en ;
     skos:scopeNote "Events directly originated by the human user, as distinct from AgentEvent, DeviceEvent, AppEvent, ToolEvent, and ServiceEvent."@en .
 

@@ -17,5 +17,5 @@ pkmv:Person a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Person"@en ;
     skos:relatedMatch schema:Person ;
-    skos:scopeNote "- Includes properties about the person. "@en .
+    skos:scopeNote "- Includes properties about the person."@en .
 

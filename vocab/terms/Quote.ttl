@@ -12,7 +12,7 @@ pkmv:Quote a skos:Concept ;
     dcterms:issued "2026-08-15"^^xsd:date ;
     dcterms:modified "2026-08-29"^^xsd:date ;
     skos:broader pkmv:Source ;
-    skos:definition "A quote by a specific source that you want to capture and reuse. "@en ;
+    skos:definition "A quote by a specific source that you want to capture and reuse."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quote"@en ;
     skos:scopeNote "Includes the specific quote as well as attribution source information."@en .

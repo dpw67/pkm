@@ -21,6 +21,6 @@ pkmv:PKMPython a skos:Concept ;
         pkmv:Python,
         pkmv:PythonTemplate ;
     skos:prefLabel "PKM Python"@en ;
-    skos:scopeNote "Includes Python API routes, services, scripts, commands, and agents. "@en ;
+    skos:scopeNote "Includes Python API routes, services, scripts, commands, and agents."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 

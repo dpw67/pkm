@@ -26,6 +26,5 @@ pkmv:AdvancedURI a skos:Concept ;
 - Call Obsidian and plugin commands.
 - Edit, read, and focus frontmatter properties
 - Navigate using file paths, file names, aliases, daily notes, or frontmatter UIDs
-- Create robust persistent IDs in properties that keep working when notes are renamed or moved.
-"""@en .
+- Create robust persistent IDs in properties that keep working when notes are renamed or moved."""@en .
 

@@ -8,6 +8,10 @@ Version levels are explained under [Versioning](#versioning).
 
 ## [Unreleased]
 
+Nothing yet. Work starts on a branch named for the version it targets.
+
+## [0.1.5] — 2026-09-11
+
 ### Added
 
 - A description for the last three collections that had none. `NoteTypes`,
@@ -204,7 +208,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.5...HEAD
+[0.1.5]: https://github.com/dpw67/pkm/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/dpw67/pkm/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/dpw67/pkm/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/dpw67/pkm/compare/v0.1.1...v0.1.2

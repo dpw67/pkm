@@ -28,6 +28,17 @@ Support automation for notes using REST API for apps or MCP server for AI agents
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “PeriodicNotesCopy” to “LocalRESTAPIWithMCP”; Preferred label changed from “Periodic Notes” to “Local REST API with MCP”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Periodic Notes” (by Doug Warren)
+- Added definition and scope notes for Local REST API with MCP.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/LocalRESTAPIWithMCP` (`pkmv:LocalRESTAPIWithMCP`)

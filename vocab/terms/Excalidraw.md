@@ -22,6 +22,17 @@ A sketching tool with rich capabilities for drawings with many extensions for sc
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “TemplaterCopy” to “Excalidraw”; Preferred label changed from “Templater” to “Excalidraw”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Templater” (by Doug Warren)
+- Added definition and scope notes for Excalidraw.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Excalidraw` (`pkmv:Excalidraw`)

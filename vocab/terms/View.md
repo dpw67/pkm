@@ -21,6 +21,19 @@ Helps presentation and navigation for a group of notes.
 
 - [Obsidian Notes](../ObsidianNotes/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “NoteCopy” to “View”; Preferred label changed from “Note” to “View”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Note” (by Doug Warren)
+- Added definition and scope notes for a View.
+- Changed scope note to be "group" of notes, since the informal use of "collection" might be confusing when Collection is subsequently defined as a concept term.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/View` (`pkmv:View`)

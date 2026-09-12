@@ -357,7 +357,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Claude Desktop](ClaudeDesktop/)** — Desktop app for Claude AI.
 - **[Clipping](Clipping/)** — A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO).
   <br>In: [Note Types](NoteTypes/)
-- **[Cluster](Cluster/)** — A group of related notes.
+- **[Cluster](Cluster/)** — Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind.
 - **[Concept](Concept/)** — A unit of thought in a knowledge organization system.
   <br>In: [Concept Collection](ConceptCollection/), [Knowledge Collection](KnowledgeCollection/), [Note Types](NoteTypes/)
 - **[Concept Collection](ConceptCollection/)** _(collection, 10 members)_ — All notes related to a Concept.
@@ -379,7 +379,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](DayCollection/)
 - **[Day Canvas](DayCanvas/)** — An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections.
   <br>In: [Day Collection](DayCollection/)
-- **[Day Cluster](DayCluster/)** — The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings.
+- **[Day Cluster](DayCluster/)** — Everything the system produces about a single day, partitioned into four unlike parts: core, support, health, and visual.
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster Core](DayClusterCore/)** — The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis.
   <br>In: [Day Collection](DayCollection/)

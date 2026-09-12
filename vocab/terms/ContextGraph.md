@@ -21,6 +21,17 @@ A structured network of entities (nodes) and their relationships (edges), typica
 
 - [Graph Database](../GraphDatabase/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “KnowledgeGraphCopy” to “ContextGraph”; Preferred label changed from “Knowledge Graph” to “Context Graph”; Definition updated; Scope note updated; Parent “Graph Database” added; Parent “Knowledge System” removed (by Doug Warren)
+- 2026-08-29 — Duplicated from “Knowledge Graph” (by Doug Warren)
+- Added definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ContextGraph` (`pkmv:ContextGraph`)

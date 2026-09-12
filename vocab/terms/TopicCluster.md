@@ -29,6 +29,19 @@ Parent context for all notes associated with a topic.
 - [Topic Plan](../TopicPlan/)
 - [Topic Review](../TopicReview/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “EffortClusterCopy” to “TopicCluster”; Preferred label changed from “Effort Cluster” to “Topic Cluster”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Effort Cluster” (by Doug Warren)
+- 2026-08-26 — Term created (by Doug Warren)
+- Added definition and scope notes for a TopicCluster.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicCluster` (`pkmv:TopicCluster`)

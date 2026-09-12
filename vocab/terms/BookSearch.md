@@ -21,6 +21,17 @@ Simplifies creation of Book notes by downloading relevant properties and cover i
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created under “Obsidian Plugin” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “BookSearch”; Preferred label “Book Search” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Book Search.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/BookSearch` (`pkmv:BookSearch`)

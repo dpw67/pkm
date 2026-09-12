@@ -24,6 +24,19 @@ A major space within an Obsidian vault containing notes about knowledge ("what y
 
 - [Vault](../Vault/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Term created under “Knowledge” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “KnowledgeFolder”; Preferred label “Knowledge Folder” added; Alternative label “Atlas Folder” added; Definition added; Scope note added; Parent “Vault” added (by Doug Warren)
+- 2026-08-29 — Renamed from “KnowledgeFolder” to “AtlasFolder”; Preferred label changed from “Knowledge Folder” to “Atlas Folder”; Alternative label “Knowledge Folder” added; Alternative label “Atlas Folder” removed (by Doug Warren)
+- 2026-08-29 — Parent “Knowledge” removed (by Doug Warren)
+- Added definition and scope notes for Knowledge Folder.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/AtlasFolder` (`pkmv:AtlasFolder`)

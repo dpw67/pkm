@@ -21,6 +21,17 @@ Recording information from meditation session.
 
 - [Health Event](../HealthEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “MeditationEvent” to “Meditation Event” (by Doug Warren)
+- 2026-08-28 — Renamed from “SleepEventCopy” to “MeditationEvent”; Preferred label changed from “SleepEvent” to “MeditationEvent”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “SleepEvent” (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/MeditationEvent` (`pkmv:MeditationEvent`)

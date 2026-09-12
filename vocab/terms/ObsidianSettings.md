@@ -21,6 +21,18 @@ A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for
 
 - [Vault](../Vault/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Term created under “Vault” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “ObsidianSettings”; Preferred label “Obsidian Settings” added (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Obsidian Settings.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ObsidianSettings` (`pkmv:ObsidianSettings`)

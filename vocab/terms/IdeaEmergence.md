@@ -21,6 +21,18 @@ The process of how ideas you encounter go from "nothingness to somethingness", a
 
 - [Ideaverse](../Ideaverse/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-31 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “ARCIdeationCopy” to “IdeaEmergence”; Preferred label changed from “ARC Ideation” to “Idea Emergence”; Alternative label “ARC Framework” removed; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “ARC Ideation” (by Doug Warren)
+- Added definition and scope notes for Idea Emergence.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/IdeaEmergence` (`pkmv:IdeaEmergence`)

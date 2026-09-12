@@ -27,6 +27,21 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-09-10 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Parent “Source” added; Parent “Add Folder” removed (by Doug Warren)
+- 2026-08-28 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-28 — Parent “Add” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Clipping.
+- Corrected typo by changing "Clipping" to "Clipper".
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Clipping` (`pkmv:Clipping`)

@@ -28,6 +28,18 @@ _Groupings; they carry no hierarchical meaning._
 - [Concept Collection](../ConceptCollection/)
 - [Semantic Web Standards](../SemanticWebStandards/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Parent “W3C Standard” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Standard” added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/RDF` (`pkmv:RDF`)

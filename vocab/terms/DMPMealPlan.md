@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Meal Domain](../MealDomain/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-27 — Preferred label changed from “DMPMealPlan” to “DMP Meal Plan” (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Corrected spelling from "Wordpress" to "WordPress" in scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DMPMealPlan` (`pkmv:DMPMealPlan`)

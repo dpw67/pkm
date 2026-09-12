@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Week Collection](../WeekCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Related term “Week” removed; Related term “Week Plan” removed; Related term “Week Review” removed (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)
+- Add missing definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/WeekAnalysis` (`pkmv:WeekAnalysis`)

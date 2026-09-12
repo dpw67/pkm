@@ -27,6 +27,17 @@ Includes Python API routes, services, scripts, commands, and agents.
 - [Python](../Python/)
 - [Python Template](../PythonTemplate/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “PKMSwiftCopy” to “PKMPython”; Preferred label changed from “PKM Swift” to “PKM Python”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “PKM Swift” (by Doug Warren)
+- Added definition and scope notes for PKM Python.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMPython` (`pkmv:PKMPython`)

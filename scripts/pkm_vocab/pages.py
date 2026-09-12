@@ -121,6 +121,8 @@ def render_page(vocab: Vocabulary, uri: URIRef, *,
     definition = _first(vocab, uri, SKOS.definition)
     scope = _first(vocab, uri, SKOS.scopeNote)
     note = _first(vocab, uri, SKOS.note, RDFS.comment)
+    editorial = _all(vocab, uri, SKOS.editorialNote)
+    changes = vocab.change_notes(uri)
     created = _first(vocab, uri, DCTERMS.created)
     modified = _first(vocab, uri, DCTERMS.modified)
     alts = _all(vocab, uri, SKOS.altLabel)
@@ -191,6 +193,18 @@ def render_page(vocab: Vocabulary, uri: URIRef, *,
     if note and definition:
         out += ["## Note", "", _prose(note), ""]
 
+    # Open questions, written on the concept so that they travel with it. They
+    # reached the RDF from the first release and never reached this page, which
+    # made three deliberate invitations to comment invisible to every reader
+    # who arrived with a browser.
+    if editorial:
+        heading = "Editorial note" if len(editorial) == 1 else "Editorial notes"
+        out += [f"## {heading}", "",
+                "_An open question about this term, not part of its definition._",
+                ""]
+        for text in editorial:
+            out += [_prose(text), ""]
+
     if uri in parents:
         out += ["## Broader", ""]
         for parent in parents[uri]:
@@ -224,6 +238,28 @@ def render_page(vocab: Vocabulary, uri: URIRef, *,
         out += [f"- See also <{u}>" for u in see_also]
         out += [f"- Related match <{u}>" for u in matches]
         out.append("")
+
+    # Every edit the SKOS Editor records, and every prose correction the 0.1.5
+    # and 0.1.6 sweeps made, left a note here saying what changed. None of it
+    # was readable anywhere but the Turtle. Collapsed because the
+    # median term carries four and pkmv:Recipe carries ten: open, the history
+    # would be longer than the term it belongs to.
+    #
+    # `markdown="1"` is load-bearing. Jekyll's default kramdown does not look
+    # for Markdown inside a block-level HTML element without it, and would ship
+    # the bullets as one run-together paragraph -- from a source file that reads
+    # correctly either way.
+    if changes:
+        plural = "" if len(changes) == 1 else "s"
+        out += [
+            "## Change history",
+            "",
+            '<details markdown="1">',
+            f"<summary>{len(changes)} change note{plural}</summary>",
+            "",                       # kramdown needs this to start a list
+        ]
+        out += [f"- {_prose(n)}" for n in changes]
+        out += ["", "</details>", ""]
 
     # The point of the whole exercise: this page and the Turtle are the same
     # URI, and a reader who wants the data should be able to see how to ask for

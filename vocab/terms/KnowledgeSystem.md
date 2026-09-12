@@ -33,6 +33,21 @@ A system of organization, navigation, and access for knowledge.
 - [Taxonomy](../Taxonomy/)
 - [Term](../Term/)
 
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-08-30 — Parent “Knowledge System Architecture” added; Related term “Knowledge System Architecture” removed (by Doug Warren)
+- 2026-08-29 — Term created under “Knowledge” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “KnowledgeSystem”; Preferred label “Knowledge System” added; Definition added; Scope note added (by Doug Warren)
+- 2026-08-29 — Related term “Knowledge System Architecture” added (by Doug Warren)
+- 2026-08-29 — Parent “Knowledge” removed (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for Knowledge System.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/KnowledgeSystem` (`pkmv:KnowledgeSystem`)

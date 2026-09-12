@@ -22,6 +22,18 @@ An area that includes all aspects of your health.
 
 - [Area](../Area/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Term created under “Area” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “Health”; Preferred label “Health” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope note for Health.
+- Fixed misspelling in "definition" for previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Health` (`pkmv:Health`)

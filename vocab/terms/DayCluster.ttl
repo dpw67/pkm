@@ -13,7 +13,7 @@ pkmv:DayCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:DayClusterCore,
@@ -22,7 +22,7 @@ pkmv:DayCluster a skos:Concept ;
         pkmv:DayClusterVisual ;
     skos:broader pkmv:CalendarFolder,
         pkmv:TimeCluster ;
-    skos:definition "The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings."@en ;
+    skos:definition "Everything the system produces about a single day, partitioned into four unlike parts: core, support, health, and visual."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:DayClusterCore,
         pkmv:DayClusterHealth,

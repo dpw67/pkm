@@ -31,6 +31,19 @@ Broader grouping for diabetes-related HealthEvent subtypes (GlucoseEvent, Insuli
 - [Meal Event](../MealEvent/)
 - [Note Event](../NoteEvent/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “DiabetesEvent” to “Diabetes Event” (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “HealthEventCopy5” to “DiabetesEvent”; Preferred label changed from “HealthEvent” to “DiabetesEvent”; Definition updated; Parent “HealthEvent” added; Parent “Event” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “HealthEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DiabetesEvent` (`pkmv:DiabetesEvent`)

@@ -27,6 +27,17 @@ Graph databases that support a PKM system.
 - [Neo4j](../Neo4j/)
 - [Neo4j Desktop](../Neo4jDesktop/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Term created (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “GraphDatabase”; Preferred label “Graph Database” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Graph Database.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/GraphDatabase` (`pkmv:GraphDatabase`)

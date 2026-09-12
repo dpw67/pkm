@@ -21,6 +21,17 @@ Health data from Apple Health via the HealthKit framework.
 
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “DexcomDataCopy” to “AppleHealth”; Preferred label changed from “Dexcom Data” to “Apple Health”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Dexcom Data” (by Doug Warren)
+- Added definition and scope notes for Apple Health.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/AppleHealth` (`pkmv:AppleHealth`)

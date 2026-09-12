@@ -21,6 +21,21 @@ Events originated by a Script (Python/Swift automation run), distinct from ToolE
 
 - [Tool Event](../ToolEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “ScriptEvent” to “Script Event” (by Doug Warren)
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “AppEventCopy” to “ScriptEvent”; Preferred label changed from “AppEvent” to “ScriptEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “AppEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ScriptEvent` (`pkmv:ScriptEvent`)

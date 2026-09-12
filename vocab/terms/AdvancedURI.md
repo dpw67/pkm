@@ -32,6 +32,19 @@ Control Obsidian features using special URIs to automate workflows.
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “LocalRESTAPIWithMCPCopy” to “AdvancedURI”; Preferred label changed from “Local REST API with MCP” to “Advanced URI”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Local REST API with MCP” (by Doug Warren)
+- Added definition and scope notes for Advanced URI.
+- Removed duplicated "c" from "workspaces" in scope note, and corrected mistyped "l" (lower L) to be "i" (lower I) for "headings".
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/AdvancedURI` (`pkmv:AdvancedURI`)

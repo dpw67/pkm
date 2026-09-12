@@ -27,6 +27,19 @@ _Associated, not hierarchical._
 
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Renamed from “PKMPythonScriptsCopy” to “PKMPythonScripts2” (by Doug Warren)
+- 2026-08-29 — Renamed from “PKMPythonScripts2” to “PKMPythonCommands”; Preferred label changed from “PKM Python Scripts” to “PKM Python Commands” (by Doug Warren)
+- 2026-08-29 — Duplicated from “PKM Python Scripts” (by Doug Warren)
+- 2026-08-29 — Definition updated; Scope note updated (by Doug Warren)
+- Added definition and scope notes for PKM Python Commands.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMPythonCommands` (`pkmv:PKMPythonCommands`)

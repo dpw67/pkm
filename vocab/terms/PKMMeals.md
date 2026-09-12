@@ -30,6 +30,19 @@ A SwiftUI app that manages events, recipes, and meals in a PKM system.
 - [Meal](../Meal/)
 - [Recipe](../Recipe/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept; Parent “PKM Swift” added (by Doug Warren)
+- 2026-08-29 — Term created (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “PKMMeals”; Preferred label “PKM Meals” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for PKM Meals.
+- Removed as Top Concept and moved under PKM Swift.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMMeals` (`pkmv:PKMMeals`)

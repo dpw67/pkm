@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Renamed from “DayView” to “DayMindmap”; Preferred label changed from “Day View” to “Day Mindmap”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-28 — Renamed from “DayPlanCopy” to “DayView”; Preferred label changed from “Day Plan” to “Day View”; Definition updated; Scope note updated; Parent “Day Cluster Visual” added; Parent “Day Cluster Core” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “Day Plan” (by Doug Warren)
+- Added definition and scope notes for DayMindmap.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayMindmap` (`pkmv:DayMindmap`)

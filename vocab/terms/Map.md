@@ -21,9 +21,32 @@ A note used to think, plan, organize, and/or navigate a group of related notes.
 - This typically evolves into a more structured map by collecting links into related groups, adding headings to establish more organization, and additional commentary to provide more context and information.
 - Connected with other maps in a network to provide organization and navigation for the linked notes in a PKM system.
 
+## Editorial note
+
+_An open question about this term, not part of its definition._
+
+- Add a Home Note to the vocabulary as a broader (parent) concept for a Map. It's a special kind of Map (a Map of all the maps, like an Atlas of knowledge).
+- Maps should have an upward path toward the Home Note.
+- The Home Note should be an entry point to an Obsidian vault providing major organizational structure and navigation paths across all the concepts in the knowledge system. When that's added, it will be the parent for Map, rather than the current Obsidian Notes.
+
 ## Broader
 
 - [Obsidian Notes](../ObsidianNotes/)
+
+## Change history
+
+<details markdown="1">
+<summary>7 change notes</summary>
+
+- 2026-09-10 — Scope note updated (by Doug Warren)
+- 2026-09-10 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “NoteCopy” to “Map”; Preferred label changed from “Note” to “Map”; Alternative label “Map of Content” added; Alternative label “MOC” added; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Note” (by Doug Warren)
+- Added definition and scope notes for a Map.
+- Correct spelling typo in scope note — changed "collectio" to "collection".
+- Modified definition to add "and/or navigate" and changed a group of "other" to "related".
+
+</details>
 
 ## This term in RDF
 

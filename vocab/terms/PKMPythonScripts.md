@@ -31,6 +31,17 @@ _Associated, not hierarchical._
 
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “PKMPythonServicesCopy” to “PKMPythonScripts”; Preferred label changed from “PKM Python Services” to “PKM Python Scripts”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “PKM Python Services” (by Doug Warren)
+- Added definition and scope notes for PKM Python Scripts.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMPythonScripts` (`pkmv:PKMPythonScripts`)

@@ -3473,7 +3473,7 @@ pkmv:Cluster a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     isothes:broaderPartitive pkmv:Knowledge ;
     isothes:narrowerGeneric pkmv:TimeCluster ;
     skos:broader pkmv:Knowledge ;
@@ -3481,14 +3481,17 @@ pkmv:Cluster a skos:Concept ;
         "2026-08-27 — Parent “Time Cluster” added (by Doug Warren)"@en,
         "2026-08-27 — Parent “Time Cluster” removed (by Doug Warren)"@en,
         "2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)"@en,
-        "2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)"@en ;
-    skos:definition "A group of related notes."@en ;
+        "2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)"@en,
+        "2026-09-12 — Definition updated (by Doug Warren)"@en,
+        "2026-09-12 — Scope note updated (by Doug Warren)"@en,
+        "Clarified definition to specify that members are part of a whole, and not instances of a kind; this is more accurate than just a \"group of related notes\"."@en ;
+    skos:definition "Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:EffortCluster,
         pkmv:TimeCluster,
         pkmv:TopicCluster ;
     skos:prefLabel "Cluster"@en ;
-    skos:scopeNote "Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
+    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
 
 pkmv:Concept a skos:Concept ;
     rdfs:label "Concept"@en ;
@@ -4072,7 +4075,7 @@ pkmv:DayCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:DayClusterCore,
@@ -4085,8 +4088,10 @@ pkmv:DayCluster a skos:Concept ;
         "2026-08-27 — Unmarked as a top concept; Parent “Time Cluster” added (by Doug Warren)"@en,
         "2026-08-28 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)"@en,
-        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "The set of structured notes and artifacts generated for a single day within the PKM system, organized into core, support, health, and visual groupings."@en ;
+        "2026-09-12 — Definition updated (by Doug Warren)"@en,
+        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en,
+        "Adjusted definition to provide more clarity since it includes several distinct unlike groups; it's not just \"The set of structured notes and artifacts generated for a single day\"."@en ;
+    skos:definition "Everything the system produces about a single day, partitioned into four unlike parts: core, support, health, and visual."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:DayClusterCore,
         pkmv:DayClusterHealth,
@@ -4671,14 +4676,14 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-11"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     dcterms:publisher pkma:Doug-Warren ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI <https://w3id.org/pkm/0.1.6/vocab> ;
-    owl:versionInfo "0.1.6" ;
+    owl:versionIRI <https://w3id.org/pkm/0.1.7/vocab> ;
+    owl:versionInfo "0.1.7" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,

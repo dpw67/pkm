@@ -23,6 +23,20 @@ Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Revi
 
 - [PKM Python Services](../PKMPythonServices/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Term created under “PKM Python Services” (by Doug Warren)
+- 2026-08-29 — Renamed from “PKMNeo4jService” to “PKMNeo4jServiceProject”; Preferred label changed from “PKM Neo4j Service” to “PKM Neo4j Service Project”; Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “PKMNeo4jService”; Preferred label “PKM Neo4j Service” added; Alternative label “pkm-neo4j-service” added; Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for PKM Neo4j Service.
+- Fixed type from "Grqph" to "Graph" in scope note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/PKMNeo4jServiceProject` (`pkmv:PKMNeo4jServiceProject`)

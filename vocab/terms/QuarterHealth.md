@@ -21,6 +21,17 @@ Parent for quarter-centric health artifacts including diabetes tracking.
 
 - [Quarter Cluster](../QuarterCluster/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-26 — Renamed from “Month-HealthCopy” to “QuarterHealth”; Preferred label changed from “MonthHealth” to “Quarter Health”; Definition updated; Scope note updated; Parent “Quarter Cluster” added; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthHealth” (by Doug Warren)
+- Added definition and scope notes to QuarterHealth.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterHealth` (`pkmv:QuarterHealth`)

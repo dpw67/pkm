@@ -16,14 +16,17 @@ the third position; only major advances the second.
 |---|---|---|
 | 1 | 0.1.5 released — tagged, published, spot-checked live | done |
 | 2 | 0.1.5 announcement, [Discussions #3](https://github.com/dpw67/pkm/discussions/3) | done |
-| 3 | Circle post on the "Cluster" naming question | posted; replies to answer — §F |
+| 3 | Circle post on the "Cluster" naming question | replied; definitions settled in 0.1.7, label still open — §E |
 | 4 | Upstream migration-cutoff issue → [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | done |
 | 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | released in 0.1.6 |
 | 6 | This roadmap, in the repo | done — §A |
 | 7 | `make review` — the family-grouped review sheet | done — §B |
 | 8 | 0.1.6 — the prose patch, 29 literals | done — §C |
-| 9 | 0.2.0 — two malformed URIs renamed | next — §D |
-| 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §F |
+| 9 | 0.2.0 — two malformed URIs renamed | after 0.1.8 — §D |
+| 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
+| 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
+| 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
+| 13 | 0.1.8 — the rest of the Cluster family | next — §H |
 
 ### Where 0.1.6 left the graph
 
@@ -249,7 +252,39 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   interesting part and it is the same test that killed *Collection*: the nicer
   word turns out to be the wrong shape.
 
-  Decide with the `Collection` definition above, not before it.
+  **Oran's 46 words** (same thread, 2026-09-12) are the most useful reply yet,
+  because a list that long stops being brainstorming and becomes a stress test.
+  They sort into four families, none of which fits: many of one kind (20 —
+  array, batch, set, stack, segment, volume, bundle …); a place where things are
+  kept (14 — bank, cache, repository, store, depot, trove …); accumulation
+  without intent (6 — clump, dump, gathering, heap, mass, pile); and derived
+  from the thing rather than the thing (6 — aggregate, digest, roundup,
+  summary …). Closest survivors *bundle* and *gathering* both stop short of
+  "about one subject". `Vault` is the only word on the list that is already a
+  label here, and it holds exactly the place-tier job family 2 wants.
+
+  **Four tests, which is what the thread actually produced.** A name must be (1)
+  a plain English word a script author would guess, (2) free of collision with a
+  term already inside the vocabulary, (3) a whole of unlike parts rather than
+  many of one kind, and (4) about one subject. Fifty-three alternatives from
+  four people, and "Cluster" still passes all four — which is itself the
+  finding.
+
+  **The relations already assert (3); both definitions contradict it.**
+  `DayCluster` carries `isothes:narrowerPartitive` to `DayClusterCore`,
+  `DayClusterHealth`, `DayClusterSupport` and `DayClusterVisual` — four unlike
+  *parts* — and is itself both `broaderGeneric pkmv:TimeCluster` and
+  `broaderPartitive pkmv:CalendarFolder`. 103 concepts assert
+  `broaderPartitive`, so the whole/part reading is pervasive, not incidental.
+  Yet `Cluster` is defined "A group of related notes" and `DayCluster` "The
+  **set** of structured notes and artifacts generated for a single day" — using
+  *set*, the word the naming post rejected for implying no structure. Both
+  describe a bag. **This was the likelier bug than the label**, and being prose
+  only — no URI change, no reparenting — it rode in 0.1.7 rather than waiting
+  for 0.2.0. Both definitions now name a whole of unlike parts about one
+  subject; the label is untouched and still under question.
+
+  Decide the label with the `Collection` definition above, not before it.
 - **The four-way question** — `Day` the period, `Day Folder` the path (not
   modelled), `Day Cluster` the concept with 25 descendants, `Day Collection` the
   flat bag with 26 members. `DayFolder` alone is odd without
@@ -269,23 +304,188 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   points a concept at an OWL class. A consumer can query it today, so changing
   it is major.
 
-## F. Unscheduled
+## F. Where the vocabulary and the periodic notes disagree
 
-- **Reply to the Circle naming thread.** Seven suggestions from three people and
-  two likes so far; all are recorded in §E with the reasoning. A reply that says
-  which ones landed and why is what keeps the thread going. *Record* deserves a
-  substantive answer in particular — it is the first suggestion to survive the
-  plain-word test, and what rules it out is a collision with `pkmv:DayLog`'s own
-  definition, which is the kind of thing only someone inside the vocabulary can
-  see.
+Found by comparing the five period subtrees against what the generators in
+`pkm-neo4j-service` actually write. Both directions are wrong, and the gap is in
+the generator rather than in any hand-copy: `pkm-week create` writes five notes
+— Plan, Log, Review, Health, Diabetes — against the ten concepts narrower than
+`pkmv:WeekCluster`, and its Week Health note links `[[2026 Year Health]]`, a
+term that is defined and a note that is never generated.
+
+Three questions, not three decisions. Each could be answered by minting a term
+or by dropping a note, and which way round is the point.
+
+- **`MonthDiabetes`** — the note exists in practice; `DayDiabetes` and
+  `WeekDiabetes` are defined terms and Month has none. Is monthly diabetes
+  tracking a real rung of the roll-up, or was that note a copy that should not
+  have been made?
+- **`MonthIndex`, `QuarterIndex`, `YearIndex`** — `DayIndex` and `WeekIndex`
+  exist, and the generated Day Index note links to all three of the missing
+  ones. Either the upper horizons get hub notes and the terms follow, or the
+  links are wrong. Only `Day`, `Week`, `Effort` and `Topic` have `Index` terms
+  at all, so this is a question about the whole tier.
+- **The Health/Journal asymmetry** — `QuarterHealth`, `YearHealth`,
+  `MonthJournal`, `QuarterJournal` and `YearJournal` are all defined, and none
+  of them is generated. Defined-but-absent is the larger half of the mismatch:
+  17 terms across the five periods have no note *in the current cluster*, seven
+  of them at Day.
+
+That 17 is the gap left by the **period generators**, not by the system. Four
+other scripts write some of those notes on their own schedule, so measured
+against the whole `Calendar/Notes` tree only **13** period terms have never
+been written at all: `DayMealPlan`, `DayMeeting`, `DayDiagram`, `DayMindmap`,
+`WeekAnalysis`, `WeekDiabetesAnalysis`, `WeekJournal`, `WeekMealPlan`,
+`MonthJournal`, `QuarterHealth`, `QuarterJournal`, `YearHealth` and
+`YearJournal` — and one of those thirteen does exist, under another name. What
+fills the difference:
+
+- `pkm-health analysis` writes `Day Analysis` (140 notes), `Day Diabetes` (219)
+  and `Day Diabetes Analysis` (131). None of the three is in today's cluster
+  because they follow a Dexcom/Glooko export rather than the calendar, which is
+  why a single-day comparison reads them as missing.
+- `pkm-recipe meal-plan --save` writes the week meal plan, six so far — but
+  named `Meal Plan`, and until this round into `Calendar/Notes/2026/2026-W##/`
+  rather than the cluster's own `W##/`. Six orphan folders are left in
+  Ideaverse (`2026-W21`, `-W22`, `-W23`, `-W25`, `-W27`, `-W29`), each holding
+  nothing but a meal plan, sitting beside the real week cluster. The path is
+  fixed; moving the six existing files is a vault edit, not a code one.
+- `WeekIndex` has exactly one note, `2026-W09 Week Index.md`. That is the same
+  shape of evidence as `MonthDiabetes` above — one note is a decision
+  half-made, not a practice.
+
+No RDF changes here, and none implied. The `--vault` flag in
+`pkm-neo4j-service` makes it possible to generate a cluster into a second
+vault; whether one *should* — and against which of the two readings above — is
+this question, not that one.
+
+Two generator defects noticed in passing, in that repo rather than this one:
+`week_cluster_generator.py:141` builds the previous-week link as
+`{year - 1}-W{week}` instead of the week before, and the next-week link as
+`W{week + 1}` with no year rollover at W52.
+
+### F1. Two naming questions
+
+Both are file renames, so both are 0.2.0 at the earliest, and both are the same
+question the three above are: does the vocabulary follow the note, or the note
+the vocabulary?
+
+- **`Meal Plan` or `Week Meal Plan`?** `pkm-recipe` writes `2026-W25 Meal
+  Plan.md` beside `2026-W25 Week Plan.md`, `Week Log.md`, `Week Health.md` —
+  every sibling carries the horizon in the name and this one does not. The
+  vocabulary says `pkmv:WeekMealPlan`, which argues for the rename; one of the
+  six is a third name again, `2026-W23 DMP Meal Plan.md`.
+- **`Diabetes Review` or `Day Diabetes`?** Three health services write
+  `{date} Diabetes Review.md` — 312 of them, 261 in 2025 and 17 in 2026, the
+  last on 2026-01-25. The generators and `pkm-health analysis` write `Day
+  Diabetes` / `Week Diabetes`, and the vocabulary defines `pkmv:DayDiabetes`
+  and `pkmv:DayDiabetesAnalysis`. So the name has already changed in practice
+  and the older one stopped being written in January; what is unsettled is
+  whether the 312 existing notes get renamed to match or stay as a dated layer.
+
+### F2. The service layer still hardcodes the vault
+
+The CLIs in `pkm-neo4j-service` now resolve the vault through `app/vault.py`
+(`OBSIDIAN_VAULT_PATH`, then `--vault`), but the CLIs that talk to the FastAPI
+service only send HTTP — the service picks the path. So `pkm-health` and
+`pkm-review` deliberately have no `--vault` flag: it would change the
+`obsidian://` URI and not the file. A worklist, so the next round is not
+another grep:
+
+| File | Lines |
+|---|---|
+| `app/services/review/morning_review_service.py` | 33 |
+| `app/services/health/dexcom_export_service.py` | 425, 488, 587 |
+| `app/services/health/glooko_export_service.py` | 332, 395, 494 |
+| `app/services/health/health_service.py` | 368 |
+| `app/services/health/diabetes_review_generator.py` | 24 — already parameterised, never passed |
+| `app/services/health/diabetes_charts.py` | 902 |
+| `app/services/health/glucose_timeline_chart.py` | 297 |
+| `app/services/recipe/recipe_service.py` | 182 |
+| `app/services/recipe/dmp_service.py` | 432 |
+
+`scripts/pkm-day-pre-neo4j` and `scripts/ontology/generators/pkm-concept.py`
+hardcode it too, but they are a separate question: both may simply be dead.
+
+## G. Unscheduled
+
 - **LinkedIn 0.1.4/0.1.5 follow-up** — drafted; its link-card claim is verified.
 - **A third Circle post** on the Spectrum — drafted, 220 lines.
 - **Stub filenames** — `vocab/terms/IdeaEmergence.md` with an `aliases:` entry,
   so wikilinks keep resolving while the filename matches the URI local name.
   `notes.py` work plus a 241-file rename. **Becomes load-bearing if §D ships**:
   two stubs would need renaming with their URIs.
-- **Vault reorganisation commit** — the move still shows as two deletes with no
-  matching adds; the destinations are untracked.
+- **Vault reorganisation commit** — done (`f207dd6` in the vault repo). One of
+  the two moves records as a rename; *Three Places for One Vocabulary* does not,
+  even at `-M30%`, because it was rewritten as well as renamed.
+
+## H. 0.1.8 — the rest of the Cluster family
+
+0.1.7 rewrote `pkmv:Cluster` and `pkmv:DayCluster` to say that a cluster is a
+whole of unlike parts about one subject. Seven concepts underneath them still
+say it is a bag. All three of `pkmv:Cluster`'s direct children are among them,
+so a reader who follows the hierarchy down one level meets the phrasing the
+parent just abandoned.
+
+| concept | definition | relation to `pkmv:Cluster` |
+| --- | --- | --- |
+| `pkmv:TimeCluster` | A group of related notes for a time period (or time horizon). | direct child, `broaderGeneric` |
+| `pkmv:EffortCluster` | A group of related notes about an effort. | direct child |
+| `pkmv:TopicCluster` | A group of related notes about a topic. | direct child |
+| `pkmv:MonthCluster` | A group of related notes about a month. | via `TimeCluster` |
+| `pkmv:QuarterCluster` | A group of related notes about a quarter. | via `TimeCluster` |
+| `pkmv:YearCluster` | A group of related notes about a year. | via `TimeCluster` |
+| `pkmv:WeekCluster` | The **set** of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters. | via `TimeCluster`; `DayCluster`'s sibling |
+
+`pkmv:WeekCluster` is the sharpest of the seven: it is the sentence
+`pkmv:DayCluster` carried until 0.1.7, word *set* included, on its own sibling.
+Whatever replaces it should hold for both, since a week aggregates days the way
+a day aggregates its four parts.
+
+`pkmv:DayCluster`'s four parts are **not** on this list. "The core set of daily
+notes within a Day Cluster", and the three like it, describe one part holding
+notes of one kind — which is what a part is, so the bag reading is correct
+there.
+
+### H1. Two scope notes cite terms that do not exist
+
+`pkmv:Cluster`'s scope note names seven examples; two of them are not in the
+vocabulary.
+
+- **`ConceptCluster`** was real once. In `z/pkm-vocab.export-0.1.2.ttl` it is
+  `pkm:collection10`, labelled "Concept Cluster", with the ten members
+  `pkmv:ConceptCollection` carries today — it was reclassified from a Cluster
+  to a Collection and the scope note was never updated. That reclassification
+  is the same Cluster/Collection distinction §E defers, so the fix is evidence
+  for that decision rather than a prejudgement of it.
+- **`OutputCluster`** has never existed, in any release.
+
+The same scope note omits `pkmv:TimeCluster` — `Cluster`'s only unnamed direct
+child — along with `pkmv:QuarterCluster` and `pkmv:YearCluster`.
+
+`pkmv:TimeCluster`'s scope note repeats the defect in both directions: it lists
+`DecadeCluster` and `LifeCluster` as time clusters (both exist only as
+`pkmv:DecadeCollection` and `pkmv:LifeCollection`) and excludes
+`ConceptCluster` and `OutputCluster` by name as the non-time clusters.
+
+Two further mentions — `pkmv:Project` "distinguish from … the Effort Cluster /
+Output Cluster structures" and `pkmv:WeekIndex` "analogous to the Index hub
+notes in the Effort/Output Cluster design" — are spaced rather than CamelCase
+and read as design language, not term citations. Judgement call whether they
+move with the rest.
+
+### H2. A check that would have caught this
+
+`checks.py` has no rule for prose that cites a CamelCase name absent from the
+scheme, which is why four scope notes have carried phantom terms since 0.1.2
+without a single finding. A check scanning `skos:definition` and
+`skos:scopeNote` for `\b[A-Z][a-z]+(?:[A-Z][a-z]+)+\b` and reporting any token
+that is neither a local name nor a known exception would have flagged all of
+them. Same shape as §D4's two proposals, and cheap.
+
+Level: patch throughout. Prose only — no URI, label, parent or membership
+moves — so by the versioning table nothing a consumer queries changes meaning.
+
 
 ## Backlog
 

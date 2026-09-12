@@ -30,6 +30,19 @@ Broader concept for all tracked health data points (GlucoseEvent, InsulinEvent, 
 - [Sleep Event](../SleepEvent/)
 - [Weight Event](../WeightEvent/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “HealthEvent” to “Health Event” (by Doug Warren)
+- 2026-08-28 — Term created under “Event” (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “NewConcept” to “HealthEvent”; Preferred label “HealthEvent” added; Definition added (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/HealthEvent` (`pkmv:HealthEvent`)

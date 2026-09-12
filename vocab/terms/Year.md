@@ -33,6 +33,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Related term “Year Cluster” added (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept (by Doug Warren)
+- 2026-08-27 — Parent “Calendar” added (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Year` (`pkmv:Year`)

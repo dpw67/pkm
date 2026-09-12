@@ -34,6 +34,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Calendar” added; Related term “Day Index” removed; Related term “Day Links” removed; Related term “Day Actions” removed; Related term “Day Schedule” removed; Related term “Day Health” removed; Related term “Day Diabetes” removed; Related term “Day Diabetes Analysis” removed; Related term “Day Analysis” removed (by Doug Warren)
+- 2026-08-24 — Related term “Day Plan” added; Related term “Day Log” added; Related term “Day Journal” added; Related term “Day Review” added; Related term “Day Links” added; Related term “Day Actions” added; Related term “Day Schedule” added; Related term “Day Health” added; Related term “Day Diabetes” added; Related term “Day Diabetes Analysis” added; Related term “Day Analysis” added (by Doug Warren)
+- 2026-08-24 — Definition added; Scope note added; Related term “Day Index” added (by Doug Warren)
+- 2026-08-16 — Related term “Day Cluster” added (by Doug Warren)
+- Added definition and scope notes to Day.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Day` (`pkmv:Day`)

@@ -28,6 +28,17 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Note Types](../NoteTypes/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-28 — Unmarked as a top concept; Parent “Add” added (by Doug Warren)
+- 2026-08-28 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Draft.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Draft` (`pkmv:Draft`)

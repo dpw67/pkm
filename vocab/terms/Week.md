@@ -37,6 +37,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Week Collection](../WeekCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-28 — Related term “Week Journal” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Calendar” added (by Doug Warren)
+- 2026-08-24 — Definition added; Scope note added; Related term “Week Index” added; Related term “Week Log” added; Related term “Week Journal” added; Related term “Week Plan” added; Related term “Week Review” added; Related term “Week Meal Plan” added; Related term “Week Diabetes” added; Related term “Week Diabetes Analysis” added; Related term “Week Health” added; Related term “Week Analysis” added (by Doug Warren)
+- 2026-08-16 — Related term “Week Cluster” added (by Doug Warren)
+- Add definition and scope notes to Week.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Week` (`pkmv:Week`)

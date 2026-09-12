@@ -41,6 +41,15 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Tech Stack](../TechStack/)
 
+## Change history
+
+<details markdown="1">
+<summary>1 change note</summary>
+
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Tool` (`pkmv:Tool`)

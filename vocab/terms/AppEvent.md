@@ -21,6 +21,22 @@ Events originated within a specific application (PKMMeals, PKMStudio), distinct 
 
 - [Tool Event](../ToolEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>8 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “AppEvent” to “App Event” (by Doug Warren)
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “AgentEventCopy” to “AppEvent”; Preferred label changed from “AgentEvent” to “AppEvent”; Definition updated (by Doug Warren)
+- 2026-08-28 — Parent “ToolEvent” added; Parent “Event” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “AgentEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+- Removed double spaces in "app processing".
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/AppEvent` (`pkmv:AppEvent`)

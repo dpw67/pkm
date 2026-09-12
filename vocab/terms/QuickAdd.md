@@ -25,6 +25,17 @@ Extension for Obsidian that includes additional tools (choices): templates, capt
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “DataviewCopy” to “QuickAdd”; Preferred label changed from “Dataview” to “QuickAdd”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Dataview” (by Doug Warren)
+- Added definition and scope notes for Dataview.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuickAdd` (`pkmv:QuickAdd`)

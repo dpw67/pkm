@@ -21,6 +21,19 @@ Captures events about a topic with timestamps as they occur: factual, not interp
 
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “TopicIndexCopy3” to “TopicLog”; Preferred label changed from “Topic Index” to “Topic Log”; Definition updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)
+- Added definition and scope notes for a Topic Log.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicLog` (`pkmv:TopicLog`)

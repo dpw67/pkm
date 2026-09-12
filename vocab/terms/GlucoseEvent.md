@@ -21,6 +21,19 @@ Narrower than HealthEvent (and DiabetesEvent); a single blood-glucose reading sy
 
 - [Diabetes Event](../DiabetesEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Preferred label changed from “GlucoseEvent” to “Glucose Event” (by Doug Warren)
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “DiabetesEventCopy4” to “GlucoseEvent”; Preferred label changed from “DiabetesEvent” to “GlucoseEvent”; Definition updated; Parent “DiabetesEvent” added; Parent “HealthEvent” removed (by Doug Warren)
+- 2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/GlucoseEvent` (`pkmv:GlucoseEvent`)

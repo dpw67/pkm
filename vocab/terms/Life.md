@@ -28,6 +28,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Life Collection](../LifeCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept; Parent “Calendar” added (by Doug Warren)
+- 2026-08-29 — Scope note updated; Parent “Area” added; Parent “Calendar” removed (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Moved from Calendar to Efforts / Area.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Life` (`pkmv:Life`)

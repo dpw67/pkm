@@ -22,6 +22,19 @@ A structured retrospective evaluating a topic.
 
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Renamed from “TopicIndexCopy” to “TopicReview”; Preferred label changed from “Topic Index” to “Topic Review”; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for a Topic Index.
+- Corrected typo from "definiton" to "definition" in previous change note; also fixed typo from a Topic "Index" which should be this one ("Review").
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicReview` (`pkmv:TopicReview`)

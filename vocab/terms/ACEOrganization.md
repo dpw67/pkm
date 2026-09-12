@@ -23,6 +23,18 @@ The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidia
 
 - [Ideaverse](../Ideaverse/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Renamed from “IdeaverseCopy” to “ACEOrganization”; Preferred label changed from “Ideaverse” to “ACE Organization”; Alternative label “ACE Folders” added; Definition updated (by Doug Warren)
+- 2026-08-29 — Parent “Ideaverse” added; Parent “Vault” removed (by Doug Warren)
+- 2026-08-29 — Duplicated from “Ideaverse” (by Doug Warren)
+- Added definition and scope notes for ACE Organization.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ACEOrganization` (`pkmv:ACEOrganization`)

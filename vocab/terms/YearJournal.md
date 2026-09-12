@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-27 — Parent “Year Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthJournalCopy” to “YearJournal”; Preferred label changed from “MonthJournal” to “Year Journal”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthJournal” (by Doug Warren)
+- Added definition and scope notes for a YearJournal.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearJournal` (`pkmv:YearJournal`)

@@ -21,6 +21,19 @@ Forward-looking: created for a topic, distinct from the retrospective TopicRevie
 
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “TopicIndexCopy4” to “TopicPlan”; Preferred label changed from “Topic Index” to “Topic Plan”; Definition updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)
+- Added definition and scope notes for a Topic Plan.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicPlan` (`pkmv:TopicPlan`)

@@ -21,6 +21,18 @@ Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
 
 - [Health Data](../HealthData/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Term created under “Health Data” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “DexcomClarityData”; Preferred label “Dexcom Clarity Data” added; Definition added; Scope note added (by Doug Warren)
+- 2026-08-29 — Renamed from “DexcomClarityData” to “DexcomData”; Preferred label changed from “Dexcom Clarity Data” to “Dexcom Data”; Scope note updated (by Doug Warren)
+- Added definition and scope notes for Diabetes Clarity Data.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DexcomData` (`pkmv:DexcomData`)

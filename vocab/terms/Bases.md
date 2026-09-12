@@ -23,6 +23,19 @@ A core plugin that creates custom views to edit, sort, and filter files using pr
 
 - [Obsidian Plugin](../ObsidianPlugin/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “PeriodicNotesCopy” to “Bases”; Preferred label changed from “Periodic Notes” to “Bases”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Periodic Notes” (by Doug Warren)
+- Added definition and scope notes for Bases.
+- Insert missing space between "that" and "creates" in definition.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Bases` (`pkmv:Bases`)

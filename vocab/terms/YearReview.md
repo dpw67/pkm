@@ -27,6 +27,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-27 — Parent “Year Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthReviewCopy” to “YearReview”; Preferred label changed from “MonthReview” to “Year Review”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthReview” (by Doug Warren)
+- Added definition and scope notes for a YearReview.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearReview` (`pkmv:YearReview`)

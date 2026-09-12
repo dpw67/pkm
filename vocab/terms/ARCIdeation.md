@@ -23,6 +23,17 @@ The stages for the natural flow of ideas in the creative process (Add, Related, 
 
 - [Ideaverse](../Ideaverse/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-29 — Renamed from “ACEOrganizationCopy” to “ARCIdeation”; Preferred label changed from “ACE Organization” to “ARC Ideation”; Alternative label “ARC Framework” added; Alternative label “ACE Folders” removed; Definition updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “ACE Organization” (by Doug Warren)
+- Added definition and scope notes for ARC Ideation.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ARCIdeation` (`pkmv:ARCIdeation`)

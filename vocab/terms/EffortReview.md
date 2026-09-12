@@ -22,6 +22,19 @@ A structured retrospective evaluating an effort.
 
 - [Effort Cluster](../EffortCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “EffortPlanCopy” to “EffortReview”; Preferred label changed from “Effort Plan” to “Effort Review” (by Doug Warren)
+- 2026-08-29 — Duplicated from “Effort Plan” (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for Effort Review.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortReview` (`pkmv:EffortReview`)

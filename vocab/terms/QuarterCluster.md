@@ -42,6 +42,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Quarter Collection](../QuarterCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)
+- 2026-08-27 — Parent “Time Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthCluster2Copy” to “QuarterCluster”; Preferred label changed from “MonthCluster” to “Quarter Cluster”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthCluster” (by Doug Warren)
+- Added definition and scope notes for QuarterCluster.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterCluster` (`pkmv:QuarterCluster`)

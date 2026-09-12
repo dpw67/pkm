@@ -35,6 +35,19 @@ A major space for time-based notes.
 - [Week](../Week/)
 - [Year](../Year/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept; Parent “Calendar Folder” added (by Doug Warren)
+- 2026-08-26 — Scope note updated (by Doug Warren)
+- 2026-08-26 — Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Removed redundant Calendar2 created by Proposals tab when it already existed.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Calendar` (`pkmv:Calendar`)

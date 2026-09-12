@@ -39,6 +39,18 @@ _Groupings; they carry no hierarchical meaning._
 
 - See also <http://www.w3.org/2004/02/skos/core#Concept>
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-31 — Linked artifact “SKOS Concept” added; Linked artifact “SKOS Concept” removed (by Doug Warren)
+- 2026-08-29 — Unmarked as a top concept; Parent “Knowledge” added (by Doug Warren)
+- 2026-08-24 — Definition added; Scope note added; Linked artifact “skos:Concept” added (by Doug Warren)
+- Added definition and scope notes for Concept.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Concept` (`pkmv:Concept`)

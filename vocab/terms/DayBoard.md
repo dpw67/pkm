@@ -29,6 +29,19 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Day Collection](../DayCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-28 — Renamed from “DayViewCopy5” to “DayBoard”; Preferred label changed from “Day View” to “Day Board”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “Day View” (by Doug Warren)
+- Added definition and scope notes for DayBoard.
+- Corrected spelling mistake from "Kanboard" to "Kanban".
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DayBoard` (`pkmv:DayBoard`)

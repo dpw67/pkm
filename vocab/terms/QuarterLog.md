@@ -27,6 +27,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Quarter Collection](../QuarterCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-09-11 — Scope note updated (by Doug Warren)
+- 2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthLogCopy” to “QuarterLog”; Preferred label changed from “MonthLog” to “Quarter Log”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)
+- Added definition and scope notes for QuarterLog.
+- Changed scopeNote self-referential prose from "QuarterLog" to indicate that it aggregates "MonthLog"; it was an invalid statement that introduced a loop in the graph.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterLog` (`pkmv:QuarterLog`)

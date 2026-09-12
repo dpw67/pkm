@@ -35,6 +35,23 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Effort Collection](../EffortCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>9 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Parent “Efforts Folder” added (by Doug Warren)
+- 2026-08-29 — Parent “Cluster” added; Parent “Efforts Folder” removed; Related term “Efforts Folder” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)
+- 2026-08-26 — Term created (by Doug Warren)
+- 2026-08-26 — Scope note added (by Doug Warren)
+- 2026-08-26 — Renamed from “NewConcept” to “EffortCluster”; Preferred label “Effort Cluster” added; Related term “Effort” added (by Doug Warren)
+- 2026-08-26 — Definition added (by Doug Warren)
+- Added definition and scope notes for an EffortCluster.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortCluster` (`pkmv:EffortCluster`)

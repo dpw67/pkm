@@ -33,6 +33,18 @@ The Calendar (Time) folder is the PKM knowledge space for time-based notes.
 - [Week Cluster](../WeekCluster/)
 - [Year Cluster](../YearCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Term created under “Calendar” (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “CalendarFolder”; Preferred label “Calendar Folder” added; Alternative label “Time Folder” added; Parent “Vault” added; Parent “Calendar” removed (by Doug Warren)
+- 2026-08-29 — Definition added; Scope note added (by Doug Warren)
+- Added definition and scope notes for Calendar Folder.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/CalendarFolder` (`pkmv:CalendarFolder`)

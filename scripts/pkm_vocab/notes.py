@@ -62,6 +62,16 @@ def _all(vocab: Vocabulary, subject: URIRef, prop) -> list[str]:
     return sorted(str(o) for o in vocab.graph.objects(subject, prop))
 
 
+def _quoted(text: str) -> list[str]:
+    """A callout body: every line carries its own `> `, blank lines included.
+
+    Obsidian ends a callout at the first line without one, and one of the
+    editorial notes is a bulleted list, so this cannot be a single f-string.
+    `> - item` is a list inside the callout, which is what that note wants.
+    """
+    return [f"> {line}" if line.strip() else ">" for line in text.splitlines()]
+
+
 def stems(vocab: Vocabulary) -> dict[URIRef, str]:
     """Map every concept and collection URI to its note filename stem."""
     out: dict[URIRef, str] = {}
@@ -92,6 +102,8 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
     definition = _first(vocab, uri, SKOS.definition)
     scope = _first(vocab, uri, SKOS.scopeNote)
     note = _first(vocab, uri, SKOS.note)
+    editorial = _all(vocab, uri, SKOS.editorialNote)
+    changes = vocab.change_notes(uri)
     created = _first(vocab, uri, DCTERMS.created)
     modified = _first(vocab, uri, DCTERMS.modified)
     broader = sorted(o for o in graph.objects(uri, SKOS.broader) if vocab.is_local(o))
@@ -173,6 +185,10 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
         body += ["## Scope", "", scope, ""]
     if note and definition:
         body += ["## Note", "", note, ""]
+    # Open, not collapsed: an open question is an invitation to answer it, and
+    # the vault is where the person who can answer it is reading.
+    for text in editorial:
+        body += ["> [!question] Editorial note"] + _quoted(text) + [""]
     if parents:
         body += ["## Broader", ""]
         for p in parents:
@@ -194,6 +210,14 @@ def render_note(vocab: Vocabulary, stem: dict[URIRef, str], uri: URIRef,
         body += [f"- see also <{u}>" for u in see_also]
         body += [f"- related match <{u}>" for u in matches]
         body += [""]
+
+    # Collapsed, matching the canonical-definition callout above: the median
+    # term carries four of these and Recipe carries ten, and none of them are
+    # what a reader opened the note to find.
+    if changes:
+        plural = "" if len(changes) == 1 else "s"
+        body += [f"> [!info]- Change history ({len(changes)} note{plural})"]
+        body += [f"> - {n}" for n in changes] + [""]
 
     # Classification and dates go in a footer, not above the title. Publish is
     # configured with hideTitle, so the H1 is the first thing a reader sees --

@@ -23,6 +23,19 @@ An Obsidian template using the Templater plugin with JavaScript that determines 
 - [Obsidian Notes](../ObsidianNotes/)
 - [Tool](../Tool/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>5 change notes</summary>
+
+- 2026-09-11 — Definition updated (by Doug Warren)
+- 2026-08-29 — Renamed from “TemplateCopy2” to “ObsidianTemplate”; Preferred label changed from “Template” to “Obsidian Template”; Definition updated; Scope note updated; Parent “Template” added; Parent “Tool” removed; Parent “Obsidian” removed (by Doug Warren)
+- 2026-08-29 — Parent “Obsidian Notes” added; Parent “Template” removed (by Doug Warren)
+- 2026-08-29 — Duplicated from “Template” (by Doug Warren)
+- Added definition and scope notes for Obsidian Template.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/ObsidianTemplate` (`pkmv:ObsidianTemplate`)

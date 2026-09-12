@@ -23,6 +23,18 @@ Narrower than HealthEvent; a single blood-pressure reading, distinct from Glucos
 
 - [Health Event](../HealthEvent/) — generic (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Renamed from “DiabetesEventCopy3” to “BloodPressureEvent”; Preferred label changed from “DiabetesEvent” to “Blood Pressure Event”; Alternative label “BP Event” added; Definition updated (by Doug Warren)
+- 2026-08-28 — Duplicated from “DiabetesEvent” (by Doug Warren)
+- Add missing scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/BloodPressureEvent` (`pkmv:BloodPressureEvent`)

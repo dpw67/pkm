@@ -22,6 +22,20 @@ Free-form reflective writing about a topic.
 
 - [Topic Cluster](../TopicCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Scope note updated (by Doug Warren)
+- 2026-08-29 — Renamed from “TopicIndexCopy2” to “TopicJournal”; Preferred label changed from “Topic Index” to “Topic Journal” (by Doug Warren)
+- 2026-08-29 — Duplicated from “Topic Index” (by Doug Warren)
+- 2026-08-29 — Definition updated (by Doug Warren)
+- Added definition and scope notes for a Topic Journal.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TopicJournal` (`pkmv:TopicJournal`)

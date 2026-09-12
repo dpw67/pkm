@@ -27,6 +27,20 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Week Collection](../WeekCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-28 — Scope note added (by Doug Warren)
+- 2026-08-28 — Related term “Week” removed; Related term “Week Journal” removed; Related term “Week Review” removed (by Doug Warren)
+- 2026-08-27 — Unmarked as a top concept; Parent “Week Cluster” added (by Doug Warren)
+- 2026-08-26 — Preferred label changed from “WeekHealth” to “Week Health”; Definition added; Related term “Week Index” added (by Doug Warren)
+- 2026-08-26 — Preferred label changed from “Week Health” to “WeekHealth” (by Doug Warren)
+- Added definition and scope notes for WeekHealth.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/WeekHealth` (`pkmv:WeekHealth`)

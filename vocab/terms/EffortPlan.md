@@ -21,6 +21,20 @@ Forward-looking: created for the effort, distinct from the retrospective EffortR
 
 - [Effort Cluster](../EffortCluster/)
 
+## Change history
+
+<details markdown="1">
+<summary>6 change notes</summary>
+
+- 2026-08-29 — Term created under “Effort Cluster” (by Doug Warren)
+- 2026-08-29 — Scope note added (by Doug Warren)
+- 2026-08-29 — Renamed from “NewConcept” to “EffortPlan”; Preferred label “Effort Plan” added (by Doug Warren)
+- 2026-08-29 — Definition added (by Doug Warren)
+- Added definition and scope notes for Effort Plan.
+- Corrected typo from "definiton" to "definition" in previous change note.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/EffortPlan` (`pkmv:EffortPlan`)

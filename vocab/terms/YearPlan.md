@@ -27,6 +27,17 @@ _Groupings; they carry no hierarchical meaning._
 
 - [Year Collection](../YearCollection/)
 
+## Change history
+
+<details markdown="1">
+<summary>3 change notes</summary>
+
+- 2026-08-26 — Renamed from “MonthPlanCopy” to “YearPlan”; Preferred label changed from “MonthPlan” to “Year Plan”; Definition updated; Scope note updated; Parent “Year Cluster” added; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)
+- Added definition and scope notes for YearPlan.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearPlan` (`pkmv:YearPlan`)

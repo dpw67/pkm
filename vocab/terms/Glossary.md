@@ -24,6 +24,18 @@ A list of concept terms and definitions.
 
 - [Knowledge System](../KnowledgeSystem/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)
+- 2026-08-29 — Renamed from “TaxonomyCopy” to “Glossary”; Preferred label changed from “Taxonomy” to “Glossary”; Definition updated; Scope note updated (by Doug Warren)
+- 2026-08-29 — Duplicated from “Taxonomy” (by Doug Warren)
+- Add definition and scope notes as initial placeholder content to review refine, and evolve further.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/Glossary` (`pkmv:Glossary`)

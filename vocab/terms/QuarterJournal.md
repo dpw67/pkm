@@ -21,6 +21,18 @@ Quarterly subjective narrative; complements QuarterJournal.
 
 - [Quarter Cluster](../QuarterCluster/) — partitive (ISO 25964)
 
+## Change history
+
+<details markdown="1">
+<summary>4 change notes</summary>
+
+- 2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)
+- 2026-08-26 — Renamed from “MonthJournalCopy” to “QuarterJournal”; Preferred label changed from “MonthJournal” to “Quarter Journal”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
+- 2026-08-26 — Duplicated from “MonthJournal” (by Doug Warren)
+- Added definition and scope notes for QuarterJournal.
+
+</details>
+
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterJournal` (`pkmv:QuarterJournal`)

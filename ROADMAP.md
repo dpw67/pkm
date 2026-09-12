@@ -22,10 +22,11 @@ the third position; only major advances the second.
 | 6 | This roadmap, in the repo | done — §A |
 | 7 | `make review` — the family-grouped review sheet | done — §B |
 | 8 | 0.1.6 — the prose patch, 29 literals | done — §C |
-| 9 | 0.2.0 — two malformed URIs renamed | next — §D |
+| 9 | 0.2.0 — two malformed URIs renamed | after 0.1.8 — §D |
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 | 12 | 0.1.7 — notes rendered, two definitions settled | built; merge pending — §E |
+| 13 | 0.1.8 — the rest of the Cluster family | next — §H |
 
 ### Where 0.1.6 left the graph
 
@@ -417,6 +418,74 @@ hardcode it too, but they are a separate question: both may simply be dead.
 - **Vault reorganisation commit** — done (`f207dd6` in the vault repo). One of
   the two moves records as a rename; *Three Places for One Vocabulary* does not,
   even at `-M30%`, because it was rewritten as well as renamed.
+
+## H. 0.1.8 — the rest of the Cluster family
+
+0.1.7 rewrote `pkmv:Cluster` and `pkmv:DayCluster` to say that a cluster is a
+whole of unlike parts about one subject. Seven concepts underneath them still
+say it is a bag. All three of `pkmv:Cluster`'s direct children are among them,
+so a reader who follows the hierarchy down one level meets the phrasing the
+parent just abandoned.
+
+| concept | definition | relation to `pkmv:Cluster` |
+| --- | --- | --- |
+| `pkmv:TimeCluster` | A group of related notes for a time period (or time horizon). | direct child, `broaderGeneric` |
+| `pkmv:EffortCluster` | A group of related notes about an effort. | direct child |
+| `pkmv:TopicCluster` | A group of related notes about a topic. | direct child |
+| `pkmv:MonthCluster` | A group of related notes about a month. | via `TimeCluster` |
+| `pkmv:QuarterCluster` | A group of related notes about a quarter. | via `TimeCluster` |
+| `pkmv:YearCluster` | A group of related notes about a year. | via `TimeCluster` |
+| `pkmv:WeekCluster` | The **set** of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters. | via `TimeCluster`; `DayCluster`'s sibling |
+
+`pkmv:WeekCluster` is the sharpest of the seven: it is the sentence
+`pkmv:DayCluster` carried until 0.1.7, word *set* included, on its own sibling.
+Whatever replaces it should hold for both, since a week aggregates days the way
+a day aggregates its four parts.
+
+`pkmv:DayCluster`'s four parts are **not** on this list. "The core set of daily
+notes within a Day Cluster", and the three like it, describe one part holding
+notes of one kind — which is what a part is, so the bag reading is correct
+there.
+
+### H1. Two scope notes cite terms that do not exist
+
+`pkmv:Cluster`'s scope note names seven examples; two of them are not in the
+vocabulary.
+
+- **`ConceptCluster`** was real once. In `z/pkm-vocab.export-0.1.2.ttl` it is
+  `pkm:collection10`, labelled "Concept Cluster", with the ten members
+  `pkmv:ConceptCollection` carries today — it was reclassified from a Cluster
+  to a Collection and the scope note was never updated. That reclassification
+  is the same Cluster/Collection distinction §E defers, so the fix is evidence
+  for that decision rather than a prejudgement of it.
+- **`OutputCluster`** has never existed, in any release.
+
+The same scope note omits `pkmv:TimeCluster` — `Cluster`'s only unnamed direct
+child — along with `pkmv:QuarterCluster` and `pkmv:YearCluster`.
+
+`pkmv:TimeCluster`'s scope note repeats the defect in both directions: it lists
+`DecadeCluster` and `LifeCluster` as time clusters (both exist only as
+`pkmv:DecadeCollection` and `pkmv:LifeCollection`) and excludes
+`ConceptCluster` and `OutputCluster` by name as the non-time clusters.
+
+Two further mentions — `pkmv:Project` "distinguish from … the Effort Cluster /
+Output Cluster structures" and `pkmv:WeekIndex` "analogous to the Index hub
+notes in the Effort/Output Cluster design" — are spaced rather than CamelCase
+and read as design language, not term citations. Judgement call whether they
+move with the rest.
+
+### H2. A check that would have caught this
+
+`checks.py` has no rule for prose that cites a CamelCase name absent from the
+scheme, which is why four scope notes have carried phantom terms since 0.1.2
+without a single finding. A check scanning `skos:definition` and
+`skos:scopeNote` for `\b[A-Z][a-z]+(?:[A-Z][a-z]+)+\b` and reporting any token
+that is neither a local name nor a known exception would have flagged all of
+them. Same shape as §D4's two proposals, and cheap.
+
+Level: patch throughout. Prose only — no URI, label, parent or membership
+moves — so by the versioning table nothing a consumer queries changes meaning.
+
 
 ## Backlog
 

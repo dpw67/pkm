@@ -21,5 +21,5 @@ pkmv:Cluster a skos:Concept ;
         pkmv:TimeCluster,
         pkmv:TopicCluster ;
     skos:prefLabel "Cluster"@en ;
-    skos:scopeNote "Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
+    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
 

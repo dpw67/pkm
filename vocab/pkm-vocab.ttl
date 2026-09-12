@@ -3483,6 +3483,7 @@ pkmv:Cluster a skos:Concept ;
         "2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)"@en,
         "2026-09-12 — Definition updated (by Doug Warren)"@en,
+        "2026-09-12 — Scope note updated (by Doug Warren)"@en,
         "Clarified definition to specify that members are part of a whole, and not instances of a kind; this is more accurate than just a \"group of related notes\"."@en ;
     skos:definition "Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
@@ -3490,7 +3491,7 @@ pkmv:Cluster a skos:Concept ;
         pkmv:TimeCluster,
         pkmv:TopicCluster ;
     skos:prefLabel "Cluster"@en ;
-    skos:scopeNote "Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
+    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
 
 pkmv:Concept a skos:Concept ;
     rdfs:label "Concept"@en ;

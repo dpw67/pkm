@@ -54,7 +54,13 @@ byte-identical across it — and the two definitions are rewordings, so
   "Notes and artifacts assembled around a single subject, where each member is a
   part of the whole rather than one more instance of a kind" and "Everything the
   system produces about a single day, partitioned into four unlike parts: core,
-  support, health, and visual". No URI, label, parent or membership changed.
+  support, health, and visual". `pkmv:Cluster`'s scope note carried the same
+  phrasing one line below its definition, and now reads "Parent context for all
+  notes associated with a single subject, like DayCluster, WeekCluster,
+  MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster,
+  etc." — which also matches the wording `pkmv:MonthCluster`,
+  `pkmv:YearCluster`, `pkmv:QuarterCluster`, `pkmv:EffortCluster` and
+  `pkmv:TopicCluster` already use. No URI, label, parent or membership changed.
 
   Prompted by the naming question, which drew fifty-three alternatives to the
   label "Cluster" from four readers and, more usefully, produced four tests a

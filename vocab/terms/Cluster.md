@@ -15,7 +15,7 @@ Notes and artifacts assembled around a single subject, where each member is a pa
 
 ## Scope note
 
-Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
+Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
 
 ## Broader
 
@@ -30,8 +30,9 @@ Parent context for a group of related notes, like DayCluster, WeekCluster, Month
 ## Change history
 
 <details markdown="1">
-<summary>7 change notes</summary>
+<summary>8 change notes</summary>
 
+- 2026-09-12 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Definition updated (by Doug Warren)
 - 2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)
 - 2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)

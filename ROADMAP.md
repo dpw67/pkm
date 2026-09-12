@@ -16,14 +16,15 @@ the third position; only major advances the second.
 |---|---|---|
 | 1 | 0.1.5 released — tagged, published, spot-checked live | done |
 | 2 | 0.1.5 announcement, [Discussions #3](https://github.com/dpw67/pkm/discussions/3) | done |
-| 3 | Circle post on the "Cluster" naming question | posted; replies to answer — §F |
+| 3 | Circle post on the "Cluster" naming question | posted; replies to answer — §G |
 | 4 | Upstream migration-cutoff issue → [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | done |
 | 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | released in 0.1.6 |
 | 6 | This roadmap, in the repo | done — §A |
 | 7 | `make review` — the family-grouped review sheet | done — §B |
 | 8 | 0.1.6 — the prose patch, 29 literals | done — §C |
 | 9 | 0.2.0 — two malformed URIs renamed | next — §D |
-| 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §F |
+| 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
+| 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 
 ### Where 0.1.6 left the graph
 
@@ -269,7 +270,43 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   points a concept at an OWL class. A consumer can query it today, so changing
   it is major.
 
-## F. Unscheduled
+## F. Where the vocabulary and the periodic notes disagree
+
+Found by comparing the five period subtrees against what the generators in
+`pkm-neo4j-service` actually write. Both directions are wrong, and the gap is in
+the generator rather than in any hand-copy: `pkm-week create` writes five notes
+— Plan, Log, Review, Health, Diabetes — against the ten concepts narrower than
+`pkmv:WeekCluster`, and its Week Health note links `[[2026 Year Health]]`, a
+term that is defined and a note that is never generated.
+
+Three questions, not three decisions. Each could be answered by minting a term
+or by dropping a note, and which way round is the point.
+
+- **`MonthDiabetes`** — the note exists in practice; `DayDiabetes` and
+  `WeekDiabetes` are defined terms and Month has none. Is monthly diabetes
+  tracking a real rung of the roll-up, or was that note a copy that should not
+  have been made?
+- **`MonthIndex`, `QuarterIndex`, `YearIndex`** — `DayIndex` and `WeekIndex`
+  exist, and the generated Day Index note links to all three of the missing
+  ones. Either the upper horizons get hub notes and the terms follow, or the
+  links are wrong. Only `Day`, `Week`, `Effort` and `Topic` have `Index` terms
+  at all, so this is a question about the whole tier.
+- **The Health/Journal asymmetry** — `QuarterHealth`, `YearHealth`,
+  `MonthJournal`, `QuarterJournal` and `YearJournal` are all defined, and none
+  of them is generated. Defined-but-absent is the larger half of the mismatch:
+  17 terms across the five periods have no note, seven of them at Day.
+
+No RDF changes here, and none implied. The `--vault` flag in
+`pkm-neo4j-service` makes it possible to generate a cluster into a second
+vault; whether one *should* — and against which of the two readings above — is
+this question, not that one.
+
+Two generator defects noticed in passing, in that repo rather than this one:
+`week_cluster_generator.py:141` builds the previous-week link as
+`{year - 1}-W{week}` instead of the week before, and the next-week link as
+`W{week + 1}` with no year rollover at W52.
+
+## G. Unscheduled
 
 - **Reply to the Circle naming thread.** Seven suggestions from three people and
   two likes so far; all are recorded in §E with the reasoning. A reply that says
@@ -284,8 +321,9 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   so wikilinks keep resolving while the filename matches the URI local name.
   `notes.py` work plus a 241-file rename. **Becomes load-bearing if §D ships**:
   two stubs would need renaming with their URIs.
-- **Vault reorganisation commit** — the move still shows as two deletes with no
-  matching adds; the destinations are untracked.
+- **Vault reorganisation commit** — done (`f207dd6` in the vault repo). One of
+  the two moves records as a rename; *Three Places for One Vocabulary* does not,
+  even at `-M30%`, because it was rewritten as well as renamed.
 
 ## Backlog
 

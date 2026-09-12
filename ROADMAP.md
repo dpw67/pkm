@@ -294,7 +294,31 @@ or by dropping a note, and which way round is the point.
 - **The Health/Journal asymmetry** — `QuarterHealth`, `YearHealth`,
   `MonthJournal`, `QuarterJournal` and `YearJournal` are all defined, and none
   of them is generated. Defined-but-absent is the larger half of the mismatch:
-  17 terms across the five periods have no note, seven of them at Day.
+  17 terms across the five periods have no note *in the current cluster*, seven
+  of them at Day.
+
+That 17 is the gap left by the **period generators**, not by the system. Four
+other scripts write some of those notes on their own schedule, so measured
+against the whole `Calendar/Notes` tree only **13** period terms have never
+been written at all: `DayMealPlan`, `DayMeeting`, `DayDiagram`, `DayMindmap`,
+`WeekAnalysis`, `WeekDiabetesAnalysis`, `WeekJournal`, `WeekMealPlan`,
+`MonthJournal`, `QuarterHealth`, `QuarterJournal`, `YearHealth` and
+`YearJournal` — and one of those thirteen does exist, under another name. What
+fills the difference:
+
+- `pkm-health analysis` writes `Day Analysis` (140 notes), `Day Diabetes` (219)
+  and `Day Diabetes Analysis` (131). None of the three is in today's cluster
+  because they follow a Dexcom/Glooko export rather than the calendar, which is
+  why a single-day comparison reads them as missing.
+- `pkm-recipe meal-plan --save` writes the week meal plan, six so far — but
+  named `Meal Plan`, and until this round into `Calendar/Notes/2026/2026-W##/`
+  rather than the cluster's own `W##/`. Six orphan folders are left in
+  Ideaverse (`2026-W21`, `-W22`, `-W23`, `-W25`, `-W27`, `-W29`), each holding
+  nothing but a meal plan, sitting beside the real week cluster. The path is
+  fixed; moving the six existing files is a vault edit, not a code one.
+- `WeekIndex` has exactly one note, `2026-W09 Week Index.md`. That is the same
+  shape of evidence as `MonthDiabetes` above — one note is a decision
+  half-made, not a practice.
 
 No RDF changes here, and none implied. The `--vault` flag in
 `pkm-neo4j-service` makes it possible to generate a cluster into a second
@@ -305,6 +329,49 @@ Two generator defects noticed in passing, in that repo rather than this one:
 `week_cluster_generator.py:141` builds the previous-week link as
 `{year - 1}-W{week}` instead of the week before, and the next-week link as
 `W{week + 1}` with no year rollover at W52.
+
+### F1. Two naming questions
+
+Both are file renames, so both are 0.2.0 at the earliest, and both are the same
+question the three above are: does the vocabulary follow the note, or the note
+the vocabulary?
+
+- **`Meal Plan` or `Week Meal Plan`?** `pkm-recipe` writes `2026-W25 Meal
+  Plan.md` beside `2026-W25 Week Plan.md`, `Week Log.md`, `Week Health.md` —
+  every sibling carries the horizon in the name and this one does not. The
+  vocabulary says `pkmv:WeekMealPlan`, which argues for the rename; one of the
+  six is a third name again, `2026-W23 DMP Meal Plan.md`.
+- **`Diabetes Review` or `Day Diabetes`?** Three health services write
+  `{date} Diabetes Review.md` — 312 of them, 261 in 2025 and 17 in 2026, the
+  last on 2026-01-25. The generators and `pkm-health analysis` write `Day
+  Diabetes` / `Week Diabetes`, and the vocabulary defines `pkmv:DayDiabetes`
+  and `pkmv:DayDiabetesAnalysis`. So the name has already changed in practice
+  and the older one stopped being written in January; what is unsettled is
+  whether the 312 existing notes get renamed to match or stay as a dated layer.
+
+### F2. The service layer still hardcodes the vault
+
+The CLIs in `pkm-neo4j-service` now resolve the vault through `app/vault.py`
+(`OBSIDIAN_VAULT_PATH`, then `--vault`), but the CLIs that talk to the FastAPI
+service only send HTTP — the service picks the path. So `pkm-health` and
+`pkm-review` deliberately have no `--vault` flag: it would change the
+`obsidian://` URI and not the file. A worklist, so the next round is not
+another grep:
+
+| File | Lines |
+|---|---|
+| `app/services/review/morning_review_service.py` | 33 |
+| `app/services/health/dexcom_export_service.py` | 425, 488, 587 |
+| `app/services/health/glooko_export_service.py` | 332, 395, 494 |
+| `app/services/health/health_service.py` | 368 |
+| `app/services/health/diabetes_review_generator.py` | 24 — already parameterised, never passed |
+| `app/services/health/diabetes_charts.py` | 902 |
+| `app/services/health/glucose_timeline_chart.py` | 297 |
+| `app/services/recipe/recipe_service.py` | 182 |
+| `app/services/recipe/dmp_service.py` | 432 |
+
+`scripts/pkm-day-pre-neo4j` and `scripts/ontology/generators/pkm-concept.py`
+hardcode it too, but they are a separate question: both may simply be dead.
 
 ## G. Unscheduled
 

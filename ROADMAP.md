@@ -16,7 +16,7 @@ the third position; only major advances the second.
 |---|---|---|
 | 1 | 0.1.5 released — tagged, published, spot-checked live | done |
 | 2 | 0.1.5 announcement, [Discussions #3](https://github.com/dpw67/pkm/discussions/3) | done |
-| 3 | Circle post on the "Cluster" naming question | replied; definitions to settle — §E |
+| 3 | Circle post on the "Cluster" naming question | replied; definitions settled in 0.1.7, label still open — §E |
 | 4 | Upstream migration-cutoff issue → [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | done |
 | 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | released in 0.1.6 |
 | 6 | This roadmap, in the repo | done — §A |
@@ -25,6 +25,7 @@ the third position; only major advances the second.
 | 9 | 0.2.0 — two malformed URIs renamed | next — §D |
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
+| 12 | 0.1.7 — notes rendered, two definitions settled | built; merge pending — §E |
 
 ### Where 0.1.6 left the graph
 
@@ -277,11 +278,12 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   Yet `Cluster` is defined "A group of related notes" and `DayCluster` "The
   **set** of structured notes and artifacts generated for a single day" — using
   *set*, the word the naming post rejected for implying no structure. Both
-  describe a bag. **This is the likelier bug than the label**, and it is prose
-  only — no URI change, no reparenting — so it can ride in a patch release
-  rather than waiting for 0.2.0.
+  describe a bag. **This was the likelier bug than the label**, and being prose
+  only — no URI change, no reparenting — it rode in 0.1.7 rather than waiting
+  for 0.2.0. Both definitions now name a whole of unlike parts about one
+  subject; the label is untouched and still under question.
 
-  Decide with the `Collection` definition above, not before it.
+  Decide the label with the `Collection` definition above, not before it.
 - **The four-way question** — `Day` the period, `Day Folder` the path (not
   modelled), `Day Cluster` the concept with 25 descendants, `Day Collection` the
   flat bag with 26 members. `DayFolder` alone is odd without
@@ -406,14 +408,6 @@ hardcode it too, but they are a separate question: both may simply be dead.
 
 ## G. Unscheduled
 
-- **Settle the `Cluster` and `Day Cluster` definitions.** What the naming thread
-  turned up is that the label was probably never the problem. `pkmv:Cluster`
-  reads "A group of related notes" and `pkmv:DayCluster` "The set of structured
-  notes and artifacts generated for a single day" — both describe a bag, while
-  the ISO 25964 relations underneath assert a whole of four unlike parts about
-  one subject. Rewriting the two to say that is **prose only** — no URI change,
-  no reparenting — so it is patch-eligible and not blocked behind §D. Reasoning
-  and the four naming tests are in §E; the Circle reply is posted.
 - **LinkedIn 0.1.4/0.1.5 follow-up** — drafted; its link-card claim is verified.
 - **A third Circle post** on the Spectrum — drafted, 220 lines.
 - **Stub filenames** — `vocab/terms/IdeaEmergence.md` with an `aliases:` entry,

@@ -10,6 +10,60 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.7] — 2026-09-12
+
+One rendering fix and two prose corrections. The rendering fix moved nothing in
+the graph — the export, `pkm-vocab.ttl` and all 241 per-term Turtle files were
+byte-identical across it — and the two definitions are rewordings, so
+[Versioning](#versioning) makes this a patch.
+
+### Fixed
+
+- **Editorial notes and change history never reached a term page.** 0.1.6 said of
+  `pkmv:Month-Health`'s editorial note that the defect was "recorded on the
+  concept, where anyone dereferencing the term will see it". That was true of the
+  RDF and false of the page: the generator rendered neither
+  `skos:editorialNote` nor `skos:changeNote`, so three open questions written
+  deliberately where a reader would find them — on `pkmv:DayClusterCore` (is
+  Analysis a Core note?), `pkmv:Map` (should a Home Note be its parent?), and
+  `pkmv:Month-Health` (the local name is wrong; see 0.1.6) — were invisible to
+  everyone who arrived with a browser, which is nearly all of them. So were 968
+  change notes across 223 concepts: the whole record the 0.1.5 and 0.1.6 audit
+  convention exists to produce, readable nowhere but the RDF. Editorial notes
+  now render open, because a question nobody sees is a question nobody answers;
+  change history renders collapsed, because the median term carries four notes
+  and `pkmv:Recipe` carries ten. Dated notes sort newest first — 735 of the 968
+  open with an ISO date and the other 233 were typed by hand without one, so an
+  alphabetical sort read backwards for a history. 223 term pages changed; the 18
+  collections carry no notes and are untouched.
+
+### Changed
+
+- **`pkmv:Cluster` and `pkmv:DayCluster` described a bag, while the relations
+  underneath them assert a whole of unlike parts about one subject.** `Cluster`
+  read "A group of related notes" and `DayCluster` "The set of structured notes
+  and artifacts generated for a single day within the PKM system, organized into
+  core, support, health, and visual groupings" — the second using *set*, the
+  exact word the open naming question rejects for implying no structure.
+  Underneath, `pkmv:DayCluster` carries `isothes:narrowerPartitive` to four
+  unlike parts (`pkmv:DayClusterCore`, `pkmv:DayClusterHealth`,
+  `pkmv:DayClusterSupport`, `pkmv:DayClusterVisual`) and is itself both
+  `isothes:broaderGeneric` of `pkmv:TimeCluster` and `isothes:broaderPartitive`
+  of `pkmv:CalendarFolder`. 103 concepts assert `broaderPartitive`, so the
+  whole/part reading is pervasive rather than incidental. The two now read
+  "Notes and artifacts assembled around a single subject, where each member is a
+  part of the whole rather than one more instance of a kind" and "Everything the
+  system produces about a single day, partitioned into four unlike parts: core,
+  support, health, and visual". No URI, label, parent or membership changed.
+
+  Prompted by the naming question, which drew fifty-three alternatives to the
+  label "Cluster" from four readers and, more usefully, produced four tests a
+  name has to pass: a plain English word a script author would guess, no
+  collision with a term already inside the vocabulary, a whole of unlike parts
+  rather than many of one kind, and about one subject. The label passed all
+  four. The definitions did not, which is why this release changes them and not
+  the label.
+
 ## [0.1.6] — 2026-09-11
 
 A prose patch. 0.1.5 fixed the four misspellings I happened to see; a systematic
@@ -269,7 +323,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.7...HEAD
+[0.1.7]: https://github.com/dpw67/pkm/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/dpw67/pkm/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/dpw67/pkm/compare/v0.1.4...v0.1.5
 [0.1.4]: https://github.com/dpw67/pkm/compare/v0.1.3...v0.1.4

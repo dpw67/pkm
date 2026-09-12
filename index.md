@@ -33,7 +33,7 @@ Machine-readable descriptions of the namespace itself:
 
 ## Status
 
-Vocabulary **0.1.6** — early draft, published for feedback. Terms are not yet stable
+Vocabulary **0.1.7** — early draft, published for feedback. Terms are not yet stable
 and may change without notice until 1.0.0 is tagged.
 
 Nothing is deleted outright: a retired URI keeps resolving, marked `owl:deprecated`

@@ -25,7 +25,7 @@ the third position; only major advances the second.
 | 9 | 0.2.0 — two malformed URIs renamed | after 0.1.8 — §D |
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
-| 12 | 0.1.7 — notes rendered, two definitions settled | built; merge pending — §E |
+| 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
 | 13 | 0.1.8 — the rest of the Cluster family | next — §H |
 
 ### Where 0.1.6 left the graph

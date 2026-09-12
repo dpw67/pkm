@@ -16,7 +16,7 @@ the third position; only major advances the second.
 |---|---|---|
 | 1 | 0.1.5 released — tagged, published, spot-checked live | done |
 | 2 | 0.1.5 announcement, [Discussions #3](https://github.com/dpw67/pkm/discussions/3) | done |
-| 3 | Circle post on the "Cluster" naming question | posted; replies to answer — §G |
+| 3 | Circle post on the "Cluster" naming question | replied; definitions to settle — §E |
 | 4 | Upstream migration-cutoff issue → [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | done |
 | 5 | `definition-no-terminal-punctuation` + `self-referential-prose` checks | released in 0.1.6 |
 | 6 | This roadmap, in the repo | done — §A |
@@ -250,6 +250,37 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   interesting part and it is the same test that killed *Collection*: the nicer
   word turns out to be the wrong shape.
 
+  **Oran's 46 words** (same thread, 2026-09-12) are the most useful reply yet,
+  because a list that long stops being brainstorming and becomes a stress test.
+  They sort into four families, none of which fits: many of one kind (20 —
+  array, batch, set, stack, segment, volume, bundle …); a place where things are
+  kept (14 — bank, cache, repository, store, depot, trove …); accumulation
+  without intent (6 — clump, dump, gathering, heap, mass, pile); and derived
+  from the thing rather than the thing (6 — aggregate, digest, roundup,
+  summary …). Closest survivors *bundle* and *gathering* both stop short of
+  "about one subject". `Vault` is the only word on the list that is already a
+  label here, and it holds exactly the place-tier job family 2 wants.
+
+  **Four tests, which is what the thread actually produced.** A name must be (1)
+  a plain English word a script author would guess, (2) free of collision with a
+  term already inside the vocabulary, (3) a whole of unlike parts rather than
+  many of one kind, and (4) about one subject. Fifty-three alternatives from
+  four people, and "Cluster" still passes all four — which is itself the
+  finding.
+
+  **The relations already assert (3); both definitions contradict it.**
+  `DayCluster` carries `isothes:narrowerPartitive` to `DayClusterCore`,
+  `DayClusterHealth`, `DayClusterSupport` and `DayClusterVisual` — four unlike
+  *parts* — and is itself both `broaderGeneric pkmv:TimeCluster` and
+  `broaderPartitive pkmv:CalendarFolder`. 103 concepts assert
+  `broaderPartitive`, so the whole/part reading is pervasive, not incidental.
+  Yet `Cluster` is defined "A group of related notes" and `DayCluster` "The
+  **set** of structured notes and artifacts generated for a single day" — using
+  *set*, the word the naming post rejected for implying no structure. Both
+  describe a bag. **This is the likelier bug than the label**, and it is prose
+  only — no URI change, no reparenting — so it can ride in a patch release
+  rather than waiting for 0.2.0.
+
   Decide with the `Collection` definition above, not before it.
 - **The four-way question** — `Day` the period, `Day Folder` the path (not
   modelled), `Day Cluster` the concept with 25 descendants, `Day Collection` the
@@ -375,13 +406,14 @@ hardcode it too, but they are a separate question: both may simply be dead.
 
 ## G. Unscheduled
 
-- **Reply to the Circle naming thread.** Seven suggestions from three people and
-  two likes so far; all are recorded in §E with the reasoning. A reply that says
-  which ones landed and why is what keeps the thread going. *Record* deserves a
-  substantive answer in particular — it is the first suggestion to survive the
-  plain-word test, and what rules it out is a collision with `pkmv:DayLog`'s own
-  definition, which is the kind of thing only someone inside the vocabulary can
-  see.
+- **Settle the `Cluster` and `Day Cluster` definitions.** What the naming thread
+  turned up is that the label was probably never the problem. `pkmv:Cluster`
+  reads "A group of related notes" and `pkmv:DayCluster` "The set of structured
+  notes and artifacts generated for a single day" — both describe a bag, while
+  the ISO 25964 relations underneath assert a whole of four unlike parts about
+  one subject. Rewriting the two to say that is **prose only** — no URI change,
+  no reparenting — so it is patch-eligible and not blocked behind §D. Reasoning
+  and the four naming tests are in §E; the Circle reply is posted.
 - **LinkedIn 0.1.4/0.1.5 follow-up** — drafted; its link-card claim is verified.
 - **A third Circle post** on the Spectrum — drafted, 220 lines.
 - **Stub filenames** — `vocab/terms/IdeaEmergence.md` with an `aliases:` entry,

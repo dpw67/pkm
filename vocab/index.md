@@ -353,7 +353,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Canvas](Canvas/)** — A core plugin that enables you to arrange and connect notes on an infinite canvas.
 - **[Claude AI](ClaudeAI/)** — Claude AI LLM (Sonnet or Opus models) that support a PKM system.
 - **[Claude Chat](ClaudeChat/)** — Chat interface for Claude AI.
-- **[Claude Cowork](ClaudeCowork/)** — Desktop app for Claude AI.
+- **[Claude Cowork](ClaudeCowork/)** — Agentic interface for Claude AI that works directly with files, apps, and scheduled tasks.
 - **[Claude Desktop](ClaudeDesktop/)** — Desktop app for Claude AI.
 - **[Clipping](Clipping/)** — A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO).
   <br>In: [Note Types](NoteTypes/)

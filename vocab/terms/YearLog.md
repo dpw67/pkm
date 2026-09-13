@@ -37,7 +37,7 @@ _Groupings; they carry no hierarchical meaning._
 - 2026-08-26 — Renamed from “MonthLogCopy” to “YearLog”; Preferred label changed from “MonthLog” to “Year Log”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)
 - 2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)
 - Added definition and scope notes for YearLog.
-- Corrected type from "Yeary" to "Yearly" in scope note.
+- Corrected typo from "Yeary" to "Yearly" in scope note.
 
 </details>
 
@@ -55,6 +55,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/YearLog
 
 ---
 
-`pkmv:YearLog` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:YearLog` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

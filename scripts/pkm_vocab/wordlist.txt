@@ -1,0 +1,76 @@
+# Words `misspelled-word` and `phantom-citation` should not flag, beyond what
+# the vocabulary already says about itself.
+#
+# `/usr/share/dict/web2` is a 1934 Webster's, so it knows "interoperability"
+# and not "workflow". Everything below was measured against the real export
+# rather than guessed: each entry is a word that actually appears in a note and
+# is actually correct.
+#
+# Lowercase entries are prose words, matched through the same suffix morphology
+# as the dictionary -- "workflow" covers "workflows", "timestamp" covers
+# "timestamped" and "timestamps". Capitalised entries are CamelCase tokens,
+# matched case-insensitively; they are external product names, which read as
+# citations but are not terms in this vocabulary.
+#
+# Add a word only after checking it is not a typo. `mispelling` is deliberately
+# absent: it was the one real misspelling in the change notes, this check found
+# it, and 0.1.8 fixed it in the editor. Allowlisting it would have hidden it.
+
+# --- computing, post-1934 ---
+agentic
+app
+automate
+checkbox
+clipboard
+database
+download
+frontmatter
+hotkey
+http
+inline
+interoperability
+lifecycle
+online
+plugin
+prepend
+rollup
+shortcut
+subgraph
+timestamp
+webinar
+webpage
+website
+widget
+wiki
+workflow
+workspace
+
+# --- this project's own idiom ---
+affordance
+attendee
+brainstorm
+broad
+carb
+dmpmembers
+lifespan
+mistype
+multi
+podcast
+timeframe
+undertaken
+
+# --- vocabularies cited by name ---
+dcmi
+dcterms
+dublin
+dublincore
+vocab
+
+# --- external product names, cited in prose as CamelCase ---
+HealthKit
+JavaScript
+JsonLogic
+PyCharm
+SwiftData
+WidgetKit
+WordPress

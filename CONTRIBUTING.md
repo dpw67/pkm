@@ -45,6 +45,11 @@ quick to accept:
   not `day_meal_plan`. `rdfs:label` mirrors it automatically.
 - **A parent, in an is-a-kind-of relationship.** `skos:broader` is for genuine
   specialisation. Part-of and merely-associated both belong in `skos:related`.
+- **An editorial note is public.** Write it for a reader: `skos:editorialNote`
+  carries an open question about a term, on the concept rather than in a
+  tracker, and the term page renders it. SKOS has no private note, so write it
+  as a question a stranger could answer rather than a reminder to me.
+  `pkmv:DayClusterCore` is the model.
 
 ## URI policy
 

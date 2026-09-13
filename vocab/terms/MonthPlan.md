@@ -15,7 +15,7 @@ The plan of intended priorities for a month.
 
 ## Scope note
 
-Forward-looking monthly intentions; parent context for WeekPlans.
+Forward-looking monthly intentions; parent context for WeekPlan.
 
 ## Broader
 
@@ -30,10 +30,12 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>2 change notes</summary>
+<summary>4 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-08-27 — Preferred label changed from “MonthPlan” to “Month Plan” (by Doug Warren)
 - 2026-08-25 — Created from approved proposal (by Doug Warren)
+- Removed "s" from WeekPlan in scope note so it uses singularized local name, not plural.
 
 </details>
 
@@ -51,6 +53,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/MonthPlan
 
 ---
 
-`pkmv:MonthPlan` · created 2026-08-25 · modified 2026-08-27 · by [Doug Warren](../../agents/)
+`pkmv:MonthPlan` · created 2026-08-25 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

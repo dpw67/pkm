@@ -33,7 +33,7 @@ Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Revi
 - 2026-08-29 — Renamed from “PKMNeo4jService” to “PKMNeo4jServiceProject”; Preferred label changed from “PKM Neo4j Service” to “PKM Neo4j Service Project”; Definition updated (by Doug Warren)
 - 2026-08-29 — Renamed from “NewConcept” to “PKMNeo4jService”; Preferred label “PKM Neo4j Service” added; Alternative label “pkm-neo4j-service” added; Definition added; Scope note added (by Doug Warren)
 - Added definition and scope notes for PKM Neo4j Service.
-- Fixed type from "Grqph" to "Graph" in scope note.
+- Fixed typo from "Grqph" to "Graph" in scope note.
 
 </details>
 
@@ -51,6 +51,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/PKMNeo4jServiceProje
 
 ---
 
-`pkmv:PKMNeo4jServiceProject` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:PKMNeo4jServiceProject` · created 2026-08-29 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

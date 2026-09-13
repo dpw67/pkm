@@ -13,11 +13,11 @@ pkmv:MonthPlan a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster ;
     skos:definition "The plan of intended priorities for a month."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Month Plan"@en ;
-    skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlans."@en .
+    skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlan."@en .
 

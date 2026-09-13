@@ -13,11 +13,11 @@ pkmv:YearPlan a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-26"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     isothes:broaderPartitive pkmv:YearCluster ;
     skos:broader pkmv:YearCluster ;
     skos:definition "The plan of intended priorities for a year."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Year Plan"@en ;
-    skos:scopeNote "Forward-looking yearly intentions; parent context for QuarterPlans."@en .
+    skos:scopeNote "Forward-looking yearly intentions; parent context for QuarterPlan."@en .
 

@@ -33,6 +33,7 @@ from . import (
     XSD,
     Vocabulary,
 )
+from . import prose
 
 ERROR, WARN, INFO = "ERROR", "WARN", "INFO"
 
@@ -41,6 +42,10 @@ ERROR, WARN, INFO = "ERROR", "WARN", "INFO"
 OPAQUE = re.compile(r"^(collection|agent|doc|document|concept|scheme|person)\d*$")
 #: Local names ending in a digit, which is how duplicate proposals show up.
 NUMERIC_SUFFIX = re.compile(r"^(?P<stem>.*?[A-Za-z])(?P<n>\d+)$")
+#: Local names the editor mints when a term is duplicated or created blank.
+#: Unlike the two above these are not harmless: the local name is the URI, so
+#: an unfinished duplicate publishes a term at a scaffolding address forever.
+SCAFFOLDING = re.compile(r"(?:Copy|NewConcept|Untitled)\d*$")
 
 #: XSD lexical spaces we can cheaply police. rdflib is permissive here — it
 #: silently truncates a dateTime handed to xsd:date — but Jena and SHACL are not.
@@ -301,6 +306,19 @@ def check(vocab: Vocabulary) -> Report:
                 WARN, "opaque-uri",
                 f'URI local name is "{name}" but the label is '
                 f'"{vocab.label(node)}"; the build step can rename it from the label',
+                name,
+            )
+            continue
+        if SCAFFOLDING.search(name):
+            # WARN, not ERROR, and for the same reason as `numeric-suffix`
+            # below: renaming a local name moves a live URI, so it waits for a
+            # minor release. An ERROR here would block `make build` until then,
+            # and a gate that is permanently red teaches you to ignore red.
+            report.add(
+                WARN, "scaffolding-local-name",
+                f'local name "{name}" is the editor\'s duplicate scaffolding, '
+                f'but the label is "{vocab.label(node)}"; rename it before the '
+                "URI resolves, or it is stuck until a minor release",
                 name,
             )
             continue
@@ -585,6 +603,20 @@ def check(vocab: Vocabulary) -> Report:
                     f"concept scheme has no {note}; the build step adds this",
                     ln(vocab.scheme) or "scheme",
                 )
+
+    # Duplicating a sibling is the normal way a term gets authored here -- 96 of
+    # the 223 concepts began that way, and the editor records it. An unchanged
+    # definition is the one signal that separates a finished copy from an
+    # abandoned one, because it means the copy still describes its source.
+    for name, source in prose.stale_duplicates(vocab):
+        report.add(
+            ERROR, "stale-duplicate-definition",
+            f'definition is still byte-identical to "{source}", which this term '
+            "was duplicated from; it describes the source, not this term",
+            name,
+        )
+
+    prose.check(vocab, report, ERROR, WARN, INFO)
 
     report.findings.sort(key=Finding.sort_key)
     return report

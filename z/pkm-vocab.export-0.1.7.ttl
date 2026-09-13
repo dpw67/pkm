@@ -21,10 +21,10 @@
     dcterms:contributor agents:Claude-AI, agents:Jessica-Talisman, agents:SKOS-Editor ;
     dcterms:created "2026-08-15"^^xsd:date ;
     dcterms:issued "2026-08-23"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.1.8" ;
+    owl:versionInfo "0.1.7" ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
     dcterms:language "en" ;
@@ -116,12 +116,12 @@ pkmv:Action a skos:Concept ;
     skos:prefLabel "Action"@en ;
     rdfs:label "Action"@en ;
     skos:definition "Something to do for an effort, project, area, or interest. "@en ;
-    skos:scopeNote "- Narrower than an Effort, and alongside Area, Interest, or Project.\n- May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.\n- More complex actions might be action groups that have one or more nested groups of actions.\n- Sequential actions can be represented as a simple bullet list with a checkbox.\n- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."@en ;
-    skos:changeNote "Added definition and scope notes for Action."@en, "Removed trailing double space at end of scope note."@en, "Removed ActionGroup reference in scope note since not defined in vocabulary yet."@en, "2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)"@en, "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "- Narrower than an Effort, and alongside Area, Interest, or Project.\n- May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.\n- More complex actions might be ActionGroups that have one or more nested groups of actions.\n- Sequential actions can be represented as a simple bullet list with a checkbox.\n- Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."@en ;
+    skos:changeNote "Added definition and scope notes for Action."@en, "Removed trailing double space at end of scope note."@en, "2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)"@en, "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:EffortsFolder ;
     skos:broader pkmv:EffortsFolder .
 
@@ -942,12 +942,12 @@ pkmv:Cluster a skos:Concept ;
     skos:prefLabel "Cluster"@en ;
     rdfs:label "Cluster"@en ;
     skos:definition "Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind."@en ;
-    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, and TopicCluster."@en ;
-    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)"@en, "2026-08-27 — Parent “Time Cluster” added (by Doug Warren)"@en, "2026-08-27 — Parent “Time Cluster” removed (by Doug Warren)"@en, "Clarified definition to specify that members are part of a whole, and not instances of a kind; this is more accurate than just a \"group of related notes\"."@en, "Updated scope note to avoid terms not in vocabulary yet."@en, "2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)"@en, "2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)"@en, "2026-09-12 — Definition updated (by Doug Warren)"@en, "2026-09-12 — Scope note updated (by Doug Warren)"@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)"@en, "2026-08-27 — Parent “Time Cluster” added (by Doug Warren)"@en, "2026-08-27 — Parent “Time Cluster” removed (by Doug Warren)"@en, "Clarified definition to specify that members are part of a whole, and not instances of a kind; this is more accurate than just a \"group of related notes\"."@en, "2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)"@en, "2026-08-29 — Parent “Knowledge” added; Parent “Knowledge System” removed (by Doug Warren)"@en, "2026-09-12 — Definition updated (by Doug Warren)"@en, "2026-09-12 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     isothes:broaderPartitive pkmv:Knowledge ;
     skos:broader pkmv:Knowledge ;
     isothes:narrowerGeneric pkmv:TimeCluster ;
@@ -1110,12 +1110,12 @@ pkmv:TimeCluster a skos:Concept ;
     skos:prefLabel "Time Cluster"@en ;
     rdfs:label "Time Cluster"@en ;
     skos:definition "A group of related notes for a time period (or time horizon)."@en ;
-    skos:scopeNote "- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, and YearCluster. \n- Does not include other non-time clusters: EffortCluster and TopicCluster."@en ;
-    skos:changeNote "Added definition and scope notes for TimeCluster."@en, "2026-08-26 — Duplicated from “Cluster” (by Doug Warren)"@en, "2026-08-26 — Renamed from “ClusterCopy” to “TimeCluster”; Preferred label changed from “Cluster@en” to “Time Cluster@en”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)"@en, "Updated scope note to avoid terms not in vocabulary yet."@en, "2026-08-29 — Parent “Calendar Folder” added; Parent “Cluster” removed (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster, LifeCluster. \n- Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en ;
+    skos:changeNote "Added definition and scope notes for TimeCluster."@en, "2026-08-26 — Duplicated from “Cluster” (by Doug Warren)"@en, "2026-08-26 — Renamed from “ClusterCopy” to “TimeCluster”; Preferred label changed from “Cluster@en” to “Time Cluster@en”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)"@en, "2026-08-29 — Parent “Calendar Folder” added; Parent “Cluster” removed (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderGeneric pkmv:Cluster ;
     skos:broader pkmv:Cluster, pkmv:CalendarFolder ;
     isothes:broaderPartitive pkmv:CalendarFolder .
@@ -2024,12 +2024,12 @@ pkmv:MonthPlan a skos:Concept ;
     skos:prefLabel "Month Plan"@en ;
     rdfs:label "Month Plan"@en ;
     skos:definition "The plan of intended priorities for a month."@en ;
-    skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlan."@en ;
-    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)"@en, "2026-08-27 — Preferred label changed from “MonthPlan@en” to “Month Plan@en” (by Doug Warren)"@en, "Removed \"s\" from WeekPlan in scope note so it uses singularized local name, not plural."@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "Forward-looking monthly intentions; parent context for WeekPlans."@en ;
+    skos:changeNote "2026-08-25 — Created from approved proposal (proposed by Doug Warren) (by Doug Warren)"@en, "2026-08-27 — Preferred label changed from “MonthPlan@en” to “Month Plan@en” (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-08-27"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster .
 
@@ -2040,11 +2040,11 @@ pkmv:Month-Health a skos:Concept ;
     skos:definition "The health-related summary for a month."@en ;
     skos:scopeNote "Parent for month-centric health artifacts including diabetes tracking."@en ;
     skos:changeNote "Added definition and scope notes to MonthHealth."@en, "2026-08-26 — Term created under “MonthCluster” (by Doug Warren)"@en, "2026-08-26 — Renamed from “NewConcept” to “Month-Health”; Preferred label “MonthHealth@en” added (by Doug Warren)"@en, "2026-08-26 — Definition added (by Doug Warren)"@en, "2026-08-26 — Scope note added (by Doug Warren)"@en, "2026-08-27 — Preferred label changed from “MonthHealth@en” to “Month Health@en” (by Doug Warren)"@en, "2026-09-11 — Renamed from “Month-Health” to “MonthHealth” (by Doug Warren)"@en, "2026-09-11 — Renamed from “MonthHealth” to “Month-Health” (by Doug Warren)"@en ;
-    skos:editorialNote "The local name is the only hyphenated one in this vocabulary; the siblings are DayHealth, WeekHealth, QuarterHealth and YearHealth. It should be \"MonthHealth\". Renaming changes the URI, so the change waits for 0.2.0 rather than a patch release. This URI resolves and is safe to cite until then, and when it moves the old one stays resolvable, marked owl:deprecated and pointed at its replacement with dcterms:isReplacedBy."@en ;
+    skos:editorialNote "The local name is the only hyphenated one in this vocabulary; the siblings are DayHealth, WeekHealth, QuarterHealth and YearHealth. It should be MonthHealth. Renaming changes the URI, so the change waits for 0.2.0 rather than a patch release. This URI resolves and is safe to cite until then, and when it moves the old one stays resolvable, marked owl:deprecated and pointed at its replacement with dcterms:isReplacedBy."@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-12"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster .
 
@@ -2054,11 +2054,11 @@ pkmv:YearLog a skos:Concept ;
     rdfs:label "Year Log"@en ;
     skos:definition "A record of what happened over a year."@en ;
     skos:scopeNote "Yearly factual roll-up; aggregates QuarterLog entries."@en ;
-    skos:changeNote "Added definition and scope notes for YearLog."@en, "2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthLogCopy” to “YearLog”; Preferred label changed from “MonthLog@en” to “Year Log@en”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)"@en, "2026-08-27 — Parent “Year Cluster” added (by Doug Warren)"@en, "Corrected typo from \"Yeary\" to \"Yearly\" in scope note."@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
+    skos:changeNote "Added definition and scope notes for YearLog."@en, "2026-08-26 — Duplicated from “MonthLog” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthLogCopy” to “YearLog”; Preferred label changed from “MonthLog@en” to “Year Log@en”; Definition updated; Scope note updated; Parent “MonthCluster” removed (by Doug Warren)"@en, "2026-08-27 — Parent “Year Cluster” added (by Doug Warren)"@en, "Corrected type from \"Yeary\" to \"Yearly\" in scope note."@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     isothes:broaderPartitive pkmv:YearCluster ;
     skos:broader pkmv:YearCluster .
 
@@ -2095,12 +2095,12 @@ pkmv:YearPlan a skos:Concept ;
     skos:prefLabel "Year Plan"@en ;
     rdfs:label "Year Plan"@en ;
     skos:definition "The plan of intended priorities for a year."@en ;
-    skos:scopeNote "Forward-looking yearly intentions; parent context for QuarterPlan."@en ;
-    skos:changeNote "Added definition and scope notes for YearPlan."@en, "2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthPlanCopy” to “YearPlan”; Preferred label changed from “MonthPlan@en” to “Year Plan@en”; Definition updated; Scope note updated; Parent “Year Cluster” added; Parent “MonthCluster” removed (by Doug Warren)"@en, "Removed \"s\" from QuarterPlan in scope note so it uses singularized local name, not plural."@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "Forward-looking yearly intentions; parent context for QuarterPlans."@en ;
+    skos:changeNote "Added definition and scope notes for YearPlan."@en, "2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthPlanCopy” to “YearPlan”; Preferred label changed from “MonthPlan@en” to “Year Plan@en”; Definition updated; Scope note updated; Parent “Year Cluster” added; Parent “MonthCluster” removed (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-08-26"^^xsd:date ;
     isothes:broaderPartitive pkmv:YearCluster ;
     skos:broader pkmv:YearCluster .
 
@@ -2165,12 +2165,12 @@ pkmv:QuarterPlan a skos:Concept ;
     skos:prefLabel "Quarter Plan"@en ;
     rdfs:label "Quarter Plan"@en ;
     skos:definition "The plan of intended priorities for a quarter."@en ;
-    skos:scopeNote "Forward-looking quarterly intentions; parent context for MonthPlan."@en ;
-    skos:changeNote "Added definition and scope notes for a QuarterPlan."@en, "2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthPlanCopy” to “QuarterPlan”; Preferred label changed from “MonthPlan@en” to “Quarter Plan@en”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-08-26 — Parent “MonthCluster” removed (by Doug Warren)"@en, "2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)"@en, "Removed \"s\" from MonthPlan in scope note so it uses singularized local name, not plural."@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "Forward-looking quarterly intentions; parent context for MonthPlans."@en ;
+    skos:changeNote "Added definition and scope notes for a QuarterPlan."@en, "2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)"@en, "2026-08-26 — Renamed from “MonthPlanCopy” to “QuarterPlan”; Preferred label changed from “MonthPlan@en” to “Quarter Plan@en”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-08-26 — Parent “MonthCluster” removed (by Doug Warren)"@en, "2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-08-27"^^xsd:date ;
     isothes:broaderPartitive pkmv:QuarterCluster ;
     skos:broader pkmv:QuarterCluster .
 
@@ -2654,11 +2654,11 @@ pkmv:Base a skos:Concept ;
     rdfs:label "Base"@en ;
     skos:definition "A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria."@en ;
     skos:scopeNote "- Provides multiple views with different query criteria, which can be selected as embedded bases in view or canvas notes.\n- Enables CSV export from a base for integration with other apps such as Neo4j as well as Swift and Python apps, services, scripts, commands, or agents."@en ;
-    skos:changeNote "Added definition and scope notes for a Base."@en, "Corrected misspelling from \"crtieria\" to \"criteria\" in scope note."@en, "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-09-11 — Definition updated (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
+    skos:changeNote "Added definition and scope notes for a Base."@en, "Corrected mispelling from \"crtieria\" to \"criteria\" in scope note."@en, "2026-08-29 — Duplicated from “Note” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)"@en, "2026-09-11 — Definition updated (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes .
 
 pkmv:View a skos:Concept ;
@@ -2959,11 +2959,11 @@ pkmv:PKMNeo4jServiceProject a skos:Concept ;
     skos:altLabel "pkm-neo4j-service"@en ;
     skos:definition "Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system."@en ;
     skos:scopeNote "Includes Python services for Calendar, Health, Graph, Obsidian, Recipe, and Review."@en ;
-    skos:changeNote "Added definition and scope notes for PKM Neo4j Service."@en, "Fixed typo from \"Grqph\" to \"Graph\" in scope note."@en, "2026-08-29 — Term created under “PKM Python Services” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NewConcept” to “PKMNeo4jService”; Preferred label “PKM Neo4j Service” added; Alternative label “pkm-neo4j-service” added; Definition added; Scope note added (by Doug Warren)"@en, "2026-08-29 — Renamed from “PKMNeo4jService” to “PKMNeo4jServiceProject”; Preferred label changed from “PKM Neo4j Service” to “PKM Neo4j Service Project”; Definition updated (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
+    skos:changeNote "Added definition and scope notes for PKM Neo4j Service."@en, "Fixed type from \"Grqph\" to \"Graph\" in scope note."@en, "2026-08-29 — Term created under “PKM Python Services” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NewConcept” to “PKMNeo4jService”; Preferred label “PKM Neo4j Service” added; Alternative label “pkm-neo4j-service” added; Definition added; Scope note added (by Doug Warren)"@en, "2026-08-29 — Renamed from “PKMNeo4jService” to “PKMNeo4jServiceProject”; Preferred label changed from “PKM Neo4j Service” to “PKM Neo4j Service Project”; Definition updated (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:PKMPythonServices .
 
 pkmv:Neo4jDesktop a skos:Concept ;
@@ -3183,25 +3183,25 @@ pkmv:ClaudeDesktop a skos:Concept ;
     skos:prefLabel "Claude Desktop"@en ;
     rdfs:label "Claude Desktop"@en ;
     skos:definition "Desktop app for Claude AI."@en ;
-    skos:scopeNote "- Available for macOS and Windows.\n- Includes Claude Chat and Claude Cowork."@en ;
-    skos:changeNote "Added definition and scope notes for Claude Desktop."@en, "2026-08-29 — Term created under “Claude AI” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NewConcept” to “ClaudeDesktop”; Preferred label “Claude Desktop” added; Definition added; Scope note added (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:scopeNote "- Available for macOS, iOS, and iPadOS.\n- Includes Claude Chat; Cowork requires Apple Silicon."@en ;
+    skos:changeNote "Added definition and scope notes for Claude Desktop."@en, "2026-08-29 — Term created under “Claude AI” (by Doug Warren)"@en, "2026-08-29 — Renamed from “NewConcept” to “ClaudeDesktop”; Preferred label “Claude Desktop” added; Definition added; Scope note added (by Doug Warren)"@en, "2026-09-11 — Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-09-11"^^xsd:date ;
     skos:broader pkmv:ClaudeAI .
 
 pkmv:ClaudeCowork a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Claude Cowork"@en ;
     rdfs:label "Claude Cowork"@en ;
-    skos:definition "Agentic interface for Claude AI that works directly with files, apps, and scheduled tasks."@en ;
-    skos:scopeNote "- Available on paid plans for Claude Desktop (macOS, Windows), web, and mobile.\n- Cowork completes work rather than describing it.\n- Works with files in folders granted access; can run scheduled tasks unattended."@en ;
-    skos:changeNote "Added definition and scope notes for Claude Cowork."@en, "Corrected definition and enhanced scope note."@en, "2026-08-29 — Duplicated from “Claude Desktop” (by Doug Warren)"@en, "2026-08-29 — Renamed from “ClaudeDesktopCopy” to “ClaudeCowork”; Preferred label changed from “Claude Desktop” to “Claude Cowork”; Scope note updated (by Doug Warren)"@en, "2026-09-13 — Definition updated; Scope note updated (by Doug Warren)"@en, "2026-09-13 — Scope note updated (by Doug Warren)"@en ;
+    skos:definition "Desktop app for Claude AI."@en ;
+    skos:scopeNote "- Available for macOS with Apple Silicon."@en ;
+    skos:changeNote "Added definition and scope notes for Claude Cowork."@en, "2026-08-29 — Duplicated from “Claude Desktop” (by Doug Warren)"@en, "2026-08-29 — Renamed from “ClaudeDesktopCopy” to “ClaudeCowork”; Preferred label changed from “Claude Desktop” to “Claude Cowork”; Scope note updated (by Doug Warren)"@en ;
     dcterms:creator agents:Doug-Warren ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-13"^^xsd:date ;
+    dcterms:modified "2026-08-29"^^xsd:date ;
     skos:broader pkmv:ClaudeAI .
 
 pkmv:ClaudeChat a skos:Concept ;

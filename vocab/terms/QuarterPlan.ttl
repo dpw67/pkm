@@ -13,11 +13,11 @@ pkmv:QuarterPlan a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-27"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     isothes:broaderPartitive pkmv:QuarterCluster ;
     skos:broader pkmv:QuarterCluster ;
     skos:definition "The plan of intended priorities for a quarter."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Quarter Plan"@en ;
-    skos:scopeNote "Forward-looking quarterly intentions; parent context for MonthPlans."@en .
+    skos:scopeNote "Forward-looking quarterly intentions; parent context for MonthPlan."@en .
 

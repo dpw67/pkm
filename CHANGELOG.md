@@ -10,6 +10,109 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.8] — 2026-09-13
+
+Two editorial notes rewritten for the audience that can now read them, the
+convention behind that written down, and four new checker rules that catch
+editor mistakes the graph checks cannot see. Prose and tooling only — no URI,
+label, membership or relationship moved — so [Versioning](#versioning) makes
+this a patch.
+
+### Changed
+
+- **Two of the three editorial notes were addressed to the maintainer, on pages
+  that tell a reader they are looking at an open question.** 0.1.7 made
+  `skos:editorialNote` render, and what it put in front of readers was a to-do
+  list: `pkmv:Map` carried three imperative bullets ("Add a Home Note to the
+  vocabulary as a broader (parent) concept for a Map", "Maps should have an
+  upward path toward the Home Note") and `pkmv:Month-Health` read "Remove the
+  hyphen from local name; it should be named MonthHealth. Deferred to 0.2.0
+  since it changes the URI." Both sit under the heading the generator writes —
+  *An open question about this term, not part of its definition* — which
+  promises a question and delivered an assignment. Neither was mistyped: the
+  SKOS Primer's own words for `skos:editorialNote` are "reminders of editorial
+  work still to be done" and warnings about "future editorial changes", so
+  these were exactly what the property is for. The mismatch was voice. SKOS
+  frames the property as one "useful for KOS managers or editors", but defines
+  no audience, privacy or access control anywhere — the Reference says only
+  "there is no restriction on the nature of this information", and the one
+  visibility mechanism in SKOS, `skos:hiddenLabel`, governs labels rather than
+  notes. So *editorial* names the addressee, not the access, and these notes
+  were public for as long as they have existed: the documentation guide
+  advertises `pkm-vocab.ttl` as carrying "every concept, collection, and
+  editorial note", and 0.1.7 changed only whether a browser could see them.
+  `pkmv:Map`'s note now opens with the question itself — should a Home Note be
+  its parent? — and keeps every fact from the bullets in one paragraph;
+  `pkmv:Month-Health`'s now answers what a consumer actually needs, which is
+  whether the URI is safe to cite today, and restates the guarantee that the
+  old URI stays resolvable when the rename lands. `pkmv:DayClusterCore`'s note
+  is untouched: it already reads outward ("It seems that... It could be argued
+  that...") and is the model the other two now match. `CONTRIBUTING.md` records
+  the convention under [What a term needs](CONTRIBUTING.md#what-a-term-needs),
+  so the next note is written this way rather than corrected afterwards. 2 term
+  pages changed; the note count is unchanged at three.
+
+- **Four checker rules for the mistakes that survive a graph check, and the
+  thirteen defects they found.** Every check in `checks.py` until now read the
+  graph; none read the words, so a note could cite a concept that does not exist
+  and nothing would notice. `phantom-citation` flags a CamelCase token in prose
+  that is not a term in this scheme — ERROR where a reader sees it, WARN in the
+  audit trail, where a name that has since gone is a record rather than a
+  mistake. It found eleven reader-facing citations, of nine names that are not
+  terms, across seven concepts: `pkmv:Cluster` and `pkmv:TimeCluster` between
+  them named `ConceptCluster` and `OutputCluster` (the first was reclassified to
+  `pkmv:ConceptCollection` back in 0.1.2 and the scope note never followed; the
+  second has never existed in any release), `pkmv:TimeCluster` also listed
+  `DecadeCluster` and `LifeCluster` as time clusters when both exist only as
+  collections, `pkmv:Action` cited `ActionGroups`, and `pkmv:MonthPlan`,
+  `pkmv:QuarterPlan` and `pkmv:YearPlan` cited CamelCase plurals of their real
+  children. The eleventh was already in the `pkmv:Month-Health` editorial note
+  rewritten above, and survived that rewrite unnoticed: it cites `MonthHealth` —
+  not a term precisely because the note exists to propose it, and now quoted so
+  the rule reads it as a string rather than a citation.
+  `stale-duplicate-definition` reads the editor's own `Duplicated from "X"` note
+  and flags a definition still byte-identical to its source's: 96 of the 223
+  concepts were authored by duplicating a sibling, so what separates a finished
+  copy from an abandoned one is whether the definition ever changed.
+  `pkmv:ClaudeCowork` still read "Desktop app for Claude AI.", inherited from
+  `pkmv:ClaudeDesktop` and never rewritten after the rename landed. Fixing it
+  surfaced a second defect in the same concept that no rule here can see: the
+  scope note still read "Available for macOS with Apple Silicon.", which
+  described the January 2026 research preview. Cowork now runs on Claude Desktop
+  for macOS and Windows, plus web and mobile, on paid plans, with no Apple
+  Silicon requirement — and the same stale claim sat in `pkmv:ClaudeDesktop`'s
+  scope note, which is where the duplicate inherited it. Both are corrected. A
+  wrong fact about someone else's product is a different defect from prose
+  hygiene: it goes stale on their release schedule, not on any edit made here,
+  so no check in this repository can detect it and only rereading the source
+  can. `scaffolding-local-name` flags a local name ending in `Copy`,
+  `NewConcept` or `Untitled`, which caught the one that is already published:
+  the concept labelled *Template* resolves at `w3id.org/pkm/vocab/TemplateCopy`,
+  an unfinished duplicate whose original is gone from the vocabulary. It is a
+  WARN rather than an ERROR, beside `numeric-suffix` for the same reason —
+  renaming moves a live URI, so it waits for 0.2.0, and a gate that is
+  permanently red teaches you to ignore red. `misspelled-word` checks prose
+  against the system dictionary behind a suffix morphology helper and a
+  committed `wordlist.txt`, because `/usr/share/dict/web2` is a 1934 Webster's
+  that knows "interoperability" but not "workflow". It found exactly one:
+  `mispelling`, in a note recording a spelling correction. The two prose rules
+  blank quoted spans before reading them, which is what makes an ERROR severity
+  safe here — the editor's change notes quote the string they record fixing
+  (`Corrected typo from "definiton" to "definition"`), and fourteen of the
+  fifteen misspellings in this vocabulary are that pattern, correctly spelled
+  wrong on purpose. Where no system dictionary exists, `misspelled-word` reports
+  no words at all and adds a single `no-dictionary` INFO saying why — with
+  nothing to compare against every word is unrecognised, and unchecked is not
+  the same as suspect. `/usr/share/dict` is macOS-only and
+  [CONTRIBUTING.md](CONTRIBUTING.md) invites contributors; the other three rules
+  need no dictionary. Two defects fixed in this release sit outside all four
+  rules:
+  `pkmv:YearLog` carries a change note reading `Corrected type from "Yeary" to
+  "Yearly"` and `pkmv:PKMNeo4jServiceProject` one reading `Fixed type from
+  "Grqph" to "Graph"`, where both mean `typo`. No check here can see them,
+  because every word is spelled correctly and none is a citation. Those two were
+  found by reading. 11 term pages changed.
+
 ## [0.1.7] — 2026-09-12
 
 One rendering fix and two prose corrections. The rendering fix moved nothing in
@@ -329,7 +432,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.8...HEAD
+[0.1.8]: https://github.com/dpw67/pkm/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/dpw67/pkm/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/dpw67/pkm/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/dpw67/pkm/compare/v0.1.4...v0.1.5

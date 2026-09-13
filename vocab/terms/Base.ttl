@@ -10,7 +10,7 @@ pkmv:Base a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-09-11"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     skos:broader pkmv:ObsidianNotes ;
     skos:definition "A database with table, grid, or list views of a collection of notes with selected properties and formulas with associated query filters, group, and sort criteria."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;

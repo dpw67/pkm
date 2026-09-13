@@ -32,7 +32,7 @@ A database with table, grid, or list views of a collection of notes with selecte
 - 2026-08-29 — Renamed from “NoteCopy” to “Base”; Preferred label changed from “Note” to “Base”; Definition updated; Scope note updated (by Doug Warren)
 - 2026-08-29 — Duplicated from “Note” (by Doug Warren)
 - Added definition and scope notes for a Base.
-- Corrected mispelling from "crtieria" to "criteria" in scope note.
+- Corrected misspelling from "crtieria" to "criteria" in scope note.
 
 </details>
 
@@ -50,6 +50,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Base
 
 ---
 
-`pkmv:Base` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:Base` · created 2026-08-29 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

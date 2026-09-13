@@ -16,7 +16,7 @@ Both fall out of one tokenising pass, which is why they live together here.
 
 WHY QUOTED SPANS ARE EXEMPT. The SKOS Editor's change notes quote the very
 string they record fixing -- `Corrected typo from "definiton" to "definition"`.
-Nineteen of the twenty misspellings in this vocabulary are that pattern, and
+Fourteen of the fifteen misspellings in this vocabulary are that pattern, and
 they are correct: the note would be useless without the bad spelling in it. A
 spell check that cannot see quotation marks would therefore fail forever on a
 working audit trail, which is the difference between this check being an ERROR

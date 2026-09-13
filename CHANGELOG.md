@@ -95,15 +95,18 @@ this a patch.
   against the system dictionary behind a suffix morphology helper and a
   committed `wordlist.txt`, because `/usr/share/dict/web2` is a 1934 Webster's
   that knows "interoperability" but not "workflow". It found exactly one:
-  `mispelling`, in a note recording a spelling correction. All four rules blank
-  quoted spans before reading them, which is what makes an ERROR severity safe
-  here — the editor's change notes quote the string they record fixing
-  (`Corrected typo from "definiton" to "definition"`), and seventeen of the
-  twenty misspellings in this vocabulary are that pattern, correctly spelled
-  wrong on purpose. `misspelled-word` drops to INFO where no system dictionary
-  exists, since `/usr/share/dict` is macOS-only and
-  [CONTRIBUTING.md](CONTRIBUTING.md) invites contributors; the other three need
-  no dictionary. Two defects fixed in this release sit outside all four rules:
+  `mispelling`, in a note recording a spelling correction. The two prose rules
+  blank quoted spans before reading them, which is what makes an ERROR severity
+  safe here — the editor's change notes quote the string they record fixing
+  (`Corrected typo from "definiton" to "definition"`), and fourteen of the
+  fifteen misspellings in this vocabulary are that pattern, correctly spelled
+  wrong on purpose. Where no system dictionary exists, `misspelled-word` reports
+  no words at all and adds a single `no-dictionary` INFO saying why — with
+  nothing to compare against every word is unrecognised, and unchecked is not
+  the same as suspect. `/usr/share/dict` is macOS-only and
+  [CONTRIBUTING.md](CONTRIBUTING.md) invites contributors; the other three rules
+  need no dictionary. Two defects fixed in this release sit outside all four
+  rules:
   `pkmv:YearLog` carries a change note reading `Corrected type from "Yeary" to
   "Yearly"` and `pkmv:PKMNeo4jServiceProject` one reading `Fixed type from
   "Grqph" to "Graph"`, where both mean `typo`. No check here can see them,

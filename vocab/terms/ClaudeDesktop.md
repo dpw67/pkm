@@ -15,8 +15,8 @@ Desktop app for Claude AI.
 
 ## Scope note
 
-- Available for macOS, iOS, and iPadOS.
-- Includes Claude Chat; Cowork requires Apple Silicon.
+- Available for macOS and Windows.
+- Includes Claude Chat and Claude Cowork.
 
 ## Broader
 
@@ -25,8 +25,9 @@ Desktop app for Claude AI.
 ## Change history
 
 <details markdown="1">
-<summary>4 change notes</summary>
+<summary>5 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-09-11 — Scope note updated (by Doug Warren)
 - 2026-08-29 — Term created under “Claude AI” (by Doug Warren)
 - 2026-08-29 — Renamed from “NewConcept” to “ClaudeDesktop”; Preferred label “Claude Desktop” added; Definition added; Scope note added (by Doug Warren)
@@ -48,6 +49,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/ClaudeDesktop
 
 ---
 
-`pkmv:ClaudeDesktop` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:ClaudeDesktop` · created 2026-08-29 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

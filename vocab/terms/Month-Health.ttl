@@ -11,11 +11,11 @@ pkmv:Month-Health a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-11"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     isothes:broaderPartitive pkmv:MonthCluster ;
     skos:broader pkmv:MonthCluster ;
     skos:definition "The health-related summary for a month."@en ;
-    skos:editorialNote "Remove the hyphen from local name; it should be named MonthHealth. Deferred to 0.2.0 since it changes the URI."@en ;
+    skos:editorialNote "The local name is the only hyphenated one in this vocabulary; the siblings are DayHealth, WeekHealth, QuarterHealth and YearHealth. It should be \"MonthHealth\". Renaming changes the URI, so the change waits for 0.2.0 rather than a patch release. This URI resolves and is safe to cite until then, and when it moves the old one stays resolvable, marked owl:deprecated and pointed at its replacement with dcterms:isReplacedBy."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Month Health"@en ;
     skos:scopeNote "Parent for month-centric health artifacts including diabetes tracking."@en .

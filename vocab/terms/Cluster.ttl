@@ -11,7 +11,7 @@ pkmv:Cluster a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-12"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     isothes:broaderPartitive pkmv:Knowledge ;
     isothes:narrowerGeneric pkmv:TimeCluster ;
     skos:broader pkmv:Knowledge ;
@@ -21,5 +21,5 @@ pkmv:Cluster a skos:Concept ;
         pkmv:TimeCluster,
         pkmv:TopicCluster ;
     skos:prefLabel "Cluster"@en ;
-    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc."@en .
+    skos:scopeNote "Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, and TopicCluster."@en .
 

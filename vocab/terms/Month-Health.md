@@ -21,7 +21,7 @@ Parent for month-centric health artifacts including diabetes tracking.
 
 _An open question about this term, not part of its definition._
 
-Remove the hyphen from local name; it should be named MonthHealth. Deferred to 0.2.0 since it changes the URI.
+The local name is the only hyphenated one in this vocabulary; the siblings are DayHealth, WeekHealth, QuarterHealth and YearHealth. It should be "MonthHealth". Renaming changes the URI, so the change waits for 0.2.0 rather than a patch release. This URI resolves and is safe to cite until then, and when it moves the old one stays resolvable, marked owl:deprecated and pointed at its replacement with dcterms:isReplacedBy.
 
 ## Broader
 
@@ -57,6 +57,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Month-Health
 
 ---
 
-`pkmv:Month-Health` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:Month-Health` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

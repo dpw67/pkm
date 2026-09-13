@@ -65,9 +65,9 @@ def _all(vocab: Vocabulary, subject: URIRef, prop) -> list[str]:
 def _quoted(text: str) -> list[str]:
     """A callout body: every line carries its own `> `, blank lines included.
 
-    Obsidian ends a callout at the first line without one, and one of the
-    editorial notes is a bulleted list, so this cannot be a single f-string.
-    `> - item` is a list inside the callout, which is what that note wants.
+    Obsidian ends a callout at the first line without one, so a multi-line or
+    bulleted note cannot be a single f-string. `> - item` is a list inside the
+    callout, which is what a bulleted note needs.
     """
     return [f"> {line}" if line.strip() else ">" for line in text.splitlines()]
 

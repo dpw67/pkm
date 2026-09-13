@@ -15,8 +15,8 @@ A group of related notes for a time period (or time horizon).
 
 ## Scope note
 
-- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, YearCluster, DecadeCluster, LifeCluster.
-- Does not include other non-time clusters: EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
+- Parent context for a group of related notes, like DayCluster, WeekCluster, MonthCluster, QuarterCluster, and YearCluster.
+- Does not include other non-time clusters: EffortCluster and TopicCluster.
 
 ## Broader
 
@@ -40,14 +40,16 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>6 change notes</summary>
+<summary>8 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-09-11 — Scope note updated (by Doug Warren)
 - 2026-08-29 — Parent “Calendar Folder” added; Parent “Cluster” removed (by Doug Warren)
 - 2026-08-27 — Unmarked as a top concept; Parent “Cluster” added (by Doug Warren)
 - 2026-08-26 — Renamed from “ClusterCopy” to “TimeCluster”; Preferred label changed from “Cluster” to “Time Cluster”; Definition updated; Scope note updated (by Doug Warren)
 - 2026-08-26 — Duplicated from “Cluster” (by Doug Warren)
 - Added definition and scope notes for TimeCluster.
+- Updated scope note to avoid terms not in vocabulary yet.
 
 </details>
 
@@ -65,6 +67,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/TimeCluster
 
 ---
 
-`pkmv:TimeCluster` · created 2026-08-26 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:TimeCluster` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

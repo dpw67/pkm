@@ -15,7 +15,7 @@ The plan of intended priorities for a quarter.
 
 ## Scope note
 
-Forward-looking quarterly intentions; parent context for MonthPlans.
+Forward-looking quarterly intentions; parent context for MonthPlan.
 
 ## Broader
 
@@ -30,13 +30,15 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>5 change notes</summary>
+<summary>7 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-08-27 — Parent “Quarter Cluster” added (by Doug Warren)
 - 2026-08-26 — Renamed from “MonthPlanCopy” to “QuarterPlan”; Preferred label changed from “MonthPlan” to “Quarter Plan”; Definition updated; Scope note updated (by Doug Warren)
 - 2026-08-26 — Parent “MonthCluster” removed (by Doug Warren)
 - 2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)
 - Added definition and scope notes for a QuarterPlan.
+- Removed "s" from MonthPlan in scope note so it uses singularized local name, not plural.
 
 </details>
 
@@ -54,6 +56,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/QuarterPlan
 
 ---
 
-`pkmv:QuarterPlan` · created 2026-08-26 · modified 2026-08-27 · by [Doug Warren](../../agents/)
+`pkmv:QuarterPlan` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

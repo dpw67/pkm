@@ -15,7 +15,7 @@ The plan of intended priorities for a year.
 
 ## Scope note
 
-Forward-looking yearly intentions; parent context for QuarterPlans.
+Forward-looking yearly intentions; parent context for QuarterPlan.
 
 ## Broader
 
@@ -30,11 +30,13 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>3 change notes</summary>
+<summary>5 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-08-26 — Renamed from “MonthPlanCopy” to “YearPlan”; Preferred label changed from “MonthPlan” to “Year Plan”; Definition updated; Scope note updated; Parent “Year Cluster” added; Parent “MonthCluster” removed (by Doug Warren)
 - 2026-08-26 — Duplicated from “MonthPlan” (by Doug Warren)
 - Added definition and scope notes for YearPlan.
+- Removed "s" from QuarterPlan in scope note so it uses singularized local name, not plural.
 
 </details>
 
@@ -52,6 +54,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/YearPlan
 
 ---
 
-`pkmv:YearPlan` · created 2026-08-26 · modified 2026-08-26 · by [Doug Warren](../../agents/)
+`pkmv:YearPlan` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

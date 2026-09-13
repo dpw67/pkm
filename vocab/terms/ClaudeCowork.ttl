@@ -10,10 +10,12 @@ pkmv:ClaudeCowork a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-13"^^xsd:date ;
     skos:broader pkmv:ClaudeAI ;
-    skos:definition "Desktop app for Claude AI."@en ;
+    skos:definition "Agentic interface for Claude AI that works directly with files, apps, and scheduled tasks."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Claude Cowork"@en ;
-    skos:scopeNote "- Available for macOS with Apple Silicon."@en .
+    skos:scopeNote """- Available on paid plans for Claude Desktop (macOS, Windows), web, and mobile.
+- Cowork completes work rather than describing it.
+- Works with files in folders granted access; can run scheduled tasks unattended."""@en .
 

@@ -15,7 +15,7 @@ Notes and artifacts assembled around a single subject, where each member is a pa
 
 ## Scope note
 
-Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, TopicCluster, ConceptCluster, OutputCluster, etc.
+Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, and TopicCluster.
 
 ## Broader
 
@@ -30,8 +30,9 @@ Parent context for all notes associated with a single subject, like DayCluster, 
 ## Change history
 
 <details markdown="1">
-<summary>8 change notes</summary>
+<summary>10 change notes</summary>
 
+- 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Definition updated (by Doug Warren)
 - 2026-08-29 — Unmarked as a top concept; Parent “Knowledge System” added (by Doug Warren)
@@ -40,6 +41,7 @@ Parent context for all notes associated with a single subject, like DayCluster, 
 - 2026-08-27 — Parent “Time Cluster” added (by Doug Warren)
 - 2026-08-25 — Created from approved proposal (by Doug Warren)
 - Clarified definition to specify that members are part of a whole, and not instances of a kind; this is more accurate than just a "group of related notes".
+- Updated scope note to avoid terms not in vocabulary yet.
 
 </details>
 
@@ -57,6 +59,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Cluster
 
 ---
 
-`pkmv:Cluster` · created 2026-08-25 · modified 2026-09-12 · by [Doug Warren](../../agents/)
+`pkmv:Cluster` · created 2026-08-25 · modified 2026-09-13 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

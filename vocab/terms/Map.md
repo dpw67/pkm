@@ -25,9 +25,7 @@ A note used to think, plan, organize, and/or navigate a group of related notes.
 
 _An open question about this term, not part of its definition._
 
-- Add a Home Note to the vocabulary as a broader (parent) concept for a Map. It's a special kind of Map (a Map of all the maps, like an Atlas of knowledge).
-- Maps should have an upward path toward the Home Note.
-- The Home Note should be an entry point to an Obsidian vault providing major organizational structure and navigation paths across all the concepts in the knowledge system. When that's added, it will be the parent for Map, rather than the current Obsidian Notes.
+Should the parent of this concept be a Home Note rather than Obsidian Notes? A Home Note would be a kind of Map — a Map of all the maps, an atlas of the knowledge system — and the single entry point to a vault, carrying the major organizational structure and the navigation paths across every concept in it. If it is added, every Map gains an upward path to it and it becomes the broader concept here in place of Obsidian Notes. It is not in the vocabulary yet, and whether it should be is open.
 
 ## Broader
 
@@ -62,6 +60,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Map
 
 ---
 
-`pkmv:Map` · created 2026-08-29 · modified 2026-09-11 · by [Doug Warren](../../agents/)
+`pkmv:Map` · created 2026-08-29 · modified 2026-09-12 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

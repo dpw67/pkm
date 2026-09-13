@@ -26,7 +26,8 @@ the third position; only major advances the second.
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 | 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
-| 13 | 0.1.8 — the rest of the Cluster family | next — §H |
+| 13 | 0.1.8 — phantom citations fixed, four prose checks | done — §H1, §H2 |
+| 14 | The seven bag-language definitions under `pkmv:Cluster` | deferred — §H |
 
 ### Where 0.1.6 left the graph
 

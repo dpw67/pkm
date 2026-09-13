@@ -141,8 +141,13 @@ the change without notice; it does not make it editorial.
 | `pkmv:Month-Health` | Month Health | the only hyphenated local name of 241; siblings are `DayHealth`, `WeekHealth`, `QuarterHealth`, `YearHealth` | `pkmv:MonthHealth` |
 | `pkmv:TemplateCopy` | Template | editor scaffolding in the URI; scope note copy-pasted verbatim from `ObsidianTemplate` | `pkmv:Template` |
 
-Both first appeared in 0.1.3, both return 200 today, and `make check` flags
-neither — `numeric-suffix` wants a digit and `opaque-uri` matches neither.
+Both first appeared in 0.1.3 and both return 200 today. As of 0.1.8
+`scaffolding-local-name` flags `pkmv:TemplateCopy` as a WARN — deliberately
+not an ERROR, because the fix is this section and an ERROR would block
+`make build` until it lands. **That warning is expected until §D ships; do
+not silence it.**
+`pkmv:Month-Health` is still flagged by nothing: `numeric-suffix` wants a digit,
+`opaque-uri` matches neither, and a hyphen is legal in a local name.
 
 `Month-Health` was briefly renamed during the 0.1.6 editor passes, which turned
 a patch into a major release and left `vocab/terms/Month-Health.{md,ttl}` as
@@ -182,6 +187,18 @@ which looks like an intent that was never finished. Adding `Template` as an
 additional broader is additive and minor; removing their existing parents is
 reparenting and major. Both can ride in 0.2.0, but the changelog has to say
 which happened.
+
+The three Claude interfaces are the same shape, found while fixing
+`pkmv:ClaudeCowork`'s stale definition in 0.1.8. `pkmv:ClaudeDesktop`,
+`pkmv:ClaudeCowork` and `pkmv:ClaudeChat` are all `skos:broader
+pkmv:ClaudeAI`, i.e. siblings — but Cowork and Chat are surfaces *inside*
+Claude Desktop, which `pkmv:ClaudeDesktop`'s own scope note says. Moving
+them under it is reparenting, so it waits with the rest of this section.
+Missing alongside them: a term for **Claude Code**, the third interface
+beside Chat and Cowork. Adding a term is additive and minor, so it need not
+wait for 0.2.0 — but it is the reason `pkmv:ClaudeDesktop`'s scope note
+lists two interfaces rather than three, and both notes should change in one
+editor session.
 
 ### D4. Two checks that would have caught these
 
@@ -419,7 +436,13 @@ hardcode it too, but they are a separate question: both may simply be dead.
   the two moves records as a rename; *Three Places for One Vocabulary* does not,
   even at `-M30%`, because it was rewritten as well as renamed.
 
-## H. 0.1.8 — the rest of the Cluster family
+## H. The rest of the Cluster family
+
+**0.1.8 shipped §H1 and §H2 and not the definitions below.** The phantom
+citations are gone and `phantom-citation` now stops the next one, but the
+seven concepts in the table still say a cluster is a bag. That is a
+definition rewrite on seven concepts at once, which wants its own release
+rather than riding along with a tooling patch.
 
 0.1.7 rewrote `pkmv:Cluster` and `pkmv:DayCluster` to say that a cluster is a
 whole of unlike parts about one subject. Seven concepts underneath them still
@@ -447,7 +470,7 @@ notes within a Day Cluster", and the three like it, describe one part holding
 notes of one kind — which is what a part is, so the bag reading is correct
 there.
 
-### H1. Two scope notes cite terms that do not exist
+### H1. Two scope notes cite terms that do not exist — fixed in 0.1.8
 
 `pkmv:Cluster`'s scope note names seven examples; two of them are not in the
 vocabulary.
@@ -474,14 +497,32 @@ notes in the Effort/Output Cluster design" — are spaced rather than CamelCase
 and read as design language, not term citations. Judgement call whether they
 move with the rest.
 
-### H2. A check that would have caught this
+### H2. A check that would have caught this — done in 0.1.8
 
-`checks.py` has no rule for prose that cites a CamelCase name absent from the
-scheme, which is why four scope notes have carried phantom terms since 0.1.2
-without a single finding. A check scanning `skos:definition` and
-`skos:scopeNote` for `\b[A-Z][a-z]+(?:[A-Z][a-z]+)+\b` and reporting any token
-that is neither a local name nor a known exception would have flagged all of
-them. Same shape as §D4's two proposals, and cheap.
+`scripts/pkm_vocab/prose.py` ships it as `phantom-citation`, and it found all
+ten of the citations in §H1 plus one more: the `pkmv:Month-Health` editorial
+note written the same week says "It should be MonthHealth", which reads as a
+citation of a term that does not exist yet. Quoting the name exempts it, which
+is both the fix and the convention — **a name you are recording rather than
+citing goes in quotes or backticks.**
+
+Two things the sketch here did not anticipate. The rule is ERROR only on
+reader-facing prose and WARN in the audit trail, because a change note naming a
+concept that has since gone is a record rather than a mistake — seven of those
+exist. Six are correct cleanup of `Proposals`-generated duplicates; the seventh
+is `pkmv:Action`'s own record of this same class of fix, "Removed ActionGroup
+reference in scope note since not defined in vocabulary yet." Which is the
+convention above arriving one note early: a name being recorded rather than
+cited belongs in quotes. It stays a WARN either way, so it is worth quoting the
+next time that note is touched rather than opening the editor for it. And the same
+tokenising pass gives `misspelled-word` for free, since deciding whether
+`DayLog` is a term and whether `mispelling` is a word are the same lookup.
+
+Two more rules landed with those, covering the rest of what the editor can
+get wrong without the graph noticing: `stale-duplicate-definition` (a
+definition still byte-identical to the concept it was duplicated from) and
+`scaffolding-local-name` (a local name ending in `Copy`, `NewConcept` or
+`Untitled`) — see §D for the one it already caught.
 
 Level: patch throughout. Prose only — no URI, label, parent or membership
 moves — so by the versioning table nothing a consumer queries changes meaning.

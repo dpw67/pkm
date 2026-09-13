@@ -81,8 +81,8 @@ classes:
     comments:
       - Reusable building block referenced by meals, per the concept's scope note.
       - >-
-        The definition names "instructions", which has no concept in 0.1.3.
-        Candidate addition for 0.1.4.
+        The definition names "instructions", which has no concept. Candidate
+        addition; minor. See ROADMAP §I1.
     see_also:
       - pkmv:Recipe
       - https://schema.org/Recipe
@@ -164,8 +164,8 @@ classes:
         amount_quantity/amount_unit and commit the vocabulary to concepts that
         do not exist yet.
       - >-
-        No pkmv: concept yet -- a 0.1.4 minting candidate, alongside Amount and
-        UnitOfMeasure.
+        No pkmv: concept yet -- a minting candidate, alongside Amount and
+        UnitOfMeasure; minor. See ROADMAP §I1.
     slots:
       - ingredient
       - quantity
@@ -185,7 +185,7 @@ classes:
         None of the six nutrients below exist as concepts -- pkmv:Nutrition has no
         narrowerPartitive children at all, so the definition's "e.g. calories,
         carbohydrates, fat, fiber" is the only place they are named. Protein and
-        sodium are not even named there. Mint all six in 0.1.4.
+        sodium are not even named there. Mint all six; minor. See ROADMAP §I1.
     see_also:
       - pkmv:Nutrition
     slots:
@@ -210,8 +210,9 @@ classes:
       - >-
         pkmv:RecipeServings is defined as "the number of servings or portions a
         recipe yields" -- a count, which is now only one of the two slots. Either
-        broaden that definition and add a RecipeYield narrowerPartitive child in
-        0.1.4, or keep it scalar and mint a separate grouping concept.
+        broaden that definition and add a RecipeYield narrowerPartitive child,
+        or keep it scalar and mint a separate grouping concept. Minor either
+        way. See ROADMAP §I2.
     see_also:
       - pkmv:RecipeServings
     slots:
@@ -227,7 +228,7 @@ classes:
       - >-
         The concept's definition names three components but the vocabulary gives
         it no narrower terms, so these three slots have no concepts behind them
-        yet. Candidate additions for 0.1.4.
+        yet. Candidate additions; minor. See ROADMAP §I1.
       - >-
         total_minutes is stored rather than derived: recipe sources state a total
         that does not always equal prep + cook.
@@ -256,8 +257,9 @@ classes:
     comments:
       - >-
         Singular, where the concept is pkmv:RecipeImages. A class names one
-        thing and the slot carries the cardinality. Worth deciding for 0.1.4
-        whether the concept should be renamed to match.
+        thing and the slot carries the cardinality. Worth deciding whether the
+        concept should be renamed to match -- a vocabulary-wide plural
+        question, not a lone rename. See ROADMAP §I3.
     see_also:
       - pkmv:RecipeImages
     slots:
@@ -280,7 +282,7 @@ enums:
     comments:
       - >-
         The concepts sit under pkmv:DayMeal, not pkmv:Meal, though Meal's scope
-        note claims them. Worth reconciling in 0.1.4.
+        note claims them. Worth reconciling; patch. See ROADMAP §I2.
     permissible_values:
       Breakfast:
         meaning: pkmv:Breakfast
@@ -296,8 +298,8 @@ enums:
     comments:
       - >-
         Read off RecipeSource's definition, not off the hierarchy -- these three
-        have no concepts. Either mint them in 0.1.4 or drop the enum for a
-        free-text string.
+        have no concepts. Either mint them or drop the enum for a free-text
+        string. Minor if minted. See ROADMAP §I1.
     permissible_values:
       Website:
       Cookbook:
@@ -387,11 +389,12 @@ slots:
     description: The unit the quantity is expressed in.
     comments:
       - >-
-        Free text for now; a UnitOfMeasure enum is a 0.1.4 candidate. It will
-        need a dimension tag before it is useful: lb and oz are mass, cup is
-        volume, can is packaging, and they do not inter-convert. So any
-        convert(to:) has to be failable -- unlike the single-dimension diabetes
-        events, where every unit in play measured the same quantity.
+        Free text for now; a UnitOfMeasure enum is a candidate; minor. See
+        ROADMAP §I1. It will need a dimension tag before it is useful: lb and
+        oz are mass, cup is volume, can is packaging, and they do not
+        inter-convert. So any convert(to:) has to be failable -- unlike the
+        single-dimension diabetes events, where every unit in play measured the
+        same quantity.
 
   calories:
     title: Cal
@@ -408,7 +411,7 @@ slots:
     range: float
     description: Protein in grams.
     comments:
-      - No pkmv concept. Mint in 0.1.4.
+      - No pkmv concept. Mint; minor. See ROADMAP §I1.
 
   fat_g:
     title: Fat
@@ -429,7 +432,7 @@ slots:
         Milligrams, unlike the macronutrients -- the unit belongs to the slot, which
         is why these are not a repeated Nutrient value object keyed by a
         UnitOfMeasure enum. Revisit if micronutrients arrive.
-      - No pkmv concept. Mint in 0.1.4.
+      - No pkmv concept. Mint; minor. See ROADMAP §I1.
 
   prep_minutes:
     title: Prep
@@ -473,5 +476,5 @@ slots:
     comments:
       - >-
         A reference, not a composition -- the recipe outlives the occasion. No
-        skos:related links Meal and Recipe in 0.1.3 even though Recipe's scope
-        note says "referenced by meals". Candidate for 0.1.4.
+        skos:related links Meal and Recipe even though Recipe's scope note says
+        "referenced by meals". Candidate; minor. See ROADMAP §I2.

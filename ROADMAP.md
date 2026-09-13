@@ -28,6 +28,7 @@ the third position; only major advances the second.
 | 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
 | 13 | 0.1.8 — phantom citations fixed, four prose checks | done — §H1, §H2 |
 | 14 | The seven bag-language definitions under `pkmv:Cluster` | deferred — §H |
+| 15 | The meals shape layer's open decisions | recorded — §I |
 
 ### Where 0.1.6 left the graph
 
@@ -527,6 +528,101 @@ definition still byte-identical to the concept it was duplicated from) and
 
 Level: patch throughout. Prose only — no URI, label, parent or membership
 moves — so by the versioning table nothing a consumer queries changes meaning.
+
+## I. The meals shape layer's open decisions
+
+`schema/pkm-meals.yaml` records a dozen open decisions in its `comments:`
+fields, and until this section existed every one of them named **0.1.4** as its
+target. 0.1.4 shipped on 2026-09-09 and none of them landed; the vocabulary is
+now at 0.1.8, so the file spent four releases pointing at a date in the past.
+The decisions are all still open — only the dates were wrong.
+
+**Why they went stale where the changelog's counts did not.** Nothing in the
+release pipeline reads this file. `schema/` is excluded in `_config.yml`, so it
+has no page and no reader; `make artifacts` does read it, but writes to
+`generated/`, which is `.gitignore`d with zero tracked files; and `schema/` was
+byte-identical across 0.1.8, which is why that release skipped `make artifacts`
+altogether. A file no build reads and no browser renders can be wrong for four
+releases without anything noticing.
+
+So the comments now name a **level** and point here, and this section carries
+the ordering. A level is a property of the change and cannot expire; a release
+number is a schedule. At `0.x` both patch and minor advance the third position,
+so an additive mint below lands at 0.1.9 if it precedes §D and at 0.2.1 if it
+follows — naming either number is exactly what went stale.
+
+### I1. Concepts the shapes need and the vocabulary does not have
+
+Sixteen, every one still absent from published 0.1.8 — checked against the
+export rather than taken from the comments:
+
+| shape site | absent concepts |
+| --- | --- |
+| `Recipe`'s definition names "instructions" | `Instructions` |
+| `RecipeIngredient` — the use, not the food (`pkmv:Ingredient` exists) | `RecipeIngredient`, `Amount`, `UnitOfMeasure` |
+| `RecipeNutrition`'s six slots — `pkmv:Nutrition` has **no** narrowerPartitive children at all | `Calories`, `Carbohydrates`, `Fat`, `Fiber`, `Protein`, `Sodium` |
+| `RecipeTime`'s three slots | `PrepTime`, `CookTime`, `TotalTime` |
+| `SourceKind`'s three values | `Website`, `Cookbook`, `Magazine` |
+
+Additive throughout, so minor. Two are decisions before they are work:
+
+- **`SourceKind` can be dropped rather than minted.** LinkML's `meaning:` slot
+  wants a `pkmv:` URI per permissible value, so an un-minted enum is precisely
+  the thing with nowhere to point. Free text is the alternative, and it costs
+  the three concepts.
+- **`UnitOfMeasure` needs a dimension tag before it is worth minting.** lb and
+  oz are mass, cup is volume, can is packaging, and they do not inter-convert —
+  which is why any `convert(to:)` over it has to be failable, unlike the
+  single-dimension diabetes units it would otherwise resemble.
+
+### I2. Prose the graph contradicts
+
+- **`pkmv:Meal`'s scope note names six children and parents none of them.** It
+  reads "Parent concept for the meal-planning domain (Breakfast, Lunch, Dinner,
+  Snack, Recipe, DayMeal, etc.)". Its actual children are `pkmv:Food`,
+  `pkmv:MealPlan` and `pkmv:Restaurant`. The four meal kinds sit under
+  `pkmv:DayMeal`, `DayMeal` sits under `MealPlan`, and `Recipe` is `Meal`'s
+  **sibling** under `pkmv:PKMMeals` — so none of the six it names, and it names
+  none of the three it has. `phantom-citation` cannot see this, because all six
+  names exist and the rule fires on names that do not. **Recorded, not
+  scheduled.**
+- **`pkmv:RecipeServings` is defined as a count** — "the number of servings or
+  portions a recipe yields" — where the shape carries two slots, because what a
+  source claims ("makes 24 cookies", "one 9-inch loaf") does not always reduce
+  to a number. Either broaden that definition and add `RecipeYield` as a
+  narrowerPartitive child, or keep it scalar and mint a grouping concept above
+  it. Minor either way; both branches mint.
+- **No `skos:related` links `Meal` and `Recipe`**, though `Recipe`'s scope note
+  says it is "referenced by meals".
+
+The first and last are one reading twice over: `Meal`'s prose claims a
+relationship to `Recipe` that the graph does not assert, and says nothing about
+the three concepts it does hold.
+
+### I3. A naming policy, not a rename
+
+The yaml asks whether `pkmv:RecipeImages` should be renamed singular to match
+the `RecipeImage` class beside it. **It does not belong in §D.** §D's two URIs
+are malformed — editor scaffolding in one, a stray hyphen in the other — and a
+plural label is neither. Twenty-six concepts carry one, among them `Bases`,
+`Day Actions`, `Day Links`, `Note Types`, `Obsidian Notes`, `Periodic Notes`,
+`Recipe Servings`, `Semantic Web Standards`, `Week Analysis` and `Workspaces`.
+So the real question is whether this vocabulary has a singular/plural
+convention at all, and it gets answered once for twenty-six concepts or not at
+all.
+
+### I4. A fifth check, deferred until the data is fixed
+
+A rule reading a scope note's parenthetical list against the concept's actual
+narrower set would have caught `pkmv:Meal`. Deferring it is deliberate:
+designing a rule from a single example produces a rule that fits a single
+example. Fix `Meal`, see whether the shape recurs, then decide — each of the
+four rules in §H2 was drawn from a class measured across the whole vocabulary
+first.
+
+Level: I1 and the last two items of I2 are minor, since every existing URI
+keeps its meaning. `pkmv:Meal`'s scope note is patch. I3 and I4 are
+unscheduled.
 
 
 ## Backlog

@@ -436,7 +436,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Note Types](NoteTypes/)
 ### E
 
-- **[Effort Cluster](EffortCluster/)** — A group of related notes about an effort.
+- **[Effort Cluster](EffortCluster/)** — Notes and artifacts assembled around a single effort, rather than every note that happens to mention it.
   <br>In: [Effort Collection](EffortCollection/)
 - **[Effort Collection](EffortCollection/)** _(collection, 5 members)_ — All the related notes for a single Effort.
 - **[Effort Index](EffortIndex/)** — The index note that links all artifacts for an effort.
@@ -518,7 +518,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Month](Month/)** — A calendar month grouping weeks and days.
   <br>In: [Month Collection](MonthCollection/)
-- **[Month Cluster](MonthCluster/)** — A group of related notes about a month.
+- **[Month Cluster](MonthCluster/)** — Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
 - **[Month Collection](MonthCollection/)** _(collection, 5 members)_ — All related notes for a calendar month grouping Weeks and Days.
 - **[Month Health](Month-Health/)** — The health-related summary for a month.
 - **[Month Journal](MonthJournal/)** — Reflective writing about a month.
@@ -581,7 +581,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Quarter](Quarter/)** — A three-month time period used for medium-level planning.
   <br>In: [Quarter Collection](QuarterCollection/)
-- **[Quarter Cluster](QuarterCluster/)** — A group of related notes about a quarter.
+- **[Quarter Cluster](QuarterCluster/)** — Everything the system produces about a single quarter — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
   <br>In: [Quarter Collection](QuarterCollection/)
 - **[Quarter Collection](QuarterCollection/)** _(collection, 6 members)_ — All related notes for a time period of three Months uses for medium-term planning.
 - **[Quarter Health](QuarterHealth/)** — The health-related summary for a quarter.
@@ -647,7 +647,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](ConceptCollection/), [Note Types](NoteTypes/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Time](Time/)** — A concept element representing a temporal reference point or duration.
   <br>In: [Time Collection](TimeCollection/)
-- **[Time Cluster](TimeCluster/)** — A group of related notes for a time period (or time horizon).
+- **[Time Cluster](TimeCluster/)** — A cluster whose subject is a single time period, at any horizon from a day to a year.
   <br>In: [Time Collection](TimeCollection/)
 - **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — All the related concepts about Time.
 - **[Tool](Tool/)** — A software capability used within the PKM system.
@@ -655,7 +655,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Tool Event](ToolEvent/)** — Something that happened during processing with a tool.
 - **[Topic](Topic/)** — A subject or theme that content can be about.
   <br>In: [Knowledge Collection](KnowledgeCollection/)
-- **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic.
+- **[Topic Cluster](TopicCluster/)** — Notes and artifacts assembled around a single topic, rather than every note that happens to mention it.
 - **[Topic Index](TopicIndex/)** — The index note that links all artifacts for a topic.
 - **[Topic Journal](TopicJournal/)** — Free-form reflective writing about a topic.
 - **[Topic Log](TopicLog/)** — A chronological record of what actually happened related to a topic.
@@ -677,7 +677,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Week Collection](WeekCollection/)
 - **[Week Analysis](WeekAnalysis/)** — A note summarizing patterns, trends, or review findings across a week's Day Clusters.
   <br>In: [Week Collection](WeekCollection/)
-- **[Week Cluster](WeekCluster/)** — The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters.
+- **[Week Cluster](WeekCluster/)** — Everything the system produces about a single week — its index, plan, log, review, journal, analysis, health and meal-plan notes — taken as one whole rather than many notes of one kind.
 - **[Week Collection](WeekCollection/)** _(collection, 11 members)_ — All notes related to a single Week time period of seven consecutive days.
 - **[Week Diabetes](WeekDiabetes/)** — A weekly note or artifact aggregating diabetes-related tracking data for the week.
   <br>In: [Week Collection](WeekCollection/)
@@ -704,7 +704,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Year](Year/)** — A calendar year grouping quarters and months.
   <br>In: [Year Collection](YearCollection/)
-- **[Year Cluster](YearCluster/)** — A group of related notes about a year.
+- **[Year Cluster](YearCluster/)** — Everything the system produces about a single year — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
   <br>In: [Year Collection](YearCollection/)
 - **[Year Collection](YearCollection/)** _(collection, 7 members)_ — All notes related to a calendar Year groups Quarters and Months.
 - **[Year Health](YearHealth/)** — The health-related summary for a year.

@@ -10,9 +10,9 @@ pkmv:TopicCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-11"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     skos:broader pkmv:Cluster ;
-    skos:definition "A group of related notes about a topic."@en ;
+    skos:definition "Notes and artifacts assembled around a single topic, rather than every note that happens to mention it."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:TopicIndex,
         pkmv:TopicJournal,
@@ -20,5 +20,5 @@ pkmv:TopicCluster a skos:Concept ;
         pkmv:TopicPlan,
         pkmv:TopicReview ;
     skos:prefLabel "Topic Cluster"@en ;
-    skos:scopeNote "Parent context for all notes associated with a topic."@en .
+    skos:scopeNote "Gathers the notes of one topic. Unlike the time clusters it asserts no partitive structure yet, so its members are related by skos:broader alone."@en .
 

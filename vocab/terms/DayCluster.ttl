@@ -13,7 +13,7 @@ pkmv:DayCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-12"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:DayClusterCore,
@@ -30,5 +30,5 @@ pkmv:DayCluster a skos:Concept ;
         pkmv:DayClusterVisual ;
     skos:prefLabel "Day Cluster"@en ;
     skos:related pkmv:Day ;
-    skos:scopeNote "The central organizing pattern of this system. Narrower concepts (DayClusterCore, DayClusterHealth, DayClusterSupport, DayClusterVisual) partition each day's artifacts; mirrors the Week/Month clusters at other granularities."@en .
+    skos:scopeNote "The central organizing pattern of this system, and the only cluster partitioned in two levels: DayClusterCore, DayClusterHealth, DayClusterSupport and DayClusterVisual each hold notes of their own, where WeekCluster, MonthCluster, QuarterCluster and YearCluster hold theirs directly."@en .
 

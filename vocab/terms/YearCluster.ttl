@@ -13,7 +13,7 @@ pkmv:YearCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:YearHealth,
@@ -23,7 +23,7 @@ pkmv:YearCluster a skos:Concept ;
         pkmv:YearReview ;
     skos:broader pkmv:CalendarFolder,
         pkmv:TimeCluster ;
-    skos:definition "A group of related notes about a year."@en ;
+    skos:definition "Everything the system produces about a single year — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:YearHealth,
         pkmv:YearJournal,
@@ -32,5 +32,5 @@ pkmv:YearCluster a skos:Concept ;
         pkmv:YearReview ;
     skos:prefLabel "Year Cluster"@en ;
     skos:related pkmv:Year ;
-    skos:scopeNote "Parent context for all notes associated with a year."@en .
+    skos:scopeNote "The yearly rung of the roll-up. Its five parts are the same five MonthCluster and QuarterCluster carry, so a reader who knows one knows all three."@en .
 

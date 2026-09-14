@@ -13,7 +13,7 @@ pkmv:DayLog a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-28"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderPartitive pkmv:DayClusterCore ;
     skos:broader pkmv:DayClusterCore ;
     skos:definition "A chronological record of what actually happened during a day."@en ;

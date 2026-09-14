@@ -15,7 +15,7 @@ Everything the system produces about a single day, partitioned into four unlike 
 
 ## Scope note
 
-The central organizing pattern of this system. Narrower concepts (DayClusterCore, DayClusterHealth, DayClusterSupport, DayClusterVisual) partition each day's artifacts; mirrors the Week/Month clusters at other granularities.
+The central organizing pattern of this system, and the only cluster partitioned in two levels: DayClusterCore, DayClusterHealth, DayClusterSupport and DayClusterVisual each hold notes of their own, where WeekCluster, MonthCluster, QuarterCluster and YearCluster hold theirs directly.
 
 ## Broader
 
@@ -44,8 +44,9 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>7 change notes</summary>
+<summary>8 change notes</summary>
 
+- 2026-09-14 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Definition updated (by Doug Warren)
 - 2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)
 - 2026-08-28 — Definition added; Scope note added (by Doug Warren)
@@ -70,6 +71,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/DayCluster
 
 ---
 
-`pkmv:DayCluster` · created 2026-08-26 · modified 2026-09-12 · by [Doug Warren](../../agents/)
+`pkmv:DayCluster` · created 2026-08-26 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

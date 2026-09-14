@@ -13,7 +13,7 @@ pkmv:Knowledge a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:narrowerPartitive pkmv:Cluster,
         pkmv:Concept,
         pkmv:Source,
@@ -26,5 +26,5 @@ pkmv:Knowledge a skos:Concept ;
         pkmv:Source,
         pkmv:Topic ;
     skos:prefLabel "Knowledge"@en ;
-    skos:scopeNote "Use as the broadest top concept anchoring the vocabulary; more specific forms (Metadata, Ontology, Taxonomy, KnowledgeGraph, Term) refine how knowledge is captured or represented. Not applied to individual notes directly."@en .
+    skos:scopeNote "Use as the broad anchor for what this vocabulary is about; its narrower concepts are Cluster, Concept, Source and Topic. Metadata, Ontology, Taxonomy, KnowledgeGraph and Term are siblings under KnowledgeSystem rather than narrower forms of this concept. Not applied to individual notes directly."@en .
 

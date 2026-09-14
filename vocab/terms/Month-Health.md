@@ -30,8 +30,9 @@ The local name is the only hyphenated one in this vocabulary; the siblings are D
 ## Change history
 
 <details markdown="1">
-<summary>8 change notes</summary>
+<summary>9 change notes</summary>
 
+- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-09-11 — Renamed from “MonthHealth” to “Month-Health” (by Doug Warren)
 - 2026-09-11 — Renamed from “Month-Health” to “MonthHealth” (by Doug Warren)
 - 2026-08-27 — Preferred label changed from “MonthHealth” to “Month Health” (by Doug Warren)
@@ -39,7 +40,7 @@ The local name is the only hyphenated one in this vocabulary; the siblings are D
 - 2026-08-26 — Scope note added (by Doug Warren)
 - 2026-08-26 — Renamed from “NewConcept” to “Month-Health”; Preferred label “MonthHealth” added (by Doug Warren)
 - 2026-08-26 — Definition added (by Doug Warren)
-- Added definition and scope notes to MonthHealth.
+- Added definition and scope notes to "MonthHealth".
 
 </details>
 
@@ -57,6 +58,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Month-Health
 
 ---
 
-`pkmv:Month-Health` · created 2026-08-26 · modified 2026-09-13 · by [Doug Warren](../../agents/)
+`pkmv:Month-Health` · created 2026-08-26 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

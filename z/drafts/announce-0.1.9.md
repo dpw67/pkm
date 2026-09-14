@@ -4,13 +4,18 @@
 [Announcements](https://github.com/dpw67/pkm/discussions/categories/announcements)
 by hand; Discussions has no draft state, so posting is immediately public.
 
-**Prerequisites, both of which must be true before posting:**
+**Prerequisites — both now satisfied, so this is clear to post.**
 
-1. The `v0.1.9` release is **published**, not a draft. It is created as a draft
-   deliberately. A draft's tag URL returns 200 with a bare tag page carrying
-   none of the notes, so the "Release notes" link below would land a reader on
-   something that looks like an empty release rather than a missing one.
-2. `w3id.org/pkm` serves 0.1.9. Verified 2026-09-14: the namespace returns
+1. The `v0.1.9` release is **published**, not a draft. ✅ Verified 2026-09-14:
+   `draft: false`, published 22:29 UTC, and v0.1.9 holds the **Latest** badge.
+   It mattered because a draft's tag URL is not a 404 — it returns 200 with a
+   bare page carrying only the title in `og:` meta tags, so the "Release notes"
+   link below would have landed a reader on what looks like an *empty* release
+   rather than a missing one. Tested by grepping the anonymous page for four
+   distinctive strings from the notes body — `DayMeeting`, `Seventy-four`,
+   `membership rule`, `241 URIs` — which returned **0 matches each while
+   drafted and 1 each now**.
+2. `w3id.org/pkm` serves 0.1.9. ✅ Verified 2026-09-14: the namespace returns
    `owl:versionInfo "0.1.9"`, the front page reads "Vocabulary 0.1.9", and
    `vocab/WeekCluster`, `vocab/Knowledge` and `vocab/DayCollection` all carry
    their new text.

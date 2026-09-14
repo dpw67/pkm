@@ -21,6 +21,35 @@ belongs to the Crosswalk panel, not the app.
 
 ---
 
+## C. `[Bug]: Editing a collection's description leaves no change note, where editing a concept does`
+
+**Not yet filed.** Measured on the 0.1.9 editor session at `dce18c0`.
+
+**Label:** `bug` · **Area:** Collections / change history
+
+One session rewrote prose on 26 terms — 11 concepts and 15 collections. The
+editor wrote a dated change note for **all eleven concepts and none of the
+fifteen collections**. So a collection's `skos:note` can be replaced entirely
+and the exported graph carries no record that it changed; in this vocabulary
+the collections' audit trail is still empty at 0 of 18 after fifteen of them
+were rewritten.
+
+Concepts get this right, and the asymmetry looks like the same second-class
+treatment as **#58** — collections exporting with `rdfs:label` and `skos:note`
+where concepts get `skos:prefLabel` and `skos:definition`. #58 is closed and
+fixed; the edit history was not in its scope.
+
+**Expected:** editing a collection's label or note seeds a history entry the
+way `seedHistory` does for a concept, and exports as `skos:changeNote`.
+
+**Why it matters here:** the changelog is currently the only record that those
+fifteen descriptions moved, and a consumer reading the graph has no way to see
+it. Writing the notes by hand in the repo is not a workaround — the export is
+the editor's output and hand-editing it is what this project has just spent a
+release undoing.
+
+---
+
 ## Observed fixed — #77, #78 and #81, at `dce18c0` (2026-09-13)
 
 Found while testing whether the editor could reload this project's own export,

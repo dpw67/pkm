@@ -124,6 +124,31 @@ makes this a patch.
   also the first time any collection has carried a `skos:changeNote` — none of
   the eighteen had an audit trail of any kind before now. 15 more term pages
   changed.
+
+- **Seventy-four change notes repaired upstream, arriving here for free.** The
+  SKOS Editor fixed the two artifact classes this vocabulary has worked around
+  since 0.1.6: a language tag written inside a quoted label
+  (`Preferred label changed from “AppIntent@en”`, 35 of them) and a proposer
+  named twice when they approved their own proposal
+  (`Created from approved proposal (proposed by Doug Warren) (by Doug Warren)`,
+  39). They are upstream
+  [#77](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77)
+  and [#78](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78),
+  with
+  [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81)
+  explaining why the fix had appeared not to reach this vocabulary — the
+  earlier migration walked only stored edit history and not notes that arrived
+  by import, and every note here arrived by import. The repair now runs
+  whenever a project is opened, so it landed without anything being asked of
+  it. **This is upstream's work, not this project's**, and it is recorded here
+  only because the published prose changes: 74 literals across 57 concepts,
+  measured rather than counted from the diff. Two consequences worth stating.
+  `make check` drops from three warnings to one — the survivor being
+  `scaffolding-local-name` on `pkmv:TemplateCopy`, which waits for the 0.2.0
+  rename. And `transform.py`'s matching repair becomes a no-op: it is kept as a
+  defence against an export from an older editor, but the count of literals it
+  rewrites on every build falls from 95 to 21, all of them now the invisible
+  whitespace kind that no reader could ever perceive.
 ## [0.1.8] — 2026-09-13
 
 Two editorial notes rewritten for the audience that can now read them, the

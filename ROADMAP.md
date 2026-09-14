@@ -33,18 +33,20 @@ the third position; only major advances the second.
 | 17 | What the eighteen collections actually are | measured — §E1 |
 | 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
 | 19 | Upstream validation as a second opinion | done — §M |
+| 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
 
 ### Where 0.1.9 left the graph
 
 `make check` on the export: 4377 triples, 223 concepts, 18 collections, 236
 hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 3 warn.**
 
-Two of the three are upstream residue, not defects here: `doubled-attribution`
-(39) and `lang-tag-in-text` (35) are SKOS Editor artifacts that `transform.py`
-repairs on the way out, so the **published** graph is clean either way. Upstream
-#81 covers them. The third is `scaffolding-local-name` on `pkmv:TemplateCopy`,
-which the transform cannot repair because the fix is a rename — see §D, and do
-not silence it.
+Two of the three were upstream residue: `doubled-attribution` (39) and
+`lang-tag-in-text` (35), SKOS Editor artifacts that `transform.py` repaired on
+the way out so the published graph was clean either way. **Both are now fixed
+at the source** — see §N — so once 0.1.9's export lands from the editor the
+count falls to **1 warn**, and that one is `scaffolding-local-name` on
+`pkmv:TemplateCopy`, which the transform cannot repair because the fix is a
+rename. See §D, and do not silence it.
 
 So `make build` prints **`1 warn remain after transform`**, and that one warning
 is the whole of what is left. The line first appeared in 0.1.8, when the rule
@@ -145,11 +147,15 @@ only definition of 223 missing its period, and `self-referential-prose` found
   whole class is the unreported kind. `pkmv:TimeCluster`'s was fixed at the
   source in 0.1.9 because its scope note was being rewritten anyway.
 
-  Worth keeping the total honest while here: `transform.py` repairs **95**
+  Worth keeping the total honest while here: `transform.py` repaired **95**
   literals on every build, not the 94 once claimed, and only 21 of them
-  silently. The other 74 are exactly the two WARN groups `make check` prints —
+  silently. The other 74 were exactly the two WARN groups `make check` printed —
   35 `lang-tag-in-text` and 39 `doubled-attribution` — so "silently repaired"
-  overstates the invisible part more than fourfold.
+  overstated the invisible part more than fourfold.
+
+  **As of §N the 74 are fixed upstream, so the number is 21 and all of them are
+  the invisible kind** — which is the measurement finally agreeing with the
+  story this section tells.
 
 ## D. 0.2.0 — two malformed URIs
 
@@ -1024,6 +1030,51 @@ dependency with
 `uv pip install --python $SKOS_ENGINE/.venv/bin/python pyshacl==0.40.1`.
 Without pyshacl the structural half still runs and the report says the SHACL
 half did not, rather than letting a silent skip read as a pass.
+
+## N. The editor fixed the two artifact classes at the source
+
+Found by testing whether the editor could reload this project's own export —
+not by looking for it, which is the only reason it was found at all.
+
+Importing `z/pkm-vocab.export-0.1.8.ttl` into the editor at `dce18c0` and
+re-exporting rewrote **74 change notes across 57 subjects**: 35 carrying a
+language tag inside a quoted label, 39 naming the proposer twice. Exactly the
+two classes `transform.py` has repaired on every build since 0.1.6, and exactly
+the two `make check` reported as WARN. Nothing else moved — 4359 triples in and
+out, 241 URIs with none minted or lost, 236 broader pairs identical, 318 ISO
+25964 triples, no collection membership changed.
+
+| upstream | defect | state |
+|---|---|---|
+| [#77](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77) | language tag inside a quoted label — `“AppIntent@en”` | **fixed** |
+| [#78](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78) | doubled attribution — `(proposed by X) (by X)` | **fixed** |
+| [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | the migration walked only stored history, not imported notes | **fixed** |
+
+**#81 is the one that matters here**, because it is why this file recorded the
+other two as permanent. The editor's own source comment explains it: the
+earlier migration "only walked history, so notes present at a user's last
+import kept their `@en` and doubled names — hence the apparent 'date cutoff'."
+This vocabulary is entirely imported notes, so it saw none of the fix.
+
+**The fix arrives without an import.** `repairNoteText()` and
+`migrateHistoryNotes()` are called from `boot()` and followed by `save()`, so
+any project repairs itself when it is opened. That is stronger than the
+migration this project asked for in the #77 draft.
+
+### N1. What it changes here
+
+- **`make check` falls from 3 warn to 1** once 0.1.9's export lands, leaving
+  only `scaffolding-local-name` — see §D.
+- **`transform.py` step 7 becomes a no-op.** `DOUBLED_ATTRIBUTION` and
+  `LANG_IN_TEXT` will match nothing. **Leave the code**: it costs one pass over
+  the literals and defends against an export from an older editor or another
+  machine. But it is belt-and-braces now, not load-bearing, and §C1's count
+  drops from 95 repaired literals to 21.
+- **74 repaired literals ride in 0.1.9** whether or not anything else changes,
+  because the migration runs on load. They are upstream's work, not this
+  project's, and the changelog says so.
+- The two checks stay. A rule that finds nothing because the defect was fixed
+  is a rule doing its job, and neither costs anything to keep.
 
 ## Backlog
 

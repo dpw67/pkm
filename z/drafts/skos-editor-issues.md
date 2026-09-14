@@ -6,9 +6,10 @@ Drafts against [`jesstalisman-ia/intentional-arrangement-skos`](https://github.c
 #58 through #63. They are kept below as an archive, because their shape is the one
 Jessica accepted and it is worth matching. Do not re-file them.
 
-A and B are filed and **open** — #77 and #78. They stay above the archive until
-they close, because follow-up may be needed. Do not re-file them either; the
-text below is what was submitted, plus a re-measurement paragraph each.
+A and B were filed and open — #77 and #78. **Both are now fixed upstream, and
+so is #81**, which was the reason the fix appeared to have a date cutoff. See
+*Observed fixed* below before reading them; the drafts are kept because the
+shape was accepted and the evidence is still the record of what was wrong.
 
 Evidence is from `../../vocab/src/pkm-vocab.export.ttl` (223 concepts, 18
 collections), re-measured against a fresh export from the editor at `48b1ae35`:
@@ -17,6 +18,41 @@ came back byte-identical and the migration ask in A is correct.
 
 **Cite the commit SHA, not a version string.** The `v0.17.3` at `app/index.html:933`
 belongs to the Crosswalk panel, not the app.
+
+---
+
+## Observed fixed — #77, #78 and #81, at `dce18c0` (2026-09-13)
+
+Found while testing whether the editor could reload this project's own export,
+not by looking for it.
+
+Importing `z/pkm-vocab.export-0.1.8.ttl` and re-exporting rewrote **74 change
+notes across 57 subjects** — 35 of the #77 shape and 39 of the #78 shape,
+summing exactly. Nothing else moved: 4359 triples in and out, 241 URIs with
+none minted or lost, 236 broader pairs identical, 318 ISO 25964 triples, no
+collection membership changed. `make check` on the re-export drops from 11
+warnings to 9, with `lang-tag-in-text` and `doubled-attribution` both gone.
+
+**The mechanism is better than the ask.** A's draft asked for a migration over
+stored history. What shipped is `repairNoteText()` plus `migrateHistoryNotes()`
+in `app/index.html`, called from **`boot()`** and followed by `save()` — so it
+runs when *any* project loads, repairs both `history[].changes` and imported
+`changeNote[].val`, and persists. No import is needed to get the fix; opening
+the project is enough.
+
+That second half is #81. The source comment says it directly: the earlier
+migration "only walked history, so notes present at a user's last import kept
+their @en and doubled names — hence the apparent 'date cutoff'." That cutoff
+is what this project had recorded as permanent upstream residue.
+
+**Consequence here.** `transform.py` steps 7's two repairs become no-ops once a
+clean export lands. The code stays as a defence against an older editor, but it
+is no longer load-bearing, and the literal count it repairs falls from 95 to
+21 — all of them the invisible whitespace kind.
+
+Nothing to file. Worth telling Jessica the fix is confirmed against a
+223-concept vocabulary, since #81's symptom was specifically the one that only
+shows up on a project with import history.
 
 ---
 

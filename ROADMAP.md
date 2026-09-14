@@ -27,13 +27,14 @@ the third position; only major advances the second.
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 | 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
 | 13 | 0.1.8 — phantom citations fixed, four prose checks | done — §H1, §H2 |
-| 14 | 0.1.9 — the Cluster family says what the graph says | done — §H |
+| 14 | 0.1.9 — released: Cluster says what the graph says, collections say what decides membership | done — §H, §E1 |
 | 15 | The meals shape layer's open decisions | recorded — §I |
 | 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
 | 17 | What the eighteen collections actually are | measured — §E1 |
 | 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
 | 19 | Upstream validation as a second opinion | done — §M |
 | 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
+| 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
 
 ### Where 0.1.9 left the graph
 
@@ -1114,6 +1115,62 @@ concepts get `skos:prefLabel` and `skos:definition`. That one is closed; the
 edit history was not part of it. Worth filing, and worth saying that no
 workaround belongs here — writing the notes by hand in the repo is precisely
 what §N's whole story says not to do.
+
+## O. Turtle as interchange, and who owns the vocabulary
+
+The round-trip test in §N was run to answer a small question — can the editor
+reload this project's own export — and answered a larger one. Worth recording
+now because **PKM Studio** and the SKOS backend taking shape in
+`pkm-neo4j-service` (`app/services/ontology/pkm/concepts/`, `mcp/`) would each
+become another writer on the same vocabulary.
+
+**What it proved.** A Turtle export goes into the SKOS Editor and comes back
+with 241 URIs intact, 236 broader pairs identical, 318 ISO 25964 relations
+preserved and no membership moved — and 74 literals repaired on the way. So
+Turtle is a viable interchange format between tools, which is the precondition
+the whole plan rests on. Import is a first-class feature of the editor, not a
+side effect, and its "new project" path leaves existing projects untouched.
+
+**What it did not prove, and 0.1.9 is the case study.** Interchange is not the
+same as multiple sources of truth. This release went wrong precisely because
+two copies existed — the editor's in browser localStorage and the repo's in
+`vocab/src/` — and the wrong one was edited. Nothing detected it. The export
+parsed, `make check` passed, the generated pages rendered, and the divergence
+was only found by reading `CONTRIBUTING.md` and asking. A third and fourth
+writer multiply that failure rather than change its shape.
+
+### O1. What a multi-writer setup needs
+
+| need | state today |
+|---|---|
+| a staleness signal per resource | `dcterms:modified` on every concept and, since 0.1.9, **18 of 18** collections |
+| a diff that ignores serialization order | `scripts/compare_exports.py` |
+| an independent validator | `make validate-skos` — §M |
+| **a declared owner per artifact** | **missing. This is the open question.** |
+
+The first three arrived incidentally while fixing something else, which is
+worth noticing: most of the machinery a second writer needs already exists. The
+fourth is not machinery at all, it is a decision.
+
+### O2. The sentence that has to change
+
+`CONTRIBUTING.md` states that the vocabulary is authored in the Intentional
+Arrangement SKOS Editor, exported to `vocab/src/pkm-vocab.export.ttl`, and
+built from there. **That sentence becomes false the day PKM Studio writes a
+term**, and it is exactly the rule this release spent four commits re-learning
+after ignoring it.
+
+So it cannot be allowed to lapse quietly. Either it is restated — one tool
+authors, the others read — or it is replaced with something that says how two
+writers reconcile. The editor's own answer is worth knowing and is not a model
+to copy: its workspace restore keeps a per-project `updated` timestamp and
+resolves conflicts by refusing to overwrite, restoring the incoming copy
+*beside* the existing one as "(restored)". Safe, and it leaves a human to
+merge.
+
+The honest default until there is something better: **one tool owns authoring
+and the rest read.** A vocabulary with 241 URIs and no merge story is not the
+place to discover that two editors disagree.
 
 ## Backlog
 

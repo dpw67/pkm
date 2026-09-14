@@ -22,15 +22,6 @@ Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts
 - [Quarter Plan](../QuarterPlan/)
 - [Quarter Review](../QuarterReview/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/QuarterCollection` (`pkmv:QuarterCollection`)
@@ -45,6 +36,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/QuarterCollection
 
 ---
 
-`pkmv:QuarterCollection`
+`pkmv:QuarterCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

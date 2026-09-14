@@ -29,10 +29,15 @@ belongs to the Crosswalk panel, not the app.
 
 One session rewrote prose on 26 terms — 11 concepts and 15 collections. The
 editor wrote a dated change note for **all eleven concepts and none of the
-fifteen collections**. So a collection's `skos:note` can be replaced entirely
-and the exported graph carries no record that it changed; in this vocabulary
-the collections' audit trail is still empty at 0 of 18 after fifteen of them
-were rewritten.
+fifteen collections**.
+
+**It is not that the edit went unnoticed — it is recorded as a date and not as
+a change.** Across the same export, collections carrying `dcterms:modified`
+went from 3 of 18 to **18 of 18**, while collections carrying
+`skos:changeNote` stayed at **0 of 18**. So the editor knows a collection was
+edited, stamps it, and writes down nothing about what changed. A
+collection's `skos:note` can be replaced entirely and the only trace in the
+exported graph is a bumped date.
 
 Concepts get this right, and the asymmetry looks like the same second-class
 treatment as **#58** — collections exporting with `rdfs:label` and `skos:note`

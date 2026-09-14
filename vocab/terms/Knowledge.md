@@ -37,9 +37,10 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>5 change notes</summary>
+<summary>6 change notes</summary>
 
-- 2026-09-14 — Scope note updated (by Doug Warren)
+- 2026-09-14 — Definition updated; Scope note updated (by Doug Warren)
+- 2026-09-14 — Definition updated (by Doug Warren)
 - 2026-08-29 — Unmarked as a top concept (by Doug Warren)
 - 2026-08-29 — Parent “Knowledge System” added (by Doug Warren)
 - 2026-08-28 — Definition added; Scope note added (by Doug Warren)

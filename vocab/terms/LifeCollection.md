@@ -17,15 +17,6 @@ Life alone, the top time horizon. No narrower concepts exist, so this records an
 
 - [Life](../Life/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/LifeCollection` (`pkmv:LifeCollection`)
@@ -40,6 +31,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/LifeCollection
 
 ---
 
-`pkmv:LifeCollection`
+`pkmv:LifeCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

@@ -1,9 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:LifeCollection a skos:Collection ;
     rdfs:label "Life Collection"@en ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
     skos:note "Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping."@en ;

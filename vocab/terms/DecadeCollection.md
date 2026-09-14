@@ -17,15 +17,6 @@ Decade alone. No decade notes are generated and no narrower concepts exist, so t
 
 - [Decade](../Decade/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/DecadeCollection` (`pkmv:DecadeCollection`)
@@ -40,6 +31,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/DecadeCollection
 
 ---
 
-`pkmv:DecadeCollection`
+`pkmv:DecadeCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

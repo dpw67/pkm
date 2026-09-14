@@ -34,9 +34,8 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>8 change notes</summary>
+<summary>7 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-09-11 — Scope note updated (by Doug Warren)
 - 2026-08-29 — Definition added; Scope note added (by Doug Warren)

@@ -120,9 +120,12 @@ makes this a patch.
   `pkmv:QuarterCluster`'s own change note records it as "Duplicated from
   MonthCluster". Two spelling errors went with them, in
   `pkmv:QuarterCollection` ("uses for medium-term planning") and
-  `pkmv:YearCollection` ("a calendar Year groups Quarters and Months"). This is
-  also the first time any collection has carried a `skos:changeNote` — none of
-  the eighteen had an audit trail of any kind before now. 15 more term pages
+  `pkmv:YearCollection` ("a calendar Year groups Quarters and Months").
+  **None of the fifteen carries a change note recording the rewrite**, because
+  the SKOS Editor writes them for concepts and not for collections — all
+  eleven edited concepts were logged and none of the fifteen collections was.
+  So the collections' audit trail is still empty at 0 of 18, and this entry is
+  the only record that their descriptions changed. 15 more term pages
   changed.
 
 - **Seventy-four change notes repaired upstream, arriving here for free.** The

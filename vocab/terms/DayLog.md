@@ -30,9 +30,8 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>7 change notes</summary>
+<summary>6 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-08-28 — Parent “Day Cluster Core” added; Parent “Day Cluster” removed (by Doug Warren)
 - 2026-08-27 — Renamed from “DayLog2” to “DayLog”; Preferred label changed from “DayLog” to “Day Log” (by Doug Warren)
 - 2026-08-27 — Parent “Day Cluster” removed (by Doug Warren)

@@ -38,9 +38,10 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>10 change notes</summary>
+<summary>11 change notes</summary>
 
-- 2026-09-14 — Definition updated; Scope note updated (by Doug Warren)
+- 2026-09-14 — Scope note updated (by Doug Warren)
+- 2026-09-14 — Definition updated (by Doug Warren)
 - 2026-09-11 — Definition updated (by Doug Warren)
 - 2026-08-29 — Parent “Efforts Folder” added (by Doug Warren)
 - 2026-08-29 — Parent “Cluster” added; Parent “Efforts Folder” removed; Related term “Efforts Folder” removed (by Doug Warren)

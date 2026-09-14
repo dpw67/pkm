@@ -31,9 +31,8 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>6 change notes</summary>
+<summary>5 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-08-28 — Parent “Day Cluster Core” added; Parent “Day Cluster” removed (by Doug Warren)
 - 2026-08-27 — Renamed from “DayReview2” to “DayReview”; Preferred label changed from “DayReview” to “Day Review”; Parent “Day Cluster” removed (by Doug Warren)
 - 2026-08-27 — Parent “Day Cluster” added (by Doug Warren)

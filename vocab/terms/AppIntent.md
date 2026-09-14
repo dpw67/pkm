@@ -25,9 +25,8 @@ App intents framework entry point; the invocable-action layer of Swift apps.
 ## Change history
 
 <details markdown="1">
-<summary>7 change notes</summary>
+<summary>6 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-08-29 — Parent “PKM Swift” added; Parent “Tool” removed (by Doug Warren)
 - 2026-08-28 — Parent “Tool” added (by Doug Warren)
 - 2026-08-27 — Renamed from “AppIntent2” to “AppIntent” (by Doug Warren)

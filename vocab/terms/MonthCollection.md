@@ -21,15 +21,6 @@ Month and four of the five parts of a Month Cluster, listed flat. It enumerates 
 - [Month Plan](../MonthPlan/)
 - [Month Review](../MonthReview/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/MonthCollection` (`pkmv:MonthCollection`)
@@ -44,6 +35,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/MonthCollection
 
 ---
 
-`pkmv:MonthCollection`
+`pkmv:MonthCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

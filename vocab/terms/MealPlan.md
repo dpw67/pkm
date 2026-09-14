@@ -38,9 +38,8 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>6 change notes</summary>
+<summary>5 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-08-28 — Unmarked as a top concept; Parent “Meal” added (by Doug Warren)
 - 2026-08-27 — Preferred label changed from “MealPlan” to “Meal Plan” (by Doug Warren)
 - 2026-08-26 — Renamed from “MealPlan2” to “MealPlan” (by Doug Warren)

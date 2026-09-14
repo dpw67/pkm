@@ -18,15 +18,6 @@ Time and the Time Cluster, and nothing else. Two members against the fifty-five 
 - [Time](../Time/)
 - [Time Cluster](../TimeCluster/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/TimeCollection` (`pkmv:TimeCollection`)
@@ -41,6 +32,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/TimeCollection
 
 ---
 
-`pkmv:TimeCollection`
+`pkmv:TimeCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

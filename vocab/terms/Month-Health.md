@@ -30,9 +30,8 @@ The local name is the only hyphenated one in this vocabulary; the siblings are D
 ## Change history
 
 <details markdown="1">
-<summary>9 change notes</summary>
+<summary>8 change notes</summary>
 
-- 2026-09-14 — Change note updated (by Doug Warren)
 - 2026-09-11 — Renamed from “MonthHealth” to “Month-Health” (by Doug Warren)
 - 2026-09-11 — Renamed from “Month-Health” to “MonthHealth” (by Doug Warren)
 - 2026-08-27 — Preferred label changed from “MonthHealth” to “Month Health” (by Doug Warren)

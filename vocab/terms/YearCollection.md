@@ -23,15 +23,6 @@ Year, the Year Cluster and all five of its parts, listed flat. It enumerates by 
 - [Year Plan](../YearPlan/)
 - [Year Review](../YearReview/)
 
-## Change history
-
-<details markdown="1">
-<summary>1 change note</summary>
-
-- 2026-09-14 — Note updated (by Doug Warren)
-
-</details>
-
 ## This term in RDF
 
 - **URI** — `https://w3id.org/pkm/vocab/YearCollection` (`pkmv:YearCollection`)
@@ -46,6 +37,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/YearCollection
 
 ---
 
-`pkmv:YearCollection`
+`pkmv:YearCollection` · modified 2026-09-14
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

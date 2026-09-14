@@ -41,7 +41,7 @@ _Associated, not hierarchical._
 <details markdown="1">
 <summary>7 change notes</summary>
 
-- 2026-09-14 — Definition updated; Scope note updated; Change note updated (by Doug Warren)
+- 2026-09-14 — Definition updated; Scope note updated (by Doug Warren)
 - 2026-08-29 — Parent “Calendar Folder” added (by Doug Warren)
 - 2026-08-27 — Renamed from “MonthCluster2” to “MonthCluster”; Preferred label changed from “MonthCluster” to “Month Cluster”; Related term “Month” added (by Doug Warren)
 - 2026-08-27 — Parent “Time Cluster” added (by Doug Warren)

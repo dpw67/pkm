@@ -369,6 +369,17 @@ backwards, and the truth points somewhere more actionable.
 | **Genuine facet** | NoteTypes (20), MealDomain (16), SemanticWebStandards (11), TechStack (10), Concept (10), Effort (5), Knowledge (4) | nothing; these cut across the tree and cannot be derived |
 | **Degenerate** | Decade (1), Life (1), Time (2), Ideaverse (2), Spark (2) | one or two members — a decision half-made |
 
+**`DecadeCollection` has a prior question that has to be answered first: which
+ten years?** A *calendar* decade is 2020–2029 — the "2020s". A *life* decade is
+ten years from a birthday: for someone born 15 March 1945, the ninth decade
+runs 15 March 2025 to 14 March 2035. They are different spans, they partition
+time differently, and nothing in the vocabulary says which `pkmv:Decade` means.
+Raised while rewriting the collection descriptions in 0.1.9 and recorded here
+rather than in the note, because a published description should state a
+membership rule rather than ask a question — and because this is where the
+answer changes something, since it decides what `DecadeCollection` could ever
+hold.
+
 **The five period collections have five different shapes**, which is the
 clearest evidence that no rule was ever applied: Day holds the period, the
 cluster and 24 of 25 descendants; Week holds the period and all ten parts but
@@ -1075,6 +1086,34 @@ migration this project asked for in the #77 draft.
   project's, and the changelog says so.
 - The two checks stay. A rule that finds nothing because the defect was fixed
   is a rule doing its job, and neither costs anything to keep.
+
+**Confirmed on the real export.** 0.1.9's export from the editor carries the 74
+repairs exactly as the round-trip predicted, and `make check` fell from three
+warnings to one — the survivor being `scaffolding-local-name`, which waits for
+§D. The prediction was made from a test import and held against a session that
+also changed 41 literals, which is the stronger result.
+
+### N2. The editor does not log collection edits
+
+Measured on the same export, and the counterpart to the good news above.
+0.1.9 rewrote prose on **26 terms — 11 concepts and 15 collections**. The
+editor wrote a dated change note for **every one of the eleven concepts and
+none of the fifteen collections**.
+
+The sharper version of that, measured across the same export: collections
+carrying `dcterms:modified` went from 3 of 18 to **18 of 18**, while
+collections carrying `skos:changeNote` stayed at **0 of 18**. The editor knows
+the collection was edited — it stamps the date — and records nothing about
+what changed. So the changelog is the only account of why fifteen descriptions
+moved.
+
+This is the same second-class treatment as upstream
+[#58](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/58),
+which was about collections exporting with `rdfs:label` and `skos:note` where
+concepts get `skos:prefLabel` and `skos:definition`. That one is closed; the
+edit history was not part of it. Worth filing, and worth saying that no
+workaround belongs here — writing the notes by hand in the repo is precisely
+what §N's whole story says not to do.
 
 ## Backlog
 

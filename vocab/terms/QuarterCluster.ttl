@@ -13,7 +13,7 @@ pkmv:QuarterCluster a skos:Concept ;
     dcterms:created "2026-08-26"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:QuarterHealth,
@@ -23,7 +23,7 @@ pkmv:QuarterCluster a skos:Concept ;
         pkmv:QuarterReview ;
     skos:broader pkmv:CalendarFolder,
         pkmv:TimeCluster ;
-    skos:definition "A group of related notes about a quarter."@en ;
+    skos:definition "Everything the system produces about a single quarter — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:QuarterHealth,
         pkmv:QuarterJournal,
@@ -32,5 +32,5 @@ pkmv:QuarterCluster a skos:Concept ;
         pkmv:QuarterReview ;
     skos:prefLabel "Quarter Cluster"@en ;
     skos:related pkmv:Quarter ;
-    skos:scopeNote "Parent context for all notes associated with a quarter."@en .
+    skos:scopeNote "The quarterly rung of the roll-up. Its five parts are the same five MonthCluster and YearCluster carry, so a reader who knows one knows all three."@en .
 

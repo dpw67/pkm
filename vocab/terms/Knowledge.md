@@ -15,7 +15,7 @@ Information, understanding, and skill acquired through experience, learning, or 
 
 ## Scope note
 
-Use as the broadest top concept anchoring the vocabulary; more specific forms (Metadata, Ontology, Taxonomy, KnowledgeGraph, Term) refine how knowledge is captured or represented. Not applied to individual notes directly.
+Use as the broad anchor for what this vocabulary is about; its narrower concepts are Cluster, Concept, Source and Topic. Metadata, Ontology, Taxonomy, KnowledgeGraph and Term are siblings under KnowledgeSystem rather than narrower forms of this concept. Not applied to individual notes directly.
 
 ## Broader
 
@@ -37,8 +37,10 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>4 change notes</summary>
+<summary>6 change notes</summary>
 
+- 2026-09-14 — Definition updated; Scope note updated (by Doug Warren)
+- 2026-09-14 — Definition updated (by Doug Warren)
 - 2026-08-29 — Unmarked as a top concept (by Doug Warren)
 - 2026-08-29 — Parent “Knowledge System” added (by Doug Warren)
 - 2026-08-28 — Definition added; Scope note added (by Doug Warren)
@@ -60,6 +62,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Knowledge
 
 ---
 
-`pkmv:Knowledge` · created 2026-08-28 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Knowledge` · created 2026-08-28 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

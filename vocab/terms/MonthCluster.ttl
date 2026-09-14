@@ -11,7 +11,7 @@ pkmv:MonthCluster a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:Month-Health,
@@ -21,7 +21,7 @@ pkmv:MonthCluster a skos:Concept ;
         pkmv:MonthReview ;
     skos:broader pkmv:CalendarFolder,
         pkmv:TimeCluster ;
-    skos:definition "A group of related notes about a month."@en ;
+    skos:definition "Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:Month-Health,
         pkmv:MonthJournal,
@@ -30,5 +30,5 @@ pkmv:MonthCluster a skos:Concept ;
         pkmv:MonthReview ;
     skos:prefLabel "Month Cluster"@en ;
     skos:related pkmv:Month ;
-    skos:scopeNote "Parent context for all notes associated with a month."@en .
+    skos:scopeNote "The monthly rung of the roll-up. Its five parts are the same five QuarterCluster and YearCluster carry, so a reader who knows one knows all three."@en .
 

@@ -1,14 +1,17 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:KnowledgeCollection a skos:Collection ;
     rdfs:label "Knowledge Collection"@en ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
         pkmv:KnowledgeGraph,
         pkmv:Topic ;
-    skos:note "All the related concepts about Knowledge."@en ;
+    skos:note "What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it is expressed as, and the Knowledge Graph it is stored in. Cuts across the hierarchy instead of following it."@en ;
     skos:prefLabel "Knowledge Collection"@en .
 

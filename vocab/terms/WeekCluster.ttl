@@ -11,7 +11,7 @@ pkmv:WeekCluster a skos:Concept ;
     dcterms:created "2026-08-27"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderGeneric pkmv:TimeCluster ;
     isothes:broaderPartitive pkmv:CalendarFolder ;
     isothes:narrowerPartitive pkmv:WeekAnalysis,
@@ -26,7 +26,7 @@ pkmv:WeekCluster a skos:Concept ;
         pkmv:WeekReview ;
     skos:broader pkmv:CalendarFolder,
         pkmv:TimeCluster ;
-    skos:definition "The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters."@en ;
+    skos:definition "Everything the system produces about a single week — its index, plan, log, review, journal, analysis, health and meal-plan notes — taken as one whole rather than many notes of one kind."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:WeekAnalysis,
         pkmv:WeekDiabetes,
@@ -39,5 +39,5 @@ pkmv:WeekCluster a skos:Concept ;
         pkmv:WeekPlan,
         pkmv:WeekReview ;
     skos:prefLabel "Week Cluster"@en ;
-    skos:scopeNote "Sits above DayCluster and below Month in the Calendar hierarchy; narrower concepts include WeekIndex, WeekAnalysis, WeekMealPlan, WeekDiabetes, and WeekHealth."@en .
+    skos:scopeNote "A sibling of DayCluster and MonthCluster under TimeCluster, not a rung between them: the week's own notes are its parts, and a day's belong to DayCluster."@en .
 

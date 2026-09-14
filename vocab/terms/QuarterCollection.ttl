@@ -1,9 +1,12 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:QuarterCollection a skos:Collection ;
     rdfs:label "Quarter Collection"@en ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:MonthJournal,
         pkmv:Quarter,
@@ -11,6 +14,6 @@ pkmv:QuarterCollection a skos:Collection ;
         pkmv:QuarterLog,
         pkmv:QuarterPlan,
         pkmv:QuarterReview ;
-    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en ;
+    skos:note "Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to the month rather than the quarter, which is the copy this collection was made from showing through. The hierarchy under Quarter Cluster is authoritative."@en ;
     skos:prefLabel "Quarter Collection"@en .
 

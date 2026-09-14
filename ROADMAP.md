@@ -27,20 +27,33 @@ the third position; only major advances the second.
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 | 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
 | 13 | 0.1.8 — phantom citations fixed, four prose checks | done — §H1, §H2 |
-| 14 | The seven bag-language definitions under `pkmv:Cluster` | deferred — §H |
+| 14 | 0.1.9 — released: Cluster says what the graph says, collections say what decides membership | done — §H, §E1 |
 | 15 | The meals shape layer's open decisions | recorded — §I |
+| 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
+| 17 | What the eighteen collections actually are | measured — §E1 |
+| 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
+| 19 | Upstream validation as a second opinion | done — §M |
+| 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
+| 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
 
-### Where 0.1.6 left the graph
+### Where 0.1.9 left the graph
 
-`make check` on the export: 4337 triples, 223 concepts, 18 collections, 236
-hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 2 warn.**
+`make check` on the export: 4377 triples, 223 concepts, 18 collections, 236
+hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 3 warn.**
 
-Both warns are upstream residue, not defects here: `doubled-attribution` (39)
-and `lang-tag-in-text` (35) are SKOS Editor artifacts that `transform.py`
-repairs on the way out, so the **published** graph is clean either way. Upstream
-#81 covers them. `make build` prints no "warn remain after transform" line,
-which is the signal that everything the transform cannot repair has been fixed
-at the source.
+Two of the three were upstream residue: `doubled-attribution` (39) and
+`lang-tag-in-text` (35), SKOS Editor artifacts that `transform.py` repaired on
+the way out so the published graph was clean either way. **Both are now fixed
+at the source** — see §N — so once 0.1.9's export lands from the editor the
+count falls to **1 warn**, and that one is `scaffolding-local-name` on
+`pkmv:TemplateCopy`, which the transform cannot repair because the fix is a
+rename. See §D, and do not silence it.
+
+So `make build` prints **`1 warn remain after transform`**, and that one warning
+is the whole of what is left. The line first appeared in 0.1.8, when the rule
+that produces it was written; this file claimed until 0.1.9 that no such line
+was printed, which had been false for a release. 0.1.9 took it from nine to one
+by quoting the eight recorded names — see §H2. Nine to zero is §D's to finish.
 
 Three `skos:editorialNote`s now record open questions on the concepts that carry
 them rather than in a tracker: `DayClusterCore` (is Analysis a Core note?),
@@ -127,9 +140,23 @@ only definition of 223 missing its period, and `self-referential-prose` found
   Cluster/Collection question is open anyway.
 - **`DayMealPlan`'s sixth change note is undated and unattributed.** No check
   fires, because `unattributed-changenote` requires a date.
-- **15 literals with edge whitespace.** `transform.py` strips them on publish,
-  so the published graph is already clean and no reader can perceive the
-  difference. 15 invisible edits in a browser textarea buys nothing.
+- **Literals with edge whitespace.** `transform.py` strips them on publish, so
+  the published graph is already clean and no reader can perceive the
+  difference. Invisible edits in a browser textarea buy nothing. Measured again
+  for 0.1.9: **21** literals, 20 with a trailing run and 14 padded at an edge,
+  and **zero** with the mid-prose double space `padded-literal` reports — so the
+  whole class is the unreported kind. `pkmv:TimeCluster`'s was fixed at the
+  source in 0.1.9 because its scope note was being rewritten anyway.
+
+  Worth keeping the total honest while here: `transform.py` repaired **95**
+  literals on every build, not the 94 once claimed, and only 21 of them
+  silently. The other 74 were exactly the two WARN groups `make check` printed —
+  35 `lang-tag-in-text` and 39 `doubled-attribution` — so "silently repaired"
+  overstated the invisible part more than fourfold.
+
+  **As of §N the 74 are fixed upstream, so the number is 21 and all of them are
+  the invisible kind** — which is the measurement finally agreeing with the
+  story this section tells.
 
 ## D. 0.2.0 — two malformed URIs
 
@@ -234,7 +261,15 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   converting it orphans all 63. The real duplication is that `DayCollection`
   restates the hierarchy by hand and **has already drifted** — `DayMeeting` is
   in the tree and missing from the collection, 26 members against 25
-  descendants.
+  descendants. See §E1 for what the other seventeen turned out to be, and §E2
+  for why "make it both" is not available.
+
+  **Every membership change is major**, which is what forces all of this into
+  one release rather than letting it arrive a collection at a time. Dropping a
+  member means `SELECT ?m { pkmv:DayCollection skos:member ?m }` returns fewer
+  rows, and the table calls that major; deprecating a collection outright is
+  listed as major too. 0.1.9 took the part that *is* patch — the descriptions —
+  and left every member in place.
 - **A collection rule:** enumerate only what the hierarchy cannot derive.
   `TechStack` is a hand-copy of the `Tool` subtree missing six — `App`,
   `AppIntent`, `ObsidianTemplate`, `PythonTemplate`, `TemplateCopy`, `Widget`. A
@@ -322,6 +357,101 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
 - **Three schema.org mappings** — `pkmv:Book skos:relatedMatch schema:Book`
   points a concept at an OWL class. A consumer can query it today, so changing
   it is major.
+
+### E1. Three kinds of collection, and only one earns its keep
+
+Measured for 0.1.9 against the subtree each one shadows. The intuition that
+these are loose bags of "everything that mentions a day" turns out to be
+backwards, and the truth points somewhere more actionable.
+
+| kind | collections | what is wrong |
+|---|---|---|
+| **Mirrors a subtree** | Day (26), Week (11), Year (7), Quarter (6), Month (5), Recipe (7) | redundant — the hierarchy already derives them — and five of the six have drifted |
+| **Genuine facet** | NoteTypes (20), MealDomain (16), SemanticWebStandards (11), TechStack (10), Concept (10), Effort (5), Knowledge (4) | nothing; these cut across the tree and cannot be derived |
+| **Degenerate** | Decade (1), Life (1), Time (2), Ideaverse (2), Spark (2) | one or two members — a decision half-made |
+
+**`DecadeCollection` has a prior question that has to be answered first: which
+ten years?** A *calendar* decade is 2020–2029 — the "2020s". A *life* decade is
+ten years from a birthday: for someone born 15 March 1945, the ninth decade
+runs 15 March 2025 to 14 March 2035. They are different spans, they partition
+time differently, and nothing in the vocabulary says which `pkmv:Decade` means.
+Raised while rewriting the collection descriptions in 0.1.9 and recorded here
+rather than in the note, because a published description should state a
+membership rule rather than ask a question — and because this is where the
+answer changes something, since it decides what `DecadeCollection` could ever
+hold.
+
+**The five period collections have five different shapes**, which is the
+clearest evidence that no rule was ever applied: Day holds the period, the
+cluster and 24 of 25 descendants; Week holds the period and all ten parts but
+not the cluster; Month holds the period and four of five parts and not the
+cluster; Quarter holds the period, the cluster, three of five parts **and
+`MonthJournal`**; Year holds the period, the cluster and all five parts.
+
+`QuarterCollection`'s stray `MonthJournal` is not random — `QuarterCluster`'s
+own change note reads `Duplicated from "MonthCluster"`, so the collection was
+copied along with the concept and only partly corrected. That is the same
+`stale-duplicate-definition` mechanism §H2 already checks for, one level up at
+the collection.
+
+So the 0.2.0 worklist is decidable rather than open-ended: **retire the six
+mirrors** (the hierarchy already says it), **finish or drop the five
+degenerates**, **keep the seven facets**. A `collection-mirrors-subtree` check
+is cheap and is already proposed above.
+
+### E2. `Concept` and `Collection` are disjoint, so "make it both" is not available
+
+SKOS Reference **S37**: `skos:Collection` is disjoint with `skos:Concept` and
+`skos:ConceptScheme`. `skos:member` has domain `skos:Collection` (S31) while
+`skos:broader`, `skos:narrower` and `skos:related` inherit domain and range
+`skos:Concept` from `skos:semanticRelation` (S19, S20) — so asserting
+`skos:broader` at a collection makes the graph inconsistent, which the
+Reference gives as Example 46.
+
+The sanctioned workaround is Example 48: relate the concepts with
+`skos:narrower`, and *separately* gather them with `skos:member`. So a twin
+collection beside a concept is legal SKOS — `DayCollection` beside
+`DayCluster` is exactly that shape.
+
+**It is still not worth minting more of them.** Giving `DayClusterCore`,
+`DayClusterHealth`, `DayClusterSupport` and `DayClusterVisual` a collection
+each was considered for 0.1.9 and rejected: all four already carry
+`isothes:narrowerPartitive` to their own notes, which **is** the grouping, so a
+collection would restate by hand what the hierarchy derives — the rule stated
+two bullets above. The evidence against is the existing twin: `DayCollection`
+is that pattern applied once, and it has already drifted by a member. Four more
+would be four more things to drift.
+
+### E3. Two classes that cannot be fixed by prose
+
+Both found while measuring 0.1.9, both recorded here because the resolution is
+structural and therefore major.
+
+- **13 concepts where a change note and the hierarchy flatly disagree.** Eleven
+  say a parent was removed and it is still there — ten of them `Tool`
+  (`Cypher`, `Neo4j`, `Python`, `Swift`, `Script`, `FastAPI`, `Hummingbird`,
+  `AppIntent`, `ObsidianTemplate`, `PythonTemplate`) plus `TimeCluster` against
+  `Cluster`. Two say a parent was added that is not there: `OWL` and `RDF`
+  against `Standard`, both now under `W3CStandard`, so those two read as a note
+  recording an intermediate state rather than an error. The obvious explanation
+  for the `Tool` ten — that the editor removed `skos:broader` and left
+  `isothes:broaderGeneric` behind — was checked and is **wrong**: `Tool` is
+  present as both. The removal simply never took. Deciding whether `Tool` stays
+  is reparenting, so major. **A `changenote-contradicts-hierarchy` check is
+  mechanically decidable and finds all 13** — same shape as §H2's four.
+- **36 concepts (16%) whose last prose edit predates a later structural
+  change.** A risk list, not a defect list: spot-checking sixteen found most
+  survived their reparenting intact, because a definition of what Python *is*
+  does not depend on where Python sits. Two are real. `pkmv:Event`'s scope note
+  opens "Top concept for the Event hierarchy" while the concept was unmarked as
+  a top concept and now sits under `pkmv:PKMMeals` — which is itself worth a
+  look. `pkmv:Time`'s says it is "the anchor/parent for the Calendar hierarchy
+  (Life > Decade > Year > Quarter > Month > Week > Day)" while `Time` is a
+  *child* of `Calendar`, so the note is inverted. That same note ends "Worth
+  deciding OWL Time alignment before finalizing" — §J reached the identical
+  question from outside, weeks after the note asked it and nothing read it.
+  **This is the argument for §L**: a note nobody can find is a note nobody acts
+  on.
 
 ## F. Where the vocabulary and the periodic notes disagree
 
@@ -438,21 +568,31 @@ hardcode it too, but they are a separate question: both may simply be dead.
   the two moves records as a rename; *Three Places for One Vocabulary* does not,
   even at `-M30%`, because it was rewritten as well as renamed.
 
-## H. The rest of the Cluster family
+## H. The rest of the Cluster family — shipped in 0.1.9
 
-**0.1.8 shipped §H1 and §H2 and not the definitions below.** The phantom
-citations are gone and `phantom-citation` now stops the next one, but the
-seven concepts in the table still say a cluster is a bag. That is a
-definition rewrite on seven concepts at once, which wants its own release
-rather than riding along with a tooling patch.
+**Done.** 0.1.7 rewrote `pkmv:Cluster` and `pkmv:DayCluster`; 0.1.8 shipped §H1
+and §H2; 0.1.9 rewrote the seven definitions in the table below, nine scope
+notes in the same family, and the eight change notes of §H2's convention. The
+itemised worklist is in the [0.1.9 changelog entry](CHANGELOG.md); what is worth
+keeping here is what the exercise settled and what it did not.
 
-0.1.7 rewrote `pkmv:Cluster` and `pkmv:DayCluster` to say that a cluster is a
-whole of unlike parts about one subject. Seven concepts underneath them still
-say it is a bag. All three of `pkmv:Cluster`'s direct children are among them,
-so a reader who follows the hierarchy down one level meets the phrasing the
-parent just abandoned.
+**Two of the seven could not take the same sentence, and the graph is why.**
+`pkmv:TimeCluster` is `narrowerGeneric` to all five period clusters where they
+are `narrowerPartitive` to their own notes — it is a kind-of parent, not a
+whole — so it got a kind-of definition. `pkmv:EffortCluster` and
+`pkmv:TopicCluster` carry **no ISO 25964 relations at all**, plain
+`skos:broader`/`skos:narrower` only, alone among the clusters. Writing "unlike
+parts" into their definitions would have asserted in prose exactly what §H
+exists to stop asserting, so they kept the subject clause without the partition
+claim and their scope notes say plainly that no partitive structure is asserted
+yet. **Adding those relations is additive, so minor** — see §K.
 
-| concept | definition | relation to `pkmv:Cluster` |
+**What stayed open.** The label. Four tests, fifty-three alternatives and the
+whole of §E still sit on `Cluster` the word, and nothing in 0.1.9 touched it —
+by design, since §E says to decide it with the `Collection` definition and not
+before.
+
+| concept | definition until 0.1.9 | relation to `pkmv:Cluster` |
 | --- | --- | --- |
 | `pkmv:TimeCluster` | A group of related notes for a time period (or time horizon). | direct child, `broaderGeneric` |
 | `pkmv:EffortCluster` | A group of related notes about an effort. | direct child |
@@ -462,19 +602,36 @@ parent just abandoned.
 | `pkmv:YearCluster` | A group of related notes about a year. | via `TimeCluster` |
 | `pkmv:WeekCluster` | The **set** of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters. | via `TimeCluster`; `DayCluster`'s sibling |
 
-`pkmv:WeekCluster` is the sharpest of the seven: it is the sentence
+`pkmv:WeekCluster` was the sharpest of the seven: it held the sentence
 `pkmv:DayCluster` carried until 0.1.7, word *set* included, on its own sibling.
-Whatever replaces it should hold for both, since a week aggregates days the way
-a day aggregates its four parts.
+
+**The expectation recorded here — that its replacement should hold for both,
+since a week aggregates days the way a day aggregates its four parts — turned
+out to be wrong, and the graph is what corrected it.** No containment between
+`pkmv:WeekCluster` and `pkmv:DayCluster` is asserted anywhere: they are
+siblings under `pkmv:TimeCluster`, and the ten `narrowerPartitive` children
+`WeekCluster` does have are the week's own notes. So the old definition's
+closing clause, "aggregating and analyzing its constituent Day Clusters", was
+itself prose the graph contradicts — a second defect in the sentence that was
+already the worst of the seven, and invisible until the relations were read
+rather than the words. It was dropped rather than rephrased. Whether the
+roll-up *should* be asserted is a reparenting question, so §E.
 
 `pkmv:DayCluster`'s four parts are **not** on this list. "The core set of daily
 notes within a Day Cluster", and the three like it, describe one part holding
 notes of one kind — which is what a part is, so the bag reading is correct
 there.
 
-### H1. Two scope notes cite terms that do not exist — fixed in 0.1.8
+### H1. Two scope notes cite terms that do not exist — fixed in 0.1.8 and 0.1.9
 
-`pkmv:Cluster`'s scope note names seven examples; two of them are not in the
+**Half in each release, which is worth recording as a pattern rather than a
+footnote.** 0.1.8 removed the two phantom citations, because that is what
+`phantom-citation` could see. The *omission* in the same sentence — three real
+children the note failed to name — no rule could see, and it survived another
+release until 0.1.9 read the note against the hierarchy by hand. A check finds
+what it was written to find; the defect beside it waits for a reader.
+
+`pkmv:Cluster`'s scope note named seven examples; two of them were not in the
 vocabulary.
 
 - **`ConceptCluster`** was real once. In `z/pkm-vocab.export-0.1.2.ttl` it is
@@ -485,8 +642,13 @@ vocabulary.
   for that decision rather than a prejudgement of it.
 - **`OutputCluster`** has never existed, in any release.
 
-The same scope note omits `pkmv:TimeCluster` — `Cluster`'s only unnamed direct
-child — along with `pkmv:QuarterCluster` and `pkmv:YearCluster`.
+The same scope note omitted `pkmv:TimeCluster` — `Cluster`'s only unnamed
+direct child — along with `pkmv:QuarterCluster` and `pkmv:YearCluster`. **Fixed
+in 0.1.9**, which also fixed the two scope notes whose claims the hierarchy
+contradicts outright: `pkmv:DayCluster` said it mirrored the week and month
+clusters when it is the only one partitioned in two levels, and
+`pkmv:WeekCluster` placed itself "above DayCluster and below Month" when all
+three are siblings under `pkmv:TimeCluster`.
 
 `pkmv:TimeCluster`'s scope note repeats the defect in both directions: it lists
 `DecadeCluster` and `LifeCluster` as time clusters (both exist only as
@@ -502,11 +664,28 @@ move with the rest.
 ### H2. A check that would have caught this — done in 0.1.8
 
 `scripts/pkm_vocab/prose.py` ships it as `phantom-citation`, and it found all
-ten of the citations in §H1 plus one more: the `pkmv:Month-Health` editorial
-note written the same week says "It should be MonthHealth", which reads as a
-citation of a term that does not exist yet. Quoting the name exempts it, which
-is both the fix and the convention — **a name you are recording rather than
-citing goes in quotes or backticks.**
+ten of the citations in §H1 plus one more on `pkmv:Month-Health`, whose
+editorial note written the same week reads as a citation of a term that does not
+exist yet. Quoting the name exempts it, which is both the fix and the
+convention — **a name you are recording rather than citing goes in quotes or
+backticks.**
+
+**The `z/` snapshots skipped a release, which is why the 0.1.7 file is out of
+step.** `z/pkm-vocab.export-<version>.ttl` archives the previous release's
+export at the *start* of the next cycle, so the file named for release N can
+carry early edits from N+1 — the 0.1.7 snapshot is 8 lines into 0.1.8. No 0.1.8
+snapshot was taken at all. 0.1.9 adds `z/pkm-vocab.export-0.1.8.ttl`, which is
+byte-identical to the v0.1.8 tag and doubles as the import source for the
+editor round-trip test. **Archive 0.1.9's export when 0.1.10 opens**, rather
+than skipping again.
+
+**Correction, made in 0.1.9.** This section said the surviving `Month-Health`
+hit was that editorial note. It was not: the note had already been quoted, and
+the finding was coming from an older, unquoted change note beside it — `Added
+definition and scope notes to MonthHealth.` The check aggregates by token across
+every literal on a concept, so the report names the concept and not the literal,
+and the wrong one was assumed. **When a rule reports per subject, confirm which
+literal fires before writing down which one it is.**
 
 Two things the sketch here did not anticipate. The rule is ERROR only on
 reader-facing prose and WARN in the audit trail, because a change note naming a
@@ -515,10 +694,13 @@ exist. Six are correct cleanup of `Proposals`-generated duplicates; the seventh
 is `pkmv:Action`'s own record of this same class of fix, "Removed ActionGroup
 reference in scope note since not defined in vocabulary yet." Which is the
 convention above arriving one note early: a name being recorded rather than
-cited belongs in quotes. It stays a WARN either way, so it is worth quoting the
-next time that note is touched rather than opening the editor for it. And the same
-tokenising pass gives `misspelled-word` for free, since deciding whether
-`DayLog` is a term and whether `mispelling` is a word are the same lookup.
+cited belongs in quotes. It stays a WARN either way, so it was worth
+quoting the next time that note was touched rather than opening the editor for
+it — which is what **0.1.9** did, to all eight at once, taking
+`phantom-citation` to zero findings and `make build`'s surviving warnings from
+nine to one. And the same tokenising pass gives `misspelled-word` for free,
+since deciding whether `DayLog` is a term and whether `mispelling` is a word are
+the same lookup.
 
 Two more rules landed with those, covering the rest of what the editor can
 get wrong without the graph noticing: `stale-duplicate-definition` (a
@@ -584,8 +766,8 @@ Additive throughout, so minor. Two are decisions before they are work:
   `pkmv:DayMeal`, `DayMeal` sits under `MealPlan`, and `Recipe` is `Meal`'s
   **sibling** under `pkmv:PKMMeals` — so none of the six it names, and it names
   none of the three it has. `phantom-citation` cannot see this, because all six
-  names exist and the rule fires on names that do not. **Recorded, not
-  scheduled.**
+  names exist and the rule fires on names that do not. **Fixed in 0.1.9**, along
+  with `pkmv:Knowledge`, which turned out to have the same defect — see §I4.
 - **`pkmv:RecipeServings` is defined as a count** — "the number of servings or
   portions a recipe yields" — where the shape carries two slots, because what a
   source claims ("makes 24 cookies", "one 9-inch loaf") does not always reduce
@@ -611,24 +793,409 @@ So the real question is whether this vocabulary has a singular/plural
 convention at all, and it gets answered once for twenty-six concepts or not at
 all.
 
-### I4. A fifth check, deferred until the data is fixed
+### I4. A fifth check — the deferral condition is met, and the answer is not the rule that was sketched
 
 A rule reading a scope note's parenthetical list against the concept's actual
-narrower set would have caught `pkmv:Meal`. Deferring it is deliberate:
+narrower set would have caught `pkmv:Meal`. Deferring it was deliberate:
 designing a rule from a single example produces a rule that fits a single
-example. Fix `Meal`, see whether the shape recurs, then decide — each of the
-four rules in §H2 was drawn from a class measured across the whole vocabulary
-first.
+example. Fix `Meal`, see whether the shape recurs, then decide.
+
+**Measured for 0.1.9, over `like` / `such as` / `including` lists as well as
+parentheticals.** Thirteen scope notes name a term that is not a direct child.
+They split in two, and the split is the finding:
+
+- **Names a descendant that is not a direct child** — `pkmv:Cluster`,
+  `pkmv:Event` (twice), `pkmv:HealthEvent`, `pkmv:KnowledgeSystem`,
+  `pkmv:Standard`. Naming a grandchild in a list of examples is ordinary
+  writing. **A rule drawn from `Meal` alone would have errored on all six.**
+- **Names something outside the subtree entirely** — seven. Two were real
+  defects and 0.1.9 fixed both: `pkmv:Meal`, and `pkmv:Knowledge`, which called
+  its own siblings "more specific forms" of itself. The remaining five are
+  benign — `pkmv:MealPlan`'s "Day, Week" are horizons, not children;
+  `pkmv:PeriodicNotes`, `pkmv:AppEvent`, `pkmv:PKMNeo4jServiceProject` and
+  `pkmv:CalendarFolder` are the same shape.
+
+So the condition for writing the rule is satisfied — there was a second example,
+and a third — but **the rule cannot be "names a non-child" at ERROR**, because
+`make check` gates `make build` and five benign hits would block it. It lands at
+WARN, or it lands after those five are triaged. That triage is the next
+measurement, not a checkbox, which is the same discipline §H2's four rules were
+drawn under.
 
 Level: I1 and the last two items of I2 are minor, since every existing URI
-keeps its meaning. `pkmv:Meal`'s scope note is patch. I3 and I4 are
-unscheduled.
+keeps its meaning. `pkmv:Meal`'s scope note was patch and shipped in 0.1.9. I3
+and I4 are unscheduled.
 
+
+## J. Where this vocabulary sits against the time vocabularies
+
+Raised while §H was open, because the Cluster question keeps turning into a
+question about periods. Nothing here is scheduled and nothing here is RDF: a
+mapping triple is a new cross-vocabulary mapping, which the versioning table
+calls **minor**. This section is the measurement 0.2.0 needs and cannot make
+from nothing.
+
+### J1. OWL-Time does not have a quarter
+
+Ten individuals of `time:TemporalUnit`: `unitSecond`, `unitMinute`, `unitHour`,
+`unitDay`, `unitWeek`, `unitMonth`, `unitYear`, `unitDecade`, `unitCentury` and
+`unitMillenium` — spelled with one `n` in the ontology, which is worth knowing
+before typing it. There is no `unitQuarter`. Membership of `TemporalUnit` is
+explicitly open, so an extension may mint one; the W3C Recommendation does not.
+
+`pkmv:Quarter` is therefore the fault line, and it is not an obscure one:
+`pkm-quarter` writes quarter notes, `pkmv:QuarterCluster` carries five children,
+and the concept has no counterpart in the standard this vocabulary would most
+naturally align to.
+
+### J2. There are no OWL-Time classes named Day, Week, Month or Year
+
+The declared classes are `time:DateTimeDescription`, `time:Instant`,
+`time:Interval`, `time:ProperInterval`, `time:MonthOfYear`, `time:DayOfWeek`,
+`time:Duration`, `time:TRS` and the rest. Calendar granularity lives in
+*properties* on `time:GeneralDateTimeDescription` (`time:day`, `time:week`,
+`time:month`, `time:year`) and in the unit individuals above.
+
+So `pkmv:Day` — a `skos:Concept` denoting the kind "calendar day" — has no class
+to point at. Its nearest counterpart is `time:unitDay`, an **individual**. That
+makes `skos:closeMatch` the strongest defensible predicate and rules out
+`skos:exactMatch` outright.
+
+### J3. The build already has an opinion, and it would bite silently
+
+`transform.py` step 8 rewrites any `skos:*Match` whose object's local name
+begins with a lowercase letter into `rdfs:seeAlso`, because the mapping
+properties have domain and range `skos:Concept` and pointing one at a property
+asserts that the property is a concept.
+
+**Every `time:unit*` name begins lowercase.** So
+`pkmv:Day skos:closeMatch time:unitDay` would be written in the editor, pass
+`make check`, and arrive in the published graph as `rdfs:seeAlso` — the mapping
+would not survive its own build, and nothing would say so. `time:ProperInterval`
+begins uppercase and *would* survive, which is worse: it is precisely the type
+error step 8 exists to prevent.
+
+This is the same shape as the `pkmv:Book skos:relatedMatch schema:Book` problem
+§E already banks, arriving from a second direction. **Decide the predicate and
+the step-8 interaction before writing a triple, not after.**
+
+### J4. What each target can express
+
+Measured against the five places these concepts are generated or consumed.
+OWL-Time and Cypher confirmed against their specifications; Swift confirmed
+against `NSCalendar.h` in the local SDK, which `make swiftcheck` already
+resolves.
+
+| | Day | Week | Month | Quarter | Year | Decade |
+|---|---|---|---|---|---|---|
+| OWL-Time | `unitDay` | `unitWeek` | `unitMonth` | — | `unitYear` | `unitDecade` |
+| Python stdlib | `date` | `isocalendar()` | `.month` | — | `.year` | — |
+| Swift `Calendar.Component` | `.day` | `.weekOfYear` | `.month` | `.quarter` | `.year` | — |
+| Cypher temporal | `.day` | `.week` | `.month` | `.quarter` | `.year` | — |
+| Obsidian Periodic Notes | daily | weekly | monthly | quarterly | yearly | — |
+
+Three readings:
+
+- **Quarter is expressible in three of the five and in neither OWL-Time nor the
+  Python standard library** — the two that matter most, since LinkML generates
+  Python and OWL-Time is the alignment target.
+- **Decade is the mirror image**: OWL-Time has it, no platform does.
+  `pkmv:Decade` exists as a concept and `pkmv:DecadeCollection` has one member.
+- **`pkmv:Life` is in none of them**, which is expected — it is this system's
+  horizon, not a calendar unit — and is a reason not to force the whole period
+  tier through one external vocabulary.
+
+### J5. Why this belongs to §E rather than beside it
+
+OWL-Time maps to `pkmv:Day` the period. It has nothing to say about
+`pkmv:DayCluster` the bundle of notes, and no vocabulary of temporal units
+ever will. That is §E's four-way question — `Day` the period, `Day Folder` the
+path, `Day Cluster` the concept, `Day Collection` the flat bag — arriving from
+outside the system rather than from reading it.
+
+The useful consequence is a test §E did not have: **a term that an external time
+vocabulary could map to is a period; a term it could not is a cluster.** That
+cuts the four-way question cleanly in two and says nothing about the
+`Cluster`/`Collection` half, which remains where §E left it.
+
+## K. Banked as minor — additive, so not waiting for 0.2.0
+
+At `0.x` a minor advances the third position like a patch, so none of these
+needs §D to ship first. They are separated from §E because every existing URI
+keeps its meaning.
+
+- **`pkmv:Effort` does not exist.** `pkmv:EffortCluster`, `pkmv:EffortIndex`,
+  `pkmv:EffortJournal`, `pkmv:EffortLog`, `pkmv:EffortPlan`,
+  `pkmv:EffortReview`, `pkmv:EffortCollection` and `pkmv:EffortsFolder` all do.
+  `pkmv:Topic` exists and anchors its family the way this one cannot. Found
+  while writing §H's definitions, which is why `pkmv:EffortCluster` cannot say
+  what its subject is the way the period clusters can.
+- **ISO 25964 relations on `pkmv:EffortCluster` and `pkmv:TopicCluster`.** Alone
+  among the clusters they carry only `skos:broader`/`skos:narrower`. Their five
+  members each are the same shape as the period clusters' — index, journal, log,
+  plan, review — so `narrowerPartitive` is the relation, and adding it is what
+  lets their definitions say "unlike parts" as the other five now do.
+- **`skos:related` between `pkmv:WeekCluster` and `pkmv:Week`.**
+  `pkmv:DayCluster`, `pkmv:MonthCluster`, `pkmv:QuarterCluster` and
+  `pkmv:YearCluster` all assert it to their period. Week is the only gap, and it
+  looks like an omission rather than a decision.
+- **Any OWL-Time alignment** — see §J, and §J3 before writing a triple.
+
+## L. 0.1.10 — the vocabulary you can actually read
+
+**Chartered, not started.** Presentation only: no triple moves, so this is a
+different file set from every release so far and it cannot collide with §D.
+
+### L1. The measured problem
+
+`vocab/index.md` is **721 lines, 51 KB, one page**: Hierarchy 249 lines,
+Collections 41, All terms 406. The A–Z section headings exist and **no A–Z
+index links to them**. There are **zero** `<details>` blocks. Everything is
+emitted flat by `render_vocabulary()` in `scripts/pkm_vocab/render.py`.
+
+The consequence is an ordering problem as much as a length one: the collections
+sit *after* 249 lines of hierarchy, and "All terms" — the section a first-time
+reader most likely wants — is last. The front page at `index.md` does the
+opposite and does it well, opening on a table of what exists with a link per
+row. The vocabulary page should be shaped like its own parent.
+
+### L2. The constraint that decides the design
+
+**Three render targets, not one**: the Pages site (Jekyll/kramdown), the
+**GitHub repo view** of the same Markdown, and **Obsidian**.
+
+`<details>`/`<summary>` renders in all three. JavaScript renders in exactly
+one. So the collapsible outline is the primary navigation because it degrades
+everywhere, and search is a Pages-only enhancement layered on top — not the
+other way round.
+
+GitHub Pages also runs Jekyll in safe mode against a fixed plugin allowlist, so
+a search *plugin* is not an option. A generated `search.json` plus vanilla JS
+in `_layouts/default.html` needs no plugin and is.
+
+### L3. The work
+
+- **Collapsible hierarchy** — `<details>` per top concept, top level open.
+- **A–Z index row** above "All terms"; the anchors already exist.
+- **Collections before the hierarchy**, not 249 lines after it.
+- **A vocabulary landing page shaped like `index.md`** — summary table, one row
+  per view — with Hierarchy, Collections and All terms as linked sub-pages
+  rather than one scroll. `render.py` already has `splice()` for writing
+  generated blocks into hand-written pages; reuse it rather than inventing a
+  second mechanism.
+- **Search** — generated `search.json`, vanilla JS, Pages only.
+- **Generate the Obsidian hub.** `pkm/vocab.md` in the vault is hand-written —
+  `notes.py` writes the 241 stubs beside it and not the hub — and is stale:
+  frontmatter `version: 0.1.3`, body "version 0.1.4", against a vocabulary at
+  0.1.9, with 18 hand-copied collection counts that §E1 has just invalidated.
+  It already has the shape the web page wants, leading with top concepts and
+  then collections, so the fix is to generate it from the same source and
+  splice the hand-written prose around it.
+
+### L4. Why it is a release of its own
+
+It moves no triple, so by the versioning table nothing a consumer queries
+changes meaning — patch, and at `0.x` the third position is an integer, so
+0.1.9 → 0.1.10. Keeping it separate also keeps the boundary that has held for
+four releases: an editor pass and a tooling pass do not ride together, because
+when they do it is no longer possible to say which one broke the build.
+
+## M. A second opinion from the editor's own validator
+
+`make validate-skos`. The vocabulary is authored in the Intentional Arrangement
+SKOS Editor, and that editor ships a validator — SHACL integrity shapes plus
+qSKOS-style structural checks. Running it is a second opinion on the same graph
+from the tool upstream, and the overlap with `checks.py` is deliberate: what
+matters is the gap.
+
+**Five integrity conditions `checks.py` does not test:**
+
+| | condition |
+|---|---|
+| **S9** | `skos:Concept` and `skos:ConceptScheme` are disjoint |
+| **S13** | `prefLabel` / `altLabel` / `hiddenLabel` are pairwise disjoint |
+| **S14** | at most one `skos:prefLabel` per language tag |
+| **S37** | `skos:Collection` is disjoint with `Concept` and `ConceptScheme` |
+| — | two concepts sharing one `prefLabel` in one language (Z39.19 6.2.1 homographs) |
+
+All five are clean today, so this is assurance rather than a defect finder.
+It is still worth having: **S37 is the condition that settles whether a term can
+be both a concept and a collection** — the question §E2 answers by quoting the
+SKOS Reference, when a validator answers it mechanically.
+
+**What it is not.** The editor's REST API and MCP server are stateless —
+`validate_skos`, `convert_skos`, `skos_profile`, and `/validate`, `/convert`,
+over a library exposing only parse, convert and validate. There are no create,
+update, delete or persist functions anywhere in them and no project store, so
+**they are not an authoring surface**: validating a hand-edited export confirms
+the RDF is sound without making it authoritative. `convert_skos` is also not a
+round-trip test — it is rdflib parse-and-reserialize and never exercises the
+editor's own `triplesToModel`, which is where import fidelity lives. The
+authoring path stays what CONTRIBUTING says it is.
+
+**Operationally.** Not wired into `all`, because it depends on a checkout this
+repo does not own — the same contract `swiftcheck` has with the Command Line
+Tools. `SKOS_ENGINE` is overridable and the target tests for the interpreter
+before invoking it, so a machine without the editor prints a skip rather than
+failing. The engine's venv is uv-managed and has no `pip`; add the SHACL
+dependency with
+`uv pip install --python $SKOS_ENGINE/.venv/bin/python pyshacl==0.40.1`.
+Without pyshacl the structural half still runs and the report says the SHACL
+half did not, rather than letting a silent skip read as a pass.
+
+## N. The editor fixed the two artifact classes at the source
+
+Found by testing whether the editor could reload this project's own export —
+not by looking for it, which is the only reason it was found at all.
+
+Importing `z/pkm-vocab.export-0.1.8.ttl` into the editor at `dce18c0` and
+re-exporting rewrote **74 change notes across 57 subjects**: 35 carrying a
+language tag inside a quoted label, 39 naming the proposer twice. Exactly the
+two classes `transform.py` has repaired on every build since 0.1.6, and exactly
+the two `make check` reported as WARN. Nothing else moved — 4359 triples in and
+out, 241 URIs with none minted or lost, 236 broader pairs identical, 318 ISO
+25964 triples, no collection membership changed.
+
+| upstream | defect | state |
+|---|---|---|
+| [#77](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77) | language tag inside a quoted label — `“AppIntent@en”` | **fixed** |
+| [#78](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78) | doubled attribution — `(proposed by X) (by X)` | **fixed** |
+| [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81) | the migration walked only stored history, not imported notes | **fixed** |
+
+**#81 is the one that matters here**, because it is why this file recorded the
+other two as permanent. The editor's own source comment explains it: the
+earlier migration "only walked history, so notes present at a user's last
+import kept their `@en` and doubled names — hence the apparent 'date cutoff'."
+This vocabulary is entirely imported notes, so it saw none of the fix.
+
+**The fix arrives without an import.** `repairNoteText()` and
+`migrateHistoryNotes()` are called from `boot()` and followed by `save()`, so
+any project repairs itself when it is opened. That is stronger than the
+migration this project asked for in the #77 draft.
+
+### N1. What it changes here
+
+- **`make check` falls from 3 warn to 1** once 0.1.9's export lands, leaving
+  only `scaffolding-local-name` — see §D.
+- **`transform.py` step 7 becomes a no-op.** `DOUBLED_ATTRIBUTION` and
+  `LANG_IN_TEXT` will match nothing. **Leave the code**: it costs one pass over
+  the literals and defends against an export from an older editor or another
+  machine. But it is belt-and-braces now, not load-bearing, and §C1's count
+  drops from 95 repaired literals to 21.
+- **74 repaired literals ride in 0.1.9** whether or not anything else changes,
+  because the migration runs on load. They are upstream's work, not this
+  project's, and the changelog says so.
+- The two checks stay. A rule that finds nothing because the defect was fixed
+  is a rule doing its job, and neither costs anything to keep.
+
+**Confirmed on the real export.** 0.1.9's export from the editor carries the 74
+repairs exactly as the round-trip predicted, and `make check` fell from three
+warnings to one — the survivor being `scaffolding-local-name`, which waits for
+§D. The prediction was made from a test import and held against a session that
+also changed 41 literals, which is the stronger result.
+
+### N2. The editor does not log collection edits
+
+Measured on the same export, and the counterpart to the good news above.
+0.1.9 rewrote prose on **26 terms — 11 concepts and 15 collections**. The
+editor wrote a dated change note for **every one of the eleven concepts and
+none of the fifteen collections**.
+
+The sharper version of that, measured across the same export: collections
+carrying `dcterms:modified` went from 3 of 18 to **18 of 18**, while
+collections carrying `skos:changeNote` stayed at **0 of 18**. The editor knows
+the collection was edited — it stamps the date — and records nothing about
+what changed. So the changelog is the only account of why fifteen descriptions
+moved.
+
+This is the same second-class treatment as upstream
+[#58](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/58),
+which was about collections exporting with `rdfs:label` and `skos:note` where
+concepts get `skos:prefLabel` and `skos:definition`. That one is closed; the
+edit history was not part of it. Worth filing, and worth saying that no
+workaround belongs here — writing the notes by hand in the repo is precisely
+what §N's whole story says not to do.
+
+## O. Turtle as interchange, and who owns the vocabulary
+
+The round-trip test in §N was run to answer a small question — can the editor
+reload this project's own export — and answered a larger one. Worth recording
+now because **PKM Studio** and the SKOS backend taking shape in
+`pkm-neo4j-service` (`app/services/ontology/pkm/concepts/`, `mcp/`) would each
+become another writer on the same vocabulary.
+
+**What it proved.** A Turtle export goes into the SKOS Editor and comes back
+with 241 URIs intact, 236 broader pairs identical, 318 ISO 25964 relations
+preserved and no membership moved — and 74 literals repaired on the way. So
+Turtle is a viable interchange format between tools, which is the precondition
+the whole plan rests on. Import is a first-class feature of the editor, not a
+side effect, and its "new project" path leaves existing projects untouched.
+
+**What it did not prove, and 0.1.9 is the case study.** Interchange is not the
+same as multiple sources of truth. This release went wrong precisely because
+two copies existed — the editor's in browser localStorage and the repo's in
+`vocab/src/` — and the wrong one was edited. Nothing detected it. The export
+parsed, `make check` passed, the generated pages rendered, and the divergence
+was only found by reading `CONTRIBUTING.md` and asking. A third and fourth
+writer multiply that failure rather than change its shape.
+
+### O1. What a multi-writer setup needs
+
+| need | state today |
+|---|---|
+| a staleness signal per resource | `dcterms:modified` on every concept and, since 0.1.9, **18 of 18** collections |
+| a diff that ignores serialization order | `scripts/compare_exports.py` |
+| an independent validator | `make validate-skos` — §M |
+| **a declared owner per artifact** | **missing. This is the open question.** |
+
+The first three arrived incidentally while fixing something else, which is
+worth noticing: most of the machinery a second writer needs already exists. The
+fourth is not machinery at all, it is a decision.
+
+### O2. The sentence that has to change
+
+`CONTRIBUTING.md` states that the vocabulary is authored in the Intentional
+Arrangement SKOS Editor, exported to `vocab/src/pkm-vocab.export.ttl`, and
+built from there. **That sentence becomes false the day PKM Studio writes a
+term**, and it is exactly the rule this release spent four commits re-learning
+after ignoring it.
+
+So it cannot be allowed to lapse quietly. Either it is restated — one tool
+authors, the others read — or it is replaced with something that says how two
+writers reconcile. The editor's own answer is worth knowing and is not a model
+to copy: its workspace restore keeps a per-project `updated` timestamp and
+resolves conflicts by refusing to overwrite, restoring the incoming copy
+*beside* the existing one as "(restored)". Safe, and it leaves a human to
+merge.
+
+The honest default until there is something better: **one tool owns authoring
+and the rest read.** A vocabulary with 241 URIs and no merge story is not the
+place to discover that two editors disagree.
 
 ## Backlog
 
-Folding the `pages.py` and `notes.py` extraction into one place; a CI build
-check on version branches; `rel="alternate"` pointing browsers at the Turtle;
-two stale `navigationHiddenItems` entries on pre-`z/` paths; a
-`make changelog FROM=v0.1.1` graph-diff generator. Publish exclusion still does
-not retract, so roughly 103 notes stay live until unpublished by hand.
+Folding the `pages.py` and `notes.py` extraction into one place — both define
+`_first`, `_all` and `_link` with divergent signatures; `rel="alternate"`
+pointing browsers at the Turtle, which needs a front-matter key out of
+`pages.py` as well as a line in `_layouts/default.html`; a
+`make changelog FROM=v0.1.1` graph-diff generator.
+
+**A CI build check on version branches is the one with downside behind it, and
+it is a build from scratch: there is no `.github/workflows/` directory at all.**
+Merging to `main` publishes to w3id.org with no staging step, so nothing today
+runs `make check` between a branch and the live namespace except a human
+remembering to.
+
+Two vault items, both measured for 0.1.9 and both larger than recorded:
+
+- Not two stale `navigationHiddenItems` entries but **twelve of seventeen**,
+  and six of seventeen in `navigationOrdering`. Six are pre-`z/` (five
+  `Calendar/Notes/…` files plus the `Calendar` entry), four moved under `+/`,
+  one to `Efforts/Works`, one deleted. Every one is now **redundant** rather
+  than merely stale: `z`, `+`, `Atlas`, `Calendar` and `Efforts` are all in the
+  publish `excluded` list, so hiding them from navigation does nothing. This is
+  server-side site configuration, not a file in this repo.
+- Publish exclusion still does not retract, so **98** notes stay live until
+  unpublished by hand — Atlas 37, `+` 31, Efforts 30, against 344 live files of
+  which 246 belong there. Not "roughly 103"; the count is exact and comes from
+  the published cache.

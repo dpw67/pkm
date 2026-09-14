@@ -41,7 +41,7 @@ _Groupings; they carry no hierarchical meaning._
 - 2026-08-29 — Definition added; Scope note added (by Doug Warren)
 - 2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)
 - Added definition and scope notes for Action.
-- Removed ActionGroup reference in scope note since not defined in vocabulary yet.
+- Removed "ActionGroup" reference in scope note since not defined in vocabulary yet.
 - Removed trailing double space at end of scope note.
 
 </details>
@@ -60,6 +60,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Action
 
 ---
 
-`pkmv:Action` · created 2026-08-28 · modified 2026-09-13 · by [Doug Warren](../../agents/)
+`pkmv:Action` · created 2026-08-28 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

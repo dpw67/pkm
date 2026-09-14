@@ -276,41 +276,41 @@ Nested by `skos:broader`, starting from the top concepts. A term with more than 
 
 Groupings that carry no hierarchical meaning — a concept's place in the tree above is independent of the collections it belongs to.
 
-- **[Concept Collection](ConceptCollection/)** — All notes related to a Concept.
+- **[Concept Collection](ConceptCollection/)** — The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it.
   <br>10 members: [Concept](Concept/), [Cypher](Cypher/), [Knowledge Graph](KnowledgeGraph/), [Metadata](Metadata/), [OWL](OWL/), [Ontology](Ontology/), [RDF](RDF/), [SKOS](SKOS/), [Taxonomy](Taxonomy/), [Term](Term/)
-- **[Day Collection](DayCollection/)** — All the related notes for a single calendar Day.
+- **[Day Collection](DayCollection/)** — The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the hierarchy already derives, and the two have drifted: 26 members against 25 concepts under Day Cluster, with DayMeeting present in the tree and absent here. Where they disagree the hierarchy is authoritative.
   <br>26 members: [Day](Day/), [Day Actions](DayActions/), [Day Analysis](DayAnalysis/), [Day Base](DayBase/), [Day Board](DayBoard/), [Day Canvas](DayCanvas/), [Day Cluster](DayCluster/), [Day Cluster Core](DayClusterCore/), [Day Cluster Health](DayClusterHealth/), [Day Cluster Support](DayClusterSupport/), [Day Cluster Visual](DayClusterVisual/), [Day Diabetes](DayDiabetes/), [Day Diabetes Analysis](DayDiabetesAnalysis/), [Day Diagram](DayDiagram/), [Day Drawing](DayDrawing/), [Day Health](DayHealth/), [Day Index](DayIndex/), [Day Journal](DayJournal/), [Day Links](DayLinks/), [Day Log](DayLog/), [Day Meal Plan](DayMealPlan/), [Day Mindmap](DayMindmap/), [Day Plan](DayPlan/), [Day Review](DayReview/), [Day Schedule](DaySchedule/), [Day View](DayView/)
-- **[Decade Collection](DecadeCollection/)** — All notes related to a ten-Year span used for long-range life planning.
+- **[Decade Collection](DecadeCollection/)** — Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a grouping.
   <br>1 member: [Decade](Decade/)
-- **[Effort Collection](EffortCollection/)** — All the related notes for a single Effort.
+- **[Effort Collection](EffortCollection/)** — The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes, and the folder they live in. It holds no member of any Effort Cluster, which is why it does not resemble the period collections.
   <br>5 members: [Area](Area/), [Effort Cluster](EffortCluster/), [Efforts Folder](EffortsFolder/), [Interest](Interest/), [Project](Project/)
-- **[Ideaverse Collection](IdeaverseCollection/)** — Connected notes with the universe of ideas that exists between your brain and every place you think.
+- **[Ideaverse Collection](IdeaverseCollection/)** — The vault as a whole and the notes inside it. Two members naming the container rather than its contents, which is a different job from every other collection here.
   <br>2 members: [Obsidian Notes](ObsidianNotes/), [Vault](Vault/)
-- **[Knowledge Collection](KnowledgeCollection/)** — All the related concepts about Knowledge.
+- **[Knowledge Collection](KnowledgeCollection/)** — What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it is expressed as, and the Knowledge Graph it is stored in. Cuts across the hierarchy instead of following it.
   <br>4 members: [Concept](Concept/), [Knowledge](Knowledge/), [Knowledge Graph](KnowledgeGraph/), [Topic](Topic/)
-- **[Life Collection](LifeCollection/)** — All notes related to the top time horizon of a full lifespan.
+- **[Life Collection](LifeCollection/)** — Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping.
   <br>1 member: [Life](Life/)
-- **[Meal Domain](MealDomain/)** — All the related notes for a meal plan.
+- **[Meal Domain](MealDomain/)** — Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the plans at each horizon, and the parts a recipe is assembled from. Wider than any one meal plan.
   <br>16 members: [Breakfast](Breakfast/), [DMP Meal Plan](DMPMealPlan/), [Day Meal Plan](DayMealPlan/), [Dinner](Dinner/), [Ingredient](Ingredient/), [Lunch](Lunch/), [Meal](Meal/), [Meal Plan](MealPlan/), [Nutrition](Nutrition/), [PTE Meal Plan](PTEMealPlan/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/), [Snack](Snack/), [Week Meal Plan](WeekMealPlan/)
-- **[Month Collection](MonthCollection/)** — All related notes for a calendar month grouping Weeks and Days.
+- **[Month Collection](MonthCollection/)** — Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where the two disagree the hierarchy under Month Cluster is authoritative.
   <br>5 members: [Month](Month/), [Month Journal](MonthJournal/), [Month Log](MonthLog/), [Month Plan](MonthPlan/), [Month Review](MonthReview/)
 - **[Note Types](NoteTypes/)** — The concepts used as note types in the vault.
   <br>20 members: [Action](Action/), [App](App/), [Area](Area/), [Clipping](Clipping/), [Concept](Concept/), [Draft](Draft/), [Focus](Focus/), [Idea](Idea/), [Interest](Interest/), [Meal](Meal/), [Meal Plan](MealPlan/), [Project](Project/), [Python Template](PythonTemplate/), [Recipe](Recipe/), [Restaurant](Restaurant/), [Script](Script/), [Shortcut](Shortcut/), [Spark](Spark/), [Term](Term/), [Vault](Vault/)
-- **[Quarter Collection](QuarterCollection/)** — All related notes for a time period of three Months uses for medium-term planning.
+- **[Quarter Collection](QuarterCollection/)** — Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to the month rather than the quarter, which is the copy this collection was made from showing through. The hierarchy under Quarter Cluster is authoritative.
   <br>6 members: [Month Journal](MonthJournal/), [Quarter](Quarter/), [Quarter Cluster](QuarterCluster/), [Quarter Log](QuarterLog/), [Quarter Plan](QuarterPlan/), [Quarter Review](QuarterReview/)
-- **[Recipe Collection](RecipeCollection/)** — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
+- **[Recipe Collection](RecipeCollection/)** — Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is assembled from. It enumerates by hand what the hierarchy already derives, and currently matches it exactly.
   <br>7 members: [Ingredient](Ingredient/), [Nutrition](Nutrition/), [Recipe](Recipe/), [Recipe Images](RecipeImages/), [Recipe Servings](RecipeServings/), [Recipe Source](RecipeSource/), [Recipe Time](RecipeTime/)
 - **[Semantic Web Standards](SemanticWebStandards/)** — Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph.
   <br>11 members: [ISO Standard](ISOStandard/), [Knowledge Graph](KnowledgeGraph/), [Metadata](Metadata/), [OWL](OWL/), [Ontology](Ontology/), [RDF](RDF/), [SKOS](SKOS/), [Standard](Standard/), [Taxonomy](Taxonomy/), [Term](Term/), [W3C Standard](W3CStandard/)
-- **[Spark Collection](SparkCollection/)** — All the related notes for a new spark of interest or importance.
+- **[Spark Collection](SparkCollection/)** — Idea and Spark, the two concepts for something newly noticed and not yet developed. Two members, and no narrower concepts beneath either, so the grouping is not yet doing work.
   <br>2 members: [Idea](Idea/), [Spark](Spark/)
 - **[Tech Stack](TechStack/)** — The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts.
   <br>10 members: [Cypher](Cypher/), [FastAPI](FastAPI/), [Hummingbird](Hummingbird/), [Neo4j](Neo4j/), [Python](Python/), [Script](Script/), [Shortcut](Shortcut/), [Siri](Siri/), [Swift](Swift/), [Tool](Tool/)
-- **[Time Collection](TimeCollection/)** — All the related concepts about Time.
+- **[Time Collection](TimeCollection/)** — Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is a decision half-made rather than a facet.
   <br>2 members: [Time](Time/), [Time Cluster](TimeCluster/)
-- **[Week Collection](WeekCollection/)** — All notes related to a single Week time period of seven consecutive days.
+- **[Week Collection](WeekCollection/)** — The ten parts of a Week Cluster listed flat, together with Week itself. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Week Cluster is authoritative.
   <br>11 members: [Week](Week/), [Week Analysis](WeekAnalysis/), [Week Diabetes](WeekDiabetes/), [Week Diabetes Analysis](WeekDiabetesAnalysis/), [Week Health](WeekHealth/), [Week Index](WeekIndex/), [Week Journal](WeekJournal/), [Week Log](WeekLog/), [Week Meal Plan](WeekMealPlan/), [Week Plan](WeekPlan/), [Week Review](WeekReview/)
-- **[Year Collection](YearCollection/)** — All notes related to a calendar Year groups Quarters and Months.
+- **[Year Collection](YearCollection/)** — Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Year Cluster is authoritative.
   <br>7 members: [Year](Year/), [Year Cluster](YearCluster/), [Year Health](YearHealth/), [Year Journal](YearJournal/), [Year Log](YearLog/), [Year Plan](YearPlan/), [Year Review](YearReview/)
 
 ## All terms
@@ -360,7 +360,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Cluster](Cluster/)** — Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind.
 - **[Concept](Concept/)** — A unit of thought in a knowledge organization system.
   <br>In: [Concept Collection](ConceptCollection/), [Knowledge Collection](KnowledgeCollection/), [Note Types](NoteTypes/)
-- **[Concept Collection](ConceptCollection/)** _(collection, 10 members)_ — All notes related to a Concept.
+- **[Concept Collection](ConceptCollection/)** _(collection, 10 members)_ — The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it.
 - **[Context Graph](ContextGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected context.
 - **[Cypher](Cypher/)** — A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j.
   <br>In: [Concept Collection](ConceptCollection/), [Tech Stack](TechStack/)
@@ -389,7 +389,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](DayCollection/)
 - **[Day Cluster Visual](DayClusterVisual/)** — The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data graphically.
   <br>In: [Day Collection](DayCollection/)
-- **[Day Collection](DayCollection/)** _(collection, 26 members)_ — All the related notes for a single calendar Day.
+- **[Day Collection](DayCollection/)** _(collection, 26 members)_ — The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the hierarchy already derives, and the two have drifted: 26 members against 25 concepts under Day Cluster, with DayMeeting present in the tree and absent here. Where they disagree the hierarchy is authoritative.
 - **[Day Diabetes](DayDiabetes/)** — The record of diabetes-relevant data for a day (glucose, insulin, carbs, events).
   <br>In: [Day Collection](DayCollection/)
 - **[Day Diabetes Analysis](DayDiabetesAnalysis/)** — Interpretation of a day's diabetes data.
@@ -424,7 +424,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Day Collection](DayCollection/)
 - **[Decade](Decade/)** — A ten-year span used for long-range life planning.
   <br>In: [Decade Collection](DecadeCollection/)
-- **[Decade Collection](DecadeCollection/)** _(collection, 1 member)_ — All notes related to a ten-Year span used for long-range life planning.
+- **[Decade Collection](DecadeCollection/)** _(collection, 1 member)_ — Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a grouping.
 - **[Device Event](DeviceEvent/)** — Something that occurred with a device.
 - **[Dexcom Data](DexcomData/)** — Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor.
 - **[Diabetes Event](DiabetesEvent/)** — Something that happened related to Diabetes.
@@ -436,9 +436,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Note Types](NoteTypes/)
 ### E
 
-- **[Effort Cluster](EffortCluster/)** — A group of related notes about an effort.
+- **[Effort Cluster](EffortCluster/)** — Notes and artifacts assembled around a single effort, rather than every note that happens to mention it.
   <br>In: [Effort Collection](EffortCollection/)
-- **[Effort Collection](EffortCollection/)** _(collection, 5 members)_ — All the related notes for a single Effort.
+- **[Effort Collection](EffortCollection/)** _(collection, 5 members)_ — The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes, and the folder they live in. It holds no member of any Effort Cluster, which is why it does not resemble the period collections.
 - **[Effort Index](EffortIndex/)** — The index note that links all artifacts for an effort.
 - **[Effort Journal](EffortJournal/)** — Free-form reflective writing about an effort.
 - **[Effort Log](EffortLog/)** — A chronological record of what actually happened during an effort.
@@ -477,7 +477,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
 - **[Idea Emergence](IdeaEmergence/)** — The process of how ideas you encounter go from "nothingness to somethingness", and how they grow in richness, complexity, and meaning over time.
 - **[Ideaverse](Ideaverse/)** — The universe of linked notes about knowledge, concepts, and ideas in a PKM system.
-- **[Ideaverse Collection](IdeaverseCollection/)** _(collection, 2 members)_ — Connected notes with the universe of ideas that exists between your brain and every place you think.
+- **[Ideaverse Collection](IdeaverseCollection/)** _(collection, 2 members)_ — The vault as a whole and the notes inside it. Two members naming the container rather than its contents, which is a different job from every other collection here.
 - **[Ingredient](Ingredient/)** — An individual food item or component used in the preparation of a recipe.
   <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
 - **[Insulin Event](InsulinEvent/)** — Something that happened related to Insulin.
@@ -489,7 +489,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Knowledge](Knowledge/)** — Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it can be applied, communicated, or built upon.
   <br>In: [Knowledge Collection](KnowledgeCollection/)
-- **[Knowledge Collection](KnowledgeCollection/)** _(collection, 4 members)_ — All the related concepts about Knowledge.
+- **[Knowledge Collection](KnowledgeCollection/)** _(collection, 4 members)_ — What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it is expressed as, and the Knowledge Graph it is stored in. Cuts across the hierarchy instead of following it.
 - **[Knowledge Graph](KnowledgeGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected knowledge.
   <br>In: [Concept Collection](ConceptCollection/), [Knowledge Collection](KnowledgeCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Knowledge System](KnowledgeSystem/)** — A system of organization, navigation, and access for knowledge.
@@ -498,7 +498,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Life](Life/)** — The full lifespan, the top temporal (time) horizon.
   <br>In: [Life Collection](LifeCollection/)
-- **[Life Collection](LifeCollection/)** _(collection, 1 member)_ — All notes related to the top time horizon of a full lifespan.
+- **[Life Collection](LifeCollection/)** _(collection, 1 member)_ — Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping.
 - **[Local REST API with MCP](LocalRESTAPIWithMCP/)** — Support automation for notes using REST API for apps or MCP server for AI agents.
 - **[Lunch](Lunch/)** — The midday meal.
   <br>In: [Meal Domain](MealDomain/)
@@ -507,7 +507,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Map](Map/)** _(also: MOC, Map of Content)_ — A note used to think, plan, organize, and/or navigate a group of related notes.
 - **[Meal](Meal/)** — An eating occasion consisting of one or more foods or recipes consumed at a particular time.
   <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
-- **[Meal Domain](MealDomain/)** _(collection, 16 members)_ — All the related notes for a meal plan.
+- **[Meal Domain](MealDomain/)** _(collection, 16 members)_ — Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the plans at each horizon, and the parts a recipe is assembled from. Wider than any one meal plan.
 - **[Meal Event](MealEvent/)** — Something that happened related to a Meal.
 - **[Meal Plan](MealPlan/)** — A structured plan of meals over a defined period.
   <br>In: [Meal Domain](MealDomain/), [Note Types](NoteTypes/)
@@ -518,8 +518,8 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Month](Month/)** — A calendar month grouping weeks and days.
   <br>In: [Month Collection](MonthCollection/)
-- **[Month Cluster](MonthCluster/)** — A group of related notes about a month.
-- **[Month Collection](MonthCollection/)** _(collection, 5 members)_ — All related notes for a calendar month grouping Weeks and Days.
+- **[Month Cluster](MonthCluster/)** — Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
+- **[Month Collection](MonthCollection/)** _(collection, 5 members)_ — Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where the two disagree the hierarchy under Month Cluster is authoritative.
 - **[Month Health](Month-Health/)** — The health-related summary for a month.
 - **[Month Journal](MonthJournal/)** — Reflective writing about a month.
   <br>In: [Month Collection](MonthCollection/), [Quarter Collection](QuarterCollection/)
@@ -581,9 +581,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Quarter](Quarter/)** — A three-month time period used for medium-level planning.
   <br>In: [Quarter Collection](QuarterCollection/)
-- **[Quarter Cluster](QuarterCluster/)** — A group of related notes about a quarter.
+- **[Quarter Cluster](QuarterCluster/)** — Everything the system produces about a single quarter — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
   <br>In: [Quarter Collection](QuarterCollection/)
-- **[Quarter Collection](QuarterCollection/)** _(collection, 6 members)_ — All related notes for a time period of three Months uses for medium-term planning.
+- **[Quarter Collection](QuarterCollection/)** _(collection, 6 members)_ — Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to the month rather than the quarter, which is the copy this collection was made from showing through. The hierarchy under Quarter Cluster is authoritative.
 - **[Quarter Health](QuarterHealth/)** — The health-related summary for a quarter.
 - **[Quarter Journal](QuarterJournal/)** — Reflective writing about a quarter.
 - **[Quarter Log](QuarterLog/)** — A record of what happened over a quarter.
@@ -600,7 +600,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](ConceptCollection/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Recipe](Recipe/)** — A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal.
   <br>In: [Note Types](NoteTypes/), [Recipe Collection](RecipeCollection/)
-- **[Recipe Collection](RecipeCollection/)** _(collection, 7 members)_ — All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack.
+- **[Recipe Collection](RecipeCollection/)** _(collection, 7 members)_ — Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is assembled from. It enumerates by hand what the hierarchy already derives, and currently matches it exactly.
 - **[Recipe Images](RecipeImages/)** — The photo or image assets associated with a recipe.
   <br>In: [Meal Domain](MealDomain/), [Recipe Collection](RecipeCollection/)
 - **[Recipe Servings](RecipeServings/)** — The number of servings or portions a recipe yields.
@@ -630,7 +630,7 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 - **[Source](Source/)** — A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system.
 - **[Spark](Spark/)** — A brief, informal capture of an idea, prompt, or stimulus intended for later development.
   <br>In: [Note Types](NoteTypes/), [Spark Collection](SparkCollection/)
-- **[Spark Collection](SparkCollection/)** _(collection, 2 members)_ — All the related notes for a new spark of interest or importance.
+- **[Spark Collection](SparkCollection/)** _(collection, 2 members)_ — Idea and Spark, the two concepts for something newly noticed and not yet developed. Two members, and no narrower concepts beneath either, so the grouping is not yet doing work.
 - **[Standard](Standard/)** — A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated use.
   <br>In: [Semantic Web Standards](SemanticWebStandards/)
 - **[Swift](Swift/)** — A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development.
@@ -647,15 +647,15 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Concept Collection](ConceptCollection/), [Note Types](NoteTypes/), [Semantic Web Standards](SemanticWebStandards/)
 - **[Time](Time/)** — A concept element representing a temporal reference point or duration.
   <br>In: [Time Collection](TimeCollection/)
-- **[Time Cluster](TimeCluster/)** — A group of related notes for a time period (or time horizon).
+- **[Time Cluster](TimeCluster/)** — A cluster whose subject is a single time period, at any horizon from a day to a year.
   <br>In: [Time Collection](TimeCollection/)
-- **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — All the related concepts about Time.
+- **[Time Collection](TimeCollection/)** _(collection, 2 members)_ — Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is a decision half-made rather than a facet.
 - **[Tool](Tool/)** — A software capability used within the PKM system.
   <br>In: [Tech Stack](TechStack/)
 - **[Tool Event](ToolEvent/)** — Something that happened during processing with a tool.
 - **[Topic](Topic/)** — A subject or theme that content can be about.
   <br>In: [Knowledge Collection](KnowledgeCollection/)
-- **[Topic Cluster](TopicCluster/)** — A group of related notes about a topic.
+- **[Topic Cluster](TopicCluster/)** — Notes and artifacts assembled around a single topic, rather than every note that happens to mention it.
 - **[Topic Index](TopicIndex/)** — The index note that links all artifacts for a topic.
 - **[Topic Journal](TopicJournal/)** — Free-form reflective writing about a topic.
 - **[Topic Log](TopicLog/)** — A chronological record of what actually happened related to a topic.
@@ -677,8 +677,8 @@ Every concept and collection in one alphabetical list. Collections are marked; t
   <br>In: [Week Collection](WeekCollection/)
 - **[Week Analysis](WeekAnalysis/)** — A note summarizing patterns, trends, or review findings across a week's Day Clusters.
   <br>In: [Week Collection](WeekCollection/)
-- **[Week Cluster](WeekCluster/)** — The set of structured notes and artifacts generated for a single week, aggregating and analyzing its constituent Day Clusters.
-- **[Week Collection](WeekCollection/)** _(collection, 11 members)_ — All notes related to a single Week time period of seven consecutive days.
+- **[Week Cluster](WeekCluster/)** — Everything the system produces about a single week — its index, plan, log, review, journal, analysis, health and meal-plan notes — taken as one whole rather than many notes of one kind.
+- **[Week Collection](WeekCollection/)** _(collection, 11 members)_ — The ten parts of a Week Cluster listed flat, together with Week itself. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Week Cluster is authoritative.
 - **[Week Diabetes](WeekDiabetes/)** — A weekly note or artifact aggregating diabetes-related tracking data for the week.
   <br>In: [Week Collection](WeekCollection/)
 - **[Week Diabetes Analysis](WeekDiabetesAnalysis/)** — A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week.
@@ -704,9 +704,9 @@ Every concept and collection in one alphabetical list. Collections are marked; t
 
 - **[Year](Year/)** — A calendar year grouping quarters and months.
   <br>In: [Year Collection](YearCollection/)
-- **[Year Cluster](YearCluster/)** — A group of related notes about a year.
+- **[Year Cluster](YearCluster/)** — Everything the system produces about a single year — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
   <br>In: [Year Collection](YearCollection/)
-- **[Year Collection](YearCollection/)** _(collection, 7 members)_ — All notes related to a calendar Year groups Quarters and Months.
+- **[Year Collection](YearCollection/)** _(collection, 7 members)_ — Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Year Cluster is authoritative.
 - **[Year Health](YearHealth/)** — The health-related summary for a year.
   <br>In: [Year Collection](YearCollection/)
 - **[Year Journal](YearJournal/)** — Reflective writing about a year.

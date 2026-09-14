@@ -15,7 +15,7 @@ An eating occasion consisting of one or more foods or recipes consumed at a part
 
 ## Scope note
 
-Parent concept for the meal-planning domain (Breakfast, Lunch, Dinner, Snack, Recipe, DayMeal, etc.) - the occasion itself, not the recipe or ingredient content.
+Parent concept for the meal-planning domain — the occasion itself, not the recipe or ingredient content. Its own narrower concepts are Food, MealPlan and Restaurant; the four meal kinds sit under DayMeal, which sits under MealPlan, and Recipe is this concept's sibling under PKMMeals.
 
 ## Broader
 
@@ -37,8 +37,9 @@ _Groupings; they carry no hierarchical meaning._
 ## Change history
 
 <details markdown="1">
-<summary>5 change notes</summary>
+<summary>6 change notes</summary>
 
+- 2026-09-14 — Scope note updated (by Doug Warren)
 - 2026-08-29 — Unmarked as a top concept (by Doug Warren)
 - 2026-08-29 — Parent “PKM Meals” added (by Doug Warren)
 - 2026-08-28 — Definition added; Scope note added (by Doug Warren)
@@ -61,6 +62,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Meal
 
 ---
 
-`pkmv:Meal` · created 2026-08-16 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:Meal` · created 2026-08-16 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

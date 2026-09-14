@@ -1,15 +1,18 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix pkmv: <https://w3id.org/pkm/vocab/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pkmv:MonthCollection a skos:Collection ;
     rdfs:label "Month Collection"@en ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
         pkmv:MonthLog,
         pkmv:MonthPlan,
         pkmv:MonthReview ;
-    skos:note "All related notes for a calendar month grouping Weeks and Days."@en ;
+    skos:note "Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where the two disagree the hierarchy under Month Cluster is authoritative."@en ;
     skos:prefLabel "Month Collection"@en .
 

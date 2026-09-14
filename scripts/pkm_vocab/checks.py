@@ -81,6 +81,14 @@ DOUBLE_PERIOD = re.compile(r"(?<!\.)\.\.(?!\.)")
 PADDED_LITERAL = re.compile(r"\S {2,}\S")
 #: What a finished definition ends with. `)` is here because a definition may
 #: close on a parenthetical — "\u2026 Recipe Maker (WPRM)".
+#: How a scope note opens and a definition should not: an instruction to the
+#: reader rather than a statement of what the term is.
+INSTRUCTION_OPENING = re.compile(
+    r"^(Use|Refers? to|Covers?|Tags?|Applies to|Apply|Distinguish|Treat|"
+    r"Parent context|Holds?|Do not|Don't)\b",
+    re.IGNORECASE,
+)
+
 TERMINAL_PUNCTUATION = ".?!)"
 #: Verbs that make prose a claim about what the subject gathers up, with any
 #: article that follows them. Only a match whose next words are the subject's
@@ -446,6 +454,31 @@ def check(vocab: Vocabulary) -> Report:
                     "HTML collapses them, so the page hides what the RDF says",
                     ln(subj) or "scheme",
                 )
+
+    # A definition names what a thing IS; a scope note tells a reader what to
+    # DO with it. An imperative opening in a definition therefore means the two
+    # were confused -- and the way that happens in practice is an edit typed
+    # into the wrong field, which costs the definition it overwrote.
+    #
+    # Measured before it was written, because a rule drawn from one example
+    # fits one example: the opening below matches 1 of 223 definitions and 15
+    # of 223 scope notes, where it is correct. The discriminator is the
+    # property, not the wording, which is what makes this safe to check.
+    #
+    # WARN, not ERROR: "Refers to a word or phrase..." is a defensible
+    # definition even though it opens like an instruction, so a human decides.
+    for subj, obj in g.subject_objects(SKOS.definition):
+        if not isinstance(obj, Literal) or obj.datatype is not None:
+            continue
+        opening = INSTRUCTION_OPENING.match(str(obj).strip())
+        if opening:
+            report.add(
+                WARN, "definition-reads-as-instruction",
+                f"skos:definition opens \u201c{opening.group()}\u2026\u201d, which is scope-note "
+                "voice -- a definition says what the term is. Check the text did "
+                "not land in the wrong field",
+                ln(subj) or "scheme",
+            )
 
     # A definition that stops without punctuation reads as truncated. One
     # missing full stop across 223 definitions is a typo; the check exists so

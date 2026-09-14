@@ -15,7 +15,7 @@ pkmv:Meal a skos:Concept ;
     dcterms:created "2026-08-16"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-14"^^xsd:date ;
     isothes:broaderPartitive pkmv:PKMMeals ;
     isothes:narrowerPartitive pkmv:Food ;
     skos:broader pkmv:PKMMeals ;
@@ -25,5 +25,5 @@ pkmv:Meal a skos:Concept ;
         pkmv:MealPlan,
         pkmv:Restaurant ;
     skos:prefLabel "Meal"@en ;
-    skos:scopeNote "Parent concept for the meal-planning domain (Breakfast, Lunch, Dinner, Snack, Recipe, DayMeal, etc.) - the occasion itself, not the recipe or ingredient content."@en .
+    skos:scopeNote "Parent concept for the meal-planning domain — the occasion itself, not the recipe or ingredient content. Its own narrower concepts are Food, MealPlan and Restaurant; the four meal kinds sit under DayMeal, which sits under MealPlan, and Recipe is this concept's sibling under PKMMeals."@en .
 

@@ -10,6 +10,148 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.9] — 2026-09-14
+
+The Cluster family now says what the graph says. Seven definitions that still
+described a cluster as a bag, nine scope notes in the same family, two
+elsewhere whose prose the hierarchy contradicted, and fifteen collection
+descriptions that were the same bag language one layer over. Prose only — no
+URI, label, membership or relationship moved — so [Versioning](#versioning)
+makes this a patch.
+
+### Changed
+
+- **Seven concepts under `pkmv:Cluster` still defined a cluster as a bag, and
+  all three of its direct children were among them.** 0.1.7 rewrote
+  `pkmv:Cluster` and `pkmv:DayCluster` to say that a cluster is a whole of
+  unlike parts about one subject, and left the rest of the family reading "A
+  group of related notes about a …" — so following the hierarchy down one level
+  met the phrasing the parent had just abandoned. `pkmv:MonthCluster`,
+  `pkmv:QuarterCluster` and `pkmv:YearCluster` carry **exactly the same five
+  partitive children** — plan, log, review, journal and health — so they take
+  one parallel sentence naming those parts, which is what `make review` reads as
+  a family rather than as drift. `pkmv:WeekCluster` was the sharpest of the
+  seven: it held the sentence `pkmv:DayCluster` carried until 0.1.7, word *set*
+  included, on `DayCluster`'s own sibling. Its old definition also ended
+  "aggregating and analyzing its constituent Day Clusters", which the graph does
+  not assert — `pkmv:DayCluster` is its sibling under `pkmv:TimeCluster`, not
+  its child — so that clause went with the rest. **`pkmv:TimeCluster` is a
+  generic parent, not a whole:** it is `narrowerGeneric` to all five period
+  clusters where they are `narrowerPartitive` to their own notes, so it gets a
+  kind-of sentence instead. **`pkmv:EffortCluster` and `pkmv:TopicCluster` carry
+  no ISO 25964 relations at all** — plain `skos:broader` and `skos:narrower`,
+  unlike every other cluster — so writing "unlike parts" into their definitions
+  would assert in prose what the graph does not. They keep the subject-focused
+  clause without the partition claim, and their scope notes say so outright. The
+  missing relations are recorded in ROADMAP as minor work; the word *record* is
+  avoided throughout, because it is already this vocabulary's word for a `Log`.
+
+- **Nine scope notes in the Cluster family, five of them saying nothing the
+  definition did not.** `pkmv:MonthCluster`, `pkmv:QuarterCluster`,
+  `pkmv:YearCluster`, `pkmv:EffortCluster` and `pkmv:TopicCluster` all read
+  "Parent context for all notes associated with a ‹X›." Three more were
+  contradicted by the graph they describe. `pkmv:DayCluster` claimed to mirror
+  "the Week/Month clusters at other granularities" when it is the only cluster
+  partitioned in two levels — its four parts each hold notes of their own, where
+  the week, month, quarter and year clusters hold theirs directly.
+  `pkmv:WeekCluster` said it "Sits above DayCluster and below Month in the
+  Calendar hierarchy", which is wrong in both directions: its parents are
+  `pkmv:TimeCluster` and `pkmv:CalendarFolder`, and `pkmv:DayCluster` and
+  `pkmv:MonthCluster` are siblings. `pkmv:TimeCluster` still opened "Parent
+  context for a group of related notes" — the exact phrasing 0.1.7 rejected on
+  the parent — and carried a trailing space, one of the literals `transform.py`
+  repairs silently on every build, now fixed at the source instead.
+  `pkmv:Cluster`'s omission is the other half of a fix 0.1.8 started: that
+  release removed the two phantom citations from its scope note and left it
+  still failing to name `pkmv:TimeCluster`, its only unnamed direct child, along
+  with two of the five period clusters.
+
+- **Two scope notes outside the Cluster family that name the wrong concepts.**
+  `pkmv:Meal`'s read "Parent concept for the meal-planning domain (Breakfast,
+  Lunch, Dinner, Snack, Recipe, DayMeal, etc.)" and parents none of the six: its
+  children are `pkmv:Food`, `pkmv:MealPlan` and `pkmv:Restaurant`, the four meal
+  kinds sit under `pkmv:DayMeal`, and `pkmv:Recipe` is `Meal`'s sibling under
+  `pkmv:PKMMeals`. `phantom-citation` cannot see this, because all six names
+  exist and that rule fires on names that do not. `pkmv:Knowledge` was the same
+  defect found by looking for a second example: it called `pkmv:Metadata`,
+  `pkmv:Ontology`, `pkmv:Taxonomy`, `pkmv:KnowledgeGraph` and `pkmv:Term` "more
+  specific forms" of itself when all five are children of
+  `pkmv:KnowledgeSystem`, which is `Knowledge`'s own parent — so they are its
+  siblings — and it named none of its four actual children. It also called
+  itself "the broadest top concept" while having a parent and not being one of
+  the eight. Both now name what they hold and place what they mention.
+
+- **Eight change notes recorded a name without quoting it, and
+  `phantom-citation` was right to flag all eight.** 0.1.8 established the
+  convention — a name you are recording rather than citing goes in quotes — and
+  left the notes themselves for the next time the file was open. `Removed
+  redundant AppIntent2 generated by Proposals when already exists` and seven
+  like it across `pkmv:Action`, `pkmv:AppIntent`, `pkmv:DayJournal`,
+  `pkmv:DayLog`, `pkmv:DayReview`, `pkmv:MealPlan`, `pkmv:Month-Health` and
+  `pkmv:MonthCluster` now quote the name they record. This takes
+  `phantom-citation` from eight findings to none, and the warnings surviving
+  `make build` from nine to one — the one being `scaffolding-local-name` on
+  `pkmv:TemplateCopy`, which is expected until the 0.2.0 rename and must not be
+  silenced. 18 term pages changed.
+
+- **Fifteen collection descriptions said "All notes related to ‹X›", which is
+  what made the collections read as unfocused.** Fourteen of the eighteen
+  opened that way, and the four that did not — `NoteTypes`, `TechStack`,
+  `SemanticWebStandards` and `IdeaverseCollection` — are exactly the ones not
+  named `*Collection`. "All notes related to X" is not a membership rule, so
+  nothing in the description let a reader decide whether a given term belonged;
+  each now states the rule instead. **No member was added or removed**, because
+  that is not available at this level: the versioning table makes Major "an
+  existing query can return different results", and dropping a member is
+  precisely that. So where a collection is a hand copy of a subtree, the
+  description now says so **and says which side wins** — `pkmv:DayCollection`
+  records that it holds 26 members against the 25 concepts under
+  `pkmv:DayCluster`, that `pkmv:DayMeeting` is in the tree and not in the
+  collection, and that the hierarchy is authoritative where they disagree. That
+  is the honest patch: it cannot fix the drift, so it tells a consumer which
+  source to trust and leaves the membership to 0.2.0. Two descriptions were not
+  vague but wrong. `pkmv:EffortCollection` read "All the related notes for a
+  single Effort" while holding `pkmv:Area`, `pkmv:EffortCluster`,
+  `pkmv:EffortsFolder`, `pkmv:Interest` and `pkmv:Project` — **zero overlap**
+  with `pkmv:EffortCluster`'s own subtree, because it is the effort vocabulary
+  and not one effort's notes. `pkmv:QuarterCollection` claimed a quarter's
+  notes while holding `pkmv:MonthJournal` and omitting `pkmv:QuarterHealth` and
+  `pkmv:QuarterJournal`, which is the copy it was made from showing through —
+  `pkmv:QuarterCluster`'s own change note records it as "Duplicated from
+  MonthCluster". Two spelling errors went with them, in
+  `pkmv:QuarterCollection` ("uses for medium-term planning") and
+  `pkmv:YearCollection` ("a calendar Year groups Quarters and Months").
+  **None of the fifteen carries a change note recording the rewrite**, because
+  the SKOS Editor writes them for concepts and not for collections — all
+  eleven edited concepts were logged and none of the fifteen collections was.
+  So the collections' audit trail is still empty at 0 of 18, and this entry is
+  the only record that their descriptions changed. 15 more term pages
+  changed.
+
+- **Seventy-four change notes repaired upstream, arriving here for free.** The
+  SKOS Editor fixed the two artifact classes this vocabulary has worked around
+  since 0.1.6: a language tag written inside a quoted label
+  (`Preferred label changed from “AppIntent@en”`, 35 of them) and a proposer
+  named twice when they approved their own proposal
+  (`Created from approved proposal (proposed by Doug Warren) (by Doug Warren)`,
+  39). They are upstream
+  [#77](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/77)
+  and [#78](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/78),
+  with
+  [#81](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/81)
+  explaining why the fix had appeared not to reach this vocabulary — the
+  earlier migration walked only stored edit history and not notes that arrived
+  by import, and every note here arrived by import. The repair now runs
+  whenever a project is opened, so it landed without anything being asked of
+  it. **This is upstream's work, not this project's**, and it is recorded here
+  only because the published prose changes: 74 literals across 57 concepts,
+  measured rather than counted from the diff. Two consequences worth stating.
+  `make check` drops from three warnings to one — the survivor being
+  `scaffolding-local-name` on `pkmv:TemplateCopy`, which waits for the 0.2.0
+  rename. And `transform.py`'s matching repair becomes a no-op: it is kept as a
+  defence against an export from an older editor, but the count of literals it
+  rewrites on every build falls from 95 to 21, all of them now the invisible
+  whitespace kind that no reader could ever perceive.
 ## [0.1.8] — 2026-09-13
 
 Two editorial notes rewritten for the audience that can now read them, the
@@ -432,7 +574,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.8...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.9...HEAD
+[0.1.9]: https://github.com/dpw67/pkm/compare/v0.1.8...v0.1.9
 [0.1.8]: https://github.com/dpw67/pkm/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/dpw67/pkm/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/dpw67/pkm/compare/v0.1.5...v0.1.6

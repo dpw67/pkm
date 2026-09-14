@@ -15,7 +15,7 @@ Notes and artifacts assembled around a single subject, where each member is a pa
 
 ## Scope note
 
-Parent context for all notes associated with a single subject, like DayCluster, WeekCluster, MonthCluster, EffortCluster, and TopicCluster.
+Three kinds of cluster narrow from here: TimeCluster, EffortCluster and TopicCluster. The period clusters — DayCluster, WeekCluster, MonthCluster, QuarterCluster and YearCluster — sit under TimeCluster rather than directly under this concept.
 
 ## Broader
 
@@ -30,8 +30,9 @@ Parent context for all notes associated with a single subject, like DayCluster, 
 ## Change history
 
 <details markdown="1">
-<summary>10 change notes</summary>
+<summary>11 change notes</summary>
 
+- 2026-09-14 — Scope note updated (by Doug Warren)
 - 2026-09-13 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Scope note updated (by Doug Warren)
 - 2026-09-12 — Definition updated (by Doug Warren)
@@ -59,6 +60,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Cluster
 
 ---
 
-`pkmv:Cluster` · created 2026-08-25 · modified 2026-09-13 · by [Doug Warren](../../agents/)
+`pkmv:Cluster` · created 2026-08-25 · modified 2026-09-14 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)

@@ -1112,10 +1112,29 @@ This is the same second-class treatment as upstream
 [#58](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/58),
 which was about collections exporting with `rdfs:label` and `skos:note` where
 concepts get `skos:prefLabel` and `skos:definition`. That one is closed; the
-edit history was not part of it. **Filed as
-[#84](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84).**
-No workaround belongs here — writing the notes by hand in the repo is
-precisely what §N's whole story says not to do.
+edit history was not part of it.
+
+**Filed as [#84](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84)
+and fixed the same day** — nineteen minutes, closed `COMPLETED`. Editing a
+collection now seeds a history entry for every kind of edit (name
+add/change/remove, note add/update/remove, toggling ordered, adding or
+removing a member), exports each as `skos:changeNote` at parity with concept
+history, and round-trips imported collection change notes through a new
+`changeNote` array so re-opening an exported file keeps the trail. Jessica
+drew the same line to #58 unprompted: "same second-class treatment, one layer
+over." **Collections now match concepts on all three axes** — labels and
+definitions (#58), Dublin Core dates, and edit history.
+
+**Expect new output in the next export, and do not read it as a defect.**
+Collections will begin carrying `skos:changeNote`. The lesson from the 74
+repaired notes in §N is that unexplained new content in an export looks like
+damage until it is traced; this one is written down in advance.
+
+**0.1.9's fifteen collection rewrites cannot be recovered, and should not be
+re-entered.** They happened before the fix, so no history was seeded, and
+re-editing them now would date notes today for edits made on the 14th — a
+worse record than none. The changelog stays the account of why those
+descriptions moved.
 
 ## O. Turtle as interchange, and who owns the vocabulary
 

@@ -23,7 +23,7 @@ belongs to the Crosswalk panel, not the app.
 
 ## C. `[Bug]: Editing a collection's description leaves no change note, where editing a concept does`
 
-**Filed as [#84 — editing a collection leaves no change note](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84). Open.**
+**Filed as [#84 — editing a collection leaves no change note](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84). Fixed and closed the same day**, nineteen minutes after filing. Every collection edit now seeds a history entry and exports as `skos:changeNote`, and imported collection change notes round-trip via a new `changeNote` array. With #58 this closes the concept/collection parity gap on labels, dates and edit history alike.
 
 Measured on the 0.1.9 editor session at `dce18c0`.
 

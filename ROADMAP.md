@@ -652,6 +652,15 @@ exist yet. Quoting the name exempts it, which is both the fix and the
 convention — **a name you are recording rather than citing goes in quotes or
 backticks.**
 
+**The `z/` snapshots skipped a release, which is why the 0.1.7 file is out of
+step.** `z/pkm-vocab.export-<version>.ttl` archives the previous release's
+export at the *start* of the next cycle, so the file named for release N can
+carry early edits from N+1 — the 0.1.7 snapshot is 8 lines into 0.1.8. No 0.1.8
+snapshot was taken at all. 0.1.9 adds `z/pkm-vocab.export-0.1.8.ttl`, which is
+byte-identical to the v0.1.8 tag and doubles as the import source for the
+editor round-trip test. **Archive 0.1.9's export when 0.1.10 opens**, rather
+than skipping again.
+
 **Correction, made in 0.1.9.** This section said the surviving `Month-Health`
 hit was that editorial note. It was not: the note had already been quoted, and
 the finding was coming from an older, unquoted change note beside it — `Added

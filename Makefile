@@ -13,6 +13,7 @@
 #   make swiftcheck compile the generated Swift against the macOS SDK
 #   make swiftrun   run the generated harness against the fixture
 #   make validate   parse-check every published Turtle file
+#   make validate-skos  validate with the SKOS Editor's own engine (second opinion)
 #   make notes      regenerate the Obsidian term stubs in the WarrenWeb vault
 #   make vault      mirror the generated Obsidian artifacts into that vault
 #   make gems       install the gems GitHub Pages builds this site with
@@ -65,6 +66,14 @@ export BUNDLE_PATH = vendor/bundle
 # bind error on any machine already running something there.
 PORT ?= 4000
 
+# The SKOS Editor checkout, for `validate-skos`. The vocabulary is authored in
+# that editor (see CONTRIBUTING.md), and it ships its own validator -- so this
+# is a second opinion on the same graph from the tool upstream, covering five
+# SKOS integrity conditions checks.py does not test. Not installed by this
+# repo, and its venv is uv-managed with no pip: add pyshacl with
+# `uv pip install --python $(SKOS_ENGINE)/.venv/bin/python pyshacl==0.40.1`.
+SKOS_ENGINE ?= $(HOME)/Projects/Python/skos
+
 # Obsidian vault directory the term stubs are mirrored into. Override on the
 # command line for a different vault: make notes NOTES_OUT=/path/to/pkm/vocab
 NOTES_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab
@@ -84,7 +93,7 @@ VAULT_OUT := $(HOME)/Obsidian/WarrenWeb/+/_PKM
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build review shapes models artifacts swiftcheck swiftrun validate notes vault gems site serve clean
+.PHONY: all check build review shapes models artifacts swiftcheck swiftrun validate validate-skos notes vault gems site serve clean
 
 all: build validate
 
@@ -172,6 +181,19 @@ swiftrun:
 # The script adds vocab/terms/*.ttl and shapes/*.ttl to whatever is listed in TTL.
 validate:
 	@$(PYTHON) scripts/validate_ttl.py $(TTL)
+
+# Deliberately not in `all`: it depends on a checkout this repo does not own,
+# the same contract `swiftcheck` has with the Command Line Tools. The engine is
+# tested for before it is invoked -- without the guard the shell fails with
+# `No such file or directory` and exit 127 before Python runs, so the script's
+# own skip path is never reached and a missing engine reads as a broken build.
+validate-skos:
+	@if [ -x "$(SKOS_ENGINE)/.venv/bin/python" ]; then \
+	  PYTHONPATH=$(SKOS_ENGINE)/api $(SKOS_ENGINE)/.venv/bin/python \
+	    scripts/validate_upstream.py $(EXPORT) vocab/pkm-vocab.ttl; \
+	else \
+	  echo "  no SKOS engine at $(SKOS_ENGINE) — skipping upstream validation"; \
+	fi
 
 # Mirrors the PUBLISHED vocabulary rather than the export, so the stubs carry
 # URIs and dates that actually resolve. Deliberately not a dependency of `all`:

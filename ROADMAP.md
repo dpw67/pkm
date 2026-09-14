@@ -32,6 +32,7 @@ the third position; only major advances the second.
 | 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
 | 17 | What the eighteen collections actually are | measured — §E1 |
 | 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
+| 19 | Upstream validation as a second opinion | done — §M |
 
 ### Where 0.1.9 left the graph
 
@@ -971,6 +972,49 @@ changes meaning — patch, and at `0.x` the third position is an integer, so
 0.1.9 → 0.1.10. Keeping it separate also keeps the boundary that has held for
 four releases: an editor pass and a tooling pass do not ride together, because
 when they do it is no longer possible to say which one broke the build.
+
+## M. A second opinion from the editor's own validator
+
+`make validate-skos`. The vocabulary is authored in the Intentional Arrangement
+SKOS Editor, and that editor ships a validator — SHACL integrity shapes plus
+qSKOS-style structural checks. Running it is a second opinion on the same graph
+from the tool upstream, and the overlap with `checks.py` is deliberate: what
+matters is the gap.
+
+**Five integrity conditions `checks.py` does not test:**
+
+| | condition |
+|---|---|
+| **S9** | `skos:Concept` and `skos:ConceptScheme` are disjoint |
+| **S13** | `prefLabel` / `altLabel` / `hiddenLabel` are pairwise disjoint |
+| **S14** | at most one `skos:prefLabel` per language tag |
+| **S37** | `skos:Collection` is disjoint with `Concept` and `ConceptScheme` |
+| — | two concepts sharing one `prefLabel` in one language (Z39.19 6.2.1 homographs) |
+
+All five are clean today, so this is assurance rather than a defect finder.
+It is still worth having: **S37 is the condition that settles whether a term can
+be both a concept and a collection** — the question §E2 answers by quoting the
+SKOS Reference, when a validator answers it mechanically.
+
+**What it is not.** The editor's REST API and MCP server are stateless —
+`validate_skos`, `convert_skos`, `skos_profile`, and `/validate`, `/convert`,
+over a library exposing only parse, convert and validate. There are no create,
+update, delete or persist functions anywhere in them and no project store, so
+**they are not an authoring surface**: validating a hand-edited export confirms
+the RDF is sound without making it authoritative. `convert_skos` is also not a
+round-trip test — it is rdflib parse-and-reserialize and never exercises the
+editor's own `triplesToModel`, which is where import fidelity lives. The
+authoring path stays what CONTRIBUTING says it is.
+
+**Operationally.** Not wired into `all`, because it depends on a checkout this
+repo does not own — the same contract `swiftcheck` has with the Command Line
+Tools. `SKOS_ENGINE` is overridable and the target tests for the interpreter
+before invoking it, so a machine without the editor prints a skip rather than
+failing. The engine's venv is uv-managed and has no `pip`; add the SHACL
+dependency with
+`uv pip install --python $SKOS_ENGINE/.venv/bin/python pyshacl==0.40.1`.
+Without pyshacl the structural half still runs and the report says the SHACL
+half did not, rather than letting a silent skip read as a pass.
 
 ## Backlog
 

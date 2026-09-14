@@ -23,7 +23,9 @@ belongs to the Crosswalk panel, not the app.
 
 ## C. `[Bug]: Editing a collection's description leaves no change note, where editing a concept does`
 
-**Not yet filed.** Measured on the 0.1.9 editor session at `dce18c0`.
+**Filed as [#84 — editing a collection leaves no change note](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84). Open.**
+
+Measured on the 0.1.9 editor session at `dce18c0`.
 
 **Label:** `bug` · **Area:** Collections / change history
 

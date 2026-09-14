@@ -1112,9 +1112,10 @@ This is the same second-class treatment as upstream
 [#58](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/58),
 which was about collections exporting with `rdfs:label` and `skos:note` where
 concepts get `skos:prefLabel` and `skos:definition`. That one is closed; the
-edit history was not part of it. Worth filing, and worth saying that no
-workaround belongs here — writing the notes by hand in the repo is precisely
-what §N's whole story says not to do.
+edit history was not part of it. **Filed as
+[#84](https://github.com/jesstalisman-ia/intentional-arrangement-skos/issues/84).**
+No workaround belongs here — writing the notes by hand in the repo is
+precisely what §N's whole story says not to do.
 
 ## O. Turtle as interchange, and who owns the vocabulary
 

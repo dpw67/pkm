@@ -12,6 +12,6 @@ pkmv:YearCollection a skos:Collection ;
         pkmv:YearLog,
         pkmv:YearPlan,
         pkmv:YearReview ;
-    skos:note "All notes related to a calendar Year groups Quarters and Months."@en ;
+    skos:note "Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Year Cluster is authoritative."@en ;
     skos:prefLabel "Year Collection"@en .
 

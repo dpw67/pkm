@@ -10,6 +10,6 @@ pkmv:EffortCollection a skos:Collection ;
         pkmv:EffortsFolder,
         pkmv:Interest,
         pkmv:Project ;
-    skos:note "All the related notes for a single Effort."@en ;
+    skos:note "The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes, and the folder they live in. It holds no member of any Effort Cluster, which is why it does not resemble the period collections."@en ;
     skos:prefLabel "Effort Collection"@en .
 

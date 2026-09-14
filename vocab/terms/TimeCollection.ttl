@@ -7,6 +7,6 @@ pkmv:TimeCollection a skos:Collection ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Time,
         pkmv:TimeCluster ;
-    skos:note "All the related concepts about Time."@en ;
+    skos:note "Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is a decision half-made rather than a facet."@en ;
     skos:prefLabel "Time Collection"@en .
 

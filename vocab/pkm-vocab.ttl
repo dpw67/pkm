@@ -14,6 +14,7 @@
 
 pkmv:ConceptCollection a skos:Collection ;
     rdfs:label "Concept Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Cypher,
@@ -25,11 +26,12 @@ pkmv:ConceptCollection a skos:Collection ;
         pkmv:SKOS,
         pkmv:Taxonomy,
         pkmv:Term ;
-    skos:note "All notes related to a Concept."@en ;
+    skos:note "The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it."@en ;
     skos:prefLabel "Concept Collection"@en .
 
 pkmv:DayCollection a skos:Collection ;
     rdfs:label "Day Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Day,
         pkmv:DayActions,
@@ -57,54 +59,60 @@ pkmv:DayCollection a skos:Collection ;
         pkmv:DayReview,
         pkmv:DaySchedule,
         pkmv:DayView ;
-    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:note "The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the hierarchy already derives, and the two have drifted: 26 members against 25 concepts under Day Cluster, with DayMeeting present in the tree and absent here. Where they disagree the hierarchy is authoritative."@en ;
     skos:prefLabel "Day Collection"@en .
 
 pkmv:DecadeCollection a skos:Collection ;
     rdfs:label "Decade Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Decade ;
-    skos:note "All notes related to a ten-Year span used for long-range life planning."@en ;
+    skos:note "Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a grouping."@en ;
     skos:prefLabel "Decade Collection"@en .
 
 pkmv:EffortCollection a skos:Collection ;
     rdfs:label "Effort Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Area,
         pkmv:EffortCluster,
         pkmv:EffortsFolder,
         pkmv:Interest,
         pkmv:Project ;
-    skos:note "All the related notes for a single Effort."@en ;
+    skos:note "The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes, and the folder they live in. It holds no member of any Effort Cluster, which is why it does not resemble the period collections."@en ;
     skos:prefLabel "Effort Collection"@en .
 
 pkmv:IdeaverseCollection a skos:Collection ;
     rdfs:label "Ideaverse Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:ObsidianNotes,
         pkmv:Vault ;
-    skos:note "Connected notes with the universe of ideas that exists between your brain and every place you think."@en ;
+    skos:note "The vault as a whole and the notes inside it. Two members naming the container rather than its contents, which is a different job from every other collection here."@en ;
     skos:prefLabel "Ideaverse Collection"@en .
 
 pkmv:KnowledgeCollection a skos:Collection ;
     rdfs:label "Knowledge Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Concept,
         pkmv:Knowledge,
         pkmv:KnowledgeGraph,
         pkmv:Topic ;
-    skos:note "All the related concepts about Knowledge."@en ;
+    skos:note "What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it is expressed as, and the Knowledge Graph it is stored in. Cuts across the hierarchy instead of following it."@en ;
     skos:prefLabel "Knowledge Collection"@en .
 
 pkmv:LifeCollection a skos:Collection ;
     rdfs:label "Life Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Life ;
-    skos:note "All notes related to the top time horizon of a full lifespan."@en ;
+    skos:note "Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping."@en ;
     skos:prefLabel "Life Collection"@en .
 
 pkmv:MealDomain a skos:Collection ;
     rdfs:label "Meal Domain"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Breakfast,
         pkmv:DMPMealPlan,
@@ -122,18 +130,19 @@ pkmv:MealDomain a skos:Collection ;
         pkmv:RecipeTime,
         pkmv:Snack,
         pkmv:WeekMealPlan ;
-    skos:note "All the related notes for a meal plan."@en ;
+    skos:note "Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the plans at each horizon, and the parts a recipe is assembled from. Wider than any one meal plan."@en ;
     skos:prefLabel "Meal Domain"@en .
 
 pkmv:MonthCollection a skos:Collection ;
     rdfs:label "Month Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Month,
         pkmv:MonthJournal,
         pkmv:MonthLog,
         pkmv:MonthPlan,
         pkmv:MonthReview ;
-    skos:note "All related notes for a calendar month grouping Weeks and Days."@en ;
+    skos:note "Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where the two disagree the hierarchy under Month Cluster is authoritative."@en ;
     skos:prefLabel "Month Collection"@en .
 
 pkmv:NoteTypes a skos:Collection ;
@@ -165,6 +174,7 @@ pkmv:NoteTypes a skos:Collection ;
 
 pkmv:QuarterCollection a skos:Collection ;
     rdfs:label "Quarter Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:MonthJournal,
         pkmv:Quarter,
@@ -172,11 +182,12 @@ pkmv:QuarterCollection a skos:Collection ;
         pkmv:QuarterLog,
         pkmv:QuarterPlan,
         pkmv:QuarterReview ;
-    skos:note "All related notes for a time period of three Months uses for medium-term planning."@en ;
+    skos:note "Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to the month rather than the quarter, which is the copy this collection was made from showing through. The hierarchy under Quarter Cluster is authoritative."@en ;
     skos:prefLabel "Quarter Collection"@en .
 
 pkmv:RecipeCollection a skos:Collection ;
     rdfs:label "Recipe Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Ingredient,
         pkmv:Nutrition,
@@ -185,7 +196,7 @@ pkmv:RecipeCollection a skos:Collection ;
         pkmv:RecipeServings,
         pkmv:RecipeSource,
         pkmv:RecipeTime ;
-    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:note "Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is assembled from. It enumerates by hand what the hierarchy already derives, and currently matches it exactly."@en ;
     skos:prefLabel "Recipe Collection"@en .
 
 pkmv:SemanticWebStandards a skos:Collection ;
@@ -208,10 +219,11 @@ pkmv:SemanticWebStandards a skos:Collection ;
 
 pkmv:SparkCollection a skos:Collection ;
     rdfs:label "Spark Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Idea,
         pkmv:Spark ;
-    skos:note "All the related notes for a new spark of interest or importance."@en ;
+    skos:note "Idea and Spark, the two concepts for something newly noticed and not yet developed. Two members, and no narrower concepts beneath either, so the grouping is not yet doing work."@en ;
     skos:prefLabel "Spark Collection"@en .
 
 pkmv:TechStack a skos:Collection ;
@@ -233,14 +245,16 @@ pkmv:TechStack a skos:Collection ;
 
 pkmv:TimeCollection a skos:Collection ;
     rdfs:label "Time Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Time,
         pkmv:TimeCluster ;
-    skos:note "All the related concepts about Time."@en ;
+    skos:note "Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is a decision half-made rather than a facet."@en ;
     skos:prefLabel "Time Collection"@en .
 
 pkmv:WeekCollection a skos:Collection ;
     rdfs:label "Week Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Week,
         pkmv:WeekAnalysis,
@@ -253,11 +267,12 @@ pkmv:WeekCollection a skos:Collection ;
         pkmv:WeekMealPlan,
         pkmv:WeekPlan,
         pkmv:WeekReview ;
-    skos:note "All notes related to a single Week time period of seven consecutive days."@en ;
+    skos:note "The ten parts of a Week Cluster listed flat, together with Week itself. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Week Cluster is authoritative."@en ;
     skos:prefLabel "Week Collection"@en .
 
 pkmv:YearCollection a skos:Collection ;
     rdfs:label "Year Collection"@en ;
+    skos:changeNote "2026-09-14 — Note updated (by Doug Warren)"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Year,
         pkmv:YearCluster,
@@ -266,7 +281,7 @@ pkmv:YearCollection a skos:Collection ;
         pkmv:YearLog,
         pkmv:YearPlan,
         pkmv:YearReview ;
-    skos:note "All notes related to a calendar Year groups Quarters and Months."@en ;
+    skos:note "Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy under Year Cluster is authoritative."@en ;
     skos:prefLabel "Year Collection"@en .
 
 pkma:Claude-AI a prov:SoftwareAgent ;

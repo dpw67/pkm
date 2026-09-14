@@ -30,6 +30,8 @@ the third position; only major advances the second.
 | 14 | 0.1.9 — the Cluster family says what the graph says | done — §H |
 | 15 | The meals shape layer's open decisions | recorded — §I |
 | 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
+| 17 | What the eighteen collections actually are | measured — §E1 |
+| 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
 
 ### Where 0.1.9 left the graph
 
@@ -251,7 +253,15 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
   converting it orphans all 63. The real duplication is that `DayCollection`
   restates the hierarchy by hand and **has already drifted** — `DayMeeting` is
   in the tree and missing from the collection, 26 members against 25
-  descendants.
+  descendants. See §E1 for what the other seventeen turned out to be, and §E2
+  for why "make it both" is not available.
+
+  **Every membership change is major**, which is what forces all of this into
+  one release rather than letting it arrive a collection at a time. Dropping a
+  member means `SELECT ?m { pkmv:DayCollection skos:member ?m }` returns fewer
+  rows, and the table calls that major; deprecating a collection outright is
+  listed as major too. 0.1.9 took the part that *is* patch — the descriptions —
+  and left every member in place.
 - **A collection rule:** enumerate only what the hierarchy cannot derive.
   `TechStack` is a hand-copy of the `Tool` subtree missing six — `App`,
   `AppIntent`, `ObsidianTemplate`, `PythonTemplate`, `TemplateCopy`, `Widget`. A
@@ -339,6 +349,90 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
 - **Three schema.org mappings** — `pkmv:Book skos:relatedMatch schema:Book`
   points a concept at an OWL class. A consumer can query it today, so changing
   it is major.
+
+### E1. Three kinds of collection, and only one earns its keep
+
+Measured for 0.1.9 against the subtree each one shadows. The intuition that
+these are loose bags of "everything that mentions a day" turns out to be
+backwards, and the truth points somewhere more actionable.
+
+| kind | collections | what is wrong |
+|---|---|---|
+| **Mirrors a subtree** | Day (26), Week (11), Year (7), Quarter (6), Month (5), Recipe (7) | redundant — the hierarchy already derives them — and five of the six have drifted |
+| **Genuine facet** | NoteTypes (20), MealDomain (16), SemanticWebStandards (11), TechStack (10), Concept (10), Effort (5), Knowledge (4) | nothing; these cut across the tree and cannot be derived |
+| **Degenerate** | Decade (1), Life (1), Time (2), Ideaverse (2), Spark (2) | one or two members — a decision half-made |
+
+**The five period collections have five different shapes**, which is the
+clearest evidence that no rule was ever applied: Day holds the period, the
+cluster and 24 of 25 descendants; Week holds the period and all ten parts but
+not the cluster; Month holds the period and four of five parts and not the
+cluster; Quarter holds the period, the cluster, three of five parts **and
+`MonthJournal`**; Year holds the period, the cluster and all five parts.
+
+`QuarterCollection`'s stray `MonthJournal` is not random — `QuarterCluster`'s
+own change note reads `Duplicated from "MonthCluster"`, so the collection was
+copied along with the concept and only partly corrected. That is the same
+`stale-duplicate-definition` mechanism §H2 already checks for, one level up at
+the collection.
+
+So the 0.2.0 worklist is decidable rather than open-ended: **retire the six
+mirrors** (the hierarchy already says it), **finish or drop the five
+degenerates**, **keep the seven facets**. A `collection-mirrors-subtree` check
+is cheap and is already proposed above.
+
+### E2. `Concept` and `Collection` are disjoint, so "make it both" is not available
+
+SKOS Reference **S37**: `skos:Collection` is disjoint with `skos:Concept` and
+`skos:ConceptScheme`. `skos:member` has domain `skos:Collection` (S31) while
+`skos:broader`, `skos:narrower` and `skos:related` inherit domain and range
+`skos:Concept` from `skos:semanticRelation` (S19, S20) — so asserting
+`skos:broader` at a collection makes the graph inconsistent, which the
+Reference gives as Example 46.
+
+The sanctioned workaround is Example 48: relate the concepts with
+`skos:narrower`, and *separately* gather them with `skos:member`. So a twin
+collection beside a concept is legal SKOS — `DayCollection` beside
+`DayCluster` is exactly that shape.
+
+**It is still not worth minting more of them.** Giving `DayClusterCore`,
+`DayClusterHealth`, `DayClusterSupport` and `DayClusterVisual` a collection
+each was considered for 0.1.9 and rejected: all four already carry
+`isothes:narrowerPartitive` to their own notes, which **is** the grouping, so a
+collection would restate by hand what the hierarchy derives — the rule stated
+two bullets above. The evidence against is the existing twin: `DayCollection`
+is that pattern applied once, and it has already drifted by a member. Four more
+would be four more things to drift.
+
+### E3. Two classes that cannot be fixed by prose
+
+Both found while measuring 0.1.9, both recorded here because the resolution is
+structural and therefore major.
+
+- **13 concepts where a change note and the hierarchy flatly disagree.** Eleven
+  say a parent was removed and it is still there — ten of them `Tool`
+  (`Cypher`, `Neo4j`, `Python`, `Swift`, `Script`, `FastAPI`, `Hummingbird`,
+  `AppIntent`, `ObsidianTemplate`, `PythonTemplate`) plus `TimeCluster` against
+  `Cluster`. Two say a parent was added that is not there: `OWL` and `RDF`
+  against `Standard`, both now under `W3CStandard`, so those two read as a note
+  recording an intermediate state rather than an error. The obvious explanation
+  for the `Tool` ten — that the editor removed `skos:broader` and left
+  `isothes:broaderGeneric` behind — was checked and is **wrong**: `Tool` is
+  present as both. The removal simply never took. Deciding whether `Tool` stays
+  is reparenting, so major. **A `changenote-contradicts-hierarchy` check is
+  mechanically decidable and finds all 13** — same shape as §H2's four.
+- **36 concepts (16%) whose last prose edit predates a later structural
+  change.** A risk list, not a defect list: spot-checking sixteen found most
+  survived their reparenting intact, because a definition of what Python *is*
+  does not depend on where Python sits. Two are real. `pkmv:Event`'s scope note
+  opens "Top concept for the Event hierarchy" while the concept was unmarked as
+  a top concept and now sits under `pkmv:PKMMeals` — which is itself worth a
+  look. `pkmv:Time`'s says it is "the anchor/parent for the Calendar hierarchy
+  (Life > Decade > Year > Quarter > Month > Week > Day)" while `Time` is a
+  *child* of `Calendar`, so the note is inverted. That same note ends "Worth
+  deciding OWL Time alignment before finalizing" — §J reached the identical
+  question from outside, weeks after the note asked it and nothing read it.
+  **This is the argument for §L**: a note nobody can find is a note nobody acts
+  on.
 
 ## F. Where the vocabulary and the periodic notes disagree
 
@@ -818,6 +912,65 @@ keeps its meaning.
   `pkmv:YearCluster` all assert it to their period. Week is the only gap, and it
   looks like an omission rather than a decision.
 - **Any OWL-Time alignment** — see §J, and §J3 before writing a triple.
+
+## L. 0.1.10 — the vocabulary you can actually read
+
+**Chartered, not started.** Presentation only: no triple moves, so this is a
+different file set from every release so far and it cannot collide with §D.
+
+### L1. The measured problem
+
+`vocab/index.md` is **721 lines, 51 KB, one page**: Hierarchy 249 lines,
+Collections 41, All terms 406. The A–Z section headings exist and **no A–Z
+index links to them**. There are **zero** `<details>` blocks. Everything is
+emitted flat by `render_vocabulary()` in `scripts/pkm_vocab/render.py`.
+
+The consequence is an ordering problem as much as a length one: the collections
+sit *after* 249 lines of hierarchy, and "All terms" — the section a first-time
+reader most likely wants — is last. The front page at `index.md` does the
+opposite and does it well, opening on a table of what exists with a link per
+row. The vocabulary page should be shaped like its own parent.
+
+### L2. The constraint that decides the design
+
+**Three render targets, not one**: the Pages site (Jekyll/kramdown), the
+**GitHub repo view** of the same Markdown, and **Obsidian**.
+
+`<details>`/`<summary>` renders in all three. JavaScript renders in exactly
+one. So the collapsible outline is the primary navigation because it degrades
+everywhere, and search is a Pages-only enhancement layered on top — not the
+other way round.
+
+GitHub Pages also runs Jekyll in safe mode against a fixed plugin allowlist, so
+a search *plugin* is not an option. A generated `search.json` plus vanilla JS
+in `_layouts/default.html` needs no plugin and is.
+
+### L3. The work
+
+- **Collapsible hierarchy** — `<details>` per top concept, top level open.
+- **A–Z index row** above "All terms"; the anchors already exist.
+- **Collections before the hierarchy**, not 249 lines after it.
+- **A vocabulary landing page shaped like `index.md`** — summary table, one row
+  per view — with Hierarchy, Collections and All terms as linked sub-pages
+  rather than one scroll. `render.py` already has `splice()` for writing
+  generated blocks into hand-written pages; reuse it rather than inventing a
+  second mechanism.
+- **Search** — generated `search.json`, vanilla JS, Pages only.
+- **Generate the Obsidian hub.** `pkm/vocab.md` in the vault is hand-written —
+  `notes.py` writes the 241 stubs beside it and not the hub — and is stale:
+  frontmatter `version: 0.1.3`, body "version 0.1.4", against a vocabulary at
+  0.1.9, with 18 hand-copied collection counts that §E1 has just invalidated.
+  It already has the shape the web page wants, leading with top concepts and
+  then collections, so the fix is to generate it from the same source and
+  splice the hand-written prose around it.
+
+### L4. Why it is a release of its own
+
+It moves no triple, so by the versioning table nothing a consumer queries
+changes meaning — patch, and at `0.x` the third position is an integer, so
+0.1.9 → 0.1.10. Keeping it separate also keeps the boundary that has held for
+four releases: an editor pass and a tooling pass do not ride together, because
+when they do it is no longer possible to say which one broke the build.
 
 ## Backlog
 

@@ -13,10 +13,11 @@ Nothing yet. Work starts on a branch named for the version it targets.
 ## [0.1.9] — 2026-09-14
 
 The Cluster family now says what the graph says. Seven definitions that still
-described a cluster as a bag, nine scope notes in the same family, and two
-elsewhere whose prose the hierarchy contradicted. Prose only — no URI, label,
-membership or relationship moved — so [Versioning](#versioning) makes this a
-patch.
+described a cluster as a bag, nine scope notes in the same family, two
+elsewhere whose prose the hierarchy contradicted, and fifteen collection
+descriptions that were the same bag language one layer over. Prose only — no
+URI, label, membership or relationship moved — so [Versioning](#versioning)
+makes this a patch.
 
 ### Changed
 
@@ -93,6 +94,36 @@ patch.
   `pkmv:TemplateCopy`, which is expected until the 0.2.0 rename and must not be
   silenced. 18 term pages changed.
 
+- **Fifteen collection descriptions said "All notes related to ‹X›", which is
+  what made the collections read as unfocused.** Fourteen of the eighteen
+  opened that way, and the four that did not — `NoteTypes`, `TechStack`,
+  `SemanticWebStandards` and `IdeaverseCollection` — are exactly the ones not
+  named `*Collection`. "All notes related to X" is not a membership rule, so
+  nothing in the description let a reader decide whether a given term belonged;
+  each now states the rule instead. **No member was added or removed**, because
+  that is not available at this level: the versioning table makes Major "an
+  existing query can return different results", and dropping a member is
+  precisely that. So where a collection is a hand copy of a subtree, the
+  description now says so **and says which side wins** — `pkmv:DayCollection`
+  records that it holds 26 members against the 25 concepts under
+  `pkmv:DayCluster`, that `pkmv:DayMeeting` is in the tree and not in the
+  collection, and that the hierarchy is authoritative where they disagree. That
+  is the honest patch: it cannot fix the drift, so it tells a consumer which
+  source to trust and leaves the membership to 0.2.0. Two descriptions were not
+  vague but wrong. `pkmv:EffortCollection` read "All the related notes for a
+  single Effort" while holding `pkmv:Area`, `pkmv:EffortCluster`,
+  `pkmv:EffortsFolder`, `pkmv:Interest` and `pkmv:Project` — **zero overlap**
+  with `pkmv:EffortCluster`'s own subtree, because it is the effort vocabulary
+  and not one effort's notes. `pkmv:QuarterCollection` claimed a quarter's
+  notes while holding `pkmv:MonthJournal` and omitting `pkmv:QuarterHealth` and
+  `pkmv:QuarterJournal`, which is the copy it was made from showing through —
+  `pkmv:QuarterCluster`'s own change note records it as "Duplicated from
+  MonthCluster". Two spelling errors went with them, in
+  `pkmv:QuarterCollection` ("uses for medium-term planning") and
+  `pkmv:YearCollection` ("a calendar Year groups Quarters and Months"). This is
+  also the first time any collection has carried a `skos:changeNote` — none of
+  the eighteen had an audit trail of any kind before now. 15 more term pages
+  changed.
 ## [0.1.8] — 2026-09-13
 
 Two editorial notes rewritten for the audience that can now read them, the

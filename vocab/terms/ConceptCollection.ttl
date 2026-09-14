@@ -15,6 +15,6 @@ pkmv:ConceptCollection a skos:Collection ;
         pkmv:SKOS,
         pkmv:Taxonomy,
         pkmv:Term ;
-    skos:note "All notes related to a Concept."@en ;
+    skos:note "The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it."@en ;
     skos:prefLabel "Concept Collection"@en .
 

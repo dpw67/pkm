@@ -10,6 +10,6 @@ pkmv:MonthCollection a skos:Collection ;
         pkmv:MonthLog,
         pkmv:MonthPlan,
         pkmv:MonthReview ;
-    skos:note "All related notes for a calendar month grouping Weeks and Days."@en ;
+    skos:note "Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where the two disagree the hierarchy under Month Cluster is authoritative."@en ;
     skos:prefLabel "Month Collection"@en .
 

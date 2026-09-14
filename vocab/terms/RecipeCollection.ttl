@@ -12,6 +12,6 @@ pkmv:RecipeCollection a skos:Collection ;
         pkmv:RecipeServings,
         pkmv:RecipeSource,
         pkmv:RecipeTime ;
-    skos:note "All notes related to Ingredients, Instructions, and Nutrition about a Recipe for preparing, cooking, and eating food as a Meal or Snack."@en ;
+    skos:note "Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is assembled from. It enumerates by hand what the hierarchy already derives, and currently matches it exactly."@en ;
     skos:prefLabel "Recipe Collection"@en .
 

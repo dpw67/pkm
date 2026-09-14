@@ -31,6 +31,6 @@ pkmv:DayCollection a skos:Collection ;
         pkmv:DayReview,
         pkmv:DaySchedule,
         pkmv:DayView ;
-    skos:note "All the related notes for a single calendar Day."@en ;
+    skos:note "The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the hierarchy already derives, and the two have drifted: 26 members against 25 concepts under Day Cluster, with DayMeeting present in the tree and absent here. Where they disagree the hierarchy is authoritative."@en ;
     skos:prefLabel "Day Collection"@en .
 

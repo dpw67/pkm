@@ -6,6 +6,6 @@ pkmv:DecadeCollection a skos:Collection ;
     rdfs:label "Decade Collection"@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:member pkmv:Decade ;
-    skos:note "All notes related to a ten-Year span used for long-range life planning."@en ;
+    skos:note "Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a grouping."@en ;
     skos:prefLabel "Decade Collection"@en .
 

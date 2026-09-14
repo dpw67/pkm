@@ -21,6 +21,6 @@ pkmv:MealDomain a skos:Collection ;
         pkmv:RecipeTime,
         pkmv:Snack,
         pkmv:WeekMealPlan ;
-    skos:note "All the related notes for a meal plan."@en ;
+    skos:note "Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the plans at each horizon, and the parts a recipe is assembled from. Wider than any one meal plan."@en ;
     skos:prefLabel "Meal Domain"@en .
 

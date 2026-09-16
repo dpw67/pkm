@@ -4,6 +4,14 @@
 [Discussion #7](https://github.com/dpw67/pkm/discussions/7), 2026-09-16, in
 Announcements, under the first of the two titles below.
 
+**Announcements are not cross-linked, and this draft is the template, so that
+decision lives here.** Discussions already lists them in sequence, which is how
+a reader moves between releases, so a chain of "previous release" links would be
+maintenance for no navigation benefit. The 0.1.9 draft asked for such a chain
+and offered "#6 links #5" as the precedent; #6 links no discussion at all, so
+the instruction had been written down twice and carried out never. Copy the
+status line above, not a chain.
+
 **The body below is deliberately unwrapped — do not re-wrap it.** Discussions
 render a single newline as `<br>`, and because this one is posted by hand there
 is no `gh` step in which anything of mine would unwrap it. A wrapped draft

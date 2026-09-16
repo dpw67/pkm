@@ -2,7 +2,6 @@
 
 **Status:** POSTED as
 [Discussion #6](https://github.com/dpw67/pkm/discussions/6), 2026-09-14.
-Link it from the next release's opener, as #6 links #5.
 
 **The body below is deliberately unwrapped — do not re-wrap it.** Discussions
 render a single newline as `<br>`, and because this one is posted by hand

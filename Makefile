@@ -267,11 +267,22 @@ site:
 	   { echo "  per-term Turtle missing from _site"; exit 1; }; \
 	 echo "  _site ok: $$built term pages, per-term Turtle intact"
 
-# Serves what `make site` builds, at http://127.0.0.1:$(PORT)/pkm/vocab/ -- the
-# `/pkm/` is `baseurl`, which Pages sets for a project site and the local build
-# has to match or the CSS 404s. The one thing worth clicking is a term URI,
-# /pkm/vocab/DayMealPlan/, since that path exists only because of `permalink`.
+# Serves what `make site` builds. The `/pkm/` is `baseurl`, which Pages sets for
+# a project site and the local build has to match or the CSS 404s -- which is
+# also why the built site cannot be browsed by opening files from _site, and why
+# a Markdown preview shows neither the A-Z anchors (kramdown generates those
+# heading ids) nor working term links (they are relative to /vocab/). This target
+# is the only way to see what a reader sees, so it prints where to go.
+#
+# The one thing worth clicking is a term URI, /pkm/vocab/DayMealPlan/, since that
+# path exists only because of `permalink`.
 serve:
+	@echo "  vocabulary   http://127.0.0.1:$(PORT)/pkm/vocab/"
+	@echo "  hierarchy    http://127.0.0.1:$(PORT)/pkm/vocab/browse/hierarchy/"
+	@echo "  collections  http://127.0.0.1:$(PORT)/pkm/vocab/browse/collections/"
+	@echo "  all terms    http://127.0.0.1:$(PORT)/pkm/vocab/browse/all/"
+	@echo "  a term       http://127.0.0.1:$(PORT)/pkm/vocab/DayMealPlan/"
+	@echo ""
 	$(BUNDLE) exec jekyll serve --livereload --port $(PORT)
 
 clean:

@@ -112,6 +112,7 @@ def _render_markdown(report: Report) -> str:
 
 def _build(args) -> int:
     """Validate, transform, then write every published artifact."""
+    from .guard import report_prose_delta
     from .pages import write_pages
     from .render import (BROWSE_DIR, render_agents, render_all_terms,
                          render_collections, render_hierarchy, render_resources,
@@ -125,6 +126,12 @@ def _build(args) -> int:
         print(_render_text(report))
         print("\nrefusing to build: fix the errors above", file=sys.stderr)
         return 1
+
+    # Before anything is written: has prose moved since the last commit, and
+    # was that intended? A re-export from the wrong SKOS Editor project once
+    # reverted 33 literals and every other check passed. See guard.py.
+    for line in report_prose_delta(vocab.graph, args.source, args.root):
+        print(line, file=sys.stderr)
 
     published = publish(vocab)
     print(

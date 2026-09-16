@@ -1066,7 +1066,7 @@ clause the graph does not assert.
 **Nothing in the build noticed.** The export parsed, `make check` reported 0
 error, `make validate` passed 247/247, and the pages rendered. It was caught by
 running `scripts/compare_exports.py` against the committed export by hand, which
-is the only reason this section is not a post-mortem.
+is the only reason this section is not a post-mortem. §L7 wires that in.
 
 The export from the correct project is clean: 4387 → 4387 triples, **one subject
 touched** — the scheme — and `modified` plus `versionInfo` the only properties,

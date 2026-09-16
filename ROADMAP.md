@@ -31,7 +31,7 @@ the third position; only major advances the second.
 | 15 | The meals shape layer's open decisions | recorded — §I |
 | 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
 | 17 | What the eighteen collections actually are | measured — §E1 |
-| 18 | 0.1.10 — the vocabulary you can actually read | built; awaiting the 0.1.10 export — §L |
+| 18 | 0.1.10 — released: four pages, a collapsible tree, search, a generated hub | done — §L |
 | 19 | Upstream validation as a second opinion | done — §M |
 | 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
@@ -948,10 +948,10 @@ keeps its meaning.
 
 ## L. 0.1.10 — the vocabulary you can actually read
 
-**Built.** Presentation only: no triple moved, which the build proves rather
+**Shipped.** Presentation only: no triple moved, which the build proves rather
 than asserts — `vocab/pkm-vocab.ttl` and all 241 per-term files are
-byte-identical across the change. The one thing outstanding is the version
-literal; see the end of this section.
+byte-identical across the change. The version literal came from the editor,
+which cost a round-trip worth recording — see §L6.
 
 ### L1. The measured problem
 
@@ -1046,14 +1046,51 @@ changes meaning — patch, and at `0.x` the third position is an integer, so
 four releases: an editor pass and a tooling pass do not ride together, because
 when they do it is no longer possible to say which one broke the build.
 
-### L6. Outstanding — the version literal
+### L6. The version literal, and the export that reverted a release
 
-`owl:versionInfo` lives in the SKOS Editor export, and `transform.py` derives
-`owl:versionIRI` from it. The graph still says **0.1.9**, which is literally
-true of its triples and wrong for the release. Bump the scheme's version to
-`0.1.10` in the editor, export over `vocab/src/pkm-vocab.export.ttl`, and run
-`make build`: the Turtle diff should be exactly those two lines, and `make hub`
-then carries 0.1.10 into the vault without further edits.
+`owl:versionInfo` lives **only** in the SKOS Editor export — `transform.py`
+merely reads it to derive `owl:versionIRI` — so a release that moves no triple
+still needs a round-trip through the editor for that one literal. Worth planning
+into a presentation release rather than discovering at tagging time.
+
+**The first re-export reverted 0.1.9 outright.** The editor held two projects:
+the stale one, and the copy import restores *beside* an existing project rather
+than overwriting it — the conflict path §O describes. Exporting from the wrong
+one produced 4387 → 4359 triples with **33 prose literals reverted**: the 7
+Cluster definitions, 11 scope notes and 15 collection descriptions §H and §E1
+had just written, plus 13 net change notes including 0.1.9's own dated history.
+`pkmv:WeekCluster` was back to "The *set* of structured notes … aggregating and
+analyzing its constituent Day Clusters" — the pre-0.1.9 sentence, with the
+clause the graph does not assert.
+
+**Nothing in the build noticed.** The export parsed, `make check` reported 0
+error, `make validate` passed 247/247, and the pages rendered. It was caught by
+running `scripts/compare_exports.py` against the committed export by hand, which
+is the only reason this section is not a post-mortem.
+
+The export from the correct project is clean: 4387 → 4387 triples, **one subject
+touched** — the scheme — and `modified` plus `versionInfo` the only properties,
+with zero `definition`/`scopeNote`/`note` differences anywhere in the graph.
+
+Two things this settles. The round-trip **put 0.1.9's prose into the editor**,
+which it had never held — 0.1.9 was applied by editing the export directly, and
+`z/pkm-vocab.export-0.1.9.ttl` being byte-identical to the committed export is
+the proof. So the divergence §O calls "the 0.1.9 case study" is now closed. And
+the acceptance test for any future editor session is written down: **no
+`definition`, `scopeNote` or `note` line in `compare_exports.py` output unless
+the release is about prose.**
+
+### L7. The check that would have caught it
+
+`compare_exports.py` existed and was wired into nothing — §O1 lists it as
+machinery that arrived incidentally. `make build` now runs it against the export
+committed at `HEAD` before writing anything, and prints the prose delta and
+triple count: loud when definitions, scope notes or notes move, silent when they
+do not. It degrades rather than fails when git or the blob is unavailable, so a
+build from a tarball still works.
+
+This is the same move as §D4 and §H2 — the defect is cheap to fix once and
+expensive to find twice.
 
 ## M. A second opinion from the editor's own validator
 

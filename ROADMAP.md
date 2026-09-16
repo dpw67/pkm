@@ -38,16 +38,21 @@ the third position; only major advances the second.
 
 ### Where 0.1.9 left the graph
 
-`make check` on the export: 4377 triples, 223 concepts, 18 collections, 236
-hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 3 warn.**
+`make check` on the export: **4387 triples**, 223 concepts, 18 collections, 236
+hierarchy links, 318 ISO 25964 links, 8 top concepts. **0 error, 1 warn.**
 
-Two of the three were upstream residue: `doubled-attribution` (39) and
-`lang-tag-in-text` (35), SKOS Editor artifacts that `transform.py` repaired on
-the way out so the published graph was clean either way. **Both are now fixed
-at the source** — see §N — so once 0.1.9's export lands from the editor the
-count falls to **1 warn**, and that one is `scaffolding-local-name` on
+**The repaired export has landed**, so this paragraph is no longer a
+prediction. Two of the three warnings were upstream residue:
+`doubled-attribution` (39) and `lang-tag-in-text` (35), SKOS Editor artifacts
+that `transform.py` repaired on the way out so the published graph was clean
+either way. Both are now fixed at the source — see §N — and the count has duly
+fallen from three to **1 warn**. That one is `scaffolding-local-name` on
 `pkmv:TemplateCopy`, which the transform cannot repair because the fix is a
 rename. See §D, and do not silence it.
+
+The triple count rose 4377 → 4387 with that same export. Recorded because this
+section exists to answer "what changed since I last read it", and a count that
+silently moves is the drift it is meant to catch.
 
 So `make build` prints **`1 warn remain after transform`**, and that one warning
 is the whole of what is left. The line first appeared in 0.1.8, when the rule

@@ -15,6 +15,7 @@
 #   make validate   parse-check every published Turtle file
 #   make validate-skos  validate with the SKOS Editor's own engine (second opinion)
 #   make notes      regenerate the Obsidian term stubs in the WarrenWeb vault
+#   make hub        fill the generated blocks in that vault's vocabulary hub
 #   make vault      mirror the generated Obsidian artifacts into that vault
 #   make gems       install the gems GitHub Pages builds this site with
 #   make site       build the site and check the term URIs resolve
@@ -78,6 +79,11 @@ SKOS_ENGINE ?= $(HOME)/Projects/Python/skos
 # command line for a different vault: make notes NOTES_OUT=/path/to/pkm/vocab
 NOTES_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab
 
+# The hand-written hub note that sits above those stubs. A file, not a
+# directory, and not inside NOTES_OUT -- `notes` prunes anything there that it
+# did not generate, and this page must survive that.
+HUB_OUT := $(HOME)/Obsidian/WarrenWeb/pkm/vocab.md
+
 # Where `vault` mirrors the generated Obsidian tree. A directory this repo owns
 # outright, not a folder shared with hand-written notes: the target prunes, so
 # anything here that the generator no longer emits is deleted. That is the point
@@ -93,7 +99,7 @@ VAULT_OUT := $(HOME)/Obsidian/WarrenWeb/+/_PKM
 TTL     := void.ttl ontology/pkm.ttl taxonomy/pkm-taxonomy.ttl \
            vocab/pkm-vocab.ttl agents/index.ttl resources/index.ttl
 
-.PHONY: all check build review shapes models artifacts swiftcheck swiftrun validate validate-skos notes vault gems site serve clean
+.PHONY: all check build review shapes models artifacts swiftcheck swiftrun validate validate-skos notes hub vault gems site serve clean
 
 all: build validate
 
@@ -203,6 +209,18 @@ validate-skos:
 notes:
 	$(VOCAB) notes vocab/pkm-vocab.ttl --out $(NOTES_OUT)
 
+# The hub note one level above the stubs, which `notes` does not write: it is
+# hand-written, and only its facts are generated -- counts, version, top
+# concepts, collection membership -- into three named marker blocks. Prose
+# around them is left alone. Fails with the markers to paste if they are absent,
+# rather than appending a block to the end of someone's page.
+#
+# Like `notes` and `vault`, deliberately not part of `all`: it writes outside
+# this repo, into a vault with Sync and Publish both enabled. `make hub DRY=-n`
+# reports without writing.
+hub:
+	$(VOCAB) hub vocab/pkm-vocab.ttl --out $(HUB_OUT) $(if $(DRY),--dry-run,)
+
 # Puts the generated Obsidian tree where Obsidian can actually open it, which is
 # the only way to find out whether a Base renders: the templates are YAML that
 # looks right and fails in the app, which is how the groupBy defect survived a
@@ -241,7 +259,7 @@ gems:
 # repo does not install.
 site:
 	$(BUNDLE) exec jekyll build
-	@built=$$(ls -d _site/vocab/*/ 2>/dev/null | grep -cv '/terms/$$'); \
+	@built=$$(ls -d _site/vocab/*/ 2>/dev/null | grep -cvE '/(terms|browse)/$$'); \
 	 want=$$(ls vocab/terms/*.md | wc -l | tr -d ' '); \
 	 test "$$built" = "$$want" || \
 	   { echo "  $$built term pages built, expected $$want"; exit 1; }; \
@@ -249,11 +267,22 @@ site:
 	   { echo "  per-term Turtle missing from _site"; exit 1; }; \
 	 echo "  _site ok: $$built term pages, per-term Turtle intact"
 
-# Serves what `make site` builds, at http://127.0.0.1:$(PORT)/pkm/vocab/ -- the
-# `/pkm/` is `baseurl`, which Pages sets for a project site and the local build
-# has to match or the CSS 404s. The one thing worth clicking is a term URI,
-# /pkm/vocab/DayMealPlan/, since that path exists only because of `permalink`.
+# Serves what `make site` builds. The `/pkm/` is `baseurl`, which Pages sets for
+# a project site and the local build has to match or the CSS 404s -- which is
+# also why the built site cannot be browsed by opening files from _site, and why
+# a Markdown preview shows neither the A-Z anchors (kramdown generates those
+# heading ids) nor working term links (they are relative to /vocab/). This target
+# is the only way to see what a reader sees, so it prints where to go.
+#
+# The one thing worth clicking is a term URI, /pkm/vocab/DayMealPlan/, since that
+# path exists only because of `permalink`.
 serve:
+	@echo "  vocabulary   http://127.0.0.1:$(PORT)/pkm/vocab/"
+	@echo "  hierarchy    http://127.0.0.1:$(PORT)/pkm/vocab/browse/hierarchy/"
+	@echo "  collections  http://127.0.0.1:$(PORT)/pkm/vocab/browse/collections/"
+	@echo "  all terms    http://127.0.0.1:$(PORT)/pkm/vocab/browse/all/"
+	@echo "  a term       http://127.0.0.1:$(PORT)/pkm/vocab/DayMealPlan/"
+	@echo ""
 	$(BUNDLE) exec jekyll serve --livereload --port $(PORT)
 
 clean:

@@ -2,6 +2,7 @@
 layout: default
 title: "Diabetes Event"
 permalink: /vocab/DiabetesEvent/
+search: true
 description: "Something that happened related to Diabetes."
 ---
 

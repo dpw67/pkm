@@ -2,6 +2,7 @@
 layout: default
 title: "Meditation Event"
 permalink: /vocab/MeditationEvent/
+search: true
 description: "Recording information from meditation session."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Action"
 permalink: /vocab/Action/
+search: true
 description: "Something to do for an effort, project, area, or interest."
 ---
 

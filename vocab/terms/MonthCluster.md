@@ -2,6 +2,7 @@
 layout: default
 title: "Month Cluster"
 permalink: /vocab/MonthCluster/
+search: true
 description: "Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."
 ---
 

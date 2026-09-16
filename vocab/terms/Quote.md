@@ -2,6 +2,7 @@
 layout: default
 title: "Quote"
 permalink: /vocab/Quote/
+search: true
 description: "A quote by a specific source that you want to capture and reuse."
 ---
 

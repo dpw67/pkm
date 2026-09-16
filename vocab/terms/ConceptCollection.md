@@ -2,6 +2,7 @@
 layout: default
 title: "Concept Collection"
 permalink: /vocab/ConceptCollection/
+search: true
 description: "The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it."
 ---
 

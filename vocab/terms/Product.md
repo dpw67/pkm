@@ -2,6 +2,7 @@
 layout: default
 title: "Product"
 permalink: /vocab/Product/
+search: true
 description: "A packaged food or grocery item."
 ---
 

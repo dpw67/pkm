@@ -2,6 +2,7 @@
 layout: default
 title: "Day Diabetes Analysis"
 permalink: /vocab/DayDiabetesAnalysis/
+search: true
 description: "Interpretation of a day's diabetes data."
 ---
 

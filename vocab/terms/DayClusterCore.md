@@ -2,6 +2,7 @@
 layout: default
 title: "Day Cluster Core"
 permalink: /vocab/DayClusterCore/
+search: true
 description: "The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis."
 ---
 

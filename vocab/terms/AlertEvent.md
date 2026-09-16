@@ -2,6 +2,7 @@
 layout: default
 title: "Alert Event"
 permalink: /vocab/AlertEvent/
+search: true
 description: "An exception condition raised by a device threshold setting, or other metric."
 ---
 

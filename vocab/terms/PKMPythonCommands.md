@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Python Commands"
 permalink: /vocab/PKMPythonCommands/
+search: true
 description: "Python commands supporting the PKM system."
 ---
 

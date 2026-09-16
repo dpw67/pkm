@@ -2,6 +2,7 @@
 layout: default
 title: "Add Folder"
 permalink: /vocab/AddFolder/
+search: true
 description: "The + (Add) folder is the PKM \"inbox\" space for new and incoming notes."
 ---
 

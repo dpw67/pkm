@@ -2,6 +2,7 @@
 layout: default
 title: "Year Journal"
 permalink: /vocab/YearJournal/
+search: true
 description: "Reflective writing about a year."
 ---
 

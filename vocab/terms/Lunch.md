@@ -2,6 +2,7 @@
 layout: default
 title: "Lunch"
 permalink: /vocab/Lunch/
+search: true
 description: "The midday meal."
 ---
 

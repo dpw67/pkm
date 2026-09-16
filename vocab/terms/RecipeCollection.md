@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe Collection"
 permalink: /vocab/RecipeCollection/
+search: true
 description: "Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is assembled from. It enumerates by hand what…"
 ---
 

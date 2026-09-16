@@ -2,6 +2,7 @@
 layout: default
 title: "Advanced URI"
 permalink: /vocab/AdvancedURI/
+search: true
 description: "Control Obsidian features using special URIs to automate workflows."
 ---
 

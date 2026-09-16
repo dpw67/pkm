@@ -2,6 +2,7 @@
 layout: default
 title: "Package"
 permalink: /vocab/Package/
+search: true
 description: "A physical package of a food product."
 ---
 

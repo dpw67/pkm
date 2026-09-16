@@ -2,6 +2,7 @@
 layout: default
 title: "Day Links"
 permalink: /vocab/DayLinks/
+search: true
 description: "A support note within a Day Cluster capturing links or references relevant to that day."
 ---
 

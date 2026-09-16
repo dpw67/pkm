@@ -2,6 +2,7 @@
 layout: default
 title: "Tool"
 permalink: /vocab/Tool/
+search: true
 description: "A software capability used within the PKM system."
 ---
 

@@ -3,6 +3,7 @@
     python -m pkm_vocab check <export.ttl>    validate, report
     python -m pkm_vocab build <export.ttl>    validate, transform, publish
     python -m pkm_vocab notes <published.ttl> --out <dir>   Obsidian stubs
+    python -m pkm_vocab hub <published.ttl> --out <note.md>  Obsidian hub blocks
     python -m pkm_vocab review <export.ttl>   family-grouped reading sheet
 """
 
@@ -15,7 +16,7 @@ from pathlib import Path
 
 from . import load, wrap
 from .checks import ERROR, INFO, WARN, Report, check
-from .notes import write_notes
+from .notes import HUB_BLOCKS, write_hub, write_notes
 from .review import write_review
 
 LEVELS = (ERROR, WARN, INFO)
@@ -111,8 +112,11 @@ def _render_markdown(report: Report) -> str:
 
 def _build(args) -> int:
     """Validate, transform, then write every published artifact."""
+    from .guard import report_prose_delta
     from .pages import write_pages
-    from .render import render_agents, render_resources, render_vocabulary, splice
+    from .render import (BROWSE_DIR, render_agents, render_all_terms,
+                         render_collections, render_hierarchy, render_resources,
+                         render_search_index, render_vocab_index, splice)
     from .split import stale_term_files, write_all
     from .transform import publish
 
@@ -122,6 +126,12 @@ def _build(args) -> int:
         print(_render_text(report))
         print("\nrefusing to build: fix the errors above", file=sys.stderr)
         return 1
+
+    # Before anything is written: has prose moved since the last commit, and
+    # was that intended? A re-export from the wrong SKOS Editor project once
+    # reverted 33 literals and every other check passed. See guard.py.
+    for line in report_prose_delta(vocab.graph, args.source, args.root):
+        print(line, file=sys.stderr)
 
     published = publish(vocab)
     print(
@@ -143,11 +153,22 @@ def _build(args) -> int:
                   file=sys.stderr)
 
     root = args.root
+    browse = root / "vocab" / BROWSE_DIR
+    # The vocabulary is four pages, not one: a landing page shaped like the
+    # namespace front page, and one page per view under browse/. See render.py.
     targets = [
-        (root / "vocab" / "index.md", render_vocabulary(vocab, published)),
+        (root / "vocab" / "index.md", render_vocab_index(vocab, published)),
+        (browse / "hierarchy.md", render_hierarchy(vocab, published)),
+        (browse / "collections.md", render_collections(vocab, published)),
+        (browse / "all.md", render_all_terms(vocab, published)),
         (root / "resources" / "index.md", render_resources(vocab, published)),
         (root / "agents" / "index.md", render_agents(vocab, published)),
     ]
+    # Written wholesale rather than spliced: it is JSON, there is no prose to
+    # preserve, and it must stay free of front matter so Jekyll copies it
+    # through as a static file instead of trying to render it.
+    search = root / "vocab" / "search.json"
+    index = render_search_index(vocab, published)
 
     if args.dry_run:
         names = {vocab.local_name(u) for u in [*vocab.concepts(), *vocab.collections()]}
@@ -156,6 +177,8 @@ def _build(args) -> int:
               f"resources/index.ttl", file=sys.stderr)
         for path, _ in targets:
             print(f"would splice {path.relative_to(root)}", file=sys.stderr)
+        print(f"would write {search.relative_to(root)} "
+              f"({len(names)} entries, {len(index)} bytes)", file=sys.stderr)
         return 0
 
     written = write_all(vocab, published, root)
@@ -164,6 +187,8 @@ def _build(args) -> int:
     pages = write_pages(vocab, published, root)
     for path, body in targets:
         written.append(splice(path, body))
+    search.write_text(index + "\n", encoding="utf-8")
+    written.append(search)
     print(f"wrote {len(written)} files, {len(pages)} term pages changed",
           file=sys.stderr)
 
@@ -187,6 +212,33 @@ def _notes(args) -> int:
     for name in pruned:
         print(f"  {'would prune' if args.dry_run else 'pruned'}: {name} — "
               "no longer in the vocabulary", file=sys.stderr)
+    return 0
+
+
+def _hub(args) -> int:
+    """Fill the generated blocks in the vault's hand-written vocabulary hub."""
+    vocab = load(args.source)
+    changed, missing = write_hub(vocab, args.out, dry_run=args.dry_run)
+
+    if missing:
+        # Reported rather than appended. A generated block appended to the end
+        # of a hand-written page is in the wrong place and silently so, and the
+        # hub's prose order is the point of keeping it hand-written.
+        print(f"{args.out}: no markers for {', '.join(missing)}", file=sys.stderr)
+        print("  The hub is hand-written. Paste each pair once, where that block "
+              "belongs, then this fills them:", file=sys.stderr)
+        for name in missing:
+            print(f"    <!-- pkm:begin generated: {name} -->", file=sys.stderr)
+            print(f"    <!-- pkm:end generated: {name} -->", file=sys.stderr)
+        return 1
+
+    print(f"{args.source}: {len(vocab.concepts())} concepts + "
+          f"{len(vocab.collections())} collections", file=sys.stderr)
+    if not changed:
+        print(f"  unchanged -> {args.out}", file=sys.stderr)
+    else:
+        print(f"  {'would update' if args.dry_run else 'updated'} "
+              f"{', '.join(HUB_BLOCKS)} -> {args.out}", file=sys.stderr)
     return 0
 
 
@@ -246,6 +298,19 @@ def main(argv: list[str] | None = None) -> int:
         help="report what would change without writing it",
     )
 
+    hubber = sub.add_parser(
+        "hub", help="fill the generated blocks in the Obsidian vocabulary hub")
+    hubber.add_argument(
+        "source", type=Path,
+        help="published Turtle to read (vocab/pkm-vocab.ttl, not the export)")
+    hubber.add_argument(
+        "--out", type=Path, required=True,
+        help="the vault's hub note; hand-written, with markers this fills")
+    hubber.add_argument(
+        "--dry-run", action="store_true",
+        help="report whether it would change without writing it",
+    )
+
     reviewer = sub.add_parser(
         "review", help="write a family-grouped reading sheet for human review")
     reviewer.add_argument("source", type=Path, help="Turtle file to review")
@@ -261,6 +326,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "notes":
         return _notes(args)
+
+    if args.command == "hub":
+        return _hub(args)
 
     if args.command == "review":
         return _review(args)

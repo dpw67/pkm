@@ -2,6 +2,7 @@
 layout: default
 title: "Event"
 permalink: /vocab/Event/
+search: true
 description: "Something that happened."
 ---
 

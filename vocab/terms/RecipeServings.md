@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe Servings"
 permalink: /vocab/RecipeServings/
+search: true
 description: "The number of servings or portions a recipe yields."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Knowledge System Architecture"
 permalink: /vocab/KnowledgeSystemArchitecture/
+search: true
 description: "A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and Python APIs, services, scripts, commands…"
 ---
 

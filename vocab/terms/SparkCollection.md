@@ -2,6 +2,7 @@
 layout: default
 title: "Spark Collection"
 permalink: /vocab/SparkCollection/
+search: true
 description: "Idea and Spark, the two concepts for something newly noticed and not yet developed. Two members, and no narrower concepts beneath either, so the grouping is…"
 ---
 

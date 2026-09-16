@@ -2,6 +2,7 @@
 layout: default
 title: "Service Event"
 permalink: /vocab/ServiceEvent/
+search: true
 description: "Something that happened during service processing."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Cluster"
 permalink: /vocab/Cluster/
+search: true
 description: "Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more instance of a kind."
 ---
 

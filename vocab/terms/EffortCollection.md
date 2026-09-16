@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Collection"
 permalink: /vocab/EffortCollection/
+search: true
 description: "The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes, and the folder they live in. It holds no…"
 ---
 

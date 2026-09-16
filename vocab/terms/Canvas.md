@@ -2,6 +2,7 @@
 layout: default
 title: "Canvas"
 permalink: /vocab/Canvas/
+search: true
 description: "A core plugin that enables you to arrange and connect notes on an infinite canvas."
 ---
 

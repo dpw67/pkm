@@ -2,6 +2,7 @@
 layout: default
 title: "Term"
 permalink: /vocab/Term/
+search: true
 description: "A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary."
 ---
 

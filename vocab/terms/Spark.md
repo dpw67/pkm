@@ -2,6 +2,7 @@
 layout: default
 title: "Spark"
 permalink: /vocab/Spark/
+search: true
 description: "A brief, informal capture of an idea, prompt, or stimulus intended for later development."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "DMP Meal Plan"
 permalink: /vocab/DMPMealPlan/
+search: true
 description: "A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription service."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day Mindmap"
 permalink: /vocab/DayMindmap/
+search: true
 description: "An Obsidian Excalidraw drawing note using the Mindmap plugin."
 ---
 

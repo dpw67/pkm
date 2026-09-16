@@ -2,6 +2,7 @@
 layout: default
 title: "Activity Event"
 permalink: /vocab/ActivityEvent/
+search: true
 description: "Something that happened related to activity or exercise."
 ---
 

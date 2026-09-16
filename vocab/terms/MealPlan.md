@@ -2,6 +2,7 @@
 layout: default
 title: "Meal Plan"
 permalink: /vocab/MealPlan/
+search: true
 description: "A structured plan of meals over a defined period."
 ---
 

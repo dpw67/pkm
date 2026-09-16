@@ -2,6 +2,7 @@
 layout: default
 title: "Note"
 permalink: /vocab/Note/
+search: true
 description: "A unit of knowledge in a PKM system."
 ---
 

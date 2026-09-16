@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Python Agents"
 permalink: /vocab/PKMPythonAgents/
+search: true
 description: "Python agents supporting the PKM system."
 ---
 

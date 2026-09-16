@@ -2,6 +2,7 @@
 layout: default
 title: "Area"
 permalink: /vocab/Area/
+search: true
 description: "An ongoing sphere of responsibility or activity with a standard to be maintained over time, without a defined completion date."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Ontology"
 permalink: /vocab/Ontology/
+search: true
 description: "A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language…"
 ---
 

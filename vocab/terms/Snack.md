@@ -2,6 +2,7 @@
 layout: default
 title: "Snack"
 permalink: /vocab/Snack/
+search: true
 description: "A small meal eaten between main meals."
 ---
 

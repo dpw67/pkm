@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Index"
 permalink: /vocab/TopicIndex/
+search: true
 description: "The index note that links all artifacts for a topic."
 ---
 

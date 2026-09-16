@@ -2,6 +2,7 @@
 layout: default
 title: "Year"
 permalink: /vocab/Year/
+search: true
 description: "A calendar year grouping quarters and months."
 ---
 

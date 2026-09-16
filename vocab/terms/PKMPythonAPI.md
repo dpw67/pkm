@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Python API"
 permalink: /vocab/PKMPythonAPI/
+search: true
 description: "Python FastAPI routes providing an API for PKM services."
 ---
 

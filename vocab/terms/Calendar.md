@@ -2,6 +2,7 @@
 layout: default
 title: "Calendar"
 permalink: /vocab/Calendar/
+search: true
 description: "A major space for time-based notes."
 ---
 

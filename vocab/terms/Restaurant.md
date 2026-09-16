@@ -2,6 +2,7 @@
 layout: default
 title: "Restaurant"
 permalink: /vocab/Restaurant/
+search: true
 description: "A dining establishment where meals are eaten or taken out."
 ---
 

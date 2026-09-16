@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Plan"
 permalink: /vocab/TopicPlan/
+search: true
 description: "The plan of intended activities and priorities for a topic."
 ---
 

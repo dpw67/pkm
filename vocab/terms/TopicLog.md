@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Log"
 permalink: /vocab/TopicLog/
+search: true
 description: "A chronological record of what actually happened related to a topic."
 ---
 

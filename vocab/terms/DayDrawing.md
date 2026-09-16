@@ -2,6 +2,7 @@
 layout: default
 title: "Day Drawing"
 permalink: /vocab/DayDrawing/
+search: true
 description: "An Obsidian Excalidraw drawing note with an infinite drawing space, tools, and plugins. embedded Base views, Dataview, and Datacore queries for a day."
 ---
 

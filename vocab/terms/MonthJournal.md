@@ -2,6 +2,7 @@
 layout: default
 title: "Month Journal"
 permalink: /vocab/MonthJournal/
+search: true
 description: "Reflective writing about a month."
 ---
 

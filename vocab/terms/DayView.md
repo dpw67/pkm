@@ -2,6 +2,7 @@
 layout: default
 title: "Day View"
 permalink: /vocab/DayView/
+search: true
 description: "An Obsidian view note with embedded Base views, Dataview, and Datacore queries for a day."
 ---
 

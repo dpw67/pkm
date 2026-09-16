@@ -2,6 +2,7 @@
 layout: default
 title: "Graph Database"
 permalink: /vocab/GraphDatabase/
+search: true
 description: "Graph databases that support a PKM system."
 ---
 

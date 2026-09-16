@@ -2,6 +2,7 @@
 layout: default
 title: "Month Log"
 permalink: /vocab/MonthLog/
+search: true
 description: "A record of what happened over a month."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Map"
 permalink: /vocab/Map/
+search: true
 description: "A note used to think, plan, organize, and/or navigate a group of related notes."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Week Index"
 permalink: /vocab/WeekIndex/
+search: true
 description: "A hub note for a given week that links to and organizes its constituent Day Cluster notes and other weekly artifacts."
 ---
 

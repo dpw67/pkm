@@ -2,6 +2,7 @@
 layout: default
 title: "Meal Event"
 permalink: /vocab/MealEvent/
+search: true
 description: "Something that happened related to a Meal."
 ---
 

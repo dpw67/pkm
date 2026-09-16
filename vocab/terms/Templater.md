@@ -2,6 +2,7 @@
 layout: default
 title: "Templater"
 permalink: /vocab/Templater/
+search: true
 description: "Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with JavaScript code."
 ---
 

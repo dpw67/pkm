@@ -2,6 +2,7 @@
 layout: default
 title: "Claude AI"
 permalink: /vocab/ClaudeAI/
+search: true
 description: "Claude AI LLM (Sonnet or Opus models) that support a PKM system."
 ---
 

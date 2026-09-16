@@ -2,6 +2,7 @@
 layout: default
 title: "App Intent"
 permalink: /vocab/AppIntent/
+search: true
 description: "A declared action the system exposes to Shortcuts, Siri, or Spotlight."
 ---
 

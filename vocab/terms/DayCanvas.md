@@ -2,6 +2,7 @@
 layout: default
 title: "Day Canvas"
 permalink: /vocab/DayCanvas/
+search: true
 description: "An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections."
 ---
 

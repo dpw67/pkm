@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Review"
 permalink: /vocab/QuarterReview/
+search: true
 description: "A structured retrospective evaluating a completed quarter."
 ---
 

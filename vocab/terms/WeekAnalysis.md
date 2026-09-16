@@ -2,6 +2,7 @@
 layout: default
 title: "Week Analysis"
 permalink: /vocab/WeekAnalysis/
+search: true
 description: "A note summarizing patterns, trends, or review findings across a week's Day Clusters."
 ---
 

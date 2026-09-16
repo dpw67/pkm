@@ -2,6 +2,7 @@
 layout: default
 title: "Sync"
 permalink: /vocab/Sync/
+search: true
 description: "A core plugin that synchronizes your files through the Obsidian Sync service."
 ---
 

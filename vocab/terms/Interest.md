@@ -2,6 +2,7 @@
 layout: default
 title: "Interest"
 permalink: /vocab/Interest/
+search: true
 description: "A note capturing an ongoing topic of curiosity or attention that is not (yet) an active Project or Area of responsibility."
 ---
 

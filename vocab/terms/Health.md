@@ -2,6 +2,7 @@
 layout: default
 title: "Health"
 permalink: /vocab/Health/
+search: true
 description: "An area that includes all aspects of your health."
 ---
 

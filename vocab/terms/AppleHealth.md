@@ -2,6 +2,7 @@
 layout: default
 title: "Apple Health"
 permalink: /vocab/AppleHealth/
+search: true
 description: "Health data from Apple Health via the HealthKit framework."
 ---
 

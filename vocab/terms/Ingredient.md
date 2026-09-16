@@ -2,6 +2,7 @@
 layout: default
 title: "Ingredient"
 permalink: /vocab/Ingredient/
+search: true
 description: "An individual food item or component used in the preparation of a recipe."
 ---
 

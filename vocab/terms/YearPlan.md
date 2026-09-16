@@ -2,6 +2,7 @@
 layout: default
 title: "Year Plan"
 permalink: /vocab/YearPlan/
+search: true
 description: "The plan of intended priorities for a year."
 ---
 

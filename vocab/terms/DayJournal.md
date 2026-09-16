@@ -2,6 +2,7 @@
 layout: default
 title: "Day Journal"
 permalink: /vocab/DayJournal/
+search: true
 description: "Free-form reflective writing about a day."
 ---
 

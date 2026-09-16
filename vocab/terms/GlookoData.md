@@ -2,6 +2,7 @@
 layout: default
 title: "Glooko Data"
 permalink: /vocab/GlookoData/
+search: true
 description: "Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insulin pump data that is also integrated with Dexcom data for glucose, meals, and…"
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe Source"
 permalink: /vocab/RecipeSource/
+search: true
 description: "The origin or provenance of a recipe, such as the website, cookbook, or person it was sourced from."
 ---
 

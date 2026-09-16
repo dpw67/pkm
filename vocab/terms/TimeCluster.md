@@ -2,6 +2,7 @@
 layout: default
 title: "Time Cluster"
 permalink: /vocab/TimeCluster/
+search: true
 description: "A cluster whose subject is a single time period, at any horizon from a day to a year."
 ---
 

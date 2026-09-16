@@ -2,6 +2,7 @@
 layout: default
 title: "Claude Chat"
 permalink: /vocab/ClaudeChat/
+search: true
 description: "Chat interface for Claude AI."
 ---
 

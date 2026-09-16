@@ -2,6 +2,7 @@
 layout: default
 title: "Ideaverse"
 permalink: /vocab/Ideaverse/
+search: true
 description: "The universe of linked notes about knowledge, concepts, and ideas in a PKM system."
 ---
 

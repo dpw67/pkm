@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Journal"
 permalink: /vocab/TopicJournal/
+search: true
 description: "Free-form reflective writing about a topic."
 ---
 

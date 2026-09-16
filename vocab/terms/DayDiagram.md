@@ -2,6 +2,7 @@
 layout: default
 title: "Day Diagram"
 permalink: /vocab/DayDiagram/
+search: true
 description: "An Obsidian note that renders Mermaid diagrams using embedded code blocks."
 ---
 

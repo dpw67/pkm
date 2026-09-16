@@ -2,6 +2,7 @@
 layout: default
 title: "Health Event"
 permalink: /vocab/HealthEvent/
+search: true
 description: "Something that happened related to Health."
 ---
 

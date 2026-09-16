@@ -2,6 +2,7 @@
 layout: default
 title: "Day Index"
 permalink: /vocab/DayIndex/
+search: true
 description: "The index note that links all artifacts for a given day."
 ---
 

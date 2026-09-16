@@ -2,6 +2,7 @@
 layout: default
 title: "Book Search"
 permalink: /vocab/BookSearch/
+search: true
 description: "Query book by title, author, publisher, or ISBN, and get book information via Google Books API for properties."
 ---
 

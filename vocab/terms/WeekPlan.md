@@ -2,6 +2,7 @@
 layout: default
 title: "Week Plan"
 permalink: /vocab/WeekPlan/
+search: true
 description: "The plan of intended priorities and activities for a week."
 ---
 

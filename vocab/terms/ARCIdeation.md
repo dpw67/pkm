@@ -2,6 +2,7 @@
 layout: default
 title: "ARC Ideation"
 permalink: /vocab/ARCIdeation/
+search: true
 description: "The stages for the natural flow of ideas in the creative process (Add, Related, Communicate)."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Topic"
 permalink: /vocab/Topic/
+search: true
 description: "A subject or theme that content can be about."
 ---
 

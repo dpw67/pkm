@@ -2,6 +2,7 @@
 layout: default
 title: "Meal Domain"
 permalink: /vocab/MealDomain/
+search: true
 description: "Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the plans at each horizon, and the parts a…"
 ---
 

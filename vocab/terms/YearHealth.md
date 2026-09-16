@@ -2,6 +2,7 @@
 layout: default
 title: "Year Health"
 permalink: /vocab/YearHealth/
+search: true
 description: "The health-related summary for a year."
 ---
 

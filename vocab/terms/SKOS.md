@@ -2,6 +2,7 @@
 layout: default
 title: "SKOS"
 permalink: /vocab/SKOS/
+search: true
 description: "Simple Knowledge Organization System - a W3C standard data model, expressed in RDF, for representing controlled vocabularies such as thesauri, taxonomies, and…"
 ---
 

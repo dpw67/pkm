@@ -2,6 +2,7 @@
 layout: default
 title: "Idea Emergence"
 permalink: /vocab/IdeaEmergence/
+search: true
 description: "The process of how ideas you encounter go from \"nothingness to somethingness\", and how they grow in richness, complexity, and meaning over time."
 ---
 

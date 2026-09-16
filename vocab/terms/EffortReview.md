@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Review"
 permalink: /vocab/EffortReview/
+search: true
 description: "A structured retrospective evaluating an effort."
 ---
 

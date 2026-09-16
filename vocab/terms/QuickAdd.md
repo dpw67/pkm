@@ -2,6 +2,7 @@
 layout: default
 title: "QuickAdd"
 permalink: /vocab/QuickAdd/
+search: true
 description: "Extension for Obsidian that includes additional tools (choices): templates, captures, macros, and multis."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day"
 permalink: /vocab/Day/
+search: true
 description: "A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons)."
 ---
 

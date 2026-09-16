@@ -2,6 +2,7 @@
 layout: default
 title: "Week Review"
 permalink: /vocab/WeekReview/
+search: true
 description: "A structured retrospective evaluating a completed week."
 ---
 

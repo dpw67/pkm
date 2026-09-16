@@ -2,6 +2,7 @@
 layout: default
 title: "W3C Standard"
 permalink: /vocab/W3CStandard/
+search: true
 description: "A standard or recommendation published by the World Wide Web Consortium (W3C)."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Shortcut"
 permalink: /vocab/Shortcut/
+search: true
 description: "An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events."
 ---
 

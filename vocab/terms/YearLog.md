@@ -2,6 +2,7 @@
 layout: default
 title: "Year Log"
 permalink: /vocab/YearLog/
+search: true
 description: "A record of what happened over a year."
 ---
 

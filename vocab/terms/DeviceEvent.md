@@ -2,6 +2,7 @@
 layout: default
 title: "Device Event"
 permalink: /vocab/DeviceEvent/
+search: true
 description: "Something that occurred with a device."
 ---
 

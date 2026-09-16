@@ -2,6 +2,7 @@
 layout: default
 title: "Nutrition"
 permalink: /vocab/Nutrition/
+search: true
 description: "The nutrient content (e.g. calories, carbohydrates, fat, fiber) associated with a meal, recipe, or ingredient."
 ---
 

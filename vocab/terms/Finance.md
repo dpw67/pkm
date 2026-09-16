@@ -2,6 +2,7 @@
 layout: default
 title: "Finance"
 permalink: /vocab/Finance/
+search: true
 description: "An area that includes all aspects of your finances."
 ---
 

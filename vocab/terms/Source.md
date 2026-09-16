@@ -2,6 +2,7 @@
 layout: default
 title: "Source"
 permalink: /vocab/Source/
+search: true
 description: "A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system."
 ---
 

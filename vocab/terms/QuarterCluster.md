@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Cluster"
 permalink: /vocab/QuarterCluster/
+search: true
 description: "Everything the system produces about a single quarter — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."
 ---
 

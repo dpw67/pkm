@@ -2,6 +2,7 @@
 layout: default
 title: "Template"
 permalink: /vocab/TemplateCopy/
+search: true
 description: "A template determines the structure, layout, and configuration for various types of notes in the PKM system."
 ---
 

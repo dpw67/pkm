@@ -2,6 +2,7 @@
 layout: default
 title: "Script Event"
 permalink: /vocab/ScriptEvent/
+search: true
 description: "Something that happened during script processing."
 ---
 

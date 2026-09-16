@@ -2,6 +2,7 @@
 layout: default
 title: "Widget"
 permalink: /vocab/Widget/
+search: true
 description: "A home- or lock-screen glanceable view."
 ---
 

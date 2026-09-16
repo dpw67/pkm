@@ -2,6 +2,7 @@
 layout: default
 title: "OWL"
 permalink: /vocab/OWL/
+search: true
 description: "Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships."
 ---
 

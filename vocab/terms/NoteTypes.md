@@ -2,6 +2,7 @@
 layout: default
 title: "Note Types"
 permalink: /vocab/NoteTypes/
+search: true
 description: "The concepts used as note types in the vault."
 ---
 

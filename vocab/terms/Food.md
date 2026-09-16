@@ -2,6 +2,7 @@
 layout: default
 title: "Food"
 permalink: /vocab/Food/
+search: true
 description: "A source of nutrition for something eaten as a meal or snack."
 ---
 

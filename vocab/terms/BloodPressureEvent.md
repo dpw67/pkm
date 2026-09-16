@@ -2,6 +2,7 @@
 layout: default
 title: "Blood Pressure Event"
 permalink: /vocab/BloodPressureEvent/
+search: true
 description: "Recording of current blood pressure with systolic/diastolic readings."
 ---
 

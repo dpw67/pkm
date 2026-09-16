@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Swift"
 permalink: /vocab/PKMSwift/
+search: true
 description: "Swift apps and services supporting PKM system."
 ---
 

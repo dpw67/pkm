@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Python Scripts"
 permalink: /vocab/PKMPythonScripts/
+search: true
 description: "Python scripts supporting the PKM system."
 ---
 

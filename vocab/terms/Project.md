@@ -2,6 +2,7 @@
 layout: default
 title: "Project"
 permalink: /vocab/Project/
+search: true
 description: "A defined, bounded effort with a specific goal and completion criteria, undertaken over a limited timeframe."
 ---
 

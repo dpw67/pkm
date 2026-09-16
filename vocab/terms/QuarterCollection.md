@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Collection"
 permalink: /vocab/QuarterCollection/
+search: true
 description: "Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to the month rather than the quarter, which…"
 ---
 

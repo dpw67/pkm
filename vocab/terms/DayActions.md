@@ -2,6 +2,7 @@
 layout: default
 title: "Day Actions"
 permalink: /vocab/DayActions/
+search: true
 description: "A support note within a Day Cluster listing discrete Action items tracked for that day."
 ---
 

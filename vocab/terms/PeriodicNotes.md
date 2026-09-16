@@ -2,6 +2,7 @@
 layout: default
 title: "Periodic Notes"
 permalink: /vocab/PeriodicNotes/
+search: true
 description: "Manage daily, weekly, and monthly notes."
 ---
 

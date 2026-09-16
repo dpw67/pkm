@@ -2,6 +2,7 @@
 layout: default
 title: "Day Review"
 permalink: /vocab/DayReview/
+search: true
 description: "A structured retrospective evaluating a completed day."
 ---
 

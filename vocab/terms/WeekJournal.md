@@ -2,6 +2,7 @@
 layout: default
 title: "Week Journal"
 permalink: /vocab/WeekJournal/
+search: true
 description: "Reflective writing about a week."
 ---
 

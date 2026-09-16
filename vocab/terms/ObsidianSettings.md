@@ -2,6 +2,7 @@
 layout: default
 title: "Obsidian Settings"
 permalink: /vocab/ObsidianSettings/
+search: true
 description: "A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins."
 ---
 

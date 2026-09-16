@@ -33,10 +33,20 @@ Ask for RDF at the same address and you get Turtle instead.
 curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/Recipe
 ```
 
-Swap `Recipe` for any term name. The full list is at
-[https://w3id.org/pkm/vocab](https://w3id.org/pkm/vocab), and the whole
-vocabulary in one file -- every concept, collection, and editorial note --
-is at
+Swap `Recipe` for any term name.
+[https://w3id.org/pkm/vocab](https://w3id.org/pkm/vocab) is the way in,
+and it opens on three ways to read the vocabulary:
+
+- [the hierarchy](https://w3id.org/pkm/vocab/browse/hierarchy/), nested
+  by `skos:broader` from the eight top concepts, one collapsible block each
+- [the collections](https://w3id.org/pkm/vocab/browse/collections/),
+  which group terms without asserting hierarchy
+- [every term A-Z](https://w3id.org/pkm/vocab/browse/all/), with
+  definitions
+
+Those pages and every term page carry a search box. The whole
+vocabulary in one file -- every concept, collection, and editorial
+note -- is at
 [vocab/pkm-vocab.ttl](https://w3id.org/pkm/vocab/pkm-vocab.ttl).
 
 Visit these companion websites to learn more about the PKM Vocabulary.

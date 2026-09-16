@@ -2,6 +2,7 @@
 layout: default
 title: "Publish"
 permalink: /vocab/Publish/
+search: true
 description: "A core plugin that allows you to host your notes online as a website, wiki, or documentation."
 ---
 

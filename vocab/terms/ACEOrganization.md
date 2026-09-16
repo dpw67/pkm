@@ -2,6 +2,7 @@
 layout: default
 title: "ACE Organization"
 permalink: /vocab/ACEOrganization/
+search: true
 description: "The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse."
 ---
 

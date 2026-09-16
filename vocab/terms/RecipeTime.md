@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe Time"
 permalink: /vocab/RecipeTime/
+search: true
 description: "The time-related metadata for a recipe, such as preparation time, cook time, and total time."
 ---
 

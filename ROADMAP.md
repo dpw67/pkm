@@ -1072,13 +1072,34 @@ The export from the correct project is clean: 4387 → 4387 triples, **one subje
 touched** — the scheme — and `modified` plus `versionInfo` the only properties,
 with zero `definition`/`scopeNote`/`note` differences anywhere in the graph.
 
-Two things this settles. The round-trip **put 0.1.9's prose into the editor**,
-which it had never held — 0.1.9 was applied by editing the export directly, and
-`z/pkm-vocab.export-0.1.9.ttl` being byte-identical to the committed export is
-the proof. So the divergence §O calls "the 0.1.9 case study" is now closed. And
-the acceptance test for any future editor session is written down: **no
+**The divergence was between two editor projects, not between the editor and
+the repo.** The stale project's contents match `z/pkm-vocab.export-0.1.8.ttl`
+plus the 74 change-note repairs exactly — identical triple count, zero
+definition, scope note or note differences — which is what the §N round-trip
+test produced when it imported the 0.1.8 export as a new project to prove import
+fidelity. That test project was still there, and it is the one that got picked.
+Import leaving existing projects untouched is the feature §O praises; a test
+import left lying around beside the real work is the bill for it.
+
+So 0.1.9's prose was never missing from the editor. `733dd9e` landed it from
+there — *"the export is the SKOS Editor's own output, and all 41 worklist
+literals are byte-identical to the spec the hand-edited branch had become"* —
+and `z/pkm-vocab.export-0.1.9.ttl` matching the committed export byte for byte
+is explained by that commit archiving it at release time rather than at the
+start of 0.1.10, deliberately, as the same message says.
+
+What this does settle is the acceptance test for a future editor session: **no
 `definition`, `scopeNote` or `note` line in `compare_exports.py` output unless
-the release is about prose.**
+the release is about prose** — and, before exporting, check which project is
+open. A stale project is indistinguishable from a current one until its prose is
+compared.
+
+**Correction.** The commit that landed this release, `a799d3b`, says 0.1.9 "was
+applied by editing the export directly" and offers the archive's byte-identity
+as proof. Both are wrong, for the reasons above: the byte-identity has an
+innocent explanation and `733dd9e` is the record of the editor pass. The error
+is left in the commit message, which cannot be corrected without rewriting the
+branch, and is corrected here instead.
 
 ### L7. The check that would have caught it
 

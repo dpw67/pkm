@@ -2,6 +2,7 @@
 layout: default
 title: "Concept"
 permalink: /vocab/Concept/
+search: true
 description: "A unit of thought in a knowledge organization system."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Metadata"
 permalink: /vocab/Metadata/
+search: true
 description: "Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file."
 ---
 

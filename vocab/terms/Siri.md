@@ -2,6 +2,7 @@
 layout: default
 title: "Siri"
 permalink: /vocab/Siri/
+search: true
 description: "Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS."
 ---
 

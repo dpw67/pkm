@@ -2,6 +2,7 @@
 layout: default
 title: "Year Cluster"
 permalink: /vocab/YearCluster/
+search: true
 description: "Everything the system produces about a single year — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind."
 ---
 

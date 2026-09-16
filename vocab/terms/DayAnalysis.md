@@ -2,6 +2,7 @@
 layout: default
 title: "Day Analysis"
 permalink: /vocab/DayAnalysis/
+search: true
 description: "Overall analytical synthesis of a day across domains."
 ---
 

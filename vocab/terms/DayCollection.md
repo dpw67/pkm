@@ -2,6 +2,7 @@
 layout: default
 title: "Day Collection"
 permalink: /vocab/DayCollection/
+search: true
 description: "The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the hierarchy already derives, and the two have…"
 ---
 

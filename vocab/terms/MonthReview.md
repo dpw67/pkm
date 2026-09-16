@@ -2,6 +2,7 @@
 layout: default
 title: "Month Review"
 permalink: /vocab/MonthReview/
+search: true
 description: "A structured retrospective evaluating a completed month."
 ---
 

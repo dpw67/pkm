@@ -2,6 +2,7 @@
 layout: default
 title: "Archive Folder"
 permalink: /vocab/ArchiveFolder/
+search: true
 description: "The top-level `z` folder space in Obsidian includes Archive (inactive) notes."
 ---
 

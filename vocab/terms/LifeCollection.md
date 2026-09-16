@@ -2,6 +2,7 @@
 layout: default
 title: "Life Collection"
 permalink: /vocab/LifeCollection/
+search: true
 description: "Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping."
 ---
 

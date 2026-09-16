@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Log"
 permalink: /vocab/EffortLog/
+search: true
 description: "A chronological record of what actually happened during an effort."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day Health"
 permalink: /vocab/DayHealth/
+search: true
 description: "The health-related summary for a day."
 ---
 

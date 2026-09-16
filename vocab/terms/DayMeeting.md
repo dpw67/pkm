@@ -2,6 +2,7 @@
 layout: default
 title: "Day Meeting"
 permalink: /vocab/DayMeeting/
+search: true
 description: "An event with attendees, agenda, topics, decisions, and actions."
 ---
 

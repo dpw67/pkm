@@ -2,6 +2,7 @@
 layout: default
 title: "Knowledge System"
 permalink: /vocab/KnowledgeSystem/
+search: true
 description: "A system of organization, navigation, and access for knowledge."
 ---
 

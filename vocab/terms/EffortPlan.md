@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Plan"
 permalink: /vocab/EffortPlan/
+search: true
 description: "The plan of intended activities and priorities for an effort."
 ---
 

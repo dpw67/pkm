@@ -2,6 +2,7 @@
 layout: default
 title: "View"
 permalink: /vocab/View/
+search: true
 description: "A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases."
 ---
 

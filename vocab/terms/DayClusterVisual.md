@@ -2,6 +2,7 @@
 layout: default
 title: "Day Cluster Visual"
 permalink: /vocab/DayClusterVisual/
+search: true
 description: "The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data graphically."
 ---
 

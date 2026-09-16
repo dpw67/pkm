@@ -2,6 +2,7 @@
 layout: default
 title: "Book"
 permalink: /vocab/Book/
+search: true
 description: "A book used as a source in a PKM system."
 ---
 

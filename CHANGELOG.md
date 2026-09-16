@@ -10,6 +10,76 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.10] — 2026-09-16
+
+The vocabulary you can actually read. `vocab/index.md` was 721 lines and 51 KB
+on one page, with the collections 249 lines down and "All terms" — the section
+a first-time reader most likely wants — last. It is now a 39-line landing page
+with a row per view, and the three views are pages of their own. Presentation
+only: **no triple moved**, and the build proves it rather than asserting it —
+`vocab/pkm-vocab.ttl` and all 241 per-term Turtle files are byte-identical
+across this release. [Versioning](#versioning) makes that a patch.
+
+### Added
+
+- **Three browse pages** at `w3id.org/pkm/vocab/browse/hierarchy/`,
+  `/browse/collections/` and `/browse/all/`. They nest under `browse/` rather
+  than sitting flat at `/vocab/hierarchy/` because term URIs are
+  `/vocab/{Term}`: a flat sub-page would permanently reserve a plausible term
+  local name, and would occupy the slot an RDF client expects a term in. One
+  reserved name instead of three, and it reads as navigation.
+- **A collapsible hierarchy.** One `<details>` per top concept, closed, so the
+  page opens as eight lines rather than 250. `<details>` and not JavaScript
+  because this Markdown renders in three places — the Pages site, the GitHub
+  repo view of the same file, and Obsidian — and it works in all three where a
+  script works in one. Each summary carries its descendant count; the eight
+  counts sum to 236, which is the `skos:broader` link count `make check`
+  reports.
+- **An A–Z index row** above All terms. The section anchors had existed since
+  the first release with nothing linking to them, which left a 400-line
+  alphabetical list with no way to jump. Only the initials that exist are
+  emitted, so no link is a dead end.
+- **Search**, on the vocabulary pages and on all 241 term pages.
+  `vocab/search.json` — 241 entries, 38 KB — plus vanilla JavaScript in the
+  layout. GitHub Pages runs Jekyll in safe mode against a fixed plugin
+  allowlist, so a search plugin was never an option. The index is fetched on
+  first use rather than on page load, because most visits to a term page never
+  search, and the box is rendered hidden and unhidden by the script, so a
+  reader without JavaScript is not shown an input that cannot do anything.
+  Ranking is exact label, then label prefix, then label substring, then
+  `skos:altLabel`, then definition.
+- **`make hub`**, which fills the generated blocks in the Obsidian vocabulary
+  hub. The hub was hand-written and stale in two places — frontmatter
+  `version: 0.1.3` against a body reading "version 0.1.4", for a vocabulary at
+  0.1.9. Counts, version, modified date, licence, top concepts and collection
+  membership now come from the graph; the surrounding prose is left alone. The
+  licence is read from `dcterms:license` rather than written in, so the hub
+  cannot claim a licence the graph does not. The 18 hand-copied member counts
+  turned out to be correct, so what this fixes is the version and what it
+  prevents is the next membership edit.
+
+### Changed
+
+- **`splice()` takes a block name.** The hub needs two generated regions with
+  hand-written prose between them, which one unnamed block per file cannot
+  express. The unnamed form is unchanged, so `vocab/index.md`,
+  `resources/index.md` and `agents/index.md` were untouched by the change.
+- **`render_vocabulary()` became four renderers** — one per view plus the
+  landing page — sharing the polyhierarchy walk that expands a shared subtree
+  once and cross-references it thereafter.
+- **Term pages carry `search: true`** and a search box. A reader arriving on a
+  term page from a search engine had no way to reach a sibling term, which is
+  the awkwardness this release is about.
+
+### Fixed
+
+- **`make site` was failing on a correct build.** It counts the directories
+  under `_site/vocab/` and expects exactly one per term page, so the new
+  `browse/` directory made that 242 against 241. Its grep now excludes
+  `browse/` alongside `terms/`. Worth naming because that check is the only
+  thing verifying the term permalinks still resolve, and a check that fails for
+  the wrong reason is a check that gets switched off.
+
 ## [0.1.9] — 2026-09-14
 
 The Cluster family now says what the graph says. Seven definitions that still
@@ -574,7 +644,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.9...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.10...HEAD
+[0.1.10]: https://github.com/dpw67/pkm/compare/v0.1.9...v0.1.10
 [0.1.9]: https://github.com/dpw67/pkm/compare/v0.1.8...v0.1.9
 [0.1.8]: https://github.com/dpw67/pkm/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/dpw67/pkm/compare/v0.1.6...v0.1.7

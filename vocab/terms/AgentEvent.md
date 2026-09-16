@@ -2,6 +2,7 @@
 layout: default
 title: "Agent Event"
 permalink: /vocab/AgentEvent/
+search: true
 description: "Something that happened during agent processing."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day Plan"
 permalink: /vocab/DayPlan/
+search: true
 description: "The plan of intended activities and priorities for a day."
 ---
 

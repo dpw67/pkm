@@ -2,6 +2,7 @@
 layout: default
 title: "Hummingbird"
 permalink: /vocab/Hummingbird/
+search: true
 description: "A lightweight, Swift-native server-side web framework for building HTTP APIs and services."
 ---
 

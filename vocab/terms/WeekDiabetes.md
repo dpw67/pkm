@@ -2,6 +2,7 @@
 layout: default
 title: "Week Diabetes"
 permalink: /vocab/WeekDiabetes/
+search: true
 description: "A weekly note or artifact aggregating diabetes-related tracking data for the week."
 ---
 

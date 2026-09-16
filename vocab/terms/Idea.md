@@ -2,6 +2,7 @@
 layout: default
 title: "Idea"
 permalink: /vocab/Idea/
+search: true
 description: "An idea about something to explore curiosity, research interests, support areas, or identify opportunities."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Year Collection"
 permalink: /vocab/YearCollection/
+search: true
 description: "Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already derives; where the two disagree the hierarchy…"
 ---
 

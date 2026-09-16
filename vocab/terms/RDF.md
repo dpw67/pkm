@@ -2,6 +2,7 @@
 layout: default
 title: "RDF"
 permalink: /vocab/RDF/
+search: true
 description: "Resource Description Framework - a W3C standard model for representing data as subject-predicate-object triples, forming the graph-based foundation for SKOS…"
 ---
 

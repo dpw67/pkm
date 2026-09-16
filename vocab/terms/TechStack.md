@@ -2,6 +2,7 @@
 layout: default
 title: "Tech Stack"
 permalink: /vocab/TechStack/
+search: true
 description: "The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts."
 ---
 

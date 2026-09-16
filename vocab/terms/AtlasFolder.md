@@ -2,6 +2,7 @@
 layout: default
 title: "Atlas Folder"
 permalink: /vocab/AtlasFolder/
+search: true
 description: "A major space within an Obsidian vault containing notes about knowledge (\"what you know\")."
 ---
 

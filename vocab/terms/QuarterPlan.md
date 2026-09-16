@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Plan"
 permalink: /vocab/QuarterPlan/
+search: true
 description: "The plan of intended priorities for a quarter."
 ---
 

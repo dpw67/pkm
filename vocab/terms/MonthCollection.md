@@ -2,6 +2,7 @@
 layout: default
 title: "Month Collection"
 permalink: /vocab/MonthCollection/
+search: true
 description: "Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already derives and is incomplete against it; where…"
 ---
 

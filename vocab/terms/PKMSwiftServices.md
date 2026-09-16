@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Swift Services"
 permalink: /vocab/PKMSwiftServices/
+search: true
 description: "Swift Hummingbird services that support a PKM system."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Studio"
 permalink: /vocab/PKMStudio/
+search: true
 description: "A SwiftUI app that manages a PKM knowledge system."
 ---
 

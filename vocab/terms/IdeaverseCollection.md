@@ -2,6 +2,7 @@
 layout: default
 title: "Ideaverse Collection"
 permalink: /vocab/IdeaverseCollection/
+search: true
 description: "The vault as a whole and the notes inside it. Two members naming the container rather than its contents, which is a different job from every other collection…"
 ---
 

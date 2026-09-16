@@ -2,6 +2,7 @@
 layout: default
 title: "Efforts Folder"
 permalink: /vocab/EffortsFolder/
+search: true
 description: "A unit of directed work toward an outcome, such as a project or initiative."
 ---
 

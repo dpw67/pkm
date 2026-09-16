@@ -2,6 +2,7 @@
 layout: default
 title: "Health Data"
 permalink: /vocab/HealthData/
+search: true
 description: "Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps."
 ---
 

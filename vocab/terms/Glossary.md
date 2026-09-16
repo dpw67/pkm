@@ -2,6 +2,7 @@
 layout: default
 title: "Glossary"
 permalink: /vocab/Glossary/
+search: true
 description: "A list of concept terms and definitions."
 ---
 

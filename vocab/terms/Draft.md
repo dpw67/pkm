@@ -2,6 +2,7 @@
 layout: default
 title: "Draft"
 permalink: /vocab/Draft/
+search: true
 description: "A new draft note received from the Drafts app via the Obsidian action group pipeline."
 ---
 

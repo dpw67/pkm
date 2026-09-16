@@ -2,6 +2,7 @@
 layout: default
 title: "Month Health"
 permalink: /vocab/Month-Health/
+search: true
 description: "The health-related summary for a month."
 ---
 

@@ -31,7 +31,7 @@ the third position; only major advances the second.
 | 15 | The meals shape layer's open decisions | recorded — §I |
 | 16 | Where this vocabulary sits against OWL-Time and the platform types | recorded — §J |
 | 17 | What the eighteen collections actually are | measured — §E1 |
-| 18 | 0.1.10 — the vocabulary you can actually read | chartered — §L |
+| 18 | 0.1.10 — the vocabulary you can actually read | built; awaiting the 0.1.10 export — §L |
 | 19 | Upstream validation as a second opinion | done — §M |
 | 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
@@ -943,23 +943,25 @@ keeps its meaning.
 
 ## L. 0.1.10 — the vocabulary you can actually read
 
-**Chartered, not started.** Presentation only: no triple moves, so this is a
-different file set from every release so far and it cannot collide with §D.
+**Built.** Presentation only: no triple moved, which the build proves rather
+than asserts — `vocab/pkm-vocab.ttl` and all 241 per-term files are
+byte-identical across the change. The one thing outstanding is the version
+literal; see the end of this section.
 
 ### L1. The measured problem
 
-`vocab/index.md` is **721 lines, 51 KB, one page**: Hierarchy 249 lines,
-Collections 41, All terms 406. The A–Z section headings exist and **no A–Z
-index links to them**. There are **zero** `<details>` blocks. Everything is
+`vocab/index.md` was **721 lines, 51 KB, one page**: Hierarchy 249 lines,
+Collections 41, All terms 406. The A–Z section headings existed and **no A–Z
+index linked to them**. There were **zero** `<details>` blocks. Everything was
 emitted flat by `render_vocabulary()` in `scripts/pkm_vocab/render.py`.
 
-The consequence is an ordering problem as much as a length one: the collections
-sit *after* 249 lines of hierarchy, and "All terms" — the section a first-time
-reader most likely wants — is last. The front page at `index.md` does the
+The consequence was an ordering problem as much as a length one: the collections
+sat *after* 249 lines of hierarchy, and "All terms" — the section a first-time
+reader most likely wants — was last. The front page at `index.md` does the
 opposite and does it well, opening on a table of what exists with a link per
-row. The vocabulary page should be shaped like its own parent.
+row. The vocabulary page is now shaped like its own parent.
 
-### L2. The constraint that decides the design
+### L2. The constraint that decided the design
 
 **Three render targets, not one**: the Pages site (Jekyll/kramdown), the
 **GitHub repo view** of the same Markdown, and **Obsidian**.
@@ -970,35 +972,83 @@ everywhere, and search is a Pages-only enhancement layered on top — not the
 other way round.
 
 GitHub Pages also runs Jekyll in safe mode against a fixed plugin allowlist, so
-a search *plugin* is not an option. A generated `search.json` plus vanilla JS
+a search *plugin* was not an option. A generated `search.json` plus vanilla JS
 in `_layouts/default.html` needs no plugin and is.
 
-### L3. The work
+### L3. What shipped
 
-- **Collapsible hierarchy** — `<details>` per top concept, top level open.
-- **A–Z index row** above "All terms"; the anchors already exist.
-- **Collections before the hierarchy**, not 249 lines after it.
-- **A vocabulary landing page shaped like `index.md`** — summary table, one row
-  per view — with Hierarchy, Collections and All terms as linked sub-pages
-  rather than one scroll. `render.py` already has `splice()` for writing
-  generated blocks into hand-written pages; reuse it rather than inventing a
-  second mechanism.
-- **Search** — generated `search.json`, vanilla JS, Pages only.
-- **Generate the Obsidian hub.** `pkm/vocab.md` in the vault is hand-written —
-  `notes.py` writes the 241 stubs beside it and not the hub — and is stale:
-  frontmatter `version: 0.1.3`, body "version 0.1.4", against a vocabulary at
-  0.1.9, with 18 hand-copied collection counts that §E1 has just invalidated.
-  It already has the shape the web page wants, leading with top concepts and
-  then collections, so the fix is to generate it from the same source and
-  splice the hand-written prose around it.
+- **Four pages, not one.** `vocab/index.md` is **39 lines**: a summary table
+  with a row per view, then Download. The three views are sub-pages under
+  `vocab/browse/` — `hierarchy.md`, `collections.md`, `all.md` — each with
+  hand-written prose around a spliced block, the same arrangement the landing
+  page already used.
+- **`browse/` rather than `/vocab/hierarchy/`.** Term URIs are
+  `/vocab/{Term}`, so a flat sub-page would permanently reserve a plausible
+  term local name *and* sit in the slot an RDF client expects a term in. One
+  reserved name instead of three, and it reads as navigation.
+  `pages.RESERVED` grew by one entry, which is what keeps the build refusing a
+  term that would overwrite a published page.
+- **Collapsible hierarchy.** One `<details markdown="1">` per top concept,
+  closed, the eight summaries as the open top level — expanding all eight puts
+  the 249 lines back. Each summary carries its descendant count, and those
+  eight counts sum to 236, which is the `skos:broader` link count `make check`
+  reports.
+- **A–Z index row** above All terms, emitting only the initials that exist, so
+  no link is a dead end. The anchors were already there.
+- **Collections on their own page**, no longer 249 lines down.
+- **Search.** `vocab/search.json`, 241 entries, 38 KB, written by
+  `render_search_index()`; vanilla JS in `_layouts/default.html` behind a
+  `search: true` front-matter flag, so a page outside the vocabulary does not
+  offer a box that searches only the vocabulary. Fetched on first use rather
+  than on load, because most visits to a term page never search. The box is
+  rendered `hidden` and unhidden by the script, so a reader without JavaScript
+  is never shown an input that cannot do anything. Ranking is exact label,
+  then label prefix, then label substring, then altLabel, then definition.
+- **The Obsidian hub is generated.** `pkm/vocab.md` in the vault was
+  hand-written and two releases stale in two places — frontmatter
+  `version: 0.1.3`, body "version 0.1.4". `make hub` now fills three named
+  blocks in it: `summary` (counts, version, modified date, licence read from
+  `dcterms:license`), `tops`, and `collections`. Its prose is left alone, which
+  is the seam: the facts are generated, the explanation is not.
+  **The 18 hand-copied member counts turned out to be correct** — §E1
+  invalidated the descriptions, not the arithmetic — so the staleness this
+  fixed was the version, and what it prevents is the next membership edit.
 
-### L4. Why it is a release of its own
+### L4. Three things worth knowing about the implementation
+
+- **`splice()` grew named blocks.** `<!-- pkm:begin generated: summary -->`.
+  The hub needs two regions with hand-written prose between them, which one
+  unnamed block per file cannot express. The unnamed form is unchanged, so
+  `vocab/index.md`, `resources/index.md` and `agents/index.md` were untouched
+  by the change. It also split into a pure `spliced()` plus the file I/O, so
+  the hub composes three blocks and writes once.
+- **`make hub` refuses rather than appends.** A generated block appended to the
+  end of a hand-written page is in the wrong place and silently so, so a
+  missing marker pair is an error that prints the markers to paste. The markers
+  were positioned once, by hand; after that the target only ever fills them.
+- **`make site` was counting `_site/vocab/*/` and expecting exactly one
+  directory per term page.** `browse/` made that 242 against 241, so the check
+  failed on a correct build until its grep excluded `browse/` alongside
+  `terms/`. Worth recording because the check is the only thing that verifies
+  the term permalinks still resolve, and a check that fails for the wrong
+  reason gets disabled.
+
+### L5. Why it is a release of its own
 
 It moves no triple, so by the versioning table nothing a consumer queries
 changes meaning — patch, and at `0.x` the third position is an integer, so
 0.1.9 → 0.1.10. Keeping it separate also keeps the boundary that has held for
 four releases: an editor pass and a tooling pass do not ride together, because
 when they do it is no longer possible to say which one broke the build.
+
+### L6. Outstanding — the version literal
+
+`owl:versionInfo` lives in the SKOS Editor export, and `transform.py` derives
+`owl:versionIRI` from it. The graph still says **0.1.9**, which is literally
+true of its triples and wrong for the release. Bump the scheme's version to
+`0.1.10` in the editor, export over `vocab/src/pkm-vocab.export.ttl`, and run
+`make build`: the Turtle diff should be exactly those two lines, and `make hub`
+then carries 0.1.10 into the vault without further edits.
 
 ## M. A second opinion from the editor's own validator
 

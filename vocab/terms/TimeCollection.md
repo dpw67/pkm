@@ -2,6 +2,7 @@
 layout: default
 title: "Time Collection"
 permalink: /vocab/TimeCollection/
+search: true
 description: "Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is a decision half-made rather than a…"
 ---
 

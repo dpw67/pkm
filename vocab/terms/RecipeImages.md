@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe Images"
 permalink: /vocab/RecipeImages/
+search: true
 description: "The photo or image assets associated with a recipe."
 ---
 

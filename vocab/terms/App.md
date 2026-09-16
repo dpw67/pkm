@@ -2,6 +2,7 @@
 layout: default
 title: "App"
 permalink: /vocab/App/
+search: true
 description: "A software application."
 ---
 

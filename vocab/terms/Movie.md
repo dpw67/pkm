@@ -2,6 +2,7 @@
 layout: default
 title: "Movie"
 permalink: /vocab/Movie/
+search: true
 description: "A movie used as a source in a PKM system."
 ---
 

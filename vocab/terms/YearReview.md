@@ -2,6 +2,7 @@
 layout: default
 title: "Year Review"
 permalink: /vocab/YearReview/
+search: true
 description: "A structured retrospective evaluating a completed year."
 ---
 

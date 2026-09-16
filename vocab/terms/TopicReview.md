@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Review"
 permalink: /vocab/TopicReview/
+search: true
 description: "A structured retrospective evaluating a topic."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "User Event"
 permalink: /vocab/UserEvent/
+search: true
 description: "Something that happened and raised by a user."
 ---
 

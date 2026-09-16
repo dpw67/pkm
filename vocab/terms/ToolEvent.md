@@ -2,6 +2,7 @@
 layout: default
 title: "Tool Event"
 permalink: /vocab/ToolEvent/
+search: true
 description: "Something that happened during processing with a tool."
 ---
 

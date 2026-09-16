@@ -2,6 +2,7 @@
 layout: default
 title: "Time"
 permalink: /vocab/Time/
+search: true
 description: "A concept element representing a temporal reference point or duration."
 ---
 

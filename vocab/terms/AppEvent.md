@@ -2,6 +2,7 @@
 layout: default
 title: "App Event"
 permalink: /vocab/AppEvent/
+search: true
 description: "Something that happened during app processing."
 ---
 

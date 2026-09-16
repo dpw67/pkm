@@ -2,6 +2,7 @@
 layout: default
 title: "Python"
 permalink: /vocab/Python/
+search: true
 description: "A general-purpose, interpreted programming language."
 ---
 

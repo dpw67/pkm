@@ -2,6 +2,7 @@
 layout: default
 title: "Obsidian Template"
 permalink: /vocab/ObsidianTemplate/
+search: true
 description: "An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM…"
 ---
 

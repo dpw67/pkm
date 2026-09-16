@@ -2,6 +2,7 @@
 layout: default
 title: "Person"
 permalink: /vocab/Person/
+search: true
 description: "A person used as a source in a PKM system."
 ---
 

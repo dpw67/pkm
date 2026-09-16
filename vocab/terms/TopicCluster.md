@@ -2,6 +2,7 @@
 layout: default
 title: "Topic Cluster"
 permalink: /vocab/TopicCluster/
+search: true
 description: "Notes and artifacts assembled around a single topic, rather than every note that happens to mention it."
 ---
 

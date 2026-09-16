@@ -2,6 +2,7 @@
 layout: default
 title: "Obsidian Notes"
 permalink: /vocab/ObsidianNotes/
+search: true
 description: "A major PKM system for linked notes."
 ---
 

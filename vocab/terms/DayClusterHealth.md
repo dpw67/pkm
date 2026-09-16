@@ -2,6 +2,7 @@
 layout: default
 title: "Day Cluster Health"
 permalink: /vocab/DayClusterHealth/
+search: true
 description: "The health-related data and notes within a Day Cluster, capturing tracked health events for that day."
 ---
 

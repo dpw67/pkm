@@ -2,6 +2,7 @@
 layout: default
 title: "Bases"
 permalink: /vocab/Bases/
+search: true
 description: "A core plugin that creates custom views to edit, sort, and filter files using properties."
 ---
 

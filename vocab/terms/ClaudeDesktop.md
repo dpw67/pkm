@@ -2,6 +2,7 @@
 layout: default
 title: "Claude Desktop"
 permalink: /vocab/ClaudeDesktop/
+search: true
 description: "Desktop app for Claude AI."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Week Cluster"
 permalink: /vocab/WeekCluster/
+search: true
 description: "Everything the system produces about a single week — its index, plan, log, review, journal, analysis, health and meal-plan notes — taken as one whole rather…"
 ---
 

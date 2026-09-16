@@ -2,6 +2,7 @@
 layout: default
 title: "Day Cluster"
 permalink: /vocab/DayCluster/
+search: true
 description: "Everything the system produces about a single day, partitioned into four unlike parts: core, support, health, and visual."
 ---
 

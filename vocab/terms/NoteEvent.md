@@ -2,6 +2,7 @@
 layout: default
 title: "Note Event"
 permalink: /vocab/NoteEvent/
+search: true
 description: "Something to record related to a note associated with an event."
 ---
 

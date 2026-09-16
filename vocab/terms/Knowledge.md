@@ -2,6 +2,7 @@
 layout: default
 title: "Knowledge"
 permalink: /vocab/Knowledge/
+search: true
 description: "Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it can be applied, communicated, or built…"
 ---
 

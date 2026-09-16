@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Python"
 permalink: /vocab/PKMPython/
+search: true
 description: "Python apps and services supporting PKM system."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day Log"
 permalink: /vocab/DayLog/
+search: true
 description: "A chronological record of what actually happened during a day."
 ---
 

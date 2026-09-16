@@ -2,6 +2,7 @@
 layout: default
 title: "Week"
 permalink: /vocab/Week/
+search: true
 description: "A seven-day time period grouping consecutive days."
 ---
 

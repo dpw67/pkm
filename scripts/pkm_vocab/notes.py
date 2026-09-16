@@ -290,3 +290,136 @@ def write_notes(vocab: Vocabulary, out: Path, prune: bool = True,
                     path.unlink()
 
     return written, unchanged, pruned
+
+
+# --- The vault's hand-written hub -------------------------------------------
+#
+# `pkm/vocab.md` sits one level above the stubs and is the page a reader in the
+# vault actually lands on. It was hand-written, and drifted: frontmatter
+# `version: 0.1.3`, body "version 0.1.4", against a vocabulary at 0.1.9, with
+# 18 collection member counts copied by hand that a single membership edit
+# invalidates.
+#
+# Its prose is worth keeping and is not derivable from the graph, so only the
+# facts are generated -- three small named blocks, with the explanation left
+# hand-written around them. That seam is the whole design: data generated,
+# prose not.
+#
+# `splice` comes from the web renderer because that is where the marker
+# convention is defined; there is one mechanism for generated blocks in this
+# repo and both targets use it.
+
+#: Blocks this module maintains in the hub, in the order they appear.
+HUB_BLOCKS = ("summary", "tops", "collections")
+
+
+def _license(vocab: Vocabulary) -> str:
+    """The scheme's licence as a Markdown link, named the short way.
+
+    Read from `dcterms:license` rather than written in, so the hub cannot
+    claim a licence the graph does not.
+    """
+    uri = vocab.graph.value(vocab.scheme, DCTERMS.license)
+    if uri is None:
+        return ""
+    text = str(uri)
+    match = re.search(r"/licenses/([a-z-]+)/([\d.]+)", text)
+    label = f"CC {match.group(1).upper()} {match.group(2)}" if match else text
+    return f"[{label}]({text})"
+
+
+def render_hub_summary(vocab: Vocabulary) -> str:
+    """Counts, version and licence -- the line that was two releases stale."""
+    parts = [
+        f"{len(vocab.concepts())} concepts",
+        f"{len(vocab.collections())} collections",
+    ]
+    version = _first(vocab, vocab.scheme, OWL.versionInfo)
+    if version:
+        parts.append(f"version {version}")
+    modified = _first(vocab, vocab.scheme, DCTERMS.modified)
+    if modified:
+        # The vocabulary is explicitly still moving, so freshness is worth
+        # knowing -- the same reason the stub footers carry their dates.
+        parts.append(f"updated {modified[:10]}")
+    licence = _license(vocab)
+    if licence:
+        parts.append(licence)
+    return "**" + " · ".join(parts) + "**"
+
+
+def render_hub_tops(vocab: Vocabulary) -> str:
+    """The top concepts as wikilinks into the stub folder."""
+    stem = stems(vocab)
+    tops = sorted(vocab.graph.objects(vocab.scheme, SKOS.hasTopConcept),
+                  key=vocab.label)
+    return "\n".join(f"- {_link(vocab, stem, top)}" for top in tops)
+
+
+def render_hub_collections(vocab: Vocabulary) -> str:
+    """The collections as wikilinks, each with its live member count."""
+    stem = stems(vocab)
+    lines = []
+    for coll in sorted(vocab.collections(), key=vocab.label):
+        members = list(vocab.graph.objects(coll, SKOS.member))
+        lines.append(f"- {_link(vocab, stem, coll)} ({len(members)})")
+    return "\n".join(lines)
+
+
+def _set_frontmatter_version(text: str, version: str) -> str:
+    """Rewrite `version:` in the YAML frontmatter, if the key is present.
+
+    Frontmatter cannot carry an HTML comment, so it is the one part of the hub
+    a generated block cannot reach -- and it is where the stalest number was.
+    Scoped to the frontmatter and to that single key: `modified:` next to it is
+    the vault's own field, and `notes.py` already goes out of its way to keep a
+    date plugin from overwriting it.
+    """
+    if not version or not text.startswith("---\n"):
+        return text
+    close = text.find("\n---", 3)
+    if close < 0:
+        return text
+    head, rest = text[:close], text[close:]
+    patched, count = re.subn(r"(?m)^version:[^\n]*$", f"version: {version}", head)
+    return patched + rest if count else text
+
+
+def write_hub(vocab: Vocabulary, path: Path, dry_run: bool = False) -> tuple[bool, list[str]]:
+    """Fill the hub's generated blocks in place.
+
+    Returns (changed, missing) -- `missing` names any block whose markers are
+    not in the file. The blocks are reported rather than appended, because a
+    block appended to the end of a hand-written page is in the wrong place and
+    silently so: the markers are positioned once, by hand, and after that this
+    only ever fills them.
+    """
+    from .render import HUB_NOTICE, _markers, spliced
+
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{path} does not exist. The hub is hand-written in the vault; this "
+            f"command fills its generated blocks rather than creating it."
+        )
+
+    original = path.read_text(encoding="utf-8")
+    bodies = {
+        "summary": render_hub_summary(vocab),
+        "tops": render_hub_tops(vocab),
+        "collections": render_hub_collections(vocab),
+    }
+
+    missing = [name for name in HUB_BLOCKS
+               if not all(m in original for m in _markers(name))]
+    if missing:
+        return False, missing
+
+    text = original
+    for name in HUB_BLOCKS:
+        text = spliced(text, bodies[name], name, notice=HUB_NOTICE)
+    text = _set_frontmatter_version(text, _first(vocab, vocab.scheme, OWL.versionInfo) or "")
+
+    changed = text != original
+    if changed and not dry_run:
+        path.write_text(text, encoding="utf-8")
+    return changed, []

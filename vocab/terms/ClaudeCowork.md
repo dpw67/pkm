@@ -2,6 +2,7 @@
 layout: default
 title: "Claude Cowork"
 permalink: /vocab/ClaudeCowork/
+search: true
 description: "Agentic interface for Claude AI that works directly with files, apps, and scheduled tasks."
 ---
 

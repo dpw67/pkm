@@ -2,6 +2,7 @@
 layout: default
 title: "Excalidraw"
 permalink: /vocab/Excalidraw/
+search: true
 description: "A sketching tool with rich capabilities for drawings with many extensions for scripts for additional features."
 ---
 

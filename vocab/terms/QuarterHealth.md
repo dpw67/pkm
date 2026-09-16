@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Health"
 permalink: /vocab/QuarterHealth/
+search: true
 description: "The health-related summary for a quarter."
 ---
 

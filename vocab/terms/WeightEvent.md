@@ -2,6 +2,7 @@
 layout: default
 title: "Weight Event"
 permalink: /vocab/WeightEvent/
+search: true
 description: "A record of current weight."
 ---
 

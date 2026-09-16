@@ -2,6 +2,7 @@
 layout: default
 title: "Day Cluster Support"
 permalink: /vocab/DayClusterSupport/
+search: true
 description: "The supporting notes within a Day Cluster that assist the core notes, such as DayActions and DayLinks."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Neo4j Service Project"
 permalink: /vocab/PKMNeo4jServiceProject/
+search: true
 description: "Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system."
 ---
 

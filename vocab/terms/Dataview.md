@@ -2,6 +2,7 @@
 layout: default
 title: "Dataview"
 permalink: /vocab/Dataview/
+search: true
 description: "An Obsidian query language for filtering, sorting, and extracting data from Markdown pages."
 ---
 

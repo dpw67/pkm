@@ -2,6 +2,7 @@
 layout: default
 title: "Menu"
 permalink: /vocab/Menu/
+search: true
 description: "A curated list of dishes offered or planned."
 ---
 

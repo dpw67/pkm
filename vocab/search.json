@@ -1,0 +1,1493 @@
+[
+{
+"label":"ACE Organization",
+"url":"ACEOrganization/",
+"kind":"concept",
+"alts":[
+"ACE Folders"
+],
+"definition":"The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse."
+},
+{
+"label":"Action",
+"url":"Action/",
+"kind":"concept",
+"definition":"Something to do for an effort, project, area, or interest."
+},
+{
+"label":"Activity Event",
+"url":"ActivityEvent/",
+"kind":"concept",
+"definition":"Something that happened related to activity or exercise."
+},
+{
+"label":"Add Folder",
+"url":"AddFolder/",
+"kind":"concept",
+"alts":[
+"Obsidian Inbox",
+"Plus Folder"
+],
+"definition":"The + (Add) folder is the PKM \"inbox\" space for new and incoming notes."
+},
+{
+"label":"Advanced URI",
+"url":"AdvancedURI/",
+"kind":"concept",
+"definition":"Control Obsidian features using special URIs to automate workflows."
+},
+{
+"label":"Agent Event",
+"url":"AgentEvent/",
+"kind":"concept",
+"definition":"Something that happened during agent processing."
+},
+{
+"label":"Alert Event",
+"url":"AlertEvent/",
+"kind":"concept",
+"definition":"An exception condition raised by a device threshold setting, or other metric."
+},
+{
+"label":"App",
+"url":"App/",
+"kind":"concept",
+"definition":"A software application."
+},
+{
+"label":"App Event",
+"url":"AppEvent/",
+"kind":"concept",
+"definition":"Something that happened during app processing."
+},
+{
+"label":"App Intent",
+"url":"AppIntent/",
+"kind":"concept",
+"definition":"A declared action the system exposes to Shortcuts, Siri, or Spotlight."
+},
+{
+"label":"Apple Health",
+"url":"AppleHealth/",
+"kind":"concept",
+"definition":"Health data from Apple Health via the HealthKit framework."
+},
+{
+"label":"ARC Ideation",
+"url":"ARCIdeation/",
+"kind":"concept",
+"alts":[
+"ARC Framework"
+],
+"definition":"The stages for the natural flow of ideas in the creative process (Add, Related, Communicate)."
+},
+{
+"label":"Archive Folder",
+"url":"ArchiveFolder/",
+"kind":"concept",
+"definition":"The top-level `z` folder space in Obsidian includes Archive (inactive) notes."
+},
+{
+"label":"Area",
+"url":"Area/",
+"kind":"concept",
+"definition":"An ongoing sphere of responsibility or activity with a standard to be maintained over time, without a defined…"
+},
+{
+"label":"Atlas Folder",
+"url":"AtlasFolder/",
+"kind":"concept",
+"alts":[
+"Knowledge Folder"
+],
+"definition":"A major space within an Obsidian vault containing notes about knowledge (\"what you know\")."
+},
+{
+"label":"Base",
+"url":"Base/",
+"kind":"concept",
+"definition":"A database with table, grid, or list views of a collection of notes with selected properties and formulas with…"
+},
+{
+"label":"Bases",
+"url":"Bases/",
+"kind":"concept",
+"definition":"A core plugin that creates custom views to edit, sort, and filter files using properties."
+},
+{
+"label":"Blood Pressure Event",
+"url":"BloodPressureEvent/",
+"kind":"concept",
+"alts":[
+"BP Event"
+],
+"definition":"Recording of current blood pressure with systolic/diastolic readings."
+},
+{
+"label":"Book",
+"url":"Book/",
+"kind":"concept",
+"definition":"A book used as a source in a PKM system."
+},
+{
+"label":"Book Search",
+"url":"BookSearch/",
+"kind":"concept",
+"definition":"Query book by title, author, publisher, or ISBN, and get book information via Google Books API for properties."
+},
+{
+"label":"Breakfast",
+"url":"Breakfast/",
+"kind":"concept",
+"definition":"The first meal of the day."
+},
+{
+"label":"Calendar",
+"url":"Calendar/",
+"kind":"concept",
+"definition":"A major space for time-based notes."
+},
+{
+"label":"Calendar Folder",
+"url":"CalendarFolder/",
+"kind":"concept",
+"alts":[
+"Time Folder"
+],
+"definition":"The Calendar (Time) folder is the PKM knowledge space for time-based notes."
+},
+{
+"label":"Canvas",
+"url":"Canvas/",
+"kind":"concept",
+"definition":"A core plugin that enables you to arrange and connect notes on an infinite canvas."
+},
+{
+"label":"Claude AI",
+"url":"ClaudeAI/",
+"kind":"concept",
+"definition":"Claude AI LLM (Sonnet or Opus models) that support a PKM system."
+},
+{
+"label":"Claude Chat",
+"url":"ClaudeChat/",
+"kind":"concept",
+"definition":"Chat interface for Claude AI."
+},
+{
+"label":"Claude Cowork",
+"url":"ClaudeCowork/",
+"kind":"concept",
+"definition":"Agentic interface for Claude AI that works directly with files, apps, and scheduled tasks."
+},
+{
+"label":"Claude Desktop",
+"url":"ClaudeDesktop/",
+"kind":"concept",
+"definition":"Desktop app for Claude AI."
+},
+{
+"label":"Clipping",
+"url":"Clipping/",
+"kind":"concept",
+"definition":"A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO)."
+},
+{
+"label":"Cluster",
+"url":"Cluster/",
+"kind":"concept",
+"definition":"Notes and artifacts assembled around a single subject, where each member is a part of the whole rather than one more…"
+},
+{
+"label":"Concept",
+"url":"Concept/",
+"kind":"concept",
+"definition":"A unit of thought in a knowledge organization system."
+},
+{
+"label":"Concept Collection",
+"url":"ConceptCollection/",
+"kind":"collection",
+"definition":"The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across…"
+},
+{
+"label":"Context Graph",
+"url":"ContextGraph/",
+"kind":"concept",
+"definition":"A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent…"
+},
+{
+"label":"Cypher",
+"url":"Cypher/",
+"kind":"concept",
+"definition":"A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in…"
+},
+{
+"label":"Dataview",
+"url":"Dataview/",
+"kind":"concept",
+"definition":"An Obsidian query language for filtering, sorting, and extracting data from Markdown pages."
+},
+{
+"label":"Day",
+"url":"Day/",
+"kind":"concept",
+"definition":"A single calendar day with 24 hours, the atomic unit of the temporal hierarchy of time periods (or time horizons)."
+},
+{
+"label":"Day Actions",
+"url":"DayActions/",
+"kind":"concept",
+"definition":"A support note within a Day Cluster listing discrete Action items tracked for that day."
+},
+{
+"label":"Day Analysis",
+"url":"DayAnalysis/",
+"kind":"concept",
+"definition":"Overall analytical synthesis of a day across domains."
+},
+{
+"label":"Day Base",
+"url":"DayBase/",
+"kind":"concept",
+"definition":"An Obsidian base file with multiple views for a day."
+},
+{
+"label":"Day Board",
+"url":"DayBoard/",
+"kind":"concept",
+"definition":"An Obsidian Kanban board note for the day."
+},
+{
+"label":"Day Canvas",
+"url":"DayCanvas/",
+"kind":"concept",
+"definition":"An Obsidian infinite Canvas with a visual interface for notes, cards, images, groups, and/or arrow connections."
+},
+{
+"label":"Day Cluster",
+"url":"DayCluster/",
+"kind":"concept",
+"definition":"Everything the system produces about a single day, partitioned into four unlike parts: core, support, health, and…"
+},
+{
+"label":"Day Cluster Core",
+"url":"DayClusterCore/",
+"kind":"concept",
+"definition":"The core set of daily notes within a Day Cluster - typically Index, Plan, Log, Journal, Review, and Analysis."
+},
+{
+"label":"Day Cluster Health",
+"url":"DayClusterHealth/",
+"kind":"concept",
+"definition":"The health-related data and notes within a Day Cluster, capturing tracked health events for that day."
+},
+{
+"label":"Day Cluster Support",
+"url":"DayClusterSupport/",
+"kind":"concept",
+"definition":"The supporting notes within a Day Cluster that assist the core notes, such as DayActions and DayLinks."
+},
+{
+"label":"Day Cluster Visual",
+"url":"DayClusterVisual/",
+"kind":"concept",
+"definition":"The visual tools and generated diagrams associated with a Day Cluster, used to represent the day's structure or data…"
+},
+{
+"label":"Day Collection",
+"url":"DayCollection/",
+"kind":"collection",
+"definition":"The Day Cluster's parts listed flat, together with Day and Day Cluster themselves. It enumerates by hand what the…"
+},
+{
+"label":"Day Diabetes",
+"url":"DayDiabetes/",
+"kind":"concept",
+"definition":"The record of diabetes-relevant data for a day (glucose, insulin, carbs, events)."
+},
+{
+"label":"Day Diabetes Analysis",
+"url":"DayDiabetesAnalysis/",
+"kind":"concept",
+"definition":"Interpretation of a day's diabetes data."
+},
+{
+"label":"Day Diagram",
+"url":"DayDiagram/",
+"kind":"concept",
+"definition":"An Obsidian note that renders Mermaid diagrams using embedded code blocks."
+},
+{
+"label":"Day Drawing",
+"url":"DayDrawing/",
+"kind":"concept",
+"definition":"An Obsidian Excalidraw drawing note with an infinite drawing space, tools, and plugins. embedded Base views, Dataview…"
+},
+{
+"label":"Day Health",
+"url":"DayHealth/",
+"kind":"concept",
+"definition":"The health-related summary for a day."
+},
+{
+"label":"Day Index",
+"url":"DayIndex/",
+"kind":"concept",
+"alts":[
+"Day Hub",
+"Day Note"
+],
+"definition":"The index note that links all artifacts for a given day."
+},
+{
+"label":"Day Journal",
+"url":"DayJournal/",
+"kind":"concept",
+"definition":"Free-form reflective writing about a day."
+},
+{
+"label":"Day Links",
+"url":"DayLinks/",
+"kind":"concept",
+"definition":"A support note within a Day Cluster capturing links or references relevant to that day."
+},
+{
+"label":"Day Log",
+"url":"DayLog/",
+"kind":"concept",
+"definition":"A chronological record of what actually happened during a day."
+},
+{
+"label":"Day Meal",
+"url":"DayMeal/",
+"kind":"concept",
+"definition":"A single planned or eaten meal within a day."
+},
+{
+"label":"Day Meal Plan",
+"url":"DayMealPlan/",
+"kind":"concept",
+"definition":"The planned set of meals for a single day."
+},
+{
+"label":"Day Meeting",
+"url":"DayMeeting/",
+"kind":"concept",
+"definition":"An event with attendees, agenda, topics, decisions, and actions."
+},
+{
+"label":"Day Mindmap",
+"url":"DayMindmap/",
+"kind":"concept",
+"definition":"An Obsidian Excalidraw drawing note using the Mindmap plugin."
+},
+{
+"label":"Day Plan",
+"url":"DayPlan/",
+"kind":"concept",
+"definition":"The plan of intended activities and priorities for a day."
+},
+{
+"label":"Day Review",
+"url":"DayReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a completed day."
+},
+{
+"label":"Day Schedule",
+"url":"DaySchedule/",
+"kind":"concept",
+"definition":"The time-blocked calendar of appointments and commitments for a day."
+},
+{
+"label":"Day View",
+"url":"DayView/",
+"kind":"concept",
+"definition":"An Obsidian view note with embedded Base views, Dataview, and Datacore queries for a day."
+},
+{
+"label":"Decade",
+"url":"Decade/",
+"kind":"concept",
+"definition":"A ten-year span used for long-range life planning."
+},
+{
+"label":"Decade Collection",
+"url":"DecadeCollection/",
+"kind":"collection",
+"definition":"Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a…"
+},
+{
+"label":"Device Event",
+"url":"DeviceEvent/",
+"kind":"concept",
+"definition":"Something that occurred with a device."
+},
+{
+"label":"Dexcom Data",
+"url":"DexcomData/",
+"kind":"concept",
+"definition":"Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor."
+},
+{
+"label":"Diabetes Event",
+"url":"DiabetesEvent/",
+"kind":"concept",
+"definition":"Something that happened related to Diabetes."
+},
+{
+"label":"Dinner",
+"url":"Dinner/",
+"kind":"concept",
+"alts":[
+"Supper"
+],
+"definition":"The evening meal."
+},
+{
+"label":"DMP Meal Plan",
+"url":"DMPMealPlan/",
+"kind":"concept",
+"definition":"A weekly meal plan sourced from Diabetes Meal Plans (dmpmembers.com), a diabetes recipe and meal-plan subscription…"
+},
+{
+"label":"Draft",
+"url":"Draft/",
+"kind":"concept",
+"definition":"A new draft note received from the Drafts app via the Obsidian action group pipeline."
+},
+{
+"label":"Effort Cluster",
+"url":"EffortCluster/",
+"kind":"concept",
+"definition":"Notes and artifacts assembled around a single effort, rather than every note that happens to mention it."
+},
+{
+"label":"Effort Collection",
+"url":"EffortCollection/",
+"kind":"collection",
+"definition":"The effort vocabulary rather than one effort's notes: the kinds of effort, the cluster that holds an effort's notes…"
+},
+{
+"label":"Effort Index",
+"url":"EffortIndex/",
+"kind":"concept",
+"definition":"The index note that links all artifacts for an effort."
+},
+{
+"label":"Effort Journal",
+"url":"EffortJournal/",
+"kind":"concept",
+"definition":"Free-form reflective writing about an effort."
+},
+{
+"label":"Effort Log",
+"url":"EffortLog/",
+"kind":"concept",
+"definition":"A chronological record of what actually happened during an effort."
+},
+{
+"label":"Effort Plan",
+"url":"EffortPlan/",
+"kind":"concept",
+"definition":"The plan of intended activities and priorities for an effort."
+},
+{
+"label":"Effort Review",
+"url":"EffortReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating an effort."
+},
+{
+"label":"Efforts Folder",
+"url":"EffortsFolder/",
+"kind":"concept",
+"alts":[
+"Effort Folder"
+],
+"definition":"A unit of directed work toward an outcome, such as a project or initiative."
+},
+{
+"label":"EKG Event",
+"url":"EKGEvent/",
+"kind":"concept",
+"alts":[
+"ECG Event"
+],
+"definition":"Recording an EKG reading from Apple Watch EKG app or Kardia 6-lead EKG device."
+},
+{
+"label":"Event",
+"url":"Event/",
+"kind":"concept",
+"definition":"Something that happened."
+},
+{
+"label":"Excalidraw",
+"url":"Excalidraw/",
+"kind":"concept",
+"definition":"A sketching tool with rich capabilities for drawings with many extensions for scripts for additional features."
+},
+{
+"label":"Extra Folder",
+"url":"ExtraFolder/",
+"kind":"concept",
+"alts":[
+"Support Folder"
+],
+"definition":"The top-level `x` folder space in Obsidian includes Extra or Support resources."
+},
+{
+"label":"FastAPI",
+"url":"FastAPI/",
+"kind":"concept",
+"definition":"A modern, high-performance Python web framework for building APIs."
+},
+{
+"label":"Finance",
+"url":"Finance/",
+"kind":"concept",
+"definition":"An area that includes all aspects of your finances."
+},
+{
+"label":"Focus",
+"url":"Focus/",
+"kind":"concept",
+"definition":"A note or tag marking current priority attention within the PKM system."
+},
+{
+"label":"Food",
+"url":"Food/",
+"kind":"concept",
+"definition":"A source of nutrition for something eaten as a meal or snack."
+},
+{
+"label":"Glooko Data",
+"url":"GlookoData/",
+"kind":"concept",
+"definition":"Diabetes data from Insulet-provided Glooko website that contain Omnipod 5 insulin pump data that is also integrated…"
+},
+{
+"label":"Glossary",
+"url":"Glossary/",
+"kind":"concept",
+"definition":"A list of concept terms and definitions."
+},
+{
+"label":"Glucose Event",
+"url":"GlucoseEvent/",
+"kind":"concept",
+"definition":"Something that happened related to Glucose."
+},
+{
+"label":"Graph Database",
+"url":"GraphDatabase/",
+"kind":"concept",
+"definition":"Graph databases that support a PKM system."
+},
+{
+"label":"Health",
+"url":"Health/",
+"kind":"concept",
+"definition":"An area that includes all aspects of your health."
+},
+{
+"label":"Health Data",
+"url":"HealthData/",
+"kind":"concept",
+"definition":"Personal health and diabetes data from websites and HealthKit collected from my wearable devices and iOS apps."
+},
+{
+"label":"Health Event",
+"url":"HealthEvent/",
+"kind":"concept",
+"definition":"Something that happened related to Health."
+},
+{
+"label":"Hummingbird",
+"url":"Hummingbird/",
+"kind":"concept",
+"definition":"A lightweight, Swift-native server-side web framework for building HTTP APIs and services."
+},
+{
+"label":"Idea",
+"url":"Idea/",
+"kind":"concept",
+"definition":"An idea about something to explore curiosity, research interests, support areas, or identify opportunities."
+},
+{
+"label":"Idea Emergence",
+"url":"IdeaEmergence/",
+"kind":"concept",
+"definition":"The process of how ideas you encounter go from \"nothingness to somethingness\", and how they grow in richness…"
+},
+{
+"label":"Ideaverse",
+"url":"Ideaverse/",
+"kind":"concept",
+"definition":"The universe of linked notes about knowledge, concepts, and ideas in a PKM system."
+},
+{
+"label":"Ideaverse Collection",
+"url":"IdeaverseCollection/",
+"kind":"collection",
+"definition":"The vault as a whole and the notes inside it. Two members naming the container rather than its contents, which is a…"
+},
+{
+"label":"Ingredient",
+"url":"Ingredient/",
+"kind":"concept",
+"definition":"An individual food item or component used in the preparation of a recipe."
+},
+{
+"label":"Insulin Event",
+"url":"InsulinEvent/",
+"kind":"concept",
+"definition":"Something that happened related to Insulin."
+},
+{
+"label":"Interest",
+"url":"Interest/",
+"kind":"concept",
+"definition":"A note capturing an ongoing topic of curiosity or attention that is not (yet) an active Project or Area of…"
+},
+{
+"label":"ISO Standard",
+"url":"ISOStandard/",
+"kind":"concept",
+"definition":"A standard published by the International Organization for Standardization (ISO)."
+},
+{
+"label":"Knowledge",
+"url":"Knowledge/",
+"kind":"concept",
+"definition":"Information, understanding, and skill acquired through experience, learning, or inference, retained and organized so it…"
+},
+{
+"label":"Knowledge Collection",
+"url":"KnowledgeCollection/",
+"kind":"collection",
+"definition":"What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it…"
+},
+{
+"label":"Knowledge Graph",
+"url":"KnowledgeGraph/",
+"kind":"concept",
+"definition":"A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent…"
+},
+{
+"label":"Knowledge System",
+"url":"KnowledgeSystem/",
+"kind":"concept",
+"definition":"A system of organization, navigation, and access for knowledge."
+},
+{
+"label":"Knowledge System Architecture",
+"url":"KnowledgeSystemArchitecture/",
+"kind":"concept",
+"alts":[
+"KSA"
+],
+"definition":"A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and…"
+},
+{
+"label":"Life",
+"url":"Life/",
+"kind":"concept",
+"definition":"The full lifespan, the top temporal (time) horizon."
+},
+{
+"label":"Life Collection",
+"url":"LifeCollection/",
+"kind":"collection",
+"definition":"Life alone, the top time horizon. No narrower concepts exist, so this records an intention rather than a grouping."
+},
+{
+"label":"Local REST API with MCP",
+"url":"LocalRESTAPIWithMCP/",
+"kind":"concept",
+"definition":"Support automation for notes using REST API for apps or MCP server for AI agents."
+},
+{
+"label":"Lunch",
+"url":"Lunch/",
+"kind":"concept",
+"definition":"The midday meal."
+},
+{
+"label":"Map",
+"url":"Map/",
+"kind":"concept",
+"alts":[
+"MOC",
+"Map of Content"
+],
+"definition":"A note used to think, plan, organize, and/or navigate a group of related notes."
+},
+{
+"label":"Meal",
+"url":"Meal/",
+"kind":"concept",
+"definition":"An eating occasion consisting of one or more foods or recipes consumed at a particular time."
+},
+{
+"label":"Meal Domain",
+"url":"MealDomain/",
+"kind":"collection",
+"definition":"Every concept in the meal-planning domain, across both the Meal and the Recipe side: the occasion, the meal kinds, the…"
+},
+{
+"label":"Meal Event",
+"url":"MealEvent/",
+"kind":"concept",
+"definition":"Something that happened related to a Meal."
+},
+{
+"label":"Meal Plan",
+"url":"MealPlan/",
+"kind":"concept",
+"definition":"A structured plan of meals over a defined period."
+},
+{
+"label":"Meditation Event",
+"url":"MeditationEvent/",
+"kind":"concept",
+"definition":"Recording information from meditation session."
+},
+{
+"label":"Memory Graph",
+"url":"MemoryGraph/",
+"kind":"concept",
+"definition":"A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent…"
+},
+{
+"label":"Menu",
+"url":"Menu/",
+"kind":"concept",
+"definition":"A curated list of dishes offered or planned."
+},
+{
+"label":"Metadata",
+"url":"Metadata/",
+"kind":"concept",
+"definition":"Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file."
+},
+{
+"label":"Month",
+"url":"Month/",
+"kind":"concept",
+"definition":"A calendar month grouping weeks and days."
+},
+{
+"label":"Month Cluster",
+"url":"MonthCluster/",
+"kind":"concept",
+"definition":"Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one…"
+},
+{
+"label":"Month Collection",
+"url":"MonthCollection/",
+"kind":"collection",
+"definition":"Month and four of the five parts of a Month Cluster, listed flat. It enumerates by hand what the hierarchy already…"
+},
+{
+"label":"Month Health",
+"url":"Month-Health/",
+"kind":"concept",
+"definition":"The health-related summary for a month."
+},
+{
+"label":"Month Journal",
+"url":"MonthJournal/",
+"kind":"concept",
+"definition":"Reflective writing about a month."
+},
+{
+"label":"Month Log",
+"url":"MonthLog/",
+"kind":"concept",
+"definition":"A record of what happened over a month."
+},
+{
+"label":"Month Plan",
+"url":"MonthPlan/",
+"kind":"concept",
+"definition":"The plan of intended priorities for a month."
+},
+{
+"label":"Month Review",
+"url":"MonthReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a completed month."
+},
+{
+"label":"Movie",
+"url":"Movie/",
+"kind":"concept",
+"definition":"A movie used as a source in a PKM system."
+},
+{
+"label":"Neo4j",
+"url":"Neo4j/",
+"kind":"concept",
+"definition":"A native graph database management system that stores and queries data as nodes, relationships, and properties."
+},
+{
+"label":"Neo4j Desktop",
+"url":"Neo4jDesktop/",
+"kind":"concept",
+"definition":"Neo4j graph database that support a PKM system."
+},
+{
+"label":"Note",
+"url":"Note/",
+"kind":"concept",
+"definition":"A unit of knowledge in a PKM system."
+},
+{
+"label":"Note Event",
+"url":"NoteEvent/",
+"kind":"concept",
+"definition":"Something to record related to a note associated with an event."
+},
+{
+"label":"Note Types",
+"url":"NoteTypes/",
+"kind":"collection",
+"definition":"The concepts used as note types in the vault."
+},
+{
+"label":"Nutrition",
+"url":"Nutrition/",
+"kind":"concept",
+"definition":"The nutrient content (e.g. calories, carbohydrates, fat, fiber) associated with a meal, recipe, or ingredient."
+},
+{
+"label":"Obsidian Notes",
+"url":"ObsidianNotes/",
+"kind":"concept",
+"definition":"A major PKM system for linked notes."
+},
+{
+"label":"Obsidian Plugin",
+"url":"ObsidianPlugin/",
+"kind":"concept",
+"definition":"A core or community plugin that extends available functions using JavaScript and the Obsidian API."
+},
+{
+"label":"Obsidian Settings",
+"url":"ObsidianSettings/",
+"kind":"concept",
+"definition":"A hidden folder (`.obsidian`) in every Obsidian vault that contains settings for Obsidian and its plugins."
+},
+{
+"label":"Obsidian Template",
+"url":"ObsidianTemplate/",
+"kind":"concept",
+"definition":"An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and…"
+},
+{
+"label":"Ontology",
+"url":"Ontology/",
+"kind":"concept",
+"definition":"A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a…"
+},
+{
+"label":"OWL",
+"url":"OWL/",
+"kind":"concept",
+"definition":"Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes…"
+},
+{
+"label":"Package",
+"url":"Package/",
+"kind":"concept",
+"definition":"A physical package of a food product."
+},
+{
+"label":"Periodic Notes",
+"url":"PeriodicNotes/",
+"kind":"concept",
+"definition":"Manage daily, weekly, and monthly notes."
+},
+{
+"label":"Person",
+"url":"Person/",
+"kind":"concept",
+"definition":"A person used as a source in a PKM system."
+},
+{
+"label":"PKM Meals",
+"url":"PKMMeals/",
+"kind":"concept",
+"definition":"A SwiftUI app that manages events, recipes, and meals in a PKM system."
+},
+{
+"label":"PKM Neo4j Service Project",
+"url":"PKMNeo4jServiceProject/",
+"kind":"concept",
+"alts":[
+"pkm-neo4j-service"
+],
+"definition":"Python (PyCharm) project with FastAPI services, scripts, commands, and agents that support the PKM system."
+},
+{
+"label":"PKM Python",
+"url":"PKMPython/",
+"kind":"concept",
+"definition":"Python apps and services supporting PKM system."
+},
+{
+"label":"PKM Python Agents",
+"url":"PKMPythonAgents/",
+"kind":"concept",
+"definition":"Python agents supporting the PKM system."
+},
+{
+"label":"PKM Python API",
+"url":"PKMPythonAPI/",
+"kind":"concept",
+"definition":"Python FastAPI routes providing an API for PKM services."
+},
+{
+"label":"PKM Python Commands",
+"url":"PKMPythonCommands/",
+"kind":"concept",
+"definition":"Python commands supporting the PKM system."
+},
+{
+"label":"PKM Python Scripts",
+"url":"PKMPythonScripts/",
+"kind":"concept",
+"definition":"Python scripts supporting the PKM system."
+},
+{
+"label":"PKM Python Services",
+"url":"PKMPythonServices/",
+"kind":"concept",
+"definition":"Python services supporting the PKM system."
+},
+{
+"label":"PKM Studio",
+"url":"PKMStudio/",
+"kind":"concept",
+"definition":"A SwiftUI app that manages a PKM knowledge system."
+},
+{
+"label":"PKM Swift",
+"url":"PKMSwift/",
+"kind":"concept",
+"definition":"Swift apps and services supporting PKM system."
+},
+{
+"label":"PKM Swift Services",
+"url":"PKMSwiftServices/",
+"kind":"concept",
+"definition":"Swift Hummingbird services that support a PKM system."
+},
+{
+"label":"Product",
+"url":"Product/",
+"kind":"concept",
+"definition":"A packaged food or grocery item."
+},
+{
+"label":"Project",
+"url":"Project/",
+"kind":"concept",
+"definition":"A defined, bounded effort with a specific goal and completion criteria, undertaken over a limited timeframe."
+},
+{
+"label":"PTE Meal Plan",
+"url":"PTEMealPlan/",
+"kind":"concept",
+"definition":"A weekly meal plan built in Plan to Eat (PTE); a recipe, meal-planning, and shopping list subscription service."
+},
+{
+"label":"Publish",
+"url":"Publish/",
+"kind":"concept",
+"definition":"A core plugin that allows you to host your notes online as a website, wiki, or documentation."
+},
+{
+"label":"Python",
+"url":"Python/",
+"kind":"concept",
+"definition":"A general-purpose, interpreted programming language."
+},
+{
+"label":"Python Template",
+"url":"PythonTemplate/",
+"kind":"concept",
+"definition":"A Python (Jinja2) template determines the structure, layout, and configuration for various types of notes in the PKM…"
+},
+{
+"label":"Quarter",
+"url":"Quarter/",
+"kind":"concept",
+"definition":"A three-month time period used for medium-level planning."
+},
+{
+"label":"Quarter Cluster",
+"url":"QuarterCluster/",
+"kind":"concept",
+"definition":"Everything the system produces about a single quarter — its plan, log, review, journal and health notes — taken as one…"
+},
+{
+"label":"Quarter Collection",
+"url":"QuarterCollection/",
+"kind":"collection",
+"definition":"Quarter, the Quarter Cluster and three of its five parts, listed flat. Two parts are absent and one member belongs to…"
+},
+{
+"label":"Quarter Health",
+"url":"QuarterHealth/",
+"kind":"concept",
+"definition":"The health-related summary for a quarter."
+},
+{
+"label":"Quarter Journal",
+"url":"QuarterJournal/",
+"kind":"concept",
+"definition":"Reflective writing about a quarter."
+},
+{
+"label":"Quarter Log",
+"url":"QuarterLog/",
+"kind":"concept",
+"definition":"A record of what happened over a quarter."
+},
+{
+"label":"Quarter Plan",
+"url":"QuarterPlan/",
+"kind":"concept",
+"definition":"The plan of intended priorities for a quarter."
+},
+{
+"label":"Quarter Review",
+"url":"QuarterReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a completed quarter."
+},
+{
+"label":"QuickAdd",
+"url":"QuickAdd/",
+"kind":"concept",
+"definition":"Extension for Obsidian that includes additional tools (choices): templates, captures, macros, and multis."
+},
+{
+"label":"Quote",
+"url":"Quote/",
+"kind":"concept",
+"definition":"A quote by a specific source that you want to capture and reuse."
+},
+{
+"label":"RDF",
+"url":"RDF/",
+"kind":"concept",
+"definition":"Resource Description Framework - a W3C standard model for representing data as subject-predicate-object triples…"
+},
+{
+"label":"Recipe",
+"url":"Recipe/",
+"kind":"concept",
+"definition":"A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal."
+},
+{
+"label":"Recipe Collection",
+"url":"RecipeCollection/",
+"kind":"collection",
+"definition":"Recipe and its six parts listed flat: the ingredients, nutrition, timings, servings, source and images a recipe is…"
+},
+{
+"label":"Recipe Images",
+"url":"RecipeImages/",
+"kind":"concept",
+"definition":"The photo or image assets associated with a recipe."
+},
+{
+"label":"Recipe Servings",
+"url":"RecipeServings/",
+"kind":"concept",
+"definition":"The number of servings or portions a recipe yields."
+},
+{
+"label":"Recipe Source",
+"url":"RecipeSource/",
+"kind":"concept",
+"definition":"The origin or provenance of a recipe, such as the website, cookbook, or person it was sourced from."
+},
+{
+"label":"Recipe Time",
+"url":"RecipeTime/",
+"kind":"concept",
+"definition":"The time-related metadata for a recipe, such as preparation time, cook time, and total time."
+},
+{
+"label":"Restaurant",
+"url":"Restaurant/",
+"kind":"concept",
+"definition":"A dining establishment where meals are eaten or taken out."
+},
+{
+"label":"Script",
+"url":"Script/",
+"kind":"concept",
+"definition":"A short program or set of automated instructions, typically in Python or Swift, that performs a specific task."
+},
+{
+"label":"Script Event",
+"url":"ScriptEvent/",
+"kind":"concept",
+"definition":"Something that happened during script processing."
+},
+{
+"label":"Semantic Web Standards",
+"url":"SemanticWebStandards/",
+"kind":"collection",
+"definition":"Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy…"
+},
+{
+"label":"Service Event",
+"url":"ServiceEvent/",
+"kind":"concept",
+"definition":"Something that happened during service processing."
+},
+{
+"label":"Shortcut",
+"url":"Shortcut/",
+"kind":"concept",
+"definition":"An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri…"
+},
+{
+"label":"Siri",
+"url":"Siri/",
+"kind":"concept",
+"definition":"Apple's voice-activated virtual assistant, integrated into iOS, iPadOS, and macOS."
+},
+{
+"label":"SKOS",
+"url":"SKOS/",
+"kind":"concept",
+"definition":"Simple Knowledge Organization System - a W3C standard data model, expressed in RDF, for representing controlled…"
+},
+{
+"label":"Sleep Event",
+"url":"SleepEvent/",
+"kind":"concept",
+"definition":"Recording metrics from overnight sleep."
+},
+{
+"label":"Snack",
+"url":"Snack/",
+"kind":"concept",
+"definition":"A small meal eaten between main meals."
+},
+{
+"label":"Source",
+"url":"Source/",
+"kind":"concept",
+"definition":"A source of information from others that is used as input for developing your own ideas and knowledge in a PKM system."
+},
+{
+"label":"Spark",
+"url":"Spark/",
+"kind":"concept",
+"definition":"A brief, informal capture of an idea, prompt, or stimulus intended for later development."
+},
+{
+"label":"Spark Collection",
+"url":"SparkCollection/",
+"kind":"collection",
+"definition":"Idea and Spark, the two concepts for something newly noticed and not yet developed. Two members, and no narrower…"
+},
+{
+"label":"Standard",
+"url":"Standard/",
+"kind":"concept",
+"definition":"A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated…"
+},
+{
+"label":"Swift",
+"url":"Swift/",
+"kind":"concept",
+"definition":"A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development."
+},
+{
+"label":"Sync",
+"url":"Sync/",
+"kind":"concept",
+"definition":"A core plugin that synchronizes your files through the Obsidian Sync service."
+},
+{
+"label":"Taxonomy",
+"url":"Taxonomy/",
+"kind":"concept",
+"definition":"A hierarchical classification scheme that organizes concepts into broader/narrower relationships."
+},
+{
+"label":"Tech Stack",
+"url":"TechStack/",
+"kind":"collection",
+"definition":"The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j…"
+},
+{
+"label":"Template",
+"url":"TemplateCopy/",
+"kind":"concept",
+"definition":"A template determines the structure, layout, and configuration for various types of notes in the PKM system."
+},
+{
+"label":"Templater",
+"url":"Templater/",
+"kind":"concept",
+"definition":"Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with…"
+},
+{
+"label":"Term",
+"url":"Term/",
+"kind":"concept",
+"definition":"A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary."
+},
+{
+"label":"Time",
+"url":"Time/",
+"kind":"concept",
+"definition":"A concept element representing a temporal reference point or duration."
+},
+{
+"label":"Time Cluster",
+"url":"TimeCluster/",
+"kind":"concept",
+"definition":"A cluster whose subject is a single time period, at any horizon from a day to a year."
+},
+{
+"label":"Time Collection",
+"url":"TimeCollection/",
+"kind":"collection",
+"definition":"Time and the Time Cluster, and nothing else. Two members against the fifty-five concepts under Time Cluster, so this is…"
+},
+{
+"label":"Tool",
+"url":"Tool/",
+"kind":"concept",
+"definition":"A software capability used within the PKM system."
+},
+{
+"label":"Tool Event",
+"url":"ToolEvent/",
+"kind":"concept",
+"definition":"Something that happened during processing with a tool."
+},
+{
+"label":"Topic",
+"url":"Topic/",
+"kind":"concept",
+"definition":"A subject or theme that content can be about."
+},
+{
+"label":"Topic Cluster",
+"url":"TopicCluster/",
+"kind":"concept",
+"definition":"Notes and artifacts assembled around a single topic, rather than every note that happens to mention it."
+},
+{
+"label":"Topic Index",
+"url":"TopicIndex/",
+"kind":"concept",
+"definition":"The index note that links all artifacts for a topic."
+},
+{
+"label":"Topic Journal",
+"url":"TopicJournal/",
+"kind":"concept",
+"definition":"Free-form reflective writing about a topic."
+},
+{
+"label":"Topic Log",
+"url":"TopicLog/",
+"kind":"concept",
+"definition":"A chronological record of what actually happened related to a topic."
+},
+{
+"label":"Topic Plan",
+"url":"TopicPlan/",
+"kind":"concept",
+"definition":"The plan of intended activities and priorities for a topic."
+},
+{
+"label":"Topic Review",
+"url":"TopicReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a topic."
+},
+{
+"label":"User Event",
+"url":"UserEvent/",
+"kind":"concept",
+"definition":"Something that happened and raised by a user."
+},
+{
+"label":"Vault",
+"url":"Vault/",
+"kind":"concept",
+"definition":"A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc."
+},
+{
+"label":"View",
+"url":"View/",
+"kind":"concept",
+"definition":"A note that offers a view perspective of related notes as a dashboard, dynamic queries, or embedded bases."
+},
+{
+"label":"W3C Standard",
+"url":"W3CStandard/",
+"kind":"concept",
+"definition":"A standard or recommendation published by the World Wide Web Consortium (W3C)."
+},
+{
+"label":"Week",
+"url":"Week/",
+"kind":"concept",
+"definition":"A seven-day time period grouping consecutive days."
+},
+{
+"label":"Week Analysis",
+"url":"WeekAnalysis/",
+"kind":"concept",
+"definition":"A note summarizing patterns, trends, or review findings across a week's Day Clusters."
+},
+{
+"label":"Week Cluster",
+"url":"WeekCluster/",
+"kind":"concept",
+"definition":"Everything the system produces about a single week — its index, plan, log, review, journal, analysis, health and…"
+},
+{
+"label":"Week Collection",
+"url":"WeekCollection/",
+"kind":"collection",
+"definition":"The ten parts of a Week Cluster listed flat, together with Week itself. It enumerates by hand what the hierarchy…"
+},
+{
+"label":"Week Diabetes",
+"url":"WeekDiabetes/",
+"kind":"concept",
+"definition":"A weekly note or artifact aggregating diabetes-related tracking data for the week."
+},
+{
+"label":"Week Diabetes Analysis",
+"url":"WeekDiabetesAnalysis/",
+"kind":"concept",
+"definition":"A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week."
+},
+{
+"label":"Week Health",
+"url":"WeekHealth/",
+"kind":"concept",
+"definition":"The health-related summary for a week."
+},
+{
+"label":"Week Index",
+"url":"WeekIndex/",
+"kind":"concept",
+"definition":"A hub note for a given week that links to and organizes its constituent Day Cluster notes and other weekly artifacts."
+},
+{
+"label":"Week Journal",
+"url":"WeekJournal/",
+"kind":"concept",
+"definition":"Reflective writing about a week."
+},
+{
+"label":"Week Log",
+"url":"WeekLog/",
+"kind":"concept",
+"definition":"A record of what happened over a week."
+},
+{
+"label":"Week Meal Plan",
+"url":"WeekMealPlan/",
+"kind":"concept",
+"definition":"A note representing the planned meals for a given week, aggregating daily meal plan entries."
+},
+{
+"label":"Week Plan",
+"url":"WeekPlan/",
+"kind":"concept",
+"definition":"The plan of intended priorities and activities for a week."
+},
+{
+"label":"Week Review",
+"url":"WeekReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a completed week."
+},
+{
+"label":"Weight Event",
+"url":"WeightEvent/",
+"kind":"concept",
+"definition":"A record of current weight."
+},
+{
+"label":"Widget",
+"url":"Widget/",
+"kind":"concept",
+"definition":"A home- or lock-screen glanceable view."
+},
+{
+"label":"Workspaces",
+"url":"Workspaces/",
+"kind":"concept",
+"definition":"A core plugin that enables you to create, save, and load workspace layouts."
+},
+{
+"label":"Year",
+"url":"Year/",
+"kind":"concept",
+"definition":"A calendar year grouping quarters and months."
+},
+{
+"label":"Year Cluster",
+"url":"YearCluster/",
+"kind":"concept",
+"definition":"Everything the system produces about a single year — its plan, log, review, journal and health notes — taken as one…"
+},
+{
+"label":"Year Collection",
+"url":"YearCollection/",
+"kind":"collection",
+"definition":"Year, the Year Cluster and all five of its parts, listed flat. It enumerates by hand what the hierarchy already…"
+},
+{
+"label":"Year Health",
+"url":"YearHealth/",
+"kind":"concept",
+"definition":"The health-related summary for a year."
+},
+{
+"label":"Year Journal",
+"url":"YearJournal/",
+"kind":"concept",
+"definition":"Reflective writing about a year."
+},
+{
+"label":"Year Log",
+"url":"YearLog/",
+"kind":"concept",
+"definition":"A record of what happened over a year."
+},
+{
+"label":"Year Plan",
+"url":"YearPlan/",
+"kind":"concept",
+"definition":"The plan of intended priorities for a year."
+},
+{
+"label":"Year Review",
+"url":"YearReview/",
+"kind":"concept",
+"definition":"A structured retrospective evaluating a completed year."
+}
+]

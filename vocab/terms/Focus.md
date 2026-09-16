@@ -2,6 +2,7 @@
 layout: default
 title: "Focus"
 permalink: /vocab/Focus/
+search: true
 description: "A note or tag marking current priority attention within the PKM system."
 ---
 

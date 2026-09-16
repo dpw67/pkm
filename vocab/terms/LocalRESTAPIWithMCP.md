@@ -2,6 +2,7 @@
 layout: default
 title: "Local REST API with MCP"
 permalink: /vocab/LocalRESTAPIWithMCP/
+search: true
 description: "Support automation for notes using REST API for apps or MCP server for AI agents."
 ---
 

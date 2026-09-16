@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Journal"
 permalink: /vocab/QuarterJournal/
+search: true
 description: "Reflective writing about a quarter."
 ---
 

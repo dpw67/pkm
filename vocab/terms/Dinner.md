@@ -2,6 +2,7 @@
 layout: default
 title: "Dinner"
 permalink: /vocab/Dinner/
+search: true
 description: "The evening meal."
 ---
 

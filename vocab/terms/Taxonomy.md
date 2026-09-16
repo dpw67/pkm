@@ -2,6 +2,7 @@
 layout: default
 title: "Taxonomy"
 permalink: /vocab/Taxonomy/
+search: true
 description: "A hierarchical classification scheme that organizes concepts into broader/narrower relationships."
 ---
 

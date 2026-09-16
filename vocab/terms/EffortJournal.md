@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Journal"
 permalink: /vocab/EffortJournal/
+search: true
 description: "Free-form reflective writing about an effort."
 ---
 

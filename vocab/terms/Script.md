@@ -2,6 +2,7 @@
 layout: default
 title: "Script"
 permalink: /vocab/Script/
+search: true
 description: "A short program or set of automated instructions, typically in Python or Swift, that performs a specific task."
 ---
 

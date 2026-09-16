@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Cluster"
 permalink: /vocab/EffortCluster/
+search: true
 description: "Notes and artifacts assembled around a single effort, rather than every note that happens to mention it."
 ---
 

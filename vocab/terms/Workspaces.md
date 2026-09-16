@@ -2,6 +2,7 @@
 layout: default
 title: "Workspaces"
 permalink: /vocab/Workspaces/
+search: true
 description: "A core plugin that enables you to create, save, and load workspace layouts."
 ---
 

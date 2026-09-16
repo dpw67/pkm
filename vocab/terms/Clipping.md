@@ -2,6 +2,7 @@
 layout: default
 title: "Clipping"
 permalink: /vocab/Clipping/
+search: true
 description: "A clipping captured by the Obsidian Web Clipper browser extension that was developed by Steph Ango (Obsidian CEO)."
 ---
 

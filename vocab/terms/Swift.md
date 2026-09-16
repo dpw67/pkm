@@ -2,6 +2,7 @@
 layout: default
 title: "Swift"
 permalink: /vocab/Swift/
+search: true
 description: "A general-purpose, compiled programming language developed by Apple, used primarily for iOS/macOS app development."
 ---
 

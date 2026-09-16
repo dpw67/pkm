@@ -2,6 +2,7 @@
 layout: default
 title: "Obsidian Plugin"
 permalink: /vocab/ObsidianPlugin/
+search: true
 description: "A core or community plugin that extends available functions using JavaScript and the Obsidian API."
 ---
 

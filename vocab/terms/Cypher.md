@@ -2,6 +2,7 @@
 layout: default
 title: "Cypher"
 permalink: /vocab/Cypher/
+search: true
 description: "A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j."
 ---
 

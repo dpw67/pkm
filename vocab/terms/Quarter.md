@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter"
 permalink: /vocab/Quarter/
+search: true
 description: "A three-month time period used for medium-level planning."
 ---
 

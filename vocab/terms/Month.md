@@ -2,6 +2,7 @@
 layout: default
 title: "Month"
 permalink: /vocab/Month/
+search: true
 description: "A calendar month grouping weeks and days."
 ---
 

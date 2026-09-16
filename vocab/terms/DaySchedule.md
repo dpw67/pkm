@@ -2,6 +2,7 @@
 layout: default
 title: "Day Schedule"
 permalink: /vocab/DaySchedule/
+search: true
 description: "The time-blocked calendar of appointments and commitments for a day."
 ---
 

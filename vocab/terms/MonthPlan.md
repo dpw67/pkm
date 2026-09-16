@@ -2,6 +2,7 @@
 layout: default
 title: "Month Plan"
 permalink: /vocab/MonthPlan/
+search: true
 description: "The plan of intended priorities for a month."
 ---
 

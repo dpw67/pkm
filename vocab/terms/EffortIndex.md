@@ -2,6 +2,7 @@
 layout: default
 title: "Effort Index"
 permalink: /vocab/EffortIndex/
+search: true
 description: "The index note that links all artifacts for an effort."
 ---
 

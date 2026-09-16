@@ -2,6 +2,7 @@
 layout: default
 title: "Life"
 permalink: /vocab/Life/
+search: true
 description: "The full lifespan, the top temporal (time) horizon."
 ---
 

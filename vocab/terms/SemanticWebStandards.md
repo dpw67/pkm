@@ -2,6 +2,7 @@
 layout: default
 title: "Semantic Web Standards"
 permalink: /vocab/SemanticWebStandards/
+search: true
 description: "Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph."
 ---
 

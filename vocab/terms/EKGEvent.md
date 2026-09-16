@@ -2,6 +2,7 @@
 layout: default
 title: "EKG Event"
 permalink: /vocab/EKGEvent/
+search: true
 description: "Recording an EKG reading from Apple Watch EKG app or Kardia 6-lead EKG device."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Day Meal Plan"
 permalink: /vocab/DayMealPlan/
+search: true
 description: "The planned set of meals for a single day."
 ---
 

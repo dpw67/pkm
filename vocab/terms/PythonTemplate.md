@@ -2,6 +2,7 @@
 layout: default
 title: "Python Template"
 permalink: /vocab/PythonTemplate/
+search: true
 description: "A Python (Jinja2) template determines the structure, layout, and configuration for various types of notes in the PKM system."
 ---
 

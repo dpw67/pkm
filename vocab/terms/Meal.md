@@ -2,6 +2,7 @@
 layout: default
 title: "Meal"
 permalink: /vocab/Meal/
+search: true
 description: "An eating occasion consisting of one or more foods or recipes consumed at a particular time."
 ---
 

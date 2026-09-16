@@ -2,6 +2,7 @@
 layout: default
 title: "Week Meal Plan"
 permalink: /vocab/WeekMealPlan/
+search: true
 description: "A note representing the planned meals for a given week, aggregating daily meal plan entries."
 ---
 

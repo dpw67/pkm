@@ -2,6 +2,7 @@
 layout: default
 title: "Knowledge Graph"
 permalink: /vocab/KnowledgeGraph/
+search: true
 description: "A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected knowledge."
 ---
 

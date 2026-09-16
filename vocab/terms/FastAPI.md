@@ -2,6 +2,7 @@
 layout: default
 title: "FastAPI"
 permalink: /vocab/FastAPI/
+search: true
 description: "A modern, high-performance Python web framework for building APIs."
 ---
 

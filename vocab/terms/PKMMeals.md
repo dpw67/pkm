@@ -2,6 +2,7 @@
 layout: default
 title: "PKM Meals"
 permalink: /vocab/PKMMeals/
+search: true
 description: "A SwiftUI app that manages events, recipes, and meals in a PKM system."
 ---
 

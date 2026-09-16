@@ -2,6 +2,7 @@
 layout: default
 title: "Sleep Event"
 permalink: /vocab/SleepEvent/
+search: true
 description: "Recording metrics from overnight sleep."
 ---
 

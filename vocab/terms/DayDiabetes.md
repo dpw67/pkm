@@ -2,6 +2,7 @@
 layout: default
 title: "Day Diabetes"
 permalink: /vocab/DayDiabetes/
+search: true
 description: "The record of diabetes-relevant data for a day (glucose, insulin, carbs, events)."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Knowledge Collection"
 permalink: /vocab/KnowledgeCollection/
+search: true
 description: "What knowledge itself is called here, as distinct from the containers that hold it: Knowledge, the Concept and Topic it is expressed as, and the Knowledge…"
 ---
 

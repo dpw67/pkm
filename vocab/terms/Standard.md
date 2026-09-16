@@ -2,6 +2,7 @@
 layout: default
 title: "Standard"
 permalink: /vocab/Standard/
+search: true
 description: "A documented specification, format, or set of rules established by a recognized body, intended for consistent, repeated use."
 ---
 

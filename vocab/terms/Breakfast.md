@@ -2,6 +2,7 @@
 layout: default
 title: "Breakfast"
 permalink: /vocab/Breakfast/
+search: true
 description: "The first meal of the day."
 ---
 

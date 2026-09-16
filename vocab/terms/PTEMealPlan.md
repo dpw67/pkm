@@ -2,6 +2,7 @@
 layout: default
 title: "PTE Meal Plan"
 permalink: /vocab/PTEMealPlan/
+search: true
 description: "A weekly meal plan built in Plan to Eat (PTE); a recipe, meal-planning, and shopping list subscription service."
 ---
 

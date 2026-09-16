@@ -2,6 +2,7 @@
 layout: default
 title: "Day Board"
 permalink: /vocab/DayBoard/
+search: true
 description: "An Obsidian Kanban board note for the day."
 ---
 

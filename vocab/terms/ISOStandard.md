@@ -2,6 +2,7 @@
 layout: default
 title: "ISO Standard"
 permalink: /vocab/ISOStandard/
+search: true
 description: "A standard published by the International Organization for Standardization (ISO)."
 ---
 

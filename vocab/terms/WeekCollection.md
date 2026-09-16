@@ -2,6 +2,7 @@
 layout: default
 title: "Week Collection"
 permalink: /vocab/WeekCollection/
+search: true
 description: "The ten parts of a Week Cluster listed flat, together with Week itself. It enumerates by hand what the hierarchy already derives; where the two disagree the…"
 ---
 

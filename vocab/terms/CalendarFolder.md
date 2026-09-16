@@ -2,6 +2,7 @@
 layout: default
 title: "Calendar Folder"
 permalink: /vocab/CalendarFolder/
+search: true
 description: "The Calendar (Time) folder is the PKM knowledge space for time-based notes."
 ---
 

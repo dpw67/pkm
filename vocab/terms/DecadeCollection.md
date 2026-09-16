@@ -2,6 +2,7 @@
 layout: default
 title: "Decade Collection"
 permalink: /vocab/DecadeCollection/
+search: true
 description: "Decade alone. No decade notes are generated and no narrower concepts exist, so this records an intention rather than a grouping."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Week Health"
 permalink: /vocab/WeekHealth/
+search: true
 description: "The health-related summary for a week."
 ---
 

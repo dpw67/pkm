@@ -2,6 +2,7 @@
 layout: default
 title: "Dexcom Data"
 permalink: /vocab/DexcomData/
+search: true
 description: "Diabetes data from Dexcom G7 15-day continuous glucose monitor (CGM) sensor."
 ---
 

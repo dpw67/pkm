@@ -2,6 +2,7 @@
 layout: default
 title: "Vault"
 permalink: /vocab/Vault/
+search: true
 description: "A folder with all the Obsidian notes for a specific purpose, such as Ideaverse, etc."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Decade"
 permalink: /vocab/Decade/
+search: true
 description: "A ten-year span used for long-range life planning."
 ---
 

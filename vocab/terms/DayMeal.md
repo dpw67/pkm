@@ -2,6 +2,7 @@
 layout: default
 title: "Day Meal"
 permalink: /vocab/DayMeal/
+search: true
 description: "A single planned or eaten meal within a day."
 ---
 

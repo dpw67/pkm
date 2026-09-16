@@ -2,6 +2,7 @@
 layout: default
 title: "Quarter Log"
 permalink: /vocab/QuarterLog/
+search: true
 description: "A record of what happened over a quarter."
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Recipe"
 permalink: /vocab/Recipe/
+search: true
 description: "A set of ingredients, instructions, nutrition, and information to prepare, cook, and eat a meal."
 ---
 

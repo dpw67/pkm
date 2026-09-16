@@ -2,6 +2,7 @@
 layout: default
 title: "Week Log"
 permalink: /vocab/WeekLog/
+search: true
 description: "A record of what happened over a week."
 ---
 

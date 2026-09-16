@@ -2,6 +2,7 @@
 layout: default
 title: "Day Base"
 permalink: /vocab/DayBase/
+search: true
 description: "An Obsidian base file with multiple views for a day."
 ---
 

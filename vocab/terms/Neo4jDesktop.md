@@ -2,6 +2,7 @@
 layout: default
 title: "Neo4j Desktop"
 permalink: /vocab/Neo4jDesktop/
+search: true
 description: "Neo4j graph database that support a PKM system."
 ---
 

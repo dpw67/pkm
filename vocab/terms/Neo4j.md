@@ -2,6 +2,7 @@
 layout: default
 title: "Neo4j"
 permalink: /vocab/Neo4j/
+search: true
 description: "A native graph database management system that stores and queries data as nodes, relationships, and properties."
 ---
 

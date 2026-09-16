@@ -2,6 +2,7 @@
 layout: default
 title: "Extra Folder"
 permalink: /vocab/ExtraFolder/
+search: true
 description: "The top-level `x` folder space in Obsidian includes Extra or Support resources."
 ---
 

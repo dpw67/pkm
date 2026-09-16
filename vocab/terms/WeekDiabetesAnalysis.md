@@ -2,6 +2,7 @@
 layout: default
 title: "Week Diabetes Analysis"
 permalink: /vocab/WeekDiabetesAnalysis/
+search: true
 description: "A note summarizing patterns or trends in diabetes-related tracked data (e.g. glucose, insulin) across a week."
 ---
 

@@ -1,16 +1,23 @@
 # Draft — GitHub Discussions announcement for v0.1.10
 
-**Status:** NOT POSTED. Post by hand in Announcements, then record the
-discussion number here and link it from the next release's opener, as #6 links
-#5.
+**Status:** POSTED as
+[Discussion #7](https://github.com/dpw67/pkm/discussions/7), 2026-09-16, in
+Announcements, under the first of the two titles below.
 
 **The body below is deliberately unwrapped — do not re-wrap it.** Discussions
 render a single newline as `<br>`, and because this one is posted by hand there
 is no `gh` step in which anything of mine would unwrap it. A wrapped draft
-hands the unwrapping to whoever pastes it, which is what happened with #2 and
-again with #6.
+hands the unwrapping to whoever pastes it, which is what was handed over for #2
+and again for #6 — both were unwrapped while being pasted, so both read
+correctly, but the work fell on the poster.
 
-**Prerequisites — both satisfied, so this is clear to post.**
+**This one needed none of that, which is the point.** #7's posted body is
+byte-identical to the body below: 15 non-blank lines each, longest line 679
+characters, no folds. That is the first time the draft arrived already
+unwrapped, and it is the reason to keep writing them this way rather than
+treating the unwrapping as a paste-time step.
+
+**Prerequisites — both were satisfied before posting.**
 
 1. The `v0.1.10` release is **published**, not a draft. ✅ Verified 2026-09-16:
    `isDraft: false`, published 20:03 UTC, and the tag URL returns 200 with the
@@ -24,9 +31,9 @@ again with #6.
    `vocab/Recipe` still returns `text/html` to a browser and `text/turtle` to
    an RDF client.
 
-**Title — pick one:**
+**Title — the first was used:**
 
-- `PKM Vocabulary v0.1.10 — the vocabulary you can actually read`
+- `PKM Vocabulary v0.1.10 — the vocabulary you can actually read` ✅ posted
 - `PKM Vocabulary v0.1.10 — same graph, a page you can find things on`
 
 ---

@@ -125,9 +125,23 @@ gone wrong before.
     reliably queue one. `gh api repos/dpw67/pkm/pages/builds/latest` until
     `built`, then check the live URLs. Everything before this step tests a local
     build.
-11. **Draft the GitHub release** with `--draft` and publish it by hand. Notes
-    must be **unwrapped**: this repo's Markdown is hard-wrapped, and GitHub
-    renders a single newline as `<br>`.
+11. **Draft the GitHub release** with `--draft`, then publish it. Notes must be
+    **unwrapped**: this repo's Markdown is hard-wrapped, and GitHub renders a
+    single newline as `<br>`.
+
+    Publishing is at
+    [github.com/dpw67/pkm/releases](https://github.com/dpw67/pkm/releases) — the
+    draft is the top entry, badged `Draft`; open it, click the pencil, then
+    **Publish release**. Or `gh release edit v<version> --draft=false`. A draft
+    lives at a `releases/tag/untagged-<hash>` URL until published, which is why
+    it is not obvious where to look.
+
+    **Check by content, not status code.** A draft's `releases/tag/v<version>`
+    URL already returns 200 — with a bare page carrying only the title — so a
+    link to unpublished notes looks like an *empty* release rather than a
+    missing one. Grep the anonymous page for a distinctive phrase from the body
+    before linking it anywhere, and remember the rendered HTML breaks strings
+    that span a `<code>` or `<strong>`.
 12. **Announcements discussion**, written and posted by hand from an unwrapped
     draft in `z/drafts/`.
 

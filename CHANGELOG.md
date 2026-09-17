@@ -10,6 +10,49 @@ Version levels are explained under [Versioning](#versioning).
 
 Nothing yet. Work starts on a branch named for the version it targets.
 
+## [0.1.11] — 2026-09-17
+
+The vocabulary has never been visible as a shape — no diagram existed anywhere
+in the project. There is now one per top concept at
+[`/vocab/browse/map/`](https://w3id.org/pkm/vocab/browse/map/), generated from
+the published graph. Presentation only: **no triple moved**, and the bulk Turtle
+plus all 241 per-term files are byte-identical to 0.1.10, so this is a patch.
+
+### Added
+
+- **A map page**, one Mermaid diagram per top concept. A single graph of 223
+  concepts is a hairball, so the unit is a chunk small enough to take in at
+  once — the structural counterpart of what `make review` already does for
+  prose. Depth and per-node fan-out are capped by measurement rather than
+  guess: depth 3 draws 132 concepts with the largest chunk at 57 nodes, where
+  depth 4 would reach 96 and defeat the purpose. `+N more` marks what is not
+  drawn, and the term's own page still lists it in full.
+- **The arrows carry the relation kind.** A solid arrow is labelled `generic`,
+  `partitive` or `instantial`; **a dotted arrow has no ISO 25964 qualifier at
+  all**. A third of this hierarchy is in that state, so the dotted arrows show
+  the outstanding work rather than decorating the page — which is the most
+  useful thing a drawing of this particular graph can do.
+
+### Changed
+
+- The vocabulary landing table gains a **Map** row beside Hierarchy,
+  Collections and All terms.
+
+### Notes
+
+Generated rather than drawn, on purpose. Every hand-maintained second
+representation in this project has drifted from the graph it describes: five of
+six subtree-mirroring collections, the Obsidian hub's version and counts before
+`make hub`, and the review sheet whenever it is not re-run. A diagram of a
+*target* cannot drift, because it proposes a graph rather than describing one.
+A published diagram of what *exists* can, so it is derived on every build.
+
+Mermaid rather than an image because the same Markdown renders natively in the
+GitHub view and in Obsidian, and only the Pages build needs a shim — the same
+three-target test that chose `<details>` over JavaScript in 0.1.10. The bundle
+is 3.3 MB, so it loads only where `mermaid: true` is set in front matter, and
+if it fails to load the fenced source is left in place and stays readable.
+
 ## [0.1.10] — 2026-09-16
 
 The vocabulary you can actually read. `vocab/index.md` was 721 lines and 51 KB
@@ -680,7 +723,8 @@ immediately, with no staging step.** Work happens on a branch named for the
 version it targets, so the level is decided before the work starts rather than
 at release time. Each published version is tagged.
 
-[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.10...HEAD
+[Unreleased]: https://github.com/dpw67/pkm/compare/v0.1.11...HEAD
+[0.1.11]: https://github.com/dpw67/pkm/compare/v0.1.10...v0.1.11
 [0.1.10]: https://github.com/dpw67/pkm/compare/v0.1.9...v0.1.10
 [0.1.9]: https://github.com/dpw67/pkm/compare/v0.1.8...v0.1.9
 [0.1.8]: https://github.com/dpw67/pkm/compare/v0.1.7...v0.1.8

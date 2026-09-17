@@ -26,6 +26,7 @@ today keeps resolving.
 | [Hierarchy](browse/hierarchy/) | 8 top concepts, nested by `skos:broader` |
 | [Collections](browse/collections/) | 18 groupings that carry no hierarchical meaning |
 | [All terms](browse/all/) | 241 concepts and collections, A–Z, with definitions |
+| [Map](browse/map/) | the same tree drawn, one diagram per top concept |
 
 Every term also has a page of its own at `https://w3id.org/pkm/vocab/{Term}`.
 

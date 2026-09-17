@@ -11,6 +11,12 @@
   builds from main. Issues and Discussions are where a correction actually
   lands.
 
+  The diagrams: rendered only where `mermaid: true` is set. The bundle is
+  3.3 MB, so it must not load on the other 246 pages. Mermaid rather than an
+  image because the same Markdown renders natively in the GitHub view and in
+  Obsidian, and only the Pages build needs this shim -- the same three-target
+  test that chose `<details>` over a script in 0.1.10.
+
   The search box: rendered only where `search: true` is set in front matter --
   the vocabulary landing page, the three browse pages, and the 241 term pages.
   Not site-wide, because a page outside the vocabulary should not offer a box
@@ -197,6 +203,39 @@
 {%- endif %}
 
       {{ content }}
+
+{%- if page.mermaid %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.15.0/mermaid.min.js" integrity="sha512-HH52omhHpZF6RfVnGiQwYgYm4H/ya2xsZYLl5xJ4+tLfX+rN4+8zF7V/H/KLeicPrKZYi1g6iBmVkk2AhXTGlg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+      (function () {
+        // Rouge has no mermaid lexer, so a ```mermaid fence comes through as
+        // a plain <pre><code class="language-mermaid"> with the source intact
+        // and no inserted spans -- textContent gives it back verbatim, HTML
+        // entities already decoded. Note the class sits on the <code>, not on
+        // a wrapper: selecting '.language-mermaid code' finds nothing.
+        var blocks = document.querySelectorAll('code.language-mermaid');
+        if (!blocks.length) return;
+        // No global means the CDN failed or blocked. Leave the fences alone:
+        // the source is still readable, which is the honest degradation.
+        if (typeof mermaid === 'undefined') return;
+        mermaid.initialize({ startOnLoad: false, securityLevel: 'strict' });
+        var nodes = [];
+        Array.prototype.forEach.call(blocks, function (code) {
+          var host = document.createElement('pre');
+          host.className = 'mermaid';
+          host.textContent = code.textContent;
+          // Replace the whole <pre>, not just the <code>, or the original
+          // block's styling frames the rendered diagram.
+          var outer = code.closest('div.highlighter-rouge') || code.parentNode;
+          outer.replaceWith(host);
+          nodes.push(host);
+        });
+        // Explicit run rather than startOnLoad, because the nodes above are
+        // created after load.
+        if (mermaid.run) mermaid.run({ nodes: nodes });
+      })();
+      </script>
+{%- endif %}
 
       <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
         Found a problem, or want to propose a term? Open an

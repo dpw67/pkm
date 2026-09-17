@@ -174,6 +174,8 @@ def render_vocab_index(vocab: Vocabulary, published: Graph) -> str:
         f"{len(collections)} groupings that carry no hierarchical meaning |",
         f"| [All terms]({BROWSE_DIR}/all/) | "
         f"{total} concepts and collections, A–Z, with definitions |",
+        f"| [Map]({BROWSE_DIR}/map/) | "
+        f"the same tree drawn, one diagram per top concept |",
         "",
         "Every term also has a page of its own at "
         "`https://w3id.org/pkm/vocab/{Term}`.",

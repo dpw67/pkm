@@ -39,6 +39,7 @@ not SemVer position names** — by position `0.2.0` is a minor bump — so read 
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
 | 22 | A second PKM tool read the vocabulary; four primitives missing, four parents wrong | measured — §P |
 | 23 | The hierarchy before 0.2.0 restructures it — 33% of links undifferentiated | measured — §Q |
+| 24 | 0.1.11 — the hierarchy drawn, one chunk per top concept | done — §R |
 
 ### Where 0.1.9 left the graph
 
@@ -1525,6 +1526,58 @@ Capacities has **no folders and no files, only objects**, which is what makes
 this the implementation boundary rather than a portability nuance: in a
 folderless model those 11 have no counterpart and the 28 lose their parent. See
 §P for where that cross-check came from.
+
+## R. 0.1.11 — the hierarchy drawn
+
+**Shipped.** Presentation only: no triple moved, and the bulk Turtle plus all
+241 per-term files are byte-identical to 0.1.10.
+
+The vocabulary had no diagram anywhere — not an SVG, not a PNG, not a line of
+Mermaid. 0.1.10 made it readable as text; nothing made it visible as a shape,
+which is the gap the 0.2.0 design work kept running into. There is now one
+diagram per top concept at `/vocab/browse/map/`.
+
+### R1. Generated, because drawings of this graph drift
+
+Every hand-maintained second representation here has drifted from the graph it
+describes: §E1's five of six subtree-mirroring collections, the Obsidian hub's
+version and counts before `make hub`, and `reports/vocab-review.md` whenever it
+is not re-run.
+
+The distinction that matters, and the reason the Excalidraw work is unaffected:
+**a drawing of a target cannot drift, because it proposes a graph rather than
+describing one.** A published drawing of what exists can. So the design drawings
+stay hand-made and the map is derived on every build.
+
+### R2. The dotted arrows are the point
+
+A solid arrow carries its ISO 25964 word — `generic`, `partitive`,
+`instantial`. **A dotted arrow has no qualifier at all.** §Q1 measured that as
+77 of 236 links, and the map is where that third stops being a number: the
+`Claude AI` chunk, for instance, is entirely dotted.
+
+`instantial` appears on no arrow anywhere, because it is asserted nowhere — §Q1
+again, and the thirteen named plugins under `ObsidianPlugin` are the clearest
+place it is missing.
+
+### R3. Three targets, one format
+
+Mermaid renders natively in the GitHub view of the same Markdown and in
+Obsidian. Only the Pages build needs help, and rouge has no mermaid lexer, so a
+fence arrives as `<pre><code class="language-mermaid">` with the source intact
+and no inserted spans — a few lines of vanilla JS read `textContent` and hand it
+over. The same three-target test that chose `<details>` over a script in §L2.
+
+Two things worth recording for whoever touches it next. The class sits on the
+`<code>`, **not** on a wrapper, so a `.language-mermaid code` selector matches
+nothing — that was a real bug, caught by diffing the built HTML against the
+generated source rather than by reading it. And the bundle is **3.3 MB**, so it
+loads only where `mermaid: true` is set; if it fails to load the fence is left
+alone and the source stays readable.
+
+Depth and fan-out were tuned by measuring: depth 2 draws 100 concepts with the
+largest chunk at 35 nodes, depth 3 draws 132 with the largest at 57, depth 4
+reaches 96 in one diagram and defeats the purpose. Depth 3, fan-out 12.
 
 ## Backlog
 

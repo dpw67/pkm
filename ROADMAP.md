@@ -36,6 +36,7 @@ the third position; only major advances the second.
 | 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
 | 22 | A second PKM tool read the vocabulary; four primitives missing, four parents wrong | measured — §P |
+| 23 | The hierarchy before 0.2.0 restructures it — 33% of links undifferentiated | measured — §Q |
 
 ### Where 0.1.9 left the graph
 
@@ -1396,6 +1397,120 @@ folders. Tool-neutral but merely *filed* there: `Day`, `Week`, `Month`,
 So the honest answer to "do you have a PKM vocabulary?" is yes, with about a
 fifth of it describing one tool — and the awkwardness a second tool's user hits
 is §P2, not the size of the Obsidian subtree.
+
+## Q. The hierarchy as it stands, before 0.2.0 restructures it
+
+**Measured 2026-09-17, at 0.1.10.** Doug is reworking the hierarchy for 0.2.0 —
+top concepts, some labels, many relationships — through iterated Excalidraw
+drawings, and named the defects before any of this was counted: generic,
+whole-part and instance relations blended without differentiation; PKM and Notes
+intertwined with Obsidian; and no split between the generic PKM vocabulary and
+his own implementation.
+
+**This section is the before-picture and nothing else.** It proposes no
+hierarchy. The drawing is still moving, and a roadmap that picked a shape now
+would fix a direction that is not settled. What it does is put numbers on the
+current state, so that when the restructuring lands the improvement is
+measurable rather than asserted.
+
+### Q1. A third of the hierarchy does not say what kind of link it is
+
+| | count | share |
+|---|---:|---:|
+| `skos:broader` pairs | 236 | |
+| carrying an ISO 25964 qualifier | 159 | 67% |
+| **bare — no qualifier at all** | **77** | **33%** |
+
+By kind: **partitive 103, generic 56, instantial 0.** No pair carries two
+qualifiers, so the 33% is absence rather than contradiction — nothing has to be
+un-decided first.
+
+**`isothes:broaderInstantial` is used zero times**, and ISO 25964 reserves it
+for exactly what several of the bare groups look like: a named individual under
+the class it instantiates, rather than a narrower class. The bare 77 by parent,
+largest first:
+
+| parent | bare children | |
+|---|---:|---|
+| `ObsidianPlugin` | 13 | Advanced URI, Bases, Book Search, Canvas, Dataview, Excalidraw, Local REST API with MCP, Periodic Notes, Publish, QuickAdd, Sync, Templater, Workspaces |
+| `PKMPython` | 7 | including `Python` itself and `PythonTemplate` |
+| `ObsidianNotes` | 6 | `Base`, `Map`, `Note`, `ObsidianPlugin`, `ObsidianTemplate`, `View` |
+| `EffortCluster` | 5 | Index, Journal, Log, Plan, Review |
+| `TopicCluster` | 5 | Index, Journal, Log, Plan, Review |
+| `Source` | 5 | Book, Clipping, Movie, Person, Quote |
+| `ClaudeAI` | 3 | Claude Chat, Claude Cowork, Claude Desktop |
+| `HealthData` | 3 | Apple Health, Dexcom Data, Glooko Data |
+| `GraphDatabase` | 3 | Cypher, Neo4j, Neo4j Desktop |
+| `Area` | 3 | Finance, Health, Life |
+| `Ideaverse` | 3 | ACE Organization, ARC Ideation, Idea Emergence |
+| `KnowledgeSystem` | 3 | Knowledge, Knowledge Graph, Term |
+| 15 more parents | 18 | 1–2 children each |
+
+**Ten of the 77 are already banked.** §K records that `pkmv:EffortCluster` and
+`pkmv:TopicCluster` are alone among the clusters in carrying no ISO relations,
+and that their five parts each are the same shape as the period clusters' — so
+those two rows are a decision already taken and not yet applied.
+
+`Calendar → Day` is also in this list, and §E already flags `Day`'s parents as
+reparenting work. Which qualifier each of the remaining links should take is the
+restructuring's call, not this section's.
+
+### Q2. 68 concepts sit under more than one top concept
+
+| top concept | subtree | exclusive | shared |
+|---|---:|---:|---:|
+| Knowledge System Architecture | 92 | 35 | 57 |
+| Obsidian Notes | 109 | 50 | 59 |
+| PKM Swift | 49 | 46 | 3 |
+| Tool | 16 | 5 | 11 |
+| PKM Python | 11 | 7 | 4 |
+| Graph Database | 7 | 4 | 3 |
+| Claude AI | 4 | 4 | 0 |
+| Health Data | 4 | 4 | 0 |
+
+**68 of 223 concepts (30%)** are reachable from more than one of the eight.
+Polyhierarchy is legitimate in SKOS and §L3 already handles it in the rendered
+tree, so the number is not a defect by itself — it is the measure of how much
+the eight top concepts overlap, which is what a re-rooting has to resolve.
+
+### Q3. The implementation blend, in one figure
+
+**56 concepts sit under both `pkmv:KnowledgeSystemArchitecture` and
+`pkmv:ObsidianNotes`** — simultaneously part of the architecture and a kind of
+Obsidian note. That is 61% of the KSA subtree and 51% of the Obsidian one.
+
+The overlap is the Day Cluster family end to end: `DayActions`, `DayAnalysis`,
+`DayBase`, `DayBoard`, `DayCanvas`, `DayCluster` and its four parts,
+`DayDiabetes`, `DayDiagram`, `DayDrawing`, `DayHealth`, `DayIndex`,
+`DayJournal`, `DayLinks`, `DayLog`, `DayMealPlan`, `DayMeeting`, `DayMindmap`,
+`DayPlan`, `DayReview` and the rest.
+
+This is the single number for "the implementation is not split from the generic
+vocabulary", and it is the one to watch across 0.2.0.
+
+### Q4. The generic tier does not exist yet
+
+None of these is a concept: **`Knowledge Management`, `PKM System`,
+`Technology`, `PKM Apps`, `PKM Services`, `PKM Diabetes`** — nor `Folder`,
+`File` or `Object`. `Knowledge System` does exist, under
+`KnowledgeSystemArchitecture`.
+
+So the tier is nine new mints, not a rename of anything. Minting is **additive,
+therefore minor**, which means the generic tier can land without waiting for §D
+to force 0.2.0 — the reparenting underneath it cannot. §E says the same of
+`Collection`, and §K banks `Tag`, `Object`, `Property` and `Relationship` from
+§P's cross-check; `Object` appears in both lists and is one concept.
+
+### Q5. What a folderless tool cannot take
+
+Eleven concepts are file-system artifacts: `Vault`, the six `*Folder`s, plus
+`Note`, `Base`, `Canvas` and `View`. §P2 counted a further 28 concepts whose
+parent is a folder or the vault, 20 of them partitive — "lives in".
+
+Capacities has **no folders and no files, only objects**, which is what makes
+this the implementation boundary rather than a portability nuance: in a
+folderless model those 11 have no counterpart and the 28 lose their parent. See
+§P for where that cross-check came from.
 
 ## Backlog
 

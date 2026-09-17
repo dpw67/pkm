@@ -27,11 +27,16 @@ plus all 241 per-term files are byte-identical to 0.1.10, so this is a patch.
   guess: depth 3 draws 132 concepts with the largest chunk at 57 nodes, where
   depth 4 would reach 96 and defeat the purpose. `+N more` marks what is not
   drawn, and the term's own page still lists it in full.
-- **The arrows carry the relation kind.** A solid arrow is labelled `generic`,
-  `partitive` or `instantial`; **a dotted arrow has no ISO 25964 qualifier at
-  all**. A third of this hierarchy is in that state, so the dotted arrows show
-  the outstanding work rather than decorating the page — which is the most
-  useful thing a drawing of this particular graph can do.
+- **The arrows carry the relation kind.** A grey labelled arrow is `generic`,
+  `partitive` or `instantial`; **an amber arrow marked `?` has no ISO 25964
+  qualifier at all**. A third of this hierarchy is in that state, so those
+  arrows show the outstanding work rather than decorating the page — which is
+  the most useful thing a drawing of this particular graph can do. Four cues
+  carry that one distinction — colour, stroke weight, a text label and the
+  dotted style — because style alone at 1px is not legible on a laptop. A
+  generated legend heads the page, built from the same constants as the
+  diagrams. The `+N more` connectors keep the default style, so "not drawn" is
+  not mistaken for "unqualified".
 
 ### Changed
 

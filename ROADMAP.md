@@ -1527,6 +1527,57 @@ this the implementation boundary rather than a portability nuance: in a
 folderless model those 11 have no counterpart and the 28 lose their parent. See
 §P for where that cross-check came from.
 
+### Q6. The shape Doug is aiming at
+
+**Stated by Doug, 2026-09-17**, after iterating Excalidraw drawings and reading
+the generated map. Recorded because it was said and is written down nowhere
+else — the same treatment §E gives the fifty-three reader-suggested
+alternatives to "Cluster". **Not a commitment, and not my design.** Q1–Q5 are
+the before-picture this will be diffed against.
+
+His reading of the current top concepts: *"they're mostly NOT top Concepts, but
+focused on Technology"* — which measures out. Five of the eight are technology
+of one sort or another:
+
+| current top concept | what it actually is |
+|---|---|
+| Claude AI | technology — one vendor's products |
+| Graph Database | technology |
+| PKM Python | technology — his own code |
+| PKM Swift | technology — his own code |
+| Tool | technology — the category itself |
+| Obsidian Notes | one specific tool |
+| Knowledge System Architecture | his own architecture |
+| Health Data | data |
+
+And **`Technology` is not a concept at all**, so the thing five of the eight are
+instances or parts of is the one term missing. `Capacities` does not exist
+either, checked here for the first time — §Q4 tested the other nine names.
+
+The tier he describes separates three kinds of thing that the graph currently
+mixes:
+
+| kind | terms |
+|---|---|
+| **General** | Knowledge Management, PKM System, Technology |
+| **His implementation** | Knowledge System Architecture, PKM Apps, PKM Services, PKM Diabetes |
+| **Tool instances** | Obsidian Notes, Capacities |
+
+*"There's so much intermingling under Obsidian Notes that should be separated"*
+— §Q3 is that intermingling measured: 56 concepts sit under both
+`KnowledgeSystemArchitecture` and `ObsidianNotes`, which is 61% of the one and
+51% of the other. *"And then there's all the stuff about my PKM Apps, PKM
+Services, and PKM Diabetes that's not generic"* — the general/specific split
+§Q4 priced at nine new mints.
+
+Two things this shape implies that are worth noticing early. **Capacities as a
+second tool instance is what makes the tier testable**: a tier that only ever
+holds Obsidian cannot be shown to separate the tool from the practice, which is
+why §P's cross-check found what it found. And **`instantial` is the relation
+this tier needs** — Obsidian and Capacities are named individuals under a class,
+not narrower classes of it — which is the qualifier §Q1 found asserted exactly
+zero times.
+
 ## R. 0.1.11 — the hierarchy drawn
 
 **Shipped.** Presentation only: no triple moved, and the bulk Turtle plus all
@@ -1551,10 +1602,20 @@ stay hand-made and the map is derived on every build.
 
 ### R2. The dotted arrows are the point
 
-A solid arrow carries its ISO 25964 word — `generic`, `partitive`,
-`instantial`. **A dotted arrow has no qualifier at all.** §Q1 measured that as
-77 of 236 links, and the map is where that third stops being a number: the
-`Claude AI` chunk, for instance, is entirely dotted.
+A grey labelled arrow carries its ISO 25964 word — `generic`, `partitive`,
+`instantial`. **An amber arrow marked `?` has no qualifier at all.** §Q1
+measured that as 77 of 236 links, and the map is where that third stops being a
+number: the `Claude AI` chunk, for instance, is entirely unqualified, and so is
+`PKM Python` at 10 of 10, while `Tool` is 12 of 13 qualified.
+
+**Four cues for that one distinction, and the first attempt shipped with one.**
+Dotted versus solid at 1px was unreadable on a 13" laptop — Doug found it
+immediately. Colour carries the distinction now, stroke weight and a `?` label
+back it up so it survives a colourblind reader or greyscale, and the dotted
+style stays because it reads as weaker and costs nothing. The `+N more`
+connectors keep the plain default style, so "not drawn" cannot be mistaken for
+"unqualified". A generated legend heads the page, built from the same constants
+as the diagrams so it cannot drift from them.
 
 `instantial` appears on no arrow anywhere, because it is asserted nowhere — §Q1
 again, and the thirteen named plugins under `ObsidianPlugin` are the clearest

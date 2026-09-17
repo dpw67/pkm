@@ -957,6 +957,38 @@ keeps its meaning.
   `z/pkmv_tag.ttl` and never published. See §P for where the four came from.
   Mint `Collection` with them or the set is half-done; §E says why `Collection`
   waits for `Cluster`.
+- **The interface kinds PKM Services exposes.** None of `API`, `REST`,
+  `GraphQL`, `Apollo`, `MCP`, `Server`, `Protocol`, `Endpoint` or `Command`
+  exists, while `FastAPI`, `Hummingbird`, `Cypher` and `Script` all do — **the
+  implementations are named and the kinds they implement are not**, which is
+  the same shape of gap §P found from Capacities and §Q4 found in the general
+  tier. `MCP` survives nowhere except inside the Obsidian plugin label `Local
+  REST API with MCP`, so the service layer's MCP tools have no term and neither
+  do its REST endpoints. Raised 2026-09-17, when Doug added GraphQL to PKM
+  Services beside its REST APIs, MCP tools, Python scripts and commands; see
+  §Q6 for where PKM Services sits in the implementation tier.
+
+  **Three literals already name FastAPI as though it were the category**, and
+  GraphQL narrows or falsifies all three: `pkmv:PKMPythonAPI`'s definition
+  ("Python FastAPI routes providing an API for PKM services.") and its scope
+  note ("Includes FastAPI routes for Python services, classes, and
+  functions."), plus `pkmv:PKMPythonServices`'s scope note ("Includes FastAPI
+  routes, services, classes, functions, scripts, commands, and agents."). Prose
+  only, so **patch** — separable from the mints and shippable before them. This
+  is the drift `make review` is built to surface, and the sheet is stale.
+
+  `FastAPI → pkmv:PKMPythonAPI` is also one of §Q1's bare 77, and it is an
+  `instantial` case by ISO 25964's own definition — a named individual under
+  the class it implements. That is the qualifier asserted **zero** times
+  anywhere, so this tier and §Q1's missing third are one piece of work.
+
+  **All of it is minor.** Minting the kinds is additive; adding them to the
+  `TechStack` collection is additive too — §E's "every membership change is
+  major" is about *dropping* a member, not adding one. So the interface tier can
+  land in a minor release without waiting for §D to force 0.2.0, the same
+  conclusion §Q1 reached for the bare links. (§E also notes `TechStack` is a
+  hand-copy of the `Tool` subtree missing six, which this would add to rather
+  than fix.)
 - **Any OWL-Time alignment** — see §J, and §J3 before writing a triple.
 
 ## L. 0.1.10 — the vocabulary you can actually read

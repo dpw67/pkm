@@ -1616,6 +1616,12 @@ zero times.
 plus all 241 per-term files were byte-identical to 0.1.10 until the version
 literal landed, which changed the three scheme triples and nothing else.
 
+`z/pkm-vocab.export-0.1.10.ttl` was archived correctly on the way in — byte-identical
+to both the pre-bump export and the `v0.1.10` tag, which is the release-time
+snapshot §N asks for and did not get for 0.1.8. The release sequence that
+produced it is now written down in [CONTRIBUTING](CONTRIBUTING.md#releasing),
+because it had existed only as scattered lessons here.
+
 The vocabulary had no diagram anywhere — not an SVG, not a PNG, not a line of
 Mermaid. 0.1.10 made it readable as text; nothing made it visible as a shape,
 which is the gap the 0.2.0 design work kept running into. There is now one

@@ -83,6 +83,54 @@ Two things worth knowing before you start:
 Maintainers run `make check`, `make validate`, and `make artifacts` before
 merging vocabulary source changes.
 
+## Releasing
+
+Maintainer steps, in this order. The order matters in two places and both have
+gone wrong before.
+
+1. **Archive the current export first**, to `z/pkm-vocab.export-<current>.ttl`.
+   The next step overwrites `vocab/src/pkm-vocab.export.ttl`, so an archive
+   taken afterwards is not the release it is named for. Take it at release time
+   rather than when the next cycle opens, or the file named for release N ends
+   up carrying edits from N+1 — see ROADMAP §N, which records that happening.
+2. **Decide the level before starting** — patch, minor or major per
+   [Versioning](CHANGELOG.md#versioning), which describes impact on a consumer
+   and not volume of work. Branch named for the version it targets.
+3. **Bump the scheme version in the SKOS Editor** — from the *real* project. The
+   editor accumulates projects, and 0.1.10's first export came from a
+   round-trip-test copy left over from an earlier experiment. It silently
+   reverted 33 prose literals and passed every check this repo has. ROADMAP §L6.
+4. **Export** over `vocab/src/pkm-vocab.export.ttl`.
+5. **Gate on `scripts/compare_exports.py old.ttl new.ttl`** before building
+   anything. It compares triple sets, because serialization order differs
+   between exports and `diff` overstates the change. Accept only if:
+   - **zero `definition`, `scopeNote` or `note` differences**, unless this
+     release is about prose
+   - no URIs minted or lost, broader pairs `identical=True`, ISO 25964 count
+     unchanged, collection membership unchanged
+   - only the properties the release intends to move
+
+   A prose line you did not intend means the wrong project was exported. Stop
+   there; do not build.
+6. **`make build`**, then read the Turtle diff and confirm it is only what the
+   release intends. The build prints its own prose delta against `HEAD`
+   (`scripts/pkm_vocab/guard.py`), so step 5 and this one are independent
+   checks of the same thing on purpose.
+7. **`make hub`** — carries the new version into the Obsidian vault.
+8. **`make check`, `make validate`, `make site`.**
+9. **Merge with `--no-ff`**, message `Publish <version>: <headline>` plus a
+   summary in the body; **annotated** tag `v<version> — <headline>`; push
+   `main`, the tag, and the branch.
+10. **Watch the Pages build rather than trusting the push** — pushing does not
+    reliably queue one. `gh api repos/dpw67/pkm/pages/builds/latest` until
+    `built`, then check the live URLs. Everything before this step tests a local
+    build.
+11. **Draft the GitHub release** with `--draft` and publish it by hand. Notes
+    must be **unwrapped**: this repo's Markdown is hard-wrapped, and GitHub
+    renders a single newline as `<br>`.
+12. **Announcements discussion**, written and posted by hand from an unwrapped
+    draft in `z/drafts/`.
+
 ## Standards to keep in mind
 
 This project is built on standards. Changes should be consistent with this

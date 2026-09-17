@@ -4720,14 +4720,14 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-16"^^xsd:date ;
+    dcterms:modified "2026-09-17"^^xsd:date ;
     dcterms:publisher pkma:Doug-Warren ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI <https://w3id.org/pkm/0.1.10/vocab> ;
-    owl:versionInfo "0.1.10" ;
+    owl:versionIRI <https://w3id.org/pkm/0.1.11/vocab> ;
+    owl:versionInfo "0.1.11" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,

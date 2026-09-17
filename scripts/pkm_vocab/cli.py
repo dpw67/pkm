@@ -112,6 +112,7 @@ def _render_markdown(report: Report) -> str:
 
 def _build(args) -> int:
     """Validate, transform, then write every published artifact."""
+    from .diagram import render_map
     from .guard import report_prose_delta
     from .pages import write_pages
     from .render import (BROWSE_DIR, render_agents, render_all_terms,
@@ -161,6 +162,7 @@ def _build(args) -> int:
         (browse / "hierarchy.md", render_hierarchy(vocab, published)),
         (browse / "collections.md", render_collections(vocab, published)),
         (browse / "all.md", render_all_terms(vocab, published)),
+        (browse / "map.md", render_map(vocab, published)),
         (root / "resources" / "index.md", render_resources(vocab, published)),
         (root / "agents" / "index.md", render_agents(vocab, published)),
     ]

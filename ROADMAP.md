@@ -39,6 +39,7 @@ not SemVer position names** — by position `0.2.0` is a minor bump — so read 
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
 | 22 | A second PKM tool read the vocabulary; four primitives missing, four parents wrong | measured — §P |
 | 23 | The hierarchy before 0.2.0 restructures it — 33% of links undifferentiated | measured — §Q |
+| 24 | 0.1.11 — the hierarchy drawn, one chunk per top concept | done — §R |
 
 ### Where 0.1.9 left the graph
 
@@ -956,6 +957,38 @@ keeps its meaning.
   `z/pkmv_tag.ttl` and never published. See §P for where the four came from.
   Mint `Collection` with them or the set is half-done; §E says why `Collection`
   waits for `Cluster`.
+- **The interface kinds PKM Services exposes.** None of `API`, `REST`,
+  `GraphQL`, `Apollo`, `MCP`, `Server`, `Protocol`, `Endpoint` or `Command`
+  exists, while `FastAPI`, `Hummingbird`, `Cypher` and `Script` all do — **the
+  implementations are named and the kinds they implement are not**, which is
+  the same shape of gap §P found from Capacities and §Q4 found in the general
+  tier. `MCP` survives nowhere except inside the Obsidian plugin label `Local
+  REST API with MCP`, so the service layer's MCP tools have no term and neither
+  do its REST endpoints. Raised 2026-09-17, when Doug added GraphQL to PKM
+  Services beside its REST APIs, MCP tools, Python scripts and commands; see
+  §Q6 for where PKM Services sits in the implementation tier.
+
+  **Three literals already name FastAPI as though it were the category**, and
+  GraphQL narrows or falsifies all three: `pkmv:PKMPythonAPI`'s definition
+  ("Python FastAPI routes providing an API for PKM services.") and its scope
+  note ("Includes FastAPI routes for Python services, classes, and
+  functions."), plus `pkmv:PKMPythonServices`'s scope note ("Includes FastAPI
+  routes, services, classes, functions, scripts, commands, and agents."). Prose
+  only, so **patch** — separable from the mints and shippable before them. This
+  is the drift `make review` is built to surface, and the sheet is stale.
+
+  `FastAPI → pkmv:PKMPythonAPI` is also one of §Q1's bare 77, and it is an
+  `instantial` case by ISO 25964's own definition — a named individual under
+  the class it implements. That is the qualifier asserted **zero** times
+  anywhere, so this tier and §Q1's missing third are one piece of work.
+
+  **All of it is minor.** Minting the kinds is additive; adding them to the
+  `TechStack` collection is additive too — §E's "every membership change is
+  major" is about *dropping* a member, not adding one. So the interface tier can
+  land in a minor release without waiting for §D to force 0.2.0, the same
+  conclusion §Q1 reached for the bare links. (§E also notes `TechStack` is a
+  hand-copy of the `Tool` subtree missing six, which this would add to rather
+  than fix.)
 - **Any OWL-Time alignment** — see §J, and §J3 before writing a triple.
 
 ## L. 0.1.10 — the vocabulary you can actually read
@@ -1525,6 +1558,120 @@ Capacities has **no folders and no files, only objects**, which is what makes
 this the implementation boundary rather than a portability nuance: in a
 folderless model those 11 have no counterpart and the 28 lose their parent. See
 §P for where that cross-check came from.
+
+### Q6. The shape Doug is aiming at
+
+**Stated by Doug, 2026-09-17**, after iterating Excalidraw drawings and reading
+the generated map. Recorded because it was said and is written down nowhere
+else — the same treatment §E gives the fifty-three reader-suggested
+alternatives to "Cluster". **Not a commitment, and not my design.** Q1–Q5 are
+the before-picture this will be diffed against.
+
+His reading of the current top concepts: *"they're mostly NOT top Concepts, but
+focused on Technology"* — which measures out. Five of the eight are technology
+of one sort or another:
+
+| current top concept | what it actually is |
+|---|---|
+| Claude AI | technology — one vendor's products |
+| Graph Database | technology |
+| PKM Python | technology — his own code |
+| PKM Swift | technology — his own code |
+| Tool | technology — the category itself |
+| Obsidian Notes | one specific tool |
+| Knowledge System Architecture | his own architecture |
+| Health Data | data |
+
+And **`Technology` is not a concept at all**, so the thing five of the eight are
+instances or parts of is the one term missing. `Capacities` does not exist
+either, checked here for the first time — §Q4 tested the other nine names.
+
+The tier he describes separates three kinds of thing that the graph currently
+mixes:
+
+| kind | terms |
+|---|---|
+| **General** | Knowledge Management, PKM System, Technology |
+| **His implementation** | Knowledge System Architecture, PKM Apps, PKM Services, PKM Diabetes |
+| **Tool instances** | Obsidian Notes, Capacities |
+
+*"There's so much intermingling under Obsidian Notes that should be separated"*
+— §Q3 is that intermingling measured: 56 concepts sit under both
+`KnowledgeSystemArchitecture` and `ObsidianNotes`, which is 61% of the one and
+51% of the other. *"And then there's all the stuff about my PKM Apps, PKM
+Services, and PKM Diabetes that's not generic"* — the general/specific split
+§Q4 priced at nine new mints.
+
+Two things this shape implies that are worth noticing early. **Capacities as a
+second tool instance is what makes the tier testable**: a tier that only ever
+holds Obsidian cannot be shown to separate the tool from the practice, which is
+why §P's cross-check found what it found. And **`instantial` is the relation
+this tier needs** — Obsidian and Capacities are named individuals under a class,
+not narrower classes of it — which is the qualifier §Q1 found asserted exactly
+zero times.
+
+## R. 0.1.11 — the hierarchy drawn
+
+**Released 2026-09-17.** Presentation only: no triple moved, and the bulk Turtle
+plus all 241 per-term files were byte-identical to 0.1.10 until the version
+literal landed, which changed the three scheme triples and nothing else.
+
+The vocabulary had no diagram anywhere — not an SVG, not a PNG, not a line of
+Mermaid. 0.1.10 made it readable as text; nothing made it visible as a shape,
+which is the gap the 0.2.0 design work kept running into. There is now one
+diagram per top concept at `/vocab/browse/map/`.
+
+### R1. Generated, because drawings of this graph drift
+
+Every hand-maintained second representation here has drifted from the graph it
+describes: §E1's five of six subtree-mirroring collections, the Obsidian hub's
+version and counts before `make hub`, and `reports/vocab-review.md` whenever it
+is not re-run.
+
+The distinction that matters, and the reason the Excalidraw work is unaffected:
+**a drawing of a target cannot drift, because it proposes a graph rather than
+describing one.** A published drawing of what exists can. So the design drawings
+stay hand-made and the map is derived on every build.
+
+### R2. The dotted arrows are the point
+
+A grey labelled arrow carries its ISO 25964 word — `generic`, `partitive`,
+`instantial`. **An amber arrow marked `?` has no qualifier at all.** §Q1
+measured that as 77 of 236 links, and the map is where that third stops being a
+number: the `Claude AI` chunk, for instance, is entirely unqualified, and so is
+`PKM Python` at 10 of 10, while `Tool` is 12 of 13 qualified.
+
+**Four cues for that one distinction, and the first attempt shipped with one.**
+Dotted versus solid at 1px was unreadable on a 13" laptop — Doug found it
+immediately. Colour carries the distinction now, stroke weight and a `?` label
+back it up so it survives a colourblind reader or greyscale, and the dotted
+style stays because it reads as weaker and costs nothing. The `+N more`
+connectors keep the plain default style, so "not drawn" cannot be mistaken for
+"unqualified". A generated legend heads the page, built from the same constants
+as the diagrams so it cannot drift from them.
+
+`instantial` appears on no arrow anywhere, because it is asserted nowhere — §Q1
+again, and the thirteen named plugins under `ObsidianPlugin` are the clearest
+place it is missing.
+
+### R3. Three targets, one format
+
+Mermaid renders natively in the GitHub view of the same Markdown and in
+Obsidian. Only the Pages build needs help, and rouge has no mermaid lexer, so a
+fence arrives as `<pre><code class="language-mermaid">` with the source intact
+and no inserted spans — a few lines of vanilla JS read `textContent` and hand it
+over. The same three-target test that chose `<details>` over a script in §L2.
+
+Two things worth recording for whoever touches it next. The class sits on the
+`<code>`, **not** on a wrapper, so a `.language-mermaid code` selector matches
+nothing — that was a real bug, caught by diffing the built HTML against the
+generated source rather than by reading it. And the bundle is **3.3 MB**, so it
+loads only where `mermaid: true` is set; if it fails to load the fence is left
+alone and the source stays readable.
+
+Depth and fan-out were tuned by measuring: depth 2 draws 100 concepts with the
+largest chunk at 35 nodes, depth 3 draws 132 with the largest at 57, depth 4
+reaches 96 in one diagram and defeats the purpose. Depth 3, fan-out 12.
 
 ## Backlog
 

@@ -19,7 +19,7 @@
 #   make vault      mirror the generated Obsidian artifacts into that vault
 #   make gems       install the gems GitHub Pages builds this site with
 #   make site       build the site and check the term URIs resolve
-#   make serve      preview the site locally
+#   make serve      preview the site locally (PORT=4001 if 4000 is taken)
 #   make clean      remove build output
 
 # schema/pkm.yaml still declares the retired Note/Tag/Source placeholders, so
@@ -66,6 +66,11 @@ export BUNDLE_PATH = vendor/bundle
 # else also picks: `make serve PORT=4001`. Without this the target fails with a
 # bind error on any machine already running something there.
 PORT ?= 4000
+
+# Jekyll's `--livereload` binds this as well as PORT, and it is invisible until
+# it collides: a second `make serve` fails even on a different PORT while an
+# earlier one is up. Overridable for the same reason PORT is.
+LIVERELOAD_PORT ?= 35729
 
 # The SKOS Editor checkout, for `validate-skos`. The vocabulary is authored in
 # that editor (see CONTRIBUTING.md), and it ships its own validator -- so this
@@ -276,14 +281,25 @@ site:
 #
 # The one thing worth clicking is a term URI, /pkm/vocab/DayMealPlan/, since that
 # path exists only because of `permalink`.
+#
+# The ports are checked before anything is printed, because printing them first
+# is how this went wrong: 4000 is Jekyll's default and therefore contended, and
+# on this machine an Apollo Router `rover dev` session holds it. Jekyll could not
+# bind, the browser reached the router instead, and the router's CSRF protection
+# answered "Access denied" -- under a list of five URLs this target had just
+# promised. A wrong URL list is worse than none, because it sends the reader to
+# another program's error page and hides the real failure below the invitation.
 serve:
+	@if command -v lsof >/dev/null 2>&1; then 	  for spec in "$(PORT):PORT" "$(LIVERELOAD_PORT):LIVERELOAD_PORT"; do 	    port=$${spec%%:*}; var=$${spec##*:}; 	    held=$$(lsof -nP -iTCP:$$port -sTCP:LISTEN 2>/dev/null | awk 'NR==2 {print $$1" (pid "$$2")"}'); 	    if [ -n "$$held" ]; then 	      echo "  port $$port is already held by $$held"; 	      echo "  retry with a free one:  make serve $$var=$$(($$port+1))"; 	      exit 1; 	    fi; 	  done; 	fi
 	@echo "  vocabulary   http://127.0.0.1:$(PORT)/pkm/vocab/"
+	@echo "  map          http://127.0.0.1:$(PORT)/pkm/vocab/browse/map/"
 	@echo "  hierarchy    http://127.0.0.1:$(PORT)/pkm/vocab/browse/hierarchy/"
 	@echo "  collections  http://127.0.0.1:$(PORT)/pkm/vocab/browse/collections/"
 	@echo "  all terms    http://127.0.0.1:$(PORT)/pkm/vocab/browse/all/"
 	@echo "  a term       http://127.0.0.1:$(PORT)/pkm/vocab/DayMealPlan/"
 	@echo ""
-	$(BUNDLE) exec jekyll serve --livereload --port $(PORT)
+	$(BUNDLE) exec jekyll serve --livereload --port $(PORT) \
+	  --livereload-port $(LIVERELOAD_PORT)
 
 clean:
 	rm -rf _site .jekyll-cache .sass-cache

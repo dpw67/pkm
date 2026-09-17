@@ -652,9 +652,28 @@ triple, and a query for the generic relation comes back short. One caveat — th
 additive ruling holds only while the parent stays. If qualifying a link reveals
 the parent itself is wrong, that is a reparent, and major.
 
-While the vocabulary is at `0.x`, patch and minor changes both advance the third
-position — `0.1.3` → `0.1.4` — and a major change advances the second, `0.1.x` →
-`0.2.0`. After `1.0.0` the three levels map onto the three positions directly.
+**These are impact levels, not position names.** Semantic Versioning formats a
+version as `MAJOR.MINOR.PATCH`, so by *position* `0.2.0` is a minor bump and a
+major bump would be `1.0.0`. The words above mean something else: they describe
+what a release does to a consumer. Below `1.0.0` the levels are shifted down one
+position, which is what SemVer itself provides for — *"Major version zero
+(0.y.z) is for initial development. Anything MAY change at any time"*
+([Semantic Versioning 2.0.0](https://semver.org/) item 4, CC BY 3.0), and item 5
+adds that `1.0.0` is what defines the public API. There is nothing to be
+compatible with yet, so a breaking change is not entitled to the first position.
+
+What each level does to the number:
+
+| level | at `0.x`, today | after `1.0.0` |
+|---|---|---|
+| **patch** | `0.1.10` → `0.1.11` | `1.4.2` → `1.4.3` |
+| **minor** | `0.1.10` → `0.1.11` | `1.4.2` → `1.5.0` |
+| **major** | `0.1.10` → `0.2.0` | `1.4.2` → `2.0.0` |
+
+At `0.x` patch and minor are **indistinguishable in the number**, which is why
+the level belongs in the entry rather than being inferred from the version: a
+reader cannot tell from `0.1.11` alone whether anything was added. After `1.0.0`
+the three levels map onto the three positions directly and the ambiguity goes.
 
 `main` is the published branch: **merging to `main` publishes to w3id.org/pkm
 immediately, with no staging step.** Work happens on a branch named for the

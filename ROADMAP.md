@@ -8,7 +8,9 @@ Section letters are stable, so a diff shows state changes rather than a reflow.
 
 Version levels come from [Versioning](CHANGELOG.md#versioning) and describe
 impact on consumers, not volume of work. At `0.x` patch and minor both advance
-the third position; only major advances the second.
+the third position; only major advances the second. **They are impact levels,
+not SemVer position names** — by position `0.2.0` is a minor bump — so read a
+"major" below in terms of what it does to a consumer, not which digit moves.
 
 ## Status
 

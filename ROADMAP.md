@@ -35,6 +35,7 @@ the third position; only major advances the second.
 | 19 | Upstream validation as a second opinion | done — §M |
 | 20 | SKOS Editor fixed #77/#78/#81 — 74 literals repaired at source | confirmed — §N |
 | 21 | Turtle round-trips losslessly; who owns the vocabulary is open | recorded — §O |
+| 22 | A second PKM tool read the vocabulary; four primitives missing, four parents wrong | measured — §P |
 
 ### Where 0.1.9 left the graph
 
@@ -284,7 +285,8 @@ Measured, and worth taking only if 0.2.0 is already happening for §D.
 - **Missing concepts:** no `Collection` and no `Vocabulary`, while 14
   `*Collection` collections exist. `Cluster` exists, defined "A group of related
   notes." Defining `Collection` is what forces `Cluster` to resolve — do them
-  together. Additive, so minor on its own.
+  together. Additive, so minor on its own. **A reader using a different tool
+  independently found the same gap and four more** — see §P.
 - **What readers suggested instead of "Cluster"** (Circle, 2026-09-11, on the
   naming post). Worth recording because the post asked the question and these
   are the answers: **Bentō**, **Dossier**, **Kit**, **Package** and "Doug Day"
@@ -944,6 +946,13 @@ keeps its meaning.
   `pkmv:DayCluster`, `pkmv:MonthCluster`, `pkmv:QuarterCluster` and
   `pkmv:YearCluster` all assert it to their period. Week is the only gap, and it
   looks like an omission rather than a decision.
+- **`Tag`, `Object`, `Property`, `Relationship`** — none exists, and all four
+  are primitives of a PKM tool that is not Obsidian. `Tag` is the sharpest: it
+  is fundamental to Obsidian *and* to Capacities, this project models tags
+  nowhere, and the only trace of one is `pkmv:tag` — lowercase, abandoned in
+  `z/pkmv_tag.ttl` and never published. See §P for where the four came from.
+  Mint `Collection` with them or the set is half-done; §E says why `Collection`
+  waits for `Cluster`.
 - **Any OWL-Time alignment** — see §J, and §J3 before writing a triple.
 
 ## L. 0.1.10 — the vocabulary you can actually read
@@ -1304,6 +1313,89 @@ merge.
 The honest default until there is something better: **one tool owns authoring
 and the rest read.** A vocabulary with 241 URIs and no merge story is not the
 place to discover that two editors disagree.
+
+## P. How much of this is Obsidian's vocabulary, not PKM's
+
+**Measured 2026-09-17.** Chris, an LYT community manager, highlighted this
+project in the community newsletter and asked the readership "Do you have a PKM
+vocabulary?" — while using **Capacities** rather than Obsidian. Recorded here
+for the same reason §E records the fifty-three suggested alternatives to
+"Cluster": a reader outside this vault tried to read the vocabulary, and what
+they could not find is data.
+
+Capacities models objects, templates, collections, tags, properties and
+relationships. Checked against the published graph:
+
+| their primitive | here |
+|---|---|
+| Template | present — but the generic one is `pkmv:TemplateCopy`, the mislabeled URI §D has to rename |
+| Object | **no concept** |
+| Collection | **no concept**, while 18 `skos:Collection` instances exist — §E already had this one |
+| Tag | **no concept**; only `pkmv:tag`, lowercase, abandoned in `z/` and never published |
+| Property | **no concept** |
+| Relationship | **no concept** |
+
+Banked in §K, because all four are additive.
+
+### P1. "Collection" already means two things
+
+Worth stating outright, since the newsletter framed this as the power of names.
+Here a collection is a `skos:Collection`: a grouping that carries **no**
+hierarchical meaning, which is the first thing every collection page says. In
+Capacities a collection does organisational work. Same word, opposite claim
+about whether membership implies structure — and §E1 has already measured that
+six of the eighteen here are redundant mirrors of a subtree anyway.
+
+This is not a rename. It is a reason the `Collection` definition §E is waiting
+on has to say what a collection is *not*.
+
+### P2. Four parents say a note type is a kind of folder
+
+Found while measuring the above. Every concept whose parent is a folder or the
+vault, by relation:
+
+| relation | count | reading |
+|---|---|---|
+| `broaderPartitive` | 20 | "is part of" — fine, and the whole/part reading §E calls pervasive |
+| plain `skos:broader` | 8 | unqualified |
+| **`broaderGeneric`** | **4** | **"is a kind of" — wrong** |
+
+The four are `pkmv:Action`, `pkmv:Area`, `pkmv:Interest` and `pkmv:Project`, all
+`broaderGeneric pkmv:EffortsFolder`. That asserts a project is a *kind of*
+folder. The twenty partitive ones next to them assert the defensible thing —
+that a note of this type *lives in* that folder — so the fix is the qualifier,
+not the parent, and the four are the odd ones out rather than the pattern.
+
+`pkmv:Note broader pkmv:ObsidianNotes` is the other direction of the same
+confusion: the general term sits under the tool-specific one, so the vocabulary
+says a note is a kind of Obsidian note. It is one of the eight unqualified
+links above.
+
+Not patch. Both leave `skos:broader` intact, so a query on `skos:broader`
+returns the same rows — but a query on `isothes:broaderGeneric` returns fewer,
+and the versioning table calls that major. Do them with §D.
+
+### P3. The vocabulary is more portable than its shape suggests
+
+`pkmv:ObsidianNotes` is the largest of the eight top-concept subtrees: **109
+concepts including itself**. That number invites the conclusion that half the
+vocabulary is tool-specific, and it is wrong. The eight subtrees sum to 284
+against 223 concepts, so they overlap heavily through the polyhierarchy:
+
+- **50 concepts (22%)** are reachable *only* from `pkmv:ObsidianNotes`
+- **59 of the 109** are also under another top concept
+- **0** concepts sit under no top concept at all
+
+And the exclusive 50 are not all Obsidian either. Genuinely tool-specific:
+`Dataview`, `Templater`, `Excalidraw`, `QuickAdd`, `Bases`, `Canvas`, `Publish`,
+`Sync`, `Workspaces`, `Vault`, `ObsidianPlugin`, `ObsidianSettings`, the six ACE
+folders. Tool-neutral but merely *filed* there: `Day`, `Week`, `Month`,
+`Quarter`, `Year`, `Decade`, `Time`, `Life`, `Note`, `Idea`, `Draft`, `Area`,
+`Project`, `Interest`, `Focus`, `Health`, `Finance`, `Map`, `Calendar`.
+
+So the honest answer to "do you have a PKM vocabulary?" is yes, with about a
+fifth of it describing one tool — and the awkwardness a second tool's user hits
+is §P2, not the size of the Obsidian subtree.
 
 ## Backlog
 

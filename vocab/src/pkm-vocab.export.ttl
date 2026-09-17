@@ -21,10 +21,10 @@
     dcterms:contributor agents:Claude-AI, agents:Jessica-Talisman, agents:SKOS-Editor ;
     dcterms:created "2026-08-15"^^xsd:date ;
     dcterms:issued "2026-08-23"^^xsd:date ;
-    dcterms:modified "2026-09-16"^^xsd:date ;
+    dcterms:modified "2026-09-17"^^xsd:date ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.1.10" ;
+    owl:versionInfo "0.1.11" ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
     dcterms:language "en" ;

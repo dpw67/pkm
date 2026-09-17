@@ -1612,8 +1612,9 @@ zero times.
 
 ## R. 0.1.11 — the hierarchy drawn
 
-**Shipped.** Presentation only: no triple moved, and the bulk Turtle plus all
-241 per-term files are byte-identical to 0.1.10.
+**Released 2026-09-17.** Presentation only: no triple moved, and the bulk Turtle
+plus all 241 per-term files were byte-identical to 0.1.10 until the version
+literal landed, which changed the three scheme triples and nothing else.
 
 The vocabulary had no diagram anywhere — not an SVG, not a PNG, not a line of
 Mermaid. 0.1.10 made it readable as text; nothing made it visible as a shape,

@@ -1455,6 +1455,18 @@ those two rows are a decision already taken and not yet applied.
 reparenting work. Which qualifier each of the remaining links should take is the
 restructuring's call, not this section's.
 
+**Most of this does not need 0.2.0.** Qualifying a bare link is *additive*:
+every ISO 25964 link asserts both `skos:broader` and the sub-property, so a
+bare link that gains one keeps the `skos:broader` it already had and no query
+comes back shorter. By [Versioning](CHANGELOG.md#versioning) that is **minor**,
+and at `0.x` minor advances the third position — so **all 77 could ship as
+0.1.11**, before §D forces 0.2.0 at all.
+
+The exceptions are the four in §P2, which *change* a qualifier rather than add
+one and are therefore major, and any link where qualifying turns out to expose
+the wrong parent — that is a reparent, and major. A versioning fact about the
+links as measured, not a proposal about which qualifier any of them takes.
+
 ### Q2. 68 concepts sit under more than one top concept
 
 | top concept | subtree | exclusive | shared |

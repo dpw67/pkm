@@ -629,11 +629,28 @@ Version levels describe impact on consumers, not volume of work.
 | Level | Means | Examples |
 |---|---|---|
 | **Patch** | Editorial only; nothing a consumer queries changes meaning | Typo fix, added or reworded scope note, change note, corrected preferred label |
-| **Minor** | Additive; every existing URI keeps its meaning | New concepts or collections, new relations, new cross-vocabulary mappings |
-| **Major** | An existing query can return different results | A concept split or merged, a term reparented, a term deprecated, a namespace change |
+| **Minor** | Additive; every existing URI keeps its meaning | New concepts or collections, new relations, an ISO 25964 qualifier added to a link that had only `skos:broader`, a new top concept, new cross-vocabulary mappings |
+| **Major** | An existing query can return different results | A concept split or merged, a term reparented, a relation qualifier changed or removed, a top concept demoted, a term deprecated, a namespace change |
 
 A concept split is always major, and its changelog entry has to say which URI
 kept which meaning.
+
+**The test is that nothing previously true becomes false.** Read literally, the
+Major column would swallow Minor: adding anything changes what a query returns,
+if only by returning one more row. It does not mean that. Major is for a
+statement the vocabulary *used* to make and no longer makes — or makes
+differently. Minor adds statements and retracts none.
+
+That is what separates the two relation cases, which are otherwise easy to
+confuse. **Adding** a qualifier is additive: every ISO 25964 link asserts *both*
+`skos:broader` and the sub-property — `transform.py` materializes the plain link
+because the ISO relations entail it without asserting it — so a bare link that
+gains `isothes:broaderPartitive` keeps the `skos:broader` it already had, and a
+consumer querying either property still gets every row it got before.
+**Changing** one is not: `broaderGeneric` → `broaderPartitive` retracts a
+triple, and a query for the generic relation comes back short. One caveat — the
+additive ruling holds only while the parent stays. If qualifying a link reveals
+the parent itself is wrong, that is a reparent, and major.
 
 While the vocabulary is at `0.x`, patch and minor changes both advance the third
 position — `0.1.3` → `0.1.4` — and a major change advances the second, `0.1.x` →

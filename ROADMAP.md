@@ -1645,7 +1645,14 @@ A grey labelled arrow carries its ISO 25964 word — `generic`, `partitive`,
 `instantial`. **An amber arrow marked `?` has no qualifier at all.** §Q1
 measured that as 77 of 236 links, and the map is where that third stops being a
 number: the `Claude AI` chunk, for instance, is entirely unqualified, and so is
-`PKM Python` at 10 of 10, while `Tool` is 12 of 13 qualified.
+`PKM Python` at 10 of 10, while all twelve of `Tool`'s are qualified.
+
+**Correction.** This section and the published v0.1.11 release notes first said
+"`Tool` is 12 of 13 qualified", which implies one unqualified link. `Tool`'s
+chunk has twelve hierarchy arrows and all twelve are grey; the thirteenth link
+statement is a `+N more` depth stub, which is a statement about what the diagram
+omits and not a relationship at all. Counting stub connectors as relations is
+exactly the mistake the stubs are styled differently to prevent.
 
 **Four cues for that one distinction, and the first attempt shipped with one.**
 Dotted versus solid at 1px was unreadable on a 13" laptop — Doug found it

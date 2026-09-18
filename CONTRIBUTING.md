@@ -132,9 +132,13 @@ gone wrong before.
     Publishing is at
     [github.com/dpw67/pkm/releases](https://github.com/dpw67/pkm/releases) — the
     draft is the top entry, badged `Draft`; open it, click the pencil, then
-    **Publish release**. Or `gh release edit v<version> --draft=false`. A draft
-    lives at a `releases/tag/untagged-<hash>` URL until published, which is why
-    it is not obvious where to look.
+    **Publish release**. Or `gh release edit v<version> --draft=false`.
+
+    **Navigate from `/releases`; do not pass the draft's own URL around.** A
+    draft lives at `releases/tag/untagged-<hash>`, which is why it is not
+    obvious where to look — and that URL **404s the moment the release is
+    published**, because the notes move to `releases/tag/v<version>`. Handing
+    someone the untagged link and then publishing gives them a dead link.
 
     **Check by content, not status code.** A draft's `releases/tag/v<version>`
     URL already returns 200 — with a bare page carrying only the title — so a

@@ -1686,6 +1686,97 @@ Depth and fan-out were tuned by measuring: depth 2 draws 100 concepts with the
 largest chunk at 35 nodes, depth 3 draws 132 with the largest at 57, depth 4
 reaches 96 in one diagram and defeats the purpose. Depth 3, fan-out 12.
 
+## S. What the map says about the top concepts
+
+**Measured 2026-09-18.** Doug read the generated map, searched the vocabulary
+for its own subject, and asked which terms to add first and what prose to
+adjust. Measurement and consequence only — **this proposes no final shape.** How
+many top concepts there are and how they relate is his to settle; §Q6 records
+his direction as explicitly not a commitment.
+
+### S1. The vocabulary never names its own subject
+
+**"Personal Knowledge Management" appears in 0 of 223 concepts** — not as a
+label, not as an altLabel, not in a single definition or scope note. Neither
+does "Knowledge Management". The namespace is `w3id.org/pkm`, the README opens
+on Personal Knowledge Management, the repository About says it, and the
+vocabulary is silent.
+
+Worth separating from a search complaint: `pkm` *does* match, 29 hits, verified
+by running the published widget's own ranking against the published index. It is
+the phrase that is absent, and the absence is in the graph rather than in the
+search.
+
+### S2. The spine already exists, and the folders took it
+
+| concept | narrower | its folder twin | narrower |
+|---|---:|---|---:|
+| `Knowledge` | **4** — Cluster, Concept, Source, Topic | `AtlasFolder` | **0** |
+| `Time` | **0** | `Calendar` | **7** — the six periods **and `Time` itself** |
+| `Action` | **0** | `EffortsFolder` | **4** — `Action` itself, Area, Interest, Project |
+
+Inverted per branch: under Knowledge the concept won and its folder is empty;
+under Time and Action the folder won and the concept is childless. So
+Knowledge / Time / Action is not a new idea to be introduced — it is a spine
+already present and out-ranked by three Obsidian folders.
+
+**The vocabulary already says so twice, in its own prose.** `AtlasFolder`'s
+scope note: *"Distinguishes notes for Knowledge (Atlas) from those about Time
+(Calendar) or Action (Efforts) in the Ideaverse ACE organization framework"* —
+the Knowledge/Time/Action reading of ACE, written down. And `Time`'s scope note:
+*"Treated as the anchor/parent for the Calendar hierarchy (Life > Decade > Year
+> Quarter > Month > Week > Day)."*
+
+**`Time` declares itself the parent of the period hierarchy, and the graph
+asserts the opposite** — `Calendar`, a folder, holds all six periods, and `Time`
+hangs beneath it with nothing. That is not a shape to be invented; it is a
+declared intent never implemented, and the single link most of this untangling
+turns on.
+
+### S3. Two Calendars, and a folder defined as a thing
+
+- **`Calendar` and `CalendarFolder` are two concepts for one folder, stacked.**
+  `CalendarFolder` ("The Calendar (Time) folder is the PKM knowledge space for
+  time-based notes") parents `Calendar` plus the six clusters; `Calendar` ("A
+  major space for time-based notes") parents the six periods plus `Time`. §E's
+  four-way `Day` question is this same knot from the other side.
+- **`EffortsFolder` is defined "A unit of directed work toward an outcome, such
+  as a project or initiative"** — the definition of an *Effort*, not of a
+  folder. Checked across every folder and space concept: it is the only one
+  whose definition describes a thing rather than a place. `AtlasFolder`'s
+  definition is the shape it should copy.
+
+### S4. A phantom the check cannot see
+
+`Action`'s scope note opens *"Narrower than an Effort, and alongside Area,
+Interest, or Project."* **`pkmv:Effort` does not exist** — §K records that
+already, with seven `Effort*` terms that do. So the note promises a concept the
+vocabulary has never had.
+
+`prose.py`'s phantom-citation rule exists to catch exactly this and cannot:
+`CAMEL_TOKEN` is `\b(?:[A-Z][a-z0-9]+){2,}\b`, **two or more** CamelCase
+segments, so `EffortCluster` matches and a one-word `Effort` never does. The
+rule catches phantoms only when they are spelled as compounds. Widening it is
+cheap; the risk is that every capitalised English word becomes a candidate, so
+it wants the lexicon check `prose.py` already carries.
+
+### S5. What can move now, and what cannot
+
+Using the rules already written down, not new ones:
+
+| | level | when |
+|---|---|---|
+| Mint absent terms; add `skos:hasTopConcept` for them | **minor** | now |
+| Fix definitions and scope notes | **patch** | now |
+| Reparent the six periods from `Calendar` to `Time` | **major** | 0.2.0 |
+| Move Action/Area/Interest/Project off `EffortsFolder` | **major** | 0.2.0 |
+| Demote the technology top concepts | **major** | 0.2.0 |
+| Resolve `Calendar` vs `CalendarFolder` | **major** | 0.2.0 |
+
+The first two rows are a release on their own, and they do not presume the final
+hierarchy — which is what makes the transformation incremental rather than one
+irreversible pass. `z/drafts/0.1.12-prep-worklist.md` is that worklist.
+
 ## Backlog
 
 Folding the `pages.py` and `notes.py` extraction into one place — both define

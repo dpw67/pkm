@@ -294,6 +294,18 @@ asserting hierarchy, and in [All terms](../all/) alphabetically.
 </details>
 
 <details markdown="1">
+<summary>Semantic Knowledge Management System — 4 narrower terms</summary>
+
+- [Semantic Knowledge Management System](../../SemanticKnowledgeManagementSystem/)
+  - [Ontology Pipeline](../../OntologyPipeline/)
+    - [Controlled Vocabulary](../../ControlledVocabulary/)
+    - [Metadata Standards](../../MetadataStandards/)
+      - [Dublin Core](../../DublinCore/)
+
+</details>
+
+- [Technology Stack](../../TechnologyStack/)
+<details markdown="1">
 <summary>Tool — 15 narrower terms</summary>
 
 - [Tool](../../Tool/)

@@ -531,6 +531,23 @@ pkmv:ClaudeDesktop a skos:Concept ;
     skos:scopeNote """- Available for macOS and Windows.
 - Includes Claude Chat and Claude Cowork."""@en .
 
+pkmv:ControlledVocabulary a skos:Concept ;
+    rdfs:label "Controlled Vocabulary"@en ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    skos:altLabel "Vocabulary"@en ;
+    skos:broader pkmv:OntologyPipeline ;
+    skos:changeNote "2026-09-19 — Parent “Ontology Pipeline” added (by Doug Warren)"@en,
+        "2026-09-19 — Renamed from “NewConcept” to “ControlledVocabulary”; Preferred label “Controlled Vocabulary” added; Alternative label “Vocabulary” added; Definition added; Scope note added; Parent “Semantic Knowledge Management System” removed (by Doug Warren)"@en,
+        "2026-09-19 — Term created under “Semantic Knowledge Management System” (by Doug Warren)"@en ;
+    skos:definition "A curated collection of concepts, labels, definitions, and relations with other concepts."@en ;
+    skos:editorialNote "In \"Domain-Driven Design\", Eric Evans calls this \"Ubiquitous Language\" when designing a domain model for software architecture that provides common knowledge between people (domain experts and developers) and systems (apps, services, and agents) about what objects know and do."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Controlled Vocabulary"@en ;
+    skos:scopeNote "Establishes shared understanding of what certain words and phrases mean in a specific context."@en .
+
 pkmv:Dataview a skos:Concept ;
     rdfs:label "Dataview"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
@@ -580,6 +597,20 @@ pkmv:DexcomData a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Dexcom Data"@en ;
     skos:scopeNote "- Includes data from Clarity website via the Dexcom API for glucose readings collected by sensor every 5 minutes."@en .
+
+pkmv:DublinCore a skos:Concept ;
+    rdfs:label "Dublin Core"@en ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    skos:broader pkmv:MetadataStandards ;
+    skos:changeNote "2026-09-19 — Renamed from “NewConcept” to “DublinCore”; Preferred label “Dublin Core” added; Definition added; Scope note added (by Doug Warren)"@en,
+        "2026-09-19 — Term created under “Metadata Standards” (by Doug Warren)"@en ;
+    skos:definition "A general-purpose metadata standard originally developed by librarians to capture metadata for publishing documentation on the web."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Dublin Core"@en ;
+    skos:scopeNote "- Developed by the Dublin Core Metadata Initiative (DCMI), it includes core elements such as identifier, title, description, creator, date (created, modified, issues), subject, source, contributor, language, publisher, type, format, rights, and relation to describes resources of any kind across domains."@en .
 
 pkmv:EffortIndex a skos:Concept ;
     rdfs:label "Effort Index"@en ;
@@ -1010,6 +1041,22 @@ pkmv:Sync a skos:Concept ;
     skos:prefLabel "Sync"@en ;
     skos:scopeNote "- Supports sharing of Obsidian notes across multiple devices, such as macOS, iOS, iPadOS, and Windows."@en .
 
+pkmv:TechnologyStack a skos:Concept ;
+    rdfs:label "Technology Stack"@en ;
+    dcterms:created "2026-09-18"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    skos:changeNote "2026-09-18 — Renamed from “NewConcept” to “TechnologyStack”; Preferred label “Technology Stack” added; Definition added; Scope note added (by Doug Warren)"@en,
+        "2026-09-18 — Term created (by Doug Warren)"@en,
+        "Added definition as well as scope and editorial notes to new top concept for technology terms."@en ;
+    skos:definition "A tool, platform, language, service, or protocol used to build or run a system, as distinct from the concepts the system organizes."@en ;
+    skos:editorialNote "Currently, technology and tools are intermingled with concepts, but they will be separated into a separate Systems scheme with the 0.2.0 split from Subjects. Maybe \"Technology Foundation\" would be a better label because \"stack\" implies vertical arrangement — consider for version 0.2.0."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:prefLabel "Technology Stack"@en ;
+    skos:scopeNote "Technology-specific terms belong here rather than under the concepts they implement, so the generic vocabulary stays readable by someone using different tools."@en ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> .
+
 pkmv:Templater a skos:Concept ;
     rdfs:label "Templater"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
@@ -1439,16 +1486,19 @@ pkmv:KnowledgeSystemArchitecture a skos:Concept ;
     dcterms:created "2026-08-29"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-15"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-18"^^xsd:date ;
     skos:altLabel "KSA"@en ;
     skos:changeNote "2026-08-29 — Renamed from “NewConcept” to “KnowledgeSystemArchitecture”; Preferred label “Knowledge System Architecture” added; Alternative label “KSA” added; Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Term created (by Doug Warren)"@en,
-        "Added definition and scope notes for KSA."@en ;
+        "2026-09-18 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes for KSA."@en,
+        "Removed leading bullet from scopeNote since there was no list."@en ;
     skos:definition "A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, and diabetes websites with Swift and Python APIs, services, scripts, commands, and agents."@en ;
+    skos:editorialNote "I'm currently untangling specific technology from general methodology."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:KnowledgeSystem ;
     skos:prefLabel "Knowledge System Architecture"@en ;
-    skos:scopeNote "- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day."@en ;
+    skos:scopeNote "The core blueprint for my specific, integrated implementation of PKM vocabulary, taxonomy, metadata standards, ontology, knowledge graph, schemas, examples, development artifacts, and tools associated with components in the ontology pipeline. Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day."@en ;
     skos:topConceptOf <https://w3id.org/pkm/vocab> .
 
 pkmv:Life a skos:Concept ;
@@ -1532,6 +1582,33 @@ pkmv:Menu a skos:Concept ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Menu"@en ;
     skos:scopeNote "Grouping of dishes or recipes, e.g. for an event or a restaurant."@en .
+
+pkmv:MetadataStandards a skos:Concept ;
+    rdfs:label "Metadata Standards"@en ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    skos:altLabel "Metadata Schema"@en ;
+    skos:broader pkmv:OntologyPipeline ;
+    skos:changeNote "2026-09-19 — Renamed from “NewConcept” to “MetadataStandards”; Preferred label “Metadata Standards” added; Alternative label “Metadata Schema” added; Definition added; Scope note added (by Doug Warren)"@en,
+        "2026-09-19 — Term created under “Ontology Pipeline” (by Doug Warren)"@en,
+        "Added concept label, definition, and scope note."@en ;
+    skos:definition "Characteristics or attributes of data are defined as properties and/or operations (methods or functions) for a common understanding of detail information with common names, data types, and allowed values, as well as relations to other objects."@en ;
+    skos:editorialNote """The PKM namespace uses standard vocabularies and metadata from multiple standards:
+- Dublin Core metadata (`dcterms`)
+- SKOS (`skos`): schemes, concepts, and collections
+- ISO 25964 (`isothes`): Thesaurus relations
+- RDF Schema (`rdfs`): Resource Description Framework
+- OWL (`owl`): Web Ontology Language
+- FOAF (`foaf`): Linked Data — people and information (originally, "Friend of a Friend" from social web)
+- Schema.org (`schema`): Standard web schemas
+- Provenance(`prov`)"""@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:DublinCore ;
+    skos:prefLabel "Metadata Standards"@en ;
+    skos:scopeNote """- Metadata is simply data about data. Metadata elements provide shared context and meaning; they are typically categorized as structural (machine readability), descriptive (for context), and administrative (for maintenance and lineage).
+- Using standards for metadata schema helps to provide consistency and common semantics for metadata properties for concepts and relationships."""@en .
 
 pkmv:Month-Health a skos:Concept ;
     rdfs:label "Month Health"@en ;
@@ -1713,6 +1790,32 @@ pkmv:ScriptEvent a skos:Concept ;
     skos:prefLabel "Script Event"@en ;
     skos:scopeNote "Events originated by a Script (Python/Swift automation run), distinct from ToolEvent (interactive tool use) and AgentEvent (AI-originated)."@en .
 
+pkmv:SemanticKnowledgeManagementSystem a skos:Concept ;
+    rdfs:label "Semantic Knowledge Management System"@en ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    rdfs:seeAlso <https://www.amazon.com/Ontology-Pipeline-Framework-Knowledge-Engineering/dp/B0HJ9223FH> ;
+    skos:altLabel "SKMS"@en ;
+    skos:changeNote "2026-09-19 — Linked artifact “Ontology Pipeline (Amazon)” added (by Doug Warren)"@en,
+        "2026-09-19 — Renamed from “NewConcept” to “SemanticKnowledgeManagementSystem”; Preferred label “Semantic Knowledge Management System” added; Alternative label “SKMS” added; Definition added; Scope note added (by Doug Warren)"@en,
+        "2026-09-19 — Term created (by Doug Warren)"@en,
+        "Added definition and scope note."@en ;
+    skos:definition "A framework for an organized structure of concepts, definitions, and relationships for consistent knowledge, context, and memory usage by both humans and agents."@en ;
+    skos:editorialNote "New top concept for general information about knowledge systems, standards, semantic web, and ontology pipeline methodology."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:OntologyPipeline ;
+    skos:prefLabel "Semantic Knowledge Management System"@en ;
+    skos:scopeNote """Reflects the process, stages, methodology, and workflows described by Jessica Talisman in her book on the "Ontology Pipeline": controlled vocabulary, taxonomy, metadata standards (schemas), thesaurus, ontology, and knowledge graph.
+
+Distinguished from:
+- Personal Knowledge Management (PKM) with generic principles and practices
+- Knowledge System Architecture (KSA) for a specific implementation
+- Concept Spaces (Ideaverse) with notes about concepts organized by Knowledge, Time, and Action
+- Technical Stack (or "Technology Foundation") with instances of products, apps, services, and tools"""@en ;
+    skos:topConceptOf <https://w3id.org/pkm/vocab> .
+
 pkmv:ServiceEvent a skos:Concept ;
     rdfs:label "Service Event"@en ;
     dcterms:created "2026-08-28"^^xsd:date ;
@@ -1808,21 +1911,24 @@ pkmv:Action a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-14"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderGeneric pkmv:EffortsFolder ;
     skos:broader pkmv:EffortsFolder ;
     skos:changeNote "2026-08-28 — Unmarked as a top concept; Parent “Effort” added (by Doug Warren)"@en,
         "2026-08-29 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-09-11 — Scope note updated (by Doug Warren)"@en,
         "2026-09-13 — Scope note updated (by Doug Warren)"@en,
+        "2026-09-19 — Definition updated; Scope note updated (by Doug Warren)"@en,
         "Added definition and scope notes for Action."@en,
+        "Clarified definition to avoid references to sibling concepts."@en,
         "Removed \"ActionGroup\" reference in scope note since not defined in vocabulary yet."@en,
         "Removed trailing double space at end of scope note."@en ;
-    skos:definition "Something to do for an effort, project, area, or interest."@en ;
+    skos:definition "A discrete thing to be done, small enough to be completed or checked off."@en ;
+    skos:editorialNote "Considering whether \"Task\" should be created as a term to complement Action. A task might describe an \"activity group\" that contains multiple actions, or maybe it could be considered a more complex kind of Action. They could be assigned to a person (or \"agent\") to perform, and require specific \"skills\" or \"context\" (knowledge). Consider that projects have tasks, which consist of actions, that might be performed by a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Action"@en ;
     skos:scopeNote """- Narrower than an Effort, and alongside Area, Interest, or Project.
-- May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.
+- May represent a single Action as a task with many steps and more descriptive content about what needs to be done than would simply be included in a bullet list.
 - More complex actions might be action groups that have one or more nested groups of actions.
 - Sequential actions can be represented as a simple bullet list with a checkbox.
 - Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."""@en .
@@ -2389,6 +2495,25 @@ pkmv:ObsidianTemplate a skos:Concept ;
     skos:scopeNote """- Includes templates created with the Obsidian Templater plugin, with optional inline Templater expressions (`<% ... %>`) and JavaScript code.
 - Distinguished from PKM Python templates using Jinja2 templates with Mustache syntax (`{{ ... }}`) that are used to generate Obsidian notes from Python (and/or Swift) services, scripts, commands, and agents."""@en .
 
+pkmv:OntologyPipeline a skos:Concept ;
+    rdfs:label "Ontology Pipeline"@en ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:creator pkma:Doug-Warren ;
+    dcterms:issued "2026-08-15"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
+    rdfs:seeAlso <https://www.amazon.com/Ontology-Pipeline-Framework-Knowledge-Engineering/dp/B0HJ9223FH> ;
+    skos:broader pkmv:SemanticKnowledgeManagementSystem ;
+    skos:changeNote "2026-09-19 — Renamed from “NewConcept” to “OntologyPipeline”; Preferred label “Ontology Pipeline” added; Definition added; Scope note added; Linked artifact “Ontology Pipeline (Amazon)” added (by Doug Warren)"@en,
+        "2026-09-19 — Term created under “Semantic Knowledge Management System” (by Doug Warren)"@en,
+        "Added definition and scope note."@en ;
+    skos:definition "A framework for knowledge management engineering."@en ;
+    skos:inScheme <https://w3id.org/pkm/vocab> ;
+    skos:narrower pkmv:ControlledVocabulary,
+        pkmv:MetadataStandards ;
+    skos:prefLabel "Ontology Pipeline"@en ;
+    skos:scopeNote """- Described by Jessica Talisman in her book "Ontology Pipeline: A Framework for Knowledge Management Engineering".
+- Includes controlled vocabulary, metadata standards, taxonomy, thesaurus, ontology, and knowledge graphs."""@en .
+
 pkmv:PKMPythonScripts a skos:Concept ;
     rdfs:label "PKM Python Scripts"@en ;
     dcterms:created "2026-08-29"^^xsd:date ;
@@ -2535,14 +2660,17 @@ pkmv:Time a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderPartitive pkmv:Calendar ;
     skos:broader pkmv:Calendar ;
     skos:changeNote "2026-08-28 — Definition added; Scope note added (by Doug Warren)"@en,
         "2026-08-29 — Parent “Calendar” added (by Doug Warren)"@en,
         "2026-08-29 — Unmarked as a top concept (by Doug Warren)"@en,
-        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en ;
-    skos:definition "A concept element representing a temporal reference point or duration."@en ;
+        "2026-09-19 — Definition updated (by Doug Warren)"@en,
+        "Add missing definition and scope notes as initial placeholder content to review refine, and evolve further."@en,
+        "Clarified definition about the thing, not the vocabulary model."@en ;
+    skos:definition "A period or point in time, at any horizon from a day to a life."@en ;
+    skos:editorialNote "It might be useful to consider additional time terms, such as \"Time Period\", \"Interval\", or \"Duration\" (with start & end times), as well as an \"Instant\", \"Timestamp\", or \"Event Time\" (point in time)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Time"@en ;
     skos:scopeNote "Treated as the anchor/parent for the Calendar hierarchy (Life > Decade > Year > Quarter > Month > Week > Day). Worth deciding OWL Time alignment before finalizing."@en .
@@ -4085,7 +4213,7 @@ pkmv:EffortsFolder a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderPartitive pkmv:Vault ;
     isothes:narrowerGeneric pkmv:Action,
         pkmv:Area,
@@ -4096,15 +4224,18 @@ pkmv:EffortsFolder a skos:Concept ;
     skos:changeNote "2026-08-25 — Created from approved proposal (by Doug Warren)"@en,
         "2026-08-26 — Renamed from “Effort2” to “Effort” (by Doug Warren)"@en,
         "2026-08-29 — Renamed from “Effort” to “EffortsFolder”; Unmarked as a top concept; Preferred label changed from “Effort” to “Efforts Folder”; Alternative label “Effort Folder” added; Parent “Vault” added (by Doug Warren)"@en,
-        "Added definition and scope notes. Removed redundant Effort2 created by Proposal when already existed."@en ;
-    skos:definition "A unit of directed work toward an outcome, such as a project or initiative."@en ;
+        "2026-09-19 — Definition updated; Scope note updated (by Doug Warren)"@en,
+        "2026-09-19 — Scope note updated (by Doug Warren)"@en,
+        "Added definition and scope notes. Removed redundant Effort2 created by Proposal when already existed."@en,
+        "Original definition described an \"Effort\" (a thing), rather than an Obsidian folder (a place) using LYT ACE organization framework; clarified definition and scope note."@en ;
+    skos:definition "A major space within an Obsidian vault containing notes about action (\"what you do\"), holding efforts such as areas, interests, and projects."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:Action,
         pkmv:Area,
         pkmv:Interest,
         pkmv:Project ;
     skos:prefLabel "Efforts Folder"@en ;
-    skos:scopeNote "Groups activity by goal; the intent behind logged actions."@en .
+    skos:scopeNote "Notes about procedural knowledge, process workflows, periodic routines, regular practices, skills, and activities — \"what you do and how it's done\". Distinguished from Atlas Folder about knowledge (\"what you know\"), or Calendar Folder with time-based notes (\"when events happened or you did something\")."@en .
 
 pkmv:DayCluster a skos:Concept ;
     rdfs:label "Day Cluster"@en ;
@@ -4720,14 +4851,14 @@ pkma:Doug-Warren a prov:Person ;
     dcterms:issued "2026-08-23"^^xsd:date ;
     dcterms:language "en" ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-09-17"^^xsd:date ;
+    dcterms:modified "2026-11-03"^^xsd:date ;
     dcterms:publisher pkma:Doug-Warren ;
     dcterms:rights "Content: CC BY 4.0; examples and build scripts: CC0 1.0"@en ;
     dcterms:title "PKM Vocabulary"@en ;
     vann:preferredNamespacePrefix "pkmv" ;
     vann:preferredNamespaceUri "https://w3id.org/pkm/vocab/" ;
-    owl:versionIRI <https://w3id.org/pkm/0.1.11/vocab> ;
-    owl:versionInfo "0.1.11" ;
+    owl:versionIRI <https://w3id.org/pkm/0.1.12/vocab> ;
+    owl:versionInfo "0.1.12" ;
     skos:hasTopConcept pkmv:ClaudeAI,
         pkmv:GraphDatabase,
         pkmv:HealthData,
@@ -4735,5 +4866,8 @@ pkma:Doug-Warren a prov:Person ;
         pkmv:ObsidianNotes,
         pkmv:PKMPython,
         pkmv:PKMSwift,
-        pkmv:Tool .
+        pkmv:SemanticKnowledgeManagementSystem,
+        pkmv:TechnologyStack,
+        pkmv:Tool ;
+    skos:historyNote "A split into PKM Subjects and PKM Systems is planned for 0.2.0."@en .
 

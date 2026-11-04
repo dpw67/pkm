@@ -13,14 +13,15 @@ pkmv:Action a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-09-14"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderGeneric pkmv:EffortsFolder ;
     skos:broader pkmv:EffortsFolder ;
-    skos:definition "Something to do for an effort, project, area, or interest."@en ;
+    skos:definition "A discrete thing to be done, small enough to be completed or checked off."@en ;
+    skos:editorialNote "Considering whether \"Task\" should be created as a term to complement Action. A task might describe an \"activity group\" that contains multiple actions, or maybe it could be considered a more complex kind of Action. They could be assigned to a person (or \"agent\") to perform, and require specific \"skills\" or \"context\" (knowledge). Consider that projects have tasks, which consist of actions, that might be performed by a tool."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Action"@en ;
     skos:scopeNote """- Narrower than an Effort, and alongside Area, Interest, or Project.
-- May represent a single Action as a Task with many steps and more content than would simply be included in a bullet list.
+- May represent a single Action as a task with many steps and more descriptive content about what needs to be done than would simply be included in a bullet list.
 - More complex actions might be action groups that have one or more nested groups of actions.
 - Sequential actions can be represented as a simple bullet list with a checkbox.
 - Parallel actions can use a numbered list to identify the sequence (1., 2., etc.)."""@en .

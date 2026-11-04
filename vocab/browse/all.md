@@ -25,7 +25,7 @@ knowing it was a collection.
 ### A
 
 - **[ACE Organization](../../ACEOrganization/)** _(also: ACE Folders)_ — The folders of Atlas, Calendar, and Efforts organizes our thinking in an Obsidian vault based on Ideaverse.
-- **[Action](../../Action/)** — Something to do for an effort, project, area, or interest.
+- **[Action](../../Action/)** — A discrete thing to be done, small enough to be completed or checked off.
   <br>In: [Note Types](../../NoteTypes/)
 - **[Activity Event](../../ActivityEvent/)** — Something that happened related to activity or exercise.
 - **[Add Folder](../../AddFolder/)** _(also: Obsidian Inbox, Plus Folder)_ — The + (Add) folder is the PKM "inbox" space for new and incoming notes.
@@ -67,6 +67,7 @@ knowing it was a collection.
   <br>In: [Concept Collection](../../ConceptCollection/), [Knowledge Collection](../../KnowledgeCollection/), [Note Types](../../NoteTypes/)
 - **[Concept Collection](../../ConceptCollection/)** _(collection, 10 members)_ — The languages, standards and artifacts a concept is expressed in, rather than notes about any one concept. Cuts across the hierarchy instead of following it.
 - **[Context Graph](../../ContextGraph/)** — A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent and query interconnected context.
+- **[Controlled Vocabulary](../../ControlledVocabulary/)** _(also: Vocabulary)_ — A curated collection of concepts, labels, definitions, and relations with other concepts.
 - **[Cypher](../../Cypher/)** — A declarative query language for graph databases, used to create, read, update, and query nodes and relationships in Neo4j.
   <br>In: [Concept Collection](../../ConceptCollection/), [Tech Stack](../../TechStack/)
 ### D
@@ -139,6 +140,7 @@ knowing it was a collection.
   <br>In: [Meal Domain](../../MealDomain/)
 - **[Draft](../../Draft/)** — A new draft note received from the Drafts app via the Obsidian action group pipeline.
   <br>In: [Note Types](../../NoteTypes/)
+- **[Dublin Core](../../DublinCore/)** — A general-purpose metadata standard originally developed by librarians to capture metadata for publishing documentation on the web.
 ### E
 
 - **[Effort Cluster](../../EffortCluster/)** — Notes and artifacts assembled around a single effort, rather than every note that happens to mention it.
@@ -149,7 +151,7 @@ knowing it was a collection.
 - **[Effort Log](../../EffortLog/)** — A chronological record of what actually happened during an effort.
 - **[Effort Plan](../../EffortPlan/)** — The plan of intended activities and priorities for an effort.
 - **[Effort Review](../../EffortReview/)** — A structured retrospective evaluating an effort.
-- **[Efforts Folder](../../EffortsFolder/)** _(also: Effort Folder)_ — A unit of directed work toward an outcome, such as a project or initiative.
+- **[Efforts Folder](../../EffortsFolder/)** _(also: Effort Folder)_ — A major space within an Obsidian vault containing notes about action ("what you do"), holding efforts such as areas, interests, and projects.
   <br>In: [Effort Collection](../../EffortCollection/)
 - **[EKG Event](../../EKGEvent/)** _(also: ECG Event)_ — Recording an EKG reading from Apple Watch EKG app or Kardia 6-lead EKG device.
 - **[Event](../../Event/)** — Something that happened.
@@ -221,6 +223,7 @@ knowing it was a collection.
 - **[Menu](../../Menu/)** — A curated list of dishes offered or planned.
 - **[Metadata](../../Metadata/)** — Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file.
   <br>In: [Concept Collection](../../ConceptCollection/), [Semantic Web Standards](../../SemanticWebStandards/)
+- **[Metadata Standards](../../MetadataStandards/)** _(also: Metadata Schema)_ — Characteristics or attributes of data are defined as properties and/or operations (methods or functions) for a common understanding of detail information with common names, data types, and allowed values, as well as relations to other objects.
 - **[Month](../../Month/)** — A calendar month grouping weeks and days.
   <br>In: [Month Collection](../../MonthCollection/)
 - **[Month Cluster](../../MonthCluster/)** — Everything the system produces about a single month — its plan, log, review, journal and health notes — taken as one whole rather than many notes of one kind.
@@ -254,6 +257,7 @@ knowing it was a collection.
 - **[Obsidian Template](../../ObsidianTemplate/)** — An Obsidian template using the Templater plugin with JavaScript that determines the structure, layout, and configuration for various types of notes in the PKM system.
 - **[Ontology](../../Ontology/)** — A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a domain, typically expressed in a language such as OWL.
   <br>In: [Concept Collection](../../ConceptCollection/), [Semantic Web Standards](../../SemanticWebStandards/)
+- **[Ontology Pipeline](../../OntologyPipeline/)** — A framework for knowledge management engineering.
 - **[OWL](../../OWL/)** — Web Ontology Language - a W3C standard for authoring ontologies with formal, machine-processable semantics for classes, properties, and logical relationships.
   <br>In: [Concept Collection](../../ConceptCollection/), [Semantic Web Standards](../../SemanticWebStandards/)
 ### P
@@ -321,6 +325,7 @@ knowing it was a collection.
 - **[Script](../../Script/)** — A short program or set of automated instructions, typically in Python or Swift, that performs a specific task.
   <br>In: [Note Types](../../NoteTypes/), [Tech Stack](../../TechStack/)
 - **[Script Event](../../ScriptEvent/)** — Something that happened during script processing.
+- **[Semantic Knowledge Management System](../../SemanticKnowledgeManagementSystem/)** _(also: SKMS)_ — A framework for an organized structure of concepts, definitions, and relationships for consistent knowledge, context, and memory usage by both humans and agents.
 - **[Semantic Web Standards](../../SemanticWebStandards/)** _(collection, 11 members)_ — Standards and knowledge organization artifacts underlying this vocabulary: SKOS, RDF, and OWL alongside term, taxonomy, ontology, and knowledge graph.
 - **[Service Event](../../ServiceEvent/)** — Something that happened during service processing.
 - **[Shortcut](../../Shortcut/)** — An Apple Shortcuts app automation - a user-defined sequence of actions run manually, scheduled, or triggered via Siri or other events.
@@ -346,11 +351,12 @@ knowing it was a collection.
 - **[Taxonomy](../../Taxonomy/)** — A hierarchical classification scheme that organizes concepts into broader/narrower relationships.
   <br>In: [Concept Collection](../../ConceptCollection/), [Semantic Web Standards](../../SemanticWebStandards/)
 - **[Tech Stack](../../TechStack/)** _(collection, 10 members)_ — The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j, Cypher, and Apple Shortcuts.
+- **[Technology Stack](../../TechnologyStack/)** — A tool, platform, language, service, or protocol used to build or run a system, as distinct from the concepts the system organizes.
 - **[Template](../../TemplateCopy/)** — A template determines the structure, layout, and configuration for various types of notes in the PKM system.
 - **[Templater](../../Templater/)** — Create and use dynamic templates with a templating language that inserts variables and functions into notes, along with JavaScript code.
 - **[Term](../../Term/)** — A word or phrase used as the preferred or alternate label for a concept in a controlled vocabulary.
   <br>In: [Concept Collection](../../ConceptCollection/), [Note Types](../../NoteTypes/), [Semantic Web Standards](../../SemanticWebStandards/)
-- **[Time](../../Time/)** — A concept element representing a temporal reference point or duration.
+- **[Time](../../Time/)** — A period or point in time, at any horizon from a day to a life.
   <br>In: [Time Collection](../../TimeCollection/)
 - **[Time Cluster](../../TimeCluster/)** — A cluster whose subject is a single time period, at any horizon from a day to a year.
   <br>In: [Time Collection](../../TimeCollection/)

@@ -23,16 +23,16 @@ today keeps resolving.
 
 | View | What it shows |
 | --- | --- |
-| [Hierarchy](browse/hierarchy/) | 8 top concepts, nested by `skos:broader` |
+| [Hierarchy](browse/hierarchy/) | 10 top concepts, nested by `skos:broader` |
 | [Collections](browse/collections/) | 18 groupings that carry no hierarchical meaning |
-| [All terms](browse/all/) | 241 concepts and collections, A–Z, with definitions |
+| [All terms](browse/all/) | 247 concepts and collections, A–Z, with definitions |
 | [Map](browse/map/) | the same tree drawn, one diagram per top concept |
 
 Every term also has a page of its own at `https://w3id.org/pkm/vocab/{Term}`.
 
 ## Download
 
-- [`pkm-vocab.ttl`](pkm-vocab.ttl) — the whole vocabulary in Turtle (223 concepts, 18 collections)
+- [`pkm-vocab.ttl`](pkm-vocab.ttl) — the whole vocabulary in Turtle (229 concepts, 18 collections)
 - One page per term at `https://w3id.org/pkm/vocab/{Term}` — the same URI serves a readable page to a browser and Turtle to an RDF client
 - The per-term Turtle on its own at `terms/{Term}.ttl`
 - [`search.json`](search.json) — every term's label, kind and definition in one file, which is what the search box on these pages reads

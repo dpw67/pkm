@@ -362,6 +362,34 @@ graph TD
   linkStyle 0,11,13,23,24 stroke:#bf8700,stroke-width:3px
 ```
 
+## Semantic Knowledge Management System
+
+[Semantic Knowledge Management System](../../SemanticKnowledgeManagementSystem/) — 4 descendants.
+
+```mermaid
+graph TD
+  SemanticKnowledgeManagementSystem["Semantic Knowledge Management System"]
+  OntologyPipeline["Ontology Pipeline"]
+  SemanticKnowledgeManagementSystem -.->|"?"| OntologyPipeline
+  ControlledVocabulary["Controlled Vocabulary"]
+  OntologyPipeline -.->|"?"| ControlledVocabulary
+  MetadataStandards["Metadata Standards"]
+  OntologyPipeline -.->|"?"| MetadataStandards
+  DublinCore["Dublin Core"]
+  MetadataStandards -.->|"?"| DublinCore
+  linkStyle default stroke:#57606a,stroke-width:1.5px
+  linkStyle 0,1,2,3 stroke:#bf8700,stroke-width:3px
+```
+
+## Technology Stack
+
+[Technology Stack](../../TechnologyStack/) — 0 descendants.
+
+```mermaid
+graph TD
+  TechnologyStack["Technology Stack"]
+```
+
 ## Tool
 
 [Tool](../../Tool/) — 15 descendants.

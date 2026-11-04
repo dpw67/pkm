@@ -24,7 +24,7 @@ not SemVer position names** — by position `0.2.0` is a minor bump — so read 
 | 6 | This roadmap, in the repo | done — §A |
 | 7 | `make review` — the family-grouped review sheet | done — §B |
 | 8 | 0.1.6 — the prose patch, 29 literals | done — §C |
-| 9 | 0.2.0 — two malformed URIs renamed | after 0.1.8 — §D |
+| 9 | 0.2.0 — the split; the two URI fixes in §D are subsumed (see §T) | after 0.1.13 — §D |
 | 10 | LinkedIn 0.1.4/0.1.5 follow-up; third Circle post | unscheduled — §G |
 | 11 | Where the vocabulary and the periodic notes disagree | recorded — §F |
 | 12 | 0.1.7 — notes rendered, two definitions settled | done — §E |
@@ -40,6 +40,13 @@ not SemVer position names** — by position `0.2.0` is a minor bump — so read 
 | 22 | A second PKM tool read the vocabulary; four primitives missing, four parents wrong | measured — §P |
 | 23 | The hierarchy before 0.2.0 restructures it — 33% of links undifferentiated | measured — §Q |
 | 24 | 0.1.11 — the hierarchy drawn, one chunk per top concept | done — §R |
+| 25 | 0.1.12 - additive: new concepts, tightened definitions | released 2026-11-03 | §S |
+| 26 | 0.1.13 - deprecate this scheme; point to Subjects and Systems | prepared; **publish after 0.2.0 is live** | §T |
+| 27 | 0.2.0 - split into PKM Subjects (276 concepts) and PKM Systems (316) | in progress | §T |
+
+**Next.** Finish the 0.2.0 worklist (`z/drafts/0.2.0-split-worklist-2.md`), run
+`make cross-scheme` clean, publish Subjects and Systems, confirm both IRIs
+resolve at w3id.org, then publish 0.1.13. The concept counts are from the 2026-10 exports, so update them when you cut 0.2.0.
 
 ### Where 0.1.9 left the graph
 
@@ -169,6 +176,10 @@ only definition of 223 missing its period, and `self-referential-prose` found
   story this section tells.
 
 ## D. 0.2.0 — two malformed URIs
+
+> **Superseded by §T.** The 0.2.0 plan is now the Subjects/Systems split. The
+> items below are kept for their reasoning. The renames are taken in the new
+> schemes, not in this one.
 
 **The renames are what force a major version.** A change is major when an
 existing query can return different results, and a query for `pkmv:Month-Health`
@@ -1776,6 +1787,38 @@ Using the rules already written down, not new ones:
 The first two rows are a release on their own, and they do not presume the final
 hierarchy — which is what makes the transformation incremental rather than one
 irreversible pass. `z/drafts/0.1.12-prep-worklist.md` is that worklist.
+
+## T. 0.2.0 — the split
+
+**In progress.** One scheme becomes two:
+
+| scheme | prefix | IRI | holds |
+|---|---|---|---|
+| PKM Subjects | `pkms:` | `https://w3id.org/pkm/subjects/` | the conceptual framework: knowledge, time, action, input/output |
+| PKM Systems | `pkmt:` | `https://w3id.org/pkm/systems/` | technology and implementation: tools, formats, note types, architecture |
+
+### T1. Why a split, not a reshuffle
+One scheme was answering two questions: what a note is *about*, and what *implements* it. 
+A term like Knowledge or Time belongs to the conceptual framework; a term like Obsidian, 
+a plugin, or a note type belongs to the implementation. Mixing them meant a "subject" 
+could be a tool, and a tool could not be changed without disturbing the framework. 
+Subjects holds the first kind, Systems the second, and `pkm:embodies` / `pkm:organizes` 
+connect a note type to the kind of knowledge it carries.
+
+### T2. The IRI rule
+A term's scheme is part of its IRI, so moving a term between schemes after
+0.2.0 publishes means deprecating it. Every placement decision has to be
+made **before** the release, even if the prose behind it waits.
+
+### T3. Verification
+`make cross-scheme` runs `scripts/cross_scheme.py` over both exports. It is
+the only check that sees links *between* the schemes; `pkm_vocab check` and
+`make validate-skos` each read one scheme.
+
+### T4. Closing this scheme
+0.1.13 sets `owl:deprecated true` and `dcterms:isReplacedBy` on the scheme
+(both new scheme IRIs). Concept-level replacements are **not** recorded. It
+publishes only after 0.2.0 is live, so the `isReplacedBy` targets resolve.
 
 ## Backlog
 

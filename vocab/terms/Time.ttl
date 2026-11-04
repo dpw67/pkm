@@ -13,10 +13,11 @@ pkmv:Time a skos:Concept ;
     dcterms:created "2026-08-28"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderPartitive pkmv:Calendar ;
     skos:broader pkmv:Calendar ;
-    skos:definition "A concept element representing a temporal reference point or duration."@en ;
+    skos:definition "A period or point in time, at any horizon from a day to a life."@en ;
+    skos:editorialNote "It might be useful to consider additional time terms, such as \"Time Period\", \"Interval\", or \"Duration\" (with start & end times), as well as an \"Instant\", \"Timestamp\", or \"Event Time\" (point in time)."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:prefLabel "Time"@en ;
     skos:scopeNote "Treated as the anchor/parent for the Calendar hierarchy (Life > Decade > Year > Quarter > Month > Week > Day). Worth deciding OWL Time alignment before finalizing."@en .

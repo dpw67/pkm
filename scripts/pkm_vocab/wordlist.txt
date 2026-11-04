@@ -30,6 +30,7 @@ http
 inline
 interoperability
 lifecycle
+namespace
 online
 plugin
 prepend

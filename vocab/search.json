@@ -12,7 +12,7 @@
 "label":"Action",
 "url":"Action/",
 "kind":"concept",
-"definition":"Something to do for an effort, project, area, or interest."
+"definition":"A discrete thing to be done, small enough to be completed or checked off."
 },
 {
 "label":"Activity Event",
@@ -215,6 +215,15 @@
 "url":"ContextGraph/",
 "kind":"concept",
 "definition":"A structured network of entities (nodes) and their relationships (edges), typically machine-readable, used to represent…"
+},
+{
+"label":"Controlled Vocabulary",
+"url":"ControlledVocabulary/",
+"kind":"concept",
+"alts":[
+"Vocabulary"
+],
+"definition":"A curated collection of concepts, labels, definitions, and relations with other concepts."
 },
 {
 "label":"Cypher",
@@ -458,6 +467,12 @@
 "definition":"A new draft note received from the Drafts app via the Obsidian action group pipeline."
 },
 {
+"label":"Dublin Core",
+"url":"DublinCore/",
+"kind":"concept",
+"definition":"A general-purpose metadata standard originally developed by librarians to capture metadata for publishing documentation…"
+},
+{
 "label":"Effort Cluster",
 "url":"EffortCluster/",
 "kind":"concept",
@@ -506,7 +521,7 @@
 "alts":[
 "Effort Folder"
 ],
-"definition":"A unit of directed work toward an outcome, such as a project or initiative."
+"definition":"A major space within an Obsidian vault containing notes about action (\"what you do\"), holding efforts such as areas…"
 },
 {
 "label":"EKG Event",
@@ -774,6 +789,15 @@
 "definition":"Structured data that describes, identifies, or provides context for another resource, such as a note, concept, or file."
 },
 {
+"label":"Metadata Standards",
+"url":"MetadataStandards/",
+"kind":"concept",
+"alts":[
+"Metadata Schema"
+],
+"definition":"Characteristics or attributes of data are defined as properties and/or operations (methods or functions) for a common…"
+},
+{
 "label":"Month",
 "url":"Month/",
 "kind":"concept",
@@ -892,6 +916,12 @@
 "url":"Ontology/",
 "kind":"concept",
 "definition":"A formal, explicit specification of a shared conceptualization - the concepts, properties, and relationships within a…"
+},
+{
+"label":"Ontology Pipeline",
+"url":"OntologyPipeline/",
+"kind":"concept",
+"definition":"A framework for knowledge management engineering."
 },
 {
 "label":"OWL",
@@ -1143,6 +1173,15 @@
 "definition":"Something that happened during script processing."
 },
 {
+"label":"Semantic Knowledge Management System",
+"url":"SemanticKnowledgeManagementSystem/",
+"kind":"concept",
+"alts":[
+"SKMS"
+],
+"definition":"A framework for an organized structure of concepts, definitions, and relationships for consistent knowledge, context…"
+},
+{
 "label":"Semantic Web Standards",
 "url":"SemanticWebStandards/",
 "kind":"collection",
@@ -1233,6 +1272,12 @@
 "definition":"The languages, frameworks, and tools used to build and run the PKM system outside Obsidian: Python, Swift, Neo4j…"
 },
 {
+"label":"Technology Stack",
+"url":"TechnologyStack/",
+"kind":"concept",
+"definition":"A tool, platform, language, service, or protocol used to build or run a system, as distinct from the concepts the…"
+},
+{
 "label":"Template",
 "url":"TemplateCopy/",
 "kind":"concept",
@@ -1254,7 +1299,7 @@
 "label":"Time",
 "url":"Time/",
 "kind":"concept",
-"definition":"A concept element representing a temporal reference point or duration."
+"definition":"A period or point in time, at any horizon from a day to a life."
 },
 {
 "label":"Time Cluster",

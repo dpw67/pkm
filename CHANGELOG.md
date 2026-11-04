@@ -8,7 +8,55 @@ Version levels are explained under [Versioning](#versioning).
 
 ## [Unreleased]
 
-Nothing yet. Work starts on a branch named for the version it targets.
+Work for 0.2.0 happens on the `0.2.0` branch: the vocabulary splits into
+**PKM Subjects** (`https://w3id.org/pkm/subjects/`) and **PKM Systems**
+(`https://w3id.org/pkm/systems/`). Once both are live, 0.1.13 marks this scheme
+deprecated and points to them. Nothing else changes here.
+
+## [0.1.12] — 2026-11-03
+
+Additive, with three definitions tightened. **No IRI was renamed or removed,
+and no `broader`, `narrower` or `related` link was dropped,** so a query that
+worked against 0.1.11 returns the same rows plus the new ones. One definition
+(Efforts Folder) described the wrong thing and now describes the folder; see
+Changed.
+
+This is the last release before the split. Its `skos:historyNote` says so: "A
+split into PKM Subjects and PKM Systems is planned for 0.2.0."
+
+### Added
+- **6 concepts:** Controlled Vocabulary, Dublin Core, Metadata Standards,
+  Ontology Pipeline, Semantic Knowledge Management System and Technology
+  Stack. 241 → 247 concepts.
+- **2 top concepts:** Semantic Knowledge Management System and Technology
+  Stack, so `skos:hasTopConcept` goes from 8 to 10.
+- **4 `skos:broader` links**, each with its `narrower` inverse:
+  Ontology Pipeline → Semantic Knowledge Management System; Controlled
+  Vocabulary → Ontology Pipeline; Metadata Standards → Ontology Pipeline;
+  Dublin Core → Metadata Standards.
+
+### Changed
+- **Efforts Folder:** the definition described an Effort (a unit of directed
+  work), not the folder. It now says what the folder is: a major space in an
+  Obsidian vault for notes about action ("what you do"), holding efforts such
+  as areas, interests and projects. The scope note now distinguishes it from
+  the Atlas Folder and the Calendar Folder.
+- **Action:** the definition is now "A discrete thing to be done, small enough
+  to be completed or checked off." The scope note is lightly reworded.
+- **Time:** the definition is now "A period or point in time, at any horizon
+  from a day to a life."
+- **Knowledge System Architecture:** the scope note lost a leading bullet that
+  preceded no list, and gained an editorial note recording an alternate
+  definition.
+
+### Notes
+- The 0.1.11 archive is `z/pkm-vocab.export-0.1.11.ttl` and the 0.1.12 archive
+  is `z/pkm-vocab.export-0.1.12.ttl`, following the naming in
+  [CONTRIBUTING](CONTRIBUTING.md#releasing). The 0.1.11 archive was misnamed
+  before.
+- `vocab/src/pkm-vocab.export.ttl` is now the 0.1.12 content. The 0.1.13
+  deprecation release is prepared separately as
+  `vocab/src/pkm-vocab-0.1.13.export.ttl` and is **not** part of this release.
 
 ## [0.1.11] — 2026-09-17
 

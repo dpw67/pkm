@@ -13,7 +13,7 @@ pkmv:EffortsFolder a skos:Concept ;
     dcterms:created "2026-08-25"^^xsd:date ;
     dcterms:creator pkma:Doug-Warren ;
     dcterms:issued "2026-08-28"^^xsd:date ;
-    dcterms:modified "2026-08-29"^^xsd:date ;
+    dcterms:modified "2026-09-19"^^xsd:date ;
     isothes:broaderPartitive pkmv:Vault ;
     isothes:narrowerGeneric pkmv:Action,
         pkmv:Area,
@@ -21,12 +21,12 @@ pkmv:EffortsFolder a skos:Concept ;
         pkmv:Project ;
     skos:altLabel "Effort Folder"@en ;
     skos:broader pkmv:Vault ;
-    skos:definition "A unit of directed work toward an outcome, such as a project or initiative."@en ;
+    skos:definition "A major space within an Obsidian vault containing notes about action (\"what you do\"), holding efforts such as areas, interests, and projects."@en ;
     skos:inScheme <https://w3id.org/pkm/vocab> ;
     skos:narrower pkmv:Action,
         pkmv:Area,
         pkmv:Interest,
         pkmv:Project ;
     skos:prefLabel "Efforts Folder"@en ;
-    skos:scopeNote "Groups activity by goal; the intent behind logged actions."@en .
+    skos:scopeNote "Notes about procedural knowledge, process workflows, periodic routines, regular practices, skills, and activities — \"what you do and how it's done\". Distinguished from Atlas Folder about knowledge (\"what you know\"), or Calendar Folder with time-based notes (\"when events happened or you did something\")."@en .
 

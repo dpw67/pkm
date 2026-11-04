@@ -26,3 +26,5 @@ generated/
 
 # Personal permission rules for this checkout; not repository policy
 .claude/settings.local.json
+
+.idea/

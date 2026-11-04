@@ -18,7 +18,13 @@ A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, an
 
 ## Scope note
 
-- Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day.
+The core blueprint for my specific, integrated implementation of PKM vocabulary, taxonomy, metadata standards, ontology, knowledge graph, schemas, examples, development artifacts, and tools associated with components in the ontology pipeline. Includes a Diabetes AI coach with Morning Review agents that produce Day Diabetes, Day Diabetes Analysis, and Day Analysis every morning to finalize the Day Review for the previous day.
+
+## Editorial note
+
+_An open question about this term, not part of its definition._
+
+I'm currently untangling specific technology from general methodology.
 
 ## Narrower
 
@@ -27,11 +33,13 @@ A PKM system that integrates Obsidian Notes, Neo4j Graph Database, Claude AI, an
 ## Change history
 
 <details markdown="1">
-<summary>3 change notes</summary>
+<summary>5 change notes</summary>
 
+- 2026-09-18 — Scope note updated (by Doug Warren)
 - 2026-08-29 — Term created (by Doug Warren)
 - 2026-08-29 — Renamed from “NewConcept” to “KnowledgeSystemArchitecture”; Preferred label “Knowledge System Architecture” added; Alternative label “KSA” added; Definition added; Scope note added (by Doug Warren)
 - Added definition and scope notes for KSA.
+- Removed leading bullet from scopeNote since there was no list.
 
 </details>
 
@@ -49,6 +57,6 @@ curl -L -H 'Accept: text/turtle' https://w3id.org/pkm/vocab/KnowledgeSystemArchi
 
 ---
 
-`pkmv:KnowledgeSystemArchitecture` · created 2026-08-29 · modified 2026-08-29 · by [Doug Warren](../../agents/)
+`pkmv:KnowledgeSystemArchitecture` · created 2026-08-29 · modified 2026-09-18 · by [Doug Warren](../../agents/)
 
 Maintained in the SKOS source, not on this page. [All terms](../) · [Namespace home](../../)
